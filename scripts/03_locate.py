@@ -21,6 +21,7 @@ from pathlib import Path
 
 import astjava
 from common import (OUT, WORK, alnum, body_end, core, doc_start, head_of, load_tesoro, mclass, norm,
+                    similarity,
                     repo_dir, run, strip_marker)
 
 MIN_ANCHOR_LEN = 25
@@ -32,7 +33,6 @@ TOKEN = re.compile(r'"[^"]*"|\'[^\']*\'|[A-Za-z_$][\w$]*|\d+|\S')
 MIN_TOKENS = 20
 # A comment marker anywhere on the line: trailing comments sit after code.
 MARKER_ANY = re.compile(r"//|/\*|\*/|^\s*\*")
-WORD = re.compile(r"[a-z0-9]+")
 FUZZY_MIN = 0.85
 
 
@@ -438,10 +438,6 @@ def cbody(line: str) -> str:
     return MARKER_ANY.sub(" ", line[m.start():]) if m else ""
 
 
-def words(text: str) -> list[str]:
-    return WORD.findall(text.lower())
-
-
 def map_comment(cl, lines, start, end, span=150, used=None, lo=None, hi=None,
                 is_comment=None):
     """Map a dataset comment onto file lines.
@@ -489,8 +485,8 @@ def map_comment(cl, lines, start, end, span=150, used=None, lo=None, hi=None,
         return list(range(p + 1, p + n + 1)), "structural"
 
     # --- fuzzy: same comment, reworded since the crawl
-    want = words(" ".join(cl))
-    if len(want) < 8:
+    want = " ".join(core(x) for x in cl)
+    if len(alnum(want)) < 12:
         return [], None
     used = used or set()
     best = None
@@ -512,9 +508,9 @@ def map_comment(cl, lines, start, end, span=150, used=None, lo=None, hi=None,
             last = q
             parts.append(body)
             q += 1
-        got = words(" ".join(parts))
+        got = " ".join(core(x) for x in parts)
         if got:
-            r = SequenceMatcher(None, want, got, autojunk=False).ratio()
+            r = similarity(want, got)
             if r >= FUZZY_MIN and (best is None or r > best[0]):
                 best = (r, first, last)
         p = q

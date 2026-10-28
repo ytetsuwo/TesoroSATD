@@ -95,10 +95,10 @@ AsaiKen/phpscan@2a7fcfd,WITHOUT_CLASSIFICATION,"// ****
 // ****
 /* output a constant decl for the terminal */"
 AsaiKen/phpscan@2a7fcfd,WITHOUT_CLASSIFICATION,/* end of class */
-Asucanc/FishMail,WITHOUT_CLASSIFICATION,//验证手机号是否11位
-Asucanc/FishMail,IMPLEMENTATION,//TODO: Replace this with your own logic
-Asucanc/FishMail,WITHOUT_CLASSIFICATION,//是否是邮箱
-Asucanc/FishMail,IMPLEMENTATION,//TODO: Replace this with your own logic
+Asucanc/FishMail@33b51ab,WITHOUT_CLASSIFICATION,//验证手机号是否11位
+Asucanc/FishMail@33b51ab,IMPLEMENTATION,//TODO: Replace this with your own logic
+Asucanc/FishMail@33b51ab,WITHOUT_CLASSIFICATION,//是否是邮箱
+Asucanc/FishMail@33b51ab,IMPLEMENTATION,//TODO: Replace this with your own logic
 AtomicPulsee/ChatDirector@60ef220,WITHOUT_CLASSIFICATION,// Checking Chain metrics
 AtomicPulsee/ChatDirector@60ef220,WITHOUT_CLASSIFICATION,// Checking Per Chain metrics
 AtomicPulsee/ChatDirector@60ef220,WITHOUT_CLASSIFICATION,// Checking Each item in chain
@@ -289,7 +289,7 @@ Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* -----------------
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* ------------------- Status -------------------- */
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* ------------------- Summary -------------------- */
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* ------------------- Transp -------------------- */
-Bedework/bw-calendar-convert,WITHOUT_CLASSIFICATION,"/* ------------------- Uid -------------------- */
+Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,"/* ------------------- Uid -------------------- */
 /* We did this above */"
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* ------------------- Url -------------------- */
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* ------------------------- x-property --------------------------- */
@@ -444,7 +444,7 @@ CesarCoelho/xtcetools@c249860,WITHOUT_CLASSIFICATION,// NOI18N
 CesarCoelho/xtcetools@c249860,WITHOUT_CLASSIFICATION,// NOI18N
 CesarCoelho/xtcetools@c249860,WITHOUT_CLASSIFICATION,// NOI18N
 CesarCoelho/xtcetools@c249860,WITHOUT_CLASSIFICATION,// NOI18N
-ChGen/AndroidGpuGraphicsTest,WITHOUT_CLASSIFICATION,"//mRenderThread = new RenderThread(getResources(), surface, v);
+ChGen/AndroidGpuGraphicsTest@fe21703,WITHOUT_CLASSIFICATION,"//mRenderThread = new RenderThread(getResources(), surface, v);
 //init"
 ChGen/AndroidGpuGraphicsTest@fe21703,WITHOUT_CLASSIFICATION,/*sSimpleFS*/
 ChGen/AndroidGpuGraphicsTest@fe21703,WITHOUT_CLASSIFICATION,//TODO: wait for onFrameAvailable() ??
@@ -1007,7 +1007,7 @@ Joybeanx/leetcode@7bea6ef,DESIGN,"/**
      * @param n
      * @return
      */"
-K-Rhen/isis,WITHOUT_CLASSIFICATION,"//endregion
+K-Rhen/isis@643b394,WITHOUT_CLASSIFICATION,"//endregion
 //region > Facet Handling"
 K-Rhen/isis@8178683,DESIGN,"// HACK: shouldn't happen, but occurring on occasion when
 // running
@@ -1079,7 +1079,7 @@ Keneral/apackages@4b1b545,TEST,"// TODO: This test will actually mess with conta
 // Ideally we would use a fake content provider to give us contact data..."
 Keneral/apackages@4b1b545,WITHOUT_CLASSIFICATION,// add test contacts.
 KyoungjunPark/SmartClass@1a7bf94,IMPLEMENTATION,//implement below code if token is send to server
-L8RMedia/exponent@24e3907,IMPLEMENTATION,// TODO: get path while TextPath is set.
+L8RMedia/exponent@720631a,IMPLEMENTATION,// TODO: get path while TextPath is set.
 LaudateCorpus1/security-certification-resources@7580072,WITHOUT_CLASSIFICATION,"/**
      * Returns a {@link List} of additional {@link TestConfiguration} instances that should be run
      * along with the default {@code TestConfiguration} instances.
@@ -1232,7 +1232,7 @@ MaximillianHays/2019-DeepSpace@ec00c53,WITHOUT_CLASSIFICATION,"// mDrive.setVelo
 // ));"
 MaximillianHays/2019-DeepSpace@492c5e8,IMPLEMENTATION,// TODO (for button person): add buttons for all superstructure wanted states
 MayerRoman/Lagerta@d2b7d5f,DEFECT,//todo issue #232 fix increment topic partition name for tests on multi jvm
-MeFisto94/test-bot-1@8f129ec,IMPLEMENTATION,//TODO: add render code
+MeFisto94/test-bot-1@a52bc0a,IMPLEMENTATION,//TODO: add render code
 MessierObject111/algorithms-playground@13461d1,WITHOUT_CLASSIFICATION,"/**
      * @param s: input string
      * @return: the longest palindromic substring
@@ -1475,7 +1475,7 @@ Newbhope/cu-bus@a3b302a,WITHOUT_CLASSIFICATION,"/**
      */"
 Newbhope/cu-bus@a3b302a,DESIGN,//TODO: determine which corner I should use
 NikitaFeodonit/bqtj@ac66b8a,WITHOUT_CLASSIFICATION,//	public static SQLiteDatabase getConnectionDB() {
-NikitaFeodonit/bqtj,WITHOUT_CLASSIFICATION,"// если базы нет, то она будет создана автоматически,
+NikitaFeodonit/bqtj@ac66b8a,WITHOUT_CLASSIFICATION,"// если базы нет, то она будет создана автоматически,
 // иначе будет создано подключение к существующей базе"
 NikitaFeodonit/bqtj@ac66b8a,IMPLEMENTATION,// TODO change to log
 NikitaFeodonit/bqtj@ac66b8a,DESIGN,// TODO change System.exit(1)
@@ -1668,7 +1668,7 @@ RogueScholar/wpcleaner@af59224,WITHOUT_CLASSIFICATION,"/**
    * @param errors Errors found in the page.
    * @return True if the error has been reported.
    */"
-RogueScholar/wpcleaner,DESIGN,"// TODO: Refactor
+RogueScholar/wpcleaner@32a7d51,DESIGN,"// TODO: Refactor
 // Check type of tag"
 RogueScholar/wpcleaner@af59224,WITHOUT_CLASSIFICATION,// Check namespace
 RogueScholar/wpcleaner@9eaf812,WITHOUT_CLASSIFICATION,// Go to the end of the last line
@@ -1873,8 +1873,8 @@ SincereXIA/ozonerpc2@5dfbef0,DESIGN,"// TODO: If you don't have OM HA configured
 SinnerSchraderMobileMirrors/mopub-android-sdk@37389b7,DESIGN,"// This violates encapsulation but there is no convenience method to get a filename from
 // DiskLruCache. Filename was derived from private class method Entry#getCleanFile
 // in DiskLruCache.java"
-SirdarYangK/SirdarYKCode,IMPLEMENTATION,//TODO send setting level frame and change shared prefs and display
-SirdarYangK/SirdarYKCode,IMPLEMENTATION,//TODO send setting level frame and change shared prefs and display
+SirdarYangK/SirdarYKCode@8f2d881,IMPLEMENTATION,//TODO send setting level frame and change shared prefs and display
+SirdarYangK/SirdarYKCode@8f2d881,IMPLEMENTATION,//TODO send setting level frame and change shared prefs and display
 SiyuChen1/Datenstrukturen-und-Algorithmen-SS21@55ad604,WITHOUT_CLASSIFICATION,"/**
      * Fill this collision map with a set of rectangles. A rectangle is added to a
      * cell if it overlaps with it (that includes just touching it). Afterwards,
@@ -1968,7 +1968,7 @@ SpencerRiddering/flingtap-done@0148fa6,DESIGN,"// TODO: !! Isn't this a hack to 
 SpencerRiddering/flingtap-done@0148fa6,WITHOUT_CLASSIFICATION,// Ignore.
 SpencerRiddering/flingtap-done@0148fa6,WITHOUT_CLASSIFICATION,// Ignore.
 SpongePowered/Common@cec3bce,DESIGN,// TODO: do these need to be hooked up for saving as well? currently they just load
-SquidPony/SquidLib,DESIGN,"/**
+SquidPony/SquidLib@62dce92,DESIGN,"/**
      * Creates a 2D array of the given width and height, filled with entirely with the value contents.
      * You may want to use {@link #fill(char[][], char)} to modify an existing 2D array instead.
      * @param contents the value to fill the array with
@@ -1976,7 +1976,7 @@ SquidPony/SquidLib,DESIGN,"/**
      * @param height   the desired height
      * @return a freshly allocated 2D array of the requested dimensions, filled entirely with contents
      */"
-SquidPony/SquidLib,DESIGN,"/**
+SquidPony/SquidLib@95cb30d,DESIGN,"/**
      * Creates a 2D array of the given width and height, filled with entirely with the value contents.
      * You may want to use {@link #fill(float[][], float)} to modify an existing 2D array instead.
      * @param contents the value to fill the array with
@@ -1984,7 +1984,7 @@ SquidPony/SquidLib,DESIGN,"/**
      * @param height   the desired height
      * @return a freshly allocated 2D array of the requested dimensions, filled entirely with contents
      */"
-SquidPony/SquidLib,DESIGN,"/**
+SquidPony/SquidLib@62dce92,DESIGN,"/**
      * Creates a 2D array of the given width and height, filled with entirely with the value contents.
      * You may want to use {@link #fill(double[][], double)} to modify an existing 2D array instead.
      * @param contents the value to fill the array with
@@ -1992,7 +1992,7 @@ SquidPony/SquidLib,DESIGN,"/**
      * @param height   the desired height
      * @return a freshly allocated 2D array of the requested dimensions, filled entirely with contents
      */"
-SquidPony/SquidLib,DESIGN,"/**
+SquidPony/SquidLib@62dce92,DESIGN,"/**
      * Creates a 2D array of the given width and height, filled with entirely with the value contents.
      * You may want to use {@link #fill(int[][], int)} to modify an existing 2D array instead.
      * @param contents the value to fill the array with
@@ -2000,7 +2000,7 @@ SquidPony/SquidLib,DESIGN,"/**
      * @param height   the desired height
      * @return a freshly allocated 2D array of the requested dimensions, filled entirely with contents
      */"
-SquidPony/SquidLib,DESIGN,"/**
+SquidPony/SquidLib@ebc45ed,DESIGN,"/**
      * Creates a 2D array of the given width and height, filled with entirely with the value contents.
      * You may want to use {@link #fill(byte[][], byte)} to modify an existing 2D array instead.
      * @param contents the value to fill the array with
@@ -2008,7 +2008,7 @@ SquidPony/SquidLib,DESIGN,"/**
      * @param height   the desired height
      * @return a freshly allocated 2D array of the requested dimensions, filled entirely with contents
      */"
-SquidPony/SquidLib,DESIGN,"/**
+SquidPony/SquidLib@62dce92,DESIGN,"/**
      * Creates a 2D array of the given width and height, filled with entirely with the value contents.
      * You may want to use {@link #fill(boolean[][], boolean)} to modify an existing 2D array instead.
      * @param contents the value to fill the array with
@@ -2387,7 +2387,7 @@ agaveplatform/java-sdk@8939a1a,DOCUMENTATION,"/** GETTER
 agaveplatform/java-sdk@8939a1a,DOCUMENTATION,"/** SETTER
      * TODO: Write general description for this method
      */"
-agilepro/purple@90e20c4,WITHOUT_CLASSIFICATION,"/**
+agilepro/purple,WITHOUT_CLASSIFICATION,"/**
      * Make a JSON text String representation of this JSONObject.
      * Think carefully before using this method!  Do you really need
      * a String in memory?  Since JSON is used as a data transport format
@@ -4119,7 +4119,7 @@ drewr/elasticsearch@1194cd0,WITHOUT_CLASSIFICATION,"// AccessControlException[ac
 drewr/elasticsearch@a7774f2,WITHOUT_CLASSIFICATION,"// test a directory we normally have access to, but the groovy script does not."
 drewr/elasticsearch@a7774f2,DESIGN,// TODO: figure out the necessary escaping for windows paths here :)
 drewr/elasticsearch@a7774f2,WITHOUT_CLASSIFICATION,"// access denied (""java.io.FilePermission"" "".../tempDir-00N"" ""read"")"
-duarterafael/Conformitate,IMPLEMENTATION,"/**
+duarterafael/Conformitate@c1da740,IMPLEMENTATION,"/**
      * TODO
      * 
      * @return
@@ -4490,7 +4490,7 @@ garyluu/dockstore-cli@1adc3b8,WITHOUT_CLASSIFICATION,"/**
      * ONLY WORKS if the current user in the database dump has no metadata, and on Github there is metadata (bio, location)
      * If the user has metadata, test will pass as long as the user's metadata isn't the same as Github already
      */"
-garyluu/dockstore-cli,WITHOUT_CLASSIFICATION,"// Setup database
+garyluu/dockstore-cli@1adc3b8,WITHOUT_CLASSIFICATION,"// Setup database
 // Refresh a tool"
 garyluu/dockstore-cli@1adc3b8,DEFECT,"// Check that user has been updated
 // TODO: bizarrely, the new GitHub Java API library doesn't seem to handle bio
@@ -4556,8 +4556,8 @@ glahiru/airavata-1@47afa39,DESIGN,"//todo so currently we execute the qstat for 
 glasser/amock@993eb1f,DESIGN,// TODO: use sane arg parsing
 glasser/amock@e137bc4,IMPLEMENTATION,// TODO: use sane arg parsing
 globalid/walletkit@ed62f5b,TEST,// TODO: Expand coverage
-godblessthequeen/spring-cloud-gateway,IMPLEMENTATION,// TODO: translate url?
-godblessthequeen/spring-cloud-gateway,WITHOUT_CLASSIFICATION,"/**
+godblessthequeen/spring-cloud-gateway@a6f48b0,IMPLEMENTATION,// TODO: translate url?
+godblessthequeen/spring-cloud-gateway@82f8831,WITHOUT_CLASSIFICATION,"/**
                  * 匹配并转发到当前网关实例本地接口。
                  * 注意：需要通过 PrefixPathGatewayFilterFactory 将请求重写路径，以匹配本地 API ，否则 DispatcherHandler 转发会失败。
                  */"
@@ -4767,10 +4767,10 @@ hsphcdm/swift-t@2485ae2,WITHOUT_CLASSIFICATION,"/**
    */"
 hsphcdm/swift-t@1dd7fc1,DESIGN,// TODO: what if not initialized in a conditional? Should insert before
 hsphcdm/swift-t@2485ae2,WITHOUT_CLASSIFICATION,// Clear out all increments
-huangzhanqiao/yuzhouwan,WITHOUT_CLASSIFICATION,"/**
+huangzhanqiao/yuzhouwan@ca6acf4,WITHOUT_CLASSIFICATION,"/**
      * 处理 监控文件夹 的事件.
      */"
-huangzhanqiao/yuzhouwan,IMPLEMENTATION,// could expand more processes here
+huangzhanqiao/yuzhouwan@eec415f,IMPLEMENTATION,// could expand more processes here
 hubersn/SwingHelpViewer@3398d2e,DEFECT,// the following stuff did not work and I don't know why!
 hubersn/SwingHelpViewer@3398d2e,IMPLEMENTATION,// TODO Auto-generated catch block
 hubersn/SwingHelpViewer@3398d2e,IMPLEMENTATION,// TODO Auto-generated catch block
@@ -4945,27 +4945,27 @@ ialvarez79/pulsar@8a99e50,DEFECT,"// TODO: the message key routing is problemati
 //       https://github.com/apache/incubator-pulsar/pull/1029 is fixing that."
 ialvarez79/pulsar@8a99e50,WITHOUT_CLASSIFICATION,"// if there is no key and sequence id is provided, it is an effectively-once publish, we need to ensure
 // for a given message it always go to one partition, so we use sequence id to do a deterministic routing."
-ibelee/aircompressor,WITHOUT_CLASSIFICATION,"// caller: newInstance()
+ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,"// caller: newInstance()
 // input: see newInstance()"
-ibelee/aircompressor,WITHOUT_CLASSIFICATION,// tableSize = 1 << 3 = 8 in my case
+ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,// tableSize = 1 << 3 = 8 in my case
 ibelee/aircompressor@16b39bb,IMPLEMENTATION,// TODO: allocate in workspace
 ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,// store the symbol which is spread
-ibelee/aircompressor,IMPLEMENTATION,"// highThreshold = 8 - 1 = 7 in my case
+ibelee/aircompressor@ea6fbc3,IMPLEMENTATION,"// highThreshold = 8 - 1 = 7 in my case
 // TODO: make sure FseCompressionTable has enough size"
-ibelee/aircompressor,WITHOUT_CLASSIFICATION,"// For explanations on how to distribute symbol values over the table:
+ibelee/aircompressor@16b39bb,WITHOUT_CLASSIFICATION,"// For explanations on how to distribute symbol values over the table:
 // http://fastcompression.blogspot.fr/2014/02/fse-distributing-symbol-values.html
 // symbol start positions"
 ibelee/aircompressor@16b39bb,IMPLEMENTATION,// TODO: allocate in workspace
 ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,"// cumulative = [0,3,6,8,9] in my case
 // store the start position of every symbol"
-ibelee/aircompressor,WITHOUT_CLASSIFICATION,// Low probability symbol
-ibelee/aircompressor,WITHOUT_CLASSIFICATION,"// cumulative[3+1] = 8+1 = 9
+ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,// Low probability symbol
+ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,"// cumulative[3+1] = 8+1 = 9
 // Spread symbols"
-ibelee/aircompressor,WITHOUT_CLASSIFICATION,// make sure the symbols are successfully spread
-ibelee/aircompressor,WITHOUT_CLASSIFICATION,"// Build table
+ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,// make sure the symbols are successfully spread
+ibelee/aircompressor@16b39bb,WITHOUT_CLASSIFICATION,"// Build table
 // fill in CTable1"
-ibelee/aircompressor,WITHOUT_CLASSIFICATION,/* TableU16 : sorted by symbol order; gives next state value */
-ibelee/aircompressor,WITHOUT_CLASSIFICATION,"// Build symbol transformation table
+ibelee/aircompressor@16b39bb,WITHOUT_CLASSIFICATION,/* TableU16 : sorted by symbol order; gives next state value */
+ibelee/aircompressor@16b39bb,WITHOUT_CLASSIFICATION,"// Build symbol transformation table
 // fill in SymbolTT"
 iconcells/healthydrive@c96fab3,WITHOUT_CLASSIFICATION,// ALM Specific Cleanup
 iconcells/healthydrive@c96fab3,DESIGN,// Should we wait for the interface to be unregistered?
@@ -5278,7 +5278,7 @@ jbapple/libfilter@9a96b0c,WITHOUT_CLASSIFICATION,"/**
    * @return the maximum number of distinct values that can be added
    */"
 jbapple/libfilter@3dcf8e5,DESIGN,// TODO: unify this exponential + binary search with the bytes needed function above
-jcdubois/cpachecker@bd96b5d,WITHOUT_CLASSIFICATION,"/**
+jcdubois/cpachecker,WITHOUT_CLASSIFICATION,"/**
    * Computes the state resulting from performing the bitwise xor-operation on this state and the
    * given state. If one of the states is bottom, bottom is returned. If both states represent
    * single values, a state representing the value obtained by the bit-wise xor-operation on the
@@ -5299,7 +5299,7 @@ jcdubois/cpachecker@bd96b5d,WITHOUT_CLASSIFICATION,"/**
    * @return the state resulting from flipping the bits of the values represented by this state.
    */"
 jcdubois/cpachecker@bd96b5d,DESIGN,// TODO maybe a more exact implementation is possible?
-jcdubois/cpachecker@bd96b5d,WITHOUT_CLASSIFICATION,"/**
+jcdubois/cpachecker,WITHOUT_CLASSIFICATION,"/**
    * Computes the state resulting from performing the bitwise or-operation on this state and the
    * given state. If one of the states is bottom, bottom is returned. If both states represent
    * single values, a state representing the value obtained by the bit-wise or-operation on the
@@ -6379,8 +6379,8 @@ licehammer/perun@e94a95b,DEFECT,"// FIXME - this is probably not good, since it 
 licehammer/perun@e94a95b,WITHOUT_CLASSIFICATION,// when there are no application form items
 licehammer/perun@e94a95b,WITHOUT_CLASSIFICATION,// create application form
 linosgian/oxTrust@e8528e1,DESIGN,//Do not use getClass() here... a typical weld issue...
-linyingfa/AnimatedPieView-master,WITHOUT_CLASSIFICATION,//-----------------------------------------tools-----------------------------------------
-linyingfa/AnimatedPieView-master,DESIGN,// fix anim duration too short
+linyingfa/AnimatedPieView-master@b07f737,WITHOUT_CLASSIFICATION,//-----------------------------------------tools-----------------------------------------
+linyingfa/AnimatedPieView-master@b07f737,DESIGN,// fix anim duration too short
 litchfieldhistoricalsociety/services@98c282a,WITHOUT_CLASSIFICATION,//================= runXmlReplayFile ======================================================
 litchfieldhistoricalsociety/services@98c282a,WITHOUT_CLASSIFICATION,"//Internally, we maintain two collections of ServiceResult:
 //  the first is the return value of this method.
@@ -6951,7 +6951,7 @@ nchambers/caevo@6bd9c67,DESIGN,"/**
    *       is somehow dropped during sentence tokenization.
    */"
 nedru004/LibraryAnalysis2@db79d11,DESIGN,//TODO: Note that not all reads actually cover a given var
-neiplz/Pedometer,DESIGN,//TODO: Replace this with your own logic
+neiplz/Pedometer@a0026c0,DESIGN,//TODO: Replace this with your own logic
 neoautus/lucidj@ce4999d,WITHOUT_CLASSIFICATION,// ObjectEventListener
 neoautus/lucidj@ce4999d,IMPLEMENTATION,// TODO: VAADIN SESSION HANDLING
 neoautus/lucidj@ce4999d,WITHOUT_CLASSIFICATION,// ObjectEventListener
@@ -7132,7 +7132,7 @@ ontometrics/tika@f7fd3a7,DESIGN,"// TODO should we set KEYWORDS too?
 ontometrics/tika@f7fd3a7,IMPLEMENTATION,"// Could not parse embedded XMP metadata. That's not a serious
 // problem, so we'll just ignore the issue for now.
 // TODO: Make error handling like this configurable."
-ontopia/ontopia,WITHOUT_CLASSIFICATION,"//log.debug(""S: '"" + uri + ""' "" + qName);
+ontopia/ontopia@cb8c6ff,WITHOUT_CLASSIFICATION,"//log.debug(""S: '"" + uri + ""' "" + qName);
 // ----- <xfml> -----------------------------------------------------------"
 ontopia/ontopia@cb8c6ff,WITHOUT_CLASSIFICATION,// Add this document to the list of processed documents.
 ontopia/ontopia@cb8c6ff,DEFECT,// FIXME: what to do about language?
@@ -7334,7 +7334,7 @@ paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,// -- ignore
 paragp/GTS-PreUAT,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
 /* ""onload='...'"" */"
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,"/* ""onunload='...'"" */"
-paragp/GTS-PreUAT,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
+paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
 /* expandMenu style */"
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,/* expandMenu javascript */
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,/* expandMenu */
@@ -7342,7 +7342,7 @@ paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,/*menuID*/
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,/*expandableMenu*/
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,/*showIcon*/
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,/*showMenuHelp*/
-paragp/GTS-PreUAT,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
+paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
 /* content table class */"
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,/* content cell class */
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,/* content message id */
@@ -7350,11 +7350,11 @@ paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,/* content message class */
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,/* content menubar */
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,/* content message */
 paragp/GTS-PreUAT@18693e8,DESIGN,// TODO: HTML encode?
-paragp/GTS-PreUAT,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
+paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
 /* request context path */"
 paragp/GTS-PreUAT,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
 /* CSS file */"
-paragp/GTS-PreUAT,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
+paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
 /* Banner Image Height */"
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,// key suffix
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,// property values
@@ -7562,13 +7562,7 @@ prokopk1n/cpachecker-1@b80f52b,IMPLEMENTATION,"/* What shall we do with function
       * There are problems with them at partitioning building stage
       */"
 prokopk1n/cpachecker-1@d610ec4,WITHOUT_CLASSIFICATION,"//It means, that there is no entry in this block. Don't add it"
-qiaolw/AndroidTest,DESIGN,// todo change the file location/name according to your needs
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qiaolw/AndroidTest@8f88a20,DESIGN,// todo change the file location/name according to your needs
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
@@ -7577,6 +7571,12 @@ qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
 qingdao81/flink@f0ac261,DEFECT,"// This is problematic as the user code class loader is not
 // available at this point."
 qingdao81/flink@f0ac261,WITHOUT_CLASSIFICATION,"// Remove shutdown hook to prevent resource leaks, unless this is
@@ -9180,7 +9180,7 @@ tondeur-h/LangTonAnt@42ad186,WITHOUT_CLASSIFICATION,"//System.out.print(""(x,y)=
 tondeur-h/LangTonAnt@0393cb8,WITHOUT_CLASSIFICATION,//no draw a black point
 tondeur-h/LangTonAnt@0393cb8,WITHOUT_CLASSIFICATION,//show me the result on scsreen
 tondeur-h/LangTonAnt@2f1f2e7,WITHOUT_CLASSIFICATION,//refresh counters
-tonywasher/bc-java@ccf93ca,DESIGN,// TDOD: make this meaningful...
+tonywasher/bc-java@5fcd94a,DESIGN,// TDOD: make this meaningful...
 torstenwerner/metro2.0@0a75b78,WITHOUT_CLASSIFICATION,// invoke the Trust Plugin if necessary
 torstenwerner/metro2.0@0a75b78,DESIGN,//TODO: replace this code with calls to the Module now
 torstenwerner/metro2.0@0a75b78,WITHOUT_CLASSIFICATION,//legacy pipes in GF
@@ -9480,9 +9480,9 @@ vulko/TransactionsTestTask@5331551,WITHOUT_CLASSIFICATION,"/**
      */"
 vulko/TransactionsTestTask@5331551,WITHOUT_CLASSIFICATION,// Ensure the loader is stopped
 vulko/TransactionsTestTask@5331551,IMPLEMENTATION,// TODO: manage mem if needed
-wangchong6808/dremio-oss@8e85901,IMPLEMENTATION,"// Create filesystem for the given user and given path
+wangchong6808/dremio-oss@82bcc76,IMPLEMENTATION,"// Create filesystem for the given user and given path
 // TODO: DX-16001 - make async configurable for Hive."
-wangchong6808/dremio-oss@8e85901,DESIGN,//DX-7850 : remove once solution for maprfs is found
+wangchong6808/dremio-oss@82bcc76,DESIGN,//DX-7850 : remove once solution for maprfs is found
 wangfanming/hadoop@b4aa24d,WITHOUT_CLASSIFICATION,"/**
    * If the currentBufferIndex is less than the buffer size - 1,
    * it means, the next buffer in the list has been freed up for
@@ -9625,14 +9625,14 @@ wufang742987117/vaccinate@4535e81,IMPLEMENTATION,"/**
 	 * @param code
 	 *
 	 */"
-wufang742987117/vaccinate,WITHOUT_CLASSIFICATION,// 初始化记录数据
-wufang742987117/vaccinate,WITHOUT_CLASSIFICATION,"// 判断签字是否存在
+wufang742987117/vaccinate@4535e81,WITHOUT_CLASSIFICATION,// 初始化记录数据
+wufang742987117/vaccinate@4535e81,WITHOUT_CLASSIFICATION,"// 判断签字是否存在
 // 打印签字信息"
-wufang742987117/vaccinate,WITHOUT_CLASSIFICATION,// base64 转换签字
-wufang742987117/vaccinate,WITHOUT_CLASSIFICATION,// 查询该记录签字是否存在
-wufang742987117/vaccinate,WITHOUT_CLASSIFICATION,// 新增签字
-wufang742987117/vaccinate,WITHOUT_CLASSIFICATION,// 修改签字状态
-wufang742987117/vaccinate,WITHOUT_CLASSIFICATION,// 签字状态
+wufang742987117/vaccinate@4535e81,WITHOUT_CLASSIFICATION,// base64 转换签字
+wufang742987117/vaccinate@4535e81,WITHOUT_CLASSIFICATION,// 查询该记录签字是否存在
+wufang742987117/vaccinate@4535e81,WITHOUT_CLASSIFICATION,// 新增签字
+wufang742987117/vaccinate@4535e81,WITHOUT_CLASSIFICATION,// 修改签字状态
+wufang742987117/vaccinate@4535e81,WITHOUT_CLASSIFICATION,// 签字状态
 wwjiang007/dal@929a79c,DESIGN,// todo-lhj  make configurable RouteStrategy of
 wxlfrank/shopizer@2d1e98a,WITHOUT_CLASSIFICATION,"/**
          * Filtering product lists based on product attributes
@@ -9889,8 +9889,8 @@ xmf-xmodeler/MosaicFX@d3ff762,WITHOUT_CLASSIFICATION,"// System.err.println(star
 xmf-xmodeler/MosaicFX@d3ff762,WITHOUT_CLASSIFICATION,"// System.err.println(""syntaxBusy, request queued"");"
 xmf-xmodeler/MosaicFX@d3ff762,DESIGN,"// Todo: if syntax is not busy but a request got stuck
 // System.err.println(""request not queued"");"
-xuanliao/MVVM_Samples@eae0068,IMPLEMENTATION,//TODO: Replace this with your own logic
-xuanliao/MVVM_Samples@8126d21,IMPLEMENTATION,//TODO: Replace this with your own logic
+xuanliao/MVVM_Samples@77a4743,IMPLEMENTATION,//TODO: Replace this with your own logic
+xuanliao/MVVM_Samples@77a4743,IMPLEMENTATION,//TODO: Replace this with your own logic
 xushjie1987/common-utils@be4106b,IMPLEMENTATION,"/*
    * TODO(cpovirk): make SleepingStopwatch the last parameter throughout the class so that the
    * overloads follow the usual convention: Foo(int), Foo(int, SleepingStopwatch)

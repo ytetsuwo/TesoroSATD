@@ -15,7 +15,6 @@ All lines are 1-based, matching the rest of the pipeline.
 """
 from __future__ import annotations
 
-import re
 from functools import lru_cache
 
 import tree_sitter_java
@@ -57,16 +56,17 @@ def text(node, src: bytes) -> str:
     return src[node.start_byte:node.end_byte].decode("utf-8", "replace")
 
 
-# Python's str.splitlines (used for every `lines` list in the pipeline) also
-# breaks on form feeds and Unicode separators, while tree-sitter only counts
-# "\n". Counting the same breaks keeps AST line numbers aligned with the lists.
-BREAK = re.compile(rb"\r\n|[\n\r\v\f\x1c\x1d\x1e\x85]|\xe2\x80[\xa8\xa9]")
-
-
 def line1(node, src: bytes, edge: str = "start") -> int:
-    """1-based line of a node's start or end, matching `str.splitlines`."""
+    """1-based line of a node's start or end, matching `str.splitlines`.
+
+    Counting line breaks on bytes would misread UTF-8 continuation bytes
+    (0x85, 0x0b, 0x0c, 0x1c-0x1e) as separators, so decode first.
+    """
     off = node.start_byte if edge == "start" else node.end_byte
-    return len(BREAK.findall(src[:off])) + 1
+    text = src[:off].decode("utf-8", "replace")
+    # A prefix that stops mid-line already counts that line, while one that
+    # stops right after a break does not: the sentinel makes both cases one.
+    return len((text + "x").splitlines())
 
 
 def walk(node):

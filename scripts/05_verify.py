@@ -11,7 +11,7 @@ import re
 import sys
 from difflib import SequenceMatcher
 
-from common import OUT, core, git, norm, repo_dir, strip_marker
+from common import OUT, core, git, norm, repo_dir, similarity, strip_marker
 
 
 def rows():
@@ -50,9 +50,7 @@ def check_text(r):
         return None if [core(x) for x in got] == [core(x) for x in want] else "exact but differs"
     if r["match"] == "fuzzy":
         # the wording changed since the crawl: require a close paraphrase
-        rat = SequenceMatcher(None, tokens(" ".join(want)),
-                              tokens(" ".join(ctext(x) for x in got)),
-                              autojunk=False).ratio()
+        rat = similarity(" ".join(want), " ".join(ctext(x) for x in got))
         return None if rat >= 0.85 else f"fuzzy {rat:.2f}"
     # structural: the block was edited, or the comment is a trailing one on a
     # code line, so one surviving line (as a substring) is expected
@@ -93,17 +91,12 @@ def check_commit(r):
 
 
 MARKER = re.compile(r"//|/\*|\*/|^\s*\*")
-WORD = re.compile(r"[a-z0-9]+")
 
 
 def ctext(line):
     """Comment body of a line, dropping any code before a trailing marker."""
     m = MARKER.search(line)
     return MARKER.sub(" ", line[m.start():]) if m else ""
-
-
-def tokens(text):
-    return WORD.findall(text.lower())
 
 
 CHECKS = (("text", check_text), ("blame", check_blame), ("show", check_commit))

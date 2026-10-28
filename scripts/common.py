@@ -9,6 +9,8 @@ import json
 import os
 import re
 import subprocess
+import unicodedata
+from difflib import SequenceMatcher
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -97,11 +99,27 @@ def norm(s: str) -> str:
     return WS.sub(" ", s).strip()
 
 
-NONALNUM = re.compile(r"[^0-9a-z]+")
+# Commentary is written in many scripts, so "letters and digits" must mean the
+# Unicode categories, not [0-9a-z]: Chinese, Cyrillic and accented Latin text
+# otherwise collapses to an empty string and can never be matched.
+NONALNUM = re.compile(r"[\W_]+", re.UNICODE)
+WORD = re.compile(r"[^\W_]+", re.UNICODE)
 
 
 def alnum(s: str) -> str:
-    return NONALNUM.sub("", s.lower())
+    return NONALNUM.sub("", unicodedata.normalize("NFKC", s).lower())
+
+
+def tokens(s: str) -> list[str]:
+    return WORD.findall(unicodedata.normalize("NFKC", s).lower())
+
+
+def similarity(a: str, b: str) -> float:
+    """Word overlap for spaced prose, character overlap for CJK and friends."""
+    ta, tb = tokens(a), tokens(b)
+    if len(ta) >= 8 and len(tb) >= 8:
+        return SequenceMatcher(None, ta, tb, autojunk=False).ratio()
+    return SequenceMatcher(None, alnum(a), alnum(b), autojunk=False).ratio()
 
 
 def core(s: str) -> str:
