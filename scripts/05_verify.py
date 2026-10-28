@@ -26,7 +26,7 @@ def content(r):
     if r.get("at_head") == "True":
         return (d / r["path"]).read_text(errors="replace").splitlines()
     ref = r["snapshot_commit"]
-    p = git(d, "show", f"{ref}:{r['path']}")
+    p = git(d, "show", f"{ref}:{r.get('path_snapshot') or r['path']}")
     if p.returncode != 0:
         raise OSError(p.stderr.strip()[:120])
     return p.stdout.splitlines()
@@ -62,9 +62,11 @@ def check_text(r):
         return (None if [core(x) for x in got if core(x)]
                 == [core(x) for x in want if core(x)] else "exact but differs")
     if r["match"] == "history":
-        # recovered from an older revision: the snapshot must carry the text
-        return (None if [core(x) for x in got if core(x)]
-                == [core(x) for x in want if core(x)] else "history but differs")
+        # recovered from an older revision; the wording may have drifted a little
+        if [core(x) for x in got if core(x)] == [core(x) for x in want if core(x)]:
+            return None
+        rat = similarity(" ".join(want), " ".join(ctext(x) for x in got))
+        return None if rat >= 0.85 else f"history {rat:.2f}"
     if r["match"] == "fuzzy":
         # the wording changed since the crawl: require a close paraphrase
         rat = similarity(" ".join(want), " ".join(ctext(x) for x in got))
@@ -83,7 +85,8 @@ def check_blame(r):
     n = int(r["n_comment_lines"])
     ln = int(r["comment_line"])
     rev = [] if r.get("at_head") == "True" else [r["snapshot_commit"]]
-    p = git(d, "blame", "--line-porcelain", "-L", f"{ln},{ln + n - 1}", *rev, "--", r["path"])
+    path = r.get("path_snapshot") or r["path"]
+    p = git(d, "blame", "--line-porcelain", "-L", f"{ln},{ln + n - 1}", *rev, "--", path)
     if p.returncode != 0:
         return f"blame failed: {p.stderr.strip()[:120]}"
     shas = {l.split()[0] for l in p.stdout.splitlines()

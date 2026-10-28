@@ -3612,8 +3612,8 @@ christoff-buerger/pmChess@fcf608c,WITHOUT_CLASSIFICATION,// Restore game history
 christoff-buerger/pmChess,DESIGN,// TODO: fix when moves_selected contains index not move
 christoff-buerger/pmChess@88da635,WITHOUT_CLASSIFICATION,"// Restore cached current game situation (figure constellation, king positions,
 //	castlings, active player and turn number):"
-christoff-buerger/pmChess,WITHOUT_CLASSIFICATION,// Castling left:
-christoff-buerger/pmChess,WITHOUT_CLASSIFICATION,// Castling right:
+christoff-buerger/pmChess@5c20b6d,WITHOUT_CLASSIFICATION,// Castling left:
+christoff-buerger/pmChess@5c20b6d,WITHOUT_CLASSIFICATION,// Castling right:
 christoff-buerger/pmChess@8128165,WITHOUT_CLASSIFICATION,// Undo en passant capture:
 cirnoftw/android-openslmediaplayer@035cc10,DEFECT,"// NOTE: This test case may fails with StandardMediaPlayer (affects: ICS to JB, Lollipop with NuPlayer)"
 cirnoftw/android-openslmediaplayer@f8bb7dc,WITHOUT_CLASSIFICATION,"// NOTE:
@@ -6721,7 +6721,7 @@ mica-gossip/MiCA@bdd4848,DEFECT,"// FIXME: check that handleError is aborting on
 // handleError(GOSSIP_IO_ERROR, se);"
 mica-gossip/MiCA@bdd4848,DEFECT,"// FIXME: check that handleError is aborting on GOSSIP_IO_ERROR
 // handleError(GOSSIP_IO_ERROR, e);"
-mickknutson/spring-cloud-config,DEFECT,// TODO Does not work with Boot Integeration tests:
+mickknutson/spring-cloud-config@ebe5e7b,DEFECT,// TODO Does not work with Boot Integeration tests:
 mihirlibran/cse605@19e5b13,DEFECT,"// FIXME: this is almost certainly boned.  a Reg could appear in the
 // address expressions."
 mikesep/rocky@f71a67f,WITHOUT_CLASSIFICATION,// method call on an object
@@ -7983,7 +7983,7 @@ sengerts/tic-tac-toe@20fcd86,WITHOUT_CLASSIFICATION,"/**
 	 * Here, the AI player calculates a fitting next field which he then marks
 	 * trying to win the tic tac toe game.
 	 */"
-sengerts/tic-tac-toe,DESIGN,// TODO Not just randomly select a tile to mark
+sengerts/tic-tac-toe@49a7e73,DESIGN,// TODO Not just randomly select a tile to mark
 seqcode/seqcode-core@cefcbe8,WITHOUT_CLASSIFICATION,"/* reads a weight matrix from the specified file,
        inserts it into the database with the specified name and
        version, and returns its dbid.  This means that the file may contain
@@ -8583,7 +8583,7 @@ stephaniestroka/digitalid-core@18a2f09,WITHOUT_CLASSIFICATION,"/**
      */"
 stephaniestroka/digitalid-core@c7deb5b,DESIGN,"// The reply.pack() statement maps the semantic type of the reply converter, which results in a concurrent update if the client unpacks the response with the same database. The following commit prevents this. However, it is a suboptimal fix for this problem."
 stephenoken/beam@acb0460,IMPLEMENTATION,// TODO[BEAM-9179] Add conversion code for ARRAY and ROW types
-steppedreckoner/reactor-core,TEST,"//Fix or deprecate fromExecutor, this test might randomly hang on CI"
+steppedreckoner/reactor-core@2fca878,TEST,"//Fix or deprecate fromExecutor, this test might randomly hang on CI"
 steven-g/pdfbox@320c500,WITHOUT_CLASSIFICATION,"// PDF spec does not mention /Border for ink annotations, but it is used if /BS is not available"
 steven-g/pdfbox@cac38c4,DESIGN,"// Adjust rectangle even if not empty
 // file from PDF.js issue 13447
@@ -9101,7 +9101,7 @@ tladesignz/DNATools@161c558,DEFECT,"/**
      *            A maximum amount of result entries.
      * @return a {@link List} of {@link TableRow}s, possibly empty, never null.
      */"
-tladesignz/DNATools@facb6c7,WITHOUT_CLASSIFICATION,//noinspection TryWithIdenticalCatches
+tladesignz/DNATools,WITHOUT_CLASSIFICATION,//noinspection TryWithIdenticalCatches
 tladesignz/DNATools@732ab40,WITHOUT_CLASSIFICATION,"// We don't want to pass the exceptions up or rethrow a more generic exception, since
 // then, we would have to handle this on every object instantiation, but these
 // exceptions should never throw in production, since these are static code issues
@@ -9318,7 +9318,7 @@ tuxjsmith/logFarmDMS@7279405,DOCUMENTATION,"/**
      * @return the audioPlaybackOwner
      */"
 uiguard/uiguard@27eea9c,IMPLEMENTATION,//TODO more browser should be supported
-uk-gov-mirror/hmcts.ia-case-api,IMPLEMENTATION,//TODO: Next step Direction name should be dynamic too.
+uk-gov-mirror/hmcts.ia-case-api@436c81a,IMPLEMENTATION,//TODO: Next step Direction name should be dynamic too.
 umeshbsa/android-twitter-search-api@11b439d,WITHOUT_CLASSIFICATION,// we don't have to implement this method
 undeadinu/viskell@18eaf24,IMPLEMENTATION,// TODO deserialize the lambda block...
 unisoc-android/android_packages_apps_Dialer@ccca315,DESIGN,"/**

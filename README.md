@@ -16,7 +16,7 @@
 | `out/summary.md` | – | カバレッジと制約の自動レポート |
 | `out/repo_manifest.csv` | 960 | 各 clone の入手経路 (`kind` / 取得元 URL / SWH swhid / HEAD) |
 
-カバレッジ: **関数 1229/1255 (97.9%)、コメント 4919/4981 (98.8%)** に commit を付与。
+カバレッジ: **関数 1229/1255 (97.9%)、コメント 4924/4981 (98.9%)** に commit を付与。
 うち 50 関数は HEAD ではなく履歴から復元 (削除リポジトリは Software Heritage・
 存命ミラー・上流プロジェクトから復元)。950 プロジェクト、commit 日付は
 2000-12-06 〜 2026-08-31。
@@ -67,6 +67,7 @@ python3 scripts/15_ast_analysis.py  # AST とデータセット関数の突き�
 python3 scripts/16_symbol_history.py # 記号だけのコメントを履歴から復元
 python3 scripts/17_history_text.py   # HEAD から消えた本文を履歴から復元
 python3 scripts/18_reshape.py        # 本文はあるが形が変わったブロックを配置
+python3 scripts/19_deep_history.py   # 改名・改変を許した履歴探索
 ```
 
 ### 1. クロール (01, 02)
@@ -147,13 +148,13 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
 
 ### 5. 検証 (05)
 
-- `--full`: commit が付いた全 4919 コメントで、ファイル上のコメント本文が一致する
-  ことを確認 → **4919/4919**。
+- `--full`: commit が付いた全 4924 コメントで、ファイル上のコメント本文が一致する
+  ことを確認 → **4924/4924**。
 - ランダム 120 件で「本文一致・blame 一致・その commit に本文が存在」の 3 点を
   確認 → **120/120**。
 - `14_check_span.py` で全コメントが**関数本体（宣言行〜閉じ括弧）または直上の
   javadoc**に入っているかを AST で検算 → 本体 4306 / 宣言部 16 / 直上 556 /
-  履歴から復元 22 / 別メソッドへ移動 19 / 本体外 0。
+  履歴から復元 27 / 別メソッドへ移動 19 / 本体外 0。
   マップされた行が実際にコメントノードかも同時に確認している。
 
 ## 既知の制約
@@ -194,7 +195,7 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
 ```
 tesoro/     Tesoro 本家のデータ (sparse clone, data/ 184MB)
 repos/      clone 960 件 (875 存命 + SWH・ミラー・上流復元 + symlink 4 件, owner__name, 全履歴 + *.java)
-scripts/    パイプライン (01〜18)
+scripts/    パイプライン (01〜19)
 work/       中間状態・ログ (repo_meta.json, clone_state.jsonl, swh_state.jsonl, locate.log)
 out/        成果物 (CSV / JSONL / summary.md / repo_manifest.csv)
 docs/       入手経路の記録 (repo_acquisition.md)
