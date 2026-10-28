@@ -29,6 +29,10 @@ SIG = re.compile(r"^[0-9a-f]{40} ")
 # lot even when the method is plainly the same one. Tokens survive that.
 TOKEN = re.compile(r'"[^"]*"|\'[^\']*\'|[A-Za-z_$][\w$]*|\d+|\S')
 MIN_TOKENS = 20
+# A comment marker anywhere on the line: trailing comments sit after code.
+MARKER_ANY = re.compile(r"//|/\*|\*/|^\s*\*")
+WORD = re.compile(r"[a-z0-9]+")
+FUZZY_MIN = 0.85
 
 
 def strip_comments(text: str) -> str:
@@ -218,6 +222,21 @@ def grep(d: Path, patterns: list):
 
 
 # ---------------------------------------------------------------- locating
+REJECT = WORK / "manual_reject.jsonl"
+
+
+def rejects() -> dict:
+    """{id: reason} for matches a human ruled out (duplicated generated tests)."""
+    if not REJECT.exists():
+        return {}
+    out = {}
+    for line in REJECT.read_text().splitlines():
+        if line.strip() and not line.startswith("//"):
+            r = json.loads(line)
+            out[r["id"]] = r.get("reason", "rejected")
+    return out
+
+
 def locate(repo: str, func: dict, comments: list) -> dict:
     d = repo_dir(repo)
     base = {"id": func["id"], "repo": repo, "label": func.get("label"),
@@ -268,7 +287,7 @@ def locate(repo: str, func: dict, comments: list) -> dict:
     if not cands:
         # No reference line survived into any hit: fall back to the raw hit
         # positions (comment-only evidence). Aligned windows still get scored.
-        cands = sorted({(path, ln) for path, ln, _ in hits})[:MAX_FILE_CANDIDATES * 10]
+        cands = {(path, ln) for path, ln, _ in hits}
     if not cands:
         return {**base, "status": "not_at_head", "head": head_of(d)}
     # The declaration name seeds candidates even when every anchor line was
@@ -303,13 +322,12 @@ def locate(repo: str, func: dict, comments: list) -> dict:
         # A match must start at the declaration of this method (a few lines of
         # annotations are fine); otherwise it is shared boilerplate — generated
         # tests and framework stubs look alike without sharing a name.
-        if name:
-            head_ok = any(re.search(rf"\b{re.escape(name)}\s*\(", x)
-                          for x in lines[max(0, start - 2):start + 3])
-            if not head_ok:
-                line_ratio = 0.0
-            if cov and not any(re.search(rf"\b{re.escape(name)}\s*\(", x)
-                               for x in lines[max(0, tok_start - 2):tok_start + 3]):
+        # The name guards token matches only: shared boilerplate (generated
+        # tests, framework stubs) matches many files, while a line-for-line
+        # copy is evidence enough on its own.
+        if name and cov > line_ratio and cov < 0.9:
+            if not any(re.search(rf"\b{re.escape(name)}\s*\(", x)
+                       for x in lines[max(0, tok_start - 2):tok_start + 3]):
                 cov = 0.0
         score = max(line_ratio, cov)
         if best is None or score > best[0]:
@@ -324,7 +342,7 @@ def locate(repo: str, func: dict, comments: list) -> dict:
     rival = ""
     if cov and cov > line_ratio and cov < 0.9:
         for p2, (c2, _) in tok_cache.items():
-            if p2 != path and c2 >= 0.9 * cov:
+            if p2 != path and c2 >= cov:
                 rival = p2
                 break
     if ratio < 0.45 or rival:
@@ -342,10 +360,11 @@ def locate(repo: str, func: dict, comments: list) -> dict:
            "confidence": "high" if ratio >= 0.9 else "medium" if ratio >= 0.7 else "low"}
 
     # --- map each comment onto file lines
-    out_comments = []
+    out_comments, used = [], set()
     for r in comments:
         cl = [norm(x) for x in (r.get("comment") or "").splitlines() if norm(x)]
-        lines_abs, kind = map_comment(cl, lines, start, start + len(ref) - 1)
+        lines_abs, kind = map_comment(cl, lines, start, start + len(ref) - 1, used=used)
+        used.update(lines_abs)
         if not lines_abs:
             out_comments.append({"comment_id": r.get("comment_id"),
                                  "comment": r.get("comment"),
@@ -377,13 +396,25 @@ def locate(repo: str, func: dict, comments: list) -> dict:
     return res
 
 
-def map_comment(cl, lines, start, end, span=150):
+def cbody(line: str) -> str:
+    """Comment text on a line (markers stripped, code before it dropped)."""
+    m = MARKER_ANY.search(line)
+    return MARKER_ANY.sub(" ", line[m.start():]) if m else ""
+
+
+def words(text: str) -> list[str]:
+    return WORD.findall(text.lower())
+
+
+def map_comment(cl, lines, start, end, span=150, used=None):
     """Map a dataset comment onto file lines.
 
-    Returns (lines_abs, kind) where kind is "exact", "structural" or None.
+    Returns (lines_abs, kind) where kind is "exact", "structural", "fuzzy" or None.
     Comments above the function are often outside the aligned code window and
     may have been edited since the crawl, so a same-shape block right above the
-    function is accepted as a structural match.
+    function is accepted as a structural match. When the wording itself changed,
+    the closest comment run in the window is accepted as "fuzzy" (token overlap
+    >= FUZZY_MIN), so the row records the commit that wrote the current wording.
     """
     if not cl:
         return [], None
@@ -405,11 +436,45 @@ def map_comment(cl, lines, start, end, span=150):
     if struct:
         p = min(struct, key=lambda q: abs((q + n) - start))
         return list(range(p + 1, p + n + 1)), "structural"
+
+    # --- fuzzy: same comment, reworded since the crawl
+    want = words(" ".join(cl))
+    if len(want) < 8:
+        return [], None
+    used = used or set()
+    best = None
+    p = lo
+    while p < hi:
+        if p in used or not cbody(lines[p]):
+            p += 1
+            continue
+        q, parts, first, last = p, [], None, None
+        while q < hi and len(parts) <= n + 4:
+            body = cbody(lines[q])
+            if not body:
+                if lines[q].strip():      # real code: the comment run ends
+                    break
+                q += 1                    # blank line: the block continues
+                continue
+            if first is None:
+                first = q
+            last = q
+            parts.append(body)
+            q += 1
+        got = words(" ".join(parts))
+        if got:
+            r = SequenceMatcher(None, want, got, autojunk=False).ratio()
+            if r >= FUZZY_MIN and (best is None or r > best[0]):
+                best = (r, first, last)
+        p = q
+    if best:
+        return list(range(best[1] + 1, best[2] + 2)), "fuzzy"
     return [], None
 
 
 def main():
     funcs, comments = load_tesoro()
+    drop = rejects()
     out_path = OUT / "functions_located.jsonl"
     done = {}
     if out_path.exists():
@@ -421,7 +486,11 @@ def main():
     # statuses worth retrying automatically (kept out of `done` results otherwise)
     RETRY = {"error", "unreadable"}
     todo = [i for i in funcs if i not in done or done[i].get("status") in RETRY]
-    only = set(sys.argv[1:])
+    all_ = "--all" in sys.argv
+    only = {a for a in sys.argv[1:] if not a.startswith("--")}
+    if all_:
+        # re-score every HEAD match; ok_history rows are 08_history's business
+        todo = [i for i in funcs if done.get(i, {}).get("status") != "ok_history"]
     if only:
         # explicit ids / repos force a re-run regardless of previous status
         todo = [i for i in funcs if funcs[i]["repo"] in only or str(i) in only]
@@ -439,6 +508,9 @@ def main():
             except Exception as e:  # noqa: BLE001
                 rec = {"id": i, "repo": funcs[i]["repo"], "status": "error",
                        "err": str(e)[:300]}
+            if i in drop:
+                rec = {"id": i, "repo": funcs[i]["repo"], "status": "weak_match",
+                       "reason": drop[i], "ratio": 0.0, "head": rec.get("head")}
             done[i] = rec
             n += 1
             if rec["status"] != "ok" or n % 50 == 0:

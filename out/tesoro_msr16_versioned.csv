@@ -74,7 +74,7 @@ Ant-OS/android_vendor_cmsdk@daee9c6,IMPLEMENTATION,"//TODO: Implement this in th
 //c.settingsAction = Settings.ACTION_CUSTOM_TILE_LISTENER_SETTINGS;"
 Arraying/astra@c11ebb2,DESIGN,"// TODO AstUtils.getClassFilesForSource(f.toString()); - attempt to get only relevant classpaths for a given source file?
 // TODO Naively we can multi-thread here (i.e. per file) but simple testing indicated that this slowed us down."
-AsaiKen/phpscan,WITHOUT_CLASSIFICATION,"/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .*/
+AsaiKen/phpscan@2a7fcfd,WITHOUT_CLASSIFICATION,"/*. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .*/
 /** Emit code for the symbol constant class, optionally including non terms,
 	 *  if they have been requested.  
 	 * @param out            stream to produce output on.
@@ -83,12 +83,12 @@ AsaiKen/phpscan,WITHOUT_CLASSIFICATION,"/*. . . . . . . . . . . . . . . . . . . 
 	 */"
 AsaiKen/phpscan@2a7fcfd,WITHOUT_CLASSIFICATION,/* top of file */
 AsaiKen/phpscan@2a7fcfd,WITHOUT_CLASSIFICATION,/* class header */
-AsaiKen/phpscan,WITHOUT_CLASSIFICATION,"/* walk over the terminals */
+AsaiKen/phpscan@2a7fcfd,WITHOUT_CLASSIFICATION,"/* walk over the terminals */
 /* later might sort these */"
 AsaiKen/phpscan@2a7fcfd,WITHOUT_CLASSIFICATION,/* output a constant decl for the terminal */
 AsaiKen/phpscan@2a7fcfd,WITHOUT_CLASSIFICATION,/* Emit names of terminals */
 AsaiKen/phpscan@2a7fcfd,WITHOUT_CLASSIFICATION,/* do the non terminals if they want them (parser doesn't need them) */
-AsaiKen/phpscan,WITHOUT_CLASSIFICATION,"/* walk over the non terminals */
+AsaiKen/phpscan@2a7fcfd,WITHOUT_CLASSIFICATION,"/* walk over the non terminals */
 /* later might sort these */"
 AsaiKen/phpscan@2a7fcfd,WITHOUT_CLASSIFICATION,"// ****
 // TUM Comment: here we could add a typesafe enumeration
@@ -304,7 +304,7 @@ Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,"/* Remove any recip
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* Save a text copy of the entire event as an x-property */
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* Remove potentially large values */
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,// Don't store the entire attachment - we just need the parameters.
-Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,// Just return notfound as this event is on its override list
+Bedework/bw-calendar-convert,WITHOUT_CLASSIFICATION,// Just return notfound as this event is on its override list
 BerlinUnited/NaoTH@7f97dcb,WITHOUT_CLASSIFICATION,"/**
      * Returns the pressed Button of the alert.
      * That can be used to in a condition, eg.:
@@ -365,43 +365,43 @@ CATION-M/X-moe@345bb1d,WITHOUT_CLASSIFICATION,// Central directory structure / c
 CATION-M/X-moe@345bb1d,DESIGN,"// TODO - check, why we have to use the local header instead of the CDS sometimes..."
 CATION-M/X-moe@345bb1d,WITHOUT_CLASSIFICATION,"/** fixed 256 key size, 16 bytes salt + 2 bytes pwVerification */"
 CATION-M/X-moe@345bb1d,IMPLEMENTATION,// TODO support 128+192 byte keys reduces the salt byte size to 8+2 or 12+2
-CBIIT/camod@ee6a1cb,WITHOUT_CLASSIFICATION,"/**
+CBIIT/camod,WITHOUT_CLASSIFICATION,"/**
    * Test of getEnteredDate method, of class gov.nih.nci.camod.domain.Availability.
    */"
 CBIIT/camod@ee6a1cb,TEST,// TODO add your test code below by replacing the default call to fail.
-CBIIT/camod@ee6a1cb,WITHOUT_CLASSIFICATION,"/**
+CBIIT/camod,WITHOUT_CLASSIFICATION,"/**
    * Test of setEnteredDate method, of class gov.nih.nci.camod.domain.Availability.
    */"
 CBIIT/camod@ee6a1cb,TEST,// TODO add your test code below by replacing the default call to fail.
-CBIIT/camod@ee6a1cb,WITHOUT_CLASSIFICATION,"/**
+CBIIT/camod,WITHOUT_CLASSIFICATION,"/**
    * Test of getModifiedDate method, of class gov.nih.nci.camod.domain.Availability.
    */"
 CBIIT/camod@ee6a1cb,TEST,// TODO add your test code below by replacing the default call to fail.
-CBIIT/camod@ee6a1cb,WITHOUT_CLASSIFICATION,"/**
+CBIIT/camod,WITHOUT_CLASSIFICATION,"/**
    * Test of setModifiedDate method, of class gov.nih.nci.camod.domain.Availability.
    */"
 CBIIT/camod@ee6a1cb,IMPLEMENTATION,// TODO add your test code below by replacing the default call to fail.
-CBIIT/camod@ee6a1cb,WITHOUT_CLASSIFICATION,"/**
+CBIIT/camod,WITHOUT_CLASSIFICATION,"/**
    * Test of getReleaseDate method, of class gov.nih.nci.camod.domain.Availability.
    */"
 CBIIT/camod@ee6a1cb,TEST,// TODO add your test code below by replacing the default call to fail.
-CBIIT/camod@ee6a1cb,WITHOUT_CLASSIFICATION,"/**
+CBIIT/camod,WITHOUT_CLASSIFICATION,"/**
    * Test of setReleaseDate method, of class gov.nih.nci.camod.domain.Availability.
    */"
 CBIIT/camod@ee6a1cb,TEST,// TODO add your test code below by replacing the default call to fail.
-CBIIT/camod@ee6a1cb,WITHOUT_CLASSIFICATION,"/**
+CBIIT/camod,WITHOUT_CLASSIFICATION,"/**
    * Test of getVisibleTo method, of class gov.nih.nci.camod.domain.Availability.
    */"
 CBIIT/camod@ee6a1cb,TEST,// TODO add your test code below by replacing the default call to fail.
-CBIIT/camod@ee6a1cb,WITHOUT_CLASSIFICATION,"/**
+CBIIT/camod,WITHOUT_CLASSIFICATION,"/**
    * Test of setVisibleTo method, of class gov.nih.nci.camod.domain.Availability.
    */"
 CBIIT/camod@ee6a1cb,TEST,// TODO add your test code below by replacing the default call to fail.
-CBIIT/camod,WITHOUT_CLASSIFICATION,"/**
+CBIIT/camod@ee6a1cb,WITHOUT_CLASSIFICATION,"/**
    * Test of toString method, of class gov.nih.nci.camod.domain.Availability.
    */"
 CBIIT/camod@ee6a1cb,TEST,// TODO add your test code below by replacing the default call to fail.
-CBIIT/camod,WITHOUT_CLASSIFICATION,"/**
+CBIIT/camod@ee6a1cb,WITHOUT_CLASSIFICATION,"/**
    * Test of equals method, of class gov.nih.nci.camod.domain.Availability.
    */"
 CBIIT/camod@ee6a1cb,TEST,// TODO add your test code below by replacing the default call to fail.
@@ -748,7 +748,7 @@ Gadreel/divconq@74fafdb,IMPLEMENTATION,// TODO somehow connect the cancel back t
 Gadreel/divconq@74fafdb,IMPLEMENTATION,// TODO somehow connect the cancel back to netsession
 Gadreel/divconq@74fafdb,WITHOUT_CLASSIFICATION,// we will use it in upcoming send
 Gadreel/divconq@74fafdb,WITHOUT_CLASSIFICATION,// bb should now be back to 1
-Gadreel/divconq,DESIGN,"// TODO track progress if possible
+Gadreel/divconq@74fafdb,DESIGN,"// TODO track progress if possible
 // final only if not canceled"
 Gaeldrin/perun-wui@75e90d6,WITHOUT_CLASSIFICATION,// make sure app is embedded in a correct DIV
 Gaeldrin/perun-wui@75e90d6,WITHOUT_CLASSIFICATION,// Main Application must bind generic Presenter and custom View !!
@@ -793,7 +793,7 @@ HemlockBane/cashier-demo@fa84635,WITHOUT_CLASSIFICATION,//Instantiate Firebase o
 HemlockBane/cashier-demo@fa84635,WITHOUT_CLASSIFICATION,//instance of Firebase object(i.e. database root object)
 HemlockBane/cashier-demo@fa84635,WITHOUT_CLASSIFICATION,//reference to depositQueue child object in root object
 HemlockBane/cashier-demo@fa84635,WITHOUT_CLASSIFICATION,//Instantiate other variables
-HemlockBane/cashier-demo,WITHOUT_CLASSIFICATION,"/**Delete this post adapter when you finish*/
+HemlockBane/cashier-demo@fa84635,WITHOUT_CLASSIFICATION,"/**Delete this post adapter when you finish*/
 //        postAdapter.add(new Payment(""James Blunt"", ""0149603509"", ""4500"", ""WAEC"", ""07033513241"", ""igwenus619@gmail.com""));
 //Add ChildEventListener, so that changes made in the database are reflected"
 HemlockBane/cashier-demo@fa84635,WITHOUT_CLASSIFICATION,/**Uncomment this when you've finished*/
@@ -963,7 +963,7 @@ JC626/quickcheck-for-whiley@85c495b,WITHOUT_CLASSIFICATION,// Add the return val
 JC626/quickcheck-for-whiley@0dc7cdf,WITHOUT_CLASSIFICATION,//					// Print out any return values produced
 JC626/quickcheck-for-whiley@0710168,DEFECT,// FIXME resolution error
 JC626/quickcheck-for-whiley@85c495b,WITHOUT_CLASSIFICATION,// Overall test statistics
-JSA-Insubria/hive,DESIGN,"// Map 1 .......... container  SUCCEEDED      7          7        0        0       0       0
+JSA-Insubria/hive@087aafc,DESIGN,"// Map 1 .......... container  SUCCEEDED      7          7        0        0       0       0
 // TODO: can we pass custom things thru the progress?"
 JULIELab/jcore-dependencies@ec768a7,TEST,"// xxx What test should this be?  What to do with negative values?
 // Whatever is decided here should also go in InfoGain.calcInfoGains()"
@@ -993,11 +993,11 @@ Jed-g/property-booking-system@7dea7fe,WITHOUT_CLASSIFICATION,//GEN-FIRST:event_g
 Jed-g/property-booking-system@80f2985,IMPLEMENTATION,"// TODO add your handling code here:
 //Guestsearch guestsearch = new Guestsearch(jFrameInstance, email);
 //jFrameInstance.changePanelToSpecific(guestsearch);"
-JoseAlban/etc,TEST,"//This unit-test class is the wrong place to test that behaviour, unless it becomes an integration test
+JoseAlban/etc@12becce,TEST,"//This unit-test class is the wrong place to test that behaviour, unless it becomes an integration test
 //Given"
 JoseAlban/etc@12becce,WITHOUT_CLASSIFICATION,//When
 JoseAlban/etc@12becce,WITHOUT_CLASSIFICATION,//Then
-JoseAlban/etc,TEST,"//This unit-test class is the wrong place to test that behaviour, unless it becomes an integration test
+JoseAlban/etc@12becce,TEST,"//This unit-test class is the wrong place to test that behaviour, unless it becomes an integration test
 //Given"
 JoseAlban/etc@12becce,WITHOUT_CLASSIFICATION,//When
 JoseAlban/etc@12becce,WITHOUT_CLASSIFICATION,//Then
@@ -1055,7 +1055,7 @@ Keneral/apackages@4b1b545,DESIGN,"// 1. Escape early if we can't find the local 
 // TODO smaller projection here"
 Keneral/apackages@4b1b545,WITHOUT_CLASSIFICATION,"// can't find old mailbox, it may have been deleted.  just return."
 Keneral/apackages@4b1b545,WITHOUT_CLASSIFICATION,// 2. We don't support delete-from-trash here
-Keneral/apackages,WITHOUT_CLASSIFICATION,"// The rest of this method handles server-side deletion
+Keneral/apackages@4b1b545,WITHOUT_CLASSIFICATION,"// The rest of this method handles server-side deletion
 // 4.  Find the remote mailbox (that we deleted from), and open it"
 Keneral/apackages@4b1b545,WITHOUT_CLASSIFICATION,// 5. Find the remote original message
 Keneral/apackages@4b1b545,WITHOUT_CLASSIFICATION,"// 6. Find the remote trash folder, and create it if not found"
@@ -1079,7 +1079,7 @@ Keneral/apackages@4b1b545,TEST,"// TODO: This test will actually mess with conta
 // Ideally we would use a fake content provider to give us contact data..."
 Keneral/apackages@4b1b545,WITHOUT_CLASSIFICATION,// add test contacts.
 KyoungjunPark/SmartClass@1a7bf94,IMPLEMENTATION,//implement below code if token is send to server
-L8RMedia/exponent@b28e94d,IMPLEMENTATION,// TODO: get path while TextPath is set.
+L8RMedia/exponent@720631a,IMPLEMENTATION,// TODO: get path while TextPath is set.
 LaudateCorpus1/security-certification-resources@7580072,WITHOUT_CLASSIFICATION,"/**
      * Returns a {@link List} of additional {@link TestConfiguration} instances that should be run
      * along with the default {@code TestConfiguration} instances.
@@ -1232,7 +1232,7 @@ MaximillianHays/2019-DeepSpace@ec00c53,WITHOUT_CLASSIFICATION,"// mDrive.setVelo
 // ));"
 MaximillianHays/2019-DeepSpace@492c5e8,IMPLEMENTATION,// TODO (for button person): add buttons for all superstructure wanted states
 MayerRoman/Lagerta@d2b7d5f,DEFECT,//todo issue #232 fix increment topic partition name for tests on multi jvm
-MeFisto94/test-bot-1@a52bc0a,IMPLEMENTATION,//TODO: add render code
+MeFisto94/test-bot-1@8f129ec,IMPLEMENTATION,//TODO: add render code
 MessierObject111/algorithms-playground@13461d1,WITHOUT_CLASSIFICATION,"/**
      * @param s: input string
      * @return: the longest palindromic substring
@@ -1278,7 +1278,7 @@ Narflex/sagetv@5180ff5,WITHOUT_CLASSIFICATION,"//		System.out.println(""GFXCMD="
 // make sure the frame is still valid or we could crash on fullscreen mode switches"
 Narflex/sagetv@5180ff5,WITHOUT_CLASSIFICATION,"//				System.out.println(""GFXCMD while frame not displayable"");
 // spin until the frame is valid and displayable, if we don't we'll lose parts of the UI or crash"
-Narflex/sagetv,WITHOUT_CLASSIFICATION,"//                                System.out.println(""INIT"");
+Narflex/sagetv@5180ff5,WITHOUT_CLASSIFICATION,"//                                System.out.println(""INIT"");
 // start up native renderer"
 Narflex/sagetv@5180ff5,WITHOUT_CLASSIFICATION,// platform default
 Narflex/sagetv@5180ff5,WITHOUT_CLASSIFICATION,"//System.out.println(""LAYOUT frame bounds="" + f.getBounds() + "" videoBounds="" + videoBounds + "" parentBounds="" + parent.getBounds());"
@@ -1551,7 +1551,7 @@ PGMacDesign/PGMacTips@5d1485f,WITHOUT_CLASSIFICATION,//Return true if the cipher
 PGMacDesign/PGMacTips@5d1485f,WITHOUT_CLASSIFICATION,//Return false if cipher initialization failed//
 PGMacDesign/PGMacTips@5d1485f,WITHOUT_CLASSIFICATION,//KeyStoreException
 PGMacDesign/PGMacTips@5d1485f,WITHOUT_CLASSIFICATION,//UnrecoverableKeyException
-PLOS/named-entity.service,DEFECT,// TODO: fix how this is rendering in XML
+PLOS/named-entity.service@c084c37,DEFECT,// TODO: fix how this is rendering in XML
 PRECISE/ROSLab@fe4bc9e,DESIGN,"// TODO improve the error message - the pointer should be at the
 // property name, not value"
 Pandrex247/patched-src-eclipselink@b1495ae,DEFECT,// TODO: Error.
@@ -2089,7 +2089,7 @@ Thewbi/knx_meister@2d6d337,DESIGN,"// TODO: how to identify the correct device i
 Thewbi/knx_meister@2d6d337,DESIGN,// TODO: maybe create a map from datapoint id to ComObject????
 Thewbi/knx_meister@2d6d337,DESIGN,"// TODO: how to identify the correct device if there are several devices in the
 // list?"
-Thewbi/knx_meister,DESIGN,"// TODO: maybe create a map from datapoint id to ComObject????
+Thewbi/knx_meister@2d6d337,DESIGN,"// TODO: maybe create a map from datapoint id to ComObject????
 // @formatter:off"
 Thewbi/knx_meister@1769fe6,WITHOUT_CLASSIFICATION,// @formatter:on
 Tingbopku/tingbo1@1509923,WITHOUT_CLASSIFICATION,"/**
@@ -2387,7 +2387,7 @@ agaveplatform/java-sdk@8939a1a,DOCUMENTATION,"/** GETTER
 agaveplatform/java-sdk@8939a1a,DOCUMENTATION,"/** SETTER
      * TODO: Write general description for this method
      */"
-agilepro/purple,WITHOUT_CLASSIFICATION,"/**
+agilepro/purple@70bc7de,WITHOUT_CLASSIFICATION,"/**
      * Make a JSON text String representation of this JSONObject.
      * Think carefully before using this method!  Do you really need
      * a String in memory?  Since JSON is used as a data transport format
@@ -2441,7 +2441,7 @@ alancnet/artifactory@919a718,DESIGN,//TORE: [by YS] should be storing repo once 
 alar17/ts-reaktive@4417558,DESIGN,"// TODO either PR ByteBuffer support into actson, or sneaky-access the underlying byte array fields here"
 alaurent4/nighres@2932678,IMPLEMENTATION,// import the image data into 1D arrays : TO DO
 alaurent4/nighres@2932678,WITHOUT_CLASSIFICATION,// create a mask for all the regions outside of the area where layer 1 is > 0 and layer 2 is < 0
-alaurent4/nighres,WITHOUT_CLASSIFICATION,"// main algorithm
+alaurent4/nighres@2932678,WITHOUT_CLASSIFICATION,"// main algorithm
 // 1. define partial voume for each layer, each voxel"
 alaurent4/nighres@2932678,WITHOUT_CLASSIFICATION,// 2. build and invert the GLM for each profile / voxel?
 alaurent4/nighres@2932678,WITHOUT_CLASSIFICATION,// get the next non-zero value
@@ -2455,7 +2455,7 @@ alexey-lukyanenko/jdrive@fa76e0e,WITHOUT_CLASSIFICATION,"//LoadGrfIndexed(files.
 alexey-lukyanenko/jdrive@f868b89,WITHOUT_CLASSIFICATION,// non-breaking space medium
 alexey-lukyanenko/jdrive@f868b89,WITHOUT_CLASSIFICATION,// non-breaking space tiny
 alexey-lukyanenko/jdrive@f868b89,WITHOUT_CLASSIFICATION,// non-breaking space large
-alexey-lukyanenko/jdrive,DESIGN,"// TODO why start from 1?
+alexey-lukyanenko/jdrive@fa76e0e,DESIGN,"// TODO why start from 1?
 //for (i = 1; files.basic[i].filename != null; i++) {"
 alexey-lukyanenko/jdrive@fa76e0e,WITHOUT_CLASSIFICATION,"//files.landscape[_sprite_page_to_load - 1].filename,"
 alexey-lukyanenko/jdrive@fa76e0e,WITHOUT_CLASSIFICATION,"// TODO LoadGrfIndexed(""trkfoundw.grf"", _slopes_spriteindexes[_opt.landscape], i++);"
@@ -2694,12 +2694,12 @@ aragozin/stackviewer@e652ba8,WITHOUT_CLASSIFICATION,"// Calculate the width of t
 aragozin/stackviewer@e652ba8,WITHOUT_CLASSIFICATION,// Get the width of the highlighted region
 aragozin/stackviewer@e652ba8,WITHOUT_CLASSIFICATION,// while ( startFrom < text.length() && matcher.find( startFrom ) )
 arenaq/weather-app@5d06aaf,IMPLEMENTATION,/* TODO Consider moving elsewhere. */
-ari-b/neb@d72b4c9,DESIGN,"// TODO: Use ""advanced probabilistic techniques""."
-ari-b/neb@2af69f0,WITHOUT_CLASSIFICATION,"// location of (zR, zI) in histogram"
-ari-b/neb@2af69f0,WITHOUT_CLASSIFICATION,// use ThreadLocalRandom for improved performance
-ari-b/neb@2af69f0,WITHOUT_CLASSIFICATION,"// check if the sequence generated by (cR, cI) escapes"
-ari-b/neb@2af69f0,DESIGN,// does the sequence escape?
-ari-b/neb@4660da3,DESIGN,// Is the point within the rendering region?
+ari-b/neb@9d8e533,DESIGN,"// TODO: Use ""advanced probabilistic techniques""."
+ari-b/neb@9d8e533,WITHOUT_CLASSIFICATION,"// location of (zR, zI) in histogram"
+ari-b/neb@9d8e533,WITHOUT_CLASSIFICATION,// use ThreadLocalRandom for improved performance
+ari-b/neb@9d8e533,WITHOUT_CLASSIFICATION,"// check if the sequence generated by (cR, cI) escapes"
+ari-b/neb@9d8e533,DESIGN,// does the sequence escape?
+ari-b/neb@9d8e533,DESIGN,// Is the point within the rendering region?
 arkanovicz/velocity-model@295de4d,DOCUMENTATION,// non positioned parameters should always be given last (CB TODO - document)
 arusinha/incubator-netbeans@6daa72c,TEST,// XXX test that nbres: file contents work
 as1000/genome-nexus@4f736c9,DESIGN,"/*
@@ -2732,7 +2732,7 @@ atb/ofbiz@94fe6d1,WITHOUT_CLASSIFICATION,"//if (Debug.infoOn()) Debug.logInfo(""
 // make a map of the values that are passed in using the top subSite as the key.
 // Content can only be linked to one subsite under a top site (ends with ""_MASTER"")"
 atb/ofbiz@94fe6d1,WITHOUT_CLASSIFICATION,"//if (Debug.infoOn()) Debug.logInfo(""in updatePublishLinks, param:"" + param + "" pos:"" + pos , module);"
-atb/ofbiz,WITHOUT_CLASSIFICATION,"//if (Debug.infoOn()) Debug.logInfo(""in updatePublishLinks, siteIdLookup:"" + siteIdLookup , module);
+atb/ofbiz@3c7a7f3,WITHOUT_CLASSIFICATION,"//if (Debug.infoOn()) Debug.logInfo(""in updatePublishLinks, siteIdLookup:"" + siteIdLookup , module);
 // Loop thru all the possible subsites"
 atb/ofbiz@94fe6d1,WITHOUT_CLASSIFICATION,// int counter = 0;
 atb/ofbiz@3c7a7f3,WITHOUT_CLASSIFICATION,// String permissionMessage = null;
@@ -2989,7 +2989,7 @@ bignaczak/eBots2020_V2@b50d408,IMPLEMENTATION,//TBD code to place the wobble goa
 bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//trigger event?
 bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//or timed out?
 bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//Perform transitional actions
-bignaczak/eBots2020_V2,WITHOUT_CLASSIFICATION,"//TBD spin up the ring launcher
+bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,"//TBD spin up the ring launcher
 //Set the new state"
 bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//perform the state actions
 bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//Report telemetry
@@ -3429,7 +3429,7 @@ cesarmo759/android_kernel_samsung_msm8916@20e791c,WITHOUT_CLASSIFICATION,// end 
 cesarmo759/android_kernel_samsung_msm8916@20e791c,WITHOUT_CLASSIFICATION,"// got CR, is the next char LF?"
 cesarmo759/android_kernel_samsung_msm8916@20e791c,WITHOUT_CLASSIFICATION,"// in any case, end of line"
 cesarmo759/android_kernel_samsung_msm8916@20e791c,WITHOUT_CLASSIFICATION,"// not CR, NL, or CRLF, count the byte"
-cesarmo759/android_kernel_samsung_msm8916,WITHOUT_CLASSIFICATION,"// here when end of line or out of data
+cesarmo759/android_kernel_samsung_msm8916@20e791c,WITHOUT_CLASSIFICATION,"// here when end of line or out of data
 // if out of data, we're done"
 cesarmo759/android_kernel_samsung_msm8916@20e791c,WITHOUT_CLASSIFICATION,"// if it was an empty line, we're done"
 cesarmo759/android_kernel_samsung_msm8916@20e791c,WITHOUT_CLASSIFICATION,// help GC
@@ -3610,7 +3610,7 @@ christiangalsterer/yet-another-commit-checker@8a61ced,DESIGN,"/**
      */"
 christoff-buerger/pmChess,WITHOUT_CLASSIFICATION,// Restore game history (pop current moves frame and reset selected move):
 christoff-buerger/pmChess,DESIGN,// TODO: fix when moves_selected contains index not move
-christoff-buerger/pmChess,WITHOUT_CLASSIFICATION,"// Restore cached current game situation (figure constellation, king positions,
+christoff-buerger/pmChess@88da635,WITHOUT_CLASSIFICATION,"// Restore cached current game situation (figure constellation, king positions,
 //	castlings, active player and turn number):"
 christoff-buerger/pmChess,WITHOUT_CLASSIFICATION,// Castling left:
 christoff-buerger/pmChess,WITHOUT_CLASSIFICATION,// Castling right:
@@ -3661,7 +3661,7 @@ cltl/EventCoreference@eaa0c8b,WITHOUT_CLASSIFICATION,"//System.out.println(""sta
 cltl/EventCoreference@f74071f,WITHOUT_CLASSIFICATION,//// this means the source has properties so it is likely to be the document with an author
 cltl/EventCoreference@779f519,WITHOUT_CLASSIFICATION,"//   System.out.println(""author source = "" + author);"
 cltl/EventCoreference@f74071f,WITHOUT_CLASSIFICATION,//// it is not the document so a cited source
-cltl/EventCoreference,DEFECT,"/*                                  THIS DOES NOT WORK: PRONOUNS, RECEPTIONIST, ETC...
+cltl/EventCoreference@eaa0c8b,DEFECT,"/*                                  THIS DOES NOT WORK: PRONOUNS, RECEPTIONIST, ETC...
                                     //// There can be source documents without meta data.
                                     //// In that case, there are no triples for in tripleMapGrasp with this subject but it is still a document
                                     //// The next hack checks for upper case characters in the URI
@@ -3841,7 +3841,7 @@ dadepo/ipl@db92eaf,WITHOUT_CLASSIFICATION,// and try again if we did not reach t
 dadepo/ipl@211ca96,WITHOUT_CLASSIFICATION,// ignored
 dadepo/ipl@211ca96,WITHOUT_CLASSIFICATION,// ignored
 dadepo/ipl@046f467,WITHOUT_CLASSIFICATION,// ignore
-daniel-sandro/WTEC1516,WITHOUT_CLASSIFICATION,"//Logger.debug(""User "" + u.id + "" connected"");
+daniel-sandro/WTEC1516@5dec426,WITHOUT_CLASSIFICATION,"//Logger.debug(""User "" + u.id + "" connected"");
 // Add the new user to the data structures"
 daniel-sandro/WTEC1516@121db2a,WITHOUT_CLASSIFICATION,"/*try (Jedis j = jedisPool.getResource()) {
                         j.sadd(""online_users"", Long.toString(u.id));
@@ -3849,7 +3849,7 @@ daniel-sandro/WTEC1516@121db2a,WITHOUT_CLASSIFICATION,"/*try (Jedis j = jedisPoo
 daniel-sandro/WTEC1516@121db2a,WITHOUT_CLASSIFICATION,// Notify logged users about the new player
 daniel-sandro/WTEC1516@5dec426,WITHOUT_CLASSIFICATION,"//Logger.debug(""Unknown user connected"");"
 daniel-sandro/WTEC1516@f93f496,IMPLEMENTATION,// TODO: add error handling
-daniel-sandro/WTEC1516,WITHOUT_CLASSIFICATION,"//Logger.debug(""User "" + u.id + "" disconnected"");
+daniel-sandro/WTEC1516@5dec426,WITHOUT_CLASSIFICATION,"//Logger.debug(""User "" + u.id + "" disconnected"");
 // Remove user from the data structures"
 daniel-sandro/WTEC1516@be67e6d,WITHOUT_CLASSIFICATION,"// Wait for 100 ms to see if the user connects through another websocket
 //Thread.sleep(100);"
@@ -3870,7 +3870,7 @@ danielxjd/hadoop-connectors@277b121,DESIGN,"// TODO(user): We might need to sepa
 danielxjd/hadoop-connectors@b7a20ab,IMPLEMENTATION,// TODO(b/110833109): populate generation ID in StorageResourceId when listing infos?
 danigiri/particle@8e05b1d,WITHOUT_CLASSIFICATION,//	** base case **
 danigiri/particle@8e05b1d,WITHOUT_CLASSIFICATION,// 								** recursive case **
-danigiri/particle,DESIGN,// TODO: notice this is not ordered like the input ^^'
+danigiri/particle@8e05b1d,DESIGN,// TODO: notice this is not ordered like the input ^^'
 danigiri/particle@8e05b1d,DESIGN,"// if we are looking for public attributes, they need to match with the attributes model, otherwise we just
 // point to the node cell model (IDEA: maybe in the future point to the internal model)"
 danigiri/particle@8e05b1d,WITHOUT_CLASSIFICATION,"//System.err.println(""\t\ta[""+i+""]:""+attributeName+"":""+attributeCell.getValue());"
@@ -3918,7 +3918,7 @@ dansiviter/cito-sockjs@ee2b8cc,TEST,"/**
          * @throws InterruptedException 
          */"
 dansiviter/cito-sockjs@ee2b8cc,WITHOUT_CLASSIFICATION,"// New line is a frame delimiter specific for xhr-polling"""
-dansiviter/cito-sockjs,WITHOUT_CLASSIFICATION,"// After a session was established the server needs to accept requests for sending messages.
+dansiviter/cito-sockjs@ee2b8cc,WITHOUT_CLASSIFICATION,"// After a session was established the server needs to accept requests for sending messages.
 // Xhr-polling accepts messages as a list of JSON-encoded strings."
 dansiviter/cito-sockjs@ee2b8cc,WITHOUT_CLASSIFICATION,// We're using an echo service - we'll receive our message back. The message is encoded as an array 'a'.
 dansiviter/cito-sockjs@ee2b8cc,WITHOUT_CLASSIFICATION,// Sending messages to not existing sessions is invalid.
@@ -3964,13 +3964,13 @@ dcheung2/datanucleus-core@2eaceaa,IMPLEMENTATION,// TODO Create mapping for the 
 dcheung2/datanucleus-core@875992a,WITHOUT_CLASSIFICATION,// Recurse through the embedded member
 dcheung2/datanucleus-core@875992a,WITHOUT_CLASSIFICATION,"// Nested embedded collection, so recurse"
 dcheung2/datanucleus-core@b9386a1,WITHOUT_CLASSIFICATION,// Add column for the collection (since the store needs a name to reference it by)
-dcheung2/datanucleus-core,IMPLEMENTATION,"// TODO Create mapping for the related info under the above column
+dcheung2/datanucleus-core@b9386a1,IMPLEMENTATION,"// TODO Create mapping for the related info under the above column
 // Recurse through the embedded collection element"
 dcheung2/datanucleus-core@875992a,WITHOUT_CLASSIFICATION,"// Nested embedded map, so recurse"
 dcheung2/datanucleus-core@c30c375,IMPLEMENTATION,// TODO Support nested embedded map key/value
 dcheung2/datanucleus-core@875992a,WITHOUT_CLASSIFICATION,"// Nested embedded array, so recurse"
 dcheung2/datanucleus-core@b9386a1,IMPLEMENTATION,// Add column for the array (since the store needs a name to reference it by) TODO Extract this block out and reuse it
-dcheung2/datanucleus-core,IMPLEMENTATION,"// TODO Create mapping for the related info under the above column
+dcheung2/datanucleus-core@b9386a1,IMPLEMENTATION,"// TODO Create mapping for the related info under the above column
 // Recurse through the embedded array element"
 dcheung2/datanucleus-core@a705936,WITHOUT_CLASSIFICATION,"// 1-1/N-1 stored as single column with persistable-id
 // 1-N/M-N stored as single column with collection<persistable-id>
@@ -4024,7 +4024,7 @@ delchev/cloud-dirigible@e429af0,TEST,"// Workaround for failing tests. When thes
 // separate test methods, only the first one passes successfully."
 derekdinan/CTFServer@8768439,WITHOUT_CLASSIFICATION,/** Sends the level finish packet. */
 derekdinan/CTFServer@0f1547c,WITHOUT_CLASSIFICATION,// for thread safety
-derekdinan/CTFServer,IMPLEMENTATION,"// now load the player's game (TODO in the future do this in parallel with loading
+derekdinan/CTFServer@df4c00a,IMPLEMENTATION,"// now load the player's game (TODO in the future do this in parallel with loading
 // the
 // level)"
 developers16/GithubsSample@bb8f4ea,DESIGN,"// This is to fix a bug in the v7 support lib. If there is no options menu and you hit MENU, it will crash with a
@@ -4089,10 +4089,10 @@ dng24/wehe-android@f071d6a,DESIGN,"// Keep checking if the user exited from Repl
 // TODO find a better way stop the tests immediately without continues checking"
 doanhoa93/struts2shop@c0bd38d,IMPLEMENTATION,"// TODO: i18n: Externalize.
 // TODO: Enhance: Print link to updated shop."
-doktoric/test123@dcd0959,WITHOUT_CLASSIFICATION,// GIVEN
-doktoric/test123@dcd0959,DESIGN,"// WHEN
+doktoric/test123@4372876,WITHOUT_CLASSIFICATION,// GIVEN
+doktoric/test123@4372876,DESIGN,"// WHEN
 // TODO email needed"
-doktoric/test123@dcd0959,WITHOUT_CLASSIFICATION,// THEN
+doktoric/test123@4372876,WITHOUT_CLASSIFICATION,// THEN
 dontdrinkandroot/cache.java@21b1769,DESIGN,/* This really shouldn't happen */
 dougkoellmer/swarm@9767dc9,DEFECT,"//--- DRK > NOTE: Assuming here that caja.load creates frames in order of calls...if not, this method could be trouble."
 dougkoellmer/swarm@9767dc9,DESIGN,"//--- This is to catch the theoretical case where we call start and stop then start really fast,
@@ -4151,7 +4151,7 @@ dukson/curvature-scale-space-corners-and-transformations@f7d049b,WITHOUT_CLASSIF
 dukson/curvature-scale-space-corners-and-transformations@f7d049b,WITHOUT_CLASSIFICATION,"//for now, choosing to look only at the blue"
 dukson/curvature-scale-space-corners-and-transformations@f7d049b,WITHOUT_CLASSIFICATION,// for each neighbor v of u
 dukson/curvature-scale-space-corners-and-transformations@f7d049b,WITHOUT_CLASSIFICATION,"// if u is not in an edge already, create a new one"
-dukson/curvature-scale-space-corners-and-transformations,WITHOUT_CLASSIFICATION,"// keep the curve points ordered
+dukson/curvature-scale-space-corners-and-transformations@f7d049b,WITHOUT_CLASSIFICATION,"// keep the curve points ordered
 // add v to the edge u if u is the last node in it's edge"
 dukson/curvature-scale-space-corners-and-transformations@f7d049b,DESIGN,"//TODO: do we only want 1 neighbor from the 9 as a continuation?
 // yes for now, but this requires edges be only 1 pixel wide
@@ -4561,7 +4561,7 @@ godblessthequeen/spring-cloud-gateway@82f8831,WITHOUT_CLASSIFICATION,"/**
                  * 匹配并转发到当前网关实例本地接口。
                  * 注意：需要通过 PrefixPathGatewayFilterFactory 将请求重写路径，以匹配本地 API ，否则 DispatcherHandler 转发会失败。
                  */"
-goncalvesm1/Robot_Project,WITHOUT_CLASSIFICATION,"//startRobot();
+goncalvesm1/Robot_Project@0b6dddf,WITHOUT_CLASSIFICATION,"//startRobot();
 //sleep(1000);  //Give motors time to ramp up to speed"
 goncalvesm1/Robot_Project@0b6dddf,IMPLEMENTATION,"//TODO: SBH - Figure out how to register/deregister if timing shows its needed
 //colorSensor.getI2cController().deregisterForPortReadyCallback(colorSensor.getPort());"
@@ -4950,7 +4950,7 @@ ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,"// caller: newInstance()
 ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,// tableSize = 1 << 3 = 8 in my case
 ibelee/aircompressor@16b39bb,IMPLEMENTATION,// TODO: allocate in workspace
 ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,// store the symbol which is spread
-ibelee/aircompressor,IMPLEMENTATION,"// highThreshold = 8 - 1 = 7 in my case
+ibelee/aircompressor@ea6fbc3,IMPLEMENTATION,"// highThreshold = 8 - 1 = 7 in my case
 // TODO: make sure FseCompressionTable has enough size"
 ibelee/aircompressor@16b39bb,WITHOUT_CLASSIFICATION,"// For explanations on how to distribute symbol values over the table:
 // http://fastcompression.blogspot.fr/2014/02/fse-distributing-symbol-values.html
@@ -4959,7 +4959,7 @@ ibelee/aircompressor@16b39bb,IMPLEMENTATION,// TODO: allocate in workspace
 ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,"// cumulative = [0,3,6,8,9] in my case
 // store the start position of every symbol"
 ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,// Low probability symbol
-ibelee/aircompressor,WITHOUT_CLASSIFICATION,"// cumulative[3+1] = 8+1 = 9
+ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,"// cumulative[3+1] = 8+1 = 9
 // Spread symbols"
 ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,// make sure the symbols are successfully spread
 ibelee/aircompressor@16b39bb,WITHOUT_CLASSIFICATION,"// Build table
@@ -5014,10 +5014,10 @@ information-machine/information-machine-api-android@15aef0e,DOCUMENTATION,"/** G
 information-machine/information-machine-api-android@15aef0e,DOCUMENTATION,"/** SETTER
      * TODO: Write general description for this method
      */"
-information-machine/information-machine-api-android@214a913,DOCUMENTATION,"/** GETTER
+information-machine/information-machine-api-android@15aef0e,DOCUMENTATION,"/** GETTER
      * TODO: Write general description for this method
      */"
-information-machine/information-machine-api-android@214a913,DOCUMENTATION,"/** SETTER
+information-machine/information-machine-api-android@15aef0e,DOCUMENTATION,"/** SETTER
      * TODO: Write general description for this method
      */"
 information-machine/information-machine-api-android@15aef0e,DOCUMENTATION,"/** GETTER
@@ -5345,42 +5345,42 @@ jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//4 - Add input fields to fo
 //4 - Alternative"
 jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//5 - Making the Layout Responsive : Custom responsive layouting
 //breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top. In both cases there is only 1 column."
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//Associate the data with the formLayout columns and load the data. 
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//1 - Set properties of the form
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//Tabs covering the full width of the tab bar
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//sets the form size to fill the screen.
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//sets the form size to fill the screen.
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"//At startup, set the first page visible, while the remaining are not"
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//sets the form size to fill the screen.
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"//At startup, set the first page visible, while the remaining are not"
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//sets the form size to fill the screen.
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"//At startup, set the first page visible, while the remaining are not"
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//sets the form size to fill the screen.
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"//At startup, set the first page visible, while the remaining are not"
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//sets the form size to fill the screen.
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"//At startup, set the first page visible, while the remaining are not"
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//sets the form size to fill the screen.
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"//At startup, set the first page visible, while the remaining are not"
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"//2 - Define the Fields instances to use - We don't use .setLabel since we will use addFormItem instead of add to add items to the form - addFormItem allows us to set SuperTextField with on a FormaLayout when add doesn't
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//Associate the data with the formLayout columns and load the data. 
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//1 - Set properties of the form
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//Tabs covering the full width of the tab bar
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//sets the form size to fill the screen.
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//sets the form size to fill the screen.
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//At startup, set the first page visible, while the remaining are not"
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//sets the form size to fill the screen.
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//At startup, set the first page visible, while the remaining are not"
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//sets the form size to fill the screen.
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//At startup, set the first page visible, while the remaining are not"
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//sets the form size to fill the screen.
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//At startup, set the first page visible, while the remaining are not"
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//sets the form size to fill the screen.
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//At startup, set the first page visible, while the remaining are not"
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//sets the form size to fill the screen.
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//At startup, set the first page visible, while the remaining are not"
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//2 - Define the Fields instances to use - We don't use .setLabel since we will use addFormItem instead of add to add items to the form - addFormItem allows us to set SuperTextField with on a FormaLayout when add doesn't
 //Contrôles de tabInfoGenerale"
 jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//setWidth(400, Unit.PIXELS);"
 jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//setWidth(400, Unit.PIXELS);"
 jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//Sepecific for isInactif
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//Contrôles de tabDefinition
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//Contrôles de tabDefinition
 jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//setWidth(400, Unit.PIXELS);"
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,// Choose which property from ModeValorisationRubrique is the presentation value
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"//???this.cboCodeModeValorisationRubrique.setLabel(""ModeValorisationRubrique"");
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,// Choose which property from ModeValorisationRubrique is the presentation value
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//???this.cboCodeModeValorisationRubrique.setLabel(""ModeValorisationRubrique"");
 //???this.cboCodeModeValorisationRubrique.setId(""this.cboCodeModeValorisationRubrique.getValue()"");"
 jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//Add Filtering
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//Tmp - this.txtMontantFixe.addClassName(TEXTFIELD_LEFT_LABEL);
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//Tmp - this.txtMontantFixe.addClassName(TEXTFIELD_LEFT_LABEL);
 jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//Align Center for numeric value
 jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//Configuration options for HasLocale
 jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//setWidth(400, Unit.PIXELS);"
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,// Choose which property from ModeValorisationBase is the presentation value
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"//???this.cboCodeModeValorisationBase.setLabel(""ModeValorisationBase"");
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,// Choose which property from ModeValorisationBase is the presentation value
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//???this.cboCodeModeValorisationBase.setLabel(""ModeValorisationBase"");
 //???this.cboCodeModeValorisationBase.setId(""this.cboCodeModeValorisationBase.getValue()"");"
 jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//Add Filtering
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//Tmp - this.txtBaseFixe.addClassName(TEXTFIELD_LEFT_LABEL);
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//Tmp - this.txtBaseFixe.addClassName(TEXTFIELD_LEFT_LABEL);
 jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//Align Center for numeric value
 jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//Configuration options for HasLocale
 jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//setWidth(400, Unit.PIXELS);"
@@ -5754,49 +5754,49 @@ jdissou/sigdep01_01@eafa6a6,DESIGN,"/* 3 - Alternative : Bind Fields instances t
 jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//4 - Add input fields to formLayout - We don't use .setLabel since we will use addFormItem instead of add to add items to the form - addFormItem allows us to set SuperTextField with on a FormaLayout when add doesn't
 //this.formLayout.add(this.txtNoRubrique, this.txtLibelleRubrique, this.txtLibelleCourtRubrique, this.txtNomMandataire, this.txtNoTelephone, this.txtNoMobile, this.txtNoTelecopie, this.datDateNaissance, this.txtLieuNaissance, this.txtAdresse, this.txtVille, this.txtNombreHomme, this.txtNombreFemme, this.chkInactif, this.txtNoPieceIdentite, this.chkDeposant, this.chkEmprunteur, this.chkGarant, this.chkDirigeant, this.chkAdministrateur);
 //4 - Alternative"
-jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//5 - Making the Layout Responsive : Custom responsive layouting
+jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"//5 - Making the Layout Responsive : Custom responsive layouting
 //breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top and there is only 1 column. The form will show 2 columns if width is >= 600px"
-jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"/*
+jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"/*
             //breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top. In both cases there is only 1 column.
             tabInfoGeneraleFormLayout.setResponsiveSteps(new FormLayout.ResponsiveStep(""0"", 1, FormLayout.ResponsiveStep.LabelsPosition.TOP), 
                     new FormLayout.ResponsiveStep(PANEL_FLEX_BASIS, 1, FormLayout.ResponsiveStep.LabelsPosition.ASIDE));
             */"
-jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top and there is only 1 column. The form will show 2 columns if width is >= 600px"
-jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"/*
+jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"//breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top and there is only 1 column. The form will show 2 columns if width is >= 600px"
+jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"/*
             //breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top. In both cases there is only 1 column.
             tabDefinitionFormLayout.setResponsiveSteps(new FormLayout.ResponsiveStep(""0"", 1, FormLayout.ResponsiveStep.LabelsPosition.TOP), 
                     new FormLayout.ResponsiveStep(PANEL_FLEX_BASIS, 1, FormLayout.ResponsiveStep.LabelsPosition.ASIDE));
             */"
-jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top and there is only 1 column. The form will show 2 columns if width is >= 600px"
-jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"/*
+jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"//breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top and there is only 1 column. The form will show 2 columns if width is >= 600px"
+jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"/*
             //breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top. In both cases there is only 1 column.
             tabAjustementFormLayout.setResponsiveSteps(new FormLayout.ResponsiveStep(""0"", 1, FormLayout.ResponsiveStep.LabelsPosition.TOP), 
                     new FormLayout.ResponsiveStep(PANEL_FLEX_BASIS, 1, FormLayout.ResponsiveStep.LabelsPosition.ASIDE));
             */"
-jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"/*
+jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"/*
             //breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top. In both cases there is only 1 column.
             this.tabCompteurBaseMontantFormLayout.setResponsiveSteps(new FormLayout.ResponsiveStep(""0"", 1, FormLayout.ResponsiveStep.LabelsPosition.TOP), 
                     new FormLayout.ResponsiveStep(PANEL_FLEX_BASIS, 1, FormLayout.ResponsiveStep.LabelsPosition.ASIDE));
             */"
-jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"/*
+jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"/*
             //breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top. In both cases there is only 1 column.
             this.tabCompteurInterneFormLayout.setResponsiveSteps(new FormLayout.ResponsiveStep(""0"", 1, FormLayout.ResponsiveStep.LabelsPosition.TOP), 
                     new FormLayout.ResponsiveStep(PANEL_FLEX_BASIS, 1, FormLayout.ResponsiveStep.LabelsPosition.ASIDE));
             */"
-jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"/*
+jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"/*
             //breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top. In both cases there is only 1 column.
             this.tabCompteurExterneFormLayout.setResponsiveSteps(new FormLayout.ResponsiveStep(""0"", 1, FormLayout.ResponsiveStep.LabelsPosition.TOP), 
                     new FormLayout.ResponsiveStep(PANEL_FLEX_BASIS, 1, FormLayout.ResponsiveStep.LabelsPosition.ASIDE));
             */"
-jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//6 - Configure Tabs
-jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//Configure OnSelectedTabChange
-jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//Cache Selected Tab
-jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//First Page to show programmatically
-jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//Pre-select tabs
+jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//6 - Configure Tabs
+jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//Configure OnSelectedTabChange
+jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//Cache Selected Tab
+jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//First Page to show programmatically
+jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//Pre-select tabs
 jebbench/jackson-dataformat-velocypack@c457b1c,DEFECT,"// 10-Dec-2018, tatu: With 2.10, should serialize same as via ObjectMapper/ObjectWriter
 // 10-Dec-2019, tatu: Surprise! No, this is not how it worked in 2.9, nor does it make
 //    sense... see [databind#2566] for details"
-jettmarks/clueRide-angular,WITHOUT_CLASSIFICATION,"/**
+jettmarks/clueRide-angular@c69d40f,WITHOUT_CLASSIFICATION,"/**
      * @param singlePointSegments
      * @param string
      *            private static void writeSegmentsToFile(List<Segment>
@@ -6198,7 +6198,7 @@ kovyrin/crawler-commons@af74ccf,WITHOUT_CLASSIFICATION,"// If we're at a wildcar
 // where the character(s) after the wildcard match up with what's in
 // the text."
 kovyrin/crawler-commons@af74ccf,WITHOUT_CLASSIFICATION,"// Pattern ends with '*', we're all good."
-kovyrin/crawler-commons,DESIGN,"// TODO - don't worry about having two '*' in a row?
+kovyrin/crawler-commons@af74ccf,DESIGN,"// TODO - don't worry about having two '*' in a row?
 // Find the end of the pattern piece we need to match."
 kovyrin/crawler-commons@40731c3,WITHOUT_CLASSIFICATION,"// See if patternPieceLen chars from text at textPos match
 // chars from pattern at patternPos"
@@ -6623,7 +6623,7 @@ masud-technope/BLIZZARD-Replication-Package-ESEC-FSE2018@5e6fca1,WITHOUT_CLASSIF
 masud-technope/BLIZZARD-Replication-Package-ESEC-FSE2018@5e6fca1,WITHOUT_CLASSIFICATION,//$NON-NLS-1$
 masud-technope/BLIZZARD-Replication-Package-ESEC-FSE2018@5e6fca1,WITHOUT_CLASSIFICATION,//$NON-NLS-1$
 mauriciotogneri/prefix@d2c2d62,DOCUMENTATION,// TODO: explain more
-maybeec/lexeme,WITHOUT_CLASSIFICATION,"/**
+maybeec/lexeme@157d731,WITHOUT_CLASSIFICATION,"/**
      * @param pathToMergeSchema
      *            String path to the MergeSchema to be used on this document. Note: Will in future builds
      *            replaced by pathToMergeSchemas which leads to a directory containing MergeSchemas for every
@@ -6721,7 +6721,7 @@ mica-gossip/MiCA@bdd4848,DEFECT,"// FIXME: check that handleError is aborting on
 // handleError(GOSSIP_IO_ERROR, se);"
 mica-gossip/MiCA@bdd4848,DEFECT,"// FIXME: check that handleError is aborting on GOSSIP_IO_ERROR
 // handleError(GOSSIP_IO_ERROR, e);"
-mickknutson/spring-cloud-config@ebe5e7b,DEFECT,// TODO Does not work with Boot Integeration tests:
+mickknutson/spring-cloud-config,DEFECT,// TODO Does not work with Boot Integeration tests:
 mihirlibran/cse605@19e5b13,DEFECT,"// FIXME: this is almost certainly boned.  a Reg could appear in the
 // address expressions."
 mikesep/rocky@f71a67f,WITHOUT_CLASSIFICATION,// method call on an object
@@ -6929,7 +6929,7 @@ nathanawmk/ICS-Security-Tools@951b4b1,WITHOUT_CLASSIFICATION,// Calculate the ra
 nathanawmk/ICS-Security-Tools@951b4b1,DESIGN,"//TODO: Since we just sorted by X, we can optimize this a bit."
 nathanawmk/ICS-Security-Tools@951b4b1,WITHOUT_CLASSIFICATION,"//axisX = new Range<>(ticksX.get(0), ticksX.get(ticksX.size() - 1));
 //rangeXRendered = axisX;"
-nathanawmk/ICS-Security-Tools,WITHOUT_CLASSIFICATION,"//axisY = new Range<>(ticksY.get(0), ticksY.get(ticksY.size() - 1));
+nathanawmk/ICS-Security-Tools@951b4b1,WITHOUT_CLASSIFICATION,"//axisY = new Range<>(ticksY.get(0), ticksY.get(ticksY.size() - 1));
 // Calculate the width of the widest Y-axis label and the height of the tallest X-axis label."
 nathanawmk/ICS-Security-Tools@951b4b1,WITHOUT_CLASSIFICATION,"//X-labels are displayed at a 30-degree incline.
 //The approximate width of the rotated text is 0.87*{width}
@@ -7232,7 +7232,7 @@ ouyangzhiping/Info-extract@2e6f9dd,WITHOUT_CLASSIFICATION,// timepoints
 ouyangzhiping/Info-extract@2e6f9dd,WITHOUT_CLASSIFICATION,// timepoint units
 ouyangzhiping/Info-extract@2e6f9dd,WITHOUT_CLASSIFICATION,// sample size
 ouyangzhiping/Info-extract@2e6f9dd,DESIGN,// TODO: anything else?
-oxelson/IDV@7daf3e3,WITHOUT_CLASSIFICATION,"/**
+oxelson/IDV@a44fc65,WITHOUT_CLASSIFICATION,"/**
      * Make point obs from a single timestep of a grid
      *
      * @param timeStep     the grid
@@ -7243,7 +7243,7 @@ oxelson/IDV@7daf3e3,WITHOUT_CLASSIFICATION,"/**
      * @throws RemoteException   Java RMI problem
      * @throws VisADException    VisAD problem
      */"
-oxelson/IDV@7daf3e3,DESIGN,// TODO:  make this  more efficient
+oxelson/IDV@a44fc65,DESIGN,// TODO:  make this  more efficient
 oxelson/IDV@a44fc65,WITHOUT_CLASSIFICATION,"/**
      * Make point obs from a single timestep of a grid
      *
@@ -7271,12 +7271,6 @@ oxelson/IDV@a44fc65,DESIGN,// TODO:  make this  more efficient
 oyarzun/incubator-netbeans@dce1642,DESIGN,//TODO: Download (in background?)
 oyarzun/incubator-netbeans@dce1642,WITHOUT_CLASSIFICATION,//open the file manager for the parent folder
 oyarzun/incubator-netbeans@dce1642,IMPLEMENTATION,//TODO: notifcation?
-pagarme/pagarme-core-api-java@deaf49f,DOCUMENTATION,"/** GETTER
-     * TODO: Write general description for this method
-     */"
-pagarme/pagarme-core-api-java@deaf49f,DOCUMENTATION,"/** SETTER
-     * TODO: Write general description for this method
-     */"
 pagarme/pagarme-core-api-java@1344457,DOCUMENTATION,"/** GETTER
      * TODO: Write general description for this method
      */"
@@ -7295,12 +7289,18 @@ pagarme/pagarme-core-api-java@1344457,DOCUMENTATION,"/** GETTER
 pagarme/pagarme-core-api-java@1344457,DOCUMENTATION,"/** SETTER
      * TODO: Write general description for this method
      */"
-palisades-lakes/xfp-jmh@63e5d27,WITHOUT_CLASSIFICATION,"//--------------------------------------------------------------
+pagarme/pagarme-core-api-java@1344457,DOCUMENTATION,"/** GETTER
+     * TODO: Write general description for this method
+     */"
+pagarme/pagarme-core-api-java@1344457,DOCUMENTATION,"/** SETTER
+     * TODO: Write general description for this method
+     */"
+palisades-lakes/xfp-jmh@fc40982,WITHOUT_CLASSIFICATION,"//--------------------------------------------------------------
 // IFastSum
 //--------------------------------------------------------------"
-palisades-lakes/xfp-jmh@63e5d27,DESIGN,// TODO: do we need to check for NaN and infinity?
+palisades-lakes/xfp-jmh@6f4a8d5,DESIGN,// TODO: do we need to check for NaN and infinity?
 palisades-lakes/xfp-jmh,WITHOUT_CLASSIFICATION,//--------------------------------------------------------------
-palisades-lakes/xfp-jmh@63e5d27,DESIGN,"// TODO: do we need to check for NaN and infinity?
+palisades-lakes/xfp-jmh@6f4a8d5,DESIGN,"// TODO: do we need to check for NaN and infinity?
 // TODO: compare to c++ implementation
 // TODO: return zero when x is zero?"
 pandawithcat/VoogaSalad@5c07c7c,WITHOUT_CLASSIFICATION,//TODO: change filename param to INT
@@ -7406,7 +7406,7 @@ pcordemans/exampleAlgorithms@a392482,WITHOUT_CLASSIFICATION,"/**
 	 * @return element
 	 */"
 pcordemans/exampleAlgorithms@a392482,IMPLEMENTATION,//TODO resolve queue with single element
-pedro-filho-81/LivrosDeJava,IMPLEMENTATION,"// TODO code application logic here
+pedro-filho-81/LivrosDeJava@457f348,IMPLEMENTATION,"// TODO code application logic here
 // cria o objeto Scanner"
 pedro-filho-81/LivrosDeJava@457f348,WITHOUT_CLASSIFICATION,// entrada de dados
 pedro-filho-81/LivrosDeJava@457f348,WITHOUT_CLASSIFICATION,// primeiro número
@@ -7429,8 +7429,8 @@ phon-ca/phon@290095e,DESIGN,"// group by session if info is available
 // TODO make this an option"
 phon-ca/phon@8cf1318,WITHOUT_CLASSIFICATION,// produce table
 phon-ca/phon@8cf1318,WITHOUT_CLASSIFICATION,// append row to table
-phques/androidpush@5cc3571,WITHOUT_CLASSIFICATION,// Always call the superclass
-phques/androidpush@5cc3571,DESIGN,"// probably not needed, onStop closes the socket, which should make the thread stop (?)"
+phques/androidpush@a908baf,WITHOUT_CLASSIFICATION,// Always call the superclass
+phques/androidpush@a908baf,DESIGN,"// probably not needed, onStop closes the socket, which should make the thread stop (?)"
 pitbox46/graaljs-forge@bb0ec6c,WITHOUT_CLASSIFICATION,/* Check for Infinity and NaN */
 pitbox46/graaljs-forge@bb0ec6c,DESIGN,// ALERT: should it distinguish -0.0 from +0.0 ?
 pitbox46/graaljs-forge@bb0ec6c,WITHOUT_CLASSIFICATION,/* Get the integer part of d including '-' sign. */
@@ -7564,18 +7564,18 @@ prokopk1n/cpachecker-1@b80f52b,IMPLEMENTATION,"/* What shall we do with function
 prokopk1n/cpachecker-1@d610ec4,WITHOUT_CLASSIFICATION,"//It means, that there is no entry in this block. Don't add it"
 qiaolw/AndroidTest@8f88a20,DESIGN,// todo change the file location/name according to your needs
 qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
 qingdao81/flink@f0ac261,DEFECT,"// This is problematic as the user code class loader is not
 // available at this point."
@@ -7633,8 +7633,8 @@ rcmaniac25/little-cms-for-blackberry@1d6780b,WITHOUT_CLASSIFICATION,"// Evaluate
 rcmaniac25/little-cms-for-blackberry@1d6780b,WITHOUT_CLASSIFICATION,// Check for domain
 rcmaniac25/little-cms-for-blackberry@1d6780b,WITHOUT_CLASSIFICATION,// Type == 0 means segment is sampled
 rcmaniac25/little-cms-for-blackberry@1d6780b,DESIGN,// Setup the table (TODO: clean that)
-rebse/flaka@9bb7d90,DOCUMENTATION,// TODO: document me
-rebse/flaka@9bb7d90,DOCUMENTATION,// TODO: document me
+rebse/flaka@0c93adb,DOCUMENTATION,// TODO: document me
+rebse/flaka@0c93adb,DOCUMENTATION,// TODO: document me
 reckue/note-api@c5a560f,IMPLEMENTATION,// TODO Implement a method
 recolic/hbase-2.1.0@3d2d77e,DEFECT,// get client ip address. ipv6 is not tested yet. (code for ipv6 maybe buggy)
 reed-foster/cdl@2fd20ea,IMPLEMENTATION,"/**
@@ -7704,7 +7704,7 @@ robin850/solr@9fed484,WITHOUT_CLASSIFICATION,"/**
    * @return the assigned shard id
    */"
 robin850/solr@91a788e,DESIGN,"// TODO: now that we create shards ahead of time, is this code needed?  Esp since hash ranges aren't assigned when creating via this method?"
-robin850/solr,DESIGN,"// TODO: don't need to sort to find shard with fewest replicas!
+robin850/solr@91a788e,DESIGN,"// TODO: don't need to sort to find shard with fewest replicas!
 // else figure out which shard needs more replicas"
 rogerfsg/servirtium@aa6ee2d,WITHOUT_CLASSIFICATION,//if (is.available() > 0) {
 rogerfsg/servirtium,WITHOUT_CLASSIFICATION,//}
@@ -7787,7 +7787,7 @@ runningt/ambari@da2ac57,WITHOUT_CLASSIFICATION,// admin has full access
 runningt/ambari@da2ac57,DESIGN,// TODO : should we log this?
 sachinlala/JavaPerfTests@4606e06,DESIGN,//TODO: this can be improved further to handle large powers
 salyh/geronimo-specs@3e81ac9,IMPLEMENTATION,//X TODO implement!
-salyh/geronimo-specs@3e81ac9,DESIGN,"/**
+salyh/geronimo-specs@adf64ad,DESIGN,"/**
      * <p>A container or an application can set this manually. If not
      * we will use the {@link java.util.ServiceLoader} and use the
      * first service we find.</p>
@@ -7796,7 +7796,7 @@ salyh/geronimo-specs@3e81ac9,DESIGN,"/**
      *
      * @param provider to use
      */"
-salyh/geronimo-specs@3e81ac9,IMPLEMENTATION,//X TODO implement!
+salyh/geronimo-specs@adf64ad,IMPLEMENTATION,//X TODO implement!
 sapols/JPL-CUSeniorProjects@9082122,WITHOUT_CLASSIFICATION,"/**
      * Finds neighbors of a given node
      * @return list of nodes neighboring the current node
@@ -7977,13 +7977,13 @@ semantic-graph/js2graph@677df3a,WITHOUT_CLASSIFICATION,"/**
 semantic-graph/js2graph@677df3a,DESIGN,"// NOTE(Zhen): Ignore CoreModule for now to enable a more flexible semantic modeling
 // if (NodejsRequiredCoreModule.isCoreModule(target)) return NodejsRequiredCoreModule.make(target);"
 semantic-graph/js2graph@677df3a,DESIGN,// NOTE(Zhen): it is not very useful to throw exception...
-sengerts/tic-tac-toe@49a7e73,WITHOUT_CLASSIFICATION,"/**
+sengerts/tic-tac-toe@20fcd86,WITHOUT_CLASSIFICATION,"/**
 	 * Lets the AI player make an automated move.
 	 * 
 	 * Here, the AI player calculates a fitting next field which he then marks
 	 * trying to win the tic tac toe game.
 	 */"
-sengerts/tic-tac-toe@49a7e73,DESIGN,// TODO Not just randomly select a tile to mark
+sengerts/tic-tac-toe,DESIGN,// TODO Not just randomly select a tile to mark
 seqcode/seqcode-core@cefcbe8,WITHOUT_CLASSIFICATION,"/* reads a weight matrix from the specified file,
        inserts it into the database with the specified name and
        version, and returns its dbid.  This means that the file may contain
@@ -8030,7 +8030,7 @@ serbaut/cloudstack@65d5d4d,WITHOUT_CLASSIFICATION,"// make sure start date is be
 // to newest, so just test against the first event)"
 serbaut/cloudstack@65d5d4d,WITHOUT_CLASSIFICATION,"// - loop over the list of events and create entries in the helper tables
 // - create the usage records using the parse methods below"
-serbaut/cloudstack,IMPLEMENTATION,"// TODO:  Fetch a maximum number of user stats and process them before moving on to the next range of user stats
+serbaut/cloudstack@65d5d4d,IMPLEMENTATION,"// TODO:  Fetch a maximum number of user stats and process them before moving on to the next range of user stats
 // get user stats in order to compute network usage"
 serbaut/cloudstack@65d5d4d,WITHOUT_CLASSIFICATION,"// Keep track of user stats for an account, across all of its public IPs"
 serbaut/cloudstack@65d5d4d,WITHOUT_CLASSIFICATION,"// loop over the user stats, create delta entries in the usage_network helper table"
@@ -8520,8 +8520,8 @@ slclark/IDV@bc3edeb,WITHOUT_CLASSIFICATION,"//                                Sy
 slclark/IDV@bc3edeb,IMPLEMENTATION,//Not sure what to do here.
 slipstream/cimi-mf2c@1eee38f,DESIGN,// TODO: pull this method up to be used in other factories.
 smartcommunitylab/AAC@1e54e66,WITHOUT_CLASSIFICATION,// fetch custom attributes
-smartcommunitylab/AAC@952725c,WITHOUT_CLASSIFICATION,// fetch identities
-smartcommunitylab/AAC@952725c,DESIGN,"// TODO decide how to merge identities into a single profile
+smartcommunitylab/AAC@27cbfdb,WITHOUT_CLASSIFICATION,// fetch identities
+smartcommunitylab/AAC@27cbfdb,DESIGN,"// TODO decide how to merge identities into a single profile
 // for now get first identity, should be last logged in"
 smartdatalake/simsearch@f457934,WITHOUT_CLASSIFICATION,"/**
 	 * Assuming that primary key is a single attribute (column) for the given table name, this method can retrieve it.
@@ -8583,7 +8583,7 @@ stephaniestroka/digitalid-core@18a2f09,WITHOUT_CLASSIFICATION,"/**
      */"
 stephaniestroka/digitalid-core@c7deb5b,DESIGN,"// The reply.pack() statement maps the semantic type of the reply converter, which results in a concurrent update if the client unpacks the response with the same database. The following commit prevents this. However, it is a suboptimal fix for this problem."
 stephenoken/beam@acb0460,IMPLEMENTATION,// TODO[BEAM-9179] Add conversion code for ARRAY and ROW types
-steppedreckoner/reactor-core@2fca878,TEST,"//Fix or deprecate fromExecutor, this test might randomly hang on CI"
+steppedreckoner/reactor-core,TEST,"//Fix or deprecate fromExecutor, this test might randomly hang on CI"
 steven-g/pdfbox@320c500,WITHOUT_CLASSIFICATION,"// PDF spec does not mention /Border for ink annotations, but it is used if /BS is not available"
 steven-g/pdfbox@cac38c4,DESIGN,"// Adjust rectangle even if not empty
 // file from PDF.js issue 13447
@@ -9180,7 +9180,7 @@ tondeur-h/LangTonAnt@42ad186,WITHOUT_CLASSIFICATION,"//System.out.print(""(x,y)=
 tondeur-h/LangTonAnt@0393cb8,WITHOUT_CLASSIFICATION,//no draw a black point
 tondeur-h/LangTonAnt@0393cb8,WITHOUT_CLASSIFICATION,//show me the result on scsreen
 tondeur-h/LangTonAnt@2f1f2e7,WITHOUT_CLASSIFICATION,//refresh counters
-tonywasher/bc-java@ccf93ca,DESIGN,// TDOD: make this meaningful...
+tonywasher/bc-java@5fcd94a,DESIGN,// TDOD: make this meaningful...
 torstenwerner/metro2.0@0a75b78,WITHOUT_CLASSIFICATION,// invoke the Trust Plugin if necessary
 torstenwerner/metro2.0@0a75b78,DESIGN,//TODO: replace this code with calls to the Module now
 torstenwerner/metro2.0@0a75b78,WITHOUT_CLASSIFICATION,//legacy pipes in GF
@@ -9480,9 +9480,9 @@ vulko/TransactionsTestTask@5331551,WITHOUT_CLASSIFICATION,"/**
      */"
 vulko/TransactionsTestTask@5331551,WITHOUT_CLASSIFICATION,// Ensure the loader is stopped
 vulko/TransactionsTestTask@5331551,IMPLEMENTATION,// TODO: manage mem if needed
-wangchong6808/dremio-oss@82bcc76,IMPLEMENTATION,"// Create filesystem for the given user and given path
+wangchong6808/dremio-oss@8e85901,IMPLEMENTATION,"// Create filesystem for the given user and given path
 // TODO: DX-16001 - make async configurable for Hive."
-wangchong6808/dremio-oss@82bcc76,DESIGN,//DX-7850 : remove once solution for maprfs is found
+wangchong6808/dremio-oss@8e85901,DESIGN,//DX-7850 : remove once solution for maprfs is found
 wangfanming/hadoop@b4aa24d,WITHOUT_CLASSIFICATION,"/**
    * If the currentBufferIndex is less than the buffer size - 1,
    * it means, the next buffer in the list has been freed up for
@@ -9785,7 +9785,7 @@ xie-wenjie/AndroidBaseApplicationSourse@931ca8f,DEFECT,"// TODO what happens if 
 // messages with incorrect status stored."
 xie-wenjie/AndroidBaseApplicationSourse@931ca8f,WITHOUT_CLASSIFICATION,// Store the updated message locally and mark it fully loaded
 xie-wenjie/AndroidBaseApplicationSourse@931ca8f,WITHOUT_CLASSIFICATION,// 15. Clean up and report results
-xie-wenjie/AndroidBaseApplicationSourse,WITHOUT_CLASSIFICATION,"// TODO - more
+xie-wenjie/AndroidBaseApplicationSourse@931ca8f,WITHOUT_CLASSIFICATION,"// TODO - more
 // Original sync code.  Using for reference, will delete when done."
 xie-wenjie/AndroidBaseApplicationSourse@931ca8f,WITHOUT_CLASSIFICATION,"/*
          * Now do the large messages that require more round trips.
@@ -9861,7 +9861,7 @@ xie-wenjie/AndroidBaseApplicationSourse@931ca8f,WITHOUT_CLASSIFICATION,"// 3. If
 // by inhibiting future sync or display of the message.  It will eventually go out of
 // scope when it becomes old, or is deleted on the server, and the regular sync code
 // will clean it up for us."
-xie-wenjie/AndroidBaseApplicationSourse,WITHOUT_CLASSIFICATION,"// The rest of this method handles server-side deletion
+xie-wenjie/AndroidBaseApplicationSourse@931ca8f,WITHOUT_CLASSIFICATION,"// The rest of this method handles server-side deletion
 // 4.  Find the remote mailbox (that we deleted from), and open it"
 xie-wenjie/AndroidBaseApplicationSourse@931ca8f,WITHOUT_CLASSIFICATION,// 5. Find the remote original message
 xie-wenjie/AndroidBaseApplicationSourse@931ca8f,WITHOUT_CLASSIFICATION,"// 6. Find the remote trash folder, and create it if not found"
@@ -9889,8 +9889,8 @@ xmf-xmodeler/MosaicFX@d3ff762,WITHOUT_CLASSIFICATION,"// System.err.println(star
 xmf-xmodeler/MosaicFX@d3ff762,WITHOUT_CLASSIFICATION,"// System.err.println(""syntaxBusy, request queued"");"
 xmf-xmodeler/MosaicFX@d3ff762,DESIGN,"// Todo: if syntax is not busy but a request got stuck
 // System.err.println(""request not queued"");"
-xuanliao/MVVM_Samples@eae0068,IMPLEMENTATION,//TODO: Replace this with your own logic
-xuanliao/MVVM_Samples@eae0068,IMPLEMENTATION,//TODO: Replace this with your own logic
+xuanliao/MVVM_Samples@77a4743,IMPLEMENTATION,//TODO: Replace this with your own logic
+xuanliao/MVVM_Samples@77a4743,IMPLEMENTATION,//TODO: Replace this with your own logic
 xushjie1987/common-utils@be4106b,IMPLEMENTATION,"/*
    * TODO(cpovirk): make SleepingStopwatch the last parameter throughout the class so that the
    * overloads follow the usual convention: Foo(int), Foo(int, SleepingStopwatch)

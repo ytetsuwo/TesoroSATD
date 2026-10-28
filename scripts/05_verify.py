@@ -7,7 +7,9 @@ line, and does the claimed commit really contain it?
 """
 import csv
 import random
+import re
 import sys
+from difflib import SequenceMatcher
 
 from common import OUT, core, git, norm, repo_dir, strip_marker
 
@@ -46,6 +48,12 @@ def check_text(r):
     wc = [core(x) for x in want if core(x)]
     if r["match"] == "exact":
         return None if [core(x) for x in got] == [core(x) for x in want] else "exact but differs"
+    if r["match"] == "fuzzy":
+        # the wording changed since the crawl: require a close paraphrase
+        rat = SequenceMatcher(None, tokens(" ".join(want)),
+                              tokens(" ".join(ctext(x) for x in got)),
+                              autojunk=False).ratio()
+        return None if rat >= 0.85 else f"fuzzy {rat:.2f}"
     # structural: the block was edited, or the comment is a trailing one on a
     # code line, so one surviving line (as a substring) is expected
     g = " ".join(gc)
@@ -75,9 +83,27 @@ def check_commit(r):
     p = git(d, "show", f"{sha}:{path}")
     if p.returncode != 0:
         return f"show failed: {p.stderr.strip()[:120]}"
+    if r["match"] == "fuzzy":
+        # blame records the commit that wrote the current wording, so the old
+        # text need not be there; require only that the file existed.
+        return None if p.stdout.strip() else "empty file at commit"
     want = [core(x) for x in r["commenttext"].splitlines() if core(x)]
     have = " ".join(core(x) for x in p.stdout.splitlines() if core(x))
     return None if any(w and w in have for w in want) else "comment absent in that commit"
+
+
+MARKER = re.compile(r"//|/\*|\*/|^\s*\*")
+WORD = re.compile(r"[a-z0-9]+")
+
+
+def ctext(line):
+    """Comment body of a line, dropping any code before a trailing marker."""
+    m = MARKER.search(line)
+    return MARKER.sub(" ", line[m.start():]) if m else ""
+
+
+def tokens(text):
+    return WORD.findall(text.lower())
 
 
 CHECKS = (("text", check_text), ("blame", check_blame), ("show", check_commit))
