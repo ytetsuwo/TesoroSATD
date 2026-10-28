@@ -1166,7 +1166,7 @@ LynzhX/android_frameworks_base-1@59c0097,DESIGN,// TODO(multidisplay): Expand to
 LynzhX/android_frameworks_base-1@f4b61d9,WITHOUT_CLASSIFICATION,"// stop boot animation
 // formerly we would just kill the process, but we now ask it to exit so it
 // can choose where to stop the animation."
-LynzhX/android_frameworks_base-1,WITHOUT_CLASSIFICATION,// BOOT_FINISHED
+LynzhX/android_frameworks_base-1@f4b61d9,WITHOUT_CLASSIFICATION,// BOOT_FINISHED
 LynzhX/android_frameworks_base-1@08a746a,WITHOUT_CLASSIFICATION,// Enable input dispatch.
 LynzhX/android_frameworks_base-1@9066cfe,WITHOUT_CLASSIFICATION,// Make sure the last requested orientation has been applied.
 LynzhX/android_frameworks_base-1@59c0097,IMPLEMENTATION,"// TODO(multidisplay): Extend to multiple displays.
