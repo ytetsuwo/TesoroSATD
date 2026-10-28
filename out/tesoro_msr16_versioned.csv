@@ -4022,8 +4022,8 @@ deividgdt/UNED_II@44a047c,WITHOUT_CLASSIFICATION,"/**
      */"
 delchev/cloud-dirigible@e429af0,TEST,"// Workaround for failing tests. When these tests are executed in
 // separate test methods, only the first one passes successfully."
-derekdinan/CTFServer,WITHOUT_CLASSIFICATION,/** Sends the level finish packet. */
-derekdinan/CTFServer,WITHOUT_CLASSIFICATION,// for thread safety
+derekdinan/CTFServer@8768439,WITHOUT_CLASSIFICATION,/** Sends the level finish packet. */
+derekdinan/CTFServer@0f1547c,WITHOUT_CLASSIFICATION,// for thread safety
 derekdinan/CTFServer,IMPLEMENTATION,"// now load the player's game (TODO in the future do this in parallel with loading
 // the
 // level)"
@@ -6821,7 +6821,7 @@ mkleczek/river@bb8ffd0,WITHOUT_CLASSIFICATION,"/* Shouldn't have to release sinc
                      * access, but the next getLogInputStream assumes things
                      * are on the freelist.
                      */"
-mkpaz/telek,WITHOUT_CLASSIFICATION,"// sadly setMaxHeight() isn't working with TextFlow
+mkpaz/telek@22f3e67,WITHOUT_CLASSIFICATION,"// sadly setMaxHeight() isn't working with TextFlow
 // so, we have to clip notification text manually"
 mo-morgan/Food-Radar@b623eef,DESIGN,// TODO: see if we can replace the words with icons in the future
 mobabel/MoMeGo@7c98588,WITHOUT_CLASSIFICATION,"//#if polish.midp || polish.usePolishGui

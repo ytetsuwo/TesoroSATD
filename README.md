@@ -16,9 +16,9 @@
 | `out/summary.md` | – | カバレッジと制約の自動レポート |
 | `out/repo_manifest.csv` | 960 | 各 clone の入手経路 (`kind` / 取得元 URL / SWH swhid / HEAD) |
 
-カバレッジ: **関数 1224/1255 (97.5%)、コメント 4750/4981 (95.4%)** に commit を付与。
+カバレッジ: **関数 1226/1255 (97.7%)、コメント 4753/4981 (95.4%)** に commit を付与。
 うち 50 関数は HEAD ではなく履歴から復元 (削除リポジトリは Software Heritage・
-存命ミラー・上流プロジェクトから復元)。945 プロジェクト、commit 日付は
+存命ミラー・上流プロジェクトから復元)。947 プロジェクト、commit 日付は
 2000-12-06 〜 2026-08-31。
 
 各 clone をどこからどう取得したかは **[docs/repo_acquisition.md](docs/repo_acquisition.md)**
@@ -80,8 +80,11 @@ git sparse-checkout set --no-cone '*.java' && git checkout HEAD
 ### 2. 特定 (03)
 
 1. 関数の代表テキストを決め、長い行をアンカーに `rg -F` で候補ファイル・行を列挙。
-2. 最長アンカーを起点に候補オフセットを作り、`difflib` で行単位アラインメント。
-   一致率で `high ≥0.9 / medium ≥0.7 / low ≥0.45` に分類。
+2. 最長アンカーを起点に候補オフセットを作り、`difflib` で 2 通りに採点する。
+   **行単位**の `SequenceMatcher` と、コメントを除いた**トークン列**の最密一致区間
+   (行数変化に強い)。`max(行, トークン)` を採り、宣言名が窓の先頭付近にあること、
+   同名メソッドが複数ファイルに無いことを確認したうえで
+   `high ≥0.9 / medium ≥0.7 / low ≥0.45` に分類。
 3. コメントは関数直前 ±150 行から
    **exact** (本文一致) → **structural** (改変・行末コメント) の順に照合。
 4. 該当行を `git blame --line-porcelain` して commit / 作者 / 日時 / その
@@ -128,7 +131,7 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
 ### 5. 検証 (05)
 
 - `--full`: commit が付いた全 4750 コメントで、ファイル上のコメント本文が一致する
-  ことを確認 → **4750/4750**。
+  ことを確認 → **4753/4753**。
 - ランダム 120 件で「本文一致・blame 一致・その commit に本文が存在」の 3 点を
   確認 → **120/120**。
 
@@ -139,12 +142,13 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
   (8 関数)、SWH の調理失敗 8 リポジトリ (14 関数, chromium の fork 2 件 6 関数、
   hive 3、cxf / midpoint / azure-sdk-for-java / openapi-generator / Marist-Sakai 各 1)、
   不正なリポジトリ名 1 件 (1 関数)。
-- **weak_match 8 関数**: `leusonmario/2022PhDThesis` の randoop 生成テスト
-  (リポジトリに存在しない生成物)、`Clay-Ferguson/Quantizr` (該当メソッドが
-  どのブランチにも無い)、`mkpaz/telek` / `nikosnikolaidis/commons-rdf` /
-  `derekdinan/CTFServer` / `good-loop/open-code` / `krisiney/SOKOBANFX-DMS-2020` /
-  `octo-online/reactive-aud` (上流・改名先は見つかったが、関数本文が大きく異なり
-  一致率が基準に届かない)。
+- **weak_match 6 関数**: `leusonmario/2022PhDThesis` の randoop 生成テスト
+  (同じ `test20046` が複数ディレクトリに重複し来歴を一意に決められない)、
+  `Clay-Ferguson/Quantizr` / `good-loop/open-code` (該当メソッドがどのブランチにも無い)、
+  `nikosnikolaidis/commons-rdf` / `octo-online/reactive-aud` /
+  `krisiney/SOKOBANFX-DMS-2020` (上流は見つかったが関数本文が存在しない)。
+  行単位の一致率だけでは `mkpaz/telek` と `derekdinan/CTFServer` も落ちていたが、
+  トークン照合で同一メソッドと確認できたため復元済み。
 - `projectname` は `owner/name`。Maldonado の `project-version` に当たる版情報は
   commit で表し、必要なら `tesoro_msr16_versioned.csv` を使う。
 - Maldonado 形式に合わせて `NONSATD` → `WITHOUT_CLASSIFICATION` に改名している

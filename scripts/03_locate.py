@@ -25,6 +25,121 @@ from common import (OUT, WORK, alnum, core, head_of, load_tesoro, mclass, norm,
 MIN_ANCHOR_LEN = 25
 MAX_FILE_CANDIDATES = 40
 SIG = re.compile(r"^[0-9a-f]{40} ")
+# Token view: `var` inlining, reordering, added branches change the line ratio a
+# lot even when the method is plainly the same one. Tokens survive that.
+TOKEN = re.compile(r'"[^"]*"|\'[^\']*\'|[A-Za-z_$][\w$]*|\d+|\S')
+MIN_TOKENS = 20
+
+
+def strip_comments(text: str) -> str:
+    """Drop // and /* */ comments, keep string literals intact."""
+    out, i, n = [], 0, len(text)
+    quote = None
+    while i < n:
+        c = text[i]
+        nxt = text[i + 1] if i + 1 < n else ""
+        if quote:
+            out.append(c)
+            if c == "\\" and nxt:
+                out.append(nxt)
+                i += 2
+                continue
+            if c == quote:
+                quote = None
+            i += 1
+            continue
+        if c == "/" and nxt == "/":
+            while i < n and text[i] != "\n":
+                i += 1
+            continue
+        if c == "/" and nxt == "*":
+            j = text.find("*/", i + 2)
+            end = n if j < 0 else j + 2
+            # keep the line count: token_match reports file line numbers
+            out.append("\n" * text.count("\n", i, end))
+            i = end
+            continue
+        if c in "\"'":
+            quote = c
+        out.append(c)
+        i += 1
+    return "".join(out)
+
+
+def content(toks) -> list:
+    """Identifiers, literals and numbers: punctuation says nothing about identity."""
+    return [t for t in toks if t[0].isalnum() or t[0] in "_$\"'"]
+
+
+def tokens(lines) -> list:
+    return content(TOKEN.findall(strip_comments("\n".join(lines))))
+
+
+NOT_NAMES = {"if", "for", "while", "switch", "catch", "new", "return", "synchronized",
+             "assert", "super", "this", "try", "do", "else"}
+
+
+def decl_name(ref) -> tuple:
+    """(method name, its index in ref) from the declaration line, or (None, 0).
+
+    The name is the one thing a refactor never changes, so it is both a cheap
+    seed for candidates and a veto on token-only matches (two different methods
+    can share a lot of boilerplate, a name they cannot).
+    """
+    for i, t in enumerate(ref):
+        s = t.strip()
+        if not s or s.startswith(("@", "//", "*", "/*", "}")):
+            continue
+        if "(" not in s or s.endswith(";"):
+            continue
+        head = s[:s.index("(")]
+        m = re.search(r"([A-Za-z_$][\w$]*)\s*$", head)
+        if m and m.group(1) not in NOT_NAMES:
+            return m.group(1), i
+    return None, 0
+
+
+def token_match(ref_tok: list, lines, span_lines: int, name: str | None = None):
+    """Best in-order occurrence of the reference tokens inside a short span.
+
+    Returns (coverage, start_line). Unlike a fixed line window this tolerates a
+    method that grew or shrank: what matters is that its tokens appear in order
+    within `span_lines` lines of each other.
+    """
+    if len(ref_tok) < MIN_TOKENS or not lines:
+        return 0.0, 0
+    clean = strip_comments("\n".join(lines)).split("\n")
+    win_tok, win_line = [], []
+    for ln, text in enumerate(clean, 1):
+        for t in content(TOKEN.findall(text)):
+            win_tok.append(t)
+            win_line.append(ln)
+    if not win_tok:
+        return 0.0, 0
+    decl = set()
+    if name:
+        rx = re.compile(rf"\b{re.escape(name)}\s*\(")
+        decl = {ln for ln, text in enumerate(clean, 1) if rx.search(text)}
+    sm = SequenceMatcher(None, ref_tok, win_tok, autojunk=False)
+    matched = []                                    # (ref index, file line), ordered
+    for a, b, size in sm.get_matching_blocks():
+        for k in range(size):
+            matched.append((a + k, win_line[b + k]))
+    if not matched:
+        return 0.0, 0
+    # densest run of matched reference tokens whose file lines stay near each other
+    best, lo = 0, 0
+    start = matched[0][1]
+    for hi, (_, line) in enumerate(matched):
+        while line - matched[lo][1] > span_lines:
+            lo += 1
+        if decl and matched[lo][1] not in decl:
+            continue                                    # not this method's declaration
+        if hi - lo + 1 > best:
+            best, start = hi - lo + 1, matched[lo][1]
+    if decl and best:
+        start = min(decl, key=lambda d: abs(d - start))
+    return best / len(ref_tok), start
 
 
 # ---------------------------------------------------------------- anchors
@@ -117,6 +232,9 @@ def locate(repo: str, func: dict, comments: list) -> dict:
     ref_ne = [x for x in ref if x]
     if not ref_ne:
         return {**base, "status": "no_anchor"}
+    ref_tok = tokens(ref)
+    span = max(40, 2 * len(ref))
+    name, decl_idx = decl_name(ref)
 
     comment_lines_all = []
     for r in comments:
@@ -153,10 +271,19 @@ def locate(repo: str, func: dict, comments: list) -> dict:
         cands = sorted({(path, ln) for path, ln, _ in hits})[:MAX_FILE_CANDIDATES * 10]
     if not cands:
         return {**base, "status": "not_at_head", "head": head_of(d)}
-    cands = sorted(cands)[:MAX_FILE_CANDIDATES * 10]
+    # The declaration name seeds candidates even when every anchor line was
+    # rewritten: `name(` is short, but it pins the window to a real method.
+    if name:
+        for path, ln, text in grep(d, [name + "("]):
+            if name + "(" in text:
+                cands.add((path, max(1, ln - decl_idx)))
+    # scan the files with the most anchor hits first: token scoring is per file
+    per_path = Counter(path for path, _, _ in hits)
+    order = {p: i for i, (p, _) in enumerate(per_path.most_common())}
+    cands = sorted(cands, key=lambda c: (order.get(c[0], 999), c))[:MAX_FILE_CANDIDATES * 10]
 
     best = None
-    cache = {}
+    cache, tok_cache = {}, {}
     for path, start in cands:
         lines = cache.get(path)
         if lines is None:
@@ -165,21 +292,52 @@ def locate(repo: str, func: dict, comments: list) -> dict:
             continue
         win = [norm(x) for x in lines[start - 1:start - 1 + len(ref)]]
         win_ne = [x for x in win if x]
-        if not win_ne:
-            continue
-        ratio = SequenceMatcher(None, ref_ne, win_ne, autojunk=False).ratio()
-        if best is None or ratio > best[0]:
-            best = (ratio, path, start, lines, win)
+        line_ratio = (SequenceMatcher(None, ref_ne, win_ne, autojunk=False).ratio()
+                      if win_ne else 0.0)
+        # Token coverage survives refactoring that changes the line count
+        # (`var`, extra branches, reordering); only the top files are worth it.
+        if path not in tok_cache:
+            tok_cache[path] = (token_match(ref_tok, lines, span, name)
+                               if len(tok_cache) < MAX_FILE_CANDIDATES else (0.0, start))
+        cov, tok_start = tok_cache[path]
+        # A match must start at the declaration of this method (a few lines of
+        # annotations are fine); otherwise it is shared boilerplate — generated
+        # tests and framework stubs look alike without sharing a name.
+        if name:
+            head_ok = any(re.search(rf"\b{re.escape(name)}\s*\(", x)
+                          for x in lines[max(0, start - 2):start + 3])
+            if not head_ok:
+                line_ratio = 0.0
+            if cov and not any(re.search(rf"\b{re.escape(name)}\s*\(", x)
+                               for x in lines[max(0, tok_start - 2):tok_start + 3]):
+                cov = 0.0
+        score = max(line_ratio, cov)
+        if best is None or score > best[0]:
+            best = (score, line_ratio, cov, path, start if line_ratio >= cov else tok_start,
+                    lines, win)
     if best is None:
         return {**base, "status": "unreadable", "head": head_of(d)}
 
-    ratio, path, start, lines, win = best
-    if ratio < 0.45:
+    ratio, line_ratio, cov, path, start, lines, win = best
+    # Same method text in several files (duplicated generated tests) has no
+    # single provenance: an almost-tied rival means the match is ambiguous.
+    rival = ""
+    if cov and cov > line_ratio and cov < 0.9:
+        for p2, (c2, _) in tok_cache.items():
+            if p2 != path and c2 >= 0.9 * cov:
+                rival = p2
+                break
+    if ratio < 0.45 or rival:
         return {**base, "status": "weak_match", "path": path, "ratio": round(ratio, 3),
+                **({"rival": rival} if rival else {}),
+                "line_ratio": round(line_ratio, 3), "tok_ratio": round(cov, 3),
                 "head": head_of(d)}
 
     res = {**base, "status": "ok", "path": path, "start": start,
-           "end": start + len(ref) - 1, "ratio": round(ratio, 3),
+           "end": min(len(lines), start + len(ref) - 1 + (20 if cov > line_ratio else 0)),
+           "ratio": round(ratio, 3),
+           "line_ratio": round(line_ratio, 3), "tok_ratio": round(cov, 3),
+           "match": "line" if line_ratio >= cov else "token",
            "head": head_of(d),
            "confidence": "high" if ratio >= 0.9 else "medium" if ratio >= 0.7 else "low"}
 
