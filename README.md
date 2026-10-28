@@ -14,11 +14,15 @@
 | `out/tesoro_msr16_versioned.csv` | 4981 | 同上、`projectname` を `owner/name@<sha7>` にした版 |
 | `out/functions_located.jsonl` | 1255 | 関数単位の生データ (アラインメント結果と全コメント) |
 | `out/summary.md` | – | カバレッジと制約の自動レポート |
+| `out/repo_manifest.csv` | 960 | 各 clone の入手経路 (`kind` / 取得元 URL / SWH swhid / HEAD) |
 
 カバレッジ: **関数 1224/1255 (97.5%)、コメント 4750/4981 (95.4%)** に commit を付与。
 うち 50 関数は HEAD ではなく履歴から復元 (削除リポジトリは Software Heritage・
 存命ミラー・上流プロジェクトから復元)。945 プロジェクト、commit 日付は
 2000-12-06 〜 2026-08-31。
+
+各 clone をどこからどう取得したかは **[docs/repo_acquisition.md](docs/repo_acquisition.md)**
+に手順つきで記録している (`out/repo_manifest.csv` に 960 件の一覧)。
 
 ## 使い方
 
@@ -151,7 +155,8 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
 ```
 tesoro/     Tesoro 本家のデータ (sparse clone, data/ 184MB)
 repos/      clone 960 件 (875 存命 + SWH・ミラー・上流復元 + symlink 4 件, owner__name, 全履歴 + *.java)
-scripts/    パイプライン (01〜10)
+scripts/    パイプライン (01〜13)
 work/       中間状態・ログ (repo_meta.json, clone_state.jsonl, swh_state.jsonl, locate.log)
-out/        成果物 (CSV / JSONL / summary.md)
+out/        成果物 (CSV / JSONL / summary.md / repo_manifest.csv)
+docs/       入手経路の記録 (repo_acquisition.md)
 ```
