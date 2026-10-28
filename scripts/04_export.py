@@ -131,7 +131,7 @@ def main():
         f"- コメント: {n_rows} 件中 {withsha} 件に commit を付与 "
         f"({withsha / n_rows:.1%})、{n_repo} プロジェクト",
         f"- 関数一致度: {dict(conf)}",
-        f"- コメント特定方法: {dict(match)} (exact=本文一致, structural=行末コメント・部分一致, fuzzy=本文が改変, position=記号のみ, relocated=別メソッドへ移動)",
+        f"- コメント特定方法: {dict(match)} (exact=本文一致, structural=行末コメント・部分一致, fuzzy=本文が改変, position=記号のみ, relocated=別メソッドへ移動, history=履歴から復元)",
         f"- commit 日付範囲: {min(dates) if dates else '-'} 〜 {max(dates) if dates else '-'}",
         "",
         "## 状態",

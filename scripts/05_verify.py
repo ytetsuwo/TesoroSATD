@@ -61,6 +61,10 @@ def check_text(r):
         # blank lines inside a block are layout, not content
         return (None if [core(x) for x in got if core(x)]
                 == [core(x) for x in want if core(x)] else "exact but differs")
+    if r["match"] == "history":
+        # recovered from an older revision: the snapshot must carry the text
+        return (None if [core(x) for x in got if core(x)]
+                == [core(x) for x in want if core(x)] else "history but differs")
     if r["match"] == "fuzzy":
         # the wording changed since the crawl: require a close paraphrase
         rat = similarity(" ".join(want), " ".join(ctext(x) for x in got))

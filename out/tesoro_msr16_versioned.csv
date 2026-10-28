@@ -478,7 +478,7 @@ Chiefwright/Mekanism@0d4b509,WITHOUT_CLASSIFICATION,//Extract fluid from dropper
 Chiefwright/Mekanism@bfa56d3,WITHOUT_CLASSIFICATION,"//If we were able to actually extract it from the item, then insert it into our gas tank"
 Chiefwright/Mekanism@bfa56d3,IMPLEMENTATION,//TODO: Print warning/error
 ChrisPrein/TUW_SelfOrganizingSystems_WS2021@b124675,DEFECT,// FIXME: maybe skip writing the SOM at 0 iterations (0 mod x == 0 ...)
-Clay-Ferguson/Quantizr,DESIGN,"/*
+Clay-Ferguson/Quantizr@b2c8d78,DESIGN,"/*
      * When 'node' has been created under 'parent' (by the sessionContext user) this will send a
      * notification to foreign servers. This call returns immediately and delegates the actuall
      * proccessing to a daemon thread.
@@ -567,7 +567,7 @@ Cotton-Ben/infinispan@fec66ec,WITHOUT_CLASSIFICATION,"//         @Override
 //            }
 //         }"
 Cotton-Ben/infinispan@59c1c22,DESIGN,//TODO figure out the way how to do interruption better (during iteration)
-CreedVI/Raylib-J,IMPLEMENTATION,// TODO: Support APNG animated images?
+CreedVI/Raylib-J@9d283d2,IMPLEMENTATION,// TODO: Support APNG animated images?
 CyberFlameGO/appengine-java-standard@4d1f855,DESIGN,// TODO: the max time this can take is actually N * timeout. Consider fixing this.
 Cyborgmas/ScalingHealth@7ec8a67,WITHOUT_CLASSIFICATION,// Ensure directories exist
 Cyborgmas/ScalingHealth@7ec8a67,DEFECT,// Failed to create directories... should probably let this crash
@@ -765,7 +765,7 @@ GoVivaceInc/SpeechPlugin@8ecac79,WITHOUT_CLASSIFICATION,"/**
 	 * @param sb StringBuilder that will contain the textual content of the node
 	 */"
 GoVivaceInc/SpeechPlugin@8ecac79,DEFECT,// BUG: this is a hack
-GoogleCloudPlatform/bq-pii-classifier,IMPLEMENTATION,"/*
+GoogleCloudPlatform/bq-pii-classifier@c1a5e65,IMPLEMENTATION,"/*
                  TODO: Support tagging in multiple locations
                  to support all locations:
                  1- Taxonomies/PolicyTags have to be created in each required location
@@ -1162,7 +1162,7 @@ Lucsparidans/GGP-Project@0387331,DESIGN,"/**
 Lucsparidans/GGP-Project@41aa077,WITHOUT_CLASSIFICATION,// Retrieve all legal moves
 Lucsparidans/GGP-Project@41aa077,WITHOUT_CLASSIFICATION,// Retrieve all joint moves and next states
 LynzhX/android_frameworks_base-1@6e2f395,WITHOUT_CLASSIFICATION,// Don't enable the screen until all existing windows have been drawn.
-LynzhX/android_frameworks_base-1,DESIGN,// TODO(multidisplay): Expand to all displays?
+LynzhX/android_frameworks_base-1@59c0097,DESIGN,// TODO(multidisplay): Expand to all displays?
 LynzhX/android_frameworks_base-1@f4b61d9,WITHOUT_CLASSIFICATION,"// stop boot animation
 // formerly we would just kill the process, but we now ask it to exit so it
 // can choose where to stop the animation."
@@ -2387,7 +2387,7 @@ agaveplatform/java-sdk@8939a1a,DOCUMENTATION,"/** GETTER
 agaveplatform/java-sdk@8939a1a,DOCUMENTATION,"/** SETTER
      * TODO: Write general description for this method
      */"
-agilepro/purple,WITHOUT_CLASSIFICATION,"/**
+agilepro/purple@70bc7de,WITHOUT_CLASSIFICATION,"/**
      * Make a JSON text String representation of this JSONObject.
      * Think carefully before using this method!  Do you really need
      * a String in memory?  Since JSON is used as a data transport format
@@ -3608,7 +3608,7 @@ christiangalsterer/yet-another-commit-checker@8a61ced,DESIGN,"/**
      * This is sort of hackish... maybe the Atlassian integration test
      * API has a way to reset all the data?
      */"
-christoff-buerger/pmChess,WITHOUT_CLASSIFICATION,// Restore game history (pop current moves frame and reset selected move):
+christoff-buerger/pmChess@fcf608c,WITHOUT_CLASSIFICATION,// Restore game history (pop current moves frame and reset selected move):
 christoff-buerger/pmChess,DESIGN,// TODO: fix when moves_selected contains index not move
 christoff-buerger/pmChess@88da635,WITHOUT_CLASSIFICATION,"// Restore cached current game situation (figure constellation, king positions,
 //	castlings, active player and turn number):"
@@ -4705,8 +4705,8 @@ haxic/Heavy-Space@d1bbb93,DESIGN,// TODO: improve by stacking events and apply t
 herbertkip/Web-App@d3e22ed,DESIGN,//TODO: Replace this with your own logic
 herbertkip/Web-App@d3e22ed,DESIGN,//TODO: Replace this with your own logic
 hernanponcedeleon/Dat3M@55cf102,WITHOUT_CLASSIFICATION,// ===== Memory Events =====
-hernanponcedeleon/Dat3M,WITHOUT_CLASSIFICATION,// ===== Fences =====
-hernanponcedeleon/Dat3M,WITHOUT_CLASSIFICATION,"// ===== Jumps =====
+hernanponcedeleon/Dat3M@55cf102,WITHOUT_CLASSIFICATION,// ===== Fences =====
+hernanponcedeleon/Dat3M@55cf102,WITHOUT_CLASSIFICATION,"// ===== Jumps =====
 // We override the meaning of execution here. A jump is executed IFF its condition was true."
 hernanponcedeleon/Dat3M@9e0bc8d,IMPLEMENTATION,"//TODO: Maybe add some other events (e.g. assertions)
 // But for now all non-visible events are simply registered without
@@ -6486,7 +6486,7 @@ lyca/lyca-xslt@0d8aa84,DEFECT,"/*
            * TransformerFactory creates a reader via the XMLReaderFactory if
            * setXMLReader is not used
            */"
-lyca/lyca-xslt,WITHOUT_CLASSIFICATION,"// Incase there is an exception thrown
+lyca/lyca-xslt@0d8aa84,WITHOUT_CLASSIFICATION,"// Incase there is an exception thrown
 // resort to JAXP"
 lyca/lyca-xslt@0d8aa84,WITHOUT_CLASSIFICATION,// handle DOMSource
 lyca/lyca-xslt@0d8aa84,WITHOUT_CLASSIFICATION,// Try to get SAX InputSource from DOM Source.
@@ -6767,7 +6767,7 @@ milkboylyf/EasyML@4a0e915,WITHOUT_CLASSIFICATION,"/**
 milkboylyf/EasyML@4a0e915,IMPLEMENTATION,"// TODO Auto-generated method stub
 //Read data from hdfs"
 milkboylyf/EasyML@4a0e915,WITHOUT_CLASSIFICATION,//Only read limited line data(if the data length over max length)
-mindscan-de/BrightFlux,IMPLEMENTATION,"// Use a predefined list of known Tokenizers
+mindscan-de/BrightFlux@672525c,IMPLEMENTATION,"// Use a predefined list of known Tokenizers
 // TODO: publish more tokenizers... (when they are ready/good enough/abstract enough)"
 mindscan-de/BrightFlux@672525c,WITHOUT_CLASSIFICATION,// Use the name of a class and instantiate this tokenizer
 mindscan-de/BrightFlux@9a9b5ad,WITHOUT_CLASSIFICATION,// use classloader  and search for named class in class path...
@@ -9101,7 +9101,7 @@ tladesignz/DNATools@161c558,DEFECT,"/**
      *            A maximum amount of result entries.
      * @return a {@link List} of {@link TableRow}s, possibly empty, never null.
      */"
-tladesignz/DNATools,WITHOUT_CLASSIFICATION,//noinspection TryWithIdenticalCatches
+tladesignz/DNATools@facb6c7,WITHOUT_CLASSIFICATION,//noinspection TryWithIdenticalCatches
 tladesignz/DNATools@732ab40,WITHOUT_CLASSIFICATION,"// We don't want to pass the exceptions up or rethrow a more generic exception, since
 // then, we would have to handle this on every object instantiation, but these
 // exceptions should never throw in production, since these are static code issues
