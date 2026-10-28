@@ -1775,8 +1775,8 @@ SandraBSofiaH/Final-UMldoclet@8cbd50a,WITHOUT_CLASSIFICATION,"// 	info = parse_r
 SandraBSofiaH/Final-UMldoclet@8cbd50a,WITHOUT_CLASSIFICATION,// 	if ((sz.x < info->size.x) || (sz.y < info->size.y)) {
 SandraBSofiaH/Final-UMldoclet@8cbd50a,IMPLEMENTATION,"// /* should check that the record really won't fit, e.g., there may be no text."
 SandraBSofiaH/Final-UMldoclet@8cbd50a,WITHOUT_CLASSIFICATION,"// 			agerr(AGWARN, ""node '%s' size may be too small\n"", agnameof(n));"
-SandraBSofiaH/Final-UMldoclet,WITHOUT_CLASSIFICATION,// */
-SandraBSofiaH/Final-UMldoclet,WITHOUT_CLASSIFICATION,// 	}
+SandraBSofiaH/Final-UMldoclet@8cbd50a,WITHOUT_CLASSIFICATION,// */
+SandraBSofiaH/Final-UMldoclet@8cbd50a,WITHOUT_CLASSIFICATION,// 	}
 SandraBSofiaH/Final-UMldoclet@d65815d,DEFECT,/* FIXME - is this still true:    suspected to introduce ronding error - see Kluge below */
 SandraBSofiaH/Final-UMldoclet,DESIGN,"/* Kluge!!  +1 to fix rounding diff between layout and rendering 
                                                    otherwise we can get -1 coords in output */"
@@ -6271,8 +6271,8 @@ leginee/netbeans@07b4566,WITHOUT_CLASSIFICATION,// in single-line or doxygen com
 leginee/netbeans@07b4566,WITHOUT_CLASSIFICATION,// found /=
 leginee/netbeans@07b4566,WITHOUT_CLASSIFICATION,// in multi-line or doxygen comment
 leginee/netbeans@07b4566,WITHOUT_CLASSIFICATION,// end of switch()
-leginee/netbeans,WITHOUT_CLASSIFICATION,// >>
-leginee/netbeans,WITHOUT_CLASSIFICATION,// >=
+leginee/netbeans@07b4566,WITHOUT_CLASSIFICATION,// >>
+leginee/netbeans@07b4566,WITHOUT_CLASSIFICATION,// >=
 leginee/netbeans@07b4566,WITHOUT_CLASSIFICATION,// invalid comment end - */ or int*/* */
 leginee/netbeans@07b4566,WITHOUT_CLASSIFICATION,// ellipsis ...
 leginee/netbeans@07b4566,WITHOUT_CLASSIFICATION,// float literal
@@ -6501,7 +6501,7 @@ lynsone/swordie@d62b03a,DEFECT,"// same issue as below, its in mushroom kingdom 
 lynsone/swordie@d62b03a,WITHOUT_CLASSIFICATION,// warping from portal in 106020403 is unable to find defined portal (not a scripted portal)
 lynsone/swordie@d23cbc6,WITHOUT_CLASSIFICATION,"// Character is dead, respawn request"
 lynsone/swordie@d23cbc6,WITHOUT_CLASSIFICATION,// always 0
-lynsone/swordie,WITHOUT_CLASSIFICATION,// ?
+lynsone/swordie@d23cbc6,WITHOUT_CLASSIFICATION,// ?
 lynsone/swordie@d23cbc6,DESIGN,// so far only got 0?
 lynsone/swordie@d62b03a,DESIGN,// attempt to respawn them where they died.. maybe portal 0 is better tho?
 maehem/Thump@68593cd,WITHOUT_CLASSIFICATION,//MenuManager menu = MenuManager.getInstance();
@@ -6635,7 +6635,7 @@ maybeec/lexeme@157d731,WITHOUT_CLASSIFICATION,"/**
      */"
 mbreemhaar/webcurator@2ccb899,DESIGN,"// TODO Add values to this list to allow more distinguished name patterns.
 //      If preferable, ldap.dn can be removed when there is more than one value to avoid confusion."
-mbreemhaar/webcurator,WITHOUT_CLASSIFICATION,"//,"
+mbreemhaar/webcurator@2ccb899,WITHOUT_CLASSIFICATION,"//,"
 mbreemhaar/webcurator@2ccb899,IMPLEMENTATION,"// TODO CONFIGURATION
 //""cn={0},OU=WCT users,DC=webcurator,DC=org"",
 //""cn={0},OU=WCT users,DC=webcurator,DC=org"""
@@ -9605,10 +9605,10 @@ woowahan/hive@fc9f758,WITHOUT_CLASSIFICATION,"// We have just obtained all we ne
 // to make a larger-level block. Each bit in the remaining target-sized blocks count
 // is one block in a list offset from target-sized list by bit index."
 wqythu13/Test@d84e6b7,DESIGN,//TODO Complex Cast
-wsargent/async-http-client,WITHOUT_CLASSIFICATION,//
-wsargent/async-http-client,WITHOUT_CLASSIFICATION,//
-wsargent/async-http-client,WITHOUT_CLASSIFICATION,//
-wsargent/async-http-client,WITHOUT_CLASSIFICATION,//
+wsargent/async-http-client@3656c92,WITHOUT_CLASSIFICATION,//
+wsargent/async-http-client@3656c92,WITHOUT_CLASSIFICATION,//
+wsargent/async-http-client@3656c92,WITHOUT_CLASSIFICATION,//
+wsargent/async-http-client@3656c92,WITHOUT_CLASSIFICATION,//
 wsargent/async-http-client@3656c92,WITHOUT_CLASSIFICATION,// server replied bare NTLM => we didn't preemptively sent Type1Msg
 wsargent/async-http-client@3656c92,DEFECT,"// FIXME we might want to filter current NTLM and add (leave other
 // Authorization headers untouched)"
@@ -10162,7 +10162,7 @@ zipated/src@f1182c9,DOCUMENTATION,"/**
 zipated/src@f1182c9,DOCUMENTATION,"/**
      * TODO: doc
      */"
-zonnie/Coins,WITHOUT_CLASSIFICATION,"/**
+zonnie/Coins@651628e,WITHOUT_CLASSIFICATION,"/**
      */"
 zonnie/Coins@651628e,IMPLEMENTATION,//TODO add a view holder
 zreed/webpieces@e12e46f,DESIGN,//TODO: Think about using System.arrayCopy here(what is faster?)

@@ -67,13 +67,16 @@ def main():
                 "commit_url": get(repo) + sha if sha else "",
                 "blame_url": blame_url(repo, sha, path_at, first),
                 "commit_author": c.get("author") or "",
-                "commit_date": (datetime.date.fromtimestamp(when).isoformat()
+                "commit_date": (when if isinstance(when, str)
+                                else datetime.date.fromtimestamp(when).isoformat()
                                 if when else ""),
                 "match": c.get("match") or "",
                 "function_ratio": loc.get("ratio", ""),
                 "status": loc.get("status", "unknown"),
-                "at_head": loc.get("status") == "ok",
-                "snapshot_commit": loc.get("commit_sha", ""),
+                # a marker-only comment recovered from history carries its own
+                # revision, so the row points at that snapshot, not at HEAD
+                "at_head": loc.get("status") == "ok" and not c.get("at_commit"),
+                "snapshot_commit": c.get("at_commit") or loc.get("commit_sha", ""),
             })
 
     rows.sort(key=lambda x: (x["projectname"], x["function_id"], x["comment_id"]))
@@ -128,7 +131,7 @@ def main():
         f"- コメント: {n_rows} 件中 {withsha} 件に commit を付与 "
         f"({withsha / n_rows:.1%})、{n_repo} プロジェクト",
         f"- 関数一致度: {dict(conf)}",
-        f"- コメント特定方法: {dict(match)} (exact=本文一致, structural=行末コメント・部分一致, fuzzy=本文が改変)",
+        f"- コメント特定方法: {dict(match)} (exact=本文一致, structural=行末コメント・部分一致, fuzzy=本文が改変, position=記号のみ)",
         f"- commit 日付範囲: {min(dates) if dates else '-'} 〜 {max(dates) if dates else '-'}",
         "",
         "## 状態",
