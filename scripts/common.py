@@ -82,7 +82,7 @@ def head_of(d: Path) -> str:
 
 def git(path: Path, *args, check=False, timeout=1800):
     return subprocess.run(
-        ["git", "-C", str(path), *args],
+        ["git", "-C", str(path), "-c", "core.quotepath=false", *args],
         capture_output=True, text=True, check=check, timeout=timeout, env=git_env(),
     )
 

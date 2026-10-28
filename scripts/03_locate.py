@@ -160,7 +160,8 @@ def anchors_from(lines, limit=10, min_len=MIN_ANCHOR_LEN):
 
 # ---------------------------------------------------------------- git helpers
 def blame(d: Path, rel: str, start: int, end: int):
-    p = run(["git", "blame", "--line-porcelain", "-L", f"{start},{end}", "--", rel],
+    p = run(["git", "-c", "core.quotepath=false", "blame", "--line-porcelain",
+             "-L", f"{start},{end}", "--", rel],
             d, timeout=600)
     if p.returncode != 0:
         return {}
@@ -185,8 +186,8 @@ def blame(d: Path, rel: str, start: int, end: int):
 
 def path_at_commit(d: Path, rel: str, sha: str) -> str:
     """Follow renames backwards to the file name that `sha` saw."""
-    p = run(["git", "log", "--follow", "--name-status", "--format=C %H", "--", rel],
-            d, timeout=600)
+    p = run(["git", "-c", "core.quotepath=false", "log", "--follow", "--name-status",
+             "--format=C %H", "--", rel], d, timeout=600)
     cur = rel
     for line in p.stdout.splitlines():
         if line.startswith("C "):

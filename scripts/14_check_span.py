@@ -73,6 +73,10 @@ def main() -> int:
         for c in f["comments"]:
             if not c.get("lines"):
                 continue
+            if c.get("at_commit"):
+                # recovered from an older revision: the line is not at HEAD
+                stats.setdefault(c.get("match") or "?", collections.Counter())["history"] += 1
+                continue
             ln, last = c["lines"][0], c["lines"][-1]
             if b_start <= ln and last <= b_end:
                 where = "body"
@@ -95,7 +99,8 @@ def main() -> int:
 
     for kind, v in sorted(stats.items()):
         print(f"{kind:10} body {v['body']:5}  decl {v['decl']:3}  above {v['above']:4}  "
-              f"outside {v['outside']:3}  not-a-comment {v['not_comment']:3}")
+              f"outside {v['outside']:3}  history {v['history']:3}  "
+              f"not-a-comment {v['not_comment']:3}")
 
     bad = [(r, c) for r in records for c in r["comments"] if c["where"] == "outside"]
     print(f"\noutside the function: {len(bad)} comment(s) in "

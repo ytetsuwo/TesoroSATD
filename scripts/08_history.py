@@ -192,7 +192,8 @@ def parent(d: Path, sha: str):
 
 
 def blame_at(d: Path, sha: str, rel: str, start: int, end: int):
-    p = run(["git", "blame", "--line-porcelain", "-L", f"{start},{end}", sha, "--", rel],
+    p = run(["git", "-c", "core.quotepath=false", "blame", "--line-porcelain",
+             "-L", f"{start},{end}", sha, "--", rel],
             d, timeout=600)
     if p.returncode != 0:
         return {}
