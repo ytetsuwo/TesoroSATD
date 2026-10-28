@@ -3609,7 +3609,7 @@ christiangalsterer/yet-another-commit-checker@8a61ced,DESIGN,"/**
      * API has a way to reset all the data?
      */"
 christoff-buerger/pmChess@fcf608c,WITHOUT_CLASSIFICATION,// Restore game history (pop current moves frame and reset selected move):
-christoff-buerger/pmChess,DESIGN,// TODO: fix when moves_selected contains index not move
+christoff-buerger/pmChess@3f7c6a0,DESIGN,// TODO: fix when moves_selected contains index not move
 christoff-buerger/pmChess@88da635,WITHOUT_CLASSIFICATION,"// Restore cached current game situation (figure constellation, king positions,
 //	castlings, active player and turn number):"
 christoff-buerger/pmChess@5c20b6d,WITHOUT_CLASSIFICATION,// Castling left:
