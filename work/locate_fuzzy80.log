@@ -1,0 +1,54 @@
+to locate: 1196 / 1255
+[50/1196] ok             0.968 Hsia-Esther/CityOfAaronGroup1 CityOfAaron/src/view/GameMenuView.java
+[100/1196] ok             1.0 DarwinSPL/DarwinSPL plugins/eu.hyvar.context.contextValidity.resource.hyvalidityformula/src/eu/hyvar/context/contextValidity/resource/hyvalidityformula/analysis/HyAttributeValidityFormulaAttributeReferenceResolver.java
+[116/1196] repo_missing    JC-Bodoque/geometric-transformer 
+[141/1196] repo_missing    IonBazan/openapi-generator 
+[150/1196] ok             1.0 Interactions-HSG/wot-search src/main/java/com/hsg/interactions/hypermas/crawler/core/CrawlerVerticle.java
+[200/1196] ok             1.0 Keneral/apackages apps/Email/provider_src/com/android/email/service/ImapService.java
+[250/1196] ok             1.0 SnoBoarder/Sudoku-Solver SudokuSolver/app/src/main/java/com/btran/bu/sudokusolver/widget/Cell.java
+[300/1196] ok             1.0 Tingbopku/tingbo1 src/main/java/com/google/devtools/build/lib/rules/objc/CompilationSupport.java
+[350/1196] ok             1.0 chenjunbiao001/tez tez-dag/src/main/java/org/apache/tez/dag/app/web/AMWebController.java
+[400/1196] ok             1.0 benbenxiaoluchi/com.accenture.cordova.plugin.sso src/android/SSOPlugin.java
+[433/1196] repo_missing    bcgov/jag-efax 
+[435/1196] repo_missing    bshp/midpoint 
+[450/1196] ok             0.932 arenaq/weather-app app/src/main/java/org/kuska/weatherapp/injection/NetworkModule.java
+[500/1196] ok             0.941 css4j/echosvg echosvg-swing/src/main/java/io/sf/carte/echosvg/swing/gvt/JGVTComponent.java
+[508/1196] repo_missing    fieldenms/ 
+[529/1196] repo_missing    fernandogomesfg/Algoritmos-em-Java 
+[530/1196] repo_missing    fernandogomesfg/Algoritmos-em-Java 
+[550/1196] ok             0.941 dougkoellmer/swarm src/swarm/client/view/sandbox/DynamicCajaSandbox.java
+[600/1196] ok             1.0 jebbench/jackson-dataformat-velocypack src/test/java/com/fasterxml/jackson/databind/node/TestMissingNode.java
+[606/1196] repo_missing    janjaali/azure-sdk-for-java 
+[630/1196] repo_missing    jd3538/Marist-Sakai-11.x 
+[650/1196] ok             1.0 herbertkip/Web-App Lesson 5 Mobile/Firebase/app/src/main/java/com/vijaya/firebase/LoginActivity.java
+[655/1196] weak_match     0.308 javacreed/super-simple-stocks super-simple-stock/src/main/java/com/jpmorgan/stocks/simple/services/impl/SimpleStockServiceImpl.java
+[700/1196] ok             1.0 isurunix/pharmacy-manager src/vidulaPharma/view/admin/ViewLowStockForm.java
+[727/1196] repo_missing    kjthegod/chromium 
+[737/1196] repo_missing    kimjand/cxf 
+[750/1196] ok             1.0 ljzzju/incubator-flink flink-staging/flink-tez/src/main/java/org/apache/flink/tez/dag/TezDAGGenerator.java
+[774/1196] repo_missing    ming1991/mingop 
+[775/1196] repo_missing    ming1991/mingop 
+[776/1196] weak_match     0.146 krisiney/SOKOBANFX-DMS-2020 games/src/games/sokoban/sokoban3/SokobanFX.java
+[800/1196] ok             1.0 leinardi/Dagger2MVP app/src/test/java/com/leinardi/dagger2mvp/ui/HitsListTest.java
+[850/1196] ok             0.952 pokebadgerswithspoon/incubator-netbeans apisupport.ant/src/org/netbeans/modules/apisupport/project/ui/customizer/SingleModuleProperties.java
+[900/1196] ok             1.0 onekeynet/OConf onos-yang-tools/compiler/base/datamodel/src/main/java/org/onosproject/yang/compiler/datamodel/YangSubModule.java
+[950/1196] ok             1.0 stuckless/sagetv-phoenix-core src/main/java/sagex/phoenix/vfs/filters/GenresFilter.java
+[979/1196] weak_match     0.0 leusonmario/2022PhDThesis 
+[1000/1196] ok             1.0 sylviawan/oop_assignment1 Desktop/Processing.app/Contents/Java/modes/java/src/processing/mode/java/pdex/PreprocessedSketch.java
+[1042/1196] repo_missing    sarang-apps/darshan_browser 
+[1050/1196] ok             1.0 seemoo-lab/polypyus_pdom export/parser/org/eclipse/cdt/internal/core/dom/parser/CompositeValue.java
+[1051/1196] weak_match     0.444 octo-online/reactive-aud core/java/android/os/Parcel.java
+[1055/1196] repo_missing    zealoussnow/chromium 
+[1056/1196] repo_missing    zealoussnow/chromium 
+[1068/1196] repo_missing    zealoussnow/chromium 
+[1075/1196] repo_missing    zem13579/hive 
+[1076/1196] repo_missing    zem13579/hive 
+[1081/1196] repo_missing    zem13579/hive 
+[1100/1196] ok             1.0 vkuznet/h2o src/main/java/water/api/Frames.java
+[1145/1196] repo_missing    zealoussnow/chromium 
+[1150/1196] ok             0.974 xzs603/codeLearning odinms/src/main/java/net/sf/odinms/net/channel/handler/InnerPortalHandler.java
+[1157/1196] repo_missing    zealoussnow/chromium 
+
+status: Counter({'ok': 1170, 'ok_history': 59, 'repo_missing': 22, 'weak_match': 4})
+confidence: Counter({'high': 1071, 'medium': 91, 'low': 8})
+elapsed 5.1 min

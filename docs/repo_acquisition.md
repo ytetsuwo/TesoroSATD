@@ -108,14 +108,18 @@ python3 scripts/08_history.py <function_id> ...   # HEAD に無ければ履歴�
 | coheigea/tcommon-studio-se | `gaozone-talend/tcommon-studio-se`（729MB） | 1 / 1 |
 | mkpaz/telek | `mkpaz/corf`（改名） | 1 / 1 |
 | derekdinan/CTFServer | `grahamedgecombe/opencraft` | 1 / 1 |
-| good-loop/open-code | `Licardo/AndroidChart` | 0 / 1 |
-| javacreed/super-simple-stocks | `jainebri/Super-Simple-Stocks` | 0 / 1 |
+| good-loop/open-code | `sodash/open-code`（旧 `Licardo/AndroidChart` は別物） | 1 / 1 |
+| javacreed/super-simple-stocks | `jainebri/Super-Simple-Stocks`（API が別物） | 0 / 1 |
 | krisiney/SOKOBANFX-DMS-2020 | `hallvard/javafx` | 0 / 1 |
 | nikosnikolaidis/commons-rdf | `apache/commons-rdf`（6.3MB） | 1 / 1 |
 
-下 3 件（`good-loop/open-code`, `javacreed/super-simple-stocks`,
-`krisiney/SOKOBANFX-DMS-2020`）は上流は見つかったが関数本文が一致せず
-（`weak_match` のまま）、記録としてディレクトリだけ残している。削除してよい。
+`good-loop/open-code` は最初に選んだ `Licardo/AndroidChart` が同名の別プロジェクトで、
+`sodash/open-code`（Winterwell 系、`winterwell.maths` を含む）に差し替えて復元した。
+`Clay-Ferguson/Quantizr` は履歴が 1 コミットに潰れていたため、上流の
+`xmonader/quantizr` に差し替えて復元した（`src/main/java/quanta/actpub/ActPubService.java`）。
+残る `javacreed/super-simple-stocks` と `krisiney/SOKOBANFX-DMS-2020` は、
+公開されている fork が別の API に書き換わっていて関数本文が一致しない
+（`weak_match` のまま）。記録としてディレクトリだけ残している。削除してよい。
 `mkpaz/telek` と `derekdinan/CTFServer` は行単位の一致率では落ちていたが、
 トークン単位の照合で同一メソッドと確認して復元した。
 

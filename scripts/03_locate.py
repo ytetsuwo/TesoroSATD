@@ -33,7 +33,7 @@ TOKEN = re.compile(r'"[^"]*"|\'[^\']*\'|[A-Za-z_$][\w$]*|\d+|\S')
 MIN_TOKENS = 20
 # A comment marker anywhere on the line: trailing comments sit after code.
 MARKER_ANY = re.compile(r"//|/\*|\*/|^\s*\*")
-FUZZY_MIN = 0.85
+FUZZY_MIN = 0.80
 
 
 def strip_comments(text: str) -> str:

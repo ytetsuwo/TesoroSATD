@@ -16,9 +16,9 @@
 | `out/summary.md` | – | カバレッジと制約の自動レポート |
 | `out/repo_manifest.csv` | 960 | 各 clone の入手経路 (`kind` / 取得元 URL / SWH swhid / HEAD) |
 
-カバレッジ: **関数 1227/1255 (97.8%)、コメント 4833/4981 (97.0%)** に commit を付与。
+カバレッジ: **関数 1229/1255 (97.9%)、コメント 4850/4981 (97.4%)** に commit を付与。
 うち 50 関数は HEAD ではなく履歴から復元 (削除リポジトリは Software Heritage・
-存命ミラー・上流プロジェクトから復元)。947 プロジェクト、commit 日付は
+存命ミラー・上流プロジェクトから復元)。949 プロジェクト、commit 日付は
 2000-12-06 〜 2026-08-31。
 
 各 clone をどこからどう取得したかは **[docs/repo_acquisition.md](docs/repo_acquisition.md)**
@@ -96,7 +96,7 @@ git sparse-checkout set --no-cone '*.java' && git checkout HEAD
    宣言名が食い違い一致率も低い候補は捨てて履歴探索に回す。
    コメントは**直上の javadoc 〜 関数本体**から
    **exact** (本文一致) → **structural** (行末コメント・部分一致) →
-   **fuzzy** (本文が改変。単語列の一致率 ≥0.85) の順に照合し、
+   **fuzzy** (本文が改変。単語列の一致率 ≥0.80) の順に照合し、
    **コメントノードの行以外は受け付けない**。
 4. 該当行を `git blame --line-porcelain` して commit / 作者 / 日時 / その
    コミット時点のパスを取得し、`git log --follow` でリネーム前のパスも解決。
@@ -141,12 +141,12 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
 
 ### 5. 検証 (05)
 
-- `--full`: commit が付いた全 4833 コメントで、ファイル上のコメント本文が一致する
-  ことを確認 → **4833/4833**。
+- `--full`: commit が付いた全 4850 コメントで、ファイル上のコメント本文が一致する
+  ことを確認 → **4850/4850**。
 - ランダム 120 件で「本文一致・blame 一致・その commit に本文が存在」の 3 点を
   確認 → **120/120**。
 - `14_check_span.py` で全コメントが**関数本体（宣言行〜閉じ括弧）または直上の
-  javadoc**に入っているかを AST で検算 → 本体 4264 / 宣言部 16 / 直上 553 / 本体外 0。
+  javadoc**に入っているかを AST で検算 → 本体 4280 / 宣言部 16 / 直上 554 / 本体外 0。
   マップされた行が実際にコメントノードかも同時に確認している。
 
 ## 既知の制約
@@ -156,12 +156,15 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
   (8 関数)、SWH の調理失敗 8 リポジトリ (14 関数, chromium の fork 2 件 6 関数、
   hive 3、cxf / midpoint / azure-sdk-for-java / openapi-generator / Marist-Sakai 各 1)、
   不正なリポジトリ名 1 件 (1 関数)。
-- **weak_match 6 関数**: `leusonmario/2022PhDThesis` の randoop 生成テスト
-  (同じ `test20046` が複数ディレクトリに重複し来歴を一意に決められない。
-  `work/manual_reject.jsonl` に理由つきで登録し、自動判定から除外)、
-  `Clay-Ferguson/Quantizr` / `good-loop/open-code` / `javacreed/super-simple-stocks`
-  (該当メソッドがどのブランチにも無い)、`octo-online/reactive-aud` /
-  `krisiney/SOKOBANFX-DMS-2020` (上流は見つかったが関数本文が存在しない)。
+- **weak_match 4 関数** (いずれも「その版のコードが公開されていない」):
+  `leusonmario/2022PhDThesis` の randoop 生成テスト (同じ `test20046` が 83 ファイルに
+  重複し来歴を一意に決められない。`work/manual_reject.jsonl` に理由つきで登録)、
+  `javacreed/super-simple-stocks` (元リポジトリは削除済み。現存する fork は
+  `calculatePERatio` に書き換わっていて `computePeRatio` が無い)、
+  `octo-online/reactive-aud` (削除済み。関数は AOSP の
+  `tools/lock_agent/.../LockHook.java` 由来で、手元の AOSP ミラーは古く該当しない)、
+  `krisiney/SOKOBANFX-DMS-2020` (削除済み。公開されている fork は
+  `keyPressed(KeyCode)` 版で、`handleKey(KeyCode)` 版が無い)。
   行単位の一致率だけでは `mkpaz/telek` と `derekdinan/CTFServer` も落ちていたが、
   トークン照合で同一メソッドと確認できたため復元済み。
   `nikosnikolaidis/commons-rdf` は上流の選定を誤っており (rdf4j ではなく

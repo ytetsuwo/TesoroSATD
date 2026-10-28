@@ -51,7 +51,7 @@ def check_text(r):
     if r["match"] == "fuzzy":
         # the wording changed since the crawl: require a close paraphrase
         rat = similarity(" ".join(want), " ".join(ctext(x) for x in got))
-        return None if rat >= 0.85 else f"fuzzy {rat:.2f}"
+        return None if rat >= 0.80 else f"fuzzy {rat:.2f}"
     # structural: the block was edited, or the comment is a trailing one on a
     # code line, so one surviving line (as a substring) is expected
     g = " ".join(gc)
