@@ -73,7 +73,7 @@ def main() -> int:
         for c in f["comments"]:
             if not c.get("lines"):
                 continue
-            if c.get("match") == "relocated":
+            if c.get("match") in ("relocated", "reshaped"):
                 stats.setdefault("relocated", collections.Counter())["outside"] += 1
                 continue
             if c.get("at_commit"):

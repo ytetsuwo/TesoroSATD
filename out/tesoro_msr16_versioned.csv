@@ -785,7 +785,7 @@ Grosskopf/openoffice@cdf0e10,DESIGN,//TODO consider mulitdimensional Arrays
 Grosskopf/openoffice@cdf0e10,DESIGN,//TODO consider mulitdimensional Arrays
 HTSUPK/alpha-wallet-android@2c72bd1,DESIGN,//TODO: Refactor with if/else
 Haulmont/jmix-old@df0c4d9,DESIGN,// todo rework when new instance name is ready
-Haulmont/jmix-old,WITHOUT_CLASSIFICATION,"/* AppContext.getProperty(""cuba.user.namePattern"");
+Haulmont/jmix-old@df0c4d9,WITHOUT_CLASSIFICATION,"/* AppContext.getProperty(""cuba.user.namePattern"");
         if (StringUtils.isBlank(pattern)) {
             pattern =*/"
 Haulmont/jmix-old@df0c4d9,WITHOUT_CLASSIFICATION,/*}*/
@@ -1778,7 +1778,7 @@ SandraBSofiaH/Final-UMldoclet@8cbd50a,WITHOUT_CLASSIFICATION,"// 			agerr(AGWARN
 SandraBSofiaH/Final-UMldoclet@8cbd50a,WITHOUT_CLASSIFICATION,// */
 SandraBSofiaH/Final-UMldoclet@8cbd50a,WITHOUT_CLASSIFICATION,// 	}
 SandraBSofiaH/Final-UMldoclet@d65815d,DEFECT,/* FIXME - is this still true:    suspected to introduce ronding error - see Kluge below */
-SandraBSofiaH/Final-UMldoclet,DESIGN,"/* Kluge!!  +1 to fix rounding diff between layout and rendering 
+SandraBSofiaH/Final-UMldoclet@d65815d,DESIGN,"/* Kluge!!  +1 to fix rounding diff between layout and rendering 
                                                    otherwise we can get -1 coords in output */"
 SanjayTechGuru/TRINO@4f63e10,DESIGN,// TODO: do we need to call logout() on the LoginContext?
 SanojPunchihewa/devstudio-tooling-esb@b1ae02c,DESIGN,"/* TODO Need to find alternative for this
@@ -2799,7 +2799,7 @@ aungphyopyaekyaw/gpstrack@1a59330,WITHOUT_CLASSIFICATION,/* no report header gro
 aungphyopyaekyaw/gpstrack@1a59330,WITHOUT_CLASSIFICATION,/* search for column */
 aungphyopyaekyaw/gpstrack@1a59330,DESIGN,// TODO: optimize
 aungphyopyaekyaw/gpstrack@1a59330,WITHOUT_CLASSIFICATION,/* not found */
-aureatesting/Syntactic,WITHOUT_CLASSIFICATION,"/*
+aureatesting/Syntactic@732b6c5,WITHOUT_CLASSIFICATION,"/*
 	 * 
 	 * corpus_%corpusName% = {
 		name: ""..."",
@@ -5100,7 +5100,7 @@ javaemus/ArcoFlexDroid@58b9180,WITHOUT_CLASSIFICATION,"/* According to the manua
 	but... */"
 javaemus/ArcoFlexDroid@58b9180,WITHOUT_CLASSIFICATION,/* DSW1 */
 javaemus/ArcoFlexDroid@58b9180,IMPLEMENTATION,/* TODO: bonus scores are different for 5 lives */
-javaemus/ArcoFlexDroid,WITHOUT_CLASSIFICATION,"/* those are the bonus with 5 lives
+javaemus/ArcoFlexDroid@58b9180,WITHOUT_CLASSIFICATION,"/* those are the bonus with 5 lives
 		PORT_DIPNAME( 0x38, 0x00, DEF_STR( ""Bonus_Life"") );
 		PORT_DIPSETTING(    0x28, ""30k 100k and every 100k"" );	PORT_DIPSETTING(    0x30, ""40k 120k and every 120k"" );	PORT_DIPSETTING(    0x00, ""30k 80k"" );	PORT_DIPSETTING(    0x08, ""30k 100k"" );	PORT_DIPSETTING(    0x10, ""30k 120k"" );	PORT_DIPSETTING(    0x18, ""30k"" );	PORT_DIPSETTING(    0x20, ""40k"" );	PORT_DIPSETTING(    0x38, ""None"" );*/"
 javaemus/ArcoFlexDroid@58b9180,WITHOUT_CLASSIFICATION,/* DSW2 */
