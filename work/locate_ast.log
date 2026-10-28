@@ -1,0 +1,56 @@
+to locate: 1205 / 1255
+[50/1205] ok             1.0 AutonomousCarProject/Steering src/main/java/com/apw/steering/steeringversions/SteeringMk3.java
+[100/1205] ok             1.0 Cyborgmas/ScalingHealth src/main/java/net/silentchaos512/scalinghealth/config/Config.java
+[111/1205] weak_match     0.202 Clay-Ferguson/Quantizr src/main/java/quanta/util/StreamUtil.java
+[124/1205] repo_missing    JC-Bodoque/geometric-transformer 
+[149/1205] repo_missing    IonBazan/openapi-generator 
+[150/1205] ok             0.987 JSA-Insubria/hive ql/src/java/org/apache/hadoop/hive/ql/exec/tez/monitoring/TezProgressMonitor.java
+[200/1205] ok             1.0 RollingSoftware/L2J_HighFive_Hardcore l2j_datapack/dist/game/data/scripts/handlers/communityboard/ClanBoard.java
+[250/1205] ok             1.0 aha0x0x/LotteryApplication src/main/java/code/aha/lottery/draw/DefaultDrawManager.java
+[300/1205] ok             1.0 SnappyDataInc/snappy-store gemfire-core/src/main/java/com/gemstone/gemfire/internal/cache/TXStateProxy.java
+[350/1205] ok             1.0 alinakazi/apache-royale-0.9.8-bin-js-swf royale-compiler/compiler/src/main/java/org/apache/royale/compiler/internal/targets/RoyaleTarget.java
+[400/1205] ok             1.0 automenta/java-unidu-pire src/main/java/de/unidu/is/retrieval/pire/dt/AbstractDT.java
+[442/1205] repo_missing    bcgov/jag-efax 
+[444/1205] repo_missing    bshp/midpoint 
+[450/1205] ok             1.0 baodingfengyun/luaj luaj-test/src/test/java/org/luaj/CompatibiltyTest.java
+[500/1205] ok             1.0 erda-project/erda-java-extensions agent-core/src/main/java/org/apache/skywalking/apm/agent/core/logging/core/EasyLogger.java
+[517/1205] repo_missing    fieldenms/ 
+[538/1205] repo_missing    fernandogomesfg/Algoritmos-em-Java 
+[539/1205] repo_missing    fernandogomesfg/Algoritmos-em-Java 
+[550/1205] ok             1.0 doktoric/test123 integration-test/src/main/java/com/sequenceiq/it/cloudbreak/ClusterCreationTest.java
+[600/1205] weak_match     0.2 good-loop/open-code HistogramBean.java
+[615/1205] repo_missing    janjaali/azure-sdk-for-java 
+[639/1205] repo_missing    jd3538/Marist-Sakai-11.x 
+[650/1205] ok             1.0 george-mcintyre/epics-core-java-backport-1.5 pvAccessJava/test/org/epics/pvaccess/impl/remote/codec/test/perf/TestCodec.java
+[666/1205] weak_match     0.308 javacreed/super-simple-stocks super-simple-stock/src/main/java/com/jpmorgan/stocks/simple/services/impl/SimpleStockServiceImpl.java
+[700/1205] ok             1.0 jkondrat/modules sms/src/main/java/org/motechproject/sms/configs/ConfigReader.java
+[736/1205] repo_missing    kjthegod/chromium 
+[746/1205] repo_missing    kimjand/cxf 
+[750/1205] ok             0.949 mbrukman/java-bigtable-hbase bigtable-client-core-parent/bigtable-client-core/src/main/java/com/google/cloud/bigtable/grpc/io/RefreshingOAuth2CredentialsInterceptor.java
+[782/1205] weak_match     0.146 krisiney/SOKOBANFX-DMS-2020 games/src/games/sokoban/sokoban3/SokobanFX.java
+[783/1205] repo_missing    ming1991/mingop 
+[784/1205] repo_missing    ming1991/mingop 
+[800/1205] ok             0.889 krisglover/cia cia-client/src/test/java/com/itall/configure/client/RestConfigClientTest.java
+[850/1205] ok             1.0 mpicque/pom-explorer pom-explorer-core/src/main/java/fr/lteconsulting/pomexplorer/TransitivityResolver.java
+[900/1205] ok             0.9 nikosnikolaidis/commons-rdf commons-rdf-rdf4j/src/main/java/org/apache/commons/rdf/rdf4j/experimental/RDF4JParser.java
+[950/1205] ok             1.0 svalaskevicius/opentelemetry-java sdk/metrics/src/main/java/io/opentelemetry/sdk/metrics/internal/state/AsynchronousMetricStorage.java
+[1000/1205] ok             1.0 sirivus/studioonline src/org/blender/dna/ClothSimSettings.java
+[1050/1205] ok             1.0 sachinlala/JavaPerfTests algorithms-java/src/main/java/com/sl/algorithms/core/utils/Formulas.java
+[1051/1205] repo_missing    sarang-apps/darshan_browser 
+[1064/1205] repo_missing    zealoussnow/chromium 
+[1065/1205] repo_missing    zealoussnow/chromium 
+[1077/1205] repo_missing    zealoussnow/chromium 
+[1084/1205] repo_missing    zem13579/hive 
+[1085/1205] repo_missing    zem13579/hive 
+[1090/1205] repo_missing    zem13579/hive 
+[1100/1205] ok             1.0 ttincs/guibat actual-sr-access-detector/gator/sootandroid/src/main/java/presto/android/xml/DefaultXMLParser.java
+[1106/1205] weak_match     0.444 octo-online/reactive-aud core/java/android/os/Parcel.java
+[1150/1205] ok             0.87 timfel/netbeans java/java.editor.base/src/org/netbeans/modules/java/editor/base/semantic/TokenList.java
+[1154/1205] repo_missing    zealoussnow/chromium 
+[1166/1205] repo_missing    zealoussnow/chromium 
+[1200/1205] ok             1.0 tamchow/inventory-management InventoryManagementLoader.java
+[1205/1205] weak_match     0.0 leusonmario/2022PhDThesis 
+
+status: Counter({'ok': 1177, 'ok_history': 50, 'repo_missing': 22, 'weak_match': 6})
+confidence: Counter({'high': 1069, 'medium': 91, 'low': 17})
+elapsed 3.2 min

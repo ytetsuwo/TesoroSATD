@@ -96,9 +96,9 @@ AsaiKen/phpscan@2a7fcfd,WITHOUT_CLASSIFICATION,"// ****
 /* output a constant decl for the terminal */"
 AsaiKen/phpscan@2a7fcfd,WITHOUT_CLASSIFICATION,/* end of class */
 Asucanc/FishMail@33b51ab,WITHOUT_CLASSIFICATION,//验证手机号是否11位
-Asucanc/FishMail@33b51ab,IMPLEMENTATION,//TODO: Replace this with your own logic
+Asucanc/FishMail,IMPLEMENTATION,//TODO: Replace this with your own logic
 Asucanc/FishMail,WITHOUT_CLASSIFICATION,//是否是邮箱
-Asucanc/FishMail@33b51ab,IMPLEMENTATION,//TODO: Replace this with your own logic
+Asucanc/FishMail,IMPLEMENTATION,//TODO: Replace this with your own logic
 AtomicPulsee/ChatDirector@60ef220,WITHOUT_CLASSIFICATION,// Checking Chain metrics
 AtomicPulsee/ChatDirector@60ef220,WITHOUT_CLASSIFICATION,// Checking Per Chain metrics
 AtomicPulsee/ChatDirector@60ef220,WITHOUT_CLASSIFICATION,// Checking Each item in chain
@@ -355,7 +355,7 @@ CAPIndustries/capDB@cc2e4fd,WITHOUT_CLASSIFICATION,// Stop the deletion
 CAPIndustries/capDB@d57a44c,WITHOUT_CLASSIFICATION,"// Sleep for a bit to let data take effect
 // Thread.sleep(1000);"
 CAPIndustries/capDB@6edf4f3,WITHOUT_CLASSIFICATION,// remove the top item from the list for this key
-CAPIndustries/capDB@43b4fd9,WITHOUT_CLASSIFICATION,"/**
+CAPIndustries/capDB@7d1606e,WITHOUT_CLASSIFICATION,"/**
 	 * @param args contains the program's input args (here for signature purposes)
 	 */"
 CAPIndustries/capDB@7d1606e,DESIGN,"// No need to use the run method here since the contructor is supposed to
@@ -536,7 +536,7 @@ CodingBash/fly-transcription-webapp@a00300a,DESIGN,"/*
 	 * TODO: Cleaner way of adding titles and ids
 	 */"
 CodingBash/fly-transcription-webapp@9ef18c8,WITHOUT_CLASSIFICATION,// Add expressionStageList to returned object
-CodingBash/fly-transcription-webapp@a00300a,WITHOUT_CLASSIFICATION,"/*
+CodingBash/fly-transcription-webapp@c9cd25c,WITHOUT_CLASSIFICATION,"/*
 		 * Add embryogenesis expressionStageGroup
 		 */"
 CodingBash/fly-transcription-webapp@a00300a,WITHOUT_CLASSIFICATION,// Add embryo stages
@@ -805,11 +805,11 @@ HoraceChoi95/incubator-pinot@a92464d,IMPLEMENTATION,"/**
    *
    * @return Name of partitioning column.
    */"
-Hsia-Esther/CityOfAaronGroup1,WITHOUT_CLASSIFICATION,"/**
+Hsia-Esther/CityOfAaronGroup1@9519037,WITHOUT_CLASSIFICATION,"/**
      * Control this view's display/prompt/action loop until the user chooses and
      * action that causes this view to close.
      */"
-Hsia-Esther/CityOfAaronGroup1,WITHOUT_CLASSIFICATION,//using this override to place getAnnualReport and gameShouldEnd inside displayView while loop.
+Hsia-Esther/CityOfAaronGroup1@c86d886,WITHOUT_CLASSIFICATION,//using this override to place getAnnualReport and gameShouldEnd inside displayView while loop.
 Hsia-Esther/CityOfAaronGroup1@3925667,IMPLEMENTATION,"//check to see if the game should end and if so, display a message and return to Main Menu 
 //TODO Implement try catch.
 //TODO when fully implemented, this will contain mortality rate variable from annual report 
@@ -915,7 +915,7 @@ IronApollo/FastAsyncWorldEdit@dd3f32b,WITHOUT_CLASSIFICATION,// Grow -- start fr
 IronApollo/FastAsyncWorldEdit@a629d15,WITHOUT_CLASSIFICATION,// Fill rest with air
 IronApollo/FastAsyncWorldEdit@a629d15,IMPLEMENTATION,"// Set the top block of the column to be the same type
 // (this could otherwise go wrong with rounding)"
-IronApollo/FastAsyncWorldEdit@d0a3169,WITHOUT_CLASSIFICATION,"/**
+IronApollo/FastAsyncWorldEdit@4041b2a,WITHOUT_CLASSIFICATION,"/**
      * Apply a raw heightmap to the region.
      *
      * @param data the data
@@ -1001,7 +1001,7 @@ JoseAlban/etc@12becce,TEST,"//This unit-test class is the wrong place to test th
 //Given"
 JoseAlban/etc@12becce,WITHOUT_CLASSIFICATION,//When
 JoseAlban/etc@12becce,WITHOUT_CLASSIFICATION,//Then
-Joybeanx/leetcode@cd92bbe,DESIGN,"/**
+Joybeanx/leetcode@7bea6ef,DESIGN,"/**
      * Ugly DP
      *
      * @param n
@@ -1134,7 +1134,7 @@ Lobesitdoll/librootjava@7b08ae7,WITHOUT_CLASSIFICATION,"/**
      *
      * @return Path to 32-bit app_process or app_process with unspecified bits or null
      */"
-LordGrimmauld/tetra@d370c39,DESIGN,"/*
+LordGrimmauld/tetra@09040e3,DESIGN,"/*
         if (event.getType() != RenderGameOverlayEvent.ElementType.CROSSHAIRS) {
             return;
         }
@@ -1166,7 +1166,7 @@ LynzhX/android_frameworks_base-1,DESIGN,// TODO(multidisplay): Expand to all dis
 LynzhX/android_frameworks_base-1@f4b61d9,WITHOUT_CLASSIFICATION,"// stop boot animation
 // formerly we would just kill the process, but we now ask it to exit so it
 // can choose where to stop the animation."
-LynzhX/android_frameworks_base-1@28391cb,WITHOUT_CLASSIFICATION,// BOOT_FINISHED
+LynzhX/android_frameworks_base-1,WITHOUT_CLASSIFICATION,// BOOT_FINISHED
 LynzhX/android_frameworks_base-1@08a746a,WITHOUT_CLASSIFICATION,// Enable input dispatch.
 LynzhX/android_frameworks_base-1@9066cfe,WITHOUT_CLASSIFICATION,// Make sure the last requested orientation has been applied.
 LynzhX/android_frameworks_base-1@59c0097,IMPLEMENTATION,"// TODO(multidisplay): Extend to multiple displays.
@@ -1250,7 +1250,7 @@ ModestosV/Simple-Calculator@8cf955f,TEST,"//TODO: Figure our why these tests fai
 ModestosV/Simple-Calculator@8cf955f,TEST,"//TODO: Figure our why these tests fail on CI build, despite passing locally
 //@Test"
 Modify24x7/ApkStringDecryptor@7de7e4e,DESIGN,// Note: Do not change method
-Mu-L/AxonFramework@7d8a287,WITHOUT_CLASSIFICATION,"/**
+Mu-L/AxonFramework@a6dcf49,WITHOUT_CLASSIFICATION,"/**
      * Start this processor. The processor will open an event stream on its message source in a new thread using {@link
      * StreamableMessageSource#openStream(TrackingToken)}. The {@link TrackingToken} used to open the stream will be
      * fetched from the {@link TokenStore}.
@@ -1555,15 +1555,15 @@ PLOS/named-entity.service@c084c37,DEFECT,// TODO: fix how this is rendering in X
 PRECISE/ROSLab@fe4bc9e,DESIGN,"// TODO improve the error message - the pointer should be at the
 // property name, not value"
 Pandrex247/patched-src-eclipselink@b1495ae,DEFECT,// TODO: Error.
-PanzerSchnitter/UltimateGoal2020,WITHOUT_CLASSIFICATION,"/*
+PanzerSchnitter/UltimateGoal2020@d3d102f,WITHOUT_CLASSIFICATION,"/*
         Initialize the setDrivePowers system variables.  The init() methods of our hardware class
         does all the work:
          */"
-PanzerSchnitter/UltimateGoal2020,WITHOUT_CLASSIFICATION,"/*
+PanzerSchnitter/UltimateGoal2020@d3d102f,WITHOUT_CLASSIFICATION,"/*
         Init Delay Option Select:
         */"
-PanzerSchnitter/UltimateGoal2020,WITHOUT_CLASSIFICATION,// After init is pushed but before Start we can change the delay using dpad up/down //
-PanzerSchnitter/UltimateGoal2020,WITHOUT_CLASSIFICATION,// Runs a loop to change certain settings while we wait to start
+PanzerSchnitter/UltimateGoal2020@d3d102f,WITHOUT_CLASSIFICATION,// After init is pushed but before Start we can change the delay using dpad up/down //
+PanzerSchnitter/UltimateGoal2020@d3d102f,WITHOUT_CLASSIFICATION,// Runs a loop to change certain settings while we wait to start
 PanzerSchnitter/UltimateGoal2020@d3d102f,WITHOUT_CLASSIFICATION,// Leave the loop if STOP is pressed
 PanzerSchnitter/UltimateGoal2020@d3d102f,WITHOUT_CLASSIFICATION,// Increases the amount of time we wait
 PanzerSchnitter/UltimateGoal2020@d3d102f,WITHOUT_CLASSIFICATION,// Decreases the amount of time we wait
@@ -1588,7 +1588,7 @@ PanzerSchnitter/UltimateGoal2020@d3d102f,WITHOUT_CLASSIFICATION,"/**
          * remaining idle for a minute or two...
          */"
 PanzerSchnitter/UltimateGoal2020@d3d102f,WITHOUT_CLASSIFICATION,// Time Delay:
-PanzerSchnitter/UltimateGoal2020,WITHOUT_CLASSIFICATION,"/*
+PanzerSchnitter/UltimateGoal2020@0105fc0,WITHOUT_CLASSIFICATION,"/*
         for (int i = 0; i <= 5; i++) {
             robot.robotWait(5);
             robot.driveOdo.quickDrive( -4,96,0.3, -90,3.0);
@@ -1770,8 +1770,8 @@ SandraBSofiaH/Final-UMldoclet@d65815d,WITHOUT_CLASSIFICATION,"/* For some forgot
      * we need at least two bytes in textbuf.
      */"
 SandraBSofiaH/Final-UMldoclet@8cbd50a,WITHOUT_CLASSIFICATION,"// 	agerr(AGERR, ""bad label format %s\n"", ND_label(n)->text);"
-SandraBSofiaH/Final-UMldoclet@d65815d,WITHOUT_CLASSIFICATION,"// 	reclblp = ""\\N"";"
-SandraBSofiaH/Final-UMldoclet@d65815d,WITHOUT_CLASSIFICATION,"// 	info = parse_reclbl(n, flip, NOT(0), textbuf);"
+SandraBSofiaH/Final-UMldoclet@8cbd50a,WITHOUT_CLASSIFICATION,"// 	reclblp = ""\\N"";"
+SandraBSofiaH/Final-UMldoclet@8cbd50a,WITHOUT_CLASSIFICATION,"// 	info = parse_reclbl(n, flip, NOT(0), textbuf);"
 SandraBSofiaH/Final-UMldoclet@8cbd50a,WITHOUT_CLASSIFICATION,// 	if ((sz.x < info->size.x) || (sz.y < info->size.y)) {
 SandraBSofiaH/Final-UMldoclet@8cbd50a,IMPLEMENTATION,"// /* should check that the record really won't fit, e.g., there may be no text."
 SandraBSofiaH/Final-UMldoclet@8cbd50a,WITHOUT_CLASSIFICATION,"// 			agerr(AGWARN, ""node '%s' size may be too small\n"", agnameof(n));"
@@ -1873,8 +1873,8 @@ SincereXIA/ozonerpc2@5dfbef0,DESIGN,"// TODO: If you don't have OM HA configured
 SinnerSchraderMobileMirrors/mopub-android-sdk@37389b7,DESIGN,"// This violates encapsulation but there is no convenience method to get a filename from
 // DiskLruCache. Filename was derived from private class method Entry#getCleanFile
 // in DiskLruCache.java"
-SirdarYangK/SirdarYKCode@8f2d881,IMPLEMENTATION,//TODO send setting level frame and change shared prefs and display
-SirdarYangK/SirdarYKCode@8f2d881,IMPLEMENTATION,//TODO send setting level frame and change shared prefs and display
+SirdarYangK/SirdarYKCode,IMPLEMENTATION,//TODO send setting level frame and change shared prefs and display
+SirdarYangK/SirdarYKCode,IMPLEMENTATION,//TODO send setting level frame and change shared prefs and display
 SiyuChen1/Datenstrukturen-und-Algorithmen-SS21@55ad604,WITHOUT_CLASSIFICATION,"/**
      * Fill this collision map with a set of rectangles. A rectangle is added to a
      * cell if it overlaps with it (that includes just touching it). Afterwards,
@@ -1968,7 +1968,7 @@ SpencerRiddering/flingtap-done@0148fa6,DESIGN,"// TODO: !! Isn't this a hack to 
 SpencerRiddering/flingtap-done@0148fa6,WITHOUT_CLASSIFICATION,// Ignore.
 SpencerRiddering/flingtap-done@0148fa6,WITHOUT_CLASSIFICATION,// Ignore.
 SpongePowered/Common@cec3bce,DESIGN,// TODO: do these need to be hooked up for saving as well? currently they just load
-SquidPony/SquidLib@62dce92,DESIGN,"/**
+SquidPony/SquidLib,DESIGN,"/**
      * Creates a 2D array of the given width and height, filled with entirely with the value contents.
      * You may want to use {@link #fill(char[][], char)} to modify an existing 2D array instead.
      * @param contents the value to fill the array with
@@ -1976,7 +1976,7 @@ SquidPony/SquidLib@62dce92,DESIGN,"/**
      * @param height   the desired height
      * @return a freshly allocated 2D array of the requested dimensions, filled entirely with contents
      */"
-SquidPony/SquidLib@95cb30d,DESIGN,"/**
+SquidPony/SquidLib,DESIGN,"/**
      * Creates a 2D array of the given width and height, filled with entirely with the value contents.
      * You may want to use {@link #fill(float[][], float)} to modify an existing 2D array instead.
      * @param contents the value to fill the array with
@@ -1984,7 +1984,7 @@ SquidPony/SquidLib@95cb30d,DESIGN,"/**
      * @param height   the desired height
      * @return a freshly allocated 2D array of the requested dimensions, filled entirely with contents
      */"
-SquidPony/SquidLib@62dce92,DESIGN,"/**
+SquidPony/SquidLib,DESIGN,"/**
      * Creates a 2D array of the given width and height, filled with entirely with the value contents.
      * You may want to use {@link #fill(double[][], double)} to modify an existing 2D array instead.
      * @param contents the value to fill the array with
@@ -1992,7 +1992,7 @@ SquidPony/SquidLib@62dce92,DESIGN,"/**
      * @param height   the desired height
      * @return a freshly allocated 2D array of the requested dimensions, filled entirely with contents
      */"
-SquidPony/SquidLib@62dce92,DESIGN,"/**
+SquidPony/SquidLib,DESIGN,"/**
      * Creates a 2D array of the given width and height, filled with entirely with the value contents.
      * You may want to use {@link #fill(int[][], int)} to modify an existing 2D array instead.
      * @param contents the value to fill the array with
@@ -2000,7 +2000,7 @@ SquidPony/SquidLib@62dce92,DESIGN,"/**
      * @param height   the desired height
      * @return a freshly allocated 2D array of the requested dimensions, filled entirely with contents
      */"
-SquidPony/SquidLib@ebc45ed,DESIGN,"/**
+SquidPony/SquidLib,DESIGN,"/**
      * Creates a 2D array of the given width and height, filled with entirely with the value contents.
      * You may want to use {@link #fill(byte[][], byte)} to modify an existing 2D array instead.
      * @param contents the value to fill the array with
@@ -2008,7 +2008,7 @@ SquidPony/SquidLib@ebc45ed,DESIGN,"/**
      * @param height   the desired height
      * @return a freshly allocated 2D array of the requested dimensions, filled entirely with contents
      */"
-SquidPony/SquidLib@62dce92,DESIGN,"/**
+SquidPony/SquidLib,DESIGN,"/**
      * Creates a 2D array of the given width and height, filled with entirely with the value contents.
      * You may want to use {@link #fill(boolean[][], boolean)} to modify an existing 2D array instead.
      * @param contents the value to fill the array with
@@ -2237,7 +2237,7 @@ YCjia/kudu@da9d9f5,DESIGN,"// this is bad, found a node that is referenced but n
 // lost, emit some info about this node for debugging purposes."
 YCjia/kudu@da9d9f5,WITHOUT_CLASSIFICATION,// node is defined but not referenced
 YCjia/kudu@da9d9f5,WITHOUT_CLASSIFICATION,// node is defined and referenced
-YYTVicky/brooklyn-server@72224d9,DESIGN,"/**
+YYTVicky/brooklyn-server@dd6e57b,DESIGN,"/**
      * Continuously attempts to connect for at least the indicated amount of time; or indefinitely if -1. This method
      * is useful when you are not sure if the system you are trying to connect to already is up and running.
      *
@@ -2315,7 +2315,7 @@ acestream/acestream-android-sdk@e7b8959,WITHOUT_CLASSIFICATION,"// Device has em
 acestream/acestream-android-sdk@e7b8959,WITHOUT_CLASSIFICATION,"// /storage/emulated/0[1,2,...]"
 acestream/acestream-android-sdk@e7b8959,WITHOUT_CLASSIFICATION,// Add all secondary storages
 acestream/acestream-android-sdk@e7b8959,WITHOUT_CLASSIFICATION,// All Secondary SD-CARDs splited into array
-ackepenek/solr@04a9b55,WITHOUT_CLASSIFICATION,"/**
+ackepenek/solr@c99af20,WITHOUT_CLASSIFICATION,"/**
    * Creates an instance of StatsValues which supports values from the specified {@link StatsField}
    *
    * @param statsField {@link StatsField} whose statistics will be created by the resulting {@link
@@ -2387,7 +2387,7 @@ agaveplatform/java-sdk@8939a1a,DOCUMENTATION,"/** GETTER
 agaveplatform/java-sdk@8939a1a,DOCUMENTATION,"/** SETTER
      * TODO: Write general description for this method
      */"
-agilepro/purple@70bc7de,WITHOUT_CLASSIFICATION,"/**
+agilepro/purple@90e20c4,WITHOUT_CLASSIFICATION,"/**
      * Make a JSON text String representation of this JSONObject.
      * Think carefully before using this method!  Do you really need
      * a String in memory?  Since JSON is used as a data transport format
@@ -2439,7 +2439,7 @@ ajpro-byte/ClinicMGMT@a558cbf,WITHOUT_CLASSIFICATION,//GEN-FIRST:event_riKeyRele
 ajpro-byte/ClinicMGMT@a558cbf,IMPLEMENTATION,//calc_total();        // TODO add your handling code here:
 alancnet/artifactory@919a718,DESIGN,//TORE: [by YS] should be storing repo once interfaces refactoring is done
 alar17/ts-reaktive@4417558,DESIGN,"// TODO either PR ByteBuffer support into actson, or sneaky-access the underlying byte array fields here"
-alaurent4/nighres,IMPLEMENTATION,// import the image data into 1D arrays : TO DO
+alaurent4/nighres@2932678,IMPLEMENTATION,// import the image data into 1D arrays : TO DO
 alaurent4/nighres@2932678,WITHOUT_CLASSIFICATION,// create a mask for all the regions outside of the area where layer 1 is > 0 and layer 2 is < 0
 alaurent4/nighres@2932678,WITHOUT_CLASSIFICATION,"// main algorithm
 // 1. define partial voume for each layer, each voxel"
@@ -2498,7 +2498,7 @@ allanim/vaadin@008dd4c,WITHOUT_CLASSIFICATION,"// System.out.println(""Continuin
 allanim/vaadin@008dd4c,DEFECT,// Hacky URLs that are might not work in all deployment scenarios
 aloklal99/apache-ranger@7defc06,IMPLEMENTATION,"//Later TODO
 //return super.getEnumName(fieldName);"
-alpinegizmo/flink@addd084,WITHOUT_CLASSIFICATION,"/**
+alpinegizmo/flink@60721e0,WITHOUT_CLASSIFICATION,"/**
 		 * Restore the KV-state / ColumnFamily meta data for all key-groups referenced by the current state handle.
 		 *
 		 * @throws IOException
@@ -2559,10 +2559,10 @@ andxu/azure-tools-for-java@ec29860,IMPLEMENTATION,// TODO: callback after mvn pa
 ankitaagar/felix-dev@8bccf4d,IMPLEMENTATION,// TODO: Connect
 ankitaagar/felix-dev@8bccf4d,IMPLEMENTATION,// TODO: Connect
 ankitaagar/felix-dev@8bccf4d,IMPLEMENTATION,// TODO: Connect
-anon24816/lucene-solr@f025322,DOCUMENTATION,"/*
+anon24816/lucene-solr@a73850e,DOCUMENTATION,"/*
    * TODO: Doc
    */"
-anon24816/lucene-solr@f025322,DOCUMENTATION,"/*
+anon24816/lucene-solr@a73850e,DOCUMENTATION,"/*
    * TODO: Doc
    */"
 anon24816/lucene-solr@5209762,WITHOUT_CLASSIFICATION,"// nestedQuery would be null when de-referenced query value is not specified
@@ -2955,14 +2955,14 @@ bigfastdata/SluiceBox@29b1d63,WITHOUT_CLASSIFICATION,"/**
      */"
 bigfastdata/SluiceBox@29b1d63,WITHOUT_CLASSIFICATION,// classifier.pruneThresholdOption.setValue(0.00001);
 bigfastdata/SluiceBox@29b1d63,IMPLEMENTATION,// TODO - add fuller set
-bignaczak/eBots2020_V2,WITHOUT_CLASSIFICATION,"//When the robot begins, it is in initialized state
+bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,"//When the robot begins, it is in initialized state
 //In this state, initialize the robot sensors and actuators
 //and wait for the event: driver pushes START
 //************************************************************
 //***   INITIALIZE THE ROBOT
 //************************************************************"
-bignaczak/eBots2020_V2,WITHOUT_CLASSIFICATION,//Initialize the wheels
-bignaczak/eBots2020_V2,WITHOUT_CLASSIFICATION,//Initialize the imu
+bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//Initialize the wheels
+bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//Initialize the imu
 bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//Initialize the color sensors
 bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//Initialize the digitalTouch sensors
 bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//Initialize the LED lights
@@ -3002,7 +3002,7 @@ bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//check for trigger event
 bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//perform state actions
 bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//Report telemetry
 bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//Exit opmode
-bignaczak/eBots2020_V2,WITHOUT_CLASSIFICATION,"//State debug info
+bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,"//State debug info
 //        if (debugOn) {
 //            Log.d(logTag, ""Transitioning out of state "" + autonState.toString());
 //            if (robot.getEbotsMotionController().isTargetPoseReached(robot)) {
@@ -3085,7 +3085,7 @@ boniatillo-com/rayo@2f3ad36,DESIGN,// FIXME: this is the case of blendModes and 
 boniatillo-com/rayo@2f3ad36,WITHOUT_CLASSIFICATION,// static flag
 boniatillo-com/rayo@2f3ad36,WITHOUT_CLASSIFICATION,// global constant
 boniatillo-com/rayo@2f3ad36,DEFECT,// FIXME: only add those Phaser.js constants
-boris-gelman/jline2@9136a1f,WITHOUT_CLASSIFICATION,"/**
+boris-gelman/jline2@fe139c9,WITHOUT_CLASSIFICATION,"/**
      * Read a line from the <i>in</i> {@link InputStream}, and return the line
      * (without any trailing newlines).
      *
@@ -3179,7 +3179,7 @@ boris-gelman/jline2@e6cb405,WITHOUT_CLASSIFICATION,"/*
                              * behavior. If the line is empty, then it is an EOF
                              * otherwise it is as if the user hit enter.
                              */"
-boris-gelman/jline2@7e686ef,WITHOUT_CLASSIFICATION,"/*
+boris-gelman/jline2@cf99001,WITHOUT_CLASSIFICATION,"/*
                                  * This is a weird special case. In vi
                                  * ""dd"" deletes the current line. So if we
                                  * get a delete-to, followed by a delete-to,
@@ -3187,7 +3187,7 @@ boris-gelman/jline2@7e686ef,WITHOUT_CLASSIFICATION,"/*
                                  */"
 boris-gelman/jline2@5dcfc6b,WITHOUT_CLASSIFICATION,"// Similar to delete-to, a ""yy"" yanks the whole line."
 boris-gelman/jline2@5dcfc6b,WITHOUT_CLASSIFICATION,"// ';' and ',' don't need another character. They indicate repeat next or repeat prev."
-boris-gelman/jline2@169d52b,WITHOUT_CLASSIFICATION,"/*
+boris-gelman/jline2@7e686ef,WITHOUT_CLASSIFICATION,"/*
                          * If we were in a yank-to, delete-to, move-to
                          * when this operation started, then fall back to
                          */"
@@ -3588,7 +3588,7 @@ chinasaur/beam@47e0df0,DESIGN,"// TODO: it would be nice to emit results as they
 chinasaur/beam@47e0df0,WITHOUT_CLASSIFICATION,// RemoteBundle close blocks until all results are received
 chinhodado/BBDB@9814614,WITHOUT_CLASSIFICATION,// Inflate the layout for this fragment
 chinhodado/BBDB@69dc138,DESIGN,//TODO: see if we can be more error-tolerance
-chinhodado/BBDB,WITHOUT_CLASSIFICATION,// instead of try-catch
+chinhodado/BBDB@0db49f1,WITHOUT_CLASSIFICATION,// instead of try-catch
 chinhodado/BBDB@9814614,WITHOUT_CLASSIFICATION,// calculate the width of the images to be displayed later on
 chinhodado/BBDB@66b906e,WITHOUT_CLASSIFICATION,// set it to be 1/10 of the screen width
 chinhodado/BBDB@9814614,WITHOUT_CLASSIFICATION,// get all rows in each table
@@ -3597,7 +3597,7 @@ chinhodado/BBDB@9814614,WITHOUT_CLASSIFICATION,// get the thubnail image src
 chinhodado/BBDB@9814614,WITHOUT_CLASSIFICATION,// the height's not exact
 chinhodado/BBDB@66b906e,WITHOUT_CLASSIFICATION,// get the scaled image link and display it
 chinhodado/BBDB@9814614,WITHOUT_CLASSIFICATION,//center vertical
-chinhodado/BBDB,IMPLEMENTATION,"//TODO: center the spinner horizontally
+chinhodado/BBDB@789fb04,IMPLEMENTATION,"//TODO: center the spinner horizontally
 //remove the spinner"
 chrishmorris/PiMS@cdcc1a5,DEFECT,"/**
      * LATER fix this test case - it leaves the DB connection bad
@@ -3646,7 +3646,7 @@ cirnoftw/android-openslmediaplayer@f8bb7dc,DESIGN,"// WTF! Android's native audi
 // accuracy!"
 cirnoftw/android-openslmediaplayer@f8bb7dc,WITHOUT_CLASSIFICATION,// wait for the next player completion
 civts/AAC@9e20a97,DESIGN,// TODO replace with keys for i18n
-ckorzen/pdfact@c879db4,IMPLEMENTATION,"/**
+ckorzen/pdfact@2a1b363,IMPLEMENTATION,"/**
    * Checks is the given text line starts with a reference anchor like ""[1]"", ""[2]"", etc.
    *
    * @param line The text line to check.
@@ -3793,7 +3793,7 @@ csrster/openwayback-csrdev@1399fc8,WITHOUT_CLASSIFICATION,//		String absPath = g
 csrster/openwayback-csrdev@24556ca,WITHOUT_CLASSIFICATION,"//IK: added null check for absPath, it may be null (ex. on jetty)"
 csrster/openwayback-csrdev@24556ca,WITHOUT_CLASSIFICATION,//			wbRequest.setContextPrefix(getUrlRoot());
 csrster/openwayback-csrdev@24556ca,DESIGN,// TODO: figure out if we got IO because of a missing dispatcher
-csrster/openwayback-csrdev@3491fbb,WITHOUT_CLASSIFICATION,"/**
+csrster/openwayback-csrdev@1e7a1c2,WITHOUT_CLASSIFICATION,"/**
 	 * @param httpRequest HttpServletRequest which is being handled
 	 * @param httpResponse HttpServletResponse which is being handled
 	 * @return true if the request was actually handled
@@ -3824,7 +3824,7 @@ css4j/echosvg@7d7ff35,DESIGN,"// HACK: getSystemClipboard sometimes deadlocks on
 d-protsenko/smartactors-core@4d4ab64,IMPLEMENTATION,// ToDo: Need to rewrite.
 d-protsenko/smartactors-core@4d4ab64,IMPLEMENTATION,// ToDo: Need to rewrite.
 d-protsenko/smartactors-core@4d4ab64,IMPLEMENTATION,// ToDo: Need to rewrite.
-dadepo/ipl@2ec8bac,DEFECT,"/*
+dadepo/ipl@9a0661e,DEFECT,"/*
      * // NOTE: this is wrong ? Even though the ibis has left, the
      * IbisIdentifier may still be floating around in the system... We should
      * just have some timeout on the cache entries instead...
@@ -3907,7 +3907,7 @@ dannyhx/artisynth_core@fde90a2,WITHOUT_CLASSIFICATION,"/* If a scrollbar is goin
 	 * not responsible for laying out the view we'll assume that the 
 	 * JViewport will always give it its preferredSize.
 	 */"
-dansiviter/cito-sockjs,TEST,"/**
+dansiviter/cito-sockjs@ee2b8cc,TEST,"/**
          * When server receives a request with unknown session_id it must recognize that as request for a new session. When
          * server opens a new session it must immediately send an frame containing a letter o.
          * </p>
@@ -3917,7 +3917,7 @@ dansiviter/cito-sockjs,TEST,"/**
          * @throws ExecutionException 
          * @throws InterruptedException 
          */"
-dansiviter/cito-sockjs,WITHOUT_CLASSIFICATION,"// New line is a frame delimiter specific for xhr-polling"""
+dansiviter/cito-sockjs@ee2b8cc,WITHOUT_CLASSIFICATION,"// New line is a frame delimiter specific for xhr-polling"""
 dansiviter/cito-sockjs@ee2b8cc,WITHOUT_CLASSIFICATION,"// After a session was established the server needs to accept requests for sending messages.
 // Xhr-polling accepts messages as a list of JSON-encoded strings."
 dansiviter/cito-sockjs@ee2b8cc,WITHOUT_CLASSIFICATION,// We're using an echo service - we'll receive our message back. The message is encoded as an array 'a'.
@@ -4495,7 +4495,7 @@ garyluu/dockstore-cli,WITHOUT_CLASSIFICATION,"// Setup database
 garyluu/dockstore-cli@1adc3b8,DEFECT,"// Check that user has been updated
 // TODO: bizarrely, the new GitHub Java API library doesn't seem to handle bio
 //final long count = testingPostgres.runSelectStatement(""select count(*) from enduser where location='Toronto' and bio='I am a test user'"", long.class);"
-gastaldi/hibernate-validator@563e63e,WITHOUT_CLASSIFICATION,"/**
+gastaldi/hibernate-validator@a937f2f,WITHOUT_CLASSIFICATION,"/**
          * Returns a bean descriptor representing this meta data object. A new
          * descriptor instance is created with each invocation. The descriptor might
          * be cached internally in the future should that need arise.
@@ -4556,8 +4556,8 @@ glahiru/airavata-1@47afa39,DESIGN,"//todo so currently we execute the qstat for 
 glasser/amock@993eb1f,DESIGN,// TODO: use sane arg parsing
 glasser/amock@e137bc4,IMPLEMENTATION,// TODO: use sane arg parsing
 globalid/walletkit@ed62f5b,TEST,// TODO: Expand coverage
-godblessthequeen/spring-cloud-gateway@a6f48b0,IMPLEMENTATION,// TODO: translate url?
-godblessthequeen/spring-cloud-gateway@82f8831,WITHOUT_CLASSIFICATION,"/**
+godblessthequeen/spring-cloud-gateway,IMPLEMENTATION,// TODO: translate url?
+godblessthequeen/spring-cloud-gateway,WITHOUT_CLASSIFICATION,"/**
                  * 匹配并转发到当前网关实例本地接口。
                  * 注意：需要通过 PrefixPathGatewayFilterFactory 将请求重写路径，以匹配本地 API ，否则 DispatcherHandler 转发会失败。
                  */"
@@ -4620,7 +4620,7 @@ guilhermemota/izpack@3181fb4,WITHOUT_CLASSIFICATION,"/**
 guilhermemota/izpack@3181fb4,DESIGN,"// TODO: check for circular references. We need to know
 // which
 // variables were substituted to do that"
-gujiedmc/spring-cloud-netflix@ace1ef7,WITHOUT_CLASSIFICATION,"/**
+gujiedmc/spring-cloud-netflix@8058189,WITHOUT_CLASSIFICATION,"/**
 	 * Partition the limit by the full path. Percentages of the limit are partitioned to
 	 * named groups. Group membership is derived from the provided mapping function.
 	 * @param pathToGroup Mapping function from full path to a named group.
@@ -4770,7 +4770,7 @@ hsphcdm/swift-t@2485ae2,WITHOUT_CLASSIFICATION,// Clear out all increments
 huangzhanqiao/yuzhouwan,WITHOUT_CLASSIFICATION,"/**
      * 处理 监控文件夹 的事件.
      */"
-huangzhanqiao/yuzhouwan@eec415f,IMPLEMENTATION,// could expand more processes here
+huangzhanqiao/yuzhouwan,IMPLEMENTATION,// could expand more processes here
 hubersn/SwingHelpViewer@3398d2e,DEFECT,// the following stuff did not work and I don't know why!
 hubersn/SwingHelpViewer@3398d2e,IMPLEMENTATION,// TODO Auto-generated catch block
 hubersn/SwingHelpViewer@3398d2e,IMPLEMENTATION,// TODO Auto-generated catch block
@@ -4945,27 +4945,27 @@ ialvarez79/pulsar@8a99e50,DEFECT,"// TODO: the message key routing is problemati
 //       https://github.com/apache/incubator-pulsar/pull/1029 is fixing that."
 ialvarez79/pulsar@8a99e50,WITHOUT_CLASSIFICATION,"// if there is no key and sequence id is provided, it is an effectively-once publish, we need to ensure
 // for a given message it always go to one partition, so we use sequence id to do a deterministic routing."
-ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,"// caller: newInstance()
+ibelee/aircompressor,WITHOUT_CLASSIFICATION,"// caller: newInstance()
 // input: see newInstance()"
-ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,// tableSize = 1 << 3 = 8 in my case
+ibelee/aircompressor,WITHOUT_CLASSIFICATION,// tableSize = 1 << 3 = 8 in my case
 ibelee/aircompressor@16b39bb,IMPLEMENTATION,// TODO: allocate in workspace
 ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,// store the symbol which is spread
-ibelee/aircompressor@ea6fbc3,IMPLEMENTATION,"// highThreshold = 8 - 1 = 7 in my case
+ibelee/aircompressor,IMPLEMENTATION,"// highThreshold = 8 - 1 = 7 in my case
 // TODO: make sure FseCompressionTable has enough size"
-ibelee/aircompressor@16b39bb,WITHOUT_CLASSIFICATION,"// For explanations on how to distribute symbol values over the table:
+ibelee/aircompressor,WITHOUT_CLASSIFICATION,"// For explanations on how to distribute symbol values over the table:
 // http://fastcompression.blogspot.fr/2014/02/fse-distributing-symbol-values.html
 // symbol start positions"
 ibelee/aircompressor@16b39bb,IMPLEMENTATION,// TODO: allocate in workspace
 ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,"// cumulative = [0,3,6,8,9] in my case
 // store the start position of every symbol"
-ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,// Low probability symbol
-ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,"// cumulative[3+1] = 8+1 = 9
+ibelee/aircompressor,WITHOUT_CLASSIFICATION,// Low probability symbol
+ibelee/aircompressor,WITHOUT_CLASSIFICATION,"// cumulative[3+1] = 8+1 = 9
 // Spread symbols"
-ibelee/aircompressor@ea6fbc3,WITHOUT_CLASSIFICATION,// make sure the symbols are successfully spread
-ibelee/aircompressor@16b39bb,WITHOUT_CLASSIFICATION,"// Build table
+ibelee/aircompressor,WITHOUT_CLASSIFICATION,// make sure the symbols are successfully spread
+ibelee/aircompressor,WITHOUT_CLASSIFICATION,"// Build table
 // fill in CTable1"
-ibelee/aircompressor@16b39bb,WITHOUT_CLASSIFICATION,/* TableU16 : sorted by symbol order; gives next state value */
-ibelee/aircompressor@16b39bb,WITHOUT_CLASSIFICATION,"// Build symbol transformation table
+ibelee/aircompressor,WITHOUT_CLASSIFICATION,/* TableU16 : sorted by symbol order; gives next state value */
+ibelee/aircompressor,WITHOUT_CLASSIFICATION,"// Build symbol transformation table
 // fill in SymbolTT"
 iconcells/healthydrive@c96fab3,WITHOUT_CLASSIFICATION,// ALM Specific Cleanup
 iconcells/healthydrive@c96fab3,DESIGN,// Should we wait for the interface to be unregistered?
@@ -5100,7 +5100,7 @@ javaemus/ArcoFlexDroid@58b9180,WITHOUT_CLASSIFICATION,"/* According to the manua
 	but... */"
 javaemus/ArcoFlexDroid@58b9180,WITHOUT_CLASSIFICATION,/* DSW1 */
 javaemus/ArcoFlexDroid@58b9180,IMPLEMENTATION,/* TODO: bonus scores are different for 5 lives */
-javaemus/ArcoFlexDroid@58b9180,WITHOUT_CLASSIFICATION,"/* those are the bonus with 5 lives
+javaemus/ArcoFlexDroid,WITHOUT_CLASSIFICATION,"/* those are the bonus with 5 lives
 		PORT_DIPNAME( 0x38, 0x00, DEF_STR( ""Bonus_Life"") );
 		PORT_DIPSETTING(    0x28, ""30k 100k and every 100k"" );	PORT_DIPSETTING(    0x30, ""40k 120k and every 120k"" );	PORT_DIPSETTING(    0x00, ""30k 80k"" );	PORT_DIPSETTING(    0x08, ""30k 100k"" );	PORT_DIPSETTING(    0x10, ""30k 120k"" );	PORT_DIPSETTING(    0x18, ""30k"" );	PORT_DIPSETTING(    0x20, ""40k"" );	PORT_DIPSETTING(    0x38, ""None"" );*/"
 javaemus/ArcoFlexDroid@58b9180,WITHOUT_CLASSIFICATION,/* DSW2 */
@@ -5156,7 +5156,7 @@ jaylinhong/jdk14-learn@bd113cf,DEFECT,"/**
          */"
 jaylinhong/jdk14-learn@bd113cf,WITHOUT_CLASSIFICATION,"// if the window went into fs mode before it was realized it
 // could have (0,0) dimensions"
-jaysooong/RxJava@991ae34,WITHOUT_CLASSIFICATION,"/**
+jaysooong/RxJava@928e437,WITHOUT_CLASSIFICATION,"/**
      * Returns an Observable that emits items that are the result of applying a specified function to pairs of
      * values, one each from the source ObservableSource and another specified ObservableSource.
      * <p>
@@ -5191,7 +5191,7 @@ jaysooong/RxJava@991ae34,WITHOUT_CLASSIFICATION,"/**
      *         and emits the results of {@code zipFunction} applied to these pairs
      * @see <a href=""http://reactivex.io/documentation/operators/zip.html"">ReactiveX operators documentation: Zip</a>
      */"
-jaysooong/RxJava@991ae34,WITHOUT_CLASSIFICATION,"/**
+jaysooong/RxJava@928e437,WITHOUT_CLASSIFICATION,"/**
      * Returns an Observable that emits items that are the result of applying a specified function to pairs of
      * values, one each from the source ObservableSource and another specified ObservableSource.
      * <p>
@@ -5229,7 +5229,7 @@ jaysooong/RxJava@991ae34,WITHOUT_CLASSIFICATION,"/**
      * @see <a href=""http://reactivex.io/documentation/operators/zip.html"">ReactiveX operators documentation: Zip</a>
      * @since 2.0
      */"
-jaysooong/RxJava@991ae34,WITHOUT_CLASSIFICATION,"/**
+jaysooong/RxJava@928e437,WITHOUT_CLASSIFICATION,"/**
      * Returns an Observable that emits items that are the result of applying a specified function to pairs of
      * values, one each from the source ObservableSource and another specified ObservableSource.
      * <p>
@@ -5269,7 +5269,7 @@ jaysooong/RxJava@991ae34,WITHOUT_CLASSIFICATION,"/**
      * @see <a href=""http://reactivex.io/documentation/operators/zip.html"">ReactiveX operators documentation: Zip</a>
      * @since 2.0
      */"
-jbapple/libfilter@3dcf8e5,WITHOUT_CLASSIFICATION,"/**
+jbapple/libfilter@9a96b0c,WITHOUT_CLASSIFICATION,"/**
    * Calculates the number of dstinct elements that can be stored in a filter of size
    * <code>bytes</code> without exceeding the given false positive probability.
    *
@@ -5278,7 +5278,7 @@ jbapple/libfilter@3dcf8e5,WITHOUT_CLASSIFICATION,"/**
    * @return the maximum number of distinct values that can be added
    */"
 jbapple/libfilter@3dcf8e5,DESIGN,// TODO: unify this exponential + binary search with the bytes needed function above
-jcdubois/cpachecker,WITHOUT_CLASSIFICATION,"/**
+jcdubois/cpachecker@bd96b5d,WITHOUT_CLASSIFICATION,"/**
    * Computes the state resulting from performing the bitwise xor-operation on this state and the
    * given state. If one of the states is bottom, bottom is returned. If both states represent
    * single values, a state representing the value obtained by the bit-wise xor-operation on the
@@ -5293,13 +5293,13 @@ jcdubois/cpachecker,WITHOUT_CLASSIFICATION,"/**
 jcdubois/cpachecker@bd96b5d,WITHOUT_CLASSIFICATION,"// [0,1] ^ 1 = [0,1]"
 jcdubois/cpachecker@bd96b5d,WITHOUT_CLASSIFICATION,"// 1 ^ [0,1] = [0,1]"
 jcdubois/cpachecker@bd96b5d,DESIGN,// TODO maybe a more exact implementation is possible?
-jcdubois/cpachecker,WITHOUT_CLASSIFICATION,"/**
+jcdubois/cpachecker@bd96b5d,WITHOUT_CLASSIFICATION,"/**
    * Computes the state resulting from flipping the bits of the values represented by this state.
    *
    * @return the state resulting from flipping the bits of the values represented by this state.
    */"
 jcdubois/cpachecker@bd96b5d,DESIGN,// TODO maybe a more exact implementation is possible?
-jcdubois/cpachecker,WITHOUT_CLASSIFICATION,"/**
+jcdubois/cpachecker@bd96b5d,WITHOUT_CLASSIFICATION,"/**
    * Computes the state resulting from performing the bitwise or-operation on this state and the
    * given state. If one of the states is bottom, bottom is returned. If both states represent
    * single values, a state representing the value obtained by the bit-wise or-operation on the
@@ -5827,9 +5827,9 @@ jettmarks/clueRide-angular@c69d40f,WITHOUT_CLASSIFICATION,"/**
 jettmarks/clueRide-angular@c69d40f,DESIGN,// TODO: Introduce PreparedGeometry
 jgallimore/crest@dc0e271,DEFECT,"// Prior to fix, this was throwing StringIndexOutOfBoundsException"
 jgallimore/crest@dc0e271,DEFECT,"// Prior to fix, this was throwing StringIndexOutOfBoundsException"
-jgorny/liferay-faces-bridge-impl,WITHOUT_CLASSIFICATION,"// If the URL is opaque, meaning it starts with something like ""portlet:"" or ""mailto:"" and
+jgorny/liferay-faces-bridge-impl@70d2aab,WITHOUT_CLASSIFICATION,"// If the URL is opaque, meaning it starts with something like ""portlet:"" or ""mailto:"" and
 // doesn't have the double-forward-slash like ""http://"" does, then"
-jgorny/liferay-faces-bridge-impl,WITHOUT_CLASSIFICATION,"// If the URI starts with ""portlet:"", then return a BaseURL that contains the modified
+jgorny/liferay-faces-bridge-impl@70d2aab,WITHOUT_CLASSIFICATION,"// If the URI starts with ""portlet:"", then return a BaseURL that contains the modified
 // parameters. This will be a URL that represents navigation to a different viewId."
 jgorny/liferay-faces-bridge-impl@f66fcdd,WITHOUT_CLASSIFICATION,"// TCK: modeViewIDTest
 // TCK: requestRenderIgnoresScopeViaCreateViewTest
@@ -5900,12 +5900,12 @@ jgorny/liferay-faces-bridge-impl@f66fcdd,WITHOUT_CLASSIFICATION,"// TCK: resourc
 // TCK: encodeActionURLWithInvalidWindowStateResourceTest
 // TCK: encodeURLEscapingTest
 // TCK: encodeResourceURLWithModeTest"
-jgorny/liferay-faces-bridge-impl,WITHOUT_CLASSIFICATION,"// Otherwise, if the bridge must encode the URL to satisfy ""in-protocol"" resource serving, then return a
+jgorny/liferay-faces-bridge-impl@70d2aab,WITHOUT_CLASSIFICATION,"// Otherwise, if the bridge must encode the URL to satisfy ""in-protocol"" resource serving, then return a
 // an appropriate ResourceURL."
-jgorny/liferay-faces-bridge-impl,WITHOUT_CLASSIFICATION,// TCK: nonFacesResourceTest
-jgorny/liferay-faces-bridge-impl,WITHOUT_CLASSIFICATION,"// Otherwise, assume that the URL is for an resource external to the portlet context like
+jgorny/liferay-faces-bridge-impl@f66fcdd,WITHOUT_CLASSIFICATION,// TCK: nonFacesResourceTest
+jgorny/liferay-faces-bridge-impl@70d2aab,WITHOUT_CLASSIFICATION,"// Otherwise, assume that the URL is for an resource external to the portlet context like
 // ""/portalcontext/resources/foo.png"" and return a BaseURL string representation of it."
-jgorny/liferay-faces-bridge-impl,WITHOUT_CLASSIFICATION,"// TCK: encodeResourceURLTest
+jgorny/liferay-faces-bridge-impl@f66fcdd,WITHOUT_CLASSIFICATION,"// TCK: encodeResourceURLTest
 // TCK: encodeResourceURLBackLinkTest"
 jiangshide/sdk@feabc18,WITHOUT_CLASSIFICATION,"// Look up the beginning and the end of the line (outside of the extracted string)
 // such that we can show a preview of the diff, e.g. if you have
@@ -6301,7 +6301,7 @@ leginee/netbeans@07b4566,WITHOUT_CLASSIFICATION,// Invalid char
 leginee/netbeans@07b4566,WITHOUT_CLASSIFICATION,// end of switch (c)
 leginee/netbeans@07b4566,WITHOUT_CLASSIFICATION,// end of while(true)
 leinardi/Dagger2MVP@d2e3f95,IMPLEMENTATION,// TODO write me
-lembergerth/cpachecker@779e6cb,WITHOUT_CLASSIFICATION,"/**
+lembergerth/cpachecker@47e7305,WITHOUT_CLASSIFICATION,"/**
    * Adds correction terms of the following form for variables v.
    *
    * <ul>
@@ -6379,8 +6379,8 @@ licehammer/perun@e94a95b,DEFECT,"// FIXME - this is probably not good, since it 
 licehammer/perun@e94a95b,WITHOUT_CLASSIFICATION,// when there are no application form items
 licehammer/perun@e94a95b,WITHOUT_CLASSIFICATION,// create application form
 linosgian/oxTrust@e8528e1,DESIGN,//Do not use getClass() here... a typical weld issue...
-linyingfa/AnimatedPieView-master@b07f737,WITHOUT_CLASSIFICATION,//-----------------------------------------tools-----------------------------------------
-linyingfa/AnimatedPieView-master@b07f737,DESIGN,// fix anim duration too short
+linyingfa/AnimatedPieView-master,WITHOUT_CLASSIFICATION,//-----------------------------------------tools-----------------------------------------
+linyingfa/AnimatedPieView-master,DESIGN,// fix anim duration too short
 litchfieldhistoricalsociety/services@98c282a,WITHOUT_CLASSIFICATION,//================= runXmlReplayFile ======================================================
 litchfieldhistoricalsociety/services@98c282a,WITHOUT_CLASSIFICATION,"//Internally, we maintain two collections of ServiceResult:
 //  the first is the return value of this method.
@@ -6539,7 +6539,7 @@ malmstein/ExoPlayer@27ab5c8,WITHOUT_CLASSIFICATION,// Build the audio renderer.
 malmstein/ExoPlayer@27ab5c8,WITHOUT_CLASSIFICATION,// Build the debug renderer.
 malmstein/ExoPlayer@27ab5c8,WITHOUT_CLASSIFICATION,// Invoke the callback.
 manifold-systems/manifold@6bdc872,DESIGN,//## todo: use location to select more specifically (in Java 9+ with the location's module)
-manjulaRathnayaka/carbon-identity,WITHOUT_CLASSIFICATION,"/**
+manjulaRathnayaka/carbon-identity@69a0a46,WITHOUT_CLASSIFICATION,"/**
      * this method are overridden for extra claim request to google end-point
      *
      * @param request
@@ -6645,7 +6645,7 @@ mbrukman/java-bigtable-hbase@cb36651,WITHOUT_CLASSIFICATION,"/**
 mbrukman/java-bigtable-hbase@62252e8,WITHOUT_CLASSIFICATION,// Optimize for the common case: do a volatile read to peek for a Good cache value
 mbrukman/java-bigtable-hbase@62252e8,DESIGN,// TODO(igorbernstein2): figure out how to make this work with appengine request scoped threads
 mbrukman/java-bigtable-hbase@62252e8,WITHOUT_CLASSIFICATION,// defer the future resolution (asyncRefresh will spin up a thread that will try to acquire the lock)
-mcheung610/r5@986b65f,DESIGN,"/**
+mcheung610/r5@6fe0d08,DESIGN,"/**
      * Take a normal (non-priority) task out of a job queue, marking it as completed so it will not be re-delivered.
      * TODO maybe use unique delivery receipts instead of task IDs to handle redelivered tasks independently
      * @return whether the task was found and removed.
@@ -6677,7 +6677,7 @@ melvidoni/chatbot@2c8c112,WITHOUT_CLASSIFICATION,// Create a counter
 melvidoni/chatbot@2c8c112,WITHOUT_CLASSIFICATION,// For each word asked
 melvidoni/chatbot@2c8c112,WITHOUT_CLASSIFICATION,"// If found, we add one, otherwise, we add zero"
 melvidoni/chatbot@2c8c112,WITHOUT_CLASSIFICATION,// Return the value
-memleakpl/flat,DEFECT,// FIXME: flashing blank activity
+memleakpl/flat@46fff04,DEFECT,// FIXME: flashing blank activity
 memleakpl/flat@46fff04,WITHOUT_CLASSIFICATION,// Finish activity earlier
 metas-fresh/fresh@a9fb744,WITHOUT_CLASSIFICATION,"/**
 	 * Add Node to correct tree
@@ -6789,7 +6789,7 @@ mino98/stix@ccbeac0,DESIGN,"/**
          * 
          * @return The serialized document as string.
          */"
-mkalus/segrada@552bce9,TEST,"//fail(""Test not implemented yet."");
+mkalus/segrada@de23927,TEST,"//fail(""Test not implemented yet."");
 //TODO: do later"
 mkleczek/river@bb8ffd0,WITHOUT_CLASSIFICATION,// Inherit documentation from supertype
 mkleczek/river@bb8ffd0,WITHOUT_CLASSIFICATION,// Check if empty
@@ -6951,16 +6951,16 @@ nchambers/caevo@6bd9c67,DESIGN,"/**
    *       is somehow dropped during sentence tokenization.
    */"
 nedru004/LibraryAnalysis2@db79d11,DESIGN,//TODO: Note that not all reads actually cover a given var
-neiplz/Pedometer@a0026c0,DESIGN,//TODO: Replace this with your own logic
-neoautus/lucidj,WITHOUT_CLASSIFICATION,// ObjectEventListener
+neiplz/Pedometer,DESIGN,//TODO: Replace this with your own logic
+neoautus/lucidj@ce4999d,WITHOUT_CLASSIFICATION,// ObjectEventListener
 neoautus/lucidj@ce4999d,IMPLEMENTATION,// TODO: VAADIN SESSION HANDLING
-neoautus/lucidj,WITHOUT_CLASSIFICATION,// ObjectEventListener
+neoautus/lucidj@ce4999d,WITHOUT_CLASSIFICATION,// ObjectEventListener
 neoautus/lucidj@ce4999d,WITHOUT_CLASSIFICATION,// Only deal with valid renderers
 neoautus/lucidj@ce4999d,IMPLEMENTATION,// TODO: VAADIN SESSION HANDLING
 neoautus/lucidj-core@c92afd8,WITHOUT_CLASSIFICATION,/* skip this+serviceChanged */
 neoautus/lucidj-core@c92afd8,DESIGN,// Skip framework (todo: add more fws)
 neoautus/lucidj-core@c92afd8,WITHOUT_CLASSIFICATION,// Skip ourselves
-ngi-nix/jitsi-videobridge@bcc8fc9,WITHOUT_CLASSIFICATION,"/**
+ngi-nix/jitsi-videobridge@f033bca,WITHOUT_CLASSIFICATION,"/**
      * Determines whether to accept or drop a VP8 frame.
      *
      * Note that, at the time of this writing, there's no practical need for a
@@ -7008,7 +7008,7 @@ ngi-nix/jitsi-videobridge@bcc8fc9,WITHOUT_CLASSIFICATION,"// In this branch we'r
 // assert needsKeyframe == true;"
 ngouagna/alien4cloud-cloudify2-provider@bbdbce8,WITHOUT_CLASSIFICATION,/* consider doing this in the tosca yaml parser */
 ngouagna/alien4cloud-cloudify2-provider@bbdbce8,IMPLEMENTATION,// TODO: throw a parsing error exception on the YAML parser when params size is less than 2.
-nickbarban/libphonenumber@f5439bb,WITHOUT_CLASSIFICATION,"/**
+nickbarban/libphonenumber@7123e33,WITHOUT_CLASSIFICATION,"/**
    * Tests whether a short number matches a valid pattern in a region. Note that this doesn't verify
    * the number is actually in use, which is impossible to tell by just looking at the number
    * itself.
@@ -7022,11 +7022,11 @@ nickbarban/libphonenumber@f5439bb,WITHOUT_CLASSIFICATION,"/**
    *             {@code #isValidShortNumberForRegion(PhoneNumber, String)}. This method will be
    *             removed in the next release.
    */"
-nicolasbelfis/practical-reactor@585eb12,WITHOUT_CLASSIFICATION,"/**
+nicolasbelfis/practical-reactor@86bbb16,WITHOUT_CLASSIFICATION,"/**
      * Create Mono that completes exceptionally with exception `IllegalStateException`.
      */"
 nicolasbelfis/practical-reactor@585eb12,DESIGN,//todo: change this line
-nicolasbelfis/practical-reactor@585eb12,WITHOUT_CLASSIFICATION,"/**
+nicolasbelfis/practical-reactor@86bbb16,WITHOUT_CLASSIFICATION,"/**
      * Create Callable that increments the counter and returns the counter value, and then use `repeat()` operator to create Flux that emits
      * values from 0 to 10.
      */"
@@ -7153,7 +7153,7 @@ ontopia/ontopia@cb8c6ff,WITHOUT_CLASSIFICATION,"// ----- <name> ----------------
 openmuthu/jaya@043fbea,WITHOUT_CLASSIFICATION,//                  if(new File(item.second).isAbsolute()){
 openmuthu/jaya@043fbea,IMPLEMENTATION,// Shortcut to check isAbsolute()
 openmuthu/jaya@043fbea,WITHOUT_CLASSIFICATION,// Its an absolute url. set the destUrl to empty so that item.second is taken as is
-openphacts/OPS-Knime,WITHOUT_CLASSIFICATION,"/**
+openphacts/OPS-Knime@9094e0a,WITHOUT_CLASSIFICATION,"/**
      * {@inheritDoc}
      */"
 openphacts/OPS-Knime@9094e0a,WITHOUT_CLASSIFICATION,"//   System.out.println(""calling execute""+resultUrl.getStringValue());
@@ -7172,9 +7172,9 @@ openphacts/OPS-Knime@a23686c,WITHOUT_CLASSIFICATION,"//urlTemplate = urlTemplate
 openphacts/OPS-Knime@9094e0a,WITHOUT_CLASSIFICATION,"//urlTemplate =urlTemplate.replaceAll(""\\[.*?\\]"", """");"
 openphacts/OPS-Knime@2177f08,DEFECT,"//urlTemplate =urlTemplate.replaceAll(""%5B"", ""[""); //strange that this is needed....API issue?
 //urlTemplate =urlTemplate.replaceAll(""%5D"", ""]"");"
-openphacts/OPS-Knime,WITHOUT_CLASSIFICATION,"//urlTemplate = urlTemplate.substring(0, urlTemplate.length()-1);
+openphacts/OPS-Knime@e3a7a66,WITHOUT_CLASSIFICATION,"//urlTemplate = urlTemplate.substring(0, urlTemplate.length()-1);
 //System.out.println(""urlTemplate became ""+urlTemplate);"
-openphacts/OPS-Knime,IMPLEMENTATION,// TODO: Return a BufferedDataTable for each output port 
+openphacts/OPS-Knime@9094e0a,IMPLEMENTATION,// TODO: Return a BufferedDataTable for each output port 
 operon-io/operon-lang@7ac40f0,WITHOUT_CLASSIFICATION,"//:OFF:log.debug(""EXIT Operator_expr :: Stack size :: "" + this.stack.size());"
 operon-io/operon-lang@1f8f783,WITHOUT_CLASSIFICATION,// Get the FunctionRef
 operon-io/operon-lang@7ac40f0,WITHOUT_CLASSIFICATION,"//:OFF:log.debug(""  >> Operator :: set cascade true :: "" + subNodes.get(subNodes.size() - 2).getText());"
@@ -7295,7 +7295,7 @@ pagarme/pagarme-core-api-java@1344457,DOCUMENTATION,"/** GETTER
 pagarme/pagarme-core-api-java@1344457,DOCUMENTATION,"/** SETTER
      * TODO: Write general description for this method
      */"
-palisades-lakes/xfp-jmh@fc40982,WITHOUT_CLASSIFICATION,"//--------------------------------------------------------------
+palisades-lakes/xfp-jmh@8dc82b3,WITHOUT_CLASSIFICATION,"//--------------------------------------------------------------
 // IFastSum
 //--------------------------------------------------------------"
 palisades-lakes/xfp-jmh@6f4a8d5,DESIGN,// TODO: do we need to check for NaN and infinity?
@@ -7471,7 +7471,7 @@ pitbox46/graaljs-forge@bb0ec6c,WITHOUT_CLASSIFICATION,"/*
 pk-80/device-modbus@42e358a,IMPLEMENTATION,"// TODO 7: [Optional] Fill with your own implementation for handling
 // asynchronous data from the driver layer to the device service"
 plusplusjiajia/SSM@2837aac,DESIGN,//Todo: optimize
-pokebadgerswithspoon/incubator-netbeans,WITHOUT_CLASSIFICATION,// Store chnages in manifest
+pokebadgerswithspoon/incubator-netbeans@6daa72c,WITHOUT_CLASSIFICATION,// Store chnages in manifest
 pokebadgerswithspoon/incubator-netbeans@6daa72c,WITHOUT_CLASSIFICATION,// store localized info
 pokebadgerswithspoon/incubator-netbeans@6daa72c,DESIGN,// XXX else ignore for now but we could save into some default location
 pokebadgerswithspoon/incubator-netbeans@6daa72c,WITHOUT_CLASSIFICATION,"// Store project.xml changes
@@ -7551,7 +7551,7 @@ profencer/appsmith@28c181b,WITHOUT_CLASSIFICATION,"// This is a known type, it s
 profencer/appsmith@28c181b,WITHOUT_CLASSIFICATION,"// If the type is not known, then this is either not parsed yet, or has polymorphic implementations"
 profencer/appsmith@927a6a3,WITHOUT_CLASSIFICATION,// Update cache for next use
 programmerr47/breverkruntkin-test-task@ae2a601,DESIGN,//TODO figure out how to act with this stuff
-prokopk1n/cpachecker-1@bdd645e,WITHOUT_CLASSIFICATION,"/**
+prokopk1n/cpachecker-1@7e139f5,WITHOUT_CLASSIFICATION,"/**
    * Create new block.
    *
    * @param nodes Nodes from which Block should be created; if the set of nodes contains inner
@@ -7562,19 +7562,19 @@ prokopk1n/cpachecker-1@b80f52b,IMPLEMENTATION,"/* What shall we do with function
       * There are problems with them at partitioning building stage
       */"
 prokopk1n/cpachecker-1@d610ec4,WITHOUT_CLASSIFICATION,"//It means, that there is no entry in this block. Don't add it"
-qiaolw/AndroidTest@8f88a20,DESIGN,// todo change the file location/name according to your needs
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qiaolw/AndroidTest,DESIGN,// todo change the file location/name according to your needs
+qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
 qingdao81/flink@f0ac261,DEFECT,"// This is problematic as the user code class loader is not
@@ -7634,7 +7634,7 @@ rcmaniac25/little-cms-for-blackberry@1d6780b,WITHOUT_CLASSIFICATION,// Check for
 rcmaniac25/little-cms-for-blackberry@1d6780b,WITHOUT_CLASSIFICATION,// Type == 0 means segment is sampled
 rcmaniac25/little-cms-for-blackberry@1d6780b,DESIGN,// Setup the table (TODO: clean that)
 rebse/flaka@0c93adb,DOCUMENTATION,// TODO: document me
-rebse/flaka@9bb7d90,DOCUMENTATION,// TODO: document me
+rebse/flaka@0c93adb,DOCUMENTATION,// TODO: document me
 reckue/note-api@c5a560f,IMPLEMENTATION,// TODO Implement a method
 recolic/hbase-2.1.0@3d2d77e,DEFECT,// get client ip address. ipv6 is not tested yet. (code for ipv6 maybe buggy)
 reed-foster/cdl@2fd20ea,IMPLEMENTATION,"/**
@@ -7787,7 +7787,7 @@ runningt/ambari@da2ac57,WITHOUT_CLASSIFICATION,// admin has full access
 runningt/ambari@da2ac57,DESIGN,// TODO : should we log this?
 sachinlala/JavaPerfTests@4606e06,DESIGN,//TODO: this can be improved further to handle large powers
 salyh/geronimo-specs@e00d53d,IMPLEMENTATION,//X TODO implement!
-salyh/geronimo-specs@adf64ad,DESIGN,"/**
+salyh/geronimo-specs@3e81ac9,DESIGN,"/**
      * <p>A container or an application can set this manually. If not
      * we will use the {@link java.util.ServiceLoader} and use the
      * first service we find.</p>
@@ -7796,7 +7796,7 @@ salyh/geronimo-specs@adf64ad,DESIGN,"/**
      *
      * @param provider to use
      */"
-salyh/geronimo-specs@adf64ad,IMPLEMENTATION,//X TODO implement!
+salyh/geronimo-specs@3e81ac9,IMPLEMENTATION,//X TODO implement!
 sapols/JPL-CUSeniorProjects@9082122,WITHOUT_CLASSIFICATION,"/**
      * Finds neighbors of a given node
      * @return list of nodes neighboring the current node
@@ -8271,10 +8271,10 @@ shisheng-1/Lantern@38da638,WITHOUT_CLASSIFICATION,"////////////////////////////
 shisheng-1/Lantern@38da638,WITHOUT_CLASSIFICATION,"/////////////////////////////
 /// Wooden Pressure Plate ///
 /////////////////////////////"
-shisheng-1/Lantern@450c345,WITHOUT_CLASSIFICATION,"////////////////////
+shisheng-1/Lantern@ca0ec58,WITHOUT_CLASSIFICATION,"////////////////////
 ///    Jukebox   ///
 ////////////////////"
-shisheng-1/Lantern@ca0ec58,WITHOUT_CLASSIFICATION,"////////////////////
+shisheng-1/Lantern@450c345,WITHOUT_CLASSIFICATION,"////////////////////
 ///    Pumpkin   ///
 ////////////////////"
 shisheng-1/Lantern@a731de1,WITHOUT_CLASSIFICATION,"//////////////////////
@@ -8342,10 +8342,10 @@ shisheng-1/Lantern@fca16ae,WITHOUT_CLASSIFICATION,"////////////////////
 shisheng-1/Lantern@fca16ae,WITHOUT_CLASSIFICATION,"////////////////////
 ///   Barrier    ///
 ////////////////////"
-shisheng-1/Lantern@eb227c9,WITHOUT_CLASSIFICATION,"/////////////////////
+shisheng-1/Lantern@3ee8248,WITHOUT_CLASSIFICATION,"/////////////////////
 ///     Carpet    ///
 /////////////////////"
-shisheng-1/Lantern@3ee8248,WITHOUT_CLASSIFICATION,"/////////////////////
+shisheng-1/Lantern@eb227c9,WITHOUT_CLASSIFICATION,"/////////////////////
 /// Red Sandstone ///
 /////////////////////"
 shisheng-1/Lantern@fca16ae,WITHOUT_CLASSIFICATION,"///////////////////////////
@@ -8578,7 +8578,7 @@ srayner/myrobotlab@bc4c960,DESIGN,// currently only support python - maybe in fu
 srinivas491/AsterixDB@02c6105,DESIGN,//TODO refactor operations according to the protocol message
 stefb965/buck@e7efa95,DEFECT,"// TODO(plamenko): this check should not be necessary, but otherwise some tests fail due to
 // FileHashLoader throwing NoSuchFileException which doesn't get correctly propagated."
-stephaniestroka/digitalid-core,WITHOUT_CLASSIFICATION,"/**
+stephaniestroka/digitalid-core@18a2f09,WITHOUT_CLASSIFICATION,"/**
      * Asynchronous method to handle the incoming request.
      */"
 stephaniestroka/digitalid-core@c7deb5b,DESIGN,"// The reply.pack() statement maps the semantic type of the reply converter, which results in a concurrent update if the client unpacks the response with the same database. The following commit prevents this. However, it is a suboptimal fix for this problem."
@@ -8949,7 +8949,7 @@ tkmonson/dataverse@0fc2ba6,DESIGN,"//        solrQuery.addFacetField(SearchField
          * if advancedSearchField is true or false
          *
          */"
-tkmonson/dataverse@bc6fc27,IMPLEMENTATION,"/**
+tkmonson/dataverse@429099c,IMPLEMENTATION,"/**
          * @todo: hide the extra line this shows in the GUI... at least it's
          * last...
          */"
@@ -8973,7 +8973,7 @@ tkmonson/dataverse@d012f3e,DEFECT,"/**
          * @todo: odd or even makes a difference. Couldn't find value of 2014
          * when this was set to 2000
          */"
-tkmonson/dataverse@b4d7ec6,DESIGN,"/**
+tkmonson/dataverse@429099c,DESIGN,"/**
          * @todo: these are dates and should be ""range facets"" not ""field
          * facets""
          *
@@ -9059,7 +9059,7 @@ tkmonson/dataverse@b4d7ec6,DESIGN,"// try to find a friendlier name to display a
              */"
 tkmonson/dataverse@066cfb2,WITHOUT_CLASSIFICATION,// give it the non-friendly name so we remember to update the reference data script for datasets
 tkmonson/dataverse@b4d7ec6,WITHOUT_CLASSIFICATION,// stop examining available dataset fields. we found a match
-tkmonson/dataverse@b4d7ec6,DESIGN,"/**
+tkmonson/dataverse@8c1b5d2,DESIGN,"/**
              * @todo get rid of this crazy reflection, per todo above... or
              * should we... let's put into a hash the friendly names of facet
              * categories, indexed by Solr field
@@ -9073,7 +9073,7 @@ tkmonson/dataverse@de0a2a7,WITHOUT_CLASSIFICATION,// special [12 TO 34] syntax f
 tkmonson/dataverse@dab6497,WITHOUT_CLASSIFICATION,// reverse to show the newest citation year range at the top
 tkmonson/dataverse@505667f,WITHOUT_CLASSIFICATION,// null check added because these tests were failing: mvn test -Dtest=SearchIT
 tkmonson/dataverse@505667f,WITHOUT_CLASSIFICATION,// how often is this null?
-tladesignz/DNATools@732ab40,DEFECT,"/**
+tladesignz/DNATools@161c558,DEFECT,"/**
      * <p>
      * Fetch the selected rows ordered by the given order with limit.
      * <p>
@@ -9107,7 +9107,7 @@ tladesignz/DNATools@732ab40,WITHOUT_CLASSIFICATION,"// We don't want to pass the
 // exceptions should never throw in production, since these are static code issues
 // (wrongly defined classes) which should be handled once, straight away and then
 // never change again."
-tladesignz/DNATools@732ab40,DEFECT,"/**
+tladesignz/DNATools@161c558,DEFECT,"/**
      * <p>
      * Fetch the selected rows unordered and unlimited.
      * <p>
@@ -9122,7 +9122,7 @@ tladesignz/DNATools@732ab40,DEFECT,"/**
      *            Passing null will return all rows for the given URI.
      * @return a list of {@link TableRow}s, possibly empty, never null.
      */"
-tladesignz/DNATools@732ab40,DEFECT,"/**
+tladesignz/DNATools@161c558,DEFECT,"/**
      * <p>
      * Fetch all rows in the table, unordered.
      * <p>
@@ -9133,7 +9133,7 @@ tladesignz/DNATools@732ab40,DEFECT,"/**
      *
      * @return a {@link List} of {@link TableRow}s, possibly empty, never null.
      */"
-tladesignz/DNATools@732ab40,DEFECT,"/**
+tladesignz/DNATools@161c558,DEFECT,"/**
      * <p>
      * Fetch a unique row as defined in the constructor.
      * <p>
@@ -9169,7 +9169,7 @@ tommilligan/FrameworkBenchmarks@7a89f37,WITHOUT_CLASSIFICATION,"//Read the one f
 tommilligan/FrameworkBenchmarks@7a89f37,WITHOUT_CLASSIFICATION,"//Update it, but make sure to exclude the current number as Hibernate optimisations would have us ""fail""
 //the verification:"
 tompecina/itext7@6dfb206,IMPLEMENTATION,// TODO: add exception handling (at least some logger)
-tondeur-h/LangTonAnt@0393cb8,DESIGN,"/**************************************************************************
+tondeur-h/LangTonAnt@42ad186,DESIGN,"/**************************************************************************
      * Drawing the image of the world and assign on the ImageViewer in the GUI
      * not very fast, can be improved...
      **************************************************************************/"
@@ -9180,7 +9180,7 @@ tondeur-h/LangTonAnt@42ad186,WITHOUT_CLASSIFICATION,"//System.out.print(""(x,y)=
 tondeur-h/LangTonAnt@0393cb8,WITHOUT_CLASSIFICATION,//no draw a black point
 tondeur-h/LangTonAnt@0393cb8,WITHOUT_CLASSIFICATION,//show me the result on scsreen
 tondeur-h/LangTonAnt@2f1f2e7,WITHOUT_CLASSIFICATION,//refresh counters
-tonywasher/bc-java@ccf93ca,DESIGN,// TDOD: make this meaningful...
+tonywasher/bc-java@5fcd94a,DESIGN,// TDOD: make this meaningful...
 torstenwerner/metro2.0@0a75b78,WITHOUT_CLASSIFICATION,// invoke the Trust Plugin if necessary
 torstenwerner/metro2.0@0a75b78,DESIGN,//TODO: replace this code with calls to the Module now
 torstenwerner/metro2.0@0a75b78,WITHOUT_CLASSIFICATION,//legacy pipes in GF
@@ -9325,8 +9325,8 @@ unisoc-android/android_packages_apps_Dialer@ccca315,DESIGN,"/**
    * Returns the [position]th call found in the call map with the specified state. TODO: Improve
    * this logic to sort by call time.
    */"
-user9209/bouncy-gpg,WITHOUT_CLASSIFICATION,// Hash Calculator
-user9209/bouncy-gpg,WITHOUT_CLASSIFICATION,// Encryptor for encrypting secret keys
+user9209/bouncy-gpg@3b7abf9,WITHOUT_CLASSIFICATION,// Hash Calculator
+user9209/bouncy-gpg@3b7abf9,WITHOUT_CLASSIFICATION,// Encryptor for encrypting secret keys
 user9209/bouncy-gpg@9d91017,WITHOUT_CLASSIFICATION,// AES-256 encrypted
 user9209/bouncy-gpg@9d91017,WITHOUT_CLASSIFICATION,// unencrypted key pair
 user9209/bouncy-gpg@3b7abf9,WITHOUT_CLASSIFICATION,// First key is the Master Key
@@ -9475,14 +9475,14 @@ vlc/r5@06bc4d3,DESIGN,"// Due to the application of distance decay functions, we
 // study area). But we'd need to control the number of decimal places serialized into the JSON."
 vlc/r5@be0b567,WITHOUT_CLASSIFICATION,"// We could do this when setting up the Spark handler, supplying writeValue as the response transformer
 // But then you also have to handle the case where you are returning raw bytes."
-vulko/TransactionsTestTask,WITHOUT_CLASSIFICATION,"/**
+vulko/TransactionsTestTask@5331551,WITHOUT_CLASSIFICATION,"/**
      * Handles a request to completely reset the Loader.
      */"
 vulko/TransactionsTestTask@5331551,WITHOUT_CLASSIFICATION,// Ensure the loader is stopped
 vulko/TransactionsTestTask@5331551,IMPLEMENTATION,// TODO: manage mem if needed
-wangchong6808/dremio-oss@82bcc76,IMPLEMENTATION,"// Create filesystem for the given user and given path
+wangchong6808/dremio-oss@8e85901,IMPLEMENTATION,"// Create filesystem for the given user and given path
 // TODO: DX-16001 - make async configurable for Hive."
-wangchong6808/dremio-oss@82bcc76,DESIGN,//DX-7850 : remove once solution for maprfs is found
+wangchong6808/dremio-oss@8e85901,DESIGN,//DX-7850 : remove once solution for maprfs is found
 wangfanming/hadoop@b4aa24d,WITHOUT_CLASSIFICATION,"/**
    * If the currentBufferIndex is less than the buffer size - 1,
    * it means, the next buffer in the list has been freed up for
@@ -9628,7 +9628,7 @@ wufang742987117/vaccinate@4535e81,IMPLEMENTATION,"/**
 wufang742987117/vaccinate,WITHOUT_CLASSIFICATION,// 初始化记录数据
 wufang742987117/vaccinate,WITHOUT_CLASSIFICATION,"// 判断签字是否存在
 // 打印签字信息"
-wufang742987117/vaccinate@4535e81,WITHOUT_CLASSIFICATION,// base64 转换签字
+wufang742987117/vaccinate,WITHOUT_CLASSIFICATION,// base64 转换签字
 wufang742987117/vaccinate,WITHOUT_CLASSIFICATION,// 查询该记录签字是否存在
 wufang742987117/vaccinate,WITHOUT_CLASSIFICATION,// 新增签字
 wufang742987117/vaccinate,WITHOUT_CLASSIFICATION,// 修改签字状态
@@ -9889,8 +9889,8 @@ xmf-xmodeler/MosaicFX@d3ff762,WITHOUT_CLASSIFICATION,"// System.err.println(star
 xmf-xmodeler/MosaicFX@d3ff762,WITHOUT_CLASSIFICATION,"// System.err.println(""syntaxBusy, request queued"");"
 xmf-xmodeler/MosaicFX@d3ff762,DESIGN,"// Todo: if syntax is not busy but a request got stuck
 // System.err.println(""request not queued"");"
-xuanliao/MVVM_Samples@77a4743,IMPLEMENTATION,//TODO: Replace this with your own logic
-xuanliao/MVVM_Samples@77a4743,IMPLEMENTATION,//TODO: Replace this with your own logic
+xuanliao/MVVM_Samples@eae0068,IMPLEMENTATION,//TODO: Replace this with your own logic
+xuanliao/MVVM_Samples@8126d21,IMPLEMENTATION,//TODO: Replace this with your own logic
 xushjie1987/common-utils@be4106b,IMPLEMENTATION,"/*
    * TODO(cpovirk): make SleepingStopwatch the last parameter throughout the class so that the
    * overloads follow the usual convention: Foo(int), Foo(int, SleepingStopwatch)
@@ -10011,7 +10011,7 @@ yanlin-Lynn/drill@fc3d921,DESIGN,"// TODO: Replace with table metadata expiratio
 //       when https://github.com/apache/incubator-iceberg/issues/181 is resolved
 //       table.expireTableMetadata().expireOlderThan(current).commit();"
 yanncoupin/omim@81134ae,DESIGN,"// TODO consider implementing other model of listeners connection, without activities being bound"
-yaohuizhou/attpg@c647455,DESIGN,"/**
+yaohuizhou/attpg@20b9f66,DESIGN,"/**
      * Convert a color name to a color value.
      * @param colorName a string repr of the color.
      * @return the color value.

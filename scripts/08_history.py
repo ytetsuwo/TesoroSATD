@@ -24,7 +24,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from difflib import SequenceMatcher
 from pathlib import Path
 
-from common import OUT, norm, repo_dir, run
+import astjava
+from common import OUT, core, norm, repo_dir, run
 
 HERE = Path(__file__).resolve().parent
 spec = importlib.util.spec_from_file_location("loc03", HERE / "03_locate.py")
@@ -92,15 +93,40 @@ def search(repo: str, func: dict, comments: list) -> dict:
                 "ratio": round(best[0], 3) if best else None}
 
     ratio, sha, path, start, lines = best
+    # Same span rule as HEAD matches: the dataset snippet may be a fragment of
+    # a longer method, so the enclosing declaration is the real function.
+    tree = astjava.parse("\n".join(lines).encode())
+    method = astjava.locate_method(tree, start)
+    if method and method["start"] < start:
+        start = method["start"]
+    end = start + len(ref) - 1
+    if method:
+        end = max(end, method["end"])
+
     res = {**base, "status": "ok_history", "at_head": False, "path": path,
-           "start": start, "end": start + len(ref) - 1, "ratio": round(ratio, 3),
+           "start": start, "end": end, "ratio": round(ratio, 3),
            "commit_sha": sha,
            "confidence": "high" if ratio >= 0.9 else "medium" if ratio >= 0.7 else "low"}
+    res.update(comment_map(d, sha, path, start, end, lines, comments, tree))
+    res["path_at_commit"] = path
+    return res
 
+
+def comment_map(d, sha, path, start, end, lines, comments, tree=None):
+    """Map dataset comments onto the file as seen at `sha` (AST-aware)."""
+    if tree is None:
+        tree = astjava.parse("\n".join(lines).encode())
+    method = astjava.locate_method(tree, start)
+    hi = max(end, method["end"] if method else 0)
+    lo = L.doc_start(lines, start) - 1
+    mask = astjava.comment_lines(tree)
     out_comments = []
+    used = set()
     for r in comments:
         cl = [norm(x) for x in (r.get("comment") or "").splitlines() if norm(x)]
-        lines_abs, kind = L.map_comment(cl, lines, start, start + len(ref) - 1)
+        lines_abs, kind = L.map_comment(cl, lines, start, end, used=used,
+                                        lo=lo, hi=hi, is_comment=mask)
+        used.update(lines_abs)
         if not lines_abs:
             out_comments.append({"comment_id": r.get("comment_id"),
                                  "comment": r.get("comment"),
@@ -108,7 +134,8 @@ def search(repo: str, func: dict, comments: list) -> dict:
                                  "lines": []})
             continue
         blames = [blame_at(d, sha, path, ln, ln) for ln in lines_abs[:12]]
-        first = blames[0] if blames else {}
+        first = next((b for b, ln in zip(blames, lines_abs) if core(lines[ln - 1])),
+                     blames[0] if blames else {})
         out_comments.append({
             "comment_id": r.get("comment_id"),
             "comment": r.get("comment"),
@@ -122,13 +149,11 @@ def search(repo: str, func: dict, comments: list) -> dict:
             "path_at": first.get("path"),
             "shas": [b.get("sha") for b in blames],
         })
-    res["comments"] = out_comments
     mapped = [c for c in out_comments if c["lines"]]
-    res["n_mapped"] = len(mapped)
+    out = {"comments": out_comments, "n_mapped": len(mapped)}
     if mapped and mapped[0].get("commit"):
-        res["commit"] = mapped[0]["commit"]
-    res["path_at_commit"] = path
-    return res
+        out["commit"] = mapped[0]["commit"]
+    return out
 
 
 def collect(d: Path, anchor_group, ref_ne, seen):
@@ -198,6 +223,33 @@ def main():
         if line.strip():
             r = json.loads(line)
             rows[r["id"]] = r
+
+    if "--remap" in sys.argv:
+        # re-map comments of existing ok_history rows against their snapshot;
+        # no history search, so this takes seconds instead of minutes
+        n = 0
+        for i, r in rows.items():
+            if r.get("status") != "ok_history":
+                continue
+            d = repo_dir(r["repo"])
+            p = run(["git", "show", f"{r['commit_sha']}:{r['path']}"], d)
+            if p.returncode != 0:
+                continue
+            lines = p.stdout.splitlines()
+            tree = astjava.parse("\n".join(lines).encode())
+            m = astjava.locate_method(tree, r["start"])
+            start = m["start"] if m and m["start"] < r["start"] else r["start"]
+            end = max(r.get("end") or start, m["end"] if m else 0)
+            r.update({"start": start, "end": end})
+            r.update(comment_map(d, r["commit_sha"], r["path"], start, end,
+                                 lines, comments.get(i, []), tree))
+            n += 1
+        tmp = path.with_suffix(".jsonl.tmp")
+        tmp.write_text("".join(json.dumps(rows[k], ensure_ascii=False) + "\n"
+                               for k in sorted(rows)))
+        tmp.replace(path)
+        print(f"re-mapped {n} ok_history functions")
+        return
 
     want = [i for i, r in rows.items() if r["status"] in ("not_at_head", "weak_match")]
     if len(sys.argv) > 1:

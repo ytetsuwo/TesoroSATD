@@ -19,6 +19,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from difflib import SequenceMatcher
 from pathlib import Path
 
+import astjava
 from common import (OUT, WORK, alnum, body_end, core, doc_start, head_of, load_tesoro, mclass, norm,
                     repo_dir, run, strip_marker)
 
@@ -359,6 +360,25 @@ def locate(repo: str, func: dict, comments: list) -> dict:
            "head": head_of(d),
            "confidence": "high" if ratio >= 0.9 else "medium" if ratio >= 0.7 else "low"}
 
+    # --- AST: exact method span and comment lines
+    # The aligned start can land inside a method body when the dataset function
+    # is a fragment of a longer method; the enclosing declaration is the real
+    # function, so widen the span to it. Parsing also tells which lines carry a
+    # comment, so text that coincides with a code line is not accepted as one.
+    tree = astjava.parse((d / path).read_bytes())
+    method = astjava.locate_method(tree, start)
+    if method and method["start"] < start:
+        res["ast_span_shift"] = start - method["start"]
+        start = method["start"]
+        res["start"] = start
+        res["end"] = max(res["end"], method["end"])
+    if method:
+        res["ast_method"] = method["name"]
+        res["ast_start"] = method["start"]
+        res["ast_end"] = method["end"]
+        res["ast_name_ok"] = method["name"] == name if name else None
+    mask = astjava.comment_lines(tree)
+
     # --- map each comment onto file lines
     out_comments, used = [], set()
     for r in comments:
@@ -366,9 +386,11 @@ def locate(repo: str, func: dict, comments: list) -> dict:
         # A comment belongs to this function only when it sits in its body or in
         # the javadoc block directly above it. Searching further out used to
         # attach comments of a neighbouring method to this one.
-        b_end = max(body_end(lines, start) or 0, start + len(ref) - 1)
+        b_end = max(method["end"] if method else 0, body_end(lines, start) or 0,
+                    start + len(ref) - 1)
         lines_abs, kind = map_comment(cl, lines, start, start + len(ref) - 1, used=used,
-                                      lo=doc_start(lines, start) - 1, hi=b_end)
+                                      lo=doc_start(lines, start) - 1, hi=b_end,
+                                      is_comment=mask)
         used.update(lines_abs)
         if not lines_abs:
             out_comments.append({"comment_id": r.get("comment_id"),
@@ -377,7 +399,10 @@ def locate(repo: str, func: dict, comments: list) -> dict:
                                  "lines": []})
             continue
         blames = [blame(d, path, ln, ln) for ln in lines_abs[:12]]
-        first = blames[0] if blames else {}
+        # The opening `/**` of a block can predate its text, so blame the first
+        # line that carries a comment body rather than the marker line.
+        first = next((b for b, ln in zip(blames, lines_abs) if core(lines[ln - 1])),
+                     blames[0] if blames else {})
         out_comments.append({
             "comment_id": r.get("comment_id"),
             "comment": r.get("comment"),
@@ -411,7 +436,8 @@ def words(text: str) -> list[str]:
     return WORD.findall(text.lower())
 
 
-def map_comment(cl, lines, start, end, span=150, used=None, lo=None, hi=None):
+def map_comment(cl, lines, start, end, span=150, used=None, lo=None, hi=None,
+                is_comment=None):
     """Map a dataset comment onto file lines.
 
     Returns (lines_abs, kind) where kind is "exact", "structural", "fuzzy" or None.
@@ -423,6 +449,14 @@ def map_comment(cl, lines, start, end, span=150, used=None, lo=None, hi=None):
     """
     if not cl:
         return [], None
+
+    def comment_block(p: int, k: int) -> bool:
+        """True when lines p..p+k-1 are all comment lines (blanks ignored)."""
+        if is_comment is None:
+            return True
+        # the mask is 1-based; p is a 0-based line index
+        return all(is_comment[p + i + 1] for i in range(k) if lines[p + i].strip())
+
     if lo is None:
         lo = max(0, start - 1 - span)
     if hi is None:
@@ -431,6 +465,8 @@ def map_comment(cl, lines, start, end, span=150, used=None, lo=None, hi=None):
     n = len(cl)
     exact, struct = [], []
     for p in range(lo, hi - n + 1):
+        if not comment_block(p, n):
+            continue
         block = lines[p:p + n]
         cores_eq = sum(1 for a, b in zip(cl, block) if core(a) and core(a) == core(b))
         if cores_eq == n and all(core(a) for a in cl):
@@ -454,7 +490,7 @@ def map_comment(cl, lines, start, end, span=150, used=None, lo=None, hi=None):
     best = None
     p = lo
     while p < hi:
-        if p in used or not cbody(lines[p]):
+        if p in used or not cbody(lines[p]) or (is_comment is not None and not is_comment[p + 1]):
             p += 1
             continue
         q, parts, first, last = p, [], None, None

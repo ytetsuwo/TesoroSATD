@@ -16,9 +16,9 @@
 | `out/summary.md` | – | カバレッジと制約の自動レポート |
 | `out/repo_manifest.csv` | 960 | 各 clone の入手経路 (`kind` / 取得元 URL / SWH swhid / HEAD) |
 
-カバレッジ: **関数 1227/1255 (97.8%)、コメント 4770/4981 (95.8%)** に commit を付与。
+カバレッジ: **関数 1227/1255 (97.8%)、コメント 4777/4981 (95.9%)** に commit を付与。
 うち 50 関数は HEAD ではなく履歴から復元 (削除リポジトリは Software Heritage・
-存命ミラー・上流プロジェクトから復元)。947 プロジェクト、commit 日付は
+存命ミラー・上流プロジェクトから復元)。940 プロジェクト、commit 日付は
 2000-12-06 〜 2026-08-31。
 
 各 clone をどこからどう取得したかは **[docs/repo_acquisition.md](docs/repo_acquisition.md)**
@@ -47,10 +47,13 @@ commit 時点のもの。
 
 ## パイプライン
 
+Python 3.9+ と `tree-sitter` / `tree-sitter-java` が必要。
+
 ```bash
+python3 -m pip install -r requirements.txt   # tree-sitter, tree-sitter-java
 python3 scripts/01_repo_meta.py     # GitHub API: 974 リポジトリの生死・既定ブランチ
 python3 scripts/02_clone_repos.py   # 存命 875 件を全履歴で clone (blob なし + *.java checkout)
-python3 scripts/03_locate.py        # 関数を行単位でアラインメントし、コメント行を blame
+python3 scripts/03_locate.py        # 関数をアラインメント (AST で範囲確定) し、コメント行を blame
 python3 scripts/04_export.py        # CSV とレポート
 python3 scripts/05_verify.py --full # 全行のテキスト検証
 python3 scripts/08_history.py       # HEAD に無い関数を履歴から探索
@@ -58,6 +61,9 @@ python3 scripts/09_swh.py           # 削除リポジトリを Software Heritage
 python3 scripts/10_swh_batch.py     # 大型リポジトリの一括調理・ポーリング
 python3 scripts/11_backfill_all.py  # 全クローンの blob を取得 (オフライン化)
 python3 scripts/12_crossrepo.py     # 削除リポジトリの関数を他の clone から探索
+python3 scripts/13_manifest.py      # 各 clone の入手経路を out/repo_manifest.csv に
+python3 scripts/14_check_span.py    # 全コメントが関数内/直上 javadoc か検算 (AST)
+python3 scripts/15_ast_analysis.py  # AST とデータセット関数の突き合わせ (work/ast_analysis.jsonl)
 ```
 
 ### 1. クロール (01, 02)
@@ -85,15 +91,18 @@ git sparse-checkout set --no-cone '*.java' && git checkout HEAD
    (行数変化に強い)。`max(行, トークン)` を採り、トークン一致のときは宣言名が窓の先頭付近に
    あること、同じ本文が複数ファイルに無いことを確認したうえで
    `high ≥0.9 / medium ≥0.7 / low ≥0.45` に分類。
-3. コメントは関数直前 ±150 行から
+3. 関数の範囲は Java の AST (tree-sitter) から取る。アラインメントの `start` が
+   メソッド本体の途中に落ちた場合は、それを囲む宣言まで広げる (`ast_span_shift`)。
+   コメントは**直上の javadoc 〜 関数本体**から
    **exact** (本文一致) → **structural** (行末コメント・部分一致) →
-   **fuzzy** (本文が改変。単語列の一致率 ≥0.85) の順に照合。
+   **fuzzy** (本文が改変。単語列の一致率 ≥0.85) の順に照合し、
+   **コメントノードの行以外は受け付けない**。
 4. 該当行を `git blame --line-porcelain` して commit / 作者 / 日時 / その
    コミット時点のパスを取得し、`git log --follow` でリネーム前のパスも解決。
 
 ### 3. 履歴探索 (08)
 
-HEAD に同一関数が無い場合、`git log --all -S<anchor> -p -- '*.java'` で追加・削除
+HEAD に同一関数が無い場合、`git log --all -S<anchor> --name-only -- '*.java'` で追加・削除
 されたコミットとパスを集め、各候補を `git show <sha>:<path>` でアラインメントし
 直して最良の commit を採用する (`ok_history`)。
 
@@ -131,12 +140,13 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
 
 ### 5. 検証 (05)
 
-- `--full`: commit が付いた全 4750 コメントで、ファイル上のコメント本文が一致する
-  ことを確認 → **4770/4770**。
+- `--full`: commit が付いた全 4777 コメントで、ファイル上のコメント本文が一致する
+  ことを確認 → **4777/4777**。
 - ランダム 120 件で「本文一致・blame 一致・その commit に本文が存在」の 3 点を
   確認 → **120/120**。
 - `14_check_span.py` で全コメントが**関数本体（宣言行〜閉じ括弧）または直上の
-  javadoc**に入っているかを検算 → 本体 950 / 直上 390 / 本体外 25。
+  javadoc**に入っているかを AST で検算 → 本体 4218 / 宣言部 16 / 直上 536 / 本体外 7
+  (1 関数のみ)。マップされた行が実際にコメントノードかも同時に確認している。
 
 ## 既知の制約
 
@@ -155,6 +165,11 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
   トークン照合で同一メソッドと確認できたため復元済み。
   `nikosnikolaidis/commons-rdf` は上流の選定を誤っており (rdf4j ではなく
   `apache/commons-rdf` が正しい)、差し替えて復元した。
+- **本体外と判定されたコメントは 7 件 / 1 関数のみ** (`Workinq/AsyncCollectors`)。
+  この関数は照合自体が誤り (一致率 0.47、クラス宣言に一致) で、コメントは
+  別メソッド `execute` の中にある。関数の同定をやり直さない限り直らない。
+- 中国語・キリル文字だけのコメントは `core()` が英数字に落とすため照合できない
+  (未対応コメント 204 件のうち 11 件)。バイト単位の比較を足せば拾える。
 - `projectname` は `owner/name`。Maldonado の `project-version` に当たる版情報は
   commit で表し、必要なら `tesoro_msr16_versioned.csv` を使う。
 - Maldonado 形式に合わせて `NONSATD` → `WITHOUT_CLASSIFICATION` に改名している
@@ -165,7 +180,7 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
 ```
 tesoro/     Tesoro 本家のデータ (sparse clone, data/ 184MB)
 repos/      clone 960 件 (875 存命 + SWH・ミラー・上流復元 + symlink 4 件, owner__name, 全履歴 + *.java)
-scripts/    パイプライン (01〜14)
+scripts/    パイプライン (01〜15)
 work/       中間状態・ログ (repo_meta.json, clone_state.jsonl, swh_state.jsonl, locate.log)
 out/        成果物 (CSV / JSONL / summary.md / repo_manifest.csv)
 docs/       入手経路の記録 (repo_acquisition.md)
