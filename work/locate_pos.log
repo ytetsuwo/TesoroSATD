@@ -1,0 +1,54 @@
+to locate: 1196 / 1255
+[50/1196] ok             0.968 Hsia-Esther/CityOfAaronGroup1 CityOfAaron/src/view/GameMenuView.java
+[100/1196] ok             0.803 CreedVI/Raylib-J src/main/com/raylib/java/textures/rTextures.java
+[116/1196] repo_missing    JC-Bodoque/geometric-transformer 
+[141/1196] repo_missing    IonBazan/openapi-generator 
+[150/1196] ok             1.0 Interactions-HSG/wot-search src/main/java/com/hsg/interactions/hypermas/crawler/core/CrawlerVerticle.java
+[200/1196] ok             1.0 Keneral/apackages apps/Email/provider_src/com/android/email/service/ImapService.java
+[250/1196] ok             1.0 SnoBoarder/Sudoku-Solver SudokuSolver/app/src/main/java/com/btran/bu/sudokusolver/widget/Cell.java
+[300/1196] ok             1.0 alexey-lukyanenko/jdrive src/game/xui/GfxInit.java
+[350/1196] ok             1.0 chenjunbiao001/tez tez-dag/src/main/java/org/apache/tez/dag/app/web/AMWebController.java
+[400/1196] ok             1.0 benbenxiaoluchi/com.accenture.cordova.plugin.sso src/android/SSOPlugin.java
+[433/1196] repo_missing    bcgov/jag-efax 
+[435/1196] repo_missing    bshp/midpoint 
+[450/1196] ok             1.0 benrayfield/occamsworkspace selfContained/data/code/mutable/util/ui/Ask.java
+[500/1196] ok             0.941 css4j/echosvg echosvg-swing/src/main/java/io/sf/carte/echosvg/swing/gvt/JGVTComponent.java
+[508/1196] repo_missing    fieldenms/ 
+[529/1196] repo_missing    fernandogomesfg/Algoritmos-em-Java 
+[530/1196] repo_missing    fernandogomesfg/Algoritmos-em-Java 
+[550/1196] ok             1.0 fernandoj92/mvca-parkinson voltric-ltm-analysis/src/main/java/parkinson/automatic/LCM_Learn.java
+[600/1196] ok             1.0 joeriddles/doclitify openjdk/classes/java/util/JapaneseImperialCalendar.java
+[606/1196] repo_missing    janjaali/azure-sdk-for-java 
+[630/1196] repo_missing    jd3538/Marist-Sakai-11.x 
+[650/1196] ok             1.0 herbertkip/Web-App Lesson 5 Mobile/Firebase/app/src/main/java/com/vijaya/firebase/LoginActivity.java
+[656/1196] weak_match     0.308 javacreed/super-simple-stocks super-simple-stock/src/main/java/com/jpmorgan/stocks/simple/services/impl/SimpleStockServiceImpl.java
+[700/1196] ok             1.0 glasser/amock src/java/edu/mit/csail/pag/amock/processor/Processor.java
+[727/1196] repo_missing    kjthegod/chromium 
+[737/1196] repo_missing    kimjand/cxf 
+[750/1196] ok             1.0 ljzzju/incubator-flink flink-staging/flink-tez/src/main/java/org/apache/flink/tez/dag/TezDAGGenerator.java
+[773/1196] weak_match     0.146 krisiney/SOKOBANFX-DMS-2020 games/src/games/sokoban/sokoban3/SokobanFX.java
+[774/1196] repo_missing    ming1991/mingop 
+[775/1196] repo_missing    ming1991/mingop 
+[800/1196] ok             1.0 leinardi/Dagger2MVP app/src/test/java/com/leinardi/dagger2mvp/ui/HitsListTest.java
+[850/1196] ok             1.0 raghuvissu/GST gstplatform/src/main/java/com/gst/organisation/teller/domain/CashierTransaction.java
+[900/1196] ok             1.0 mobabel/MoMeGo source/src/de/enough/polish/util/TextUtil.java
+[932/1196] weak_match     0.0 leusonmario/2022PhDThesis 
+[950/1196] ok             1.0 riscv-android-src/platform-test-mlts-benchmark src/com/android/nn/benchmark/core/NNTestBase.java
+[1000/1196] ok             1.0 stratosphere/metadata-store mdms/mdms-java/src/main/java/de/hpi/isg/mdms/java/ml/GradientDescent.java
+[1028/1196] weak_match     0.444 octo-online/reactive-aud core/java/android/os/Parcel.java
+[1042/1196] repo_missing    sarang-apps/darshan_browser 
+[1050/1196] ok             1.0 sharad-oss/knox gateway-provider-security-aws/src/main/java/org/apache/knox/gateway/aws/utils/SamlUtils.java
+[1055/1196] repo_missing    zealoussnow/chromium 
+[1056/1196] repo_missing    zealoussnow/chromium 
+[1068/1196] repo_missing    zealoussnow/chromium 
+[1075/1196] repo_missing    zem13579/hive 
+[1076/1196] repo_missing    zem13579/hive 
+[1081/1196] repo_missing    zem13579/hive 
+[1100/1196] ok             1.0 tadeegan/eiger-application-aware src/java/org/apache/cassandra/client/RingCache.java
+[1145/1196] repo_missing    zealoussnow/chromium 
+[1150/1196] ok             1.0 tabneib/petimo app/src/main/java/de/tud/nhd/petimo/model/db/MonitorCategory.java
+[1157/1196] repo_missing    zealoussnow/chromium 
+
+status: Counter({'ok': 1170, 'ok_history': 59, 'repo_missing': 22, 'weak_match': 4})
+confidence: Counter({'high': 1071, 'medium': 91, 'low': 8})
+elapsed 5.1 min

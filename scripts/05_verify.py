@@ -46,6 +46,10 @@ def check_text(r):
         return "line out of range"
     gc = [core(x) for x in got if core(x)]
     wc = [core(x) for x in want if core(x)]
+    if r["match"] == "position":
+        # marker-only comment (`//}`, `// ----`): nothing to compare, but the
+        # line must still be a comment without text
+        return None if got and not any(core(x) for x in got) else "position: text present"
     if r["match"] == "exact":
         # blank lines inside a block are layout, not content
         return (None if [core(x) for x in got if core(x)]
@@ -83,7 +87,7 @@ def check_commit(r):
     p = git(d, "show", f"{sha}:{path}")
     if p.returncode != 0:
         return f"show failed: {p.stderr.strip()[:120]}"
-    if r["match"] == "fuzzy":
+    if r["match"] in ("fuzzy", "position"):
         # blame records the commit that wrote the current wording, so the old
         # text need not be there; require only that the file existed.
         return None if p.stdout.strip() else "empty file at commit"

@@ -20,9 +20,8 @@ from difflib import SequenceMatcher
 from pathlib import Path
 
 import astjava
-from common import (OUT, WORK, alnum, body_end, core, doc_start, head_of, load_tesoro, mclass, norm,
-                    similarity,
-                    repo_dir, run, strip_marker)
+from common import (OUT, WORK, WS, alnum, body_end, core, doc_start, head_of, load_tesoro,
+                    mclass, norm, similarity, repo_dir, run, strip_marker)
 
 MIN_ANCHOR_LEN = 25
 MAX_FILE_CANDIDATES = 40
@@ -386,18 +385,49 @@ def locate(repo: str, func: dict, comments: list) -> dict:
     mask = astjava.comment_lines(tree)
 
     # --- map each comment onto file lines
-    out_comments, used = [], set()
+    b_end = max(method["end"] if method else 0, body_end(lines, start) or 0,
+                start + len(ref) - 1)
+    lo = doc_start(lines, start) - 1
+    used = set()
+    plans = []
     for r in comments:
         cl = [norm(x) for x in (r.get("comment") or "").splitlines() if norm(x)]
         # A comment belongs to this function only when it sits in its body or in
         # the javadoc block directly above it. Searching further out used to
         # attach comments of a neighbouring method to this one.
-        b_end = max(method["end"] if method else 0, body_end(lines, start) or 0,
-                    start + len(ref) - 1)
         lines_abs, kind = map_comment(cl, lines, start, start + len(ref) - 1, used=used,
-                                      lo=doc_start(lines, start) - 1, hi=b_end,
-                                      is_comment=mask)
+                                      lo=lo, hi=b_end, is_comment=mask)
         used.update(lines_abs)
+        plans.append([r, lines_abs, kind])
+
+    # --- comments made only of punctuation (`//}`, `// -----`, `//`)
+    # They carry no word to compare, but a commented-out brace or a separator
+    # still marks a real line, so they are matched by their marker text in the
+    # gap between the surrounding mapped comments.
+    def sym(s: str) -> str:
+        return WS.sub("", strip_marker(s))
+
+    for i, plan in enumerate(plans):
+        r = plan[0]
+        body = sym(r.get("comment") or "")
+        if plan[1] or any(core(x) for x in (r.get("comment") or "").splitlines()):
+            continue
+        before = [ln for _, la, _ in plans[:i] for ln in la]
+        prev_line = max(before) if before else lo + 1
+        # Comments are listed in source order but a duplicated one can map to an
+        # earlier line, so only lines after the previous anchor bound the gap.
+        after = [ln for _, la, _ in plans[i + 1:] for ln in la if ln > prev_line]
+        next_line = min(after) if after else b_end + 1
+        cand = [p for p in range(prev_line, max(prev_line, next_line - 1))
+                if p + 1 < len(mask) and mask[p + 1] and p + 1 not in used
+                and sym(lines[p]) == body]
+        if cand:
+            plans[i][1] = [cand[0] + 1]
+            plans[i][2] = "position"
+            used.add(cand[0] + 1)
+
+    out_comments = []
+    for r, lines_abs, kind in plans:
         if not lines_abs:
             out_comments.append({"comment_id": r.get("comment_id"),
                                  "comment": r.get("comment"),
