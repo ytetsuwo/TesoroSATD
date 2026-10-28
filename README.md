@@ -15,9 +15,10 @@
 | `out/functions_located.jsonl` | 1255 | 関数単位の生データ (アラインメント結果と全コメント) |
 | `out/summary.md` | – | カバレッジと制約の自動レポート |
 
-カバレッジ: **関数 1197/1255 (95.4%)、コメント 4692/4981 (94.2%)** に commit を付与。
-うち 36 関数は HEAD ではなく履歴から復元 (削除リポジトリ 62 件は Software Heritage と
-存命ミラーから復元)。932 プロジェクト、commit 日付は 2000-12-06 〜 2026-08-31。
+カバレッジ: **関数 1224/1255 (97.5%)、コメント 4750/4981 (95.4%)** に commit を付与。
+うち 50 関数は HEAD ではなく履歴から復元 (削除リポジトリは Software Heritage・
+存命ミラー・上流プロジェクトから復元)。945 プロジェクト、commit 日付は
+2000-12-06 〜 2026-08-31。
 
 ## 使い方
 
@@ -66,7 +67,7 @@ git sparse-checkout set --no-cone '*.java' && git checkout HEAD
 ```
 
 で**全履歴を持つが作業ツリーは Java だけ**のクローンを作る。
-その後 `11_backfill_all.py` で全 blob を取得済みなので (`repos/` 940 件, 125GB)、
+その後 `11_backfill_all.py` で全 blob を取得済みなので (`repos/` 960 件, 141GB)、
 `git blame` / `git log -S` はネットワークなしで動く。
 
 > 注: 匿名の部分クローンは数百リクエストで HTTP 400 になる。`git_env()` が
@@ -98,7 +99,7 @@ GitHub から消えた 99 件は Software Heritage の Vault で復元する。
 
 匿名 API は **120 リクエスト/時**なので、`10_swh_batch.py` は全件を一括で調理依頼
 してから 15 分おきにまとめて確認する (1 件ずつ待つと巨大リポジトリで詰まる)。
-最終状態: 復元 62 / 未収録 25 / 調理失敗 5 / 調理中 6 / 不正名 1。
+最終状態: 復元 62 / 未収録 25 / 調理失敗 11 / 不正名 1。
 Vault の調理に失敗した 3 件 (`jcdubois/cpachecker`, `focadiz/metasfresh`,
 `coheigea/tcommon-studio-se`) は、同一プロジェクトの存命ミラーから clone して補った
 (commit SHA は共通なので blame はそのまま使える)。`chromium` の fork 2 件は
@@ -107,23 +108,39 @@ Vault の調理に失敗した 3 件 (`jcdubois/cpachecker`, `focadiz/metasfresh
 symlink で、`repos/coheigea__tcommon-studio-se` は
 `gaozone-talend/tcommon-studio-se` の clone。
 
+SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検索で特徴行を探し、
+改名・組織移転先や上流プロジェクトを見つけて復元した (25 件中 13 件・27 関数)。
+
+- `zipated/src` (10) と `LynzhX/android_frameworks_base-1` (2) は AOSP
+  `platform_frameworks_base` の全履歴から `WifiStateMachine.java` 等を特定。
+- `sigurasg/ghidra` (4) は `NationalSecurityAgency/ghidra` の履歴から
+  `CppCompositeTypeTest.java` を特定。
+- 改名・移転: `mkpaz/corf` ← telek (未復元)、`NerdNu/DragonFight`、
+  `camunda-community-hub/camunda-dmn-xlsx`、`deanhiller/webpieces`、
+  `WebCuratorTool/webcurator`、`specs-feup/clava`、`blockset-corp/walletkit`。
+- 上流プロジェクト: `aws/aws-sdk-java-v2`、`aws/aws-iot-device-sdk-java-v2`、
+  `apache/stanbol`、`homacs/org.cakelab.blender.dna`。
+
 ### 5. 検証 (05)
 
-- `--full`: commit が付いた全 4692 コメントで、ファイル上のコメント本文が一致する
-  ことを確認 → **4692/4692**。
+- `--full`: commit が付いた全 4750 コメントで、ファイル上のコメント本文が一致する
+  ことを確認 → **4750/4750**。
 - ランダム 120 件で「本文一致・blame 一致・その commit に本文が存在」の 3 点を
   確認 → **120/120**。
 
 ## 既知の制約
 
-- **repo_missing 64 関数 / 40 リポジトリ**: GitHub 上で削除済みで、SWH でも復元
-  できないもの。内訳は SWH に未保存 25 リポジトリ (41 関数)、調理失敗 10 件
-  (16 関数, 主に chromium の巨大フォーク)、調理中 4 件 (6 関数)、不正な
-  リポジトリ名 1 件 (1 関数)。復元済みクローン全体を横断検索して上流・フォーク
-  から拾う試み (`12_crossrepo.py`, 423 パターン) も行ったが一致は無かった。
-- **weak_match 2 関数**: `leusonmario/2022PhDThesis` の randoop 生成テスト
-  (リポジトリに存在しない生成物) と `Clay-Ferguson/Quantizr` (該当メソッドが
-  どのブランチにも無い)。
+- **repo_missing 23 関数 / 15 リポジトリ**: GitHub 上で削除済みで、SWH と上流の
+  どちらからも復元できなかったもの。内訳は SWH に未収録かつ上流も辿れない 6 リポジトリ
+  (8 関数)、SWH の調理失敗 8 リポジトリ (14 関数, chromium の fork 2 件 6 関数、
+  hive 3、cxf / midpoint / azure-sdk-for-java / openapi-generator / Marist-Sakai 各 1)、
+  不正なリポジトリ名 1 件 (1 関数)。
+- **weak_match 8 関数**: `leusonmario/2022PhDThesis` の randoop 生成テスト
+  (リポジトリに存在しない生成物)、`Clay-Ferguson/Quantizr` (該当メソッドが
+  どのブランチにも無い)、`mkpaz/telek` / `nikosnikolaidis/commons-rdf` /
+  `derekdinan/CTFServer` / `good-loop/open-code` / `krisiney/SOKOBANFX-DMS-2020` /
+  `octo-online/reactive-aud` (上流・改名先は見つかったが、関数本文が大きく異なり
+  一致率が基準に届かない)。
 - `projectname` は `owner/name`。Maldonado の `project-version` に当たる版情報は
   commit で表し、必要なら `tesoro_msr16_versioned.csv` を使う。
 - Maldonado 形式に合わせて `NONSATD` → `WITHOUT_CLASSIFICATION` に改名している
@@ -133,7 +150,7 @@ symlink で、`repos/coheigea__tcommon-studio-se` は
 
 ```
 tesoro/     Tesoro 本家のデータ (sparse clone, data/ 184MB)
-repos/      clone 940 件 (875 存命 + 65 SWH・ミラー復元, owner__name, 全履歴 + *.java)
+repos/      clone 960 件 (875 存命 + SWH・ミラー・上流復元 + symlink 4 件, owner__name, 全履歴 + *.java)
 scripts/    パイプライン (01〜10)
 work/       中間状態・ログ (repo_meta.json, clone_state.jsonl, swh_state.jsonl, locate.log)
 out/        成果物 (CSV / JSONL / summary.md)

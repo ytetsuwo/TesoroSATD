@@ -1161,15 +1161,15 @@ Lucsparidans/GGP-Project@0387331,DESIGN,"/**
          */"
 Lucsparidans/GGP-Project@41aa077,WITHOUT_CLASSIFICATION,// Retrieve all legal moves
 Lucsparidans/GGP-Project@41aa077,WITHOUT_CLASSIFICATION,// Retrieve all joint moves and next states
-LynzhX/android_frameworks_base-1,WITHOUT_CLASSIFICATION,// Don't enable the screen until all existing windows have been drawn.
+LynzhX/android_frameworks_base-1@6e2f395,WITHOUT_CLASSIFICATION,// Don't enable the screen until all existing windows have been drawn.
 LynzhX/android_frameworks_base-1,DESIGN,// TODO(multidisplay): Expand to all displays?
-LynzhX/android_frameworks_base-1,WITHOUT_CLASSIFICATION,"// stop boot animation
+LynzhX/android_frameworks_base-1@f4b61d9,WITHOUT_CLASSIFICATION,"// stop boot animation
 // formerly we would just kill the process, but we now ask it to exit so it
 // can choose where to stop the animation."
-LynzhX/android_frameworks_base-1,WITHOUT_CLASSIFICATION,// BOOT_FINISHED
-LynzhX/android_frameworks_base-1,WITHOUT_CLASSIFICATION,// Enable input dispatch.
-LynzhX/android_frameworks_base-1,WITHOUT_CLASSIFICATION,// Make sure the last requested orientation has been applied.
-LynzhX/android_frameworks_base-1,IMPLEMENTATION,"// TODO(multidisplay): Extend to multiple displays.
+LynzhX/android_frameworks_base-1@28391cb,WITHOUT_CLASSIFICATION,// BOOT_FINISHED
+LynzhX/android_frameworks_base-1@08a746a,WITHOUT_CLASSIFICATION,// Enable input dispatch.
+LynzhX/android_frameworks_base-1@9066cfe,WITHOUT_CLASSIFICATION,// Make sure the last requested orientation has been applied.
+LynzhX/android_frameworks_base-1@59c0097,IMPLEMENTATION,"// TODO(multidisplay): Extend to multiple displays.
 /**
      * Returns the focused window in the following format:
      * windowHashCodeInHexadecimal windowName
@@ -1177,7 +1177,7 @@ LynzhX/android_frameworks_base-1,IMPLEMENTATION,"// TODO(multidisplay): Extend t
      * @param client The remote client to send the listing to.
      * @return False if an error occurred, true otherwise.
      */"
-LynzhX/android_frameworks_base-1,WITHOUT_CLASSIFICATION,// Any uncaught exception will crash the system process
+LynzhX/android_frameworks_base-1@f962476,WITHOUT_CLASSIFICATION,// Any uncaught exception will crash the system process
 MPDL/imeji-gui-testing@c92fa56,IMPLEMENTATION,//FIXME: Create an item or a collection containing the special characters before searching for them
 MaTriXy/atlas@ecadac9,WITHOUT_CLASSIFICATION,"/**
      * Gets the line number associated with the given address.
@@ -2945,11 +2945,11 @@ bertl4398/ssdbm2020@873f4e1,DESIGN,"/**
    * @return a list of the sorted entries
    */
 // TODO: move somewhere else?"
-bgklika/aws-iot-device-sdk-java-v2,WITHOUT_CLASSIFICATION,//framework checks for null authN so this shouldn't happen
-bgklika/aws-iot-device-sdk-java-v2,WITHOUT_CLASSIFICATION,"//check if the authN data type matches is a good idea, and necessary if there are other fields
+bgklika/aws-iot-device-sdk-java-v2@a568912,WITHOUT_CLASSIFICATION,//framework checks for null authN so this shouldn't happen
+bgklika/aws-iot-device-sdk-java-v2@a568912,WITHOUT_CLASSIFICATION,"//check if the authN data type matches is a good idea, and necessary if there are other fields
 //to open/inspect"
-bgklika/aws-iot-device-sdk-java-v2,WITHOUT_CLASSIFICATION,//WARNING!!! this logic is for demonstration purposes
-bgklika/aws-iot-device-sdk-java-v2,DESIGN,//good idea to log reasons for rejection with the authentication label so testers/users can understand
+bgklika/aws-iot-device-sdk-java-v2@a568912,WITHOUT_CLASSIFICATION,//WARNING!!! this logic is for demonstration purposes
+bgklika/aws-iot-device-sdk-java-v2@a568912,DESIGN,//good idea to log reasons for rejection with the authentication label so testers/users can understand
 bigfastdata/SluiceBox@29b1d63,WITHOUT_CLASSIFICATION,"/**
      * Test of getVotesForInstance method, of class FeS2.
      */"
@@ -4543,8 +4543,8 @@ geniusdibya/pepipost-sdk-java@156e2a0,DOCUMENTATION,"/** SETTER
 george-mcintyre/epics-core-java-backport-1.5@c1c7530,DESIGN,// TODO this could be optimized
 george-mcintyre/epics-core-java-backport-1.5@c1c7530,DESIGN,// TODO: not by the JavaDoc API spec
 george-mcintyre/epics-core-java-backport-1.5@c1c7530,WITHOUT_CLASSIFICATION,"// we could write remaining bytes, but for test this is enough"
-gerdreiss/camunda-dmn-xlsx,IMPLEMENTATION,// TODO: checked exception
-gerdreiss/camunda-dmn-xlsx,DESIGN,"// TODO: exception when no worksheet present
+gerdreiss/camunda-dmn-xlsx@0505ca0,IMPLEMENTATION,// TODO: checked exception
+gerdreiss/camunda-dmn-xlsx@0505ca0,DESIGN,"// TODO: exception when no worksheet present
 // TODO: make worksheet number configurable/import all worksheets?"
 gjbang/graduation-design@deaaa11,WITHOUT_CLASSIFICATION,//        add MQTT listener
 gjbang/graduation-design@deaaa11,WITHOUT_CLASSIFICATION,//        need to bind the UI activity and the background service
@@ -4555,7 +4555,7 @@ glahiru/airavata-1@47afa39,DESIGN,"//todo so currently we execute the qstat for 
 //todo or we should concatenate all the commands and execute them in one go and parse the response"
 glasser/amock@993eb1f,DESIGN,// TODO: use sane arg parsing
 glasser/amock@e137bc4,IMPLEMENTATION,// TODO: use sane arg parsing
-globalid/walletkit,TEST,// TODO: Expand coverage
+globalid/walletkit@ed62f5b,TEST,// TODO: Expand coverage
 godblessthequeen/spring-cloud-gateway@a6f48b0,IMPLEMENTATION,// TODO: translate url?
 godblessthequeen/spring-cloud-gateway@82f8831,WITHOUT_CLASSIFICATION,"/**
                  * 匹配并转发到当前网关实例本地接口。
@@ -5950,8 +5950,8 @@ jmwhite999/_multithreaded_greyscaling@88cceec,DESIGN,"/**
 jmwhite999/_multithreaded_greyscaling@88cceec,WITHOUT_CLASSIFICATION,// set the flag and while loop in the run() will exit
 jmwhite999/_multithreaded_greyscaling@88cceec,WITHOUT_CLASSIFICATION,// try to wake up the thread which associate this object
 joaocc/nifi-registry@f1e5aef,DESIGN,// TODO figure out what to do with build info
-joaonmatos/clava,IMPLEMENTATION,// TODO: copy header file inclusion
-joaonmatos/clava,WITHOUT_CLASSIFICATION,"// if (!function.hasBody()) {
+joaonmatos/clava@81cf7f8,IMPLEMENTATION,// TODO: copy header file inclusion
+joaonmatos/clava@81cf7f8,WITHOUT_CLASSIFICATION,"// if (!function.hasBody()) {
 // /*add the clone to the original place in order to be included where needed */
 // return makeCloneAndInsert(newName, function, true);
 // }
@@ -5968,17 +5968,17 @@ joaonmatos/clava,WITHOUT_CLASSIFICATION,"// if (!function.hasBody()) {
 //
 // file = Optional.of(tu);
 // }"
-joaonmatos/clava,WITHOUT_CLASSIFICATION,/* copy headers from the current file to the file with the clone */
-joaonmatos/clava,WITHOUT_CLASSIFICATION,// List<IncludeDecl> allIncludes = getIncludesCopyFromFile(originalFile);
-joaonmatos/clava,WITHOUT_CLASSIFICATION,// Add as many ../ as folders in the relative folder
-joaonmatos/clava,WITHOUT_CLASSIFICATION,// Add relative folder of original file
-joaonmatos/clava,WITHOUT_CLASSIFICATION,"// System.out.println(""BASE: "" + baseIncludePath);
+joaonmatos/clava@81cf7f8,WITHOUT_CLASSIFICATION,/* copy headers from the current file to the file with the clone */
+joaonmatos/clava@81cf7f8,WITHOUT_CLASSIFICATION,// List<IncludeDecl> allIncludes = getIncludesCopyFromFile(originalFile);
+joaonmatos/clava@81cf7f8,WITHOUT_CLASSIFICATION,// Add as many ../ as folders in the relative folder
+joaonmatos/clava@81cf7f8,WITHOUT_CLASSIFICATION,// Add relative folder of original file
+joaonmatos/clava@81cf7f8,WITHOUT_CLASSIFICATION,"// System.out.println(""BASE: "" + baseIncludePath);
 // System.out.println(""DEPTH: "" + relativeFolderDepth);
 // Adapt includes"
-joaonmatos/clava,WITHOUT_CLASSIFICATION,"// If angled, ignore"
-joaonmatos/clava,WITHOUT_CLASSIFICATION,"// System.out.println(""INCLUDE BEFORE: "" + includeDecl.getCode());"
-joaonmatos/clava,WITHOUT_CLASSIFICATION,"// System.out.println(""INCLUDE AFTER: "" + includeDecl.getCode());"
-joaonmatos/clava,WITHOUT_CLASSIFICATION,// Add includes
+joaonmatos/clava@81cf7f8,WITHOUT_CLASSIFICATION,"// If angled, ignore"
+joaonmatos/clava@81cf7f8,WITHOUT_CLASSIFICATION,"// System.out.println(""INCLUDE BEFORE: "" + includeDecl.getCode());"
+joaonmatos/clava@81cf7f8,WITHOUT_CLASSIFICATION,"// System.out.println(""INCLUDE AFTER: "" + includeDecl.getCode());"
+joaonmatos/clava@81cf7f8,WITHOUT_CLASSIFICATION,// Add includes
 joeriddles/doclitify@501eeda,WITHOUT_CLASSIFICATION,"/**
      * Returns the maximum value that this calendar field could have,
      * taking into consideration the given time value and the current
@@ -6080,7 +6080,7 @@ k0kubun/jjvm@588e93f,WITHOUT_CLASSIFICATION,// not needed
 k0kubun/jjvm@588e93f,WITHOUT_CLASSIFICATION,// not needed
 k0kubun/jjvm@588e93f,DESIGN,// not used yet
 k0kubun/jjvm@588e93f,WITHOUT_CLASSIFICATION,// Long/Double may leave create a blank space
-kadenscott/DragonFight,WITHOUT_CLASSIFICATION,"// ------------------------------------------------------------------------
+kadenscott/DragonFight@a17adfb,WITHOUT_CLASSIFICATION,"// ------------------------------------------------------------------------
 /**
      * When the dragon dies:
      *
@@ -6091,13 +6091,13 @@ kadenscott/DragonFight,WITHOUT_CLASSIFICATION,"// ------------------------------
      *
      * @param dragon the dragon that died.
      */"
-kadenscott/DragonFight,WITHOUT_CLASSIFICATION,"// Bukkit.getOfflinePlayer() NEVER returns null, even for non-existent."
-kadenscott/DragonFight,WITHOUT_CLASSIFICATION,// Fight owner is offline. Record an unclaimed prize.
-kadenscott/DragonFight,DESIGN,"// Select a single drop from the `df-dragon-drops` loot set.
+kadenscott/DragonFight@a17adfb,WITHOUT_CLASSIFICATION,"// Bukkit.getOfflinePlayer() NEVER returns null, even for non-existent."
+kadenscott/DragonFight@a17adfb,WITHOUT_CLASSIFICATION,// Fight owner is offline. Record an unclaimed prize.
+kadenscott/DragonFight@a17adfb,DESIGN,"// Select a single drop from the `df-dragon-drops` loot set.
 // TODO: actually, multiple drops should be supported, once
 // BeastMaster supports deferred item drops."
-kadenscott/DragonFight,WITHOUT_CLASSIFICATION,"// The item(s) did not fit, so player must claim with command."
-kadenscott/DragonFight,WITHOUT_CLASSIFICATION,"// Clear the fight owner once prizes have been given or unclaimed prizes
+kadenscott/DragonFight@a17adfb,WITHOUT_CLASSIFICATION,"// The item(s) did not fit, so player must claim with command."
+kadenscott/DragonFight@5da133c,WITHOUT_CLASSIFICATION,"// Clear the fight owner once prizes have been given or unclaimed prizes
 // recorded, to prevent extra prizes if spurious dragons spawn."
 kalucky0/The-Aether@2e54b51,DESIGN,"/**
      * Recolors map colors in the aether dimension to look nicer.
@@ -6633,10 +6633,10 @@ maybeec/lexeme,WITHOUT_CLASSIFICATION,"/**
      * @author sholzer (12.03.2015)
      * @return a LeXeMerger
      */"
-mbreemhaar/webcurator,DESIGN,"// TODO Add values to this list to allow more distinguished name patterns.
+mbreemhaar/webcurator@2ccb899,DESIGN,"// TODO Add values to this list to allow more distinguished name patterns.
 //      If preferable, ldap.dn can be removed when there is more than one value to avoid confusion."
 mbreemhaar/webcurator,WITHOUT_CLASSIFICATION,"//,"
-mbreemhaar/webcurator,IMPLEMENTATION,"// TODO CONFIGURATION
+mbreemhaar/webcurator@2ccb899,IMPLEMENTATION,"// TODO CONFIGURATION
 //""cn={0},OU=WCT users,DC=webcurator,DC=org"",
 //""cn={0},OU=WCT users,DC=webcurator,DC=org"""
 mbrukman/java-bigtable-hbase@cb36651,WITHOUT_CLASSIFICATION,"/**
@@ -7048,7 +7048,7 @@ nikosnikolaidis/commons-rdf,DESIGN,"// TODO: This probably does not support http
 // redirections"
 nikosnikolaidis/commons-rdf,WITHOUT_CLASSIFICATION,"// must be getSourceInputStream then, this is guaranteed by
 // super.checkSource();"
-nikosnikolaidis/stanbol,TEST,"/**
+nikosnikolaidis/stanbol@c409f6c,TEST,"/**
      * We may want to test this method with more then 1 ontology. This is why the implementation is in
      * aprivate method. This method tests if all the logical axioms in testExpectedID ontology are inferences
      * of the testID ontology.
@@ -7058,12 +7058,12 @@ nikosnikolaidis/stanbol,TEST,"/**
      * @param testExpectedID
      *            // The ID of the ontology which contains logical axioms expected in the result
      */"
-nikosnikolaidis/stanbol,WITHOUT_CLASSIFICATION,// We prepare the input ontology
-nikosnikolaidis/stanbol,WITHOUT_CLASSIFICATION,// Maybe we want to see what is in before
-nikosnikolaidis/stanbol,WITHOUT_CLASSIFICATION,// Now we test the method
-nikosnikolaidis/stanbol,WITHOUT_CLASSIFICATION,// Maybe we want to see the inferred axiom list
-nikosnikolaidis/stanbol,WITHOUT_CLASSIFICATION,// We want only Class related axioms in the result set
-nikosnikolaidis/stanbol,WITHOUT_CLASSIFICATION,// We want to remove the ontology from the manager
+nikosnikolaidis/stanbol@c409f6c,WITHOUT_CLASSIFICATION,// We prepare the input ontology
+nikosnikolaidis/stanbol@c409f6c,WITHOUT_CLASSIFICATION,// Maybe we want to see what is in before
+nikosnikolaidis/stanbol@c409f6c,WITHOUT_CLASSIFICATION,// Now we test the method
+nikosnikolaidis/stanbol@c409f6c,WITHOUT_CLASSIFICATION,// Maybe we want to see the inferred axiom list
+nikosnikolaidis/stanbol@c409f6c,WITHOUT_CLASSIFICATION,// We want only Class related axioms in the result set
+nikosnikolaidis/stanbol@c409f6c,WITHOUT_CLASSIFICATION,// We want to remove the ontology from the manager
 nilesh14/FMC@1c05174,DESIGN,// not called
 nisrulz/validatetor@f2b66bb,DEFECT,"// Not work, maybe only in Android JUnit test."
 niuyiming/alpha-umi@2f7b49a,WITHOUT_CLASSIFICATION,"/**
@@ -8455,26 +8455,26 @@ shrinidhijoshi/presto@4f74189,WITHOUT_CLASSIFICATION,// See if we can push down 
 shrinidhijoshi/presto@4f74189,WITHOUT_CLASSIFICATION,"// Push outer and join equalities into the inner side. For example:
 // SELECT * FROM nation LEFT OUTER JOIN region ON nation.regionkey = region.regionkey and nation.name = region.name WHERE nation.name = 'blah'"
 shrinidhijoshi/presto@4f74189,DESIGN,// TODO: we can further improve simplifying the equalities by considering other relationships from the outer side
-sigurasg/ghidra,DESIGN,"// TODO: Need to work on layout algorithm... believe we can do better, but don't have
+sigurasg/ghidra@a1d7ed2,DESIGN,"// TODO: Need to work on layout algorithm... believe we can do better, but don't have
 //  a decision on the best speculative results yet.
 //	@Test"
-sigurasg/ghidra,DESIGN,"// TODO: Need to work on layout algorithm... believe we can do better, but don't have
+sigurasg/ghidra@a1d7ed2,DESIGN,"// TODO: Need to work on layout algorithm... believe we can do better, but don't have
 //  a decision on the best speculative results yet.
 //	@Test"
-sigurasg/ghidra,DESIGN,"// TODO: Need to work on layout algorithm... believe we can do better, but don't have
+sigurasg/ghidra@a1d7ed2,DESIGN,"// TODO: Need to work on layout algorithm... believe we can do better, but don't have
 //  a decision on the best speculative results yet.
 //	@Test"
-sigurasg/ghidra,DESIGN,"// TODO: Need to work on layout algorithm... believe we can do better, but don't have
+sigurasg/ghidra@a1d7ed2,DESIGN,"// TODO: Need to work on layout algorithm... believe we can do better, but don't have
 //  a decision on the best speculative results yet.
 //	@Test"
-sirivus/studioonline,DESIGN,"/**
+sirivus/studioonline@8223c19,DESIGN,"/**
          * Get method for struct member 'bending_damping'.
          * <h3>Field Documentation</h3>
          * <h4>Blender Source Code:</h4>
          * <p> XXX various hair stuff should really be separate, this struct is a horrible mess already Damping of bending springs. </p>
          * @see #__DNA__FIELD__bending_damping
          */"
-sirivus/studioonline,DESIGN,"/**
+sirivus/studioonline@8223c19,DESIGN,"/**
          * Set method for struct member 'bending_damping'.
          * <h3>Field Documentation</h3>
          * <h4>Blender Source Code:</h4>
@@ -8492,7 +8492,7 @@ skashin/Amazon-S3-FileSystem-NIO2@a88bd78,DESIGN,"/**
 skashin/Amazon-S3-FileSystem-NIO2@a88bd78,IMPLEMENTATION,"/**
          * TODO: set as a list. one s3FileSystem by region
          */"
-slachiewicz/aws-sdk-java-v2,DESIGN,"// FIXME: Ugly hack, but some services (Health) have shapes with names
+slachiewicz/aws-sdk-java-v2@9fd4687,DESIGN,"// FIXME: Ugly hack, but some services (Health) have shapes with names
 // that differ only in the casing of the first letter, and generating
 // classes for them breaks on case insensitive filesystems..."
 slankas/OSKE@16a9254,DOCUMENTATION,"/**
@@ -10132,37 +10132,37 @@ zepedropaixao/videoplayer@df152c5,DESIGN,"// TODO Here I define the order for wh
 // For now it just accepts the gridAdapter selected array order"
 zhe525069676/WeiBoLayout@ae009dc,DEFECT,"//Android has a bug, sometime TextView wont change its value when you modify SpannableString,
 // so you must setText again, test on Android 4.3 Nexus4"
-zipated/src,DOCUMENTATION,"/**
+zipated/src@f1182c9,DOCUMENTATION,"/**
      * TODO: doc
      */"
-zipated/src,DOCUMENTATION,"/**
+zipated/src@f1182c9,DOCUMENTATION,"/**
      * TODO: doc
      */"
-zipated/src,DOCUMENTATION,"/**
+zipated/src@f1182c9,DOCUMENTATION,"/**
      * TODO: doc
      */"
-zipated/src,DOCUMENTATION,"/**
+zipated/src@f1182c9,DOCUMENTATION,"/**
      * TODO: doc
      */"
-zipated/src,DOCUMENTATION,"/**
+zipated/src@f1182c9,DOCUMENTATION,"/**
      * TODO: doc
      */"
-zipated/src,DOCUMENTATION,"/**
+zipated/src@f1182c9,DOCUMENTATION,"/**
      * TODO: doc
      */"
-zipated/src,DOCUMENTATION,"/**
+zipated/src@f1182c9,DOCUMENTATION,"/**
      * TODO: doc
      */"
-zipated/src,DOCUMENTATION,"/**
+zipated/src@f1182c9,DOCUMENTATION,"/**
      * TODO: doc
      */"
-zipated/src,DOCUMENTATION,"/**
+zipated/src@f1182c9,DOCUMENTATION,"/**
      * TODO: doc
      */"
-zipated/src,DOCUMENTATION,"/**
+zipated/src@f1182c9,DOCUMENTATION,"/**
      * TODO: doc
      */"
 zonnie/Coins,WITHOUT_CLASSIFICATION,"/**
      */"
 zonnie/Coins@651628e,IMPLEMENTATION,//TODO add a view holder
-zreed/webpieces,DESIGN,//TODO: Think about using System.arrayCopy here(what is faster?)
+zreed/webpieces@e12e46f,DESIGN,//TODO: Think about using System.arrayCopy here(what is faster?)

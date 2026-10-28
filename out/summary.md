@@ -1,30 +1,30 @@
 # Tesoro provenance (repo / file / commit)
 
-生成: 2026-10-28 14:27
+生成: 2026-10-28 16:24
 
 ## カバレッジ
 
-- 関数: 1255 件中 1197 件を特定 (95.4%)、うち commit 取得 1190 件 (履歴から復元 36 件)
-- コメント: 4981 件中 4692 件に commit を付与 (94.2%)、932 プロジェクト
-- 関数一致度: {'high': 991, 'medium': 193, 'low': 13}
-- コメント特定方法: {'exact': 3337, 'structural': 1355} (exact=本文一致, structural=改変/行末コメント)
+- 関数: 1255 件中 1224 件を特定 (97.5%)、うち commit 取得 1217 件 (履歴から復元 50 件)
+- コメント: 4981 件中 4750 件に commit を付与 (95.4%)、945 プロジェクト
+- 関数一致度: {'high': 1011, 'medium': 198, 'low': 15}
+- コメント特定方法: {'exact': 3376, 'structural': 1374} (exact=本文一致, structural=改変/行末コメント)
 - commit 日付範囲: 2000-12-06 〜 2026-08-31
 
 ## 状態
 
-- ok: 1161
-- repo_missing: 56
-- ok_history: 36
-- weak_match: 2
+- ok: 1174
+- ok_history: 50
+- repo_missing: 23
+- weak_match: 8
 
 ## ラベル分布 (全件 / commit あり)
 
-- DESIGN: 697 / 656
-- IMPLEMENTATION: 474 / 445
-- NONSATD: 3432 / 3239
+- DESIGN: 697 / 668
+- IMPLEMENTATION: 474 / 449
+- NONSATD: 3432 / 3269
 - DEFECT: 220 / 210
-- TEST: 78 / 72
-- DOCUMENTATION: 80 / 70
+- TEST: 78 / 74
+- DOCUMENTATION: 80 / 80
 
 ## ファイル
 
