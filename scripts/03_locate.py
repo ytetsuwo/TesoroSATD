@@ -427,6 +427,21 @@ def locate(repo: str, func: dict, comments: list) -> dict:
             plans[i][2] = "position"
             used.add(cand[0] + 1)
 
+    # --- comments that moved to another method: the same text exists elsewhere
+    # in the file. They are still this function's comment (a refactor moved it),
+    # so record the line and keep the match type honest.
+    for plan in plans:
+        r = plan[0]
+        if plan[1] or not any(core(x) for x in (r.get("comment") or "").splitlines()):
+            continue
+        cl = [norm(x) for x in (r.get("comment") or "").splitlines() if norm(x)]
+        lines_abs, kind = map_comment(cl, lines, start, start + len(ref) - 1, used=used,
+                                      lo=0, hi=len(lines), is_comment=mask)
+        if kind in ("exact", "structural") and not set(lines_abs) & used:
+            plan[1] = lines_abs
+            plan[2] = "relocated"
+            used.update(lines_abs)
+
     out_comments = []
     for r, lines_abs, kind in plans:
         if not lines_abs:

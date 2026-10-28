@@ -22,7 +22,12 @@ import subprocess
 import sys
 from datetime import datetime
 
+import importlib.util
 from common import OUT, WORK, WS, core, repo_dir, strip_marker
+
+_spec = importlib.util.spec_from_file_location("loc03", OUT.parent / "scripts" / "03_locate.py")
+L = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(L)
 
 TESORO = OUT.parent / "tesoro" / "data" / "tesoro" / "tesoro_comment.json"
 MARKS = ("//", "/*")
@@ -155,7 +160,7 @@ def main() -> int:
             c["author"] = info.get("author")
             c["author_time"] = info.get("date")
             c["summary"] = info.get("summary")
-            c["path_at"] = loc["path"]
+            c["path_at"] = L.path_at_commit(d, loc["path"], info.get("sha"))
             c["at_commit"] = rev
             found.append((loc["id"], c["comment_id"], loc["repo"], ln, rev,
                           info.get("sha"), info.get("date"), info.get("summary")))

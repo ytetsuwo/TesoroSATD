@@ -231,16 +231,16 @@ Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,"//debug(""ical prop
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* ------------------- Accept Response -------------------- */
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* ------------------- Attachment -------------------- */
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* ------------------- Attendee -------------------- */
-Bedework/bw-calendar-convert,WITHOUT_CLASSIFICATION,"//if (cb.getStrictness() == IcalCallback.conformanceWarn) {
+Bedework/bw-calendar-convert@f0a900c,WITHOUT_CLASSIFICATION,"//if (cb.getStrictness() == IcalCallback.conformanceWarn) {
 //  warn(""Had attendees for PUBLISH"");
 //}"
-Bedework/bw-calendar-convert,WITHOUT_CLASSIFICATION,"/* Only update for our own attendee
+Bedework/bw-calendar-convert@f0a900c,WITHOUT_CLASSIFICATION,"/* Only update for our own attendee
                  * We're doing a PUT and this must be the attendee updating their
                  * partstat. We don't allow them to change other attendees
                  * whatever the PUT content says.
                  */"
-Bedework/bw-calendar-convert,WITHOUT_CLASSIFICATION,// Use the value we currently have
-Bedework/bw-calendar-convert,WITHOUT_CLASSIFICATION,// An added attendee
+Bedework/bw-calendar-convert@f0a900c,WITHOUT_CLASSIFICATION,// Use the value we currently have
+Bedework/bw-calendar-convert@f0a900c,WITHOUT_CLASSIFICATION,// An added attendee
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* ------------------- Categories -------------------- */
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* Got some categories */
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* ------------------- Class -------------------- */
@@ -262,15 +262,15 @@ Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* -----------------
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* ------------------- Geo -------------------- */
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* ------------------- LastModified -------------------- */
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* ------------------- Location -------------------- */
-Bedework/bw-calendar-convert,DEFECT,"//String uid = getUidPar(prop);
+Bedework/bw-calendar-convert@fea79ee,DEFECT,"//String uid = getUidPar(prop);
 /* At the moment Mozilla lightning is broken and this leads to all
            * sorts of problems.
             if (uid != null) {
               loc = cb.getLocation(uid);
             }
            */"
-Bedework/bw-calendar-convert,WITHOUT_CLASSIFICATION,// CHGTBL - this only shows that it's a different location object
-Bedework/bw-calendar-convert,WITHOUT_CLASSIFICATION,// See if the value is changed
+Bedework/bw-calendar-convert@fea79ee,WITHOUT_CLASSIFICATION,// CHGTBL - this only shows that it's a different location object
+Bedework/bw-calendar-convert@fea79ee,WITHOUT_CLASSIFICATION,// See if the value is changed
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* ------------------- Organizer -------------------- */
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* ------------------- PercentComplete -------------------- */
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* ------------------- Poll mode -------------------- */
@@ -516,7 +516,7 @@ Clay-Ferguson/Quantizr@81e852c,WITHOUT_CLASSIFICATION,// loads ONLY foreign user
 Clay-Ferguson/Quantizr@3ff912f,WITHOUT_CLASSIFICATION,// merge both sets of inboxes into allInboxes and send to them
 Clay-Ferguson/Quantizr@81e852c,WITHOUT_CLASSIFICATION,"// Post message to all foreign usernames found in 'toUserNames', but skip all in userInboxes becasue
 // we just sent to those above."
-Clay-Ferguson/Quantizr@00769fd,WITHOUT_CLASSIFICATION,//
+Clay-Ferguson/Quantizr,WITHOUT_CLASSIFICATION,//
 CoderMMK/RSPS@5cf72f4,TEST,"/**
          * Can they kick?
          * 
@@ -1798,7 +1798,7 @@ SanojPunchihewa/devstudio-tooling-esb@b1ae02c,DESIGN,"/* TODO Need to find alter
                 */"
 Sceptres/ud406@91d01c8,IMPLEMENTATION,"// TODO: Draw a game over message
 // Feel free to get more creative with this screen. Perhaps you could cover the screen in enemy robots?"
-SciGaP/DEPRECATED-Cipres-Airavata-POC,DESIGN,"/*
+SciGaP/DEPRECATED-Cipres-Airavata-POC@278c0d4,DESIGN,"/*
                 Returns a list of filenames (just the filename, not the path) in working directory.  
                 Todo: currently this skips over subdirs.   
                 This will throw an IOException exception if the working directory is deleted (or possibly if
@@ -2889,9 +2889,9 @@ bancha2nd/nativescript-plugins@2927a78,WITHOUT_CLASSIFICATION,// And read/update
 baobab-it/notebookFX@aa08ee5,IMPLEMENTATION,// TODO rewrite after add extension dialogs
 baodingfengyun/luaj@67962d4,TEST,// FIXME Test failures
 baodingfengyun/luaj@67962d4,TEST,// FIXME Test failures
-baodingfengyun/luaj,TEST,// FIXME Test failures
 baodingfengyun/luaj@67962d4,TEST,// FIXME Test failures
-baodingfengyun/luaj,TEST,// FIXME Test failures
+baodingfengyun/luaj@67962d4,TEST,// FIXME Test failures
+baodingfengyun/luaj@67962d4,TEST,// FIXME Test failures
 baodingfengyun/luaj@67962d4,TEST,// FIXME Test failures
 basitkhurram/fresco@1f96aec,TEST,"// TODO Should be split into different tests for mean, variance, covariance, covariancematrix"
 batiaev/provisioner@f61cb00,DEFECT,//FIXME use Auth header with basic auth
@@ -4258,7 +4258,7 @@ emafazillah/andhow@8b3a576,DESIGN,"/**
 	 * This is really testing how the NonProductionConfig works - how can this be
 	 * targeted to the init config?
 	 */"
-emafazillah/andhow,WITHOUT_CLASSIFICATION,//The line above should throw an error
+emafazillah/andhow@8b3a576,WITHOUT_CLASSIFICATION,//The line above should throw an error
 enoxos/r5@cbe1111,DEFECT,// TODO fix
 enoxos/r5@cbe1111,WITHOUT_CLASSIFICATION,"// we now know what patterns are being used, interleave to find times
 // NB no need to reverse-optimize these itineraries; we'll just filter them below."
@@ -5290,9 +5290,9 @@ jcdubois/cpachecker,WITHOUT_CLASSIFICATION,"/**
    *     single values, a state representing the value obtained by the bit-wise xor-operation on the
    *     states' values is returned. Otherwise, top is returned.
    */"
-jcdubois/cpachecker@bd96b5d,WITHOUT_CLASSIFICATION,"// [0,1] ^ 1 = [0,1]"
-jcdubois/cpachecker@bd96b5d,WITHOUT_CLASSIFICATION,"// 1 ^ [0,1] = [0,1]"
-jcdubois/cpachecker@bd96b5d,DESIGN,// TODO maybe a more exact implementation is possible?
+jcdubois/cpachecker@a065e8b,WITHOUT_CLASSIFICATION,"// [0,1] ^ 1 = [0,1]"
+jcdubois/cpachecker@a065e8b,WITHOUT_CLASSIFICATION,"// 1 ^ [0,1] = [0,1]"
+jcdubois/cpachecker@a065e8b,DESIGN,// TODO maybe a more exact implementation is possible?
 jcdubois/cpachecker@bd96b5d,WITHOUT_CLASSIFICATION,"/**
    * Computes the state resulting from flipping the bits of the values represented by this state.
    *
@@ -5311,7 +5311,7 @@ jcdubois/cpachecker,WITHOUT_CLASSIFICATION,"/**
    *     single values, a state representing the value obtained by the bit-wise or-operation on the
    *     states' values is returned. Otherwise, top is returned.
    */"
-jcdubois/cpachecker@bd96b5d,DESIGN,// TODO maybe a more exact implementation is possible?
+jcdubois/cpachecker@a065e8b,DESIGN,// TODO maybe a more exact implementation is possible?
 jd3538/Marist-Sakai-11.x,WITHOUT_CLASSIFICATION,// unpack model
 jd3538/Marist-Sakai-11.x,WITHOUT_CLASSIFICATION,// link
 jd3538/Marist-Sakai-11.x,WITHOUT_CLASSIFICATION,// name label
@@ -6558,7 +6558,7 @@ marceloamorimcg/Dr.InfoSystem@6c7cec1,WITHOUT_CLASSIFICATION,"//a estrutura abai
 //a linha abaixo atualiza a tabela usuario com os dados do formulario"
 marceloamorimcg/Dr.InfoSystem@6c7cec1,WITHOUT_CLASSIFICATION,"// testando a logica 
 //System.out.println(adicionado);"
-marcus8448/Mekanism,DESIGN,"//TODO: AT to get access to the cubeList and childModel or not bother given we have already converted things
+marcus8448/Mekanism@42e48f8,DESIGN,"//TODO: AT to get access to the cubeList and childModel or not bother given we have already converted things
 /*public static VoxelShape getShapeFromModel(ModelRenderer... models) {
         return getShapeFromModel(false, models);
     }
@@ -7984,12 +7984,12 @@ sengerts/tic-tac-toe@20fcd86,WITHOUT_CLASSIFICATION,"/**
 	 * trying to win the tic tac toe game.
 	 */"
 sengerts/tic-tac-toe,DESIGN,// TODO Not just randomly select a tile to mark
-seqcode/seqcode-core,WITHOUT_CLASSIFICATION,"/* reads a weight matrix from the specified file,
+seqcode/seqcode-core@cefcbe8,WITHOUT_CLASSIFICATION,"/* reads a weight matrix from the specified file,
        inserts it into the database with the specified name and
        version, and returns its dbid.  This means that the file may contain
        only a single weight matrix*/"
 seqcode/seqcode-core@cefcbe8,IMPLEMENTATION,//TODO add a method to read a single transfac matrix
-seqcode/seqcode-core,WITHOUT_CLASSIFICATION,"/* reads a weight matrix from the specified file,
+seqcode/seqcode-core@cefcbe8,WITHOUT_CLASSIFICATION,"/* reads a weight matrix from the specified file,
     inserts it into the database with the specified name and
     version, and returns its dbid.  This means that the file may contain
     only a single weight matrix*/"
@@ -8817,7 +8817,7 @@ timassman/roomba@562d9f5,DESIGN,"/**
      */
 // FIXME I think this should be (2 * angle())/258"
 timboudreau/netbeans-contrib@01f28fd,DESIGN,//TODO: custom host and port
-timburrow/openvnmrj-source,WITHOUT_CLASSIFICATION,"/************************************************** <pre>
+timburrow/openvnmrj-source@b622b0d,WITHOUT_CLASSIFICATION,"/************************************************** <pre>
      Process a Vnmrbg ""SQ"" command.
      SQ commands are sent from the VNMR background engine to the SQ
      through the vnmrj-Vnmrbg socket interface. Usually, they are generated by

@@ -1,29 +1,29 @@
 # Tesoro provenance (repo / file / commit)
 
-生成: 2026-10-28 23:04
+生成: 2026-10-29 07:25
 
 ## カバレッジ
 
-- 関数: 1255 件中 1229 件を特定 (97.9%)、うち commit 取得 1219 件 (履歴から復元 59 件)
-- コメント: 4981 件中 4890 件に commit を付与 (98.2%)、950 プロジェクト
-- 関数一致度: {'high': 1114, 'medium': 104, 'low': 11}
-- コメント特定方法: {'exact': 3478, 'structural': 1378, 'fuzzy': 10, 'position': 24} (exact=本文一致, structural=行末コメント・部分一致, fuzzy=本文が改変, position=記号のみ)
+- 関数: 1255 件中 1229 件を特定 (97.9%)、うち commit 取得 1222 件 (履歴から復元 57 件)
+- コメント: 4981 件中 4904 件に commit を付与 (98.5%)、951 プロジェクト
+- 関数一致度: {'high': 1116, 'medium': 103, 'low': 10}
+- コメント特定方法: {'exact': 3478, 'structural': 1378, 'fuzzy': 10, 'relocated': 15, 'position': 23} (exact=本文一致, structural=行末コメント・部分一致, fuzzy=本文が改変, position=記号のみ, relocated=別メソッドへ移動)
 - commit 日付範囲: 2000-12-06 〜 2026-08-31
 
 ## 状態
 
-- ok: 1170
-- ok_history: 59
+- ok: 1172
+- ok_history: 57
 - repo_missing: 22
 - weak_match: 4
 
 ## ラベル分布 (全件 / commit あり)
 
-- DESIGN: 697 / 680
+- DESIGN: 697 / 682
 - IMPLEMENTATION: 474 / 460
-- NONSATD: 3432 / 3385
-- DEFECT: 220 / 211
-- TEST: 78 / 74
+- NONSATD: 3432 / 3394
+- DEFECT: 220 / 212
+- TEST: 78 / 76
 - DOCUMENTATION: 80 / 80
 
 ## ファイル

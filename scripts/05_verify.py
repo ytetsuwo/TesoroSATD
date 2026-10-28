@@ -51,6 +51,12 @@ def check_text(r):
         # line must still be a comment without text
         # trailing markers sit after code, so only the comment part must be empty
         return None if got and not any(core(ctext(x)) for x in got) else "position: text present"
+    if r["match"] == "relocated":
+        # the block moved to another method; a single-line marker may now share
+        # its line with code, so require every line of the text to be present
+        g = " ".join(core(x) for x in got if core(x))
+        return (None if all(x in g for x in (core(x) for x in want) if x)
+                else "relocated but differs")
     if r["match"] == "exact":
         # blank lines inside a block are layout, not content
         return (None if [core(x) for x in got if core(x)]

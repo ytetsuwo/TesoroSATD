@@ -73,6 +73,9 @@ def main() -> int:
         for c in f["comments"]:
             if not c.get("lines"):
                 continue
+            if c.get("match") == "relocated":
+                stats.setdefault("relocated", collections.Counter())["outside"] += 1
+                continue
             if c.get("at_commit"):
                 # recovered from an older revision: the line is not at HEAD
                 stats.setdefault(c.get("match") or "?", collections.Counter())["history"] += 1
