@@ -1,0 +1,11 @@
+# クローンしたリポジトリ (125GB) と Tesoro 生データ (276MB) は追跡しない
+repos/
+tesoro/
+
+# Python
+__pycache__/
+*.pyc
+
+# 作業用の一時ファイル (調理済み tarball など)
+work/*.tar.gz
+work/tmp/

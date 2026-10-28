@@ -1,0 +1,305 @@
+"""Locate every Tesoro function in its repository and blame its SATD comments.
+
+Steps per function (1255 of them):
+  1. grep the `*.java` working tree for distinctive lines of the function,
+  2. align the function text with the file (difflib) to find its exact position,
+  3. map every comment of the function onto file lines and `git blame` them.
+
+Output: out/functions_located.jsonl, one row per function.
+"""
+from __future__ import annotations
+
+import json
+import re
+import subprocess
+import sys
+import time
+from collections import Counter
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from difflib import SequenceMatcher
+from pathlib import Path
+
+from common import (OUT, WORK, alnum, core, head_of, load_tesoro, mclass, norm,
+                    repo_dir, run, strip_marker)
+
+MIN_ANCHOR_LEN = 25
+MAX_FILE_CANDIDATES = 40
+SIG = re.compile(r"^[0-9a-f]{40} ")
+
+
+# ---------------------------------------------------------------- anchors
+def anchors_from(lines, limit=10, min_len=MIN_ANCHOR_LEN):
+    """Longest, most distinctive non-empty lines."""
+    seen, out = set(), []
+    for t in lines:
+        if len(t) >= min_len and t not in seen:
+            seen.add(t)
+            out.append(t)
+    out.sort(key=len, reverse=True)
+    return out[:limit]
+
+
+# ---------------------------------------------------------------- git helpers
+def blame(d: Path, rel: str, start: int, end: int):
+    p = run(["git", "blame", "--line-porcelain", "-L", f"{start},{end}", "--", rel],
+            d, timeout=600)
+    if p.returncode != 0:
+        return {}
+    sha = author = summary = fname = None
+    when = None
+    for line in p.stdout.splitlines():
+        if SIG.match(line):
+            sha = line.split()[0]
+        elif line.startswith("author "):
+            author = line[7:]
+        elif line.startswith("author-time "):
+            when = int(line[12:])
+        elif line.startswith("summary "):
+            summary = line[8:]
+        elif line.startswith("filename "):
+            fname = line[9:]
+        elif line.startswith("\t"):
+            break
+    return {"sha": sha, "author": author, "author_time": when, "summary": summary,
+            "path": fname}
+
+
+def path_at_commit(d: Path, rel: str, sha: str) -> str:
+    """Follow renames backwards to the file name that `sha` saw."""
+    p = run(["git", "log", "--follow", "--name-status", "--format=C %H", "--", rel],
+            d, timeout=600)
+    cur = rel
+    for line in p.stdout.splitlines():
+        if line.startswith("C "):
+            if line[2:] == sha:
+                return cur
+        elif line[:1] in ("R", "C") and "\t" in line:
+            parts = line.split("\t")
+            if len(parts) == 3 and parts[2] == cur:
+                cur = parts[1]
+    return rel
+
+
+def read_lines(path: Path):
+    try:
+        return path.read_text(encoding="utf-8", errors="replace").splitlines()
+    except OSError:
+        return []
+
+
+def grep(d: Path, patterns: list):
+    """Search the java working tree for the given lines (fixed strings)."""
+    if not patterns:
+        return []
+    p = subprocess.run(["rg", "--no-ignore-vcs", "--no-heading", "-n", "-F", "-f", "-",
+                        "-g", "*.java", "."], cwd=str(d), input="\n".join(patterns) + "\n",
+                       capture_output=True, text=True, errors="replace", timeout=300)
+    hits = []
+    for line in p.stdout.splitlines():
+        parts = line.split(":", 2)
+        if len(parts) == 3 and parts[1].isdigit():
+            hits.append((parts[0].lstrip("./"), int(parts[1]), norm(parts[2])))
+    return hits
+
+
+# ---------------------------------------------------------------- locating
+def locate(repo: str, func: dict, comments: list) -> dict:
+    d = repo_dir(repo)
+    base = {"id": func["id"], "repo": repo, "label": func.get("label"),
+            "n_comments": len(comments)}
+    if not (d / ".git").exists():
+        return {**base, "status": "repo_missing"}
+
+    # Representative text: the record whose code is the most complete.
+    rep = max(comments, key=lambda r: len(r.get("code") or "")) if comments else None
+    code = (rep or {}).get("code") or func.get("original_code") or ""
+    ref = [norm(x) for x in code.splitlines()]
+    ref_ne = [x for x in ref if x]
+    if not ref_ne:
+        return {**base, "status": "no_anchor"}
+
+    comment_lines_all = []
+    for r in comments:
+        comment_lines_all += [norm(x) for x in (r.get("comment") or "").splitlines()]
+    anchors = anchors_from(ref_ne) or sorted(ref_ne, key=len, reverse=True)[:3]
+    anchors += [a for a in anchors_from([x for x in comment_lines_all if x], 6) if a not in anchors]
+    hits = grep(d, anchors)
+    if not hits:
+        # the dataset text may be an older shape of the function: relax the
+        # anchors (shorter lines, then everything) before giving up
+        for relaxed in (ref_ne[:3] + anchors_from(ref_ne, min_len=12),
+                        ref_ne[:5] + sorted(ref_ne, key=len, reverse=True)[:4],
+                        ref_ne[:40]):
+            hits = grep(d, relaxed)
+            if hits:
+                anchors = relaxed
+                break
+    if not hits:
+        return {**base, "status": "not_at_head", "head": head_of(d)}
+
+    # --- candidate alignments (file, start), seeded by the longest anchor line
+    index_of = {}
+    for i, t in enumerate(ref):
+        index_of.setdefault(t, []).append(i)
+    seed = anchors[0]
+    cands = {(path, ln - idx) for path, ln, text in hits if text == seed
+             for idx in index_of.get(seed, [])[:3] if ln - idx >= 1}
+    if not cands:
+        cands = {(path, ln - idx) for path, ln, text in hits
+                 for idx in index_of.get(text, [])[:1] if ln - idx >= 1}
+    if not cands:
+        # No reference line survived into any hit: fall back to the raw hit
+        # positions (comment-only evidence). Aligned windows still get scored.
+        cands = sorted({(path, ln) for path, ln, _ in hits})[:MAX_FILE_CANDIDATES * 10]
+    if not cands:
+        return {**base, "status": "not_at_head", "head": head_of(d)}
+    cands = sorted(cands)[:MAX_FILE_CANDIDATES * 10]
+
+    best = None
+    cache = {}
+    for path, start in cands:
+        lines = cache.get(path)
+        if lines is None:
+            lines = cache[path] = read_lines(d / path)
+        if not lines:
+            continue
+        win = [norm(x) for x in lines[start - 1:start - 1 + len(ref)]]
+        win_ne = [x for x in win if x]
+        if not win_ne:
+            continue
+        ratio = SequenceMatcher(None, ref_ne, win_ne, autojunk=False).ratio()
+        if best is None or ratio > best[0]:
+            best = (ratio, path, start, lines, win)
+    if best is None:
+        return {**base, "status": "unreadable", "head": head_of(d)}
+
+    ratio, path, start, lines, win = best
+    if ratio < 0.45:
+        return {**base, "status": "weak_match", "path": path, "ratio": round(ratio, 3),
+                "head": head_of(d)}
+
+    res = {**base, "status": "ok", "path": path, "start": start,
+           "end": start + len(ref) - 1, "ratio": round(ratio, 3),
+           "head": head_of(d),
+           "confidence": "high" if ratio >= 0.9 else "medium" if ratio >= 0.7 else "low"}
+
+    # --- map each comment onto file lines
+    out_comments = []
+    for r in comments:
+        cl = [norm(x) for x in (r.get("comment") or "").splitlines() if norm(x)]
+        lines_abs, kind = map_comment(cl, lines, start, start + len(ref) - 1)
+        if not lines_abs:
+            out_comments.append({"comment_id": r.get("comment_id"),
+                                 "comment": r.get("comment"),
+                                 "classification": r.get("classification"),
+                                 "lines": []})
+            continue
+        blames = [blame(d, path, ln, ln) for ln in lines_abs[:12]]
+        first = blames[0] if blames else {}
+        out_comments.append({
+            "comment_id": r.get("comment_id"),
+            "comment": r.get("comment"),
+            "classification": r.get("classification"),
+            "lines": lines_abs,
+            "match": kind,
+            "commit": first.get("sha"),
+            "author": first.get("author"),
+            "author_time": first.get("author_time"),
+            "summary": first.get("summary"),
+            "path_at": first.get("path"),
+            "shas": [b.get("sha") for b in blames],
+        })
+    res["comments"] = out_comments
+
+    mapped = [c for c in out_comments if c["lines"]]
+    res["n_mapped"] = len(mapped)
+    if mapped and mapped[0].get("commit"):
+        res["commit"] = mapped[0]["commit"]
+        res["path_at_commit"] = path_at_commit(d, path, mapped[0]["commit"])
+    return res
+
+
+def map_comment(cl, lines, start, end, span=150):
+    """Map a dataset comment onto file lines.
+
+    Returns (lines_abs, kind) where kind is "exact", "structural" or None.
+    Comments above the function are often outside the aligned code window and
+    may have been edited since the crawl, so a same-shape block right above the
+    function is accepted as a structural match.
+    """
+    if not cl:
+        return [], None
+    lo, hi = max(0, start - 1 - span), min(len(lines), end + span)
+    n = len(cl)
+    exact, struct = [], []
+    for p in range(lo, hi - n + 1):
+        block = lines[p:p + n]
+        cores_eq = sum(1 for a, b in zip(cl, block) if core(a) and core(a) == core(b))
+        if cores_eq == n and all(core(a) for a in cl):
+            exact.append(p)
+        elif n <= 1 or (mclass(block[0]) and mclass(block[0]) == mclass(cl[0])
+                        and mclass(block[-1]) == mclass(cl[-1])):
+            if cores_eq >= 1 or (n == 1 and core(cl[0]) and core(cl[0]) in core(block[0])):
+                struct.append(p)
+    if exact:
+        p = min(exact, key=lambda q: abs((q + n) - start))
+        return list(range(p + 1, p + n + 1)), "exact"
+    if struct:
+        p = min(struct, key=lambda q: abs((q + n) - start))
+        return list(range(p + 1, p + n + 1)), "structural"
+    return [], None
+
+
+def main():
+    funcs, comments = load_tesoro()
+    out_path = OUT / "functions_located.jsonl"
+    done = {}
+    if out_path.exists():
+        for line in out_path.read_text().splitlines():
+            if line.strip():
+                r = json.loads(line)
+                done[r["id"]] = r
+
+    # statuses worth retrying automatically (kept out of `done` results otherwise)
+    RETRY = {"error", "unreadable"}
+    todo = [i for i in funcs if i not in done or done[i].get("status") in RETRY]
+    only = set(sys.argv[1:])
+    if only:
+        # explicit ids / repos force a re-run regardless of previous status
+        todo = [i for i in funcs if funcs[i]["repo"] in only or str(i) in only]
+    print(f"to locate: {len(todo)} / {len(funcs)}", flush=True)
+
+    t0 = time.time()
+    n = 0
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        futs = {ex.submit(locate, funcs[i]["repo"], funcs[i], comments.get(i, [])): i
+                for i in todo}
+        for fut in as_completed(futs):
+            i = futs[fut]
+            try:
+                rec = fut.result()
+            except Exception as e:  # noqa: BLE001
+                rec = {"id": i, "repo": funcs[i]["repo"], "status": "error",
+                       "err": str(e)[:300]}
+            done[i] = rec
+            n += 1
+            if rec["status"] != "ok" or n % 50 == 0:
+                print(f"[{n}/{len(todo)}] {rec['status']:14s} {rec.get('ratio','')} "
+                      f"{rec.get('repo')} {rec.get('path','')}", flush=True)
+            if n % 200 == 0:
+                save(out_path, done)
+
+    save(out_path, done)
+    print("\nstatus:", Counter(r["status"] for r in done.values()))
+    print("confidence:", Counter(r.get("confidence") for r in done.values() if r["status"] == "ok"))
+    print(f"elapsed {(time.time()-t0)/60:.1f} min")
+
+
+def save(path, done):
+    tmp = path.with_suffix(".jsonl.tmp")
+    tmp.write_text("".join(json.dumps(done[k], ensure_ascii=False) + "\n" for k in sorted(done)))
+    tmp.replace(path)
+
+
+if __name__ == "__main__":
+    main()

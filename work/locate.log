@@ -1,0 +1,222 @@
+to locate: 1213 / 1255
+[12/1213] repo_missing    AIPaaS/sky-walking 
+[15/1213] repo_missing    GNUDimarik/libjitsi 
+[21/1213] repo_missing    EricssonBroadcastServices/AndroidClientReferenceApp 
+[23/1213] repo_missing    29e7e280-0d1c-4bba-98fe-f7cd3ca7500a/data-transfer-project 
+[33/1213] repo_missing    ExodiusStudios/quizzibles 
+[35/1213] repo_missing    Ant-OS/android_vendor_cmsdk 
+[50/1213] repo_missing    AndreasGB/jellyfin-apiclient-java 
+[60/1213] weak_match     0.417 FelixRilling/webmention4j server/src/main/java/dev/rilling/webmention4j/server/AbstractWebmentionEndpointServlet.java
+[75/1213] repo_missing    COMP30022-Russia/Russia_Client 
+[76/1213] repo_missing    COMP30022-Russia/Russia_Client 
+[85/1213] repo_missing    IFML2/ifml-player 
+[89/1213] not_at_head     Clay-Ferguson/Quantizr 
+[98/1213] repo_missing    Chiefwright/Mekanism 
+[100/1213] ok             0.769 JavaQualitasCorpus/cayenne-3.0.1 framework/cayenne-jpa-unpublished/src/main/java/org/apache/cayenne/jpa/conf/EntityMapDefaultsProcessor.java
+[109/1213] repo_missing    MalteBerlin/TerraMobile 
+[114/1213] repo_missing    JC-Bodoque/geometric-transformer 
+[117/1213] repo_missing    JamesCao2048/BlizzardData 
+[118/1213] repo_missing    LynzhX/android_frameworks_base-1 
+[119/1213] repo_missing    LynzhX/android_frameworks_base-1 
+[139/1213] repo_missing    IonBazan/openapi-generator 
+[150/1213] ok             0.88 Mark110/e-commerce framework/base/src/org/ofbiz/base/util/UtilValidate.java
+[159/1213] weak_match     0.222 RYH61/iotdb iotdb-core/confignode/src/main/java/org/apache/iotdb/confignode/manager/load/balancer/router/leader/MinCostFlowLeaderBalancer.java
+[184/1213] repo_missing    JamesCao2048/BlizzardData 
+[195/1213] not_at_head     PGMacDesign/PGMacTips 
+[200/1213] ok             0.917 Keneral/apackages apps/Messaging/tests/src/com/android/messaging/util/ContactUtilTest.java
+[205/1213] not_at_head     Narflex/sagetv 
+[210/1213] repo_missing    Skenvy/SeleniumNG 
+[232/1213] weak_match     0.281 alpinegizmo/flink flink-state-backends/flink-statebackend-rocksdb/src/main/java/org/apache/flink/contrib/streaming/state/restore/RocksDBIncrementalRestoreOperation.java
+[233/1213] weak_match     0.167 alpinegizmo/flink flink-state-backends/flink-statebackend-rocksdb/src/main/java/org/apache/flink/contrib/streaming/state/restore/RocksDBIncrementalRestoreOperation.java
+[238/1213] repo_missing    SnoBoarder/Sudoku-Solver 
+[246/1213] repo_missing    adam-collins/parsers 
+[250/1213] ok             1.0 aloklal99/apache-ranger security-admin/src/main/java/org/apache/ranger/entity/XXCredentialStore.java
+[254/1213] weak_match     0.36 amc8391/mage Mage.Sets/src/mage/cards/w/WorldgorgerDragon.java
+[257/1213] repo_missing    Sceptres/ud406 
+[300/1213] ok             1.0 Uniandes-isis2603/s2_Boletas s2_boletas-back/src/main/java/co/edu/uniandes/csw/boletas/persistence/CompraPersistence.java
+[304/1213] repo_missing    andbi-redpill/datasonnet-mapper 
+[316/1213] repo_missing    XuyuEre/fabric-furnaces 
+[326/1213] repo_missing    chanwit/groovy 
+[328/1213] repo_missing    cmyxt502/aim-project-2020 
+[335/1213] repo_missing    bacta/cu 
+[347/1213] repo_missing    bgklika/aws-iot-device-sdk-java-v2 
+[350/1213] ok             1.0 chenjiafan/eclipselink org/eclipse/persistence/internal/sessions/UnitOfWorkImpl.java
+[360/1213] repo_missing    canoo/open-dolphin 
+[367/1213] error           ankitaagar/felix-dev 
+[377/1213] weak_match     0.385 apache/incubator-datasketches-memory datasketches-memory-java11/src/main/java/org/apache/datasketches/memory/internal/ResourceImpl.java
+[378/1213] weak_match     0.207 colorizenl/colorize-java-commons source/nl/colorize/util/swing/SwingUtils.java
+[396/1213] repo_missing    coheigea/tcommon-studio-se 
+[400/1213] ok             0.962 benbenxiaoluchi/com.accenture.cordova.plugin.sso src/android/SSOPlugin.java
+[405/1213] weak_match     0.242 asf-transfer/pinot pinot-segment-local/src/main/java/org/apache/pinot/segment/local/dedup/BasePartitionDedupMetadataManager.java
+[429/1213] weak_match     0.25 astei/velocity proxy/src/test/java/com/velocitypowered/proxy/scheduler/VelocitySchedulerTest.java
+[432/1213] repo_missing    bcgov/jag-efax 
+[434/1213] repo_missing    avereon/xenon 
+[435/1213] repo_missing    bshp/midpoint 
+[437/1213] repo_missing    batiaev/provisioner 
+[438/1213] error           baodingfengyun/luaj 
+[440/1213] error           baodingfengyun/luaj 
+[441/1213] error           baodingfengyun/luaj 
+[442/1213] error           baodingfengyun/luaj 
+[443/1213] error           baodingfengyun/luaj 
+[446/1213] repo_missing    caricah/mq.tracah 
+[450/1213] ok             1.0 augmented-human-lab/kiwrious-android-library kiwrious/src/main/java/org/ahlab/kiwrious/android/service/QueueReader.java
+[461/1213] repo_missing    elwinarens/beam 
+[487/1213] repo_missing    focadiz/metasfresh 
+[494/1213] repo_missing    finki001/couchbase-lite-java-core 
+[500/1213] ok             0.941 css4j/echosvg echosvg-swing/src/main/java/io/sf/carte/echosvg/swing/gvt/JGVTComponent.java
+[509/1213] repo_missing    fieldenms/ 
+[530/1213] repo_missing    fernandogomesfg/Algoritmos-em-Java 
+[531/1213] repo_missing    fernandogomesfg/Algoritmos-em-Java 
+[540/1213] repo_missing    devolksbank/NL-Help-U 
+[545/1213] repo_missing    derekdinan/CTFServer 
+[547/1213] repo_missing    deividgdt/UNED_II 
+[550/1213] ok             0.994 defoltbmd/SimpleRobot src/controller/ComandInvoker.java
+[556/1213] not_at_head     elimu-ai/content-provider 
+[567/1213] weak_match     0.267 consulo/consulo modules/desktop-awt/desktop-awt-ui-impl/src/main/java/consulo/desktop/awt/ui/impl/base/SwingComponentDelegate.java
+[576/1213] repo_missing    isabella232/explorer-2 
+[577/1213] repo_missing    isabella232/explorer-2 
+[578/1213] repo_missing    isabella232/explorer-2 
+[579/1213] repo_missing    isabella232/explorer-2 
+[580/1213] repo_missing    isabella232/explorer-2 
+[581/1213] repo_missing    jaysooong/RxJava 
+[582/1213] repo_missing    jaysooong/RxJava 
+[583/1213] repo_missing    jaysooong/RxJava 
+[588/1213] repo_missing    isabella232/subzero 
+[589/1213] repo_missing    isabella232/subzero 
+[591/1213] repo_missing    good-loop/open-code 
+[597/1213] repo_missing    hlemorvan/jimfs 
+[600/1213] ok             0.941 jebbench/jackson-dataformat-velocypack src/test/java/com/fasterxml/jackson/databind/node/TestMissingNode.java
+[601/1213] weak_match     0.333 guilhermejulio/PAA-IndiceInvertido src/app/Index.java
+[604/1213] repo_missing    huangzhanqiao/yuzhouwan 
+[605/1213] repo_missing    joaonmatos/clava 
+[608/1213] not_at_head     jmix-framework/jmix 
+[611/1213] repo_missing    janjaali/azure-sdk-for-java 
+[615/1213] repo_missing    gerdreiss/camunda-dmn-xlsx 
+[635/1213] repo_missing    jd3538/Marist-Sakai-11.x 
+[639/1213] repo_missing    intel-secl/key-broker-service 
+[640/1213] repo_missing    globalid/walletkit 
+[648/1213] repo_missing    imperialft/jquantlib 
+[649/1213] repo_missing    imperialft/jquantlib 
+[650/1213] not_at_head     haku/Morrigan 
+[653/1213] repo_missing    jcdubois/cpachecker 
+[654/1213] repo_missing    jcdubois/cpachecker 
+[655/1213] repo_missing    jcdubois/cpachecker 
+[664/1213] repo_missing    javacreed/super-simple-stocks 
+[672/1213] repo_missing    gjbang/graduation-design 
+[683/1213] repo_missing    information-machine/information-machine-api-android 
+[684/1213] repo_missing    information-machine/information-machine-api-android 
+[685/1213] repo_missing    information-machine/information-machine-api-android 
+[686/1213] repo_missing    information-machine/information-machine-api-android 
+[687/1213] repo_missing    information-machine/information-machine-api-android 
+[688/1213] repo_missing    information-machine/information-machine-api-android 
+[689/1213] repo_missing    information-machine/information-machine-api-android 
+[690/1213] repo_missing    information-machine/information-machine-api-android 
+[691/1213] repo_missing    information-machine/information-machine-api-android 
+[692/1213] repo_missing    information-machine/information-machine-api-android 
+[693/1213] repo_missing    information-machine/information-machine-api-android 
+[694/1213] repo_missing    information-machine/information-machine-api-android 
+[698/1213] repo_missing    isabella232/continuum 
+[699/1213] repo_missing    isabella232/continuum 
+[700/1213] ok             1.0 johnaohara/qDup src/main/java/io/hyperfoil/tools/qdup/Coordinator.java
+[709/1213] not_at_head     kduncan99/em2200-java 
+[731/1213] not_at_head     kupl/starlab-benchmarks 
+[734/1213] repo_missing    lembergerth/cpachecker 
+[738/1213] repo_missing    kjthegod/chromium 
+[747/1213] not_at_head     kupl/starlab-benchmarks 
+[749/1213] repo_missing    kimjand/cxf 
+[750/1213] ok             0.889 mauriciotogneri/prefix src/com/mauriciotogneri/jan/kernel/nodes/array/IndexNode.java
+[761/1213] repo_missing    julien-faye/drill 
+[767/1213] repo_missing    kkrolczyk/Schowek 
+[768/1213] repo_missing    kkrolczyk/Schowek 
+[769/1213] repo_missing    kadenscott/DragonFight 
+[776/1213] weak_match     0.215 leusonmario/2022PhDThesis HikariCP/1bca94af9ec625f21d1b58ff10efb5be71ab87a6/randoop-modified_1/RegressionTest0.java
+[777/1213] repo_missing    mbreemhaar/webcurator 
+[779/1213] repo_missing    marcus8448/Mekanism 
+[781/1213] repo_missing    linyingfa/AnimatedPieView-master 
+[785/1213] repo_missing    krisiney/SOKOBANFX-DMS-2020 
+[786/1213] repo_missing    ming1991/mingop 
+[787/1213] repo_missing    ming1991/mingop 
+[794/1213] repo_missing    marceloamorimcg/Dr.InfoSystem 
+[795/1213] repo_missing    marceloamorimcg/Dr.InfoSystem 
+[798/1213] unreadable      krisglover/cia 
+[800/1213] ok             0.923 llanox/EasyVote EasyVote/src/com/llanox/mobile/easyvote/activities/EntryPointActivity.java
+[803/1213] unreadable      kalucky0/The-Aether 
+[805/1213] repo_missing    lbqh/kalang 
+[816/1213] repo_missing    racker/salus-telemetry-ambassador 
+[817/1213] not_at_head     pcal43/mob-filter 
+[823/1213] repo_missing    nikosnikolaidis/stanbol 
+[828/1213] repo_missing    rebse/flaka 
+[829/1213] repo_missing    rebse/flaka 
+[837/1213] repo_missing    pokebadgerswithspoon/incubator-netbeans 
+[850/1213] ok             1.0 rayeaster/tablesaw core/src/test/java/tech/tablesaw/io/csv/CsvReaderTest.java
+[859/1213] unreadable      phit/AdvancedRocketry 
+[860/1213] unreadable      phit/AdvancedRocketry 
+[861/1213] repo_missing    nakomis/incubator-brooklyn 
+[862/1213] repo_missing    nakomis/incubator-brooklyn 
+[871/1213] repo_missing    octo-online/reactive-aud 
+[872/1213] weak_match     0.444 rajarshisarkar/iceberg core/src/main/java/org/apache/iceberg/io/BaseTaskWriter.java
+[873/1213] weak_match     0.029 paragp/GTS-PreUAT src/org/opengts/war/tools/WebPageAdaptor.java
+[879/1213] repo_missing    nikosnikolaidis/commons-rdf 
+[883/1213] repo_missing    mkpaz/telek 
+[887/1213] repo_missing    nedru004/LibraryAnalysis2 
+[892/1213] repo_missing    qiaolw/AndroidTest 
+[900/1213] ok             0.947 mphi-rc/pi-zero-security-key src/main/java/com/github/mphi_rc/fido2/protocol/ctap2/AuthenticatorRequestHandler.java
+[950/1213] ok             0.973 scottmcmaster/blogcode selftest/src/main/java/com/smcmaster/selftest/runner/SelfTestRunner.java
+[959/1213] repo_missing    rillig/r4intellij 
+[962/1213] repo_missing    shaneknapp/tachyon 
+[971/1213] repo_missing    slachiewicz/aws-sdk-java-v2 
+[979/1213] repo_missing    sirivus/studioonline 
+[980/1213] repo_missing    sirivus/studioonline 
+[989/1213] weak_match     0.108 smengcl/hadoop-ozone hadoop-ozone/integration-test/src/test/java/org/apache/hadoop/hdds/scm/container/metrics/TestSCMContainerManagerMetrics.java
+[997/1213] repo_missing    rohankumardubey/cayenne 
+[1000/1213] ok             1.0 salyh/geronimo-specs geronimo-jcdi_1.1_spec/src/main/java/javax/enterprise/inject/spi/CDI.java
+[1002/1213] repo_missing    rsampson/GuitarView 
+[1003/1213] repo_missing    rohankumardubey/stubby4j 
+[1014/1213] repo_missing    savannahostrowski/atlas 
+[1031/1213] repo_missing    sigurasg/ghidra 
+[1032/1213] repo_missing    sigurasg/ghidra 
+[1033/1213] repo_missing    sigurasg/ghidra 
+[1034/1213] repo_missing    sigurasg/ghidra 
+[1040/1213] weak_match     0.286 soerendomroes/lingua-franca org.lflang/src/org/lflang/generator/c/CGenerator.java
+[1044/1213] repo_missing    sarang-apps/darshan_browser 
+[1050/1213] ok             0.99 swing-fly/webswing webswing-server/webswing-server-war/src/main/java/org/webswing/server/services/files/FileTransferHandlerImpl.java
+[1057/1213] repo_missing    zealoussnow/chromium 
+[1058/1213] repo_missing    zealoussnow/chromium 
+[1060/1213] repo_missing    szymek22/AxonFramework 
+[1068/1213] repo_missing    zreed/webpieces 
+[1070/1213] repo_missing    zealoussnow/chromium 
+[1077/1213] repo_missing    zem13579/hive 
+[1078/1213] repo_missing    zem13579/hive 
+[1083/1213] not_at_head     xxwar/muzei 
+[1084/1213] not_at_head     xxwar/muzei 
+[1085/1213] repo_missing    zem13579/hive 
+[1100/1213] ok             0.909 zonnie/Coins app/src/main/java/com/moneyifyapp/activities/analytics/adapters/CategoryTileAdapter.java
+[1104/1213] weak_match     0.057 wangfanming/hadoop hadoop-tools/hadoop-aws/src/test/java/org/apache/hadoop/fs/s3a/prefetch/TestS3ARemoteObjectReader.java
+[1137/1213] repo_missing    yatyanng/jvb 
+[1150/1213] repo_missing    zealoussnow/chromium 
+[1152/1213] not_at_head     uwe-koeckemann/SpiderPlan 
+[1155/1213] repo_missing    tuxjsmith/logFarmDMS 
+[1156/1213] repo_missing    tuxjsmith/logFarmDMS 
+[1157/1213] repo_missing    tuxjsmith/logFarmDMS 
+[1158/1213] repo_missing    tuxjsmith/logFarmDMS 
+[1159/1213] repo_missing    tuxjsmith/logFarmDMS 
+[1160/1213] repo_missing    tuxjsmith/logFarmDMS 
+[1161/1213] repo_missing    tuxjsmith/logFarmDMS 
+[1163/1213] repo_missing    zealoussnow/chromium 
+[1165/1213] not_at_head     tomhenne/Jerusalem 
+[1174/1213] repo_missing    tomitribe/cdi 
+[1180/1213] repo_missing    zipated/src 
+[1181/1213] repo_missing    zipated/src 
+[1182/1213] repo_missing    zipated/src 
+[1183/1213] repo_missing    zipated/src 
+[1184/1213] repo_missing    zipated/src 
+[1185/1213] repo_missing    zipated/src 
+[1186/1213] repo_missing    zipated/src 
+[1187/1213] repo_missing    zipated/src 
+[1188/1213] repo_missing    zipated/src 
+[1189/1213] repo_missing    zipated/src 
+[1200/1213] ok             0.933 tszielin/q-lab-editor src/main/java/org/openide/filesystems/LocalFileSystem.java
+
+status: Counter({'ok': 1059, 'repo_missing': 155, 'weak_match': 17, 'not_at_head': 14, 'error': 6, 'unreadable': 4})
+confidence: Counter({'high': 879, 'medium': 169, 'low': 11})
+elapsed 15.3 min

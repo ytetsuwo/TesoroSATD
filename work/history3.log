@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/tetsuo/Projects/AI/TesoroSATD/scripts/08_history.py", line 233, in <module>
+    main()
+  File "/Users/tetsuo/Projects/AI/TesoroSATD/scripts/08_history.py", line 206, in main
+    want = [int(a) for a in sys.argv[1:]]
+  File "/Users/tetsuo/Projects/AI/TesoroSATD/scripts/08_history.py", line 206, in <listcomp>
+    want = [int(a) for a in sys.argv[1:]]
+ValueError: invalid literal for int() with base 10: '83 1134 1136 1139 1407 1759 2951 2992 3003 3803 9309 9310 11234 14154 15621 15626 16532 18334 18335 18378 18643 18792 19939 20270 20579 24462 25662 30915 31546 31742 34902 34920'

@@ -1,0 +1,645 @@
+to clone: 869 / 875
+[25/869] 1.0 min elapsed, 2.3s/repo avg | last: anon24816/lucene-solr java=8565
+[50/869] 1.6 min elapsed, 1.9s/repo avg | last: codesbyzhangpeng/scipio-erp java=1526
+[75/869] 2.2 min elapsed, 1.7s/repo avg | last: adele-robots/fiona java=1360
+[100/869] 2.6 min elapsed, 1.6s/repo avg | last: AndrewGuthua/JournalSystem java=442
+[125/869] 2.9 min elapsed, 1.4s/repo avg | last: xmf-xmodeler/MosaicFX java=315
+[150/869] 3.4 min elapsed, 1.4s/repo avg | last: marrmartin/onesaitplatform-cloud java=1767
+[175/869] 3.7 min elapsed, 1.3s/repo avg | last: osoco/comprendiendo-software-creando-herramientas java=2163
+[200/869] 3.9 min elapsed, 1.2s/repo avg | last: vijji432/pdfbox java=1306
+[225/869] 4.2 min elapsed, 1.1s/repo avg | last: SanjayTechGuru/TRINO java=7866
+[250/869] 4.4 min elapsed, 1.0s/repo avg | last: Cotton-Ben/infinispan java=3729
+[275/869] 4.6 min elapsed, 1.0s/repo avg | last: mark43/nibrs java=287
+[300/869] 4.7 min elapsed, 0.9s/repo avg | last: bertl4398/ssdbm2020 java=2630
+[325/869] 4.9 min elapsed, 0.9s/repo avg | last: christoff-buerger/pmChess java=11
+[350/869] 5.0 min elapsed, 0.9s/repo avg | last: Clay-Ferguson/Quantizr java=342
+[375/869] 5.1 min elapsed, 0.8s/repo avg | last: IronApollo/FastAsyncWorldEdit java=1545
+[400/869] 5.3 min elapsed, 0.8s/repo avg | last: avineshwar/wycheproof java=44
+[425/869] 5.4 min elapsed, 0.8s/repo avg | last: E-C-Group/jsip java=892
+[450/869] 5.5 min elapsed, 0.7s/repo avg | last: bramdvrepublic/com.beligum.blocks.core java=264
+[475/869] 5.7 min elapsed, 0.7s/repo avg | last: uwe-koeckemann/SpiderPlan java=0
+[500/869] 5.8 min elapsed, 0.7s/repo avg | last: jkandcoding/QuantiTanti_1 java=48
+[525/869] 5.9 min elapsed, 0.7s/repo avg | last: lrscp/ControlAndroidDeviceFromPC java=164
+[550/869] 6.0 min elapsed, 0.7s/repo avg | last: SinnerSchraderMobileMirrors/mopub-android-sdk java=329
+[575/869] 6.1 min elapsed, 0.6s/repo avg | last: timassman/roomba java=150
+[600/869] 6.2 min elapsed, 0.6s/repo avg | last: seemoo-lab/polypyus_pdom java=2324
+[608/869] checkout_failed: malmstein/ExoPlayer error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[610/869] checkout_failed: ModestosV/Simple-Calculator error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[612/869] checkout_failed: SafwanAhmad/Sunshine-Version-2 error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[614/869] checkout_failed: bisc/active error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[615/869] checkout_failed: LouisJenkinsCS/DSL error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[616/869] checkout_failed: Ikinon/CascadeBot error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[617/869] checkout_failed: ScribbleLP/StrongholdTrainer error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[618/869] checkout_failed: BrahmaOS/brahmaos-packages-apps-Contacts error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[619/869] checkout_failed: ngouagna/alien4cloud-cloudify2-provider error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[620/869] checkout_failed: SilasK/BBMap error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[621/869] checkout_failed: boniatillo-com/rayo error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[622/869] checkout_failed: Gaeldrin/perun-wui error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[623/869] checkout_failed: UprootStaging/maven-OpenViewerFX-src error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[625/869] 6.3 min elapsed, 0.6s/repo avg | last: KGKallasmaa/S_P500_trading_options java=10
+[626/869] checkout_failed: kovyrin/crawler-commons error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[627/869] checkout_failed: mikiec84/jsoup error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[629/869] checkout_failed: stratosphere/metadata-store error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[630/869] checkout_failed: tabneib/petimo error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[631/869] checkout_failed: sisbell/appia error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[632/869] checkout_failed: smartdatalake/simsearch error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[634/869] checkout_failed: mpicque/pom-explorer error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[635/869] checkout_failed: I2SE/RISE-V2G error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[636/869] checkout_failed: j-be/ewp-registry-service error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[637/869] checkout_failed: mikiec84/blueprints error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[638/869] checkout_failed: K1UBC/BlangModel error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[639/869] checkout_failed: TortleWortle/CascadeBot error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[640/869] checkout_failed: Saba-d-coder/6thSemIse error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[641/869] checkout_failed: johnaohara/qDup error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[642/869] checkout_failed: Legioth/reactivevaadin error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[643/869] checkout_failed: llanox/EasyVote error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[644/869] checkout_failed: kylekyle/netgrok error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[645/869] checkout_failed: stokpop/lograter error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[646/869] checkout_failed: GoogleCloudPlatform/bq-pii-classifier error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[647/869] checkout_failed: dwws-ufes/2020-doeLivro error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[648/869] checkout_failed: mindscan-de/BrightFlux error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[649/869] checkout_failed: scottkillen-vault/Bunyan error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[650/869] checkout_failed: O70/spring-laboratory error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[651/869] checkout_failed: maheshp/gocd-groovy-dsl-config-plugin error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[652/869] checkout_failed: gcdev373/stroom-query error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[653/869] checkout_failed: RubbaBoy/jsyn error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[654/869] checkout_failed: Agardner329/TOA-DataSync error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[655/869] checkout_failed: tszielin/q-lab-editor error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[658/869] checkout_failed: minhhn2910/g-mason error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[659/869] checkout_failed: ASofterSpace/Toolbox-Java error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[662/869] checkout_failed: SpencerRiddering/flingtap-done error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[664/869] checkout_failed: PaulBoon/dccd-lib error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[665/869] checkout_failed: humbletrader/katechaki error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[666/869] checkout_failed: Sammoore15/Robot2022-2832-altencoderforingestor error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[667/869] checkout_failed: jdissou/sigdep01_01 error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[668/869] checkout_failed: colorizenl/colorize-java-commons error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[670/869] checkout_failed: smtilden/java-control-plane error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[671/869] checkout_failed: nicolasbelfis/practical-reactor error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[672/869] checkout_failed: johnjardin/ukuvuma-xpages-boilerplate error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[673/869] checkout_failed: LeandroDosSantosPereira/sistemaBarbearia error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[674/869] checkout_failed: hardeepnagi/stripe-java error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[675/869] checkout_failed: skashin/Amazon-S3-FileSystem-NIO2 error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[677/869] checkout_failed: DaniloSosa98/SE-WebCheckers error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[678/869] checkout_failed: automenta/java-unidu-pire error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[679/869] checkout_failed: viveshs/sqoop-netezza-connector error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[680/869] checkout_failed: andreika63/viritin error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[681/869] checkout_failed: maehem/Thump error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[682/869] checkout_failed: ce-store/ce-store error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[683/869] checkout_failed: developers16/GithubsSample error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[684/869] checkout_failed: vdmeer/skb-java-base error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[685/869] checkout_failed: arkanovicz/velocity-model error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[687/869] checkout_failed: 210118-java-enterprise/demos error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[688/869] checkout_failed: agilepro/purple error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[689/869] checkout_failed: onekeynet/OConf error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[690/869] checkout_failed: eorygen/sema2_android error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[691/869] checkout_failed: yzy830/undertow-analyze error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[692/869] checkout_failed: MaximillianHays/2019-DeepSpace error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[693/869] checkout_failed: Bedework/bw-calendar-convert error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[694/869] checkout_failed: commitd/jonah-server error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[695/869] checkout_failed: Cyborgmas/ScalingHealth error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[696/869] checkout_failed: dbl-x/sofa-rpc error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[697/869] checkout_failed: melvidoni/chatbot error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[698/869] checkout_failed: bsergean/sentry-android error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[699/869] checkout_failed: yinwil27/PortfolioRepositorySQLJava error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[700/869] checkout_failed: Wilhansen/gtfs-lib error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[702/869] checkout_failed: alar17/ts-reaktive error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[704/869] checkout_failed: panpf/tools4j error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[705/869] checkout_failed: reckue/note-api error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[707/869] checkout_failed: tevosouza/apiman-plugins error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[708/869] checkout_failed: Tecbot3158/open-ds error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[710/869] checkout_failed: operon-io/operon-lang error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[711/869] checkout_failed: acestream/acestream-android-sdk error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[712/869] checkout_failed: Nargeshdb/plume-util error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[714/869] checkout_failed: hugogrochau/VoidMS error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[715/869] checkout_failed: mvm-sap/ADT_Frontend error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[716/869] checkout_failed: slipstream/cimi-mf2c error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[718/869] checkout_failed: jgallimore/crest error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[719/869] checkout_failed: Uniandes-isis2603/s2_Boletas error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[720/869] checkout_failed: entropycoder/Jaffree error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[721/869] checkout_failed: MatzeS/blackbird_java error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[722/869] checkout_failed: AtomicPulsee/ChatDirector error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[723/869] checkout_failed: riscv-android-src/platform-test-mlts-benchmark error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[724/869] checkout_failed: aoen/reair error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[725/869] checkout_failed: QuinnCiccoretti/aws-greengrass-provisioner error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[726/869] checkout_failed: pedro-filho-81/LivrosDeJava error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[727/869] checkout_failed: sengerts/tic-tac-toe error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[728/869] checkout_failed: Joybeanx/leetcode error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[729/869] checkout_failed: RobAlexander/SCovSGen error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[730/869] checkout_failed: erda-project/erda-java-extensions error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[731/869] checkout_failed: taswin/Warpspace error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[732/869] checkout_failed: molcikas/photon error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[733/869] checkout_failed: liuziyuan/retrofit-spring-boot-starter error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[734/869] checkout_failed: Asucanc/FishMail error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[735/869] checkout_failed: xushjie1987/common-utils error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[736/869] checkout_failed: jebbench/jackson-dataformat-velocypack error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[738/869] checkout_failed: chbi/gerrit-gitblit-plugin error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[739/869] checkout_failed: blackducksoftware/magpie-libraries error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[740/869] checkout_failed: pcal43/mob-filter error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[741/869] checkout_failed: neiplz/Pedometer error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[743/869] checkout_failed: Arraying/astra error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[744/869] checkout_failed: Workinq/AsyncCollectors error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[747/869] checkout_failed: MessierObject111/algorithms-playground error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[748/869] checkout_failed: programmerr47/breverkruntkin-test-task error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[749/869] checkout_failed: palisades-lakes/xfp-jmh error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[750/869] checkout_failed: LinuxTek/kona-app-model error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[751/869] checkout_failed: gabibeyo/stepping error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[752/869] checkout_failed: andrebrait/java-uuid-generator error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[753/869] checkout_failed: RomanSery/codesnippets error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[754/869] checkout_failed: niuyiming/alpha-umi error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[756/869] checkout_failed: xzs603/codeLearning error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[758/869] checkout_failed: hjaremko/cute-animals error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[759/869] checkout_failed: osglworks/java-di error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[760/869] checkout_failed: finefuture/gazelle error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[761/869] checkout_failed: Yarulika/Microblogging error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[762/869] checkout_failed: meyerbaptiste/idea-php-annotation-plugin error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[763/869] checkout_failed: mobabel/MoMeGo error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[764/869] checkout_failed: ambedrake/UniversalAuthenticatedReportGenerator error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[765/869] checkout_failed: OrienteerBAP/Transponder error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[766/869] checkout_failed: swbrenneis/secomm-tls-java error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[767/869] checkout_failed: adams-okode/chirpstack-rest-sdk error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[768/869] checkout_failed: FelixRilling/webmention4j error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[770/869] checkout_failed: Erhannis/UnstableArt error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[771/869] checkout_failed: bumfo/LWJGUI error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[772/869] checkout_failed: atcbosselut/recipe-interpretation error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[773/869] checkout_failed: christiangalsterer/yet-another-commit-checker error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[774/869] checkout_failed: mickknutson/spring-cloud-config error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[775/869] checkout_failed: doanhoa93/struts2shop error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[777/869] checkout_failed: rhulha/EasyLang error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[778/869] checkout_failed: mskamp/StarSmith error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[779/869] checkout_failed: romainr/flink-sql-gateway error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[780/869] checkout_failed: k0kubun/jjvm error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[782/869] checkout_failed: Zimbra/qless-java error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[783/869] checkout_failed: FRC6302/2022Bot1 error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[784/869] checkout_failed: mohanakrishna12/rokuality-server error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[785/869] checkout_failed: Mustard/chatterbox error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[786/869] checkout_failed: reed-foster/cdl error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[787/869] checkout_failed: maybeec/lexeme error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[788/869] checkout_failed: dontdrinkandroot/cache.java error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[789/869] checkout_failed: krisglover/cia error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[790/869] checkout_failed: johannesc/gerrit-builder-plugin error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[791/869] checkout_failed: Hsia-Esther/CityOfAaronGroup1 error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[792/869] checkout_failed: agaveplatform/java-sdk error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[794/869] checkout_failed: NikitaFeodonit/bqtj error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[795/869] checkout_failed: PC-Logix/GregsLighting-Reloaded error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[797/869] checkout_failed: tianshaojie/common-framework error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[798/869] checkout_failed: LeonisX/jSite-Watcher error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[799/869] checkout_failed: dgisser/Ripple error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[800/869] checkout_failed: leinardi/Dagger2MVP error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[801/869] checkout_failed: zepedropaixao/videoplayer error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[802/869] checkout_failed: tladesignz/DNATools error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[803/869] checkout_failed: Open-MBEE/sync-service error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[804/869] checkout_failed: memleakpl/flat error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[805/869] checkout_failed: HemlockBane/cashier-demo error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[809/869] checkout_failed: abarhub/tinyvfs error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[810/869] checkout_failed: Stratio/spark-solr error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[811/869] checkout_failed: juansgonzalez/ingenia-bank error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[814/869] checkout_failed: lg198/CodeFray error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[815/869] checkout_failed: pk-80/device-modbus error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[816/869] checkout_failed: xuanliao/MVVM_Samples error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[817/869] checkout_failed: devjn/fesimplegeoprox-android-maps error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[818/869] checkout_failed: mauriciotogneri/prefix error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[821/869] checkout_failed: MisterRnobe/sodexo-tg-bot error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[822/869] checkout_failed: Tamicer/FilterBar error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[823/869] checkout_failed: eZubia/scrum-team error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[825/869] 7.0 min elapsed, 0.5s/repo avg | last: avioconsulting/ics-maven-plugin java=12
+[827/869] checkout_failed: EDUMATT3/orange-talents-06-template-proposta error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[828/869] checkout_failed: first-1251/exp-drive error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[829/869] checkout_failed: geniusdibya/pepipost-sdk-java error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[830/869] checkout_failed: ThaChillera/CardScore error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[831/869] checkout_failed: utd-hltri/scribe error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[832/869] checkout_failed: rscadrde/projekt-task-capturing error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[835/869] checkout_failed: kyunghoj/pigout error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[838/869] checkout_failed: serkaneren78/konkod-android-sdk error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[840/869] checkout_failed: dansiviter/cito-sockjs error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[844/869] checkout_failed: BertKoor/camelCase error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[846/869] checkout_failed: hutoroff/jagpb error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[849/869] checkout_failed: SwettSoquelHS/think-java-notswett error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[850/869] checkout_failed: andrewflbarnes/debt-tracker error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[854/869] checkout_failed: rmannibucau/access-log-stats error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+[863/869] checkout_failed: PolyhedralDev/Terra-biome-provider-pipeline error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+fatal: could not fe
+
+finished in 7.2 min; ok=683 failures=192
+  checkout_failed malmstein/ExoPlayer error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+  checkout_failed ModestosV/Simple-Calculator error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+  checkout_failed SafwanAhmad/Sunshine-Version-2 error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+  checkout_failed bisc/active error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+  checkout_failed LouisJenkinsCS/DSL error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+  checkout_failed Ikinon/CascadeBot error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+  checkout_failed ScribbleLP/StrongholdTrainer error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+  checkout_failed BrahmaOS/brahmaos-packages-apps-Contacts error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+  checkout_failed ngouagna/alien4cloud-cloudify2-provider error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+  checkout_failed SilasK/BBMap error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+  checkout_failed boniatillo-com/rayo error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+  checkout_failed Gaeldrin/perun-wui error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+  checkout_failed UprootStaging/maven-OpenViewerFX-src error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+  checkout_failed kovyrin/crawler-commons error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+  checkout_failed mikiec84/jsoup error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+  checkout_failed stratosphere/metadata-store error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+  checkout_failed tabneib/petimo error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+  checkout_failed sisbell/appia error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+  checkout_failed smartdatalake/simsearch error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'
+  checkout_failed mpicque/pom-explorer error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+fatal: expected 'packfile'

@@ -1,0 +1,118 @@
+14 repositories to cook, 8 rounds
+  submit IonBazan/openapi-generator: new
+  submit bshp/midpoint: new
+  submit coheigea/tcommon-studio-se: pending
+  submit elwinarens/beam: new
+  submit focadiz/metasfresh: new
+  submit janjaali/azure-sdk-for-java: new
+  submit jcdubois/cpachecker: new
+  submit jd3538/Marist-Sakai-11.x: new
+  submit kimjand/cxf: new
+  submit kjthegod/chromium: new
+  submit lembergerth/cpachecker: new
+  submit pokebadgerswithspoon/incubator-netbeans: pending
+  submit zealoussnow/chromium: new
+  submit zem13579/hive: new
+round 1: 14 pending, waiting 900s
+  pending IonBazan/openapi-generator
+  pending bshp/midpoint
+  pending coheigea/tcommon-studio-se
+  pending elwinarens/beam
+  failed focadiz/metasfresh: 
+  failed focadiz/metasfresh
+  pending janjaali/azure-sdk-for-java
+  pending jcdubois/cpachecker
+  pending jd3538/Marist-Sakai-11.x
+  pending kimjand/cxf
+  failed kjthegod/chromium: 
+  failed kjthegod/chromium
+  pending lembergerth/cpachecker
+  pending pokebadgerswithspoon/incubator-netbeans
+  failed zealoussnow/chromium: 
+  failed zealoussnow/chromium
+  pending zem13579/hive
+round 2: 11 pending, waiting 900s
+  pending IonBazan/openapi-generator
+  pending bshp/midpoint
+  pending coheigea/tcommon-studio-se
+  pending elwinarens/beam
+  pending janjaali/azure-sdk-for-java
+  pending jcdubois/cpachecker
+  pending jd3538/Marist-Sakai-11.x
+  pending kimjand/cxf
+  pending lembergerth/cpachecker
+  pending pokebadgerswithspoon/incubator-netbeans
+  pending zem13579/hive
+round 3: 11 pending, waiting 900s
+  pending IonBazan/openapi-generator
+  pending bshp/midpoint
+  pending coheigea/tcommon-studio-se
+  pending elwinarens/beam
+  pending janjaali/azure-sdk-for-java
+  pending jcdubois/cpachecker
+  pending jd3538/Marist-Sakai-11.x
+  pending kimjand/cxf
+  pending lembergerth/cpachecker
+  pending pokebadgerswithspoon/incubator-netbeans
+  pending zem13579/hive
+round 4: 11 pending, waiting 900s
+  pending IonBazan/openapi-generator
+  pending bshp/midpoint
+  pending coheigea/tcommon-studio-se
+  pending elwinarens/beam
+  pending janjaali/azure-sdk-for-java
+  pending jcdubois/cpachecker
+  pending jd3538/Marist-Sakai-11.x
+  pending kimjand/cxf
+  pending lembergerth/cpachecker
+  pending pokebadgerswithspoon/incubator-netbeans
+  pending zem13579/hive
+round 5: 11 pending, waiting 900s
+  pending IonBazan/openapi-generator
+  pending bshp/midpoint
+  pending coheigea/tcommon-studio-se
+  pending elwinarens/beam
+  pending janjaali/azure-sdk-for-java
+  pending jcdubois/cpachecker
+  pending jd3538/Marist-Sakai-11.x
+  pending kimjand/cxf
+  pending lembergerth/cpachecker
+  pending pokebadgerswithspoon/incubator-netbeans
+  pending zem13579/hive
+round 6: 11 pending, waiting 900s
+  pending IonBazan/openapi-generator
+  pending bshp/midpoint
+  pending coheigea/tcommon-studio-se
+  pending elwinarens/beam
+  pending janjaali/azure-sdk-for-java
+  pending jcdubois/cpachecker
+  pending jd3538/Marist-Sakai-11.x
+  pending kimjand/cxf
+  pending lembergerth/cpachecker
+  pending pokebadgerswithspoon/incubator-netbeans
+  pending zem13579/hive
+round 7: 11 pending, waiting 900s
+  pending IonBazan/openapi-generator
+  pending bshp/midpoint
+  pending coheigea/tcommon-studio-se
+  pending elwinarens/beam
+  pending janjaali/azure-sdk-for-java
+  pending jcdubois/cpachecker
+  pending jd3538/Marist-Sakai-11.x
+  pending kimjand/cxf
+  pending lembergerth/cpachecker
+  pending pokebadgerswithspoon/incubator-netbeans
+  pending zem13579/hive
+round 8: 11 pending, waiting 900s
+  pending IonBazan/openapi-generator
+  pending bshp/midpoint
+  pending coheigea/tcommon-studio-se
+  pending elwinarens/beam
+  pending janjaali/azure-sdk-for-java
+  pending jcdubois/cpachecker
+  pending jd3538/Marist-Sakai-11.x
+  pending kimjand/cxf
+  pending lembergerth/cpachecker
+  pending pokebadgerswithspoon/incubator-netbeans
+  pending zem13579/hive
+done, 11 still cooking

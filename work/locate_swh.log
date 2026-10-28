@@ -1,0 +1,7 @@
+to locate: 74 / 1255
+[14/74] weak_match     0.136 avereon/xenon source/test/java/com/avereon/xenon/ProgramCardTest.java
+[50/74] ok             1.0 information-machine/information-machine-api-android InformationMachineAPILib/src/main/java/co/iamdata/api/models/PurchasedItem.java
+
+status: Counter({'ok': 1140, 'repo_missing': 81, 'ok_history': 31, 'weak_match': 3})
+confidence: Counter({'high': 943, 'medium': 186, 'low': 11})
+elapsed 0.1 min

@@ -1,0 +1,10 @@
+to clone: 192 / 875
+[25/192] 0.1 min elapsed, 0.2s/repo avg | last: johnaohara/qDup java=184
+[50/192] 0.1 min elapsed, 0.1s/repo avg | last: ASofterSpace/Toolbox-Java java=296
+[75/192] 0.2 min elapsed, 0.1s/repo avg | last: Wilhansen/gtfs-lib java=164
+[100/192] 0.2 min elapsed, 0.1s/repo avg | last: RobAlexander/SCovSGen java=36
+[125/192] 0.3 min elapsed, 0.1s/repo avg | last: osglworks/java-di java=167
+[150/192] 0.4 min elapsed, 0.1s/repo avg | last: maybeec/lexeme java=46
+[175/192] 0.4 min elapsed, 0.1s/repo avg | last: Tamicer/FilterBar java=27
+
+finished in 0.4 min; ok=875 failures=0

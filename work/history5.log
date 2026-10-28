@@ -1,0 +1,7 @@
+4 functions to search
+[1/4] ok_history   0.752 jcdubois/cpachecker src/org/sosy_lab/cpachecker/cpa/invariants/CompoundBitVectorInterval.java
+[2/4] ok_history   0.696 jcdubois/cpachecker src/org/sosy_lab/cpachecker/cpa/invariants/CompoundBitVectorInterval.java
+[3/4] ok_history   0.689 jcdubois/cpachecker src/org/sosy_lab/cpachecker/cpa/invariants/CompoundBitVectorInterval.java
+[4/4] ok_history   0.909 focadiz/metasfresh backend/de.metas.ui.web.base/src/main/java/de/metas/ui/web/view/ViewRestController.java
+
+recovered 36 functions from history

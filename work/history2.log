@@ -1,0 +1,37 @@
+34 functions to search
+[1/34] ok_history   0.903 kduncan99/em2200-java kex/src/test/com/kadware/komodo/kex/kasm/expressions/Test_ExpressionParser.java
+[2/34] ok_history   1.0 rajarshisarkar/iceberg core/src/main/java/org/apache/iceberg/io/BaseTaskWriter.java
+[3/34] ok_history   0.889 jmix-framework/jmix jmix-flowui/flowui/src/main/java/io/jmix/flowui/sys/UiControllerDependencyInjector.java
+[4/34] ok_history   0.959 paragp/GTS-PreUAT src/org/opengts/war/track/taglib/TrackTag.java
+[5/34] ok_history   0.852 tomhenne/Jerusalem src/test/java/JerusalemTests.java
+[6/34] ok_history   0.984 kupl/starlab-benchmarks functional/Java/Bears-169/src/thirdeye/thirdeye-pinot/src/main/java/com/linkedin/thirdeye/anomalydetection/function/AbstractModularizedAnomalyFunction.java
+[7/34] ok_history   0.93 xxwar/muzei main/src/main/java/com/google/android/apps/muzei/util/IOUtil.java
+[8/34] ok_history   0.93 xxwar/muzei main/src/main/java/com/google/android/apps/muzei/util/IOUtil.java
+[9/34] ok_history   0.933 RYH61/iotdb confignode/src/main/java/org/apache/iotdb/confignode/manager/load/balancer/allocator/CopySetRegionAllocator.java
+[10/34] ok_history   1.0 asf-transfer/pinot pinot-segment-local/src/main/java/org/apache/pinot/segment/local/dedup/PartitionDedupMetadataManager.java
+[11/34] ok_history   0.977 PGMacDesign/PGMacTips library/src/main/java/com/pgmacdesign/pgmactips/biometricutilities/BiometricVerification.java
+[12/34] ok_history   1.0 astei/velocity proxy/src/test/java/com/velocitypowered/proxy/scheduler/VelocitySchedulerTest.java
+[13/34] ok_history   1.0 soerendomroes/lingua-franca org.lflang/src/org/lflang/generator/python/PythonGenerator.java
+[14/34] ok_history   1.0 wangfanming/hadoop hadoop-hdds/client/src/main/java/org/apache/hadoop/hdds/scm/storage/BufferPool.java
+[15/34] ok_history   1.0 pcal43/mob-filter src/main/java/net/pcal/mobfilter/MFRules.java
+[16/34] ok_history   0.929 alpinegizmo/flink flink-contrib/flink-statebackend-rocksdb/src/main/java/org/apache/flink/contrib/streaming/state/RocksDBKeyedStateBackend.java
+[17/34] ok_history   0.861 alpinegizmo/flink flink-contrib/flink-statebackend-rocksdb/src/main/java/org/apache/flink/contrib/streaming/state/RocksDBKeyedStateBackend.java
+[18/34] ok_history   1.0 phit/AdvancedRocketry src/main/java/zmaster587/advancedRocketry/util/SealableBlockHandler.java
+[19/34] ok_history   0.923 phit/AdvancedRocketry src/main/java/zmaster587/advancedRocketry/util/SealableBlockHandler.java
+[20/34] ok_history   1.0 uwe-koeckemann/SpiderPlan src/main/java/org/spiderplan/causal/forwardPlanning/fastForward/FastForwardHeuristic.java
+[21/34] ok_history   0.944 FelixRilling/webmention4j server/src/main/java/dev/rilling/webmention4j/server/AbstractWebmentionEndpointServlet.java
+[22/34] not_at_head  0.172 Clay-Ferguson/Quantizr 
+[23/34] ok_history   1.0 kupl/starlab-benchmarks functional/Java/checkstyle-536bc20/src/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractOptionCheck.java
+[24/34] ok_history   1.0 guilhermejulio/PAA-IndiceInvertido src/app/Index.java
+[25/34] ok_history   0.909 haku/Morrigan com.vaguehope.morrigan.osgiconsole/src/com/vaguehope/morrigan/osgiconsole/CliHelper.java
+[26/34] ok_history   0.974 smengcl/hadoop-ozone hadoop-hdds/server-scm/src/test/java/org/apache/hadoop/hdds/scm/container/TestSCMContainerManager.java
+[27/34] ok_history   0.941 avereon/xenon source/test/java/com/avereon/xenon/BaseXenonUiTestCase.java
+[28/34] ok_history   0.928 elimu-ai/content-provider app/src/main/java/ai/elimu/content_provider/ui/audio/AudiosFragment.java
+[29/34] ok_history   0.98 kalucky0/The-Aether src/main/java/net/id/aether/mixin/client/render/MapRendererMixin.java
+[30/34] ok_history   1.0 colorizenl/colorize-java-commons source/nl/colorize/util/swing/SwingUtils.java
+[31/34] ok_history   1.0 apache/incubator-datasketches-memory src/main/java/org/apache/datasketches/memory/internal/UnsafeUtil.java
+[32/34] ok_history   1.0 amc8391/mage Mage.Sets/src/mage/cards/h/HedonistsTrove.java
+[33/34] not_at_head  0.358 leusonmario/2022PhDThesis 
+[34/34] ok_history   0.867 consulo/consulo modules/desktop-awt/desktop-ui-impl/src/main/java/consulo/ui/desktop/internal/base/SwingComponentDelegate.java
+
+recovered 32 functions from history

@@ -1,0 +1,120 @@
+"""Shared helpers for the Tesoro provenance pipeline.
+
+The pipeline maps every Tesoro function back to (repo, file, commit) so that
+`git blame` can be run on the exact lines that carry the SATD comment.
+"""
+from __future__ import annotations
+
+import json
+import os
+import re
+import subprocess
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+TESORO = ROOT / "tesoro"
+DATA = TESORO / "data"
+REPOS = ROOT / "repos"
+WORK = ROOT / "work"
+OUT = ROOT / "out"
+
+for d in (REPOS, WORK, OUT):
+    d.mkdir(parents=True, exist_ok=True)
+
+
+def read_jsonl(path):
+    """Read a .json file that actually holds one JSON object per line."""
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line:
+                yield json.loads(line)
+
+
+def write_jsonl(path, rows):
+    tmp = Path(str(path) + ".tmp")
+    with open(tmp, "w", encoding="utf-8") as f:
+        for r in rows:
+            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    tmp.replace(path)
+
+
+def load_tesoro():
+    """Return (functions, comments) keyed by function id."""
+    funcs = {r["id"]: r for r in read_jsonl(DATA / "tesoro" / "tesoro_code.json")}
+    comments = {}
+    for r in read_jsonl(DATA / "tesoro" / "tesoro_comment.json"):
+        comments.setdefault(r["id"], []).append(r)
+    return funcs, comments
+
+
+def repo_dir(repo: str) -> Path:
+    return REPOS / repo.replace("/", "__")
+
+
+def git_env():
+    """Git env that authenticates GitHub fetches without persisting the token.
+
+    GitHub answers anonymous partial-clone (filter=blob:none) requests with
+    HTTP 400 once the request volume grows, so rewrite the remote URL to a
+    token-authenticated one for every git subprocess.
+    """
+    token = os.environ.get("GH_TOKEN") or subprocess.run(
+        ["gh", "auth", "token"], capture_output=True, text=True).stdout.strip()
+    env = os.environ.copy()
+    env["GIT_CONFIG_COUNT"] = "1"
+    env["GIT_CONFIG_KEY_0"] = "url.https://x-access-token:%s@github.com/.insteadOf" % token
+    env["GIT_CONFIG_VALUE_0"] = "https://github.com/"
+    env["GIT_TERMINAL_PROMPT"] = "0"
+    return env
+
+
+def run(cmd, cwd, timeout=900, input_=None):
+    return subprocess.run(cmd, cwd=str(cwd), input=input_, capture_output=True,
+                          text=True, errors="replace", timeout=timeout, env=git_env())
+
+
+def head_of(d: Path) -> str:
+    return run(["git", "rev-parse", "HEAD"], d, timeout=120).stdout.strip()
+
+
+def git(path: Path, *args, check=False, timeout=1800):
+    return subprocess.run(
+        ["git", "-C", str(path), *args],
+        capture_output=True, text=True, check=check, timeout=timeout, env=git_env(),
+    )
+
+
+COMMENT_MARK = re.compile(r"^\s*(//+|/\*+|\*+|#)\s?")
+WS = re.compile(r"\s+")
+
+
+def strip_marker(line: str) -> str:
+    return COMMENT_MARK.sub("", line).strip()
+
+
+def norm(s: str) -> str:
+    return WS.sub(" ", s).strip()
+
+
+NONALNUM = re.compile(r"[^0-9a-z]+")
+
+
+def alnum(s: str) -> str:
+    return NONALNUM.sub("", s.lower())
+
+
+def core(s: str) -> str:
+    """Comment text without markers, whitespace and punctuation."""
+    return alnum(strip_marker(s))
+
+
+def mclass(s: str) -> str:
+    t = s.strip()
+    if t.startswith("//"):
+        return "//"
+    if t.startswith("/*"):
+        return "/*"
+    if t.startswith("*"):
+        return "*"
+    return ""

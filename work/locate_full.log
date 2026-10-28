@@ -1,0 +1,124 @@
+to locate: 1255 / 1255
+[50/1255] ok             0.917 CATION-M/X-moe Dev/ONScripter/onscripter_android/src/de/idyl/crypto/zip/impl/CentralDirectoryEntry.java
+[63/1255] weak_match     0.417 FelixRilling/webmention4j server/src/main/java/dev/rilling/webmention4j/server/AbstractWebmentionEndpointServlet.java
+[100/1255] ok             0.889 CBIIT/camod software/camod/test/unit/gov/nih/nci/camod/domain/AvailabilityTest.java
+[105/1255] weak_match     0.202 Clay-Ferguson/Quantizr src/main/java/quanta/util/StreamUtil.java
+[125/1255] repo_missing    JC-Bodoque/geometric-transformer 
+[129/1255] repo_missing    LynzhX/android_frameworks_base-1 
+[130/1255] repo_missing    LynzhX/android_frameworks_base-1 
+[150/1255] repo_missing    IonBazan/openapi-generator 
+[173/1255] weak_match     0.222 RYH61/iotdb iotdb-core/confignode/src/main/java/org/apache/iotdb/confignode/manager/load/balancer/router/leader/MinCostFlowLeaderBalancer.java
+[200/1255] ok             0.923 Programming-Systems-Lab/pitest pitest/src/test/java/com/example/HasMutableStaticInitializerTest.java
+[209/1255] weak_match     0.262 PGMacDesign/PGMacTips library/src/main/java/com/pgmacdesign/pgmactips/locationutilities/LocationUtilities.java
+[250/1255] ok             0.963 Stephen3333/codesniffer codesniffer/src/main/java/com/msd/project/codesniffer/serviceImpl/StorageServiceImpl.java
+[253/1255] weak_match     0.281 alpinegizmo/flink flink-state-backends/flink-statebackend-rocksdb/src/main/java/org/apache/flink/contrib/streaming/state/restore/RocksDBIncrementalRestoreOperation.java
+[254/1255] weak_match     0.167 alpinegizmo/flink flink-state-backends/flink-statebackend-rocksdb/src/main/java/org/apache/flink/contrib/streaming/state/restore/RocksDBIncrementalRestoreOperation.java
+[272/1255] weak_match     0.36 amc8391/mage Mage.Sets/src/mage/cards/w/WorldgorgerDragon.java
+[300/1255] ok             1.0 agaveplatform/java-sdk src/org/agave/client/models/ApplicationCloneAction.java
+[350/1255] ok             1.0 cmyxt502/aim-project-2020 src/com/aim/project/pwp/heuristics/HeuristicOperators.java
+[364/1255] repo_missing    bgklika/aws-iot-device-sdk-java-v2 
+[396/1255] weak_match     0.385 apache/incubator-datasketches-memory datasketches-memory-java11/src/main/java/org/apache/datasketches/memory/internal/ResourceImpl.java
+[397/1255] weak_match     0.207 colorizenl/colorize-java-commons source/nl/colorize/util/swing/SwingUtils.java
+[400/1255] ok             0.978 andxu/azure-tools-for-java PluginsAndFeatures/azure-toolkit-for-eclipse/com.microsoft.azuretools.container/src/main/java/com/microsoft/azuretools/container/handlers/DockerRunHandler.java
+[413/1255] repo_missing    coheigea/tcommon-studio-se 
+[423/1255] weak_match     0.242 asf-transfer/pinot pinot-segment-local/src/main/java/org/apache/pinot/segment/local/dedup/BasePartitionDedupMetadataManager.java
+[450/1255] weak_match     0.25 astei/velocity proxy/src/test/java/com/velocitypowered/proxy/scheduler/VelocitySchedulerTest.java
+[452/1255] repo_missing    bcgov/jag-efax 
+[454/1255] weak_match     0.136 avereon/xenon source/test/java/com/avereon/xenon/ProgramCardTest.java
+[455/1255] repo_missing    bshp/midpoint 
+[481/1255] repo_missing    elwinarens/beam 
+[500/1255] ok             1.0 dbraga/solr2activemq src/main/java/com/solr2activemq/SolrToActiveMQComponent.java
+[507/1255] repo_missing    focadiz/metasfresh 
+[529/1255] repo_missing    fieldenms/ 
+[550/1255] repo_missing    fernandogomesfg/Algoritmos-em-Java 
+[551/1255] repo_missing    fernandogomesfg/Algoritmos-em-Java 
+[565/1255] repo_missing    derekdinan/CTFServer 
+[577/1255] weak_match     0.121 elimu-ai/content-provider app/src/main/java/ai/elimu/content_provider/room/db/RoomDb.java
+[592/1255] weak_match     0.267 consulo/consulo modules/desktop-awt/desktop-awt-ui-impl/src/main/java/consulo/desktop/awt/ui/impl/base/SwingComponentDelegate.java
+[600/1255] ok             0.923 glasser/amock src/java/edu/mit/csail/pag/amock/processor/AnalyzeMethodEntry.java
+[611/1255] repo_missing    good-loop/open-code 
+[621/1255] weak_match     0.333 guilhermejulio/PAA-IndiceInvertido src/app/Index.java
+[625/1255] repo_missing    joaonmatos/clava 
+[631/1255] repo_missing    janjaali/azure-sdk-for-java 
+[632/1255] weak_match     0.333 jmix-framework/jmix jmix-flowui/flowui/src/main/java/io/jmix/flowui/sys/event/UiEventListenerMethodAdapter.java
+[635/1255] repo_missing    gerdreiss/camunda-dmn-xlsx 
+[650/1255] ok             0.961 j420247/platform_frameworks_support paging/common/src/main/java/androidx/paging/PositionalDataSource.java
+[655/1255] repo_missing    jd3538/Marist-Sakai-11.x 
+[660/1255] repo_missing    globalid/walletkit 
+[672/1255] weak_match     0.264 haku/Morrigan src/main/java/com/vaguehope/common/rpc/RpcTarget.java
+[673/1255] repo_missing    jcdubois/cpachecker 
+[674/1255] repo_missing    jcdubois/cpachecker 
+[675/1255] repo_missing    jcdubois/cpachecker 
+[684/1255] repo_missing    javacreed/super-simple-stocks 
+[700/1255] ok             0.938 jkandcoding/QuantiTanti_1 app/src/main/java/com/example/android/quantitanti/adapters/AllCostsAdapter.java
+[733/1255] weak_match     0.182 kduncan99/em2200-java baselib/src/test/java/com/bearsnake/komodo/baselib/TestWord36.java
+[750/1255] ok             0.907 lw-lin/incubator-ranger security-admin/src/main/java/org/apache/ranger/rest/ServiceREST.java
+[754/1255] repo_missing    lembergerth/cpachecker 
+[758/1255] repo_missing    kjthegod/chromium 
+[769/1255] repo_missing    kimjand/cxf 
+[772/1255] weak_match     0.255 kupl/starlab-benchmarks Java-base/commons-beanutils/src/src/main/java/org/apache/commons/beanutils2/BaseDynaBeanMapDecorator.java
+[789/1255] repo_missing    kadenscott/DragonFight 
+[791/1255] weak_match     0.25 kupl/starlab-benchmarks Java-base/commons-beanutils/src/src/main/java/org/apache/commons/beanutils2/BaseDynaBeanMapDecorator.java
+[797/1255] repo_missing    mbreemhaar/webcurator 
+[800/1255] ok             0.986 manifold-systems/manifold manifold-core-parent/manifold/src/main/java/manifold/internal/host/SimpleModule.java
+[805/1255] repo_missing    krisiney/SOKOBANFX-DMS-2020 
+[806/1255] repo_missing    ming1991/mingop 
+[807/1255] repo_missing    ming1991/mingop 
+[823/1255] weak_match     0.122 kalucky0/The-Aether common/src/main/java/net/id/paradise_lost/block/natural/ParadiseLostGrassBlock.java
+[839/1255] weak_match     0.333 pcal43/mob-filter common/src/test/java/net/pcal/mobfilter/IdMatcherTest.java
+[850/1255] ok             1.0 pagarme/pagarme-core-api-java src/main/java/me/pagar/api/models/CreateOrderItemRequest.java
+[851/1255] repo_missing    nikosnikolaidis/stanbol 
+[865/1255] repo_missing    pokebadgerswithspoon/incubator-netbeans 
+[888/1255] weak_match     0.095 phit/AdvancedRocketry src/main/java/zmaster587/advancedRocketry/util/SealableBlockHandler.java
+[889/1255] weak_match     0.143 phit/AdvancedRocketry src/main/java/zmaster587/advancedRocketry/util/SealableBlockHandler.java
+[900/1255] ok             1.0 qinFamily/freeVM enhanced/archive/classlib/java6/modules/swing/src/test/api/java/common/javax/swing/plaf/basic/BasicTabbedPaneUITest.java
+[912/1255] weak_match     0.444 rajarshisarkar/iceberg core/src/main/java/org/apache/iceberg/io/BaseTaskWriter.java
+[913/1255] repo_missing    octo-online/reactive-aud 
+[916/1255] weak_match     0.029 paragp/GTS-PreUAT src/org/opengts/war/tools/WebPageAdaptor.java
+[921/1255] repo_missing    nikosnikolaidis/commons-rdf 
+[925/1255] repo_missing    mkpaz/telek 
+[950/1255] ok             1.0 panpf/tools4j tools4j-lang/src/main/java/com/github/panpf/tools4j/lang/Stringx.java
+[1000/1255] ok             1.0 seemoo-lab/polypyus_pdom export/src/org/eclipse/cdt/core/dom/CDOM.java
+[1013/1255] repo_missing    slachiewicz/aws-sdk-java-v2 
+[1021/1255] repo_missing    sirivus/studioonline 
+[1022/1255] repo_missing    sirivus/studioonline 
+[1032/1255] weak_match     0.108 smengcl/hadoop-ozone hadoop-ozone/integration-test/src/test/java/org/apache/hadoop/hdds/scm/container/metrics/TestSCMContainerManagerMetrics.java
+[1050/1255] ok             1.0 salyh/geronimo-specs geronimo-jcdi_1.1_spec/src/main/java/javax/enterprise/inject/spi/CDI.java
+[1073/1255] repo_missing    sigurasg/ghidra 
+[1074/1255] repo_missing    sigurasg/ghidra 
+[1075/1255] repo_missing    sigurasg/ghidra 
+[1076/1255] repo_missing    sigurasg/ghidra 
+[1083/1255] weak_match     0.286 soerendomroes/lingua-franca org.lflang/src/org/lflang/generator/c/CGenerator.java
+[1086/1255] repo_missing    sarang-apps/darshan_browser 
+[1099/1255] repo_missing    zealoussnow/chromium 
+[1100/1255] repo_missing    zealoussnow/chromium 
+[1110/1255] repo_missing    zreed/webpieces 
+[1112/1255] repo_missing    zealoussnow/chromium 
+[1119/1255] repo_missing    zem13579/hive 
+[1120/1255] repo_missing    zem13579/hive 
+[1126/1255] weak_match     0.333 xxwar/muzei gl-wallpaper/src/main/java/com/google/android/apps/muzei/render/GLTextureView.java
+[1127/1255] repo_missing    zem13579/hive 
+[1128/1255] weak_match     0.333 xxwar/muzei gl-wallpaper/src/main/java/com/google/android/apps/muzei/render/GLTextureView.java
+[1146/1255] weak_match     0.215 leusonmario/2022PhDThesis HikariCP/1bca94af9ec625f21d1b58ff10efb5be71ab87a6/randoop-modified_1/RegressionTest0.java
+[1148/1255] weak_match     0.057 wangfanming/hadoop hadoop-tools/hadoop-aws/src/test/java/org/apache/hadoop/fs/s3a/prefetch/TestS3ARemoteObjectReader.java
+[1150/1255] ok             0.837 vijaysbhat/apex-malhar library/src/main/java/com/datatorrent/lib/appdata/schemas/DimensionalSchema.java
+[1192/1255] repo_missing    zealoussnow/chromium 
+[1195/1255] not_at_head     uwe-koeckemann/SpiderPlan 
+[1200/1255] ok             0.914 tladesignz/DNATools tools/src/main/java/com/netzarchitekten/tools/db/Table.java
+[1205/1255] repo_missing    zealoussnow/chromium 
+[1210/1255] not_at_head     tomhenne/Jerusalem 
+[1222/1255] repo_missing    zipated/src 
+[1223/1255] repo_missing    zipated/src 
+[1224/1255] repo_missing    zipated/src 
+[1225/1255] repo_missing    zipated/src 
+[1226/1255] repo_missing    zipated/src 
+[1227/1255] repo_missing    zipated/src 
+[1228/1255] repo_missing    zipated/src 
+[1229/1255] repo_missing    zipated/src 
+[1230/1255] repo_missing    zipated/src 
+[1231/1255] repo_missing    zipated/src 
+[1250/1255] ok             0.957 xyxiaoyou/snappy-store tests/core/src/main/java/com/gemstone/gemfire/cache30/UniversalMembershipListenerAdapterDUnitTest.java
+
+status: Counter({'ok': 1157, 'repo_missing': 64, 'weak_match': 32, 'not_at_head': 2})
+confidence: Counter({'high': 959, 'medium': 187, 'low': 11})
+elapsed 3.5 min

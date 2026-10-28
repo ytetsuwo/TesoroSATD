@@ -1,0 +1,231 @@
+  skip fieldenms/: None
+26 repositories to cook, 10 rounds
+  submit Chiefwright/Mekanism: pending
+  submit IonBazan/openapi-generator: pending
+  submit JamesCao2048/BlizzardData: pending
+  submit adam-collins/parsers: pending
+  submit bshp/midpoint: new
+  submit chanwit/groovy: done
+  ok chanwit/groovy
+  submit coheigea/tcommon-studio-se: pending
+  submit elwinarens/beam: new
+  submit focadiz/metasfresh: new
+  submit isabella232/continuum: done
+  ok isabella232/continuum
+  submit janjaali/azure-sdk-for-java: pending
+  submit jaysooong/RxJava: done
+  ok jaysooong/RxJava
+  submit jcdubois/cpachecker: new
+  submit jd3538/Marist-Sakai-11.x: new
+  submit julien-faye/drill: pending
+  submit kimjand/cxf: new
+  submit kjthegod/chromium: new
+  submit lembergerth/cpachecker: new
+  submit marcus8448/Mekanism: pending
+  submit nakomis/incubator-brooklyn: pending
+  submit pokebadgerswithspoon/incubator-netbeans: pending
+  submit rohankumardubey/cayenne: pending
+  submit shaneknapp/tachyon: pending
+  submit szymek22/AxonFramework: done
+  ok szymek22/AxonFramework
+  submit zealoussnow/chromium: new
+  submit zem13579/hive: new
+round 1: 22 pending, waiting 900s
+  pending Chiefwright/Mekanism
+  pending IonBazan/openapi-generator
+  pending JamesCao2048/BlizzardData
+  pending adam-collins/parsers
+  new bshp/midpoint
+  pending coheigea/tcommon-studio-se
+  new elwinarens/beam
+  new focadiz/metasfresh
+  pending janjaali/azure-sdk-for-java
+  new jcdubois/cpachecker
+  new jd3538/Marist-Sakai-11.x
+  pending julien-faye/drill
+  new kimjand/cxf
+  new kjthegod/chromium
+  new lembergerth/cpachecker
+  pending marcus8448/Mekanism
+  pending nakomis/incubator-brooklyn
+  pending pokebadgerswithspoon/incubator-netbeans
+  pending rohankumardubey/cayenne
+  pending shaneknapp/tachyon
+  new zealoussnow/chromium
+  new zem13579/hive
+round 2: 22 pending, waiting 900s
+  pending Chiefwright/Mekanism
+  pending IonBazan/openapi-generator
+  pending JamesCao2048/BlizzardData
+  pending adam-collins/parsers
+  pending bshp/midpoint
+  pending coheigea/tcommon-studio-se
+  new elwinarens/beam
+  new focadiz/metasfresh
+  pending janjaali/azure-sdk-for-java
+  new jcdubois/cpachecker
+  new jd3538/Marist-Sakai-11.x
+  pending julien-faye/drill
+  new kimjand/cxf
+  new kjthegod/chromium
+  new lembergerth/cpachecker
+  pending marcus8448/Mekanism
+  pending nakomis/incubator-brooklyn
+  pending pokebadgerswithspoon/incubator-netbeans
+  pending rohankumardubey/cayenne
+  pending shaneknapp/tachyon
+  new zealoussnow/chromium
+  new zem13579/hive
+round 3: 22 pending, waiting 900s
+  pending Chiefwright/Mekanism
+  pending IonBazan/openapi-generator
+  pending JamesCao2048/BlizzardData
+  pending adam-collins/parsers
+  pending bshp/midpoint
+  pending coheigea/tcommon-studio-se
+  new elwinarens/beam
+  new focadiz/metasfresh
+  pending janjaali/azure-sdk-for-java
+  new jcdubois/cpachecker
+  new jd3538/Marist-Sakai-11.x
+  pending julien-faye/drill
+  new kimjand/cxf
+  new kjthegod/chromium
+  new lembergerth/cpachecker
+  pending marcus8448/Mekanism
+  pending nakomis/incubator-brooklyn
+  pending pokebadgerswithspoon/incubator-netbeans
+  pending rohankumardubey/cayenne
+  pending shaneknapp/tachyon
+  new zealoussnow/chromium
+  new zem13579/hive
+round 4: 22 pending, waiting 900s
+  pending Chiefwright/Mekanism
+  pending IonBazan/openapi-generator
+  pending JamesCao2048/BlizzardData
+  pending adam-collins/parsers
+  pending bshp/midpoint
+  pending coheigea/tcommon-studio-se
+  new elwinarens/beam
+  new focadiz/metasfresh
+  pending janjaali/azure-sdk-for-java
+  new jcdubois/cpachecker
+  new jd3538/Marist-Sakai-11.x
+  pending julien-faye/drill
+  new kimjand/cxf
+  new kjthegod/chromium
+  new lembergerth/cpachecker
+  pending marcus8448/Mekanism
+  pending nakomis/incubator-brooklyn
+  pending pokebadgerswithspoon/incubator-netbeans
+  pending rohankumardubey/cayenne
+  pending shaneknapp/tachyon
+  new zealoussnow/chromium
+  new zem13579/hive
+round 5: 22 pending, waiting 900s
+  pending Chiefwright/Mekanism
+  pending IonBazan/openapi-generator
+  pending JamesCao2048/BlizzardData
+  pending adam-collins/parsers
+  pending bshp/midpoint
+  pending coheigea/tcommon-studio-se
+  failed elwinarens/beam: 
+  failed elwinarens/beam
+  pending focadiz/metasfresh
+  pending janjaali/azure-sdk-for-java
+  new jcdubois/cpachecker
+  new jd3538/Marist-Sakai-11.x
+  pending julien-faye/drill
+  new kimjand/cxf
+  new kjthegod/chromium
+  new lembergerth/cpachecker
+  pending marcus8448/Mekanism
+  pending nakomis/incubator-brooklyn
+  pending pokebadgerswithspoon/incubator-netbeans
+  pending rohankumardubey/cayenne
+  pending shaneknapp/tachyon
+  new zealoussnow/chromium
+  new zem13579/hive
+round 6: 21 pending, waiting 900s
+  pending Chiefwright/Mekanism
+  pending IonBazan/openapi-generator
+  pending JamesCao2048/BlizzardData
+  ready adam-collins/parsers
+  ok adam-collins/parsers
+  pending bshp/midpoint
+  pending coheigea/tcommon-studio-se
+  failed focadiz/metasfresh: 
+  failed focadiz/metasfresh
+  pending janjaali/azure-sdk-for-java
+  failed jcdubois/cpachecker: 
+  failed jcdubois/cpachecker
+  failed jd3538/Marist-Sakai-11.x: 
+  failed jd3538/Marist-Sakai-11.x
+  pending julien-faye/drill
+  failed kimjand/cxf: 
+  failed kimjand/cxf
+  failed kjthegod/chromium: 
+  failed kjthegod/chromium
+  failed lembergerth/cpachecker: 
+  failed lembergerth/cpachecker
+  pending marcus8448/Mekanism
+  pending nakomis/incubator-brooklyn
+  pending pokebadgerswithspoon/incubator-netbeans
+  pending rohankumardubey/cayenne
+  pending shaneknapp/tachyon
+  failed zealoussnow/chromium: 
+  failed zealoussnow/chromium
+  pending zem13579/hive
+round 7: 13 pending, waiting 900s
+  pending Chiefwright/Mekanism
+  pending IonBazan/openapi-generator
+  pending JamesCao2048/BlizzardData
+  pending bshp/midpoint
+  pending coheigea/tcommon-studio-se
+  pending janjaali/azure-sdk-for-java
+  pending julien-faye/drill
+  pending marcus8448/Mekanism
+  pending nakomis/incubator-brooklyn
+  pending pokebadgerswithspoon/incubator-netbeans
+  ready rohankumardubey/cayenne
+  ok rohankumardubey/cayenne
+  pending shaneknapp/tachyon
+  pending zem13579/hive
+round 8: 12 pending, waiting 900s
+  ready Chiefwright/Mekanism
+  ok Chiefwright/Mekanism
+  pending IonBazan/openapi-generator
+  ready JamesCao2048/BlizzardData
+  ok JamesCao2048/BlizzardData
+  pending bshp/midpoint
+  pending coheigea/tcommon-studio-se
+  pending janjaali/azure-sdk-for-java
+  pending julien-faye/drill
+  pending marcus8448/Mekanism
+  pending nakomis/incubator-brooklyn
+  pending pokebadgerswithspoon/incubator-netbeans
+  pending shaneknapp/tachyon
+  pending zem13579/hive
+round 9: 10 pending, waiting 900s
+  pending IonBazan/openapi-generator
+  pending bshp/midpoint
+  pending coheigea/tcommon-studio-se
+  pending janjaali/azure-sdk-for-java
+  pending julien-faye/drill
+  pending marcus8448/Mekanism
+  pending nakomis/incubator-brooklyn
+  pending pokebadgerswithspoon/incubator-netbeans
+  pending shaneknapp/tachyon
+  pending zem13579/hive
+round 10: 10 pending, waiting 900s
+  pending IonBazan/openapi-generator
+  pending bshp/midpoint
+  pending coheigea/tcommon-studio-se
+  pending janjaali/azure-sdk-for-java
+  pending julien-faye/drill
+  pending marcus8448/Mekanism
+  pending nakomis/incubator-brooklyn
+  pending pokebadgerswithspoon/incubator-netbeans
+  pending shaneknapp/tachyon
+  pending zem13579/hive
+done, 10 still cooking

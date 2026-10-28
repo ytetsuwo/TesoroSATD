@@ -1,0 +1,71 @@
+"Failed to add bookmarks: parentTypeAndId %s, defaultFolderTypeAndId %s, "
+// Ignores the service worker payment apps in WebLayer until -
+// Reading list items will be added when either one of the 2 conditions is met:
+// TODO maybe a more exact implementation is possible?
+// TODO(crbug.com/1224420): WebLayer supports Service worker payment apps.
+// TODO(dalecurtis): We may want to drop transient errors here.
+// TODO(lazzzis): remove log after bookmark sync is fixed, crbug.com/986978
+// TODO(qinmin): May need to report the error to the caller. crbug.com/356498.
+// TODO(qinmin): pass the error code to native.
+// TODO: atm we are forwarding all calls to windowRestController hoping the document existing and has the same ID as view's row ID.
+// The shopping list experiment saves extra metadata along with the bookmark.
+// userSession.assertLoggedIn(); // NOTE: not needed because we are forwarding to windowRestController
+@GetMapping("/{viewId}/{rowId}/field/{fieldName}/zoomInto")
+@PathVariable("fieldName") final String fieldName)
+@PathVariable("rowId") final String rowId,
+@PathVariable("windowId") final String windowIdStr,
+@PathVariable(PARAM_ViewId) final String viewIdStr,
+CompoundBitVectorInterval result = bottom(info);
+EList<ModelElement> elements = (schema != null) ? schema.getOwnedElement() : catalog.getOwnedElement();
+Log.e(TAG, "Failed to release output buffer", e);
+Log.e(TAG, "MediaCodec.onError: %s", e.getDiagnosticInfo());
+RelationalSwitch<T> relationalSwitch = new RelationalSwitch<T>() {
+String title, GURL url, WebContents webContents, @Nullable BookmarkId parent,
+T columnSet = relationalSwitch.doSwitch(elt);
+ViewId.ofViewIdString(viewIdStr, WindowId.fromJson(windowIdStr)); // just validate the windowId and viewId
+boolean pAllowSignedWrapAround, final OverflowEventHandler pOverflowEventHandler) {
+checkBitVectorCompatibilityWith(pState.info);
+final BitVectorInterval partialResult;
+final OverflowEventHandler pOverflowEventHandler) {
+for (BitVectorInterval interval : intervals) {
+if (catalog == null && schema == null) {
+if (isBottom() || pState.isBottom()) {
+if (isSingleton() && contains(1) && pState.equals(getZeroToOne(info))) {
+if (pState.isSingleton() && pState.contains(1) && equals(getZeroToOne(info))) {
+if (pState.isSingleton() && pState.containsZero()) {
+if (parent == null || parentItem == null || parentItem.isManaged()
+if (theEObject.eClass().getClassifierID() != tClassifierId) {
+interval.getLowerBound().not(),
+interval.getLowerBound().or(pState.getValue()),
+interval.getLowerBound().xor(pState.getValue()),
+mHandler.post(new Runnable() {
+mMediaCodec.releaseOutputBuffer(index, render);
+mMediaCodecBridge.onError(e);
+nativeOnSessionError(mNativeMediaDrmBridge, sessionId);
+new BigInteger(1, interval.getLowerBound().not().toByteArray()),
+parent = parent == null ? getLastUsedParent(context, bookmarkModel) : parent;
+parent, bookmarkModel.getDefaultFolder(), bookmarkModel.getMobileFolderId(),
+private void onSessionError(final int sessionId) {
+protected T doSwitch(int classifierID, EObject theEObject) {
+protected boolean shouldNotifyObserversOnSetIndex() {
+protected void releaseOutputBuffer(int index, boolean render) {
+public CompoundBitVectorInterval binaryNot(
+public CompoundBitVectorInterval binaryOr(
+public JSONZoomInto getRowFieldZoomInto(
+public T caseColumnSet(ColumnSet object) {
+public T caseTdTable(TdTable object) {
+public boolean onPaymentAppCreated(PaymentApp paymentApp) {
+public static <T extends ColumnSet> boolean fillColumnSets(Catalog catalog, Schema schema, Collection<T> output,
+public void onError(MediaCodec codec, MediaCodec.CodecException e) {
+result = result.unionWith(partialResult);
+return getInternal(info.getRange());
+return pState.binaryOr(this, pAllowSignedWrapAround, pOverflowEventHandler);
+return pState.binaryXor(this, pAllowSignedWrapAround, pOverflowEventHandler);
+return paymentApp.getPaymentAppType() != PaymentAppType.SERVICE_WORKER_APP;
+return super.doSwitch(classifierID, theEObject);
+return true;
+return windowRestController.getDocumentFieldZoomInto(windowIdStr, rowId, fieldName);
+static BookmarkId addBookmarkInternal(Context context, BookmarkModel bookmarkModel,
+webContents, parent, bookmarkModel.getChildCount(parent), title, url);
+}
+} catch (IllegalStateException e) {
