@@ -372,6 +372,12 @@ def locate(repo: str, func: dict, comments: list) -> dict:
         start = method["start"]
         res["start"] = start
         res["end"] = max(res["end"], method["end"])
+    if method and name and method["name"] != name and res["confidence"] == "low":
+        # The window is a different method (a refactored sibling kept the code
+        # shape). The dataset's own method may still exist in history, so hand
+        # this over to 08_history instead of blaming the wrong file.
+        return {**res, "status": "not_at_head", "reason": "ast_name_mismatch",
+                "head": head_of(d)}
     if method:
         res["ast_method"] = method["name"]
         res["ast_start"] = method["start"]

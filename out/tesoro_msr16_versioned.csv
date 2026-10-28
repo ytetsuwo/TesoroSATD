@@ -95,7 +95,7 @@ AsaiKen/phpscan@2a7fcfd,WITHOUT_CLASSIFICATION,"// ****
 // ****
 /* output a constant decl for the terminal */"
 AsaiKen/phpscan@2a7fcfd,WITHOUT_CLASSIFICATION,/* end of class */
-Asucanc/FishMail@33b51ab,WITHOUT_CLASSIFICATION,//验证手机号是否11位
+Asucanc/FishMail,WITHOUT_CLASSIFICATION,//验证手机号是否11位
 Asucanc/FishMail,IMPLEMENTATION,//TODO: Replace this with your own logic
 Asucanc/FishMail,WITHOUT_CLASSIFICATION,//是否是邮箱
 Asucanc/FishMail,IMPLEMENTATION,//TODO: Replace this with your own logic
@@ -365,38 +365,38 @@ CATION-M/X-moe@345bb1d,WITHOUT_CLASSIFICATION,// Central directory structure / c
 CATION-M/X-moe@345bb1d,DESIGN,"// TODO - check, why we have to use the local header instead of the CDS sometimes..."
 CATION-M/X-moe@345bb1d,WITHOUT_CLASSIFICATION,"/** fixed 256 key size, 16 bytes salt + 2 bytes pwVerification */"
 CATION-M/X-moe@345bb1d,IMPLEMENTATION,// TODO support 128+192 byte keys reduces the salt byte size to 8+2 or 12+2
-CBIIT/camod,WITHOUT_CLASSIFICATION,"/**
+CBIIT/camod@d564848,WITHOUT_CLASSIFICATION,"/**
    * Test of getEnteredDate method, of class gov.nih.nci.camod.domain.Availability.
    */"
-CBIIT/camod@ee6a1cb,TEST,// TODO add your test code below by replacing the default call to fail.
-CBIIT/camod,WITHOUT_CLASSIFICATION,"/**
+CBIIT/camod@d564848,TEST,// TODO add your test code below by replacing the default call to fail.
+CBIIT/camod@d564848,WITHOUT_CLASSIFICATION,"/**
    * Test of setEnteredDate method, of class gov.nih.nci.camod.domain.Availability.
    */"
-CBIIT/camod@ee6a1cb,TEST,// TODO add your test code below by replacing the default call to fail.
-CBIIT/camod,WITHOUT_CLASSIFICATION,"/**
+CBIIT/camod@d564848,TEST,// TODO add your test code below by replacing the default call to fail.
+CBIIT/camod@d564848,WITHOUT_CLASSIFICATION,"/**
    * Test of getModifiedDate method, of class gov.nih.nci.camod.domain.Availability.
    */"
-CBIIT/camod@ee6a1cb,TEST,// TODO add your test code below by replacing the default call to fail.
-CBIIT/camod,WITHOUT_CLASSIFICATION,"/**
+CBIIT/camod@d564848,TEST,// TODO add your test code below by replacing the default call to fail.
+CBIIT/camod@d564848,WITHOUT_CLASSIFICATION,"/**
    * Test of setModifiedDate method, of class gov.nih.nci.camod.domain.Availability.
    */"
-CBIIT/camod@ee6a1cb,IMPLEMENTATION,// TODO add your test code below by replacing the default call to fail.
-CBIIT/camod,WITHOUT_CLASSIFICATION,"/**
+CBIIT/camod@d564848,IMPLEMENTATION,// TODO add your test code below by replacing the default call to fail.
+CBIIT/camod@d564848,WITHOUT_CLASSIFICATION,"/**
    * Test of getReleaseDate method, of class gov.nih.nci.camod.domain.Availability.
    */"
-CBIIT/camod@ee6a1cb,TEST,// TODO add your test code below by replacing the default call to fail.
-CBIIT/camod,WITHOUT_CLASSIFICATION,"/**
+CBIIT/camod@d564848,TEST,// TODO add your test code below by replacing the default call to fail.
+CBIIT/camod@d564848,WITHOUT_CLASSIFICATION,"/**
    * Test of setReleaseDate method, of class gov.nih.nci.camod.domain.Availability.
    */"
-CBIIT/camod@ee6a1cb,TEST,// TODO add your test code below by replacing the default call to fail.
-CBIIT/camod,WITHOUT_CLASSIFICATION,"/**
+CBIIT/camod@d564848,TEST,// TODO add your test code below by replacing the default call to fail.
+CBIIT/camod@d564848,WITHOUT_CLASSIFICATION,"/**
    * Test of getVisibleTo method, of class gov.nih.nci.camod.domain.Availability.
    */"
-CBIIT/camod@ee6a1cb,TEST,// TODO add your test code below by replacing the default call to fail.
-CBIIT/camod,WITHOUT_CLASSIFICATION,"/**
+CBIIT/camod@d564848,TEST,// TODO add your test code below by replacing the default call to fail.
+CBIIT/camod@d564848,WITHOUT_CLASSIFICATION,"/**
    * Test of setVisibleTo method, of class gov.nih.nci.camod.domain.Availability.
    */"
-CBIIT/camod@ee6a1cb,TEST,// TODO add your test code below by replacing the default call to fail.
+CBIIT/camod@d564848,TEST,// TODO add your test code below by replacing the default call to fail.
 CBIIT/camod@ee6a1cb,WITHOUT_CLASSIFICATION,"/**
    * Test of toString method, of class gov.nih.nci.camod.domain.Availability.
    */"
@@ -2215,17 +2215,17 @@ WilsonWangCS/incubator-doris@7db8841,WITHOUT_CLASSIFICATION,// 6. check alter jo
 WilsonWangCS/incubator-doris@7db8841,DESIGN,"// 7. query
 // TODO: we can not process real query for now. So it has to be a explain query"
 WilsonWangCS/incubator-doris@982b76c,WITHOUT_CLASSIFICATION,// test show backends;
-Workinq/AsyncCollectors,WITHOUT_CLASSIFICATION,// Filler
-Workinq/AsyncCollectors@50e282e,WITHOUT_CLASSIFICATION,// Items
-Workinq/AsyncCollectors@50e282e,WITHOUT_CLASSIFICATION,// Args
-Workinq/AsyncCollectors,WITHOUT_CLASSIFICATION,// Add
-Workinq/AsyncCollectors,WITHOUT_CLASSIFICATION,// Cancel
-Workinq/AsyncCollectors@50e282e,WITHOUT_CLASSIFICATION,// Args
-Workinq/AsyncCollectors@50e282e,WITHOUT_CLASSIFICATION,// Check
-Workinq/AsyncCollectors@50e282e,IMPLEMENTATION,// TODO: Make it so collectors don't pick up items which can't be sold
-Workinq/AsyncCollectors@50e282e,WITHOUT_CLASSIFICATION,// Deposit & Inform
-Workinq/AsyncCollectors@50e282e,WITHOUT_CLASSIFICATION,// Update
-Workinq/AsyncCollectors,WITHOUT_CLASSIFICATION,// Navigation
+Workinq/AsyncCollectors@d6196f3,WITHOUT_CLASSIFICATION,// Filler
+Workinq/AsyncCollectors@d6196f3,WITHOUT_CLASSIFICATION,// Items
+Workinq/AsyncCollectors@d6196f3,WITHOUT_CLASSIFICATION,// Args
+Workinq/AsyncCollectors@d6196f3,WITHOUT_CLASSIFICATION,// Add
+Workinq/AsyncCollectors@d6196f3,WITHOUT_CLASSIFICATION,// Cancel
+Workinq/AsyncCollectors@d6196f3,WITHOUT_CLASSIFICATION,// Args
+Workinq/AsyncCollectors@d1a40be,WITHOUT_CLASSIFICATION,// Check
+Workinq/AsyncCollectors@d6196f3,IMPLEMENTATION,// TODO: Make it so collectors don't pick up items which can't be sold
+Workinq/AsyncCollectors@d6196f3,WITHOUT_CLASSIFICATION,// Deposit & Inform
+Workinq/AsyncCollectors@d6196f3,WITHOUT_CLASSIFICATION,// Update
+Workinq/AsyncCollectors@d6196f3,WITHOUT_CLASSIFICATION,// Navigation
 XuyuEre/fabric-furnaces@c12fbbf,DESIGN,// TODO: WHAT HAPPENS IF FINAL COUNT IS 63 AND WE SMELT DOUBLE?
 Y-D-Lu/rr_frameworks_base@cf9d19e,DESIGN,"// TODO: Revisit the cache size after running more storage tests.
 // TODO: Figure out how to ensure ExtServices has the permissions to call
@@ -2895,7 +2895,7 @@ baodingfengyun/luaj,TEST,// FIXME Test failures
 baodingfengyun/luaj@67962d4,TEST,// FIXME Test failures
 basitkhurram/fresco@1f96aec,TEST,"// TODO Should be split into different tests for mean, variance, covariance, covariancematrix"
 batiaev/provisioner@f61cb00,DEFECT,//FIXME use Auth header with basic auth
-bcgov/EDUC-GRAD-REPORT-API@f008413,DESIGN,"/**
+bcgov/EDUC-GRAD-REPORT-API@15fdc62,DESIGN,"/**
          * TODO: ""previous course"" and ""original course"" appear to be separate
          * concepts; comment needs revision to explain a bit more.
          *
@@ -4119,7 +4119,7 @@ drewr/elasticsearch@1194cd0,WITHOUT_CLASSIFICATION,"// AccessControlException[ac
 drewr/elasticsearch@a7774f2,WITHOUT_CLASSIFICATION,"// test a directory we normally have access to, but the groovy script does not."
 drewr/elasticsearch@a7774f2,DESIGN,// TODO: figure out the necessary escaping for windows paths here :)
 drewr/elasticsearch@a7774f2,WITHOUT_CLASSIFICATION,"// access denied (""java.io.FilePermission"" "".../tempDir-00N"" ""read"")"
-duarterafael/Conformitate@c1da740,IMPLEMENTATION,"/**
+duarterafael/Conformitate,IMPLEMENTATION,"/**
      * TODO
      * 
      * @return
@@ -6789,7 +6789,7 @@ mino98/stix@ccbeac0,DESIGN,"/**
          * 
          * @return The serialized document as string.
          */"
-mkalus/segrada@de23927,TEST,"//fail(""Test not implemented yet."");
+mkalus/segrada@552bce9,TEST,"//fail(""Test not implemented yet."");
 //TODO: do later"
 mkleczek/river@bb8ffd0,WITHOUT_CLASSIFICATION,// Inherit documentation from supertype
 mkleczek/river@bb8ffd0,WITHOUT_CLASSIFICATION,// Check if empty
@@ -7429,8 +7429,8 @@ phon-ca/phon@290095e,DESIGN,"// group by session if info is available
 // TODO make this an option"
 phon-ca/phon@8cf1318,WITHOUT_CLASSIFICATION,// produce table
 phon-ca/phon@8cf1318,WITHOUT_CLASSIFICATION,// append row to table
-phques/androidpush@5cc3571,WITHOUT_CLASSIFICATION,// Always call the superclass
-phques/androidpush@5cc3571,DESIGN,"// probably not needed, onStop closes the socket, which should make the thread stop (?)"
+phques/androidpush@a908baf,WITHOUT_CLASSIFICATION,// Always call the superclass
+phques/androidpush@a908baf,DESIGN,"// probably not needed, onStop closes the socket, which should make the thread stop (?)"
 pitbox46/graaljs-forge@bb0ec6c,WITHOUT_CLASSIFICATION,/* Check for Infinity and NaN */
 pitbox46/graaljs-forge@bb0ec6c,DESIGN,// ALERT: should it distinguish -0.0 from +0.0 ?
 pitbox46/graaljs-forge@bb0ec6c,WITHOUT_CLASSIFICATION,/* Get the integer part of d including '-' sign. */
@@ -7563,20 +7563,20 @@ prokopk1n/cpachecker-1@b80f52b,IMPLEMENTATION,"/* What shall we do with function
       */"
 prokopk1n/cpachecker-1@d610ec4,WITHOUT_CLASSIFICATION,"//It means, that there is no entry in this block. Don't add it"
 qiaolw/AndroidTest,DESIGN,// todo change the file location/name according to your needs
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qingdao81/flink@f0ac261,DEFECT,"// This is problematic as the user code class loader is not
 // available at this point."
 qingdao81/flink@f0ac261,WITHOUT_CLASSIFICATION,"// Remove shutdown hook to prevent resource leaks, unless this is
@@ -9180,7 +9180,7 @@ tondeur-h/LangTonAnt@42ad186,WITHOUT_CLASSIFICATION,"//System.out.print(""(x,y)=
 tondeur-h/LangTonAnt@0393cb8,WITHOUT_CLASSIFICATION,//no draw a black point
 tondeur-h/LangTonAnt@0393cb8,WITHOUT_CLASSIFICATION,//show me the result on scsreen
 tondeur-h/LangTonAnt@2f1f2e7,WITHOUT_CLASSIFICATION,//refresh counters
-tonywasher/bc-java@5fcd94a,DESIGN,// TDOD: make this meaningful...
+tonywasher/bc-java@ccf93ca,DESIGN,// TDOD: make this meaningful...
 torstenwerner/metro2.0@0a75b78,WITHOUT_CLASSIFICATION,// invoke the Trust Plugin if necessary
 torstenwerner/metro2.0@0a75b78,DESIGN,//TODO: replace this code with calls to the Module now
 torstenwerner/metro2.0@0a75b78,WITHOUT_CLASSIFICATION,//legacy pipes in GF

@@ -1,0 +1,64 @@
+to locate: 1204 / 1255
+[50/1204] ok             1.0 Gravitational-Field/Dive-In-Java 03_JavaWeb/noteAndResource/05_xml&tomcat/dom4j-1.6.1/src/java/org/dom4j/tree/AbstractBranch.java
+[90/1204] not_at_head    0.667 CBIIT/camod software/camod/test/unit/gov/nih/nci/camod/domain/AnimalModelTest.java
+[91/1204] not_at_head    0.667 CBIIT/camod software/camod/test/unit/gov/nih/nci/camod/domain/AnimalModelTest.java
+[92/1204] not_at_head    0.667 CBIIT/camod software/camod/test/unit/gov/nih/nci/camod/domain/AnimalModelTest.java
+[93/1204] not_at_head    0.667 CBIIT/camod software/camod/test/unit/gov/nih/nci/camod/domain/AnimalModelTest.java
+[94/1204] not_at_head    0.667 CBIIT/camod software/camod/test/unit/gov/nih/nci/camod/domain/AnimalModelTest.java
+[95/1204] not_at_head    0.667 CBIIT/camod software/camod/test/unit/gov/nih/nci/camod/domain/AnimalModelTest.java
+[96/1204] not_at_head    0.667 CBIIT/camod software/camod/test/unit/gov/nih/nci/camod/domain/AnimalModelTest.java
+[98/1204] not_at_head    0.667 CBIIT/camod software/camod/test/unit/gov/nih/nci/camod/domain/AnimalModelTest.java
+[100/1204] ok             1.0 FIT-Mobility/dimo-tool-suite server-report/src/main/java/de/fraunhofer/fit/ips/reportgenerator/reporter/StructureEmbedder.java
+[104/1204] weak_match     0.202 Clay-Ferguson/Quantizr src/main/java/quanta/util/StreamUtil.java
+[124/1204] repo_missing    JC-Bodoque/geometric-transformer 
+[149/1204] repo_missing    IonBazan/openapi-generator 
+[150/1204] ok             0.987 JSA-Insubria/hive ql/src/java/org/apache/hadoop/hive/ql/exec/tez/monitoring/TezProgressMonitor.java
+[200/1204] ok             1.0 MatthewJuliusScott/ImageOptimization src/main/java/com/salesforce/perfeng/uiperf/imageoptimization/service/ImageOptimizationService.java
+[250/1204] ok             1.0 Wilhansen/gtfs-lib src/main/java/com/conveyal/gtfs/loader/JdbcGtfsSnapshotter.java
+[300/1204] ok             1.0 Tamicer/FilterBar FilterViewSipmle/app/src/main/java/com/tamic/widget/filter/DataSelectContainer.java
+[350/1204] ok             1.0 autayeu/obo2skos src/main/java/uk/ac/man/cs/owl/sealife/Obo2Skos.java
+[400/1204] ok             1.0 apache/servicemix4-features camel/servicemix-camel/src/test/java/org/apache/servicemix/camel/nmr/ws/addressing/GreeterImpl.java
+[441/1204] repo_missing    bcgov/jag-efax 
+[443/1204] repo_missing    bshp/midpoint 
+[450/1204] ok             1.0 baodingfengyun/luaj luaj-test/src/test/java/org/luaj/CompatibiltyTest.java
+[500/1204] ok             1.0 erda-project/erda-java-extensions agent-core/src/main/java/org/apache/skywalking/apm/agent/core/logging/core/EasyLogger.java
+[516/1204] repo_missing    fieldenms/ 
+[537/1204] repo_missing    fernandogomesfg/Algoritmos-em-Java 
+[538/1204] repo_missing    fernandogomesfg/Algoritmos-em-Java 
+[550/1204] ok             1.0 devolksbank/NL-Help-U app/src/main/java/nl/devolksbank/nlhelpu/activity/DocumentCollectionActivity.java
+[598/1204] weak_match     0.2 good-loop/open-code HistogramBean.java
+[600/1204] ok             0.954 iGivefirst/elasticsearch-grails-plugin src/java/org/grails/plugins/elasticsearch/mapping/ElasticSearchMappingFactory.java
+[615/1204] repo_missing    janjaali/azure-sdk-for-java 
+[638/1204] repo_missing    jd3538/Marist-Sakai-11.x 
+[650/1204] ok             1.0 haoyuan/Duke src/main/java/no/priv/garshol/duke/PropertyImpl.java
+[664/1204] weak_match     0.308 javacreed/super-simple-stocks super-simple-stock/src/main/java/com/jpmorgan/stocks/simple/services/impl/SimpleStockServiceImpl.java
+[700/1204] ok             0.889 gemalto/idcloud-kyc-sample-android idcloud-idv/app/src/main/java/com/thalesgroup/kyc/idv/gui/view/DrawMrzOverlayView.java
+[735/1204] repo_missing    kjthegod/chromium 
+[745/1204] repo_missing    kimjand/cxf 
+[750/1204] ok             1.0 maehem/Thump render/src/main/java/thump/render/Renderer.java
+[781/1204] weak_match     0.146 krisiney/SOKOBANFX-DMS-2020 games/src/games/sokoban/sokoban3/SokobanFX.java
+[782/1204] repo_missing    ming1991/mingop 
+[783/1204] repo_missing    ming1991/mingop 
+[800/1204] ok             1.0 jzerbe/musiczones jar-src/audio/JMPlayer.java
+[850/1204] ok             1.0 ouyangzhiping/Info-extract core/src/main/java/com/ibm/drl/hbcp/parser/JSONRefParser.java
+[900/1204] ok             1.0 nedru004/LibraryAnalysis2 bbmap/current/clump/Splitter.java
+[950/1204] ok             1.0 svalaskevicius/opentelemetry-java sdk/metrics/src/main/java/io/opentelemetry/sdk/metrics/internal/state/AsynchronousMetricStorage.java
+[972/1204] weak_match     0.0 leusonmario/2022PhDThesis 
+[1000/1204] ok             1.0 smartdatalake/simsearch src/main/java/eu/smartdatalake/simsearch/manager/insitu/JdbcConnector.java
+[1050/1204] repo_missing    sarang-apps/darshan_browser 
+[1059/1204] weak_match     0.444 octo-online/reactive-aud core/java/android/os/Parcel.java
+[1063/1204] repo_missing    zealoussnow/chromium 
+[1064/1204] repo_missing    zealoussnow/chromium 
+[1076/1204] repo_missing    zealoussnow/chromium 
+[1083/1204] repo_missing    zem13579/hive 
+[1084/1204] repo_missing    zem13579/hive 
+[1089/1204] repo_missing    zem13579/hive 
+[1100/1204] ok             1.0 ttincs/guibat actual-sr-access-detector/gator/sootandroid/src/main/java/presto/android/xml/DefaultXMLParser.java
+[1150/1204] ok             1.0 tfisher1226/ARIES aries/tx-manager/tx-manager-client/src/main/java/common/tx/state/AbstractStateManager.java
+[1153/1204] repo_missing    zealoussnow/chromium 
+[1165/1204] repo_missing    zealoussnow/chromium 
+[1200/1204] ok             1.0 yujintao529/android_practice MyPractice/source/23/PhoneWindow.java
+
+status: Counter({'ok': 1168, 'ok_history': 51, 'repo_missing': 22, 'not_at_head': 8, 'weak_match': 6})
+confidence: Counter({'high': 1069, 'medium': 91, 'low': 8})
+elapsed 8.2 min
