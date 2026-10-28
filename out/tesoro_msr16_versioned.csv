@@ -903,7 +903,7 @@ Institute-Web-Science-and-Technologies/SparqlUpdater@c397d75,DESIGN,"//if ( Spar
 // TODO if printing is not desired, this loop can be combined with the one above and the method used here can be removed within the Justification class."
 Interactions-HSG/wot-search@2d460e6,DESIGN,// TODO IDEA: recognise links that return promising representations
 Interactions-HSG/wot-search@2d460e6,WITHOUT_CLASSIFICATION,// check for valid uri
-IonBazan/openapi-generator,DEFECT,"// TODO: the null value is not allowed per OAS document.
+IonBazan/openapi-generator@cd41bc8,DEFECT,"// TODO: the null value is not allowed per OAS document.
 // The deserialization should fail."
 IronApollo/FastAsyncWorldEdit@a69b239,WITHOUT_CLASSIFICATION,// Apply heightmap
 IronApollo/FastAsyncWorldEdit@d0a3169,WITHOUT_CLASSIFICATION,//Clamp newHeight within the selection area
@@ -4343,8 +4343,8 @@ fieldenms/unknown,WITHOUT_CLASSIFICATION,"/**
      * @param root
      * @return
      */"
-fieldenms/unknown,WITHOUT_CLASSIFICATION,"// empty property means ""entity itself"""
-fieldenms/unknown,DESIGN,// TODO do not forget about Money later (after Money widget will be available)
+fieldenms/unknown@6711ae6,WITHOUT_CLASSIFICATION,"// empty property means ""entity itself"""
+fieldenms/unknown@6711ae6,DESIGN,// TODO do not forget about Money later (after Money widget will be available)
 finefuture/gazelle@f0a54c6,DESIGN,// Probably incorrect - comparing Object[] arrays with Arrays.equals
 finki001/couchbase-lite-java-core,WITHOUT_CLASSIFICATION,"/**
      * Creates a db and populates it with the sql statements in sqlStatements.
@@ -6175,11 +6175,11 @@ kef/hieos@e5b8fa4,WITHOUT_CLASSIFICATION,"/**
 kef/hieos@f0133f6,IMPLEMENTATION,// no idea what to do here
 kef/hieos@f8eb13e,DESIGN,// AMS 04/24/2009 - FIXME - Refactor this - 'else-if' and 'else' are pretty similar
 kevinpostlewaite/killbill@5274849,IMPLEMENTATION,// TODO add/remove tag to invoice
-kimjand/cxf,DESIGN,// workaround for the db file deletion problem during the tests
-kimjand/cxf,WITHOUT_CLASSIFICATION,// use the old db definitions to create the tables
-kimjand/cxf,WITHOUT_CLASSIFICATION,// verify the absence of the new columns in the tables
-kimjand/cxf,WITHOUT_CLASSIFICATION,// upgrade the tables and add new columns to the old tables
-kimjand/cxf,WITHOUT_CLASSIFICATION,// verify the presence of the new columns in the upgraded tables
+kimjand/cxf@f786738,DESIGN,// workaround for the db file deletion problem during the tests
+kimjand/cxf@f786738,WITHOUT_CLASSIFICATION,// use the old db definitions to create the tables
+kimjand/cxf@f786738,WITHOUT_CLASSIFICATION,// verify the absence of the new columns in the tables
+kimjand/cxf@f786738,WITHOUT_CLASSIFICATION,// upgrade the tables and add new columns to the old tables
+kimjand/cxf@f786738,WITHOUT_CLASSIFICATION,// verify the presence of the new columns in the upgraded tables
 kiuby88/incubator-brooklyn@7ee06ba,DESIGN,// TODO Want to use classLoader = mgmt.getCatalog().getRootClassLoader();
 kiuby88/incubator-brooklyn@35fd634,DEFECT,"/** TODO this test works if we assume most recent version wins, but semantics TBC */"
 kiuby88/incubator-brooklyn@99c1119,DESIGN,// TODO unsubscribe from everything? And resubscribe on resume?
@@ -10093,7 +10093,7 @@ zarechenskiy/kotlin@756ca9b,WITHOUT_CLASSIFICATION,"/*
      */"
 zarechenskiy/kotlin@ce01c61,DESIGN,// TODO : Take smart casts into account?
 zarechenskiy/kotlin@756ca9b,WITHOUT_CLASSIFICATION,// check if the pattern is essentially a 'null' expression
-zealoussnow/chromium,DEFECT,"// TODO(crbug.com/948518): This is a band-aid fix for not crashing when undo the last closed
+zealoussnow/chromium@b2a61e5,DEFECT,"// TODO(crbug.com/948518): This is a band-aid fix for not crashing when undo the last closed
 // tab, should remove later.
 /**
      * @return Whether filter should notify observers about the SetIndex call.
@@ -10119,14 +10119,14 @@ zealoussnow/chromium,WITHOUT_CLASSIFICATION,// The shopping list experiment save
 zealoussnow/chromium,DESIGN,"// TODO(lazzzis): remove log after bookmark sync is fixed, crbug.com/986978"
 zebra1024/couchbase-lite-android@542ad90,TEST,"// TODO: MArray has isMuated() method, but unable to check mutated to mutated.
 // @Test"
-zem13579/hive,DESIGN,// TODO May be possible to do finer-grained locks.
-zem13579/hive,DESIGN,// TODO May be possible to do finer-grained locks.
-zem13579/hive,DEFECT,"/**
+zem13579/hive@3f3d210,DESIGN,// TODO May be possible to do finer-grained locks.
+zem13579/hive@3f3d210,DESIGN,// TODO May be possible to do finer-grained locks.
+zem13579/hive@85b98a0,DEFECT,"/**
    * Column pruning could become problematic when a single Map Task contains multiple TableScan operators where
    * different columns are pruned. This only occurs on MR, as Tez initializes a single Map task for every TableScan
    * operator.
    */"
-zem13579/hive,WITHOUT_CLASSIFICATION,// MR is needed for the reproduction
+zem13579/hive@85b98a0,WITHOUT_CLASSIFICATION,// MR is needed for the reproduction
 zepedropaixao/videoplayer@df152c5,DESIGN,"// TODO Here I define the order for which I want the videos to play.
 // Could try diferent ordering for the playlists
 // For now it just accepts the gridAdapter selected array order"

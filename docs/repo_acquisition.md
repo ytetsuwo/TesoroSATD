@@ -158,3 +158,24 @@ python3 scripts/05_verify.py --full                              # コメント 
 - chromium のフォーク 2 件（`kjthegod/chromium`, `zealoussnow/chromium`）は
   全 clone が 100GB 超で取得していない。SWH の 2016 年スナップショットは Vault に無い
   （`POST /vault/git-bare/` が 404）。未復元 6 関数の主因。
+
+## repo_missing の差し替え（上流・ミラー）
+
+削除済みリポジトリの関数を、コード検索で見つけた上流・ミラーに差し替えて復元した
+（2026-10-29）。ディレクトリ名は Tesoro 側の `repo` のまま。
+
+| Tesoro の repo | 差し替え先 | 回収 |
+| --- | --- | --- |
+| zealoussnow/chromium | `kiwibrowser/src.next` | 9 |
+| kimjand/cxf | `apache/cxf` | 5 |
+| zem13579/hive | `apache/hive` | 4 |
+| jd3538/Marist-Sakai-11.x | `sakaiproject/sakai` | 5 |
+| fieldenms/（名前欠落） | `fieldenms/tg` | 3 |
+| janjaali/azure-sdk-for-java | `Azure/azure-sdk-for-java` | 2 |
+| IonBazan/openapi-generator | `OpenAPITools/openapi-generator` | 1 |
+| bshp/midpoint | `Evolveum/midpoint` | 1 |
+| kjthegod/chromium / sarang-apps/darshan_browser | `zealoussnow__chromium` への symlink | 1 |
+
+残る `repo_missing` は `bcgov/jag-efax` / `fernandogomesfg/Algoritmos-em-Java` /
+`ming1991/mingop` / `JC-Bodoque/geometric-transformer` の 4 件で、いずれも
+GitHub 上に現存せず、コード検索でも同一本文が見つからない。

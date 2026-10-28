@@ -1,28 +1,29 @@
 # Tesoro provenance (repo / file / commit)
 
-生成: 2026-10-29 08:15
+生成: 2026-10-29 08:33
 
 ## カバレッジ
 
-- 関数: 1255 件中 1229 件を特定 (97.9%)、うち commit 取得 1222 件 (履歴から復元 57 件)
-- コメント: 4981 件中 4927 件に commit を付与 (98.9%)、955 プロジェクト
-- 関数一致度: {'high': 1116, 'medium': 103, 'low': 10}
-- コメント特定方法: {'exact': 3478, 'structural': 1378, 'fuzzy': 10, 'relocated': 15, 'history': 19, 'reshaped': 4, 'position': 23} (exact=本文一致, structural=行末コメント・部分一致, fuzzy=本文が改変, position=記号のみ, relocated=別メソッドへ移動, history=履歴から復元, reshaped=形が変化)
+- 関数: 1255 件中 1237 件を特定 (98.6%)、うち commit 取得 1229 件 (履歴から復元 57 件)
+- コメント: 4981 件中 4940 件に commit を付与 (99.2%)、960 プロジェクト
+- 関数一致度: {'high': 1122, 'medium': 104, 'low': 11}
+- コメント特定方法: {'exact': 3487, 'structural': 1382, 'fuzzy': 10, 'relocated': 15, 'history': 19, 'reshaped': 4, 'position': 23} (exact=本文一致, structural=行末コメント・部分一致, fuzzy=本文が改変, position=記号のみ, relocated=別メソッドへ移動, history=履歴から復元, reshaped=形が変化)
 - commit 日付範囲: 2000-12-06 〜 2026-08-31
 
 ## 状態
 
-- ok: 1172
+- ok: 1180
 - ok_history: 57
-- repo_missing: 22
-- weak_match: 4
+- weak_match: 11
+- repo_missing: 6
+- not_at_head: 1
 
 ## ラベル分布 (全件 / commit あり)
 
-- DESIGN: 697 / 687
+- DESIGN: 697 / 691
 - IMPLEMENTATION: 474 / 464
-- NONSATD: 3432 / 3406
-- DEFECT: 220 / 213
+- NONSATD: 3432 / 3412
+- DEFECT: 220 / 216
 - TEST: 78 / 77
 - DOCUMENTATION: 80 / 80
 
