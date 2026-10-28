@@ -304,7 +304,7 @@ Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,"/* Remove any recip
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* Save a text copy of the entire event as an x-property */
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* Remove potentially large values */
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,// Don't store the entire attachment - we just need the parameters.
-Bedework/bw-calendar-convert,WITHOUT_CLASSIFICATION,// Just return notfound as this event is on its override list
+Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,// Just return notfound as this event is on its override list
 BerlinUnited/NaoTH@7f97dcb,WITHOUT_CLASSIFICATION,"/**
      * Returns the pressed Button of the alert.
      * That can be used to in a condition, eg.:
@@ -805,11 +805,11 @@ HoraceChoi95/incubator-pinot@a92464d,IMPLEMENTATION,"/**
    *
    * @return Name of partitioning column.
    */"
-Hsia-Esther/CityOfAaronGroup1@cac2487,WITHOUT_CLASSIFICATION,"/**
+Hsia-Esther/CityOfAaronGroup1,WITHOUT_CLASSIFICATION,"/**
      * Control this view's display/prompt/action loop until the user chooses and
      * action that causes this view to close.
      */"
-Hsia-Esther/CityOfAaronGroup1@c86d886,WITHOUT_CLASSIFICATION,//using this override to place getAnnualReport and gameShouldEnd inside displayView while loop.
+Hsia-Esther/CityOfAaronGroup1,WITHOUT_CLASSIFICATION,//using this override to place getAnnualReport and gameShouldEnd inside displayView while loop.
 Hsia-Esther/CityOfAaronGroup1@3925667,IMPLEMENTATION,"//check to see if the game should end and if so, display a message and return to Main Menu 
 //TODO Implement try catch.
 //TODO when fully implemented, this will contain mortality rate variable from annual report 
@@ -850,7 +850,7 @@ I2SE/RISE-V2G@505e772,IMPLEMENTATION,"// TODO how to react to failure status of 
 IBM/ibm-cos-sdk-java@1233055,DESIGN,"//Hacky assert but we know that this mockServer will create an exception that will be logged, if there's no log entry
 //then there's no exception, which means that getCredentials didn't get called on the fetcher"
 ICARUS-tooling/icarus2-modeling-framework@de6a1a8,WITHOUT_CLASSIFICATION,//		component.setImportEnabled(false);
-ICARUS-tooling/icarus2-modeling-framework@b14c7de,IMPLEMENTATION,"//		component.setKeepSelectionVisibleOnZoom(true);
+ICARUS-tooling/icarus2-modeling-framework@de6a1a8,IMPLEMENTATION,"//		component.setKeepSelectionVisibleOnZoom(true);
 //		component.getViewport().setBackground(Color.white);
 //TODO setup"
 IFML2/ifml-player@d610ad0,WITHOUT_CLASSIFICATION,//TODO: file was choosen;
@@ -928,9 +928,9 @@ IronApollo/FastAsyncWorldEdit@6c94cca,WITHOUT_CLASSIFICATION,"// Offset x,z to b
 IronApollo/FastAsyncWorldEdit@a629d15,WITHOUT_CLASSIFICATION,// Depending on growing or shrinking we need to start at the bottom or top
 IronApollo/FastAsyncWorldEdit@a629d15,IMPLEMENTATION,// Set the top block of the column to be the same type (this might go wrong with rounding)
 IronApollo/FastAsyncWorldEdit@a629d15,WITHOUT_CLASSIFICATION,// Skip water/lava
-IronApollo/FastAsyncWorldEdit@a629d15,IMPLEMENTATION,"// Set the top block of the column to be the same type
+IronApollo/FastAsyncWorldEdit@dd3f32b,IMPLEMENTATION,"// Set the top block of the column to be the same type
 // (this could otherwise go wrong with rounding)"
-IronApollo/FastAsyncWorldEdit@a629d15,WITHOUT_CLASSIFICATION,// Fill rest with air
+IronApollo/FastAsyncWorldEdit@dd3f32b,WITHOUT_CLASSIFICATION,// Fill rest with air
 IronApollo/FastAsyncWorldEdit@6c94cca,WITHOUT_CLASSIFICATION,// Drop trees to the floor -- TODO
 JC-Bodoque/geometric-transformer,IMPLEMENTATION,//TODO: translate code
 JC626/quickcheck-for-whiley@8b33feb,WITHOUT_CLASSIFICATION,"/**
@@ -1079,7 +1079,7 @@ Keneral/apackages@4b1b545,TEST,"// TODO: This test will actually mess with conta
 // Ideally we would use a fake content provider to give us contact data..."
 Keneral/apackages@4b1b545,WITHOUT_CLASSIFICATION,// add test contacts.
 KyoungjunPark/SmartClass@1a7bf94,IMPLEMENTATION,//implement below code if token is send to server
-L8RMedia/exponent@720631a,IMPLEMENTATION,// TODO: get path while TextPath is set.
+L8RMedia/exponent@24e3907,IMPLEMENTATION,// TODO: get path while TextPath is set.
 LaudateCorpus1/security-certification-resources@7580072,WITHOUT_CLASSIFICATION,"/**
      * Returns a {@link List} of additional {@link TestConfiguration} instances that should be run
      * along with the default {@code TestConfiguration} instances.
@@ -1555,15 +1555,15 @@ PLOS/named-entity.service@c084c37,DEFECT,// TODO: fix how this is rendering in X
 PRECISE/ROSLab@fe4bc9e,DESIGN,"// TODO improve the error message - the pointer should be at the
 // property name, not value"
 Pandrex247/patched-src-eclipselink@b1495ae,DEFECT,// TODO: Error.
-PanzerSchnitter/UltimateGoal2020@d3d102f,WITHOUT_CLASSIFICATION,"/*
+PanzerSchnitter/UltimateGoal2020,WITHOUT_CLASSIFICATION,"/*
         Initialize the setDrivePowers system variables.  The init() methods of our hardware class
         does all the work:
          */"
-PanzerSchnitter/UltimateGoal2020@d3d102f,WITHOUT_CLASSIFICATION,"/*
+PanzerSchnitter/UltimateGoal2020,WITHOUT_CLASSIFICATION,"/*
         Init Delay Option Select:
         */"
-PanzerSchnitter/UltimateGoal2020@d3d102f,WITHOUT_CLASSIFICATION,// After init is pushed but before Start we can change the delay using dpad up/down //
-PanzerSchnitter/UltimateGoal2020@d3d102f,WITHOUT_CLASSIFICATION,// Runs a loop to change certain settings while we wait to start
+PanzerSchnitter/UltimateGoal2020,WITHOUT_CLASSIFICATION,// After init is pushed but before Start we can change the delay using dpad up/down //
+PanzerSchnitter/UltimateGoal2020,WITHOUT_CLASSIFICATION,// Runs a loop to change certain settings while we wait to start
 PanzerSchnitter/UltimateGoal2020@d3d102f,WITHOUT_CLASSIFICATION,// Leave the loop if STOP is pressed
 PanzerSchnitter/UltimateGoal2020@d3d102f,WITHOUT_CLASSIFICATION,// Increases the amount of time we wait
 PanzerSchnitter/UltimateGoal2020@d3d102f,WITHOUT_CLASSIFICATION,// Decreases the amount of time we wait
@@ -1588,7 +1588,7 @@ PanzerSchnitter/UltimateGoal2020@d3d102f,WITHOUT_CLASSIFICATION,"/**
          * remaining idle for a minute or two...
          */"
 PanzerSchnitter/UltimateGoal2020@d3d102f,WITHOUT_CLASSIFICATION,// Time Delay:
-PanzerSchnitter/UltimateGoal2020@0105fc0,WITHOUT_CLASSIFICATION,"/*
+PanzerSchnitter/UltimateGoal2020,WITHOUT_CLASSIFICATION,"/*
         for (int i = 0; i <= 5; i++) {
             robot.robotWait(5);
             robot.driveOdo.quickDrive( -4,96,0.3, -90,3.0);
@@ -1628,7 +1628,7 @@ Pixate/pixate-freestyle-android@ff59b6c,WITHOUT_CLASSIFICATION,// reset active m
 Pokecube-Development/Pokecube-Core@7f8c6b4,DESIGN,// TODO some way to make this change based on how long button is held?
 Pokecube-Development/Pokecube-Core@7f8c6b4,WITHOUT_CLASSIFICATION,// Sync the rotations.
 PolyhedralDev/Terra-biome-provider-pipeline@7335645,IMPLEMENTATION,// TODO: actually implement this lol
-Prodaxis/kie-wb-common@c49bfd8,DEFECT,"// compatibility fix: boundary events should always occur at the bottom
+Prodaxis/kie-wb-common@80a34e9,DEFECT,"// compatibility fix: boundary events should always occur at the bottom
 // otherwise they will be drawn at an incorrect position on load"
 Programming-Systems-Lab/pitest@22ec8b9,IMPLEMENTATION,"// workaround to register this test as covering some part of the testee.
 // static variable access does not currently register as coverage . . ."
@@ -2439,7 +2439,7 @@ ajpro-byte/ClinicMGMT@a558cbf,WITHOUT_CLASSIFICATION,//GEN-FIRST:event_riKeyRele
 ajpro-byte/ClinicMGMT@a558cbf,IMPLEMENTATION,//calc_total();        // TODO add your handling code here:
 alancnet/artifactory@919a718,DESIGN,//TORE: [by YS] should be storing repo once interfaces refactoring is done
 alar17/ts-reaktive@4417558,DESIGN,"// TODO either PR ByteBuffer support into actson, or sneaky-access the underlying byte array fields here"
-alaurent4/nighres@2932678,IMPLEMENTATION,// import the image data into 1D arrays : TO DO
+alaurent4/nighres,IMPLEMENTATION,// import the image data into 1D arrays : TO DO
 alaurent4/nighres@2932678,WITHOUT_CLASSIFICATION,// create a mask for all the regions outside of the area where layer 1 is > 0 and layer 2 is < 0
 alaurent4/nighres@2932678,WITHOUT_CLASSIFICATION,"// main algorithm
 // 1. define partial voume for each layer, each voxel"
@@ -2734,7 +2734,7 @@ atb/ofbiz@94fe6d1,WITHOUT_CLASSIFICATION,"//if (Debug.infoOn()) Debug.logInfo(""
 atb/ofbiz@94fe6d1,WITHOUT_CLASSIFICATION,"//if (Debug.infoOn()) Debug.logInfo(""in updatePublishLinks, param:"" + param + "" pos:"" + pos , module);"
 atb/ofbiz@3c7a7f3,WITHOUT_CLASSIFICATION,"//if (Debug.infoOn()) Debug.logInfo(""in updatePublishLinks, siteIdLookup:"" + siteIdLookup , module);
 // Loop thru all the possible subsites"
-atb/ofbiz@94fe6d1,WITHOUT_CLASSIFICATION,// int counter = 0;
+atb/ofbiz@3c7a7f3,WITHOUT_CLASSIFICATION,// int counter = 0;
 atb/ofbiz@3c7a7f3,WITHOUT_CLASSIFICATION,// String permissionMessage = null;
 atb/ofbiz@3c7a7f3,WITHOUT_CLASSIFICATION,"//if (Debug.infoOn()) Debug.logInfo(""in updatePublishLinks, arr:"" + Arrays.asList(arr) , module);"
 atb/ofbiz@94fe6d1,WITHOUT_CLASSIFICATION,// main (2nd level) site id
@@ -2799,7 +2799,7 @@ aungphyopyaekyaw/gpstrack@1a59330,WITHOUT_CLASSIFICATION,/* no report header gro
 aungphyopyaekyaw/gpstrack@1a59330,WITHOUT_CLASSIFICATION,/* search for column */
 aungphyopyaekyaw/gpstrack@1a59330,DESIGN,// TODO: optimize
 aungphyopyaekyaw/gpstrack@1a59330,WITHOUT_CLASSIFICATION,/* not found */
-aureatesting/Syntactic@732b6c5,WITHOUT_CLASSIFICATION,"/*
+aureatesting/Syntactic,WITHOUT_CLASSIFICATION,"/*
 	 * 
 	 * corpus_%corpusName% = {
 		name: ""..."",
@@ -2889,13 +2889,13 @@ bancha2nd/nativescript-plugins@2927a78,WITHOUT_CLASSIFICATION,// And read/update
 baobab-it/notebookFX@aa08ee5,IMPLEMENTATION,// TODO rewrite after add extension dialogs
 baodingfengyun/luaj@67962d4,TEST,// FIXME Test failures
 baodingfengyun/luaj@67962d4,TEST,// FIXME Test failures
+baodingfengyun/luaj,TEST,// FIXME Test failures
 baodingfengyun/luaj@67962d4,TEST,// FIXME Test failures
-baodingfengyun/luaj@67962d4,TEST,// FIXME Test failures
-baodingfengyun/luaj@67962d4,TEST,// FIXME Test failures
+baodingfengyun/luaj,TEST,// FIXME Test failures
 baodingfengyun/luaj@67962d4,TEST,// FIXME Test failures
 basitkhurram/fresco@1f96aec,TEST,"// TODO Should be split into different tests for mean, variance, covariance, covariancematrix"
 batiaev/provisioner@f61cb00,DEFECT,//FIXME use Auth header with basic auth
-bcgov/EDUC-GRAD-REPORT-API@15fdc62,DESIGN,"/**
+bcgov/EDUC-GRAD-REPORT-API@f008413,DESIGN,"/**
          * TODO: ""previous course"" and ""original course"" appear to be separate
          * concepts; comment needs revision to explain a bit more.
          *
@@ -2955,14 +2955,14 @@ bigfastdata/SluiceBox@29b1d63,WITHOUT_CLASSIFICATION,"/**
      */"
 bigfastdata/SluiceBox@29b1d63,WITHOUT_CLASSIFICATION,// classifier.pruneThresholdOption.setValue(0.00001);
 bigfastdata/SluiceBox@29b1d63,IMPLEMENTATION,// TODO - add fuller set
-bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,"//When the robot begins, it is in initialized state
+bignaczak/eBots2020_V2,WITHOUT_CLASSIFICATION,"//When the robot begins, it is in initialized state
 //In this state, initialize the robot sensors and actuators
 //and wait for the event: driver pushes START
 //************************************************************
 //***   INITIALIZE THE ROBOT
 //************************************************************"
-bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//Initialize the wheels
-bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//Initialize the imu
+bignaczak/eBots2020_V2,WITHOUT_CLASSIFICATION,//Initialize the wheels
+bignaczak/eBots2020_V2,WITHOUT_CLASSIFICATION,//Initialize the imu
 bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//Initialize the color sensors
 bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//Initialize the digitalTouch sensors
 bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//Initialize the LED lights
@@ -3002,7 +3002,7 @@ bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//check for trigger event
 bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//perform state actions
 bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//Report telemetry
 bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,//Exit opmode
-bignaczak/eBots2020_V2@b50d408,WITHOUT_CLASSIFICATION,"//State debug info
+bignaczak/eBots2020_V2,WITHOUT_CLASSIFICATION,"//State debug info
 //        if (debugOn) {
 //            Log.d(logTag, ""Transitioning out of state "" + autonState.toString());
 //            if (robot.getEbotsMotionController().isTargetPoseReached(robot)) {
@@ -3577,7 +3577,7 @@ chenyukaola/Elastos.DID.Java.SDK@8349f36,DESIGN,"/**
          * @throws DIDResolveException if an error occurred when resolving DID
          */
 // TODO: to be remove in the future"
-chenyukaola/Elastos.DID.Java.SDK@03bd6c3,WITHOUT_CLASSIFICATION,"// NOTICE: Make a copy from DIDBackend cache.
+chenyukaola/Elastos.DID.Java.SDK@664534a,WITHOUT_CLASSIFICATION,"// NOTICE: Make a copy from DIDBackend cache.
 // 		   Avoid share same DIDDocument instance between DIDBackend
 //         cache and DIDStore cache."
 chinasaur/beam@6ed4d55,DESIGN,"// TODO: currently assumes that every element is a separate bundle,
@@ -3588,7 +3588,7 @@ chinasaur/beam@47e0df0,DESIGN,"// TODO: it would be nice to emit results as they
 chinasaur/beam@47e0df0,WITHOUT_CLASSIFICATION,// RemoteBundle close blocks until all results are received
 chinhodado/BBDB@9814614,WITHOUT_CLASSIFICATION,// Inflate the layout for this fragment
 chinhodado/BBDB@69dc138,DESIGN,//TODO: see if we can be more error-tolerance
-chinhodado/BBDB@0db49f1,WITHOUT_CLASSIFICATION,// instead of try-catch
+chinhodado/BBDB,WITHOUT_CLASSIFICATION,// instead of try-catch
 chinhodado/BBDB@9814614,WITHOUT_CLASSIFICATION,// calculate the width of the images to be displayed later on
 chinhodado/BBDB@66b906e,WITHOUT_CLASSIFICATION,// set it to be 1/10 of the screen width
 chinhodado/BBDB@9814614,WITHOUT_CLASSIFICATION,// get all rows in each table
@@ -3597,7 +3597,7 @@ chinhodado/BBDB@9814614,WITHOUT_CLASSIFICATION,// get the thubnail image src
 chinhodado/BBDB@9814614,WITHOUT_CLASSIFICATION,// the height's not exact
 chinhodado/BBDB@66b906e,WITHOUT_CLASSIFICATION,// get the scaled image link and display it
 chinhodado/BBDB@9814614,WITHOUT_CLASSIFICATION,//center vertical
-chinhodado/BBDB@789fb04,IMPLEMENTATION,"//TODO: center the spinner horizontally
+chinhodado/BBDB,IMPLEMENTATION,"//TODO: center the spinner horizontally
 //remove the spinner"
 chrishmorris/PiMS@cdcc1a5,DEFECT,"/**
      * LATER fix this test case - it leaves the DB connection bad
@@ -3907,7 +3907,7 @@ dannyhx/artisynth_core@fde90a2,WITHOUT_CLASSIFICATION,"/* If a scrollbar is goin
 	 * not responsible for laying out the view we'll assume that the 
 	 * JViewport will always give it its preferredSize.
 	 */"
-dansiviter/cito-sockjs@ee2b8cc,TEST,"/**
+dansiviter/cito-sockjs,TEST,"/**
          * When server receives a request with unknown session_id it must recognize that as request for a new session. When
          * server opens a new session it must immediately send an frame containing a letter o.
          * </p>
@@ -3917,7 +3917,7 @@ dansiviter/cito-sockjs@ee2b8cc,TEST,"/**
          * @throws ExecutionException 
          * @throws InterruptedException 
          */"
-dansiviter/cito-sockjs@ee2b8cc,WITHOUT_CLASSIFICATION,"// New line is a frame delimiter specific for xhr-polling"""
+dansiviter/cito-sockjs,WITHOUT_CLASSIFICATION,"// New line is a frame delimiter specific for xhr-polling"""
 dansiviter/cito-sockjs@ee2b8cc,WITHOUT_CLASSIFICATION,"// After a session was established the server needs to accept requests for sending messages.
 // Xhr-polling accepts messages as a list of JSON-encoded strings."
 dansiviter/cito-sockjs@ee2b8cc,WITHOUT_CLASSIFICATION,// We're using an echo service - we'll receive our message back. The message is encoded as an array 'a'.
@@ -4124,7 +4124,7 @@ duarterafael/Conformitate@c1da740,IMPLEMENTATION,"/**
      * 
      * @return
      */"
-duarterafael/Conformitate@c1da740,IMPLEMENTATION,"/**
+duarterafael/Conformitate,IMPLEMENTATION,"/**
      * TODO
      * 
      * @return
@@ -4217,7 +4217,7 @@ ecgreb/robolectric@29a8359,DESIGN,"// ugh, we're barfing while loading org.sqlit
 edmazur/everquest-robot-stanvern@6c94c47,DESIGN,// TODO: Do something intelligent.
 edmazur/everquest-robot-stanvern@6c94c47,DESIGN,// TODO: Do something intelligent.
 edmazur/everquest-robot-stanvern@2c54587,DESIGN,// TODO Auto-generated catch block
-edmazur/everquest-robot-stanvern@6c94c47,DESIGN,// TODO: Do something intelligent.
+edmazur/everquest-robot-stanvern@2c54587,DESIGN,// TODO: Do something intelligent.
 edwinperaza/playmagnet@b95e0b1,WITHOUT_CLASSIFICATION,"/**
      * Attempts to sign in or register the account specified by the login form.
      * If there are form errors (invalid email, missing fields, etc.), the
@@ -4258,7 +4258,7 @@ emafazillah/andhow@8b3a576,DESIGN,"/**
 	 * This is really testing how the NonProductionConfig works - how can this be
 	 * targeted to the init config?
 	 */"
-emafazillah/andhow@8b3a576,WITHOUT_CLASSIFICATION,//The line above should throw an error
+emafazillah/andhow,WITHOUT_CLASSIFICATION,//The line above should throw an error
 enoxos/r5@cbe1111,DEFECT,// TODO fix
 enoxos/r5@cbe1111,WITHOUT_CLASSIFICATION,"// we now know what patterns are being used, interleave to find times
 // NB no need to reverse-optimize these itineraries; we'll just filter them below."
@@ -4346,7 +4346,7 @@ fieldenms/,WITHOUT_CLASSIFICATION,"/**
 fieldenms/,WITHOUT_CLASSIFICATION,"// empty property means ""entity itself"""
 fieldenms/,DESIGN,// TODO do not forget about Money later (after Money widget will be available)
 finefuture/gazelle@f0a54c6,DESIGN,// Probably incorrect - comparing Object[] arrays with Arrays.equals
-finki001/couchbase-lite-java-core@79c317f,WITHOUT_CLASSIFICATION,"/**
+finki001/couchbase-lite-java-core,WITHOUT_CLASSIFICATION,"/**
      * Creates a db and populates it with the sql statements in sqlStatements.
      *
      * @param context the context to use to create the db
@@ -5754,45 +5754,45 @@ jdissou/sigdep01_01@eafa6a6,DESIGN,"/* 3 - Alternative : Bind Fields instances t
 jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//4 - Add input fields to formLayout - We don't use .setLabel since we will use addFormItem instead of add to add items to the form - addFormItem allows us to set SuperTextField with on a FormaLayout when add doesn't
 //this.formLayout.add(this.txtNoRubrique, this.txtLibelleRubrique, this.txtLibelleCourtRubrique, this.txtNomMandataire, this.txtNoTelephone, this.txtNoMobile, this.txtNoTelecopie, this.datDateNaissance, this.txtLieuNaissance, this.txtAdresse, this.txtVille, this.txtNombreHomme, this.txtNombreFemme, this.chkInactif, this.txtNoPieceIdentite, this.chkDeposant, this.chkEmprunteur, this.chkGarant, this.chkDirigeant, this.chkAdministrateur);
 //4 - Alternative"
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"//5 - Making the Layout Responsive : Custom responsive layouting
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//5 - Making the Layout Responsive : Custom responsive layouting
 //breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top and there is only 1 column. The form will show 2 columns if width is >= 600px"
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"/*
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"/*
             //breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top. In both cases there is only 1 column.
             tabInfoGeneraleFormLayout.setResponsiveSteps(new FormLayout.ResponsiveStep(""0"", 1, FormLayout.ResponsiveStep.LabelsPosition.TOP), 
                     new FormLayout.ResponsiveStep(PANEL_FLEX_BASIS, 1, FormLayout.ResponsiveStep.LabelsPosition.ASIDE));
             */"
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"//breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top and there is only 1 column. The form will show 2 columns if width is >= 600px"
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"/*
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top and there is only 1 column. The form will show 2 columns if width is >= 600px"
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"/*
             //breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top. In both cases there is only 1 column.
             tabDefinitionFormLayout.setResponsiveSteps(new FormLayout.ResponsiveStep(""0"", 1, FormLayout.ResponsiveStep.LabelsPosition.TOP), 
                     new FormLayout.ResponsiveStep(PANEL_FLEX_BASIS, 1, FormLayout.ResponsiveStep.LabelsPosition.ASIDE));
             */"
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"//breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top and there is only 1 column. The form will show 2 columns if width is >= 600px"
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"/*
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"//breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top and there is only 1 column. The form will show 2 columns if width is >= 600px"
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"/*
             //breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top. In both cases there is only 1 column.
             tabAjustementFormLayout.setResponsiveSteps(new FormLayout.ResponsiveStep(""0"", 1, FormLayout.ResponsiveStep.LabelsPosition.TOP), 
                     new FormLayout.ResponsiveStep(PANEL_FLEX_BASIS, 1, FormLayout.ResponsiveStep.LabelsPosition.ASIDE));
             */"
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"/*
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"/*
             //breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top. In both cases there is only 1 column.
             this.tabCompteurBaseMontantFormLayout.setResponsiveSteps(new FormLayout.ResponsiveStep(""0"", 1, FormLayout.ResponsiveStep.LabelsPosition.TOP), 
                     new FormLayout.ResponsiveStep(PANEL_FLEX_BASIS, 1, FormLayout.ResponsiveStep.LabelsPosition.ASIDE));
             */"
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"/*
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"/*
             //breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top. In both cases there is only 1 column.
             this.tabCompteurInterneFormLayout.setResponsiveSteps(new FormLayout.ResponsiveStep(""0"", 1, FormLayout.ResponsiveStep.LabelsPosition.TOP), 
                     new FormLayout.ResponsiveStep(PANEL_FLEX_BASIS, 1, FormLayout.ResponsiveStep.LabelsPosition.ASIDE));
             */"
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,"/*
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,"/*
             //breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top. In both cases there is only 1 column.
             this.tabCompteurExterneFormLayout.setResponsiveSteps(new FormLayout.ResponsiveStep(""0"", 1, FormLayout.ResponsiveStep.LabelsPosition.TOP), 
                     new FormLayout.ResponsiveStep(PANEL_FLEX_BASIS, 1, FormLayout.ResponsiveStep.LabelsPosition.ASIDE));
             */"
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//6 - Configure Tabs
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//Configure OnSelectedTabChange
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//Cache Selected Tab
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//First Page to show programmatically
-jdissou/sigdep01_01,WITHOUT_CLASSIFICATION,//Pre-select tabs
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//6 - Configure Tabs
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//Configure OnSelectedTabChange
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//Cache Selected Tab
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//First Page to show programmatically
+jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//Pre-select tabs
 jebbench/jackson-dataformat-velocypack@c457b1c,DEFECT,"// 10-Dec-2018, tatu: With 2.10, should serialize same as via ObjectMapper/ObjectWriter
 // 10-Dec-2019, tatu: Surprise! No, this is not how it worked in 2.9, nor does it make
 //    sense... see [databind#2566] for details"
@@ -5827,9 +5827,9 @@ jettmarks/clueRide-angular@c69d40f,WITHOUT_CLASSIFICATION,"/**
 jettmarks/clueRide-angular@c69d40f,DESIGN,// TODO: Introduce PreparedGeometry
 jgallimore/crest@dc0e271,DEFECT,"// Prior to fix, this was throwing StringIndexOutOfBoundsException"
 jgallimore/crest@dc0e271,DEFECT,"// Prior to fix, this was throwing StringIndexOutOfBoundsException"
-jgorny/liferay-faces-bridge-impl@70d2aab,WITHOUT_CLASSIFICATION,"// If the URL is opaque, meaning it starts with something like ""portlet:"" or ""mailto:"" and
+jgorny/liferay-faces-bridge-impl,WITHOUT_CLASSIFICATION,"// If the URL is opaque, meaning it starts with something like ""portlet:"" or ""mailto:"" and
 // doesn't have the double-forward-slash like ""http://"" does, then"
-jgorny/liferay-faces-bridge-impl@70d2aab,WITHOUT_CLASSIFICATION,"// If the URI starts with ""portlet:"", then return a BaseURL that contains the modified
+jgorny/liferay-faces-bridge-impl,WITHOUT_CLASSIFICATION,"// If the URI starts with ""portlet:"", then return a BaseURL that contains the modified
 // parameters. This will be a URL that represents navigation to a different viewId."
 jgorny/liferay-faces-bridge-impl@f66fcdd,WITHOUT_CLASSIFICATION,"// TCK: modeViewIDTest
 // TCK: requestRenderIgnoresScopeViaCreateViewTest
@@ -5900,12 +5900,12 @@ jgorny/liferay-faces-bridge-impl@f66fcdd,WITHOUT_CLASSIFICATION,"// TCK: resourc
 // TCK: encodeActionURLWithInvalidWindowStateResourceTest
 // TCK: encodeURLEscapingTest
 // TCK: encodeResourceURLWithModeTest"
-jgorny/liferay-faces-bridge-impl@70d2aab,WITHOUT_CLASSIFICATION,"// Otherwise, if the bridge must encode the URL to satisfy ""in-protocol"" resource serving, then return a
+jgorny/liferay-faces-bridge-impl,WITHOUT_CLASSIFICATION,"// Otherwise, if the bridge must encode the URL to satisfy ""in-protocol"" resource serving, then return a
 // an appropriate ResourceURL."
-jgorny/liferay-faces-bridge-impl@f66fcdd,WITHOUT_CLASSIFICATION,// TCK: nonFacesResourceTest
-jgorny/liferay-faces-bridge-impl@70d2aab,WITHOUT_CLASSIFICATION,"// Otherwise, assume that the URL is for an resource external to the portlet context like
+jgorny/liferay-faces-bridge-impl,WITHOUT_CLASSIFICATION,// TCK: nonFacesResourceTest
+jgorny/liferay-faces-bridge-impl,WITHOUT_CLASSIFICATION,"// Otherwise, assume that the URL is for an resource external to the portlet context like
 // ""/portalcontext/resources/foo.png"" and return a BaseURL string representation of it."
-jgorny/liferay-faces-bridge-impl@f66fcdd,WITHOUT_CLASSIFICATION,"// TCK: encodeResourceURLTest
+jgorny/liferay-faces-bridge-impl,WITHOUT_CLASSIFICATION,"// TCK: encodeResourceURLTest
 // TCK: encodeResourceURLBackLinkTest"
 jiangshide/sdk@feabc18,WITHOUT_CLASSIFICATION,"// Look up the beginning and the end of the line (outside of the extracted string)
 // such that we can show a preview of the diff, e.g. if you have
@@ -6539,7 +6539,7 @@ malmstein/ExoPlayer@27ab5c8,WITHOUT_CLASSIFICATION,// Build the audio renderer.
 malmstein/ExoPlayer@27ab5c8,WITHOUT_CLASSIFICATION,// Build the debug renderer.
 malmstein/ExoPlayer@27ab5c8,WITHOUT_CLASSIFICATION,// Invoke the callback.
 manifold-systems/manifold@6bdc872,DESIGN,//## todo: use location to select more specifically (in Java 9+ with the location's module)
-manjulaRathnayaka/carbon-identity@69a0a46,WITHOUT_CLASSIFICATION,"/**
+manjulaRathnayaka/carbon-identity,WITHOUT_CLASSIFICATION,"/**
      * this method are overridden for extra claim request to google end-point
      *
      * @param request
@@ -6558,7 +6558,7 @@ marceloamorimcg/Dr.InfoSystem@6c7cec1,WITHOUT_CLASSIFICATION,"//a estrutura abai
 //a linha abaixo atualiza a tabela usuario com os dados do formulario"
 marceloamorimcg/Dr.InfoSystem@6c7cec1,WITHOUT_CLASSIFICATION,"// testando a logica 
 //System.out.println(adicionado);"
-marcus8448/Mekanism@42e48f8,DESIGN,"//TODO: AT to get access to the cubeList and childModel or not bother given we have already converted things
+marcus8448/Mekanism,DESIGN,"//TODO: AT to get access to the cubeList and childModel or not bother given we have already converted things
 /*public static VoxelShape getShapeFromModel(ModelRenderer... models) {
         return getShapeFromModel(false, models);
     }
@@ -6677,7 +6677,7 @@ melvidoni/chatbot@2c8c112,WITHOUT_CLASSIFICATION,// Create a counter
 melvidoni/chatbot@2c8c112,WITHOUT_CLASSIFICATION,// For each word asked
 melvidoni/chatbot@2c8c112,WITHOUT_CLASSIFICATION,"// If found, we add one, otherwise, we add zero"
 melvidoni/chatbot@2c8c112,WITHOUT_CLASSIFICATION,// Return the value
-memleakpl/flat@46fff04,DEFECT,// FIXME: flashing blank activity
+memleakpl/flat,DEFECT,// FIXME: flashing blank activity
 memleakpl/flat@46fff04,WITHOUT_CLASSIFICATION,// Finish activity earlier
 metas-fresh/fresh@a9fb744,WITHOUT_CLASSIFICATION,"/**
 	 * Add Node to correct tree
@@ -6952,9 +6952,9 @@ nchambers/caevo@6bd9c67,DESIGN,"/**
    */"
 nedru004/LibraryAnalysis2@db79d11,DESIGN,//TODO: Note that not all reads actually cover a given var
 neiplz/Pedometer@a0026c0,DESIGN,//TODO: Replace this with your own logic
-neoautus/lucidj@ce4999d,WITHOUT_CLASSIFICATION,// ObjectEventListener
+neoautus/lucidj,WITHOUT_CLASSIFICATION,// ObjectEventListener
 neoautus/lucidj@ce4999d,IMPLEMENTATION,// TODO: VAADIN SESSION HANDLING
-neoautus/lucidj@ce4999d,WITHOUT_CLASSIFICATION,// ObjectEventListener
+neoautus/lucidj,WITHOUT_CLASSIFICATION,// ObjectEventListener
 neoautus/lucidj@ce4999d,WITHOUT_CLASSIFICATION,// Only deal with valid renderers
 neoautus/lucidj@ce4999d,IMPLEMENTATION,// TODO: VAADIN SESSION HANDLING
 neoautus/lucidj-core@c92afd8,WITHOUT_CLASSIFICATION,/* skip this+serviceChanged */
@@ -7153,7 +7153,7 @@ ontopia/ontopia@cb8c6ff,WITHOUT_CLASSIFICATION,"// ----- <name> ----------------
 openmuthu/jaya@043fbea,WITHOUT_CLASSIFICATION,//                  if(new File(item.second).isAbsolute()){
 openmuthu/jaya@043fbea,IMPLEMENTATION,// Shortcut to check isAbsolute()
 openmuthu/jaya@043fbea,WITHOUT_CLASSIFICATION,// Its an absolute url. set the destUrl to empty so that item.second is taken as is
-openphacts/OPS-Knime@9094e0a,WITHOUT_CLASSIFICATION,"/**
+openphacts/OPS-Knime,WITHOUT_CLASSIFICATION,"/**
      * {@inheritDoc}
      */"
 openphacts/OPS-Knime@9094e0a,WITHOUT_CLASSIFICATION,"//   System.out.println(""calling execute""+resultUrl.getStringValue());
@@ -7172,9 +7172,9 @@ openphacts/OPS-Knime@a23686c,WITHOUT_CLASSIFICATION,"//urlTemplate = urlTemplate
 openphacts/OPS-Knime@9094e0a,WITHOUT_CLASSIFICATION,"//urlTemplate =urlTemplate.replaceAll(""\\[.*?\\]"", """");"
 openphacts/OPS-Knime@2177f08,DEFECT,"//urlTemplate =urlTemplate.replaceAll(""%5B"", ""[""); //strange that this is needed....API issue?
 //urlTemplate =urlTemplate.replaceAll(""%5D"", ""]"");"
-openphacts/OPS-Knime@e3a7a66,WITHOUT_CLASSIFICATION,"//urlTemplate = urlTemplate.substring(0, urlTemplate.length()-1);
+openphacts/OPS-Knime,WITHOUT_CLASSIFICATION,"//urlTemplate = urlTemplate.substring(0, urlTemplate.length()-1);
 //System.out.println(""urlTemplate became ""+urlTemplate);"
-openphacts/OPS-Knime@9094e0a,IMPLEMENTATION,// TODO: Return a BufferedDataTable for each output port 
+openphacts/OPS-Knime,IMPLEMENTATION,// TODO: Return a BufferedDataTable for each output port 
 operon-io/operon-lang@7ac40f0,WITHOUT_CLASSIFICATION,"//:OFF:log.debug(""EXIT Operator_expr :: Stack size :: "" + this.stack.size());"
 operon-io/operon-lang@1f8f783,WITHOUT_CLASSIFICATION,// Get the FunctionRef
 operon-io/operon-lang@7ac40f0,WITHOUT_CLASSIFICATION,"//:OFF:log.debug(""  >> Operator :: set cascade true :: "" + subNodes.get(subNodes.size() - 2).getText());"
@@ -7429,8 +7429,8 @@ phon-ca/phon@290095e,DESIGN,"// group by session if info is available
 // TODO make this an option"
 phon-ca/phon@8cf1318,WITHOUT_CLASSIFICATION,// produce table
 phon-ca/phon@8cf1318,WITHOUT_CLASSIFICATION,// append row to table
-phques/androidpush@a908baf,WITHOUT_CLASSIFICATION,// Always call the superclass
-phques/androidpush@a908baf,DESIGN,"// probably not needed, onStop closes the socket, which should make the thread stop (?)"
+phques/androidpush@5cc3571,WITHOUT_CLASSIFICATION,// Always call the superclass
+phques/androidpush@5cc3571,DESIGN,"// probably not needed, onStop closes the socket, which should make the thread stop (?)"
 pitbox46/graaljs-forge@bb0ec6c,WITHOUT_CLASSIFICATION,/* Check for Infinity and NaN */
 pitbox46/graaljs-forge@bb0ec6c,DESIGN,// ALERT: should it distinguish -0.0 from +0.0 ?
 pitbox46/graaljs-forge@bb0ec6c,WITHOUT_CLASSIFICATION,/* Get the integer part of d including '-' sign. */
@@ -7471,7 +7471,7 @@ pitbox46/graaljs-forge@bb0ec6c,WITHOUT_CLASSIFICATION,"/*
 pk-80/device-modbus@42e358a,IMPLEMENTATION,"// TODO 7: [Optional] Fill with your own implementation for handling
 // asynchronous data from the driver layer to the device service"
 plusplusjiajia/SSM@2837aac,DESIGN,//Todo: optimize
-pokebadgerswithspoon/incubator-netbeans@6daa72c,WITHOUT_CLASSIFICATION,// Store chnages in manifest
+pokebadgerswithspoon/incubator-netbeans,WITHOUT_CLASSIFICATION,// Store chnages in manifest
 pokebadgerswithspoon/incubator-netbeans@6daa72c,WITHOUT_CLASSIFICATION,// store localized info
 pokebadgerswithspoon/incubator-netbeans@6daa72c,DESIGN,// XXX else ignore for now but we could save into some default location
 pokebadgerswithspoon/incubator-netbeans@6daa72c,WITHOUT_CLASSIFICATION,"// Store project.xml changes
@@ -7508,7 +7508,7 @@ pranavbj-amzn/batfish@d4470b6,DESIGN,// TODO: get the remark line in there too.
 pranavbj-amzn/batfish@d4470b6,DESIGN,// TODO: get the remark line in there too.
 pranavbj-amzn/batfish@d4470b6,DESIGN,// TODO: get the remark line in there too.
 pranavbj-amzn/batfish@d4470b6,DESIGN,// TODO: get the remark line in there too.
-priamm/dagger@b37be92,DESIGN,// TODO(b/199889259): Consider optimizing this for fastInit mode.
+priamm/dagger@9ef4865,DESIGN,// TODO(b/199889259): Consider optimizing this for fastInit mode.
 priamm/dagger@9ef4865,WITHOUT_CLASSIFICATION,"// These binding kinds avoid SwitchingProvider when the backing instance already exists,
 // e.g. a component provider can use FactoryInstance.create(this)."
 priamm/dagger@9ef4865,WITHOUT_CLASSIFICATION,"// These binding kinds avoid SwitchingProvider when their are no dependencies,
@@ -7563,15 +7563,15 @@ prokopk1n/cpachecker-1@b80f52b,IMPLEMENTATION,"/* What shall we do with function
       */"
 prokopk1n/cpachecker-1@d610ec4,WITHOUT_CLASSIFICATION,"//It means, that there is no entry in this block. Don't add it"
 qiaolw/AndroidTest@8f88a20,DESIGN,// todo change the file location/name according to your needs
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
@@ -7634,7 +7634,7 @@ rcmaniac25/little-cms-for-blackberry@1d6780b,WITHOUT_CLASSIFICATION,// Check for
 rcmaniac25/little-cms-for-blackberry@1d6780b,WITHOUT_CLASSIFICATION,// Type == 0 means segment is sampled
 rcmaniac25/little-cms-for-blackberry@1d6780b,DESIGN,// Setup the table (TODO: clean that)
 rebse/flaka@0c93adb,DOCUMENTATION,// TODO: document me
-rebse/flaka@0c93adb,DOCUMENTATION,// TODO: document me
+rebse/flaka@9bb7d90,DOCUMENTATION,// TODO: document me
 reckue/note-api@c5a560f,IMPLEMENTATION,// TODO Implement a method
 recolic/hbase-2.1.0@3d2d77e,DEFECT,// get client ip address. ipv6 is not tested yet. (code for ipv6 maybe buggy)
 reed-foster/cdl@2fd20ea,IMPLEMENTATION,"/**
@@ -7786,7 +7786,7 @@ runningt/ambari@da2ac57,WITHOUT_CLASSIFICATION,"/**
 runningt/ambari@da2ac57,WITHOUT_CLASSIFICATION,// admin has full access
 runningt/ambari@da2ac57,DESIGN,// TODO : should we log this?
 sachinlala/JavaPerfTests@4606e06,DESIGN,//TODO: this can be improved further to handle large powers
-salyh/geronimo-specs@3e81ac9,IMPLEMENTATION,//X TODO implement!
+salyh/geronimo-specs@e00d53d,IMPLEMENTATION,//X TODO implement!
 salyh/geronimo-specs@adf64ad,DESIGN,"/**
      * <p>A container or an application can set this manually. If not
      * we will use the {@link java.util.ServiceLoader} and use the
@@ -7984,12 +7984,12 @@ sengerts/tic-tac-toe@20fcd86,WITHOUT_CLASSIFICATION,"/**
 	 * trying to win the tic tac toe game.
 	 */"
 sengerts/tic-tac-toe,DESIGN,// TODO Not just randomly select a tile to mark
-seqcode/seqcode-core@cefcbe8,WITHOUT_CLASSIFICATION,"/* reads a weight matrix from the specified file,
+seqcode/seqcode-core,WITHOUT_CLASSIFICATION,"/* reads a weight matrix from the specified file,
        inserts it into the database with the specified name and
        version, and returns its dbid.  This means that the file may contain
        only a single weight matrix*/"
 seqcode/seqcode-core@cefcbe8,IMPLEMENTATION,//TODO add a method to read a single transfac matrix
-seqcode/seqcode-core@cefcbe8,WITHOUT_CLASSIFICATION,"/* reads a weight matrix from the specified file,
+seqcode/seqcode-core,WITHOUT_CLASSIFICATION,"/* reads a weight matrix from the specified file,
     inserts it into the database with the specified name and
     version, and returns its dbid.  This means that the file may contain
     only a single weight matrix*/"
@@ -8578,7 +8578,7 @@ srayner/myrobotlab@bc4c960,DESIGN,// currently only support python - maybe in fu
 srinivas491/AsterixDB@02c6105,DESIGN,//TODO refactor operations according to the protocol message
 stefb965/buck@e7efa95,DEFECT,"// TODO(plamenko): this check should not be necessary, but otherwise some tests fail due to
 // FileHashLoader throwing NoSuchFileException which doesn't get correctly propagated."
-stephaniestroka/digitalid-core@18a2f09,WITHOUT_CLASSIFICATION,"/**
+stephaniestroka/digitalid-core,WITHOUT_CLASSIFICATION,"/**
      * Asynchronous method to handle the incoming request.
      */"
 stephaniestroka/digitalid-core@c7deb5b,DESIGN,"// The reply.pack() statement maps the semantic type of the reply converter, which results in a concurrent update if the client unpacks the response with the same database. The following commit prevents this. However, it is a suboptimal fix for this problem."
@@ -8817,7 +8817,7 @@ timassman/roomba@562d9f5,DESIGN,"/**
      */
 // FIXME I think this should be (2 * angle())/258"
 timboudreau/netbeans-contrib@01f28fd,DESIGN,//TODO: custom host and port
-timburrow/openvnmrj-source@b622b0d,WITHOUT_CLASSIFICATION,"/************************************************** <pre>
+timburrow/openvnmrj-source,WITHOUT_CLASSIFICATION,"/************************************************** <pre>
      Process a Vnmrbg ""SQ"" command.
      SQ commands are sent from the VNMR background engine to the SQ
      through the vnmrj-Vnmrbg socket interface. Usually, they are generated by
@@ -9180,7 +9180,7 @@ tondeur-h/LangTonAnt@42ad186,WITHOUT_CLASSIFICATION,"//System.out.print(""(x,y)=
 tondeur-h/LangTonAnt@0393cb8,WITHOUT_CLASSIFICATION,//no draw a black point
 tondeur-h/LangTonAnt@0393cb8,WITHOUT_CLASSIFICATION,//show me the result on scsreen
 tondeur-h/LangTonAnt@2f1f2e7,WITHOUT_CLASSIFICATION,//refresh counters
-tonywasher/bc-java@5fcd94a,DESIGN,// TDOD: make this meaningful...
+tonywasher/bc-java@ccf93ca,DESIGN,// TDOD: make this meaningful...
 torstenwerner/metro2.0@0a75b78,WITHOUT_CLASSIFICATION,// invoke the Trust Plugin if necessary
 torstenwerner/metro2.0@0a75b78,DESIGN,//TODO: replace this code with calls to the Module now
 torstenwerner/metro2.0@0a75b78,WITHOUT_CLASSIFICATION,//legacy pipes in GF
@@ -9325,8 +9325,8 @@ unisoc-android/android_packages_apps_Dialer@ccca315,DESIGN,"/**
    * Returns the [position]th call found in the call map with the specified state. TODO: Improve
    * this logic to sort by call time.
    */"
-user9209/bouncy-gpg@3b7abf9,WITHOUT_CLASSIFICATION,// Hash Calculator
-user9209/bouncy-gpg@3b7abf9,WITHOUT_CLASSIFICATION,// Encryptor for encrypting secret keys
+user9209/bouncy-gpg,WITHOUT_CLASSIFICATION,// Hash Calculator
+user9209/bouncy-gpg,WITHOUT_CLASSIFICATION,// Encryptor for encrypting secret keys
 user9209/bouncy-gpg@9d91017,WITHOUT_CLASSIFICATION,// AES-256 encrypted
 user9209/bouncy-gpg@9d91017,WITHOUT_CLASSIFICATION,// unencrypted key pair
 user9209/bouncy-gpg@3b7abf9,WITHOUT_CLASSIFICATION,// First key is the Master Key
@@ -9366,7 +9366,7 @@ valtri/midpoint@27b1100,DESIGN,// todo consider whether it is always necessary t
 valtri/midpoint@bcddc78,WITHOUT_CLASSIFICATION,"/**
 	 * Tries to get the object directly if primary identifiers are present. Tries to search for the object if they are not. 
 	 */"
-valtri/midpoint@27b1100,DESIGN,// todo consider whether it is always necessary to fetch the entitlements
+valtri/midpoint@bc3f7bd,DESIGN,// todo consider whether it is always necessary to fetch the entitlements
 valtri/midpoint@bcddc78,WITHOUT_CLASSIFICATION,// Search
 valtri/midpoint@bcddc78,WITHOUT_CLASSIFICATION,// Assume single secondary identifier for simplicity
 valtri/midpoint@887e4f9,DESIGN,// Writing by different connector that we are going to use for reading: danger of quantum effects
@@ -9475,14 +9475,14 @@ vlc/r5@06bc4d3,DESIGN,"// Due to the application of distance decay functions, we
 // study area). But we'd need to control the number of decimal places serialized into the JSON."
 vlc/r5@be0b567,WITHOUT_CLASSIFICATION,"// We could do this when setting up the Spark handler, supplying writeValue as the response transformer
 // But then you also have to handle the case where you are returning raw bytes."
-vulko/TransactionsTestTask@5331551,WITHOUT_CLASSIFICATION,"/**
+vulko/TransactionsTestTask,WITHOUT_CLASSIFICATION,"/**
      * Handles a request to completely reset the Loader.
      */"
 vulko/TransactionsTestTask@5331551,WITHOUT_CLASSIFICATION,// Ensure the loader is stopped
 vulko/TransactionsTestTask@5331551,IMPLEMENTATION,// TODO: manage mem if needed
-wangchong6808/dremio-oss@8e85901,IMPLEMENTATION,"// Create filesystem for the given user and given path
+wangchong6808/dremio-oss@82bcc76,IMPLEMENTATION,"// Create filesystem for the given user and given path
 // TODO: DX-16001 - make async configurable for Hive."
-wangchong6808/dremio-oss@8e85901,DESIGN,//DX-7850 : remove once solution for maprfs is found
+wangchong6808/dremio-oss@82bcc76,DESIGN,//DX-7850 : remove once solution for maprfs is found
 wangfanming/hadoop@b4aa24d,WITHOUT_CLASSIFICATION,"/**
    * If the currentBufferIndex is less than the buffer size - 1,
    * it means, the next buffer in the list has been freed up for
@@ -10038,7 +10038,7 @@ yatyanng/jvb@8caefcc,WITHOUT_CLASSIFICATION,"// Start the initialization of the 
 // Asynchronous, because the AWS and STUN harvester may take a long
 // time to initialize."
 yehzu/vespa@a9f527b,WITHOUT_CLASSIFICATION,// ConfigKey is defined as <CONFIGCLASS extends ConfigInstance>
-yehzu/vespa@a9f527b,TEST,"// TODO: test specific code, remove"
+yehzu/vespa@82a03d6,TEST,"// TODO: test specific code, remove"
 yehzu/vespa@a9f527b,TEST,"//TODO: test specific code, remove"
 yejingjie0209/robotutor_china@de28ac8,WITHOUT_CLASSIFICATION,"/**
      * utility function to convert text string into canonical-format word array

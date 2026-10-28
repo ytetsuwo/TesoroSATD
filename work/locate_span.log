@@ -1,0 +1,56 @@
+to locate: 1205 / 1255
+[50/1205] ok             1.0 AutonomousCarProject/Steering src/main/java/com/apw/steering/steeringversions/SteeringMk3.java
+[100/1205] ok             1.0 Cyclonit/CubicChunks src/main/java/cubicchunks/worldgen/generator/custom/structures/CubicStructureGenerator.java
+[104/1205] weak_match     0.202 Clay-Ferguson/Quantizr src/main/java/quanta/util/StreamUtil.java
+[124/1205] repo_missing    JC-Bodoque/geometric-transformer 
+[149/1205] repo_missing    IonBazan/openapi-generator 
+[150/1205] ok             1.0 IronApollo/FastAsyncWorldEdit worldedit-core/src/main/java/com/sk89q/worldedit/math/convolution/HeightMap.java
+[200/1205] ok             1.0 MatthewJuliusScott/ImageOptimization src/main/java/com/salesforce/perfeng/uiperf/imageoptimization/service/ImageOptimizationService.java
+[250/1205] ok             1.0 Wilhansen/gtfs-lib src/main/java/com/conveyal/gtfs/loader/JdbcGtfsSnapshotter.java
+[300/1205] ok             1.0 Tamicer/FilterBar FilterViewSipmle/app/src/main/java/com/tamic/widget/filter/DataSelectContainer.java
+[350/1205] ok             1.0 codesbyzhangpeng/scipio-erp applications/product/src/com/ilscipio/scipio/product/seo/SeoCatalogUrlWorker.java
+[400/1205] ok             1.0 apache/servicemix4-features camel/servicemix-camel/src/test/java/org/apache/servicemix/camel/nmr/ws/addressing/GreeterImpl.java
+[442/1205] repo_missing    bcgov/jag-efax 
+[444/1205] repo_missing    bshp/midpoint 
+[450/1205] ok             1.0 baodingfengyun/luaj luaj-test/src/test/java/org/luaj/CompatibiltyTest.java
+[500/1205] ok             1.0 gabilang/module-ballerina-http native/src/main/java/io/ballerina/stdlib/http/transport/contractimpl/sender/channel/TargetChannel.java
+[517/1205] repo_missing    fieldenms/ 
+[538/1205] repo_missing    fernandogomesfg/Algoritmos-em-Java 
+[539/1205] repo_missing    fernandogomesfg/Algoritmos-em-Java 
+[550/1205] ok             1.0 dbiir/pard pard-connector-postgresql/src/main/java/cn/edu/ruc/iir/pard/connector/postgresql/PostgresConnector.java
+[597/1205] weak_match     0.2 good-loop/open-code HistogramBean.java
+[600/1205] ok             1.0 isabella232/subzero java/gui/src/main/java/com/squareup/subzero/framebuffer/Screens.java
+[615/1205] repo_missing    janjaali/azure-sdk-for-java 
+[639/1205] repo_missing    jd3538/Marist-Sakai-11.x 
+[650/1205] ok             1.0 hao44le/CS473HW4-Galago-3.10 core/src/main/java/org/lemurproject/galago/core/index/mem/MemoryDocumentNames.java
+[664/1205] weak_match     0.308 javacreed/super-simple-stocks super-simple-stock/src/main/java/com/jpmorgan/stocks/simple/services/impl/SimpleStockServiceImpl.java
+[700/1205] ok             1.0 jkondrat/modules sms/src/main/java/org/motechproject/sms/configs/ConfigReader.java
+[736/1205] repo_missing    kjthegod/chromium 
+[746/1205] repo_missing    kimjand/cxf 
+[750/1205] ok             0.949 mbrukman/java-bigtable-hbase bigtable-client-core-parent/bigtable-client-core/src/main/java/com/google/cloud/bigtable/grpc/io/RefreshingOAuth2CredentialsInterceptor.java
+[782/1205] weak_match     0.146 krisiney/SOKOBANFX-DMS-2020 games/src/games/sokoban/sokoban3/SokobanFX.java
+[783/1205] repo_missing    ming1991/mingop 
+[784/1205] repo_missing    ming1991/mingop 
+[800/1205] ok             0.889 krisglover/cia cia-client/src/test/java/com/itall/configure/client/RestConfigClientTest.java
+[850/1205] ok             1.0 rayeaster/tablesaw core/src/test/java/tech/tablesaw/io/csv/CsvReaderTest.java
+[900/1205] ok             0.629 mkpaz/telek desktop/src/main/java/corf/desktop/layout/Toast.java
+[950/1205] ok             0.909 snuk182/tectonicus Source/tectonicus/cache/swap/HddTileListIterator.java
+[1000/1205] ok             1.0 sirivus/studioonline src/org/blender/dna/ClothSimSettings.java
+[1002/1205] weak_match     0.0 leusonmario/2022PhDThesis 
+[1050/1205] weak_match     0.444 octo-online/reactive-aud core/java/android/os/Parcel.java
+[1051/1205] repo_missing    sarang-apps/darshan_browser 
+[1064/1205] repo_missing    zealoussnow/chromium 
+[1065/1205] repo_missing    zealoussnow/chromium 
+[1077/1205] repo_missing    zealoussnow/chromium 
+[1084/1205] repo_missing    zem13579/hive 
+[1085/1205] repo_missing    zem13579/hive 
+[1090/1205] repo_missing    zem13579/hive 
+[1100/1205] ok             1.0 vidkidz/crossbridge llvm-gcc-4.2-2.9/libjava/classpath/javax/sound/midi/Sequence.java
+[1150/1205] ok             1.0 vlc/r5 src/main/java/com/conveyal/r5/analyst/cluster/AnalysisWorker.java
+[1154/1205] repo_missing    zealoussnow/chromium 
+[1166/1205] repo_missing    zealoussnow/chromium 
+[1200/1205] ok             1.0 xyxiaoyou/snappy-store tests/core/src/main/java/com/gemstone/gemfire/cache30/UniversalMembershipListenerAdapterDUnitTest.java
+
+status: Counter({'ok': 1177, 'ok_history': 50, 'repo_missing': 22, 'weak_match': 6})
+confidence: Counter({'high': 1069, 'medium': 91, 'low': 17})
+elapsed 6.0 min

@@ -118,3 +118,41 @@ def mclass(s: str) -> str:
     if t.startswith("*"):
         return "*"
     return ""
+
+
+def body_end(lines, start: int):
+    """Closing-brace line (1-based) of the function whose declaration is at `start`."""
+    depth, opened, in_block = 0, False, False
+    for i in range(start - 1, len(lines)):
+        text = lines[i]
+        if in_block:
+            if "*/" in text:
+                in_block = False
+                text = text.split("*/", 1)[1]
+            else:
+                continue
+        text = re.sub(r"/\*.*?\*/", "", text)
+        if "/*" in text:
+            in_block = True
+            text = text.split("/*", 1)[0]
+        text = re.sub(r'"(\\.|[^"\\])*"', '""', text)
+        text = re.sub(r"'(\\.|[^'\\])*'", "''", text)
+        text = re.sub(r"//.*", "", text)
+        depth += text.count("{") - text.count("}")
+        opened = opened or "{" in text
+        if opened and depth <= 0:
+            return i + 1
+    return None
+
+
+def doc_start(lines, start: int) -> int:
+    """First line (1-based) of the comment block directly above `start`."""
+    i = start - 2                      # 0-based line above the declaration
+    while i >= 0:
+        t = lines[i].strip()
+        if not t or t.startswith("@") or t.startswith("//") or t.startswith("*") \
+                or t.startswith("/*") or t.endswith("*/"):
+            i -= 1
+            continue
+        break
+    return i + 2                       # 1-based first line of that block

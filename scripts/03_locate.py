@@ -19,7 +19,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from difflib import SequenceMatcher
 from pathlib import Path
 
-from common import (OUT, WORK, alnum, core, head_of, load_tesoro, mclass, norm,
+from common import (OUT, WORK, alnum, body_end, core, doc_start, head_of, load_tesoro, mclass, norm,
                     repo_dir, run, strip_marker)
 
 MIN_ANCHOR_LEN = 25
@@ -363,7 +363,12 @@ def locate(repo: str, func: dict, comments: list) -> dict:
     out_comments, used = [], set()
     for r in comments:
         cl = [norm(x) for x in (r.get("comment") or "").splitlines() if norm(x)]
-        lines_abs, kind = map_comment(cl, lines, start, start + len(ref) - 1, used=used)
+        # A comment belongs to this function only when it sits in its body or in
+        # the javadoc block directly above it. Searching further out used to
+        # attach comments of a neighbouring method to this one.
+        b_end = max(body_end(lines, start) or 0, start + len(ref) - 1)
+        lines_abs, kind = map_comment(cl, lines, start, start + len(ref) - 1, used=used,
+                                      lo=doc_start(lines, start) - 1, hi=b_end)
         used.update(lines_abs)
         if not lines_abs:
             out_comments.append({"comment_id": r.get("comment_id"),
@@ -406,7 +411,7 @@ def words(text: str) -> list[str]:
     return WORD.findall(text.lower())
 
 
-def map_comment(cl, lines, start, end, span=150, used=None):
+def map_comment(cl, lines, start, end, span=150, used=None, lo=None, hi=None):
     """Map a dataset comment onto file lines.
 
     Returns (lines_abs, kind) where kind is "exact", "structural", "fuzzy" or None.
@@ -418,7 +423,11 @@ def map_comment(cl, lines, start, end, span=150, used=None):
     """
     if not cl:
         return [], None
-    lo, hi = max(0, start - 1 - span), min(len(lines), end + span)
+    if lo is None:
+        lo = max(0, start - 1 - span)
+    if hi is None:
+        hi = min(len(lines), end + span)
+    hi = min(hi, len(lines))
     n = len(cl)
     exact, struct = [], []
     for p in range(lo, hi - n + 1):
