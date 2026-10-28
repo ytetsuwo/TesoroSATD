@@ -47,7 +47,9 @@ def check_text(r):
     gc = [core(x) for x in got if core(x)]
     wc = [core(x) for x in want if core(x)]
     if r["match"] == "exact":
-        return None if [core(x) for x in got] == [core(x) for x in want] else "exact but differs"
+        # blank lines inside a block are layout, not content
+        return (None if [core(x) for x in got if core(x)]
+                == [core(x) for x in want if core(x)] else "exact but differs")
     if r["match"] == "fuzzy":
         # the wording changed since the crawl: require a close paraphrase
         rat = similarity(" ".join(want), " ".join(ctext(x) for x in got))

@@ -452,37 +452,57 @@ def map_comment(cl, lines, start, end, span=150, used=None, lo=None, hi=None,
     if not cl:
         return [], None
 
-    def comment_block(p: int, k: int) -> bool:
-        """True when lines p..p+k-1 are all comment lines (blanks ignored)."""
-        if is_comment is None:
-            return True
-        # the mask is 1-based; p is a 0-based line index
-        return all(is_comment[p + i + 1] for i in range(k) if lines[p + i].strip())
-
     if lo is None:
         lo = max(0, start - 1 - span)
     if hi is None:
         hi = min(len(lines), end + span)
     hi = min(hi, len(lines))
     n = len(cl)
+
+    def candidates():
+        """Blocks that carry `n` comment lines, with (first, last) indexes.
+
+        Blank lines between comment lines are skipped. Tesoro stores one record
+        per comment, but a file may separate two adjacent blocks with a blank
+        line, or a `/* */` block may carry empty `*` lines. Counting those as
+        content made such blocks miss exact/structural and fall through to fuzzy.
+        """
+        for p in range(lo, hi):
+            if not lines[p].strip():
+                continue
+            if is_comment is not None and not is_comment[p + 1]:
+                continue
+            idx, q = [], p
+            while q < hi and len(idx) < n:
+                if not lines[q].strip():
+                    q += 1
+                    continue
+                if is_comment is not None and not is_comment[q + 1]:
+                    break          # a code line ends the comment run
+                idx.append(q)
+                q += 1
+            if len(idx) == n:
+                yield idx
+
     exact, struct = [], []
-    for p in range(lo, hi - n + 1):
-        if not comment_block(p, n):
-            continue
-        block = lines[p:p + n]
-        cores_eq = sum(1 for a, b in zip(cl, block) if core(a) and core(a) == core(b))
-        if cores_eq == n and all(core(a) for a in cl):
-            exact.append(p)
-        elif n <= 1 or (mclass(block[0]) and mclass(block[0]) == mclass(cl[0])
-                        and mclass(block[-1]) == mclass(cl[-1])):
-            if cores_eq >= 1 or (n == 1 and core(cl[0]) and core(cl[0]) in core(block[0])):
-                struct.append(p)
+    for idx in candidates():
+        cores = [core(lines[i]) for i in idx]
+        cores_eq = sum(1 for a, c in zip(cl, cores) if c and core(a) == c)
+        if cores_eq == n:
+            exact.append(idx)
+        elif n <= 1 or (mclass(lines[idx[0]]) and mclass(lines[idx[0]]) == mclass(cl[0])
+                        and mclass(lines[idx[-1]]) == mclass(cl[-1])):
+            if n == 1:
+                if core(cl[0]) and core(cl[0]) in cores[0]:
+                    struct.append(idx)
+            elif cores_eq >= 1:
+                struct.append(idx)
     if exact:
-        p = min(exact, key=lambda q: abs((q + n) - start))
-        return list(range(p + 1, p + n + 1)), "exact"
+        idx = min(exact, key=lambda x: abs((x[-1] + 1) - start))
+        return list(range(idx[0] + 1, idx[-1] + 2)), "exact"
     if struct:
-        p = min(struct, key=lambda q: abs((q + n) - start))
-        return list(range(p + 1, p + n + 1)), "structural"
+        idx = min(struct, key=lambda x: abs((x[-1] + 1) - start))
+        return list(range(idx[0] + 1, idx[-1] + 2)), "structural"
 
     # --- fuzzy: same comment, reworded since the crawl
     want = " ".join(core(x) for x in cl)

@@ -186,7 +186,7 @@ Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,"/* If we have a rec
        * that instance only and leave the others alone.
        */"
 Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,/* We need this in a couple of places */
-Bedework/bw-calendar-convert,WITHOUT_CLASSIFICATION,"/*
+Bedework/bw-calendar-convert@4a7fc22,WITHOUT_CLASSIFICATION,"/*
       if (rid != null) {
         // See if we have a new master event. If so create a proxy to that event.
         masterEI = findMaster(guid, ical.getComponents());
@@ -881,7 +881,7 @@ Institute-Web-Science-and-Technologies/SparqlUpdater@61487f9,WITHOUT_CLASSIFICAT
 Institute-Web-Science-and-Technologies/SparqlUpdater@61487f9,WITHOUT_CLASSIFICATION,"// We represent justifications as instances of a custom class outside of this function, which requires transitioning
 // This is done in order to hide usage of the OWLAPI in code that does not need to rely directly on it."
 Institute-Web-Science-and-Technologies/SparqlUpdater@61487f9,WITHOUT_CLASSIFICATION,// order is important for hitting set computation -> use TreeSet!
-Institute-Web-Science-and-Technologies/SparqlUpdater,DESIGN,"/* //TODO Use this if printing is not desired
+Institute-Web-Science-and-Technologies/SparqlUpdater@61487f9,DESIGN,"/* //TODO Use this if printing is not desired
         for ( Set< OWLAxiom > justification : justifications ) {
             // JAVA 8:
             // justification.removeIf( ( OWLAxiom a ) -> { return a.isOfType( AxiomType.TBoxAndRBoxAxiomTypes ) } );
@@ -1079,7 +1079,7 @@ Keneral/apackages@4b1b545,TEST,"// TODO: This test will actually mess with conta
 // Ideally we would use a fake content provider to give us contact data..."
 Keneral/apackages@4b1b545,WITHOUT_CLASSIFICATION,// add test contacts.
 KyoungjunPark/SmartClass@1a7bf94,IMPLEMENTATION,//implement below code if token is send to server
-L8RMedia/exponent@b28e94d,IMPLEMENTATION,// TODO: get path while TextPath is set.
+L8RMedia/exponent@24e3907,IMPLEMENTATION,// TODO: get path while TextPath is set.
 LaudateCorpus1/security-certification-resources@7580072,WITHOUT_CLASSIFICATION,"/**
      * Returns a {@link List} of additional {@link TestConfiguration} instances that should be run
      * along with the default {@code TestConfiguration} instances.
@@ -1232,7 +1232,7 @@ MaximillianHays/2019-DeepSpace@ec00c53,WITHOUT_CLASSIFICATION,"// mDrive.setVelo
 // ));"
 MaximillianHays/2019-DeepSpace@492c5e8,IMPLEMENTATION,// TODO (for button person): add buttons for all superstructure wanted states
 MayerRoman/Lagerta@d2b7d5f,DEFECT,//todo issue #232 fix increment topic partition name for tests on multi jvm
-MeFisto94/test-bot-1@8f129ec,IMPLEMENTATION,//TODO: add render code
+MeFisto94/test-bot-1@a52bc0a,IMPLEMENTATION,//TODO: add render code
 MessierObject111/algorithms-playground@13461d1,WITHOUT_CLASSIFICATION,"/**
      * @param s: input string
      * @return: the longest palindromic substring
@@ -1282,7 +1282,7 @@ Narflex/sagetv@5180ff5,WITHOUT_CLASSIFICATION,"//                               
 // start up native renderer"
 Narflex/sagetv@5180ff5,WITHOUT_CLASSIFICATION,// platform default
 Narflex/sagetv@5180ff5,WITHOUT_CLASSIFICATION,"//System.out.println(""LAYOUT frame bounds="" + f.getBounds() + "" videoBounds="" + videoBounds + "" parentBounds="" + parent.getBounds());"
-Narflex/sagetv,WITHOUT_CLASSIFICATION,"/*
+Narflex/sagetv@5180ff5,WITHOUT_CLASSIFICATION,"/*
                                         if not connecting to localhost:
                                                 - draw background to bounds (scaled)
                                                 - draw logo to {{2% from left, 15% from top}{20% view width, 7% view height}}, no clipping, alpha = 0.85, adjust size to keep aspect ratio
@@ -1356,7 +1356,7 @@ Narflex/sagetv@5180ff5,WITHOUT_CLASSIFICATION,"//						System.out.println(""draw
 Narflex/sagetv@5180ff5,WITHOUT_CLASSIFICATION,"// x, y, width, height, handle, srcx, srcy, srcwidth, srcheight, blend"
 Narflex/sagetv@5180ff5,WITHOUT_CLASSIFICATION,"// blend is a color, use alpha component for blending"
 Narflex/sagetv@5180ff5,WITHOUT_CLASSIFICATION,// either an image handle or layer handle (if not in imageMap)
-Narflex/sagetv,WITHOUT_CLASSIFICATION,"/*
+Narflex/sagetv@5180ff5,WITHOUT_CLASSIFICATION,"/*
 						if height < 0
 							disable blending
 						if width < 0 (font mode, composite with background and blend with given color)
@@ -1781,7 +1781,7 @@ SandraBSofiaH/Final-UMldoclet@d65815d,DEFECT,/* FIXME - is this still true:    s
 SandraBSofiaH/Final-UMldoclet,DESIGN,"/* Kluge!!  +1 to fix rounding diff between layout and rendering 
                                                    otherwise we can get -1 coords in output */"
 SanjayTechGuru/TRINO@4f63e10,DESIGN,// TODO: do we need to call logout() on the LoginContext?
-SanojPunchihewa/devstudio-tooling-esb,DESIGN,"/* TODO Need to find alternative for this
+SanojPunchihewa/devstudio-tooling-esb@b1ae02c,DESIGN,"/* TODO Need to find alternative for this
             DataMapperRoot rootDiagram =  (DataMapperRoot)DataMapperDiagramEditor.getInstance().getDiagram().getElement();
             TreeNode inputTreeNode = rootDiagram.getInput().getTreeNode().get(0);
             TreeNode outputTreeNode = rootDiagram.getOutput().getTreeNode().get(0);
@@ -4089,10 +4089,10 @@ dng24/wehe-android@f071d6a,DESIGN,"// Keep checking if the user exited from Repl
 // TODO find a better way stop the tests immediately without continues checking"
 doanhoa93/struts2shop@c0bd38d,IMPLEMENTATION,"// TODO: i18n: Externalize.
 // TODO: Enhance: Print link to updated shop."
-doktoric/test123@dcd0959,WITHOUT_CLASSIFICATION,// GIVEN
-doktoric/test123@dcd0959,DESIGN,"// WHEN
+doktoric/test123@4372876,WITHOUT_CLASSIFICATION,// GIVEN
+doktoric/test123@4372876,DESIGN,"// WHEN
 // TODO email needed"
-doktoric/test123@dcd0959,WITHOUT_CLASSIFICATION,// THEN
+doktoric/test123@4372876,WITHOUT_CLASSIFICATION,// THEN
 dontdrinkandroot/cache.java@21b1769,DESIGN,/* This really shouldn't happen */
 dougkoellmer/swarm@9767dc9,DEFECT,"//--- DRK > NOTE: Assuming here that caja.load creates frames in order of calls...if not, this method could be trouble."
 dougkoellmer/swarm@9767dc9,DESIGN,"//--- This is to catch the theoretical case where we call start and stop then start really fast,
@@ -4119,7 +4119,7 @@ drewr/elasticsearch@1194cd0,WITHOUT_CLASSIFICATION,"// AccessControlException[ac
 drewr/elasticsearch@a7774f2,WITHOUT_CLASSIFICATION,"// test a directory we normally have access to, but the groovy script does not."
 drewr/elasticsearch@a7774f2,DESIGN,// TODO: figure out the necessary escaping for windows paths here :)
 drewr/elasticsearch@a7774f2,WITHOUT_CLASSIFICATION,"// access denied (""java.io.FilePermission"" "".../tempDir-00N"" ""read"")"
-duarterafael/Conformitate@c1da740,IMPLEMENTATION,"/**
+duarterafael/Conformitate,IMPLEMENTATION,"/**
      * TODO
      * 
      * @return
@@ -4158,7 +4158,7 @@ dukson/curvature-scale-space-corners-and-transformations@f7d049b,DESIGN,"//TODO:
 // inserting back at the top of the stack assures that the 
 // search continues next from an associated point"
 dukson/curvature-scale-space-corners-and-transformations@f7d049b,WITHOUT_CLASSIFICATION,// count the number of points in edges
-dukson/curvature-scale-space-corners-and-transformations,WITHOUT_CLASSIFICATION,"/*
+dukson/curvature-scale-space-corners-and-transformations@f7d049b,WITHOUT_CLASSIFICATION,"/*
         //not necessary now that lines from CannyEdgeFilter are 1 pix width.
         MiscellaneousCurveHelper ch = new MiscellaneousCurveHelper();
         n = 0;
@@ -4455,7 +4455,7 @@ fsasaki/xmlcalabash1-print@963bd33,WITHOUT_CLASSIFICATION,"//""PostScript"";"
 fsasaki/xmlcalabash1-print@963bd33,WITHOUT_CLASSIFICATION,"//""AFP"";"
 fsasaki/xmlcalabash1-print@b5267c9,DEFECT,// FIXME: how do I do this in 2.x?
 fsilva-c/Screens_LP2@57330ba,WITHOUT_CLASSIFICATION,//GEN-FIRST:event_label_iconRealizarPedidoMouseClicked
-fsilva-c/Screens_LP2,IMPLEMENTATION,"// TODO add your handling code here:
+fsilva-c/Screens_LP2@57330ba,IMPLEMENTATION,"// TODO add your handling code here:
 //instanciar a tela cad pessoa apenas uma vez"
 g-pechorin/flexdock@858b606,WITHOUT_CLASSIFICATION,"// we have more space than necessary; resize to give each at least
 // preferred size"
@@ -6737,7 +6737,7 @@ mikesep/rocky@f71a67f,WITHOUT_CLASSIFICATION,// get the object itself
 mikesep/rocky@f71a67f,WITHOUT_CLASSIFICATION,// find the context that contains the function
 mikesep/rocky@f71a67f,WITHOUT_CLASSIFICATION,// get the method from the object
 mikesep/rocky@19e9b0b,WITHOUT_CLASSIFICATION,// simple method call syntax
-mikesep/rocky@f71a67f,WITHOUT_CLASSIFICATION,"// unqualified ""parent"" function: must be a parent constructor reference
+mikesep/rocky@19e9b0b,WITHOUT_CLASSIFICATION,"// unqualified ""parent"" function: must be a parent constructor reference
 // find the caller object context"
 mikesep/rocky@f71a67f,WITHOUT_CLASSIFICATION,"// get the parent object, if exists"
 mikesep/rocky@19e9b0b,IMPLEMENTATION,// TODO check if it is called in a constructor
@@ -6764,7 +6764,7 @@ milkboylyf/EasyML@4a0e915,WITHOUT_CLASSIFICATION,"/**
 	 * @return
 	 * @throws IllegalArgumentException
 	 */"
-milkboylyf/EasyML,IMPLEMENTATION,"// TODO Auto-generated method stub
+milkboylyf/EasyML@4a0e915,IMPLEMENTATION,"// TODO Auto-generated method stub
 //Read data from hdfs"
 milkboylyf/EasyML@4a0e915,WITHOUT_CLASSIFICATION,//Only read limited line data(if the data length over max length)
 mindscan-de/BrightFlux,IMPLEMENTATION,"// Use a predefined list of known Tokenizers
@@ -7331,7 +7331,7 @@ paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,/* ignore blank section definit
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,// -- ignore
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,/* not a match? */
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,// -- ignore
-paragp/GTS-PreUAT,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
+paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
 /* ""onload='...'"" */"
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,"/* ""onunload='...'"" */"
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
@@ -7352,7 +7352,7 @@ paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,/* content message */
 paragp/GTS-PreUAT@18693e8,DESIGN,// TODO: HTML encode?
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
 /* request context path */"
-paragp/GTS-PreUAT,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
+paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
 /* CSS file */"
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
 /* Banner Image Height */"
@@ -7382,17 +7382,17 @@ paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,/* Banner Image Height */
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,// key suffix
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,// property values
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,// generate html
-paragp/GTS-PreUAT,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
+paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
 /* JavaScript */"
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,"// always write ""utils.js"""
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,// check for other javascript 
-paragp/GTS-PreUAT,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
+paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
 /* current page name */"
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,"// ""pagename"""
-paragp/GTS-PreUAT,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
+paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
 /* Page URL */"
 paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,"// ""pageurl"""
-paragp/GTS-PreUAT,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
+paragp/GTS-PreUAT@18693e8,WITHOUT_CLASSIFICATION,"// --------------------------------------------------------------------
 /* HTMLOutput */"
 pcal43/mob-filter@ef691cc,WITHOUT_CLASSIFICATION,"/**
          * Return the id of the block that the spawn is happening on.
@@ -7429,8 +7429,8 @@ phon-ca/phon@290095e,DESIGN,"// group by session if info is available
 // TODO make this an option"
 phon-ca/phon@8cf1318,WITHOUT_CLASSIFICATION,// produce table
 phon-ca/phon@8cf1318,WITHOUT_CLASSIFICATION,// append row to table
-phques/androidpush@5cc3571,WITHOUT_CLASSIFICATION,// Always call the superclass
-phques/androidpush@5cc3571,DESIGN,"// probably not needed, onStop closes the socket, which should make the thread stop (?)"
+phques/androidpush@a908baf,WITHOUT_CLASSIFICATION,// Always call the superclass
+phques/androidpush@a908baf,DESIGN,"// probably not needed, onStop closes the socket, which should make the thread stop (?)"
 pitbox46/graaljs-forge@bb0ec6c,WITHOUT_CLASSIFICATION,/* Check for Infinity and NaN */
 pitbox46/graaljs-forge@bb0ec6c,DESIGN,// ALERT: should it distinguish -0.0 from +0.0 ?
 pitbox46/graaljs-forge@bb0ec6c,WITHOUT_CLASSIFICATION,/* Get the integer part of d including '-' sign. */
@@ -7563,18 +7563,18 @@ prokopk1n/cpachecker-1@b80f52b,IMPLEMENTATION,"/* What shall we do with function
       */"
 prokopk1n/cpachecker-1@d610ec4,WITHOUT_CLASSIFICATION,"//It means, that there is no entry in this block. Don't add it"
 qiaolw/AndroidTest@8f88a20,DESIGN,// todo change the file location/name according to your needs
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qingdao81/flink@f0ac261,DEFECT,"// This is problematic as the user code class loader is not
@@ -7634,7 +7634,7 @@ rcmaniac25/little-cms-for-blackberry@1d6780b,WITHOUT_CLASSIFICATION,// Check for
 rcmaniac25/little-cms-for-blackberry@1d6780b,WITHOUT_CLASSIFICATION,// Type == 0 means segment is sampled
 rcmaniac25/little-cms-for-blackberry@1d6780b,DESIGN,// Setup the table (TODO: clean that)
 rebse/flaka@0c93adb,DOCUMENTATION,// TODO: document me
-rebse/flaka@0c93adb,DOCUMENTATION,// TODO: document me
+rebse/flaka@9bb7d90,DOCUMENTATION,// TODO: document me
 reckue/note-api@c5a560f,IMPLEMENTATION,// TODO Implement a method
 recolic/hbase-2.1.0@3d2d77e,DEFECT,// get client ip address. ipv6 is not tested yet. (code for ipv6 maybe buggy)
 reed-foster/cdl@2fd20ea,IMPLEMENTATION,"/**
@@ -7787,7 +7787,7 @@ runningt/ambari@da2ac57,WITHOUT_CLASSIFICATION,// admin has full access
 runningt/ambari@da2ac57,DESIGN,// TODO : should we log this?
 sachinlala/JavaPerfTests@4606e06,DESIGN,//TODO: this can be improved further to handle large powers
 salyh/geronimo-specs@e00d53d,IMPLEMENTATION,//X TODO implement!
-salyh/geronimo-specs@3e81ac9,DESIGN,"/**
+salyh/geronimo-specs@adf64ad,DESIGN,"/**
      * <p>A container or an application can set this manually. If not
      * we will use the {@link java.util.ServiceLoader} and use the
      * first service we find.</p>
@@ -7796,7 +7796,7 @@ salyh/geronimo-specs@3e81ac9,DESIGN,"/**
      *
      * @param provider to use
      */"
-salyh/geronimo-specs@3e81ac9,IMPLEMENTATION,//X TODO implement!
+salyh/geronimo-specs@adf64ad,IMPLEMENTATION,//X TODO implement!
 sapols/JPL-CUSeniorProjects@9082122,WITHOUT_CLASSIFICATION,"/**
      * Finds neighbors of a given node
      * @return list of nodes neighboring the current node
@@ -9147,7 +9147,7 @@ tladesignz/DNATools@161c558,DEFECT,"/**
      *
      * @return a {@link TableRow}, possibly null.
      */"
-tomhenne/Jerusalem,TEST,"/* just testing ... this is wrong
+tomhenne/Jerusalem@575a788,TEST,"/* just testing ... this is wrong
                 pf.setID(48.11001,  11.48, 55);
                 pf.setID(48.11002,  11.48, 56);
                 List<NodeIndexNodeDescriptor> l = pf.getIDPlusSourroundingIDs(48.11001, 11.48, 0);
@@ -9480,9 +9480,9 @@ vulko/TransactionsTestTask@5331551,WITHOUT_CLASSIFICATION,"/**
      */"
 vulko/TransactionsTestTask@5331551,WITHOUT_CLASSIFICATION,// Ensure the loader is stopped
 vulko/TransactionsTestTask@5331551,IMPLEMENTATION,// TODO: manage mem if needed
-wangchong6808/dremio-oss@82bcc76,IMPLEMENTATION,"// Create filesystem for the given user and given path
+wangchong6808/dremio-oss@8e85901,IMPLEMENTATION,"// Create filesystem for the given user and given path
 // TODO: DX-16001 - make async configurable for Hive."
-wangchong6808/dremio-oss@82bcc76,DESIGN,//DX-7850 : remove once solution for maprfs is found
+wangchong6808/dremio-oss@8e85901,DESIGN,//DX-7850 : remove once solution for maprfs is found
 wangfanming/hadoop@b4aa24d,WITHOUT_CLASSIFICATION,"/**
    * If the currentBufferIndex is less than the buffer size - 1,
    * it means, the next buffer in the list has been freed up for
@@ -9889,7 +9889,7 @@ xmf-xmodeler/MosaicFX@d3ff762,WITHOUT_CLASSIFICATION,"// System.err.println(star
 xmf-xmodeler/MosaicFX@d3ff762,WITHOUT_CLASSIFICATION,"// System.err.println(""syntaxBusy, request queued"");"
 xmf-xmodeler/MosaicFX@d3ff762,DESIGN,"// Todo: if syntax is not busy but a request got stuck
 // System.err.println(""request not queued"");"
-xuanliao/MVVM_Samples@8126d21,IMPLEMENTATION,//TODO: Replace this with your own logic
+xuanliao/MVVM_Samples@77a4743,IMPLEMENTATION,//TODO: Replace this with your own logic
 xuanliao/MVVM_Samples@77a4743,IMPLEMENTATION,//TODO: Replace this with your own logic
 xushjie1987/common-utils@be4106b,IMPLEMENTATION,"/*
    * TODO(cpovirk): make SleepingStopwatch the last parameter throughout the class so that the
@@ -9968,7 +9968,7 @@ xyxiaoyou/snappy-store@3ea72f8,IMPLEMENTATION,"// @todo lises move this check in
 //             averaging, make ValueComparator accept a list of tests"
 xyxiaoyou/snappy-store@3ea72f8,WITHOUT_CLASSIFICATION,// make each instance read its archives
 xzs603/codeLearning@b3cbf16,WITHOUT_CLASSIFICATION,//        private static org.slf4j.Logger log = LoggerFactory.getLogger(SpecialPortalHandler.class);
-xzs603/codeLearning,IMPLEMENTATION,"/*
+xzs603/codeLearning@b3cbf16,IMPLEMENTATION,"/*
 		// TODO Need to code this check somehow =/
 		[5D 00] // Opcode
 		[02] // Map Portal
