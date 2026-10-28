@@ -106,15 +106,18 @@ python3 scripts/08_history.py <function_id> ...   # HEAD に無ければ履歴�
 | nikosnikolaidis/stanbol | `apache/stanbol` | 1 / 1 |
 | globalid/walletkit | `blockset-corp/walletkit` | 1 / 1 |
 | coheigea/tcommon-studio-se | `gaozone-talend/tcommon-studio-se`（729MB） | 1 / 1 |
-| mkpaz/telek | `mkpaz/corf`（改名） | 0 / 1 |
-| derekdinan/CTFServer | `grahamedgecombe/opencraft` | 0 / 1 |
+| mkpaz/telek | `mkpaz/corf`（改名） | 1 / 1 |
+| derekdinan/CTFServer | `grahamedgecombe/opencraft` | 1 / 1 |
 | good-loop/open-code | `Licardo/AndroidChart` | 0 / 1 |
 | javacreed/super-simple-stocks | `jainebri/Super-Simple-Stocks` | 0 / 1 |
 | krisiney/SOKOBANFX-DMS-2020 | `hallvard/javafx` | 0 / 1 |
-| nikosnikolaidis/commons-rdf | `eclipse-rdf4j/rdf4j`（2.6GB） | 0 / 1 |
+| nikosnikolaidis/commons-rdf | `apache/commons-rdf`（6.3MB） | 1 / 1 |
 
-下 6 件は上流は見つかったが本文の一致率が基準に届かず（`weak_match` のまま）、
-記録としてディレクトリだけ残している。削除してよい。
+下 3 件（`good-loop/open-code`, `javacreed/super-simple-stocks`,
+`krisiney/SOKOBANFX-DMS-2020`）は上流は見つかったが関数本文が一致せず
+（`weak_match` のまま）、記録としてディレクトリだけ残している。削除してよい。
+`mkpaz/telek` と `derekdinan/CTFServer` は行単位の一致率では落ちていたが、
+トークン単位の照合で同一メソッドと確認して復元した。
 
 ## 4. symlink による使い回し（4 件）
 
@@ -144,7 +147,7 @@ python3 scripts/05_verify.py --full                              # コメント 
 
 ## 注意
 
-- `repos/` は `.gitignore` 対象（141GB）。**このリポジトリには入っていない**ので、
+- `repos/` は `.gitignore` 対象（138GB）。**このリポジトリには入っていない**ので、
   別マシンでは上記 1〜4 を実行して作り直す。
 - `git log -S` を使う `08_history.py` は全 blob を必要とする。SWH 由来の clone も
   02 と同じく全履歴を持つが、blob は `11_backfill_all.py` で補充済み。

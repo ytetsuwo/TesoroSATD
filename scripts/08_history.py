@@ -137,27 +137,25 @@ def collect(d: Path, anchor_group, ref_ne, seen):
     for a in anchor_group:
         if not a:
             continue
-        p = run(["git", "log", "--all", "--format=C %H", f"-S{a}", "-p", "--", "*.java"],
-                d, timeout=1800)
+        # --name-only avoids materialising every diff: on a big history the
+        # patch output is what made `git log -S` take tens of minutes.
+        p = run(["git", "log", "--all", "--name-only", "--format=C %H",
+                 f"-S{a}", "--", "*.java"], d, timeout=1800)
         if p.returncode != 0:
             continue
-        sha = plus = minus = None
+        sha = None
         for line in p.stdout.splitlines():
             m = HEADER.match(line)
             if m:
-                sha, plus, minus = m.group(1), None, None
+                sha = m.group(1)
                 continue
-            if line.startswith("+++ b/"):
-                plus = line[6:]
-            elif line.startswith("--- a/"):
-                minus = line[6:]
-            elif sha and len(line) > 1 and line[0] in "+-" and a in line:
-                path = plus if line[0] == "+" else minus
-                if path and path.endswith(".java"):
-                    for key in ((sha, path), (parent(d, sha), path)):
-                        if key[0] and key not in seen:
-                            seen.add(key)
-                            cands.append(key)
+            path = line.strip()
+            if not sha or not path.endswith(".java"):
+                continue
+            for key in ((sha, path), (parent(d, sha), path)):
+                if key[0] and key not in seen:
+                    seen.add(key)
+                    cands.append(key)
         if len(cands) > MAX_CANDIDATES:
             break
     return cands

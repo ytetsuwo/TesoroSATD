@@ -7031,8 +7031,8 @@ nicolasbelfis/practical-reactor@585eb12,WITHOUT_CLASSIFICATION,"/**
      * values from 0 to 10.
      */"
 nicolasbelfis/practical-reactor@585eb12,DESIGN,//todo: change this line
-nikosnikolaidis/commons-rdf,DESIGN,// TODO: Should we need to set anything?
-nikosnikolaidis/commons-rdf,WITHOUT_CLASSIFICATION,"// NOTE: While we could have used
+nikosnikolaidis/commons-rdf@558ab51,DESIGN,// TODO: Should we need to set anything?
+nikosnikolaidis/commons-rdf@558ab51,WITHOUT_CLASSIFICATION,"// NOTE: While we could have used
 // loader.load(sourcePath.toFile()
 // if the path fs provider == FileSystems.getDefault(),
 // that RDFLoader method does not use absolute path
@@ -7040,13 +7040,13 @@ nikosnikolaidis/commons-rdf,WITHOUT_CLASSIFICATION,"// NOTE: While we could have
 // we'll always do it with our own input stream
 //
 // That means we may have to guess format by extensions:"
-nikosnikolaidis/commons-rdf,DESIGN,"// TODO: for the excited.. what about the extension after following
+nikosnikolaidis/commons-rdf@558ab51,DESIGN,"// TODO: for the excited.. what about the extension after following
 // symlinks?"
-nikosnikolaidis/commons-rdf,IMPLEMENTATION,"// TODO: Handle international IRIs properly
+nikosnikolaidis/commons-rdf@558ab51,IMPLEMENTATION,"// TODO: Handle international IRIs properly
 // (Unicode support for for hostname, path and query)"
-nikosnikolaidis/commons-rdf,DESIGN,"// TODO: This probably does not support https:// -> http://
+nikosnikolaidis/commons-rdf@558ab51,DESIGN,"// TODO: This probably does not support https:// -> http://
 // redirections"
-nikosnikolaidis/commons-rdf,WITHOUT_CLASSIFICATION,"// must be getSourceInputStream then, this is guaranteed by
+nikosnikolaidis/commons-rdf@558ab51,WITHOUT_CLASSIFICATION,"// must be getSourceInputStream then, this is guaranteed by
 // super.checkSource();"
 nikosnikolaidis/stanbol@c409f6c,TEST,"/**
      * We may want to test this method with more then 1 ontology. This is why the implementation is in

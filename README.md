@@ -16,9 +16,9 @@
 | `out/summary.md` | – | カバレッジと制約の自動レポート |
 | `out/repo_manifest.csv` | 960 | 各 clone の入手経路 (`kind` / 取得元 URL / SWH swhid / HEAD) |
 
-カバレッジ: **関数 1226/1255 (97.7%)、コメント 4793/4981 (96.2%)** に commit を付与。
+カバレッジ: **関数 1227/1255 (97.8%)、コメント 4799/4981 (96.3%)** に commit を付与。
 うち 50 関数は HEAD ではなく履歴から復元 (削除リポジトリは Software Heritage・
-存命ミラー・上流プロジェクトから復元)。948 プロジェクト、commit 日付は
+存命ミラー・上流プロジェクトから復元)。949 プロジェクト、commit 日付は
 2000-12-06 〜 2026-08-31。
 
 各 clone をどこからどう取得したかは **[docs/repo_acquisition.md](docs/repo_acquisition.md)**
@@ -71,7 +71,7 @@ git sparse-checkout set --no-cone '*.java' && git checkout HEAD
 ```
 
 で**全履歴を持つが作業ツリーは Java だけ**のクローンを作る。
-その後 `11_backfill_all.py` で全 blob を取得済みなので (`repos/` 960 件, 141GB)、
+その後 `11_backfill_all.py` で全 blob を取得済みなので (`repos/` 960 件, 138GB)、
 `git blame` / `git log -S` はネットワークなしで動く。
 
 > 注: 匿名の部分クローンは数百リクエストで HTTP 400 になる。`git_env()` が
@@ -132,7 +132,7 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
 ### 5. 検証 (05)
 
 - `--full`: commit が付いた全 4750 コメントで、ファイル上のコメント本文が一致する
-  ことを確認 → **4793/4793**。
+  ことを確認 → **4799/4799**。
 - ランダム 120 件で「本文一致・blame 一致・その commit に本文が存在」の 3 点を
   確認 → **120/120**。
 
@@ -143,15 +143,16 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
   (8 関数)、SWH の調理失敗 8 リポジトリ (14 関数, chromium の fork 2 件 6 関数、
   hive 3、cxf / midpoint / azure-sdk-for-java / openapi-generator / Marist-Sakai 各 1)、
   不正なリポジトリ名 1 件 (1 関数)。
-- **weak_match 7 関数**: `leusonmario/2022PhDThesis` の randoop 生成テスト
+- **weak_match 6 関数**: `leusonmario/2022PhDThesis` の randoop 生成テスト
   (同じ `test20046` が複数ディレクトリに重複し来歴を一意に決められない。
   `work/manual_reject.jsonl` に理由つきで登録し、自動判定から除外)、
   `Clay-Ferguson/Quantizr` / `good-loop/open-code` / `javacreed/super-simple-stocks`
-  (該当メソッドがどのブランチにも無い)、`nikosnikolaidis/commons-rdf` /
-  `octo-online/reactive-aud` / `krisiney/SOKOBANFX-DMS-2020`
-  (上流は見つかったが関数本文が存在しない)。
+  (該当メソッドがどのブランチにも無い)、`octo-online/reactive-aud` /
+  `krisiney/SOKOBANFX-DMS-2020` (上流は見つかったが関数本文が存在しない)。
   行単位の一致率だけでは `mkpaz/telek` と `derekdinan/CTFServer` も落ちていたが、
   トークン照合で同一メソッドと確認できたため復元済み。
+  `nikosnikolaidis/commons-rdf` は上流の選定を誤っており (rdf4j ではなく
+  `apache/commons-rdf` が正しい)、差し替えて復元した。
 - `projectname` は `owner/name`。Maldonado の `project-version` に当たる版情報は
   commit で表し、必要なら `tesoro_msr16_versioned.csv` を使う。
 - Maldonado 形式に合わせて `NONSATD` → `WITHOUT_CLASSIFICATION` に改名している

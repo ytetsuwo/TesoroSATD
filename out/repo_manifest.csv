@@ -695,7 +695,7 @@ ngi-nix__jitsi-videobridge,github,https://github.com/ngi-nix/jitsi-videobridge.g
 ngouagna__alien4cloud-cloudify2-provider,github,https://github.com/ngouagna/alien4cloud-cloudify2-provider.git,,dc84ced08ba2de735ad92b1a1cd098e24255e4f5,,
 nickbarban__libphonenumber,github,https://github.com/nickbarban/libphonenumber.git,,1781c08673fe0e962069be3f1576afa79a6737c5,,
 nicolasbelfis__practical-reactor,github,https://github.com/nicolasbelfis/practical-reactor.git,,4f7bf8b9b01dc867ecdd245e32cacf85c1132144,,
-nikosnikolaidis__commons-rdf,mirror,https://github.com/eclipse-rdf4j/rdf4j,,06056fb2b415249f4daac9b8a925eab2438f3e02,not_archived,
+nikosnikolaidis__commons-rdf,mirror,https://github.com/apache/commons-rdf,,647e897499db7e7a218814afff31484bae0a1a88,not_archived,
 nikosnikolaidis__stanbol,mirror,https://github.com/apache/stanbol,,2fcf471b467fb84e59491f4c54ba0a95924ab04a,not_archived,
 nilesh14__FMC,github,https://github.com/nilesh14/FMC.git,,5ac37cfcc14a5eaec8ecff67983e5d1aa933bef5,,
 nisrulz__validatetor,github,https://github.com/nisrulz/validatetor.git,,cfe7115d792a988dd8efee96468ad95223b65a5f,,
