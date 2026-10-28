@@ -516,7 +516,7 @@ Clay-Ferguson/Quantizr@81e852c,WITHOUT_CLASSIFICATION,// loads ONLY foreign user
 Clay-Ferguson/Quantizr@3ff912f,WITHOUT_CLASSIFICATION,// merge both sets of inboxes into allInboxes and send to them
 Clay-Ferguson/Quantizr@81e852c,WITHOUT_CLASSIFICATION,"// Post message to all foreign usernames found in 'toUserNames', but skip all in userInboxes becasue
 // we just sent to those above."
-Clay-Ferguson/Quantizr,WITHOUT_CLASSIFICATION,//
+Clay-Ferguson/Quantizr@00769fd,WITHOUT_CLASSIFICATION,//
 CoderMMK/RSPS@5cf72f4,TEST,"/**
          * Can they kick?
          * 
