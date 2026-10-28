@@ -50,6 +50,9 @@ def main():
             path = loc.get("path", "")
             path_at = c.get("path_at") or loc.get("path_at_commit") or path
             repo = loc.get("repo") or funcs[fid]["repo"]
+            # one Tesoro record has a truncated repo name ("fieldenms/")
+            if repo.endswith("/"):
+                repo += "unknown"
             rows.append({
                 "function_id": fid,
                 "comment_id": r["comment_id"],

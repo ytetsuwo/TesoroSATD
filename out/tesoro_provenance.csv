@@ -4336,15 +4336,15 @@ function_id,comment_id,projectname,classification,commenttext,repo,path,path_at_
 13381,2,fhg-fokus-nubomedia/signaling-plane,NONSATD,// no need to close myClientInputStream since myParser.close() above will do it,fhg-fokus-nubomedia/signaling-plane,modules/lib-sip/src/main/java/gov/nist/javax/sip/stack/TCPMessageChannel.java,modules/lib-sip/src/main/java/gov/nist/javax/sip/stack/TCPMessageChannel.java,modules/lib-sip/src/main/java/gov/nist/javax/sip/stack/TCPMessageChannel.java,160,180,1,2ab48dfde4556bd6920d6cbaa1d80a8646ba737f,2ab48dfde4,https://github.com/fhg-fokus-nubomedia/signaling-plane/commit/2ab48dfde4556bd6920d6cbaa1d80a8646ba737f,https://github.com/fhg-fokus-nubomedia/signaling-plane/blame/2ab48dfde4556bd6920d6cbaa1d80a8646ba737f/modules/lib-sip/src/main/java/gov/nist/javax/sip/stack/TCPMessageChannel.java#L180,Alice Cheambe,2016-01-08,exact,1.0,ok,True,
 13381,3,fhg-fokus-nubomedia/signaling-plane,NONSATD,"// remove the ""tcp:"" part of the key to cleanup the ioHandler hashmap",fhg-fokus-nubomedia/signaling-plane,modules/lib-sip/src/main/java/gov/nist/javax/sip/stack/TCPMessageChannel.java,modules/lib-sip/src/main/java/gov/nist/javax/sip/stack/TCPMessageChannel.java,modules/lib-sip/src/main/java/gov/nist/javax/sip/stack/TCPMessageChannel.java,160,192,1,2ab48dfde4556bd6920d6cbaa1d80a8646ba737f,2ab48dfde4,https://github.com/fhg-fokus-nubomedia/signaling-plane/commit/2ab48dfde4556bd6920d6cbaa1d80a8646ba737f,https://github.com/fhg-fokus-nubomedia/signaling-plane/blame/2ab48dfde4556bd6920d6cbaa1d80a8646ba737f/modules/lib-sip/src/main/java/gov/nist/javax/sip/stack/TCPMessageChannel.java#L192,Alice Cheambe,2016-01-08,exact,1.0,ok,True,
 13381,4,fhg-fokus-nubomedia/signaling-plane,NONSATD,// Issue 358 : remove socket and semaphore on close to avoid leaking,fhg-fokus-nubomedia/signaling-plane,modules/lib-sip/src/main/java/gov/nist/javax/sip/stack/TCPMessageChannel.java,modules/lib-sip/src/main/java/gov/nist/javax/sip/stack/TCPMessageChannel.java,modules/lib-sip/src/main/java/gov/nist/javax/sip/stack/TCPMessageChannel.java,160,196,1,2ab48dfde4556bd6920d6cbaa1d80a8646ba737f,2ab48dfde4,https://github.com/fhg-fokus-nubomedia/signaling-plane/commit/2ab48dfde4556bd6920d6cbaa1d80a8646ba737f,https://github.com/fhg-fokus-nubomedia/signaling-plane/blame/2ab48dfde4556bd6920d6cbaa1d80a8646ba737f/modules/lib-sip/src/main/java/gov/nist/javax/sip/stack/TCPMessageChannel.java#L196,Alice Cheambe,2016-01-08,exact,1.0,ok,True,
-2495,0,fieldenms/,NONSATD,"/**
+2495,0,fieldenms/unknown,NONSATD,"/**
      * Creates the widgets for criteria.
      *
      * @param centre
      * @param root
      * @return
-     */",fieldenms/,,,,,,0,,,,,,,,,repo_missing,False,
-2495,1,fieldenms/,NONSATD,"// empty property means ""entity itself""",fieldenms/,,,,,,0,,,,,,,,,repo_missing,False,
-2495,2,fieldenms/,DESIGN,// TODO do not forget about Money later (after Money widget will be available),fieldenms/,,,,,,0,,,,,,,,,repo_missing,False,
+     */",fieldenms/unknown,,,,,,0,,,,,,,,,repo_missing,False,
+2495,1,fieldenms/unknown,NONSATD,"// empty property means ""entity itself""",fieldenms/unknown,,,,,,0,,,,,,,,,repo_missing,False,
+2495,2,fieldenms/unknown,DESIGN,// TODO do not forget about Money later (after Money widget will be available),fieldenms/unknown,,,,,,0,,,,,,,,,repo_missing,False,
 13058,0,finefuture/gazelle,DESIGN,// Probably incorrect - comparing Object[] arrays with Arrays.equals,finefuture/gazelle,structure/CheckChainMap.java,structure/CheckChainMap.java,structure/CheckChainMap.java,27,35,1,f0a54c61141cf32c31e203fa953c243986a5adae,f0a54c6114,https://github.com/finefuture/gazelle/commit/f0a54c61141cf32c31e203fa953c243986a5adae,https://github.com/finefuture/gazelle/blame/f0a54c61141cf32c31e203fa953c243986a5adae/structure/CheckChainMap.java#L35,龙强,2018-01-08,exact,0.875,ok,True,
 18158,0,finki001/couchbase-lite-java-core,NONSATD,"/**
      * Creates a db and populates it with the sql statements in sqlStatements.

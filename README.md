@@ -68,6 +68,7 @@ python3 scripts/16_symbol_history.py # 記号だけのコメントを履歴か�
 python3 scripts/17_history_text.py   # HEAD から消えた本文を履歴から復元
 python3 scripts/18_reshape.py        # 本文はあるが形が変わったブロックを配置
 python3 scripts/19_deep_history.py   # 改名・改変を許した履歴探索
+python3 scripts/20_check_msr16.py    # MSR16 の列・語彙を本家と照合
 ```
 
 ### 1. クロール (01, 02)
@@ -157,6 +158,22 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
   履歴から復元 29 / 別メソッドへ移動 19 / 本体外 0。
   マップされた行が実際にコメントノードかも同時に確認している。
 
+### MSR16 形式の適合性 (20)
+
+Maldonado の本家データ (`technical_debt_dataset.csv`, 62,275 行) と突き合わせた結果:
+
+| 項目 | 本家 | 本プロジェクト | 判定 |
+| --- | --- | --- | --- |
+| 列 | `projectname,classification,commenttext` | 同じ | 一致 |
+| ラベル語彙 | WITHOUT_CLASSIFICATION / DESIGN / IMPLEMENTATION / DEFECT / DOCUMENTATION / TEST | 同じ 6 種 | 一致 |
+| 改行を含む commenttext | 保持 (6,286 行) | 保持 (1,559 行) | 一致 |
+| BOM / 文字コード | なし / UTF-8 | なし / UTF-8 | 一致 |
+| projectname | `<project>-<version>` | `owner/name`（版は commit） | 意図的な差異 |
+
+`msr16_versioned.csv` は `owner/name@<sha7>` で版を表す (commit を特定できなかった
+55 行は版なし)。`fieldenms/` という壊れたリポジトリ名 1 件は `fieldenms/unknown`
+として出力する。検証は `scripts/20_check_msr16.py --ref <本家CSV>` で再現できる。
+
 ## 既知の制約
 
 - **repo_missing 23 関数 / 15 リポジトリ**: GitHub 上で削除済みで、SWH と上流の
@@ -195,7 +212,7 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
 ```
 tesoro/     Tesoro 本家のデータ (sparse clone, data/ 184MB)
 repos/      clone 960 件 (875 存命 + SWH・ミラー・上流復元 + symlink 4 件, owner__name, 全履歴 + *.java)
-scripts/    パイプライン (01〜19)
+scripts/    パイプライン (01〜20)
 work/       中間状態・ログ (repo_meta.json, clone_state.jsonl, swh_state.jsonl, locate.log)
 out/        成果物 (CSV / JSONL / summary.md / repo_manifest.csv)
 docs/       入手経路の記録 (repo_acquisition.md)

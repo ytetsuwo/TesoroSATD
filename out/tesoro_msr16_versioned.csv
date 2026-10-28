@@ -4336,15 +4336,15 @@ fhg-fokus-nubomedia/signaling-plane@2ab48df,WITHOUT_CLASSIFICATION,"// we need t
 fhg-fokus-nubomedia/signaling-plane@2ab48df,WITHOUT_CLASSIFICATION,// no need to close myClientInputStream since myParser.close() above will do it
 fhg-fokus-nubomedia/signaling-plane@2ab48df,WITHOUT_CLASSIFICATION,"// remove the ""tcp:"" part of the key to cleanup the ioHandler hashmap"
 fhg-fokus-nubomedia/signaling-plane@2ab48df,WITHOUT_CLASSIFICATION,// Issue 358 : remove socket and semaphore on close to avoid leaking
-fieldenms/,WITHOUT_CLASSIFICATION,"/**
+fieldenms/unknown,WITHOUT_CLASSIFICATION,"/**
      * Creates the widgets for criteria.
      *
      * @param centre
      * @param root
      * @return
      */"
-fieldenms/,WITHOUT_CLASSIFICATION,"// empty property means ""entity itself"""
-fieldenms/,DESIGN,// TODO do not forget about Money later (after Money widget will be available)
+fieldenms/unknown,WITHOUT_CLASSIFICATION,"// empty property means ""entity itself"""
+fieldenms/unknown,DESIGN,// TODO do not forget about Money later (after Money widget will be available)
 finefuture/gazelle@f0a54c6,DESIGN,// Probably incorrect - comparing Object[] arrays with Arrays.equals
 finki001/couchbase-lite-java-core,WITHOUT_CLASSIFICATION,"/**
      * Creates a db and populates it with the sql statements in sqlStatements.
