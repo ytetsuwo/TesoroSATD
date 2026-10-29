@@ -23,10 +23,11 @@ def rows():
 def content(r):
     """File lines as seen at the commit the row refers to (HEAD or a snapshot)."""
     d = repo_dir(r["repo"])
+    path = r.get("path_snapshot") or r["path"]
     if r.get("at_head") == "True":
-        return (d / r["path"]).read_text(errors="replace").splitlines()
+        return (d / path).read_text(errors="replace").splitlines()
     ref = r["snapshot_commit"]
-    p = git(d, "show", f"{ref}:{r.get('path_snapshot') or r['path']}")
+    p = git(d, "show", f"{ref}:{path}")
     if p.returncode != 0:
         raise OSError(p.stderr.strip()[:120])
     return p.stdout.splitlines()
