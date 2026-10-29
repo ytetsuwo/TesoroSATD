@@ -1,6 +1,6 @@
 # Tesoro provenance (repo / file / commit)
 
-生成: 2026-10-29 20:31
+生成: 2026-10-29 20:37
 
 ## カバレッジ
 

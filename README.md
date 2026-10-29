@@ -69,6 +69,8 @@ python3 scripts/17_history_text.py   # HEAD から消えた本文を履歴から
 python3 scripts/18_reshape.py        # 本文はあるが形が変わったブロックを配置
 python3 scripts/19_deep_history.py   # 改名・改変を許した履歴探索
 python3 scripts/20_check_msr16.py    # MSR16 の列・語彙を本家と照合
+python3 scripts/21_crossfile.py      # 同一リポジトリ内の別コピーを検索
+python3 scripts/22_name_search.py    # メソッド名で別クローンまで探索
 ```
 
 ### 1. クロール (01, 02)
