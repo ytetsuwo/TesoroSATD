@@ -3267,7 +3267,7 @@ bsanchezb/jackson-modules-base@3349d7f,WITHOUT_CLASSIFICATION,"// for now, only 
 bsanchezb/jackson-modules-base@3349d7f,WITHOUT_CLASSIFICATION,"// First things first: as per [Issue#34], can NOT access private ctors or methods"
 bsanchezb/jackson-modules-base@3349d7f,WITHOUT_CLASSIFICATION,"// and as above, can't access private ones"
 bsergean/sentry-android@8837065,IMPLEMENTATION,// TODO: Flush transport
-bshp/midpoint,DESIGN,// TODO: optimize
+bshp/midpoint@9ad589a,DESIGN,// TODO: optimize
 bumfo/LWJGUI@9d90751,WITHOUT_CLASSIFICATION,// Bounds
 bumfo/LWJGUI@9d90751,DESIGN,// Swap blue/red channel? Why do I need to do this?
 bumfo/LWJGUI@9d90751,WITHOUT_CLASSIFICATION,// Update the temp color
