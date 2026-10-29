@@ -179,3 +179,23 @@ python3 scripts/05_verify.py --full                              # コメント 
 残る `repo_missing` は `bcgov/jag-efax` / `fernandogomesfg/Algoritmos-em-Java` /
 `ming1991/mingop` / `JC-Bodoque/geometric-transformer` の 4 件で、いずれも
 GitHub 上に現存せず、コード検索でも同一本文が見つからない。
+
+### bcgov/jag-efax の復元試行（保留）
+
+Software Heritage には snapshot `e33d71a7`（最終訪問 2025-02-09）があるが、
+`vault/gitfast` の調理要求（cook id `422257283`）が `status: new` のまま
+進まない（flat 版 `422257535` も同じ）。API もレート制限に達したため中断。
+
+判明していること:
+
+- snapshot の HEAD は `51514339`（2024-10-30）。ツリー上の Java 89 ファイルに
+  `hasTimedOut` / `SentMessage` は無く、データセットの版より新しい。
+- したがって執筆コミットの特定には履歴（gitfast バルク）が必要。
+
+再試行:
+
+```bash
+curl -s -X POST https://archive.softwareheritage.org/api/1/vault/gitfast/swh:1:rev:51514339d68c12a2ae81fea5c5bb3c638bb1b8f2/
+curl -s https://archive.softwareheritage.org/api/1/vault/gitfast/swh:1:rev:51514339d68c12a2ae81fea5c5bb3c638bb1b8f2/
+# status が done になったら fetch_url から tar を取得して repos/bcgov__jag-efax に展開
+```
