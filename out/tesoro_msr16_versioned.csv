@@ -4346,7 +4346,7 @@ fieldenms/unknown,WITHOUT_CLASSIFICATION,"/**
 fieldenms/unknown@6711ae6,WITHOUT_CLASSIFICATION,"// empty property means ""entity itself"""
 fieldenms/unknown@6711ae6,DESIGN,// TODO do not forget about Money later (after Money widget will be available)
 finefuture/gazelle@f0a54c6,DESIGN,// Probably incorrect - comparing Object[] arrays with Arrays.equals
-finki001/couchbase-lite-java-core,WITHOUT_CLASSIFICATION,"/**
+finki001/couchbase-lite-java-core@79c317f,WITHOUT_CLASSIFICATION,"/**
      * Creates a db and populates it with the sql statements in sqlStatements.
      *
      * @param context the context to use to create the db
