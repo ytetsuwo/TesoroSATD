@@ -251,3 +251,17 @@ curl -s https://archive.softwareheritage.org/api/1/vault/gitfast/swh:1:rev:51514
 スパンとリビジョンを修正した結果、`reproduce.sh` は **4,957 件 / 0 bad** を
 再現する（手動対応付け 12 件を含む）。再実行で 3182 の `//noinspection` が
 履歴から追加で見つかり、4,956 → 4,957 になった。
+
+### Chromium 系の部分取得（2026-10-29）
+
+`chromium/chromium` を `--filter=blob:none --sparse` で 4.9GB に抑えて取得し、
+`media/base/android/java/src/org/chromium/media/` を checkout した。
+
+- 16761 `// TODO(qinmin): May need to report the error to the caller. crbug.com/356498.`
+  → `MediaCodecBridge.java:1007`、commit `e272282175ff95`（qinmin, 2014-03-26）
+- 16764 `// TODO(dalecurtis): We may want to drop transient errors here.`
+  → `MediaCodecBridge.java:384`、commit `e048085aee3fb3`（Dale Curtis, 2018-08-15）
+
+スパース clone を `repos/zealoussnow__chromium` に置くと、`chrome/browser/...` を
+必要とする 728 などが読めなくなるため、本体は Kiwi の clone のままにし、
+上記 2 件は未統合（`repos/_chromium` に証跡を保持）。
