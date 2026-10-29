@@ -72,6 +72,7 @@ python3 scripts/20_check_msr16.py    # MSR16 の列・語彙を本家と照合
 python3 scripts/21_crossfile.py      # 同一リポジトリ内の別コピーを検索
 python3 scripts/22_name_search.py    # メソッド名で別クローンまで探索
 python3 scripts/23_environment.py    # 実行環境を out/environment.txt に記録
+python3 scripts/24_consistency.py    # データ・CSV・README・manifest の整合性検査
 python3 scripts/00_pin_repos.py      # clone を manifest の HEAD に固定/検査
 ```
 
