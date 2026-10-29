@@ -1,6 +1,6 @@
 # Tesoro provenance (repo / file / commit)
 
-生成: 2026-10-29 08:59
+生成: 2026-10-29 16:39
 
 ## カバレッジ
 
@@ -15,7 +15,7 @@
 - ok: 1180
 - ok_history: 59
 - weak_match: 9
-- repo_missing: 6
+- unavailable: 6
 - not_at_head: 1
 
 ## ラベル分布 (全件 / commit あり)
@@ -43,8 +43,8 @@ snapshot_commit, path_snapshot
 
 ## 既知の制約
 
-- `repo_missing`: GitHub 上で削除/非公開になったリポジトリ (再取得は Software
-  Heritage Vault で可能)。
+- `unavailable`: リポジトリが GitHub 上で削除され、Software Heritage にも
+  使えるスナップショットが無いもの (来歴は復元できない)。
 - `ok_history`: HEAD には無いが、履歴 `git log -S` で見つけたもの。
   `path` と行番号はその commit 時点のもの (`at_head=false`)。
 - `not_at_head` / `weak_match`: 履歴を探しても見つからなかったもの。

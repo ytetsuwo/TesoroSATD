@@ -243,7 +243,8 @@ def locate(repo: str, func: dict, comments: list) -> dict:
     base = {"id": func["id"], "repo": repo, "label": func.get("label"),
             "n_comments": len(comments)}
     if not (d / ".git").exists():
-        return {**base, "status": "repo_missing"}
+        return {**base, "status": "unavailable",
+                "reason": "repository deleted and not archived (SWH has no usable snapshot)"}
 
     # Representative text: the record whose code is the most complete.
     rep = max(comments, key=lambda r: len(r.get("code") or "")) if comments else None

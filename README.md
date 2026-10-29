@@ -176,7 +176,7 @@ Maldonado の本家データ (`technical_debt_dataset.csv`, 62,275 行) と突�
 
 ## 既知の制約
 
-- **repo_missing 23 関数 / 15 リポジトリ**: GitHub 上で削除済みで、SWH と上流の
+- **unavailable 6 関数 / 4 リポジトリ**: GitHub 上で削除済みで、SWH と上流の
   どちらからも復元できなかったもの。内訳は SWH に未収録かつ上流も辿れない 6 リポジトリ
   (8 関数)、SWH の調理失敗 8 リポジトリ (14 関数, chromium の fork 2 件 6 関数、
   hive 3、cxf / midpoint / azure-sdk-for-java / openapi-generator / Marist-Sakai 各 1)、
