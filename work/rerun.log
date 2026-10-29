@@ -1,0 +1,42 @@
+to locate: 1196 / 1255
+[50/1196] ok             1.0 AutonomousCarProject/Steering src/main/java/com/apw/steering/steeringversions/SteeringMk3.java
+[100/1196] ok             0.803 CreedVI/Raylib-J src/main/com/raylib/java/textures/rTextures.java
+[116/1196] unavailable     JC-Bodoque/geometric-transformer 
+[150/1196] ok             0.933 LouisJenkinsCS/DSL src/dsllanguage/ASTNodes/ProgramASTNode.java
+[200/1196] ok             1.0 Keneral/apackages apps/Email/provider_src/com/android/email/service/ImapService.java
+[250/1196] ok             0.838 WilsonWangCS/incubator-doris fe/fe-core/src/test/java/org/apache/doris/utframe/DemoMultiBackendsTest.java
+[300/1196] ok             1.0 SoftwareEngineeringToolDemos/type-inference inference-framework/checker-framework/checkers/src/checkers/inference/sflow/SFlowAnnotatedTypeFactory.java
+[350/1196] ok             1.0 chenjunbiao001/tez tez-dag/src/main/java/org/apache/tez/dag/app/web/AMWebController.java
+[400/1196] ok             1.0 benbenxiaoluchi/com.accenture.cordova.plugin.sso src/android/SSOPlugin.java
+[450/1196] ok             1.0 benrayfield/occamsworkspace selfContained/data/code/mutable/util/ui/Ask.java
+[500/1196] ok             1.0 csrster/openwayback-csrdev wayback-core/src/main/java/org/archive/wayback/webapp/AccessPoint.java
+[529/1196] unavailable     fernandogomesfg/Algoritmos-em-Java 
+[530/1196] unavailable     fernandogomesfg/Algoritmos-em-Java 
+[550/1196] ok             1.0 fernandoj92/mvca-parkinson voltric-ltm-analysis/src/main/java/parkinson/automatic/LCM_Learn.java
+[600/1196] ok             1.0 jaysooong/RxJava src/main/java/io/reactivex/Observable.java
+[650/1196] ok             1.0 herbertkip/Web-App Lesson 5 Mobile/Firebase/app/src/main/java/com/vijaya/firebase/LoginActivity.java
+[655/1196] weak_match     0.308 javacreed/super-simple-stocks super-simple-stock/src/main/java/com/jpmorgan/stocks/simple/services/impl/SimpleStockServiceImpl.java
+[700/1196] ok             1.0 j-be/ewp-registry-service src/main/java/eu/erasmuswithoutpaper/registry/validators/iiavalidator/v2/index/IiaIndexBasicSetupValidationSuiteV2.java
+[750/1196] ok             1.0 ljzzju/incubator-flink flink-staging/flink-tez/src/main/java/org/apache/flink/tez/dag/TezDAGGenerator.java
+[774/1196] unavailable     ming1991/mingop 
+[775/1196] unavailable     ming1991/mingop 
+[776/1196] weak_match     0.146 krisiney/SOKOBANFX-DMS-2020 games/src/games/sokoban/sokoban3/SokobanFX.java
+[800/1196] ok             1.0 leinardi/Dagger2MVP app/src/test/java/com/leinardi/dagger2mvp/ui/HitsListTest.java
+[850/1196] ok             0.893 phax/ph-masterdata ph-masterdata/src/test/java/com/helger/masterdata/currencyvalue/CurrencyValueTest.java
+[900/1196] ok             1.0 pharod/effektif effektif-workflow-impl/src/main/java/com/effektif/workflow/impl/bpmn/BpmnReaderImpl.java
+[928/1196] weak_match     0.0 leusonmario/2022PhDThesis 
+[950/1196] ok             1.0 riscv-android-src/platform-test-mlts-benchmark src/com/android/nn/benchmark/core/NNTestBase.java
+[1000/1196] ok             1.0 sylviawan/oop_assignment1 Desktop/Processing.app/Contents/Java/modes/java/src/processing/mode/java/pdex/PreprocessedSketch.java
+[1044/1196] weak_match     0.4 sarang-apps/darshan_browser chrome/browser/ui/android/appmenu/internal/java/src/org/chromium/chrome/browser/ui/appmenu/AppMenuTest.java
+[1049/1196] weak_match     0.444 octo-online/reactive-aud core/java/android/os/Parcel.java
+[1050/1196] ok             1.0 sharad-oss/knox gateway-provider-security-aws/src/main/java/org/apache/knox/gateway/aws/utils/SamlUtils.java
+[1056/1196] weak_match     0.222 zealoussnow/chromium chrome/browser/download/android/java/src/org/chromium/chrome/browser/download/DownloadManagerBridge.java
+[1057/1196] weak_match     0.364 zealoussnow/chromium chrome/browser/ui/android/toolbar/java/src/org/chromium/chrome/browser/toolbar/top/ToolbarPhone.java
+[1100/1196] ok             1.0 vkuznet/h2o src/main/java/water/api/Frames.java
+[1148/1196] weak_match     0.364 zealoussnow/chromium chrome/browser/ui/android/toolbar/java/src/org/chromium/chrome/browser/toolbar/top/ToolbarPhone.java
+[1150/1196] ok             1.0 tabneib/petimo app/src/main/java/de/tud/nhd/petimo/model/db/MonitorCategory.java
+[1164/1196] weak_match     0.186 zealoussnow/chromium chrome/android/java/src/org/chromium/chrome/browser/app/ChromeActivity.java
+
+status: Counter({'ok': 1182, 'ok_history': 59, 'weak_match': 9, 'unavailable': 5})
+confidence: Counter({'high': 1081, 'medium': 92, 'low': 9})
+elapsed 5.1 min

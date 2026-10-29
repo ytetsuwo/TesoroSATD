@@ -1,0 +1,11 @@
+OK      784 c0   steppedreckoner/reactor-core   reactor/core/publisher/FluxPublishOnTest.java L988   2fca8784ff
+OK    10862 c0   leusonmario/2022PhDThesis      b87a6/randoop-modified_1/RegressionTest0.java L14    df424c04a5
+OK    10862 c1   leusonmario/2022PhDThesis      47fa0/randoop-modified_3/RegressionTest1.java L208   efafe731ac
+OK    10862 c2   leusonmario/2022PhDThesis      b87a6/randoop-modified_1/RegressionTest0.java L19    df424c04a5
+OK    14698 c0   bshp/midpoint                  del/impl/lens/ClockworkRequestAuthorizer.java L235   f482acb065
+OK    16008 c1   sengerts/tic-tac-toe           engerts/tictactoe/model/players/AIPlayer.java L37    49a7e732d6
+OK    19833 c0   duarterafael/Conformitate      @dot/org/argouml/persistence/PgmlUtility.java L75    c1da7401c6
+OK    31763 c0   mickknutson/spring-cloud-confi m/baselogic/cloud/PrimerApplicationTests.java L58    ebe5e7bc84
+OK    32849 c0   Asucanc/FishMail               mple/bangbangmail/ForgetPasswordActivity.java L107   33b51abd80
+
+found 9 of 43 unmapped comments

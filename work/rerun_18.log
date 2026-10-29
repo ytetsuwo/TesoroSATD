@@ -1,0 +1,9 @@
+OK     1238 c4   javaemus/ArcoFlexDroid           L212   n=3  58b9180523 2020-04-03
+OK    10797 c12  SandraBSofiaH/Final-UMldoclet    L1828  n=2  d65815dd83 2020-12-14
+OK    13267 c1   Haulmont/jmix-old                L183   n=3  df0c4d9c83 2020-04-05
+MISS   2495 c0   fieldenms/                       hits=0 '/**'
+MISS   8889 c3   LynzhX/android_frameworks_base-1 hits=0 '// BOOT_FINISHED'
+MISS  15634 c0   Clay-Ferguson/Quantizr           hits=0 '/*'
+MISS  34588 c0   agilepro/purple                  hits=0 '/**'
+
+3 resolved, 4 not found

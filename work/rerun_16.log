@@ -1,0 +1,14 @@
+OK    10732 c5   lynsone/swordie                    L168   f2efdab6e -> d23cbc6ea7 2019-07-15 Refactored WorldHandler, split everything up 
+OK    10797 c9   SandraBSofiaH/Final-UMldoclet      L1818  d65815dd8 -> 8cbd50a1f5 2020-04-27 Uncompress plantuml-asl sources (#264)
+OK    10797 c10  SandraBSofiaH/Final-UMldoclet      L262   d65815dd8 -> 8cbd50a1f5 2020-04-27 Uncompress plantuml-asl sources (#264)
+OK    17282 c0   wsargent/async-http-client         L201   2ffab4710 -> 3656c9209c 2015-12-17 Merge Handler and Protocol + extract and comp
+OK    17282 c1   wsargent/async-http-client         L201   2ffab4710 -> 3656c9209c 2015-12-17 Merge Handler and Protocol + extract and comp
+OK    17282 c2   wsargent/async-http-client         L201   2ffab4710 -> 3656c9209c 2015-12-17 Merge Handler and Protocol + extract and comp
+OK    17282 c3   wsargent/async-http-client         L201   2ffab4710 -> 3656c9209c 2015-12-17 Merge Handler and Protocol + extract and comp
+OK    21065 c1   mbreemhaar/webcurator              L30    3ec56c2ea -> 2ccb8992bf 2019-05-16 Convert Spring XML beans to Java annotations.
+OK    33498 c8   leginee/netbeans                   L203   07b4566e4 -> 07b4566e47 2020-02-06 cnd from 4th donation
+OK    33498 c9   leginee/netbeans                   L209   07b4566e4 -> 07b4566e47 2020-02-06 cnd from 4th donation
+OK    34026 c0   zonnie/Coins                       L60    a57c8e75d -> 651628e04e 2014-07-30 Updates to drawer.
+MISS  15634 c14  Clay-Ferguson/Quantizr             '//'
+
+11 resolved, 1 not found

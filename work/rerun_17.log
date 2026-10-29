@@ -1,0 +1,21 @@
+OK     2495 c0   fieldenms/                       L290   e48bbe18e -> cd0cd15e9a 2015-04-10 #131 Added some stubs for generation of cdtma
+OK     2684 c0   GoogleCloudPlatform/bq-pii-class L205   c81f39c9a -> c1a5e65eb2 2022-02-18 created repo
+OK     3182 c1   tladesignz/DNATools              L167   facb6c74e -> facb6c74e5 2016-10-07 Fixed lint warnings "WeakerAccess" and "unuse
+OK     7837 c0   CreedVI/Raylib-J                 L178   7cb09ec4c -> 9d283d27cd 2021-09-07 Offline updates number 3. Textures working, m
+OK     8889 c1   LynzhX/android_frameworks_base-1 L5269  9158825f9 -> 59c009776d 2012-07-31 Introduce multiple displays with DisplayConte
+OK     8889 c3   LynzhX/android_frameworks_base-1 L5339  9158825f9 -> c042ee2acd 2012-05-09 Disable input dispatch until boot finished.
+OK    10081 c0   christoff-buerger/pmChess        L208   fcf608c13 -> fcf608c13f 2018-10-16 #16: Refactored names according to code conve
+OK    10081 c1   christoff-buerger/pmChess        L207   2a93b24b8 -> 3f7c6a061d 2017-12-11 Initial commit; version 1.0.0.
+OK    10081 c3   christoff-buerger/pmChess        L161   2a93b24b8 -> 3f7c6a061d 2017-12-11 Initial commit; version 1.0.0.
+OK    10081 c4   christoff-buerger/pmChess        L169   2a93b24b8 -> 3f7c6a061d 2017-12-11 Initial commit; version 1.0.0.
+OK    14786 c0   mindscan-de/BrightFlux           L50    16ceaa42d -> 672525c854 2021-08-07 cleanup some comments
+OK    15634 c0   Clay-Ferguson/Quantizr           L115   cce32e091 -> b2c8d7820e 2022-01-25 refactored services bean construction
+OK    21954 c4   lyca/lyca-xslt                   L94    0d8aa84db -> 0d8aa84dbc 2014-01-28 Formatted source code, fixed imports.
+OK    22990 c1   hernanponcedeleon/Dat3M          L270   b3a3cb37e -> 55cf102489 2021-02-01 Reworked initial version of graph refinement
+OK    22990 c2   hernanponcedeleon/Dat3M          L276   b3a3cb37e -> 55cf102489 2021-02-01 Reworked initial version of graph refinement
+OK    34588 c0   agilepro/purple                  L1580  adeca0a5b -> 70bc7de73c 2019-01-11 initial commit, move from mendocino repositor
+MISS  16350 c0   uk-gov-mirror/hmcts.ia-case-api  '//TODO: Next step Direction name should be dynamic too.'
+MISS  20776 c0   jcdubois/cpachecker              '/**'
+MISS  20778 c0   jcdubois/cpachecker              '/**'
+
+16 resolved, 3 not found

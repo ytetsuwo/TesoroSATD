@@ -226,3 +226,18 @@ curl -s https://archive.softwareheritage.org/api/1/vault/gitfast/swh:1:rev:51514
 - `bcgov__jag-efax` は SWH の gitfast バンドル（`work/jag.git`）を remote にしている。
 - `fieldenms__unknown` は `fieldenms__` への、`sarang-apps__darshan_browser` は
   `zealoussnow__chromium` への symlink。
+
+### 再解析テスト（2026-10-29）
+
+`03 --all` → `08 --remap` → `16` → `17` → `18` → `21` を再実行したところ、
+**4,957 件（+1）だが内容は不一致**だった。
+
+- 誤って増えたもの: 2495（0.23 の低類似）、3182（`Table.java` に無い本文）、
+  10862 の重複 3 件。
+- 失われたもの: 15634 c14、16350、20776、20778（手作業で入れた対応付け）。
+- 原因: 手動修正がスクリプト化されておらず、`17`/`21` が低類似・重複を
+  受け入れてしまう。
+
+再解析後は `work/fl_before_rerun.jsonl` に戻し、検証済みの 4,956 件を維持した。
+完全再現には `25_manual_fixes.py`（手動対応付けの明示）と、
+`17`/`21` の受理条件の厳格化が必要。
