@@ -273,7 +273,7 @@ curl -s https://archive.softwareheritage.org/api/1/vault/gitfast/swh:1:rev:51514
 | 関数 | コメント | 追加コミット | 位置（当時） |
 | --- | --- | --- | --- |
 | 19585 | `// Ignores the service worker payment apps in WebLayer until -` | `f019e0c2f94e0`（Liquan (Max) Gu, 2021-06-30） | `weblayer/.../payments/WebLayerPaymentRequestService.java` 63 行 |
-| 20104 | `/** Adds a bookmark with the given {@link Tab} ... */` | `26c1683c7f1a8`（newt, 2016-01-28） | `chrome/android/.../enhancedbookmarks/EnhancedBookmarkUtils.java` 83 行 |
+| 20104 | `/** Adds a bookmark with the given {@link Tab} ... */` | `611d21bc6f867a`（Brandon Wylie, 2021-09-27） | `chrome/android/.../bookmarks/BookmarkUtils.java` 236 行 |
 | 24102 | `/** Tests that pressing the app button ... */` | `d48d2b1639774`（bsheedy, 2019-03-13） | `chrome/android/javatests/.../vr/VrBrowserNativeUiTest.java` 709 行 |
 
 いずれも当該ファイルは現在の HEAD から削除済み。`zealoussnow/chromium` の clone は
