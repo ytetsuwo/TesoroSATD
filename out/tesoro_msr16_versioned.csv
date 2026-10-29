@@ -6185,7 +6185,7 @@ kiuby88/incubator-brooklyn@35fd634,DEFECT,"/** TODO this test works if we assume
 kiuby88/incubator-brooklyn@99c1119,DESIGN,// TODO unsubscribe from everything? And resubscribe on resume?
 kiwiwearables/sync-android@16a33a5,DESIGN,"// create a rev with an attachment, then update it keeping attachment
 // TODO we need to somehow check the attachment wasn't re-downloaded"
-kjthegod/chromium,IMPLEMENTATION,// TODO(qinmin): pass the error code to native.
+kjthegod/chromium@3abbea9,IMPLEMENTATION,// TODO(qinmin): pass the error code to native.
 kkrolczyk/Schowek@cbd6169,IMPLEMENTATION,"/*
                                                     TODO: check for possibility to chain/join/combine xml menus
                                                     TODO: manage recurring funds (ie set monthly incomes/payments)

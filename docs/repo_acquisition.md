@@ -199,3 +199,10 @@ curl -s -X POST https://archive.softwareheritage.org/api/1/vault/gitfast/swh:1:r
 curl -s https://archive.softwareheritage.org/api/1/vault/gitfast/swh:1:rev:51514339d68c12a2ae81fea5c5bb3c638bb1b8f2/
 # status が done になったら fetch_url から tar を取得して repos/bcgov__jag-efax に展開
 ```
+
+### kjthegod/chromium の差し替え（2026-10-29）
+
+`kiwibrowser/src.next` は Chromium 本体ではなく差分のみで、`MediaDrmBridge.java` を
+含んでいなかった（`not_at_head` の原因）。完全なミラー `ChromiumWebApps/chromium`
+（2014 年の SVN スナップショット、2.1GB）に差し替えたところ、function 1656 が
+比率 1.0 で一致し、コメントも exact で blame できた。
