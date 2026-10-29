@@ -219,7 +219,7 @@ curl -s https://archive.softwareheritage.org/api/1/vault/gitfast/swh:1:rev:51514
 | --- | --- | --- |
 | github | 874 | 存命リポジトリを GitHub から clone |
 | swh | 62 | Software Heritage のバルクから復元（remote は `work/swh/...`） |
-| mirror | 32 | 削除済みの代替（上流・fork・SWH バンドル） |
+| mirror | 30 | 削除済みの代替（上流・fork・SWH バンドル） |
 | symlink | 6 | 同一内容の clone を使い回し |
 
 - 972 ディレクトリすべてが manifest に載り、HEAD のドリフトは 0。
