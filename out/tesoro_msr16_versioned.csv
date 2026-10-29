@@ -5278,7 +5278,7 @@ jbapple/libfilter@9a96b0c,WITHOUT_CLASSIFICATION,"/**
    * @return the maximum number of distinct values that can be added
    */"
 jbapple/libfilter@3dcf8e5,DESIGN,// TODO: unify this exponential + binary search with the bytes needed function above
-jcdubois/cpachecker,WITHOUT_CLASSIFICATION,"/**
+jcdubois/cpachecker@a065e8b,WITHOUT_CLASSIFICATION,"/**
    * Computes the state resulting from performing the bitwise xor-operation on this state and the
    * given state. If one of the states is bottom, bottom is returned. If both states represent
    * single values, a state representing the value obtained by the bit-wise xor-operation on the
@@ -5299,7 +5299,7 @@ jcdubois/cpachecker@bd96b5d,WITHOUT_CLASSIFICATION,"/**
    * @return the state resulting from flipping the bits of the values represented by this state.
    */"
 jcdubois/cpachecker@bd96b5d,DESIGN,// TODO maybe a more exact implementation is possible?
-jcdubois/cpachecker,WITHOUT_CLASSIFICATION,"/**
+jcdubois/cpachecker@a065e8b,WITHOUT_CLASSIFICATION,"/**
    * Computes the state resulting from performing the bitwise or-operation on this state and the
    * given state. If one of the states is bottom, bottom is returned. If both states represent
    * single values, a state representing the value obtained by the bit-wise or-operation on the

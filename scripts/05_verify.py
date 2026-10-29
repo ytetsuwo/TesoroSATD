@@ -11,7 +11,7 @@ import re
 import sys
 from difflib import SequenceMatcher
 
-from common import OUT, core, git, norm, repo_dir, similarity, strip_marker
+from common import OUT, alnum, core, git, norm, repo_dir, similarity, strip_marker
 
 
 def rows():
@@ -51,7 +51,13 @@ def check_text(r):
         # line must still be a comment without text
         # trailing markers sit after code, so only the comment part must be empty
         return None if got and not any(core(ctext(x)) for x in got) else "position: text present"
-    if r["match"] in ("relocated", "reshaped"):
+    if r["match"] == "reshaped":
+        # the rewrap moves words across lines, so compare with all whitespace gone
+        a = alnum(" ".join(want))
+        b = alnum(" ".join(got))
+        return None if a and (a in b or similarity(" ".join(want), " ".join(got)) >= 0.9) \
+            else "reshaped but differs"
+    if r["match"] == "relocated":
         # the block moved to another method; a single-line marker may now share
         # its line with code, so require every line of the text to be present
         g = " ".join(core(x) for x in got if core(x))
