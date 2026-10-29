@@ -102,9 +102,6 @@ def main() -> int:
                 continue
             f, ln = hit
             info = blame(d, f, ln) if not dry else {}
-            end = ln + len(cl)
-            while end < len(lines) and False:
-                end += 1
             c["lines"] = list(range(ln, ln + len(cl)))
             c["match"] = "relocated"
             c["commit"] = info.get("sha")
