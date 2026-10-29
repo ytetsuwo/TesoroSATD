@@ -1,0 +1,176 @@
+
+at target: 966  drifted: 0  clone missing: 0 (use --pin to fix)
+to locate: 1196 / 1255
+[50/1196] ok             0.968 Hsia-Esther/CityOfAaronGroup1 CityOfAaron/src/view/GameMenuView.java
+[100/1196] ok             0.803 CreedVI/Raylib-J src/main/com/raylib/java/textures/rTextures.java
+[116/1196] unavailable     JC-Bodoque/geometric-transformer 
+[150/1196] ok             0.933 LouisJenkinsCS/DSL src/dsllanguage/ASTNodes/ProgramASTNode.java
+[200/1196] ok             0.8 Jed-g/property-booking-system source code/src/main/java/com2008/team/project/Guestupcomingbooking.java
+[250/1196] ok             1.0 SnoBoarder/Sudoku-Solver SudokuSolver/app/src/main/java/com/btran/bu/sudokusolver/widget/Cell.java
+[300/1196] ok             1.0 Tingbopku/tingbo1 src/main/java/com/google/devtools/build/lib/rules/objc/CompilationSupport.java
+[350/1196] ok             1.0 chenjunbiao001/tez tez-dag/src/main/java/org/apache/tez/dag/app/web/AMWebController.java
+[400/1196] ok             0.848 anubandhan/spring-security-oauth-BlockChain spring-security-oauth2/src/main/java/org/springframework/security/oauth2/blockchain/util/DefaultBlockChainPublisher.java
+[450/1196] ok             0.932 arenaq/weather-app app/src/main/java/org/kuska/weatherapp/injection/NetworkModule.java
+[500/1196] ok             0.941 css4j/echosvg echosvg-swing/src/main/java/io/sf/carte/echosvg/swing/gvt/JGVTComponent.java
+[529/1196] unavailable     fernandogomesfg/Algoritmos-em-Java 
+[530/1196] unavailable     fernandogomesfg/Algoritmos-em-Java 
+[550/1196] ok             1.0 fernandoj92/mvca-parkinson voltric-ltm-analysis/src/main/java/parkinson/automatic/LCM_Learn.java
+[600/1196] ok             1.0 jaysooong/RxJava src/main/java/io/reactivex/Observable.java
+[650/1196] ok             1.0 herbertkip/Web-App Lesson 5 Mobile/Firebase/app/src/main/java/com/vijaya/firebase/LoginActivity.java
+[655/1196] weak_match     0.308 javacreed/super-simple-stocks super-simple-stock/src/main/java/com/jpmorgan/stocks/simple/services/impl/SimpleStockServiceImpl.java
+[700/1196] ok             1.0 glasser/amock src/java/edu/mit/csail/pag/amock/processor/Processor.java
+[750/1196] ok             1.0 mica-gossip/MiCA src/main/java/org/princehouse/mica/base/simple/SimpleRuntime.java
+[774/1196] unavailable     ming1991/mingop 
+[775/1196] unavailable     ming1991/mingop 
+[776/1196] weak_match     0.146 krisiney/SOKOBANFX-DMS-2020 games/src/games/sokoban/sokoban3/SokobanFX.java
+[800/1196] ok             0.985 laakhbeenor/cayenne cayenne-server/src/main/java/org/apache/cayenne/log/CommonsJdbcEventLogger.java
+[850/1196] ok             0.893 phax/ph-masterdata ph-masterdata/src/test/java/com/helger/masterdata/currencyvalue/CurrencyValueTest.java
+[900/1196] ok             1.0 pharod/effektif effektif-workflow-impl/src/main/java/com/effektif/workflow/impl/bpmn/BpmnReaderImpl.java
+[931/1196] weak_match     0.0 leusonmario/2022PhDThesis 
+[950/1196] ok             1.0 riscv-android-src/platform-test-mlts-benchmark src/com/android/nn/benchmark/core/NNTestBase.java
+[1000/1196] ok             1.0 sylviawan/oop_assignment1 Desktop/Processing.app/Contents/Java/modes/java/src/processing/mode/java/pdex/PreprocessedSketch.java
+[1035/1196] weak_match     0.444 octo-online/reactive-aud core/java/android/os/Parcel.java
+[1045/1196] weak_match     0.4 sarang-apps/darshan_browser chrome/browser/ui/android/appmenu/internal/java/src/org/chromium/chrome/browser/ui/appmenu/AppMenuTest.java
+[1050/1196] ok             0.963 sengerts/tic-tac-toe core/src/de/sengerts/tictactoe/model/players/ai/EasyAIPlayer.java
+[1055/1196] weak_match     0.222 zealoussnow/chromium chrome/browser/download/android/java/src/org/chromium/chrome/browser/download/DownloadManagerBridge.java
+[1056/1196] weak_match     0.364 zealoussnow/chromium chrome/browser/ui/android/toolbar/java/src/org/chromium/chrome/browser/toolbar/top/ToolbarPhone.java
+[1100/1196] ok             1.0 yaohuizhou/attpg src/main/org/apache/tools/ant/types/optional/image/ColorMapper.java
+[1149/1196] weak_match     0.364 zealoussnow/chromium chrome/browser/ui/android/toolbar/java/src/org/chromium/chrome/browser/toolbar/top/ToolbarPhone.java
+[1150/1196] ok             1.0 tabneib/petimo app/src/main/java/de/tud/nhd/petimo/model/db/MonitorCategory.java
+[1164/1196] weak_match     0.186 zealoussnow/chromium chrome/android/java/src/org/chromium/chrome/browser/app/ChromeActivity.java
+
+status: Counter({'ok': 1182, 'ok_history': 59, 'weak_match': 9, 'unavailable': 5})
+confidence: Counter({'high': 1081, 'medium': 92, 'low': 9})
+elapsed 5.1 min
+re-mapped 59 ok_history functions
+OK    10732 c5   lynsone/swordie                    L168   f2efdab6e -> d23cbc6ea7 2019-07-15 Refactored WorldHandler, split everything up 
+OK    10797 c9   SandraBSofiaH/Final-UMldoclet      L1818  d65815dd8 -> 8cbd50a1f5 2020-04-27 Uncompress plantuml-asl sources (#264)
+OK    10797 c10  SandraBSofiaH/Final-UMldoclet      L262   d65815dd8 -> 8cbd50a1f5 2020-04-27 Uncompress plantuml-asl sources (#264)
+OK    17282 c0   wsargent/async-http-client         L201   2ffab4710 -> 3656c9209c 2015-12-17 Merge Handler and Protocol + extract and comp
+OK    17282 c1   wsargent/async-http-client         L201   2ffab4710 -> 3656c9209c 2015-12-17 Merge Handler and Protocol + extract and comp
+OK    17282 c2   wsargent/async-http-client         L201   2ffab4710 -> 3656c9209c 2015-12-17 Merge Handler and Protocol + extract and comp
+OK    17282 c3   wsargent/async-http-client         L201   2ffab4710 -> 3656c9209c 2015-12-17 Merge Handler and Protocol + extract and comp
+OK    21065 c1   mbreemhaar/webcurator              L30    3ec56c2ea -> 2ccb8992bf 2019-05-16 Convert Spring XML beans to Java annotations.
+OK    33498 c8   leginee/netbeans                   L203   07b4566e4 -> 07b4566e47 2020-02-06 cnd from 4th donation
+OK    33498 c9   leginee/netbeans                   L209   07b4566e4 -> 07b4566e47 2020-02-06 cnd from 4th donation
+OK    34026 c0   zonnie/Coins                       L60    a57c8e75d -> 651628e04e 2014-07-30 Updates to drawer.
+MISS  15634 c14  Clay-Ferguson/Quantizr             '//'
+
+11 resolved, 1 not found
+OK     2684 c0   GoogleCloudPlatform/bq-pii-class L205   c81f39c9a -> c1a5e65eb2 2022-02-18 created repo
+OK     3182 c1   tladesignz/DNATools              L167   facb6c74e -> facb6c74e5 2016-10-07 Fixed lint warnings "WeakerAccess" and "unuse
+OK     7837 c0   CreedVI/Raylib-J                 L178   7cb09ec4c -> 9d283d27cd 2021-09-07 Offline updates number 3. Textures working, m
+OK     8889 c1   LynzhX/android_frameworks_base-1 L5269  9158825f9 -> 59c009776d 2012-07-31 Introduce multiple displays with DisplayConte
+OK    10081 c0   christoff-buerger/pmChess        L208   fcf608c13 -> fcf608c13f 2018-10-16 #16: Refactored names according to code conve
+OK    10081 c3   christoff-buerger/pmChess        L261   812816548 -> 5c20b6d237 2021-06-05 #16: Updated formatting according to new code
+OK    10081 c4   christoff-buerger/pmChess        L274   812816548 -> 5c20b6d237 2021-06-05 #16: Updated formatting according to new code
+OK    14786 c0   mindscan-de/BrightFlux           L50    16ceaa42d -> 672525c854 2021-08-07 cleanup some comments
+OK    21954 c4   lyca/lyca-xslt                   L94    0d8aa84db -> 0d8aa84dbc 2014-01-28 Formatted source code, fixed imports.
+OK    22990 c1   hernanponcedeleon/Dat3M          L270   b3a3cb37e -> 55cf102489 2021-02-01 Reworked initial version of graph refinement
+OK    22990 c2   hernanponcedeleon/Dat3M          L276   b3a3cb37e -> 55cf102489 2021-02-01 Reworked initial version of graph refinement
+MISS    784 c0   steppedreckoner/reactor-core     '//Fix or deprecate fromExecutor, this test might randomly ha'
+MISS   1238 c4   javaemus/ArcoFlexDroid           '/* those are the bonus with 5 lives'
+MISS   2495 c0   fieldenms/                       '/**'
+MISS   8889 c3   LynzhX/android_frameworks_base-1 '// BOOT_FINISHED'
+MISS  10081 c1   christoff-buerger/pmChess        '// TODO: fix when moves_selected contains index not move'
+MISS  10797 c12  SandraBSofiaH/Final-UMldoclet    '/* Kluge!!  +1 to fix rounding diff between layout and rende'
+MISS  13267 c1   Haulmont/jmix-old                '/* AppContext.getProperty("cuba.user.namePattern");'
+MISS  14698 c0   bshp/midpoint                    '// TODO: optimize'
+MISS  15634 c0   Clay-Ferguson/Quantizr           '/*'
+MISS  16008 c1   sengerts/tic-tac-toe             '// TODO Not just randomly select a tile to mark'
+MISS  16350 c0   uk-gov-mirror/hmcts.ia-case-api  '//TODO: Next step Direction name should be dynamic too.'
+MISS  19833 c0   duarterafael/Conformitate        '/**'
+MISS  20776 c0   jcdubois/cpachecker              '/**'
+MISS  20778 c0   jcdubois/cpachecker              '/**'
+MISS  31763 c0   mickknutson/spring-cloud-config  '// TODO Does not work with Boot Integeration tests:'
+MISS  34588 c0   agilepro/purple                  '/**'
+
+11 resolved, 16 not found
+OK     1238 c4   javaemus/ArcoFlexDroid           L212   n=3  58b9180523 2020-04-03
+OK    10797 c12  SandraBSofiaH/Final-UMldoclet    L1828  n=2  d65815dd83 2020-12-14
+OK    13267 c1   Haulmont/jmix-old                L183   n=3  df0c4d9c83 2020-04-05
+MISS   2495 c0   fieldenms/                       hits=0 '/**'
+MISS   8889 c3   LynzhX/android_frameworks_base-1 hits=0 '// BOOT_FINISHED'
+MISS  15634 c0   Clay-Ferguson/Quantizr           hits=0 '/*'
+MISS  34588 c0   agilepro/purple                  hits=0 '/**'
+
+3 resolved, 4 not found
+OK      784 c0   steppedreckoner/reactor-core   reactor/core/publisher/FluxPublishOnTest.java L988   2fca8784ff
+OK    14698 c0   bshp/midpoint                  del/impl/lens/ClockworkRequestAuthorizer.java L235   f482acb065
+OK    16008 c1   sengerts/tic-tac-toe           engerts/tictactoe/model/players/AIPlayer.java L37    49a7e732d6
+OK    19833 c0   duarterafael/Conformitate      @dot/org/argouml/persistence/PgmlUtility.java L75    c1da7401c6
+OK    31763 c0   mickknutson/spring-cloud-confi m/baselogic/cloud/PrimerApplicationTests.java L58    ebe5e7bc84
+
+found 5 of 28 unmapped comments
+applied 12 manual mappings
+# Tesoro provenance (repo / file / commit)
+
+生成: 2026-10-29 21:46
+
+## カバレッジ
+
+- 関数: 1255 件中 1241 件を特定 (98.9%)、うち commit 取得 1235 件 (履歴から復元 59 件)
+- コメント: 4981 件中 4957 件に commit を付与 (99.5%)、966 プロジェクト
+- 関数一致度: {'high': 1125, 'medium': 105, 'low': 11}
+- コメント特定方法: {'exact': 3494, 'structural': 1385, 'fuzzy': 10, 'relocated': 21, 'history': 18, 'reshaped': 6, 'position': 23} (exact=本文一致, structural=行末コメント・部分一致, fuzzy=本文が改変, position=記号のみ, relocated=別メソッドへ移動, history=履歴から復元, reshaped=形が変化)
+- commit 日付範囲: 2000-12-06 〜 2026-08-31
+
+## 状態
+
+- ok: 1182
+- ok_history: 59
+- weak_match: 9
+- unavailable: 5
+
+## ラベル分布 (全件 / commit あり)
+
+- DESIGN: 697 / 693
+- IMPLEMENTATION: 474 / 468
+- NONSATD: 3432 / 3422
+- DEFECT: 220 / 217
+- TEST: 78 / 77
+- DOCUMENTATION: 80 / 80
+
+## ファイル
+
+| ファイル | 行 | 内容 |
+| --- | --- | --- |
+| `out/tesoro_provenance.csv` | 4981 | コメント単位の来歴 (下記の列) |
+| `out/tesoro_msr16.csv` | 4981 | Maldonado MSR16 形式 (3 列) |
+| `out/tesoro_msr16_versioned.csv` | 4981 | 同上、projectname に commit を付加 |
+
+`tesoro_provenance.csv` の列: function_id, comment_id, projectname,
+classification, commenttext, repo, path, path_at_commit, start_line,
+comment_line, n_comment_lines, commit_id, commit_short, commit_url,
+blame_url, commit_author, commit_date, match, function_ratio, status, at_head,
+snapshot_commit, path_snapshot
+
+## 既知の制約
+
+- `unavailable`: リポジトリが GitHub 上で削除され、Software Heritage にも
+  使えるスナップショットが無いもの (来歴は復元できない)。
+- `ok_history`: HEAD には無いが、履歴 `git log -S` で見つけたもの。
+  `path` と行番号はその commit 時点のもの (`at_head=false`)。
+- `not_at_head` / `weak_match`: 履歴を探しても見つからなかったもの。
+- `commit_id` はコメント行の blame なので、関数本体の最終変更とは異なる。
+- `projectname` は `owner/name`。Maldonado の `project-version` に相当する
+  版情報は commit で表す (`tesoro_msr16_versioned.csv`)。
+- `NONSATD` は msr16 形式では `WITHOUT_CLASSIFICATION` に改名。
+
+## 再現方法
+
+```
+python3 scripts/01_repo_meta.py    # GitHub API で生死と既定ブランチ
+python3 scripts/02_clone_repos.py  # blob なし部分クローン + *.java checkout
+python3 scripts/03_locate.py       # 関数アラインメント + git blame
+python3 scripts/04_export.py       # CSV / レポート
+python3 scripts/05_verify.py --full  # 全行のテキスト検証
+python3 scripts/06_blame.py 8431   # 個別の来歴と blame
+```
+text: 4957 ok / 0 bad of 4957
+versioned rows without a commit: 24
+rows: 4981  with commit: 4957  status: {'ok': 4766, 'ok_history': 192, 'unavailable': 5, 'weak_match': 18}
+manifest: 972  dirs: 972
+
+FAIL
+  - README coverage コメント 4956/4981 (99.5%) != 4957

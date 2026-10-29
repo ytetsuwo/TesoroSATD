@@ -20,7 +20,7 @@ from common import OUT, repo_dir
 # (function_id, comment_id, revision or None for HEAD, path, first, last, match)
 FIXES = [
     (15634, 14, "e0aa47caf", "src/main/java/quanta/actpub/ActPubService.java", 238, 238, "history"),
-    (16350, 0, "e5521533530e9815e25d21d26518b7efc9a69ac4",
+    (16350, 0, "436c81aa7f353c2cc26c3ce866cd7f750883a826",
      "src/main/java/uk/gov/hmcts/reform/iacaseapi/domain/handlers/postsubmit/ReviewTimeExtensionConfirmation.java",
      47, 47, "history"),
     (8889, 3, "28391cbe0ff8^",
@@ -40,9 +40,9 @@ FIXES = [
      778, 817, "relocated"),
     (20776, 0, None, "src/org/sosy_lab/cpachecker/cpa/invariants/CompoundBitVectorInterval.java",
      1491, 1506, "reshaped"),
-    (15634, 0, "cce32e091", "src/main/java/quanta/actpub/ActPubService.java", 116, 116, "history"),
+    (15634, 0, "cce32e091", "src/main/java/quanta/actpub/ActPubService.java", 115, 132, "history"),
     (34588, 0, "adeca0a5b", "purpleLib/src/main/java/com/purplehillsbooks/json/JSONObject.java",
-     1581, 1581, "history"),
+     1580, 1610, "history"),
     (20778, 0, None, "src/org/sosy_lab/cpachecker/cpa/invariants/CompoundBitVectorInterval.java",
      1585, 1601, "reshaped"),
 ]

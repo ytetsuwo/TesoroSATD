@@ -903,7 +903,7 @@ Institute-Web-Science-and-Technologies/SparqlUpdater@c397d75,DESIGN,"//if ( Spar
 // TODO if printing is not desired, this loop can be combined with the one above and the method used here can be removed within the Justification class."
 Interactions-HSG/wot-search@2d460e6,DESIGN,// TODO IDEA: recognise links that return promising representations
 Interactions-HSG/wot-search@2d460e6,WITHOUT_CLASSIFICATION,// check for valid uri
-IonBazan/openapi-generator@cd41bc8,DEFECT,"// TODO: the null value is not allowed per OAS document.
+IonBazan/openapi-generator@233087c,DEFECT,"// TODO: the null value is not allowed per OAS document.
 // The deserialization should fail."
 IronApollo/FastAsyncWorldEdit@a69b239,WITHOUT_CLASSIFICATION,// Apply heightmap
 IronApollo/FastAsyncWorldEdit@d0a3169,WITHOUT_CLASSIFICATION,//Clamp newHeight within the selection area
@@ -1079,7 +1079,7 @@ Keneral/apackages@4b1b545,TEST,"// TODO: This test will actually mess with conta
 // Ideally we would use a fake content provider to give us contact data..."
 Keneral/apackages@4b1b545,WITHOUT_CLASSIFICATION,// add test contacts.
 KyoungjunPark/SmartClass@1a7bf94,IMPLEMENTATION,//implement below code if token is send to server
-L8RMedia/exponent@720631a,IMPLEMENTATION,// TODO: get path while TextPath is set.
+L8RMedia/exponent@24e3907,IMPLEMENTATION,// TODO: get path while TextPath is set.
 LaudateCorpus1/security-certification-resources@7580072,WITHOUT_CLASSIFICATION,"/**
      * Returns a {@link List} of additional {@link TestConfiguration} instances that should be run
      * along with the default {@code TestConfiguration} instances.
@@ -1628,7 +1628,7 @@ Pixate/pixate-freestyle-android@ff59b6c,WITHOUT_CLASSIFICATION,// reset active m
 Pokecube-Development/Pokecube-Core@7f8c6b4,DESIGN,// TODO some way to make this change based on how long button is held?
 Pokecube-Development/Pokecube-Core@7f8c6b4,WITHOUT_CLASSIFICATION,// Sync the rotations.
 PolyhedralDev/Terra-biome-provider-pipeline@7335645,IMPLEMENTATION,// TODO: actually implement this lol
-Prodaxis/kie-wb-common@80a34e9,DEFECT,"// compatibility fix: boundary events should always occur at the bottom
+Prodaxis/kie-wb-common@c49bfd8,DEFECT,"// compatibility fix: boundary events should always occur at the bottom
 // otherwise they will be drawn at an incorrect position on load"
 Programming-Systems-Lab/pitest@22ec8b9,IMPLEMENTATION,"// workaround to register this test as covering some part of the testee.
 // static variable access does not currently register as coverage . . ."
@@ -7563,20 +7563,20 @@ prokopk1n/cpachecker-1@b80f52b,IMPLEMENTATION,"/* What shall we do with function
       */"
 prokopk1n/cpachecker-1@d610ec4,WITHOUT_CLASSIFICATION,"//It means, that there is no entry in this block. Don't add it"
 qiaolw/AndroidTest@8f88a20,DESIGN,// todo change the file location/name according to your needs
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
-qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
 qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@2858b00,TEST,"// Note: painting code, cannot test"
+qinFamily/freeVM@3a86aa6,TEST,"// Note: painting code, cannot test"
 qingdao81/flink@f0ac261,DEFECT,"// This is problematic as the user code class loader is not
 // available at this point."
 qingdao81/flink@f0ac261,WITHOUT_CLASSIFICATION,"// Remove shutdown hook to prevent resource leaks, unless this is
@@ -7786,7 +7786,7 @@ runningt/ambari@da2ac57,WITHOUT_CLASSIFICATION,"/**
 runningt/ambari@da2ac57,WITHOUT_CLASSIFICATION,// admin has full access
 runningt/ambari@da2ac57,DESIGN,// TODO : should we log this?
 sachinlala/JavaPerfTests@4606e06,DESIGN,//TODO: this can be improved further to handle large powers
-salyh/geronimo-specs@adf64ad,IMPLEMENTATION,//X TODO implement!
+salyh/geronimo-specs@e00d53d,IMPLEMENTATION,//X TODO implement!
 salyh/geronimo-specs@3e81ac9,DESIGN,"/**
      * <p>A container or an application can set this manually. If not
      * we will use the {@link java.util.ServiceLoader} and use the
@@ -9101,7 +9101,7 @@ tladesignz/DNATools@161c558,DEFECT,"/**
      *            A maximum amount of result entries.
      * @return a {@link List} of {@link TableRow}s, possibly empty, never null.
      */"
-tladesignz/DNATools,WITHOUT_CLASSIFICATION,//noinspection TryWithIdenticalCatches
+tladesignz/DNATools@facb6c7,WITHOUT_CLASSIFICATION,//noinspection TryWithIdenticalCatches
 tladesignz/DNATools@732ab40,WITHOUT_CLASSIFICATION,"// We don't want to pass the exceptions up or rethrow a more generic exception, since
 // then, we would have to handle this on every object instantiation, but these
 // exceptions should never throw in production, since these are static code issues
@@ -9180,7 +9180,7 @@ tondeur-h/LangTonAnt@42ad186,WITHOUT_CLASSIFICATION,"//System.out.print(""(x,y)=
 tondeur-h/LangTonAnt@0393cb8,WITHOUT_CLASSIFICATION,//no draw a black point
 tondeur-h/LangTonAnt@0393cb8,WITHOUT_CLASSIFICATION,//show me the result on scsreen
 tondeur-h/LangTonAnt@2f1f2e7,WITHOUT_CLASSIFICATION,//refresh counters
-tonywasher/bc-java@ccf93ca,DESIGN,// TDOD: make this meaningful...
+tonywasher/bc-java@5fcd94a,DESIGN,// TDOD: make this meaningful...
 torstenwerner/metro2.0@0a75b78,WITHOUT_CLASSIFICATION,// invoke the Trust Plugin if necessary
 torstenwerner/metro2.0@0a75b78,DESIGN,//TODO: replace this code with calls to the Module now
 torstenwerner/metro2.0@0a75b78,WITHOUT_CLASSIFICATION,//legacy pipes in GF
