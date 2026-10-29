@@ -2904,10 +2904,10 @@ bcgov/EDUC-GRAD-REPORT-API@15fdc62,DESIGN,"/**
          * @param originalCourseId The original course ID.
          * @return thisBuilder
          */"
-bcgov/jag-efax,WITHOUT_CLASSIFICATION,"/**
+bcgov/jag-efax@4c63903,WITHOUT_CLASSIFICATION,"/**
      * Returns true of the queued redis message has timed out (ie, created > 25 minutes ago)
      */"
-bcgov/jag-efax,DEFECT,// NPE fix.  For some reason under heavy load redis can return null records.
+bcgov/jag-efax@898db74,DEFECT,// NPE fix.  For some reason under heavy load redis can return null records.
 be1be1/appinventor-polyu@807eb38,DEFECT,"// The superclass uses getOffsetHeight, which won't work for us."
 benbenxiaoluchi/com.accenture.cordova.plugin.sso@48241ba,IMPLEMENTATION,//todo send to background
 benbenxiaoluchi/com.accenture.cordova.plugin.sso@48241ba,IMPLEMENTATION,//todo send to background

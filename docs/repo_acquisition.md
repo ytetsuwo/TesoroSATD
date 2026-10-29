@@ -180,7 +180,7 @@ python3 scripts/05_verify.py --full                              # コメント 
 `ming1991/mingop` / `JC-Bodoque/geometric-transformer` の 4 件で、いずれも
 GitHub 上に現存せず、コード検索でも同一本文が見つからない。
 
-### bcgov/jag-efax の復元試行（保留）
+### bcgov/jag-efax の復元（完了）
 
 Software Heritage には snapshot `e33d71a7`（最終訪問 2025-02-09）があるが、
 `vault/gitfast` の調理要求（cook id `422257283`）が `status: new` のまま
@@ -206,3 +206,7 @@ curl -s https://archive.softwareheritage.org/api/1/vault/gitfast/swh:1:rev:51514
 含んでいなかった（`not_at_head` の原因）。完全なミラー `ChromiumWebApps/chromium`
 （2014 年の SVN スナップショット、2.1GB）に差し替えたところ、function 1656 が
 比率 1.0 で一致し、コメントも exact で blame できた。
+
+追記: gitfast バルクの調理が完了（502 リビジョン、数分）し、fast-import ストリームを
+`work/jag.git` に取り込んで `repos/bcgov__jag-efax` に clone した。function 30563 は
+比率 1.0 で一致し、コメント 2 件を blame できた（`4c63903378` / `898db744d6`）。
