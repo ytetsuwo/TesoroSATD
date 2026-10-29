@@ -21,11 +21,19 @@ from datetime import datetime
 
 from common import OUT, core, repo_dir, similarity
 
+REJECT = set()
+try:
+    for _line in open(OUT.parent / "work" / "manual_reject.jsonl"):
+        if _line.strip() and not _line.startswith("//"):
+            REJECT.add(json.loads(_line)["id"])
+except OSError:
+    pass
+
 _COMMENTS = {}
 for _r in (json.loads(x) for x in open(OUT.parent / "tesoro" / "data" / "tesoro" / "tesoro_comment.json")):
     _COMMENTS.setdefault(_r["id"], []).append(_r)
 
-MIN = 0.9
+MIN = 0.95
 
 
 def blame(d, path, ln):
@@ -61,6 +69,8 @@ def main() -> int:
             loc["comments"] = [{"comment_id": r["comment_id"], "comment": r["comment"],
                                 "classification": r.get("classification"), "lines": []}
                                for r in _COMMENTS.get(loc["id"], [])]
+        if loc["id"] in REJECT:
+            continue
         for c in loc.get("comments") or []:
             if c.get("lines"):
                 continue
@@ -87,8 +97,6 @@ def main() -> int:
                 span = lines[max(0, i - 6):i + len(cl) + 6]
                 blob = " ".join(core(x) for x in span)
                 ok = all(x in blob for x in cl)
-                if not ok:
-                    ok = similarity(" ".join(cl), " ".join(core(x) for x in span)) >= MIN
                 if ok:
                     # the anchor may sit inside the block, so back up to its start
                     off = next((k for k, x in enumerate(cl) if x and x in core(lines[i])), 0)

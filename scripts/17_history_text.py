@@ -22,7 +22,7 @@ import sys
 from datetime import datetime
 
 import astjava
-from common import OUT, core, norm, repo_dir
+from common import OUT, core, norm, repo_dir, similarity
 
 _spec = importlib.util.spec_from_file_location("loc03", OUT.parent / "scripts" / "03_locate.py")
 L = importlib.util.module_from_spec(_spec)
@@ -62,7 +62,10 @@ def search(d, path: str, cl, revs):
         lines_abs, kind = L.map_comment(cl, lines, 1, max(1, len(lines)), lo=0,
                                         hi=len(lines), is_comment=mask)
         if kind in ("exact", "structural"):
-            return rev, lines_abs
+            want = " ".join(cl)
+            got = " ".join(core(lines[i - 1]) for i in lines_abs)
+            if similarity(want, got) >= 0.85:
+                return rev, lines_abs
     return None, None
 
 
