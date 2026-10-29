@@ -97,6 +97,7 @@ Incapture__OG-Platform,github,https://github.com/Incapture/OG-Platform.git,,76be
 InstantWebP2P__node-android,github,https://github.com/InstantWebP2P/node-android.git,,e4652cc09233c35393bf1089d7871e31f2cb1941,,
 Institute-Web-Science-and-Technologies__SparqlUpdater,github,https://github.com/Institute-Web-Science-and-Technologies/SparqlUpdater.git,,fa968289398af38e4f587795ef21f70d85c47e8a,,
 Interactions-HSG__wot-search,github,https://github.com/Interactions-HSG/wot-search.git,,a26ec17129927278c0290513be26a9b35e83cd58,,
+IonBazan__openapi-generator,mirror,https://github.com/OpenAPITools/openapi-generator,,644f963c3cd98e109940dacc182e39c2d87623ef,,
 IronApollo__FastAsyncWorldEdit,github,https://github.com/IronApollo/FastAsyncWorldEdit.git,,07a5ef5ab485e1f27a3d1ac8108b4269ab8e46f7,,
 JC626__quickcheck-for-whiley,github,https://github.com/JC626/quickcheck-for-whiley.git,,d2798bc708b4e19e19cfcc733398e0a0d45b3845,,
 JSA-Insubria__hive,github,https://github.com/JSA-Insubria/hive.git,,988b608c3224cb9cc56dadb8fd51ab5b025ea891,,
@@ -327,6 +328,7 @@ baodingfengyun__luaj,github,https://github.com/baodingfengyun/luaj.git,,d2b27f0f
 basitkhurram__fresco,github,https://github.com/basitkhurram/fresco.git,,3b7877fbe73e1c1432b53303a2ea022ba12244e1,,
 batiaev__provisioner,swh,swh vault,swh:1:snp:5bd5d11258497cb6bc4ffa66a3e6eb17ce2a6235,b2543b073e442f3e0260c940c11f93a0c397afb4,ok,2023-12-01T12:39:23.216000+00:00
 bcgov__EDUC-GRAD-REPORT-API,github,https://github.com/bcgov/EDUC-GRAD-REPORT-API.git,,f73e7c46381bb8f1ac19b83bb4925ed785c1880a,,
+bcgov__jag-efax,mirror,/Users/tetsuo/Projects/AI/TesoroSATD/work/jag.git,,c5bfb83dfd688e73aee26229c86d921c105d49c0,,
 be1be1__appinventor-polyu,github,https://github.com/be1be1/appinventor-polyu.git,,807eb38fdee7fe4ff9049bb7bc2dbc2a0c88141e,,
 benbenxiaoluchi__com.accenture.cordova.plugin.sso,github,https://github.com/benbenxiaoluchi/com.accenture.cordova.plugin.sso.git,,48241ba9691643fbee53b15a301100b30aca7d6c,,
 benrayfield__occamsworkspace,github,https://github.com/benrayfield/occamsworkspace.git,,6968855d2b3a7ad40a537929b4c5c410e57117dd,,
@@ -348,6 +350,7 @@ bramdvrepublic__com.beligum.blocks.core,github,https://github.com/bramdvrepublic
 brownsys__android-app-modes-osmand,github,https://github.com/brownsys/android-app-modes-osmand.git,,3e971bd4b919122e12600d3f96de514eadf532fd,,
 bsanchezb__jackson-modules-base,github,https://github.com/bsanchezb/jackson-modules-base.git,,bc992036db2b5984994b22391ccb156614e27e44,,
 bsergean__sentry-android,github,https://github.com/bsergean/sentry-android.git,,265316ec51e44528c05ce3093cfec1860ef40a06,,
+bshp__midpoint,mirror,https://github.com/Evolveum/midpoint,,a6f90aa198c9e2c4dc7686b0d056320019825913,,
 bumfo__LWJGUI,github,https://github.com/bumfo/LWJGUI.git,,9d9075198cf8186edbcb0e6603895efdd73cf9f4,,
 c0de-wizard__pod-adddict,github,https://github.com/c0de-wizard/pod-adddict.git,,6f3a0e113b11196c4abdefdefda66c80f2c7a40f,,
 canoo__open-dolphin,swh,swh vault,swh:1:snp:d6264f445e1fda612ee1f6e16a4e5d9b6fa151c3,50166defc3ef2de473d7a7246c32dc04304d80ef,ok,2020-04-15T23:51:56.626000+00:00
@@ -461,6 +464,8 @@ fbarthez__aribaweb,github,https://github.com/fbarthez/aribaweb.git,,404bc87fb5e5
 federa7675__Dawn,github,https://github.com/federa7675/Dawn.git,,92aa54f0180b6fd238a3ecaf317ee1d6d8f5203f,,
 fernandoj92__mvca-parkinson,github,https://github.com/fernandoj92/mvca-parkinson.git,,df4585c65614f7c6ad09a02d12cb0bc98915de8b,,
 fhg-fokus-nubomedia__signaling-plane,github,https://github.com/fhg-fokus-nubomedia/signaling-plane.git,,2ab48dfde4556bd6920d6cbaa1d80a8646ba737f,,
+fieldenms__,mirror,https://github.com/fieldenms/tg,,b78cd6e48cfdb77d584bedf4ba8e876b4b90ad3d,,
+fieldenms__unknown,symlink,fieldenms__,,,,
 finefuture__gazelle,github,https://github.com/finefuture/gazelle.git,,10fef0f1921d7dce364e4c2b783f921db84fe7f4,,
 finki001__couchbase-lite-java-core,swh,swh vault,swh:1:snp:2f820ed2e0b3865c779dca089cb363353510c939,3b275642e2d2f231fd155ad9def9c5e9eff3118e,ok,2024-06-09T16:43:24.720000+00:00
 first-1251__exp-drive,github,https://github.com/first-1251/exp-drive.git,,465c4557ad76a275a8a6729cdd3d183f26ff8e48,,
@@ -549,6 +554,7 @@ j-be__ewp-registry-service,github,https://github.com/j-be/ewp-registry-service.g
 j143__mesos,github,https://github.com/j143/mesos.git,,a85a22baa32f66ecaa13c4602a195d57f6abf9be,,
 j420247__platform_frameworks_support,github,https://github.com/j420247/platform_frameworks_support.git,,32dee044b7f9341a6651ea28b2746b2ddbd0b5ba,,
 jandppw__ppwcode,github,https://github.com/jandppw/ppwcode.git,,7878d1c1c9efff2982d73e4b10fd141f78e7c200,,
+janjaali__azure-sdk-for-java,mirror,https://github.com/Azure/azure-sdk-for-java,,9d720c4089c6d1885fdb9767b5c1ea08e186526d,,
 jasonnam__buck,github,https://github.com/jasonnam/buck.git,,ad735af4d06040e78c85427fb6baeae90b64632b,,
 javacreed__super-simple-stocks,mirror,https://github.com/jainebri/Super-Simple-Stocks,,fef3b126e4b384e71e2662f0be3d07a8c2dd4b7c,not_archived,
 javaemus__ArcoFlexDroid,github,https://github.com/javaemus/ArcoFlexDroid.git,,e9ece569f14b65c906612e2574d15dacbf4bfc80,,
@@ -557,6 +563,7 @@ jaylinhong__jdk14-learn,github,https://github.com/jaylinhong/jdk14-learn.git,,bd
 jaysooong__RxJava,swh,swh vault,swh:1:snp:d3c6a91759f16e3a4212e4e93505cb05dae94392,14ea26be82b8b5fc8fa53eba84b553d727e8475f,ok,2021-06-21T11:46:58.563000+00:00
 jbapple__libfilter,github,https://github.com/jbapple/libfilter.git,,4ebeaef1215969aee9edb05eb145e94b8dd98e16,,
 jcdubois__cpachecker,symlink,../repos/lembergerth__cpachecker,,,failed,
+jd3538__Marist-Sakai-11.x,mirror,https://github.com/sakaiproject/sakai,,dd5d200698ae4297417b8d3afc0689fde29b93c9,,
 jdissou__sigdep01_01,github,https://github.com/jdissou/sigdep01_01.git,,298070a36bd0bf8f00ad371efc716a02fedf25c0,,
 jebbench__jackson-dataformat-velocypack,github,https://github.com/jebbench/jackson-dataformat-velocypack.git,,7167d5caafcf31c55675f3b6fcc5e32a1498eddf,,
 jettmarks__clueRide-angular,github,https://github.com/jettmarks/clueRide-angular.git,,0685d4edd76ecac889269bc7fb5fbdb40c193176,,
@@ -592,8 +599,10 @@ kaubster__se-577-group-projects,github,https://github.com/kaubster/se-577-group-
 kduncan99__em2200-java,github,https://github.com/kduncan99/em2200-java.git,,73c6bc71f03f550fe70d1a32b92e74b48ffb6c9a,,
 kef__hieos,github,https://github.com/kef/hieos.git,,7d75d1465337293fc6b6832c4b52754b1fea4cc0,,
 kevinpostlewaite__killbill,github,https://github.com/kevinpostlewaite/killbill.git,,19e9ee463fa88cc33c890b1068f6f1f89e5b879d,,
+kimjand__cxf,mirror,https://github.com/apache/cxf,,b83776bba97ceec2fe390b7d7b0f340ffaa81c30,,
 kiuby88__incubator-brooklyn,github,https://github.com/kiuby88/incubator-brooklyn.git,,726bebca3adf07232641c719db30f333a5a780c8,,
 kiwiwearables__sync-android,github,https://github.com/kiwiwearables/sync-android.git,,21f23a698397d3dd876b476831ade075790378a8,,
+kjthegod__chromium,mirror,https://github.com/ChromiumWebApps/chromium,,c7361d39be8abd1574e6ce8957c8dbddd4c6ccf7,,
 kkrolczyk__Schowek,swh,swh vault,swh:1:snp:b8f635378e41f4e25bf70b4f9c90f2d14cde93b5,3700ab00bceaa5cc1f74d98f051fff3a67d4256e,ok,2024-06-28T04:40:57.397000+00:00
 kovyrin__crawler-commons,github,https://github.com/kovyrin/crawler-commons.git,,a10cf2540a894a305159570a4d5f19538a804be9,,
 krisglover__cia,github,https://github.com/krisglover/cia.git,,d4ffaac3a3a220aee406573e60f51d8153df4ed4,,
@@ -796,6 +805,7 @@ runningt__ambari,github,https://github.com/runningt/ambari.git,,7b91469e68a80bfc
 sachinlala__JavaPerfTests,github,https://github.com/sachinlala/JavaPerfTests.git,,5b06e82a66b9b2aeb124044e2feb1c7be63eb062,,
 salyh__geronimo-specs,github,https://github.com/salyh/geronimo-specs.git,,ae87272821fc199881d88e7aa57ae34f8683ce0a,,
 sapols__JPL-CUSeniorProjects,github,https://github.com/sapols/JPL-CUSeniorProjects.git,,0e25e251bf4328e526f56f07e02659f3b767af5a,,
+sarang-apps__darshan_browser,symlink,zealoussnow__chromium,,,,
 sarasara100__Quicksql,github,https://github.com/sarasara100/Quicksql.git,,ae08234137958f6cec0ddef979343e3fff5c2d9b,,
 savannahostrowski__atlas,swh,swh vault,swh:1:snp:230a742837c3ac4f563e9379354908125992ed71,2db4bdce2cd7d6c2d70745f2aeb2230387dd60eb,ok,2020-03-10T14:56:40.983000+00:00
 sbalineni19__OpenRefine,github,https://github.com/sbalineni19/OpenRefine.git,,a8e8a6c1ad938bef288ee1c4e5242a786f5acef9,,
@@ -953,7 +963,9 @@ ysc972__UserAgentParser,github,https://github.com/ysc972/UserAgentParser.git,,43
 yujintao529__android_practice,github,https://github.com/yujintao529/android_practice.git,,70c8757c79099e222c93124c63b6351b65508fb2,,
 yzy830__undertow-analyze,github,https://github.com/yzy830/undertow-analyze.git,,616a7516b43c12b1d27235780b17d2371e6f8e4e,,
 zarechenskiy__kotlin,github,https://github.com/zarechenskiy/kotlin.git,,cb9c28e73fc3f88d8e08ec7661ac169434c8311f,,
+zealoussnow__chromium,mirror,https://github.com/kiwibrowser/src.next,,7be7edd1532148f22103cb4c5a1964d96297836f,,
 zebra1024__couchbase-lite-android,github,https://github.com/zebra1024/couchbase-lite-android.git,,005811e239585885ff9693dae70470fb71e9aef4,,
+zem13579__hive,mirror,https://github.com/apache/hive,,96c8b2abde07c18b1d72275e7863951524159917,,
 zepedropaixao__videoplayer,github,https://github.com/zepedropaixao/videoplayer.git,,4cef989012a4281b6f5430a1b67715422cc13eb9,,
 zhe525069676__WeiBoLayout,github,https://github.com/zhe525069676/WeiBoLayout.git,,f46f440e25937c2285c0dcbf96472747070db68f,,
 zipated__src,symlink,LynzhX__android_frameworks_base-1,,,not_archived,

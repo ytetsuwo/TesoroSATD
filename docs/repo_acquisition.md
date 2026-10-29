@@ -210,3 +210,19 @@ curl -s https://archive.softwareheritage.org/api/1/vault/gitfast/swh:1:rev:51514
 追記: gitfast バルクの調理が完了（502 リビジョン、数分）し、fast-import ストリームを
 `work/jag.git` に取り込んで `repos/bcgov__jag-efax` に clone した。function 30563 は
 比率 1.0 で一致し、コメント 2 件を blame できた（`4c63903378` / `898db744d6`）。
+
+### 取得方法の棚卸し（2026-10-29）
+
+`out/repo_manifest.csv` を実際のディレクトリと突き合わせて補完した。
+
+| 種別 | 件数 | 意味 |
+| --- | --- | --- |
+| github | 874 | 存命リポジトリを GitHub から clone |
+| swh | 62 | Software Heritage のバルクから復元（remote は `work/swh/...`） |
+| mirror | 32 | 削除済みの代替（上流・fork・SWH バンドル） |
+| symlink | 6 | 同一内容の clone を使い回し |
+
+- 972 ディレクトリすべてが manifest に載り、HEAD のドリフトは 0。
+- `bcgov__jag-efax` は SWH の gitfast バンドル（`work/jag.git`）を remote にしている。
+- `fieldenms__unknown` は `fieldenms__` への、`sarang-apps__darshan_browser` は
+  `zealoussnow__chromium` への symlink。
