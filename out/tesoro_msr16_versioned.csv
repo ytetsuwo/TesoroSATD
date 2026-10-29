@@ -5085,10 +5085,10 @@ jandppw/ppwcode@d707925,DESIGN,"// MUDO: this persist is only needed because cas
 // for a new entity when merge is used"
 jandppw/ppwcode@d707925,WITHOUT_CLASSIFICATION,// get a managed copy from the merge operation
 jandppw/ppwcode@d707925,WITHOUT_CLASSIFICATION,// verification
-janjaali/azure-sdk-for-java,WITHOUT_CLASSIFICATION,"/**
+janjaali/azure-sdk-for-java@40bad2e,WITHOUT_CLASSIFICATION,"/**
      * {@inheritDoc}
      */"
-janjaali/azure-sdk-for-java,DESIGN,// TODO (savaity): replace with the AZ_TRACING_NAMESPACE_KEY
+janjaali/azure-sdk-for-java@2fd8e68,DESIGN,// TODO (savaity): replace with the AZ_TRACING_NAMESPACE_KEY
 jasonnam/buck@b4479d2,DEFECT,"// TODO(T48080142): When we wrap up all of these validation errors into something human
 // friendly, this will become a build file error"
 javacreed/super-simple-stocks,IMPLEMENTATION,"/*
@@ -5312,11 +5312,11 @@ jcdubois/cpachecker,WITHOUT_CLASSIFICATION,"/**
    *     states' values is returned. Otherwise, top is returned.
    */"
 jcdubois/cpachecker@a065e8b,DESIGN,// TODO maybe a more exact implementation is possible?
-jd3538/Marist-Sakai-11.x,WITHOUT_CLASSIFICATION,// unpack model
-jd3538/Marist-Sakai-11.x,WITHOUT_CLASSIFICATION,// link
-jd3538/Marist-Sakai-11.x,WITHOUT_CLASSIFICATION,// name label
-jd3538/Marist-Sakai-11.x,WITHOUT_CLASSIFICATION,"// eid label, configurable"
-jd3538/Marist-Sakai-11.x,IMPLEMENTATION,"// TODO use config, will need to be passed in the model map"
+jd3538/Marist-Sakai-11.x@73607ee,WITHOUT_CLASSIFICATION,// unpack model
+jd3538/Marist-Sakai-11.x@73607ee,WITHOUT_CLASSIFICATION,// link
+jd3538/Marist-Sakai-11.x@73607ee,WITHOUT_CLASSIFICATION,// name label
+jd3538/Marist-Sakai-11.x@73607ee,WITHOUT_CLASSIFICATION,"// eid label, configurable"
+jd3538/Marist-Sakai-11.x@73607ee,IMPLEMENTATION,"// TODO use config, will need to be passed in the model map"
 jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//Associate the data with the formLayout columns and load the data. 
 jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//1 - Set properties of the form
 jdissou/sigdep01_01@eafa6a6,WITHOUT_CLASSIFICATION,//sets the form size to fill the screen.
