@@ -39,7 +39,7 @@ CesarCoelho__xtcetools,github,https://github.com/CesarCoelho/xtcetools.git,,14b7
 ChGen__AndroidGpuGraphicsTest,github,https://github.com/ChGen/AndroidGpuGraphicsTest.git,,fe21703883db0c2dfcb4c7c24f4c3670efb6a35f,,
 Chiefwright__Mekanism,swh,swh vault,swh:1:snp:42ab1377b950d76804088f6b424ad17b0eb17713,aebbe3bce2c3ae42e4a55112efc21b05ca4da848,ok,2021-04-17T18:19:19.052000+00:00
 ChrisPrein__TUW_SelfOrganizingSystems_WS2021,github,https://github.com/ChrisPrein/TUW_SelfOrganizingSystems_WS2021.git,,a9d137ee30d5e17c1fc3db8ec89cf9aae9fc331a,,
-Clay-Ferguson__Quantizr,github,https://github.com/Clay-Ferguson/Quantizr.git,,1db9da33dadbe3b78ecc231926c9608f344ca47a,,
+Clay-Ferguson__Quantizr,mirror,https://github.com/xmonader/quantizr,,1f98ba5fa6ce2178c54f3e8fa9bbbb71b260d2f9,,
 CoderMMK__RSPS,github,https://github.com/CoderMMK/RSPS.git,,5cf72f4203626e3bf3ab8790072547e260afa3f5,,
 CodingBash__fly-transcription-webapp,github,https://github.com/CodingBash/fly-transcription-webapp.git,,fe57b6c0b678e14e551e602c698e673b3d19a80a,,
 Cotton-Ben__infinispan,github,https://github.com/Cotton-Ben/infinispan.git,,2ba2d9992cd0018829d9ba0b0d4ba74bab49616b,,
@@ -494,7 +494,7 @@ glasser__amock,github,https://github.com/glasser/amock.git,,641cbebc5f5ad7468295
 globalid__walletkit,mirror,https://github.com/blockset-corp/walletkit,,288c3e8e1f4ac1aa1f4590aff27b2b603389814c,not_archived,
 godblessthequeen__spring-cloud-gateway,github,https://github.com/godblessthequeen/spring-cloud-gateway.git,,82f8831b2421e247f976e820cc306d176b88289e,,
 goncalvesm1__Robot_Project,github,https://github.com/goncalvesm1/Robot_Project.git,,9945435d2e3cc37a953f91dd4dbb3869064bc3b2,,
-good-loop__open-code,mirror,https://github.com/Licardo/AndroidChart,,95e327c83763590c11726f6c57269a13dadda7af,not_archived,
+good-loop__open-code,mirror,https://github.com/sodash/open-code,,5d8f66ce318838fb4c305b20c187864b483ae6ec,not_archived,
 googleworkspace__docs-transcripts,github,https://github.com/googleworkspace/docs-transcripts.git,,7ef6c67895bdc17cbc06e5d1f3f31ef1e5f9252d,,
 goyourfly__NovaCustom,github,https://github.com/goyourfly/NovaCustom.git,,c55265060a84b7b5b1f4b42ae096370205c66ad7,,
 gree7__privacy-analysis,github,https://github.com/gree7/privacy-analysis.git,,5353bc35ea2925934d5942fc932c173e3e82870d,,

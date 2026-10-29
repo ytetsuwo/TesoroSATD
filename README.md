@@ -71,6 +71,8 @@ python3 scripts/19_deep_history.py   # 改名・改変を許した履歴探索
 python3 scripts/20_check_msr16.py    # MSR16 の列・語彙を本家と照合
 python3 scripts/21_crossfile.py      # 同一リポジトリ内の別コピーを検索
 python3 scripts/22_name_search.py    # メソッド名で別クローンまで探索
+python3 scripts/23_environment.py    # 実行環境を out/environment.txt に記録
+python3 scripts/00_pin_repos.py      # clone を manifest の HEAD に固定/検査
 ```
 
 ### 1. クロール (01, 02)
@@ -176,6 +178,18 @@ Maldonado の本家データ (`technical_debt_dataset.csv`, 62,275 行) と突�
 55 行は版なし)。`fieldenms/` という壊れたリポジトリ名 1 件は `fieldenms/unknown`
 として出力する。検証は `scripts/20_check_msr16.py --ref <本家CSV>` で再現できる。
 
+## 再現性
+
+- `requirements.txt` は `tree-sitter==0.23.2` / `tree-sitter-java==0.23.5` に固定。
+- `out/repo_manifest.csv` に clone ごとの取得元と HEAD を記録している。
+  **再現前**に `python3 scripts/00_pin_repos.py --pin` で全 clone をその HEAD に固定し、
+  `--check` でドリフト 0 を確認する（現在 956 件が一致）。
+- `python3 scripts/23_environment.py` が Python / tree-sitter / git / commit /
+  manifest のハッシュを `out/environment.txt` に残す。
+- 手動判断は `work/manual_reject.jsonl` と `docs/repo_acquisition.md` に理由つきで残す。
+
+この 3 点を守れば、同じマシンで同じ 4,956 件が得られる。
+
 ## 既知の制約
 
 - **unavailable 6 関数 / 4 リポジトリ**: GitHub 上で削除済みで、SWH と上流の
@@ -214,7 +228,7 @@ Maldonado の本家データ (`technical_debt_dataset.csv`, 62,275 行) と突�
 ```
 tesoro/     Tesoro 本家のデータ (sparse clone, data/ 184MB)
 repos/      clone 960 件 (875 存命 + SWH・ミラー・上流復元 + symlink 4 件, owner__name, 全履歴 + *.java)
-scripts/    パイプライン (01〜20)
+scripts/    パイプライン (00〜23)
 work/       中間状態・ログ (repo_meta.json, clone_state.jsonl, swh_state.jsonl, locate.log)
 out/        成果物 (CSV / JSONL / summary.md / repo_manifest.csv)
 docs/       入手経路の記録 (repo_acquisition.md)
