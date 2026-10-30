@@ -274,8 +274,8 @@ curl -s https://archive.softwareheritage.org/api/1/vault/gitfast/swh:1:rev:51514
 | --- | --- | --- | --- |
 | 19585 | `// Ignores the service worker payment apps in WebLayer until -` | `f019e0c2f94e0`（Liquan (Max) Gu, 2021-06-30） | `weblayer/.../payments/WebLayerPaymentRequestService.java` 63 行 |
 | 20104 | `/** Adds a bookmark with the given {@link Tab} ... */` | `611d21bc6f867a`（Brandon Wylie, 2021-09-27） | `chrome/android/.../bookmarks/BookmarkUtils.java` 236 行 |
-| 24102 | `/** Tests that pressing the app button ... */` | 追加コミットは `d48d2b1639774`（2019-03-13）だが、当時の本文はデータセットと不一致（0.82）のため未統合 | — |
+| 24102 | `/** Tests that pressing the app button ... */` | `d48d2b1639774`（bsheedy, 2019-03-13） | `chrome/android/javatests/.../vr/VrBrowserNativeUiTest.java` 703〜706 行 |
 
 19585 と 20104 は、`zealoussnow__chromium` に `_chromium_full` から該当コミットを fetch し、
 `25_manual_fixes.py` に `at_commit` 付きで登録して CSV に統合した。
-24102 は当時の本文がデータセットと一致しないため未統合。
+24102 も当時の本文が一致したため統合。

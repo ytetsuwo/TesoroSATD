@@ -47,6 +47,9 @@ FIXES = [
      "weblayer/browser/java/org/chromium/weblayer_private/payments/WebLayerPaymentRequestService.java", 63, 64, "history"),
     (20104, 0, "611d21bc6f867af25637c37ed062c6fbc022d70c",
      "chrome/android/java/src/org/chromium/chrome/browser/bookmarks/BookmarkUtils.java", 235, 242, "history"),
+    (24102, 0, "d48d2b1639774af47043bf653ccfb15fd972005b",
+     "chrome/android/javatests/src/org/chromium/chrome/browser/vr/VrBrowserNativeUiTest.java",
+     703, 706, "history"),
     (20778, 0, None, "src/org/sosy_lab/cpachecker/cpa/invariants/CompoundBitVectorInterval.java",
      1585, 1601, "reshaped"),
 ]
