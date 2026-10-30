@@ -7,7 +7,7 @@ survived in another, so the comment is still the same one.
 
 For every comment that has no line yet, its longest text line is searched with
 `git grep` across the whole clone; a hit is accepted when the whole text is
-present in that file (or the similarity is high), and the first line is blamed.
+present on AST comment lines in the recorded span, and the first line is blamed.
 
     python3 scripts/21_crossfile.py [--dry]
 """
@@ -19,21 +19,45 @@ import subprocess
 import sys
 from datetime import datetime
 
-from common import OUT, core, repo_dir, similarity
+import astjava
+from common import OUT, core, norm, read_jsonl, repo_dir
+from comment_matching import candidate_blocks
 
 REJECT = set()
 try:
-    for _line in open(OUT.parent / "work" / "manual_reject.jsonl"):
-        if _line.strip() and not _line.startswith("//"):
-            REJECT.add(json.loads(_line)["id"])
+    for _row in read_jsonl(OUT.parent / "work" / "manual_reject.jsonl"):
+        REJECT.add(_row["id"])
 except OSError:
     pass
 
 _COMMENTS = {}
-for _r in (json.loads(x) for x in open(OUT.parent / "tesoro" / "data" / "tesoro" / "tesoro_comment.json")):
+for _r in read_jsonl(OUT.parent / "tesoro" / "data" / "tesoro" / "tesoro_comment.json"):
     _COMMENTS.setdefault(_r["id"], []).append(_r)
 
-MIN = 0.95
+
+def relocated_span(text, lines):
+    """Return a complete comment-only span, never surrounding code text.
+
+    Count nonempty source lines (including markers), but preserve intervening
+    blank lines in the result. AST node text excludes code before trailing
+    comments, even when the line mask alone would allow that code through.
+    """
+    wanted = [norm(line) for line in text.splitlines() if norm(line)]
+    wanted_core = [value for value in map(core, wanted) if value]
+    if not wanted_core:
+        return []
+    tree = astjava.parse("\n".join(lines).encode())
+    mask = astjava.comment_lines(tree)
+    bodies = {}
+    for comment in astjava.comments(tree):
+        for offset, fragment in enumerate(comment["text"].splitlines()):
+            line = comment["start"] + offset - 1
+            bodies.setdefault(line, []).append(core(fragment))
+    for indices in candidate_blocks(lines, len(wanted), 0, len(lines), mask):
+        combined = " ".join(value for i in indices for value in bodies.get(i, []))
+        if all(value in combined for value in wanted_core):
+            return list(range(indices[0] + 1, indices[-1] + 2))
+    return []
 
 
 def blame(d, path, ln):
@@ -83,7 +107,7 @@ def main() -> int:
             g = subprocess.run(["git", "-C", str(d), "-c", "core.quotepath=false",
                                 "grep", "-l", "-F", anchor, "--", "*.java"],
                                capture_output=True, text=True)
-            files = [l for l in g.stdout.splitlines() if l]
+            files = sorted(l for l in g.stdout.splitlines() if l)
             hit = None
             for f in files:
                 p = d / f
@@ -91,26 +115,16 @@ def main() -> int:
                     lines = p.read_text(errors="replace").splitlines()
                 except OSError:
                     continue
-                i = next((i for i, l in enumerate(lines) if anchor in l), None)
-                if i is None:
-                    continue
-                span = lines[max(0, i - 6):i + len(cl) + 6]
-                blob = " ".join(core(x) for x in span)
-                ok = all(x in blob for x in cl)
-                if ok:
-                    # the anchor may sit inside the block, so back up to its start
-                    off = next((k for k, x in enumerate(cl) if x and x in core(lines[i])), 0)
-                    start = max(0, i - off)
-                    while start > 0 and core(lines[start - 1]) and "//" not in lines[start - 1] \
-                            and "/*" not in lines[start - 1] and "*" not in lines[start - 1]:
-                        break
-                    hit = (f, start + 1)
+                span = relocated_span(text, lines)
+                if span:
+                    hit = (f, span)
                     break
             if not hit:
                 continue
-            f, ln = hit
+            f, span = hit
+            ln = span[0]
             info = blame(d, f, ln) if not dry else {}
-            c["lines"] = list(range(ln, ln + len(cl)))
+            c["lines"] = span
             c["match"] = "relocated"
             c["commit"] = info.get("sha")
             c["author"] = info.get("author")

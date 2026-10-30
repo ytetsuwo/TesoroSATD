@@ -21,7 +21,7 @@ def rows():
         return [row for row in csv.DictReader(file) if row["commit_id"] and row["comment_line"]]
 
 
-def main():
+def main() -> int:
     rs = rows()
     sources = SourceFiles()
     checks = (("text", lambda row: check_text(row, sources)),
@@ -37,7 +37,7 @@ def main():
         for row, error in bad[:30]:
             print(f"  {row['function_id']:>6} {row['repo']} {row['path']}:{row['comment_line']} "
                   f"[{row['match']}] {error}")
-        return
+        return int(bool(bad))
 
     n = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 12
     sample = random.Random(7).sample(rs, n)
@@ -55,7 +55,8 @@ def main():
             if error:
                 print(f"       {key}: {error}")
     print("\n" + ", ".join(f"{key} {count}/{len(sample)}" for key, count in tally.items()))
+    return int(any(count != len(sample) for count in tally.values()))
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

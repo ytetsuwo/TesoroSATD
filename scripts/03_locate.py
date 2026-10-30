@@ -217,7 +217,7 @@ def grep(d: Path, patterns: list):
         parts = line.split(":", 2)
         if len(parts) == 3 and parts[1].isdigit():
             hits.append((parts[0].lstrip("./"), int(parts[1]), norm(parts[2])))
-    return hits
+    return sorted(hits)
 
 
 # ---------------------------------------------------------------- locating
@@ -298,7 +298,8 @@ def locate(repo: str, func: dict, comments: list) -> dict:
                 cands.add((path, max(1, ln - decl_idx)))
     # scan the files with the most anchor hits first: token scoring is per file
     per_path = Counter(path for path, _, _ in hits)
-    order = {p: i for i, (p, _) in enumerate(per_path.most_common())}
+    ranked_paths = sorted(per_path, key=lambda p: (-per_path[p], p))
+    order = {p: i for i, p in enumerate(ranked_paths)}
     cands = sorted(cands, key=lambda c: (order.get(c[0], 999), c))[:MAX_FILE_CANDIDATES * 10]
 
     best = None

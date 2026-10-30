@@ -19,6 +19,9 @@ from common import OUT, core, repo_dir
 
 # (function_id, comment_id, revision or None for HEAD, path, first, last, match)
 FIXES = [
+    (19831, 0, None,
+     "MainProject/use-3.0.7/src/main/org/tzi/use/uml/sys/soil/MOperationCallStatement.java",
+     82, 86, "structural"),
     (15634, 14, "e0aa47caf", "src/main/java/quanta/actpub/ActPubService.java", 238, 238, "history"),
     (16350, 0, "436c81aa7f353c2cc26c3ce866cd7f750883a826",
      "src/main/java/uk/gov/hmcts/reform/iacaseapi/domain/handlers/postsubmit/ReviewTimeExtensionConfirmation.java",
@@ -98,6 +101,8 @@ def main() -> int:
                       "path_snapshot": fpath, "path_at": fpath})
             if rev:
                 c["at_commit"] = rev
+            else:
+                c.pop("at_commit", None)
             n += 1
     tmp = path.with_suffix(".jsonl.tmp")
     tmp.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))

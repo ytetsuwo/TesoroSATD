@@ -189,9 +189,12 @@ Maldonado の本家データ (`technical_debt_dataset.csv`, 62,275 行) と突�
   manifest のハッシュを `out/environment.txt` に残す。
 - 手動判断は `work/manual_reject.jsonl` と `docs/repo_acquisition.md` に理由つきで残す。
 
-これらは再実行の前提条件であり、同一結果の保証ではない。旧版の通し再実行で
-候補選択の揺れと誤対応を確認しているため、件数だけでなく行ごとの来歴と本文検証を
-比較する必要がある（[検証記録](docs/refactoring_benchmark.md)）。
+これらは再実行の前提条件であり、任意の環境での同一結果を保証するものではない。
+検索結果は並べ替え、ヒット数同点の候補はパス順に評価する。別ファイル探索では
+ASTのコメント本文だけを照合し、空行を含む完全な範囲を記録する。
+`05_verify.py`は本文・blame・コミット検証の失敗時に終了コード1を返すため、
+`reproduce.sh`も本文検証失敗で停止する。件数だけでなく、行ごとの来歴も比較する
+（[修正と検証の記録](docs/reproducibility_fix.md)）。
 
 ## 保守・性能測定
 
@@ -211,7 +214,8 @@ python3 -m unittest discover -s tests -v
 python3 scripts/26_benchmark.py --repeat 3 --output work/tmp/benchmark.json
 ```
 
-照合閾値と候補の優先順位は変更していない。固定5ソース・3回の中央値で、AST解析は
+リファクタリングでは照合閾値を維持し、その後の再現性修正で同点候補の順序を固定した。
+固定5ソース・3回の中央値で、AST解析は
 約4.3倍、コメント照合は約3.7倍高速化した。これは通し実行全体の倍率ではない。
 測定条件と旧版比較は [性能・互換性の記録](docs/refactoring_benchmark.md) を参照。
 
