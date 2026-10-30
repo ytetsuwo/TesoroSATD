@@ -20,6 +20,7 @@ from difflib import SequenceMatcher
 from pathlib import Path
 
 import astjava
+from comment_matching import CommentIndex, FUZZY_MIN, MARKER_ANY, cbody, map_comment
 from common import (OUT, WORK, WS, alnum, body_end, core, doc_start, head_of, load_tesoro,
                     mclass, norm, similarity, repo_dir, run, strip_marker)
 
@@ -30,9 +31,6 @@ SIG = re.compile(r"^[0-9a-f]{40} ")
 # lot even when the method is plainly the same one. Tokens survive that.
 TOKEN = re.compile(r'"[^"]*"|\'[^\']*\'|[A-Za-z_$][\w$]*|\d+|\S')
 MIN_TOKENS = 20
-# A comment marker anywhere on the line: trailing comments sit after code.
-MARKER_ANY = re.compile(r"//|/\*|\*/|^\s*\*")
-FUZZY_MIN = 0.80
 
 
 def strip_comments(text: str) -> str:
@@ -391,6 +389,7 @@ def locate(repo: str, func: dict, comments: list) -> dict:
                 start + len(ref) - 1)
     lo = doc_start(lines, start) - 1
     used = set()
+    comment_index = CommentIndex(lines)
     plans = []
     for r in comments:
         cl = [norm(x) for x in (r.get("comment") or "").splitlines() if norm(x)]
@@ -398,7 +397,7 @@ def locate(repo: str, func: dict, comments: list) -> dict:
         # the javadoc block directly above it. Searching further out used to
         # attach comments of a neighbouring method to this one.
         lines_abs, kind = map_comment(cl, lines, start, start + len(ref) - 1, used=used,
-                                      lo=lo, hi=b_end, is_comment=mask)
+                                      lo=lo, hi=b_end, is_comment=mask, index=comment_index)
         used.update(lines_abs)
         plans.append([r, lines_abs, kind])
 
@@ -437,7 +436,7 @@ def locate(repo: str, func: dict, comments: list) -> dict:
             continue
         cl = [norm(x) for x in (r.get("comment") or "").splitlines() if norm(x)]
         lines_abs, kind = map_comment(cl, lines, start, start + len(ref) - 1, used=used,
-                                      lo=0, hi=len(lines), is_comment=mask)
+                                      lo=0, hi=len(lines), is_comment=mask, index=comment_index)
         if kind in ("exact", "structural") and not set(lines_abs) & used:
             plan[1] = lines_abs
             plan[2] = "relocated"
@@ -477,113 +476,6 @@ def locate(repo: str, func: dict, comments: list) -> dict:
         res["commit"] = mapped[0]["commit"]
         res["path_at_commit"] = path_at_commit(d, path, mapped[0]["commit"])
     return res
-
-
-def cbody(line: str) -> str:
-    """Comment text on a line (markers stripped, code before it dropped)."""
-    m = MARKER_ANY.search(line)
-    return MARKER_ANY.sub(" ", line[m.start():]) if m else ""
-
-
-def map_comment(cl, lines, start, end, span=150, used=None, lo=None, hi=None,
-                is_comment=None):
-    """Map a dataset comment onto file lines.
-
-    Returns (lines_abs, kind) where kind is "exact", "structural", "fuzzy" or None.
-    Comments above the function are often outside the aligned code window and
-    may have been edited since the crawl, so a same-shape block right above the
-    function is accepted as a structural match. When the wording itself changed,
-    the closest comment run in the window is accepted as "fuzzy" (token overlap
-    >= FUZZY_MIN), so the row records the commit that wrote the current wording.
-    """
-    if not cl:
-        return [], None
-
-    if lo is None:
-        lo = max(0, start - 1 - span)
-    if hi is None:
-        hi = min(len(lines), end + span)
-    hi = min(hi, len(lines))
-    n = len(cl)
-
-    def candidates():
-        """Blocks that carry `n` comment lines, with (first, last) indexes.
-
-        Blank lines between comment lines are skipped. Tesoro stores one record
-        per comment, but a file may separate two adjacent blocks with a blank
-        line, or a `/* */` block may carry empty `*` lines. Counting those as
-        content made such blocks miss exact/structural and fall through to fuzzy.
-        """
-        for p in range(lo, hi):
-            if not lines[p].strip():
-                continue
-            if is_comment is not None and not is_comment[p + 1]:
-                continue
-            idx, q = [], p
-            while q < hi and len(idx) < n:
-                if not lines[q].strip():
-                    q += 1
-                    continue
-                if is_comment is not None and not is_comment[q + 1]:
-                    break          # a code line ends the comment run
-                idx.append(q)
-                q += 1
-            if len(idx) == n:
-                yield idx
-
-    exact, struct = [], []
-    for idx in candidates():
-        cores = [core(lines[i]) for i in idx]
-        cores_eq = sum(1 for a, c in zip(cl, cores) if c and core(a) == c)
-        if cores_eq == n:
-            exact.append(idx)
-        elif n <= 1 or (mclass(lines[idx[0]]) and mclass(lines[idx[0]]) == mclass(cl[0])
-                        and mclass(lines[idx[-1]]) == mclass(cl[-1])):
-            if n == 1:
-                if core(cl[0]) and core(cl[0]) in cores[0]:
-                    struct.append(idx)
-            elif cores_eq >= 1:
-                struct.append(idx)
-    if exact:
-        idx = min(exact, key=lambda x: abs((x[-1] + 1) - start))
-        return list(range(idx[0] + 1, idx[-1] + 2)), "exact"
-    if struct:
-        idx = min(struct, key=lambda x: abs((x[-1] + 1) - start))
-        return list(range(idx[0] + 1, idx[-1] + 2)), "structural"
-
-    # --- fuzzy: same comment, reworded since the crawl
-    want = " ".join(core(x) for x in cl)
-    if len(alnum(want)) < 12:
-        return [], None
-    used = used or set()
-    best = None
-    p = lo
-    while p < hi:
-        if p in used or not cbody(lines[p]) or (is_comment is not None and not is_comment[p + 1]):
-            p += 1
-            continue
-        q, parts, first, last = p, [], None, None
-        while q < hi and len(parts) <= n + 4:
-            body = cbody(lines[q])
-            if not body:
-                if lines[q].strip():      # real code: the comment run ends
-                    break
-                q += 1                    # blank line: the block continues
-                continue
-            if first is None:
-                first = q
-            last = q
-            parts.append(body)
-            q += 1
-        got = " ".join(core(x) for x in parts)
-        if got:
-            r = similarity(want, got)
-            if r >= FUZZY_MIN and (best is None or r > best[0]):
-                best = (r, first, last)
-        p = q
-    if best:
-        return list(range(best[1] + 1, best[2] + 2)), "fuzzy"
-    return [], None
 
 
 def main():

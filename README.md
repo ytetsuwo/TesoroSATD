@@ -189,7 +189,31 @@ Maldonado の本家データ (`technical_debt_dataset.csv`, 62,275 行) と突�
   manifest のハッシュを `out/environment.txt` に残す。
 - 手動判断は `work/manual_reject.jsonl` と `docs/repo_acquisition.md` に理由つきで残す。
 
-この 3 点を守れば、同じマシンで同じ 4,956 件が得られる。
+これらは再実行の前提条件であり、同一結果の保証ではない。旧版の通し再実行で
+候補選択の揺れと誤対応を確認しているため、件数だけでなく行ごとの来歴と本文検証を
+比較する必要がある（[検証記録](docs/refactoring_benchmark.md)）。
+
+## 保守・性能測定
+
+番号付きスクリプトは処理段階を表し、共通ロジックは役割別に分離している。
+既存の `astjava` / `03_locate` / `05_verify` の公開関数はそのまま利用できる。
+
+| 共通モジュール | 役割 |
+| --- | --- |
+| `java_tree.py` / `source_lines.py` | AST の走査結果と行番号索引。Parser はスレッドごとに保持 |
+| `comment_matching.py` | exact → structural → fuzzy の照合。ファイル内の正規化結果を再利用 |
+| `provenance_checks.py` | 本文・blame・コミット存在の検証規則 |
+| `source_files.py` | 検証実行内だけのファイルキャッシュ（上限128項目、版とパスを区別） |
+| `git_auth.py` | Git 用環境変数。CLI の認証取得はプロセス内で再利用 |
+
+```bash
+python3 -m unittest discover -s tests -v
+python3 scripts/26_benchmark.py --repeat 3 --output work/tmp/benchmark.json
+```
+
+照合閾値と候補の優先順位は変更していない。固定5ソース・3回の中央値で、AST解析は
+約4.3倍、コメント照合は約3.7倍高速化した。これは通し実行全体の倍率ではない。
+測定条件と旧版比較は [性能・互換性の記録](docs/refactoring_benchmark.md) を参照。
 
 ## 既知の制約
 

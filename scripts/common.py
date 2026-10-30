@@ -6,12 +6,13 @@ The pipeline maps every Tesoro function back to (repo, file, commit) so that
 from __future__ import annotations
 
 import json
-import os
 import re
 import subprocess
 import unicodedata
 from difflib import SequenceMatcher
 from pathlib import Path
+
+from git_auth import git_env
 
 ROOT = Path(__file__).resolve().parent.parent
 TESORO = ROOT / "tesoro"
@@ -52,23 +53,6 @@ def load_tesoro():
 
 def repo_dir(repo: str) -> Path:
     return REPOS / repo.replace("/", "__")
-
-
-def git_env():
-    """Git env that authenticates GitHub fetches without persisting the token.
-
-    GitHub answers anonymous partial-clone (filter=blob:none) requests with
-    HTTP 400 once the request volume grows, so rewrite the remote URL to a
-    token-authenticated one for every git subprocess.
-    """
-    token = os.environ.get("GH_TOKEN") or subprocess.run(
-        ["gh", "auth", "token"], capture_output=True, text=True).stdout.strip()
-    env = os.environ.copy()
-    env["GIT_CONFIG_COUNT"] = "1"
-    env["GIT_CONFIG_KEY_0"] = "url.https://x-access-token:%s@github.com/.insteadOf" % token
-    env["GIT_CONFIG_VALUE_0"] = "https://github.com/"
-    env["GIT_TERMINAL_PROMPT"] = "0"
-    return env
 
 
 def run(cmd, cwd, timeout=900, input_=None):

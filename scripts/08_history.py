@@ -122,10 +122,11 @@ def comment_map(d, sha, path, start, end, lines, comments, tree=None):
     mask = astjava.comment_lines(tree)
     out_comments = []
     used = set()
+    comment_index = L.CommentIndex(lines)
     for r in comments:
         cl = [norm(x) for x in (r.get("comment") or "").splitlines() if norm(x)]
         lines_abs, kind = L.map_comment(cl, lines, start, end, used=used,
-                                        lo=lo, hi=hi, is_comment=mask)
+                                        lo=lo, hi=hi, is_comment=mask, index=comment_index)
         used.update(lines_abs)
         if not lines_abs:
             out_comments.append({"comment_id": r.get("comment_id"),
