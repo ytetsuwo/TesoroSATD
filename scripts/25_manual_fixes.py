@@ -15,7 +15,7 @@ import subprocess
 import sys
 from datetime import datetime
 
-from common import OUT, repo_dir
+from common import OUT, core, repo_dir
 
 # (function_id, comment_id, revision or None for HEAD, path, first, last, match)
 FIXES = [
@@ -43,6 +43,10 @@ FIXES = [
     (15634, 0, "cce32e091", "src/main/java/quanta/actpub/ActPubService.java", 115, 132, "history"),
     (34588, 0, "adeca0a5b", "purpleLib/src/main/java/com/purplehillsbooks/json/JSONObject.java",
      1580, 1610, "history"),
+    (19585, 0, "f019e0c2f94e08e66572956735f3f5c6969db5d4",
+     "weblayer/browser/java/org/chromium/weblayer_private/payments/WebLayerPaymentRequestService.java", 63, 64, "history"),
+    (20104, 0, "611d21bc6f867af25637c37ed062c6fbc022d70c",
+     "chrome/android/java/src/org/chromium/chrome/browser/bookmarks/BookmarkUtils.java", 235, 242, "history"),
     (20778, 0, None, "src/org/sosy_lab/cpachecker/cpa/invariants/CompoundBitVectorInterval.java",
      1585, 1601, "reshaped"),
 ]
@@ -76,7 +80,12 @@ def main() -> int:
         if not loc:
             continue
         d = repo_dir(loc["repo"])
-        info = blame(d, rev, fpath, first)
+        # blame the first line that carries text: the opening /** can be older
+        lines = subprocess.run(["git", "-C", str(d), "show", f"{rev}:{fpath}"],
+                               capture_output=True, text=True).stdout.splitlines() \
+            if rev else (d / fpath).read_text(errors="replace").splitlines()
+        target = next((i for i in range(first, last + 1) if core(lines[i - 1])), first)
+        info = blame(d, rev, fpath, target)
         for c in loc.get("comments") or []:
             if c["comment_id"] != cid:
                 continue

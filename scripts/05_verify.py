@@ -16,8 +16,7 @@ from common import OUT, alnum, core, git, norm, repo_dir, similarity, strip_mark
 
 def rows():
     with open(OUT / "tesoro_provenance.csv") as f:
-        return [r for r in csv.DictReader(f)
-                if r["status"] in ("ok", "ok_history") and r["comment_line"]]
+        return [r for r in csv.DictReader(f) if r["commit_id"] and r["comment_line"]]
 
 
 def content(r):

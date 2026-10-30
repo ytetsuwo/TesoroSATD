@@ -478,7 +478,7 @@ Chiefwright/Mekanism@0d4b509,WITHOUT_CLASSIFICATION,//Extract fluid from dropper
 Chiefwright/Mekanism@bfa56d3,WITHOUT_CLASSIFICATION,"//If we were able to actually extract it from the item, then insert it into our gas tank"
 Chiefwright/Mekanism@bfa56d3,IMPLEMENTATION,//TODO: Print warning/error
 ChrisPrein/TUW_SelfOrganizingSystems_WS2021@b124675,DEFECT,// FIXME: maybe skip writing the SOM at 0 iterations (0 mod x == 0 ...)
-Clay-Ferguson/Quantizr@b2c8d78,DESIGN,"/*
+Clay-Ferguson/Quantizr@9c84f6b,DESIGN,"/*
      * When 'node' has been created under 'parent' (by the sessionContext user) this will send a
      * notification to foreign servers. This call returns immediately and delegates the actuall
      * proccessing to a daemon thread.
@@ -10100,9 +10100,9 @@ zealoussnow/chromium@b2a61e5,DEFECT,"// TODO(crbug.com/948518): This is a band-a
      */"
 zealoussnow/chromium,IMPLEMENTATION,// TODO(qinmin): May need to report the error to the caller. crbug.com/356498.
 zealoussnow/chromium,IMPLEMENTATION,// TODO(dalecurtis): We may want to drop transient errors here.
-zealoussnow/chromium,IMPLEMENTATION,"// Ignores the service worker payment apps in WebLayer until -
+zealoussnow/chromium@f019e0c,IMPLEMENTATION,"// Ignores the service worker payment apps in WebLayer until -
 // TODO(crbug.com/1224420): WebLayer supports Service worker payment apps."
-zealoussnow/chromium,WITHOUT_CLASSIFICATION,"/**
+zealoussnow/chromium@611d21b,WITHOUT_CLASSIFICATION,"/**
      * Adds a bookmark with the given {@link Tab}. This will reset last used parent if it fails to
      * add a bookmark.
      *
