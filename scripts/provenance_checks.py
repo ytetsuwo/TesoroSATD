@@ -72,10 +72,30 @@ def check_commit(row, sources=None):
         lines = (sources if sources is not None else SourceFiles()).read(directory, path, sha)
     except OSError as error:
         return f"show failed: {error}"
+    want = _cores(row.get("commenttext", "").splitlines())
+    if not want and "comment_line" in row:
+        # Symbols have no alphanumeric core: verify the actual blamed line,
+        # rather than accepting any file or looking for an empty substring.
+        from strict_verification import parse_blame
+
+        start = int(row["comment_line"])
+        end = start + int(row["n_comment_lines"]) - 1
+        revision = [] if row.get("at_head") == "True" else [row["snapshot_commit"]]
+        snapshot_path = row.get("path_snapshot") or row["path"]
+        result = git(directory, "blame", "--line-porcelain", "-L", f"{start},{end}",
+                     *revision, "--", snapshot_path)
+        if result.returncode != 0:
+            return f"blame failed: {result.stderr.strip()[:120]}"
+        evidence = [record for record in parse_blame(result.stdout) if record["sha"] == sha]
+        valid = evidence and all(
+            record.get("path") == path
+            and 1 <= record["original_line"] <= len(lines)
+            and lines[record["original_line"] - 1] == record["text"]
+            for record in evidence)
+        return None if valid else "symbol absent at blamed origin"
     if row["match"] in ("fuzzy", "position"):
         # Existing policy: the blamed commit needs the file, not the old wording.
         return None if any(line.strip() for line in lines) else "empty file at commit"
-    want = _cores(row["commenttext"].splitlines())
     have = " ".join(_cores(lines))
     return None if any(value in have for value in want) else "comment absent in that commit"
 

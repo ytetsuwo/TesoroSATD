@@ -19,6 +19,10 @@ from common import OUT, core, repo_dir
 
 # (function_id, comment_id, revision or None for HEAD, path, first, last, match)
 FIXES = [
+    (16008, 1, None, "core/src/de/sengerts/tictactoe/model/players/AIPlayer.java",
+     37, 37, "relocated"),
+    (784, 0, None, "reactor-core/src/test/java/reactor/core/publisher/FluxPublishOnTest.java",
+     988, 988, "relocated"),
     (19831, 0, None,
      "MainProject/use-3.0.7/src/main/org/tzi/use/uml/sys/soil/MOperationCallStatement.java",
      82, 86, "structural"),
@@ -73,6 +77,8 @@ def blame(d, rev, path, ln):
             out["date"] = datetime.fromtimestamp(int(line[12:])).strftime("%Y-%m-%d")
         elif line.startswith("summary "):
             out["summary"] = line[8:]
+        elif line.startswith("filename "):
+            out["path"] = line[9:]
     return out
 
 
@@ -98,7 +104,7 @@ def main() -> int:
             c.update({"lines": list(range(first, last + 1)), "match": kind,
                       "commit": info.get("sha"), "author": info.get("author"),
                       "author_time": info.get("date"), "summary": info.get("summary"),
-                      "path_snapshot": fpath, "path_at": fpath})
+                      "path_snapshot": fpath, "path_at": info.get("path") or fpath})
             if rev:
                 c["at_commit"] = rev
             else:

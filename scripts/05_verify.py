@@ -3,6 +3,8 @@
 
   python3 scripts/05_verify.py [N]     fixed random sample, 3 checks
   python3 scripts/05_verify.py --full  every mapped row, text check only
+  python3 scripts/05_verify.py --all-checks  every mapped row, all 3 legacy checks
+  python3 scripts/27_strict_audit.py  independent strict AST/body/blame/origin audit
 
 Rules live in provenance_checks; this file selects rows and reports results.
 """
@@ -27,6 +29,21 @@ def main() -> int:
     checks = (("text", lambda row: check_text(row, sources)),
               ("blame", check_blame),
               ("show", lambda row: check_commit(row, sources)))
+    if "--all-checks" in sys.argv:
+        tally = {key: 0 for key, _ in checks}
+        bad = []
+        for row in rs:
+            for key, check in checks:
+                error = check(row)
+                if error is None:
+                    tally[key] += 1
+                else:
+                    bad.append((row, key, error))
+        print(", ".join(f"{key}: {count} ok / {len(rs) - count} bad of {len(rs)}"
+                        for key, count in tally.items()))
+        for row, key, error in bad[:30]:
+            print(f"  {row['function_id']}:{row['comment_id']} {key}: {error}")
+        return int(bool(bad))
     if "--full" in sys.argv:
         bad = []
         for row in rs:

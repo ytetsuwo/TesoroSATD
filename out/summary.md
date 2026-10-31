@@ -1,6 +1,6 @@
 # Tesoro provenance (repo / file / commit)
 
-生成: 2026-10-31 08:42
+生成: 2026-10-31 11:21
 
 ## カバレッジ
 
@@ -62,3 +62,17 @@ python3 scripts/04_export.py       # CSV / レポート
 python3 scripts/05_verify.py --full  # 全行のテキスト検証
 python3 scripts/06_blame.py 8431   # 個別の来歴と blame
 ```
+
+## 来歴の厳密監査
+
+来歴付き件数と検証の確実性は別集計です。全コメントの個別版を検査しています。
+
+- 確定: 4589
+- 要確認: 348
+- 不一致: 24
+- 検証不能: 0
+- 未対応: 20
+
+確定は本文・関数所属・本文行の最終更新者についての自動判定であり、
+最初の導入コミットや同型コピーの唯一の起源を保証しません。
+詳細: `out/strict_audit_summary.md` / `out/strict_audit.jsonl`。

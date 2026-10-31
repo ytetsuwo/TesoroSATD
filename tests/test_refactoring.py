@@ -216,6 +216,23 @@ class VerificationTests(unittest.TestCase):
 
 
 class CommitVerificationTests(unittest.TestCase):
+    def test_symbol_history_requires_exact_blame_origin(self):
+        sha = "a" * 40
+        row = {"repo": "example/project", "commit_id": sha,
+               "path": "New.java", "path_at_commit": "Old.java",
+               "path_snapshot": "New.java", "at_head": "True",
+               "comment_line": "10", "n_comment_lines": "1",
+               "match": "history", "commenttext": "} //"}
+        output = f"{sha} 2 10 1\nfilename Old.java\n\t}} //\n"
+        result = SimpleNamespace(returncode=0, stdout=output, stderr="")
+        sources = SourceFiles()
+        with patch("provenance_checks.git", return_value=result), \
+                patch.object(sources, "read", return_value=["class A {", "} //"]):
+            self.assertIsNone(provenance_checks.check_commit(row, sources))
+        with patch("provenance_checks.git", return_value=result), \
+                patch.object(sources, "read", return_value=["} //", "// unrelated"]):
+            self.assertIsNotNone(provenance_checks.check_commit(row, sources))
+
     def test_snapshot_path_and_body_check(self):
         row = {"repo": "example/project", "commit_id": "abc123",
                "path": "New.java", "path_at_commit": "Old.java",

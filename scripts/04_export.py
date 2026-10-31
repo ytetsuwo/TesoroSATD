@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import csv
 import datetime
+import hashlib
 import json
 from collections import Counter
 
@@ -185,6 +186,19 @@ def main():
         "python3 scripts/06_blame.py 8431   # 個別の来歴と blame",
         "```",
     ]
+    audit_path = OUT / "strict_audit_summary.json"
+    if audit_path.exists():
+        audit = json.loads(audit_path.read_text())
+        fingerprint = hashlib.sha256((OUT / "tesoro_provenance.csv").read_bytes()).hexdigest()
+        if audit.get("provenance_sha256") == fingerprint and audit.get("full_attribution"):
+            labels = {"confirmed": "確定", "review": "要確認", "mismatch": "不一致",
+                      "unverifiable": "検証不能", "unmapped": "未対応"}
+            lines += ["", "## 来歴の厳密監査", "",
+                      "来歴付き件数と検証の確実性は別集計です。全コメントの個別版を検査しています。", ""]
+            lines += [f"- {label}: {audit['counts'].get(status, 0)}" for status, label in labels.items()]
+            lines += ["", "確定は本文・関数所属・本文行の最終更新者についての自動判定であり、",
+                      "最初の導入コミットや同型コピーの唯一の起源を保証しません。",
+                      "詳細: `out/strict_audit_summary.md` / `out/strict_audit.jsonl`。"]
     (OUT / "summary.md").write_text("\n".join(lines) + "\n")
     print("\n".join(lines))
 

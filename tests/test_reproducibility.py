@@ -88,12 +88,13 @@ class ManualFixTests(unittest.TestCase):
             with patch.object(fixes, "OUT", directory), \
                     patch.object(fixes, "repo_dir", return_value=directory), \
                     patch.object(fixes, "FIXES", [(1, 0, None, "A.java", 1, 1, "exact")]), \
-                    patch.object(fixes, "blame", return_value={"sha": "a" * 40}), \
+                    patch.object(fixes, "blame", return_value={"sha": "a" * 40, "path": "old/A.java"}), \
                     contextlib.redirect_stdout(io.StringIO()):
                 self.assertEqual(fixes.main(), 0)
             comment = json.loads(output.read_text())["comments"][0]
             self.assertNotIn("at_commit", comment)
             self.assertEqual(comment["path_snapshot"], "A.java")
+            self.assertEqual(comment["path_at"], "old/A.java")
             self.assertEqual(comment["lines"], [1])
 
 
@@ -113,7 +114,7 @@ class VerificationExitTests(unittest.TestCase):
                                     env=environment, capture_output=True, text=True)
             self.assertEqual(result.returncode, 1, result.stderr)
             invoked = calls.read_text().splitlines()
-            self.assertEqual(invoked[-1], "scripts/05_verify.py --full")
+            self.assertEqual(invoked[-1], "scripts/05_verify.py --all-checks")
             self.assertNotIn("scripts/24_consistency.py", invoked)
 
     def test_failure_returns_nonzero_in_full_and_sample_modes(self):
