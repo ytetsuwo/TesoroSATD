@@ -127,10 +127,11 @@ class Auditor:
             lines = self.sources.read(directory, path, revision)
             tree = astjava.parse("\n".join(lines).encode())
             fragments = {}
-            for comment in astjava.comments(tree):
+            nodes = astjava.comments(tree)
+            for comment in nodes:
                 for offset, text in enumerate(comment["text"].splitlines()):
                     fragments.setdefault(comment["start"] + offset, []).append(body(text))
-            self.trees[key] = (lines, tree, fragments)
+            self.trees[key] = (lines, tree, fragments, nodes)
             if len(self.trees) > self.maxsize:
                 self.trees.popitem(last=False)
         self.trees.move_to_end(key)
@@ -138,7 +139,7 @@ class Auditor:
 
     def syntax(self, row):
         try:
-            lines, tree, fragments = self.source(row)
+            lines, tree, fragments, nodes = self.source(row)
             first = int(row["comment_line"])
             last = first + int(row["n_comment_lines"]) - 1
         except (OSError, ValueError, KeyError) as error:
@@ -151,25 +152,54 @@ class Auditor:
         non_comment = [i for i in selected if lines[i - 1].strip() and i not in fragments]
         actual = "\n".join(" ".join(fragments.get(i, [])) for i in selected).strip()
         wanted = dataset_body(row["commenttext"])
-        raw_fragments = []
-        for comment in astjava.comments(tree):
-            raw_fragments.extend(text for offset, text in enumerate(comment["text"].splitlines())
-                                 if first <= comment["start"] + offset <= last)
-        empty_symbol_equal = not compact(wanted) and not compact(actual) \
-            and compact(row["commenttext"]) == compact("\n".join(raw_fragments))
-        a, b = compact(wanted), compact(actual)
+        a = compact(wanted)
+        contained = [node for node in nodes if first <= node["start"] and node["end"] <= last]
+        groups = []
+        ordered = sorted(contained, key=lambda node: (node["start"], node["end"]))
+        for index, node in enumerate(ordered):
+            text = body(node["text"])
+            groups.append((node["start"], node["end"], text))
+            end, parts = node["end"], [text]
+            for following in ordered[index + 1:]:
+                if following["start"] == end + 1:
+                    parts.append(body(following["text"]))
+                    end = following["end"]
+                elif following["start"] > end + 1:
+                    break
+            if len(parts) > 1:
+                groups.append((node["start"], end, "\n".join(parts)))
+        exact = next(((start, end, text) for start, end, text in groups
+                      if a and compact(text) == a), None)
+        empty_exact = next(((start, end, text) for start, end, text in groups
+                            if not a and not compact(text)), None)
+        prefix = next(((start, end, text) for start, end, text in groups
+                       if a and core(wanted) and compact(text).startswith(a)), None)
+        incomplete_empty = next((node for node in nodes
+                                 if not a and node["start"] <= first <= last <= node["end"]), None)
+        combined_exact = bool(a) and compact(actual) == a
+        combined_empty = not a and not compact(actual)
+        source_body = exact[2] if exact else prefix[2] if prefix else actual
+        b = compact(source_body)
         ratio = SequenceMatcher(None, a, b, autojunk=False).ratio()
-        # Ordered, complete body equality is stronger than any shared-line check.
-        if (a and a == b) or empty_symbol_equal:
+        # Compare AST node groups: one line can hold several comments, adjacent
+        # line comments can form one dataset comment.
+        if exact or combined_exact:
             text_status = "review" if not core(wanted) else "confirmed"
             text_reason = "symbol matches; context still requires review" if text_status == "review" \
                 else "complete ordered comment body matches"
+        elif empty_exact or combined_empty:
+            text_status, text_reason = "review", "empty comment matches; context still requires review"
+        elif incomplete_empty is not None:
+            text_status, text_reason = "review", "empty documentation comment extends beyond recorded span"
+        elif prefix:
+            text_status, text_reason = "review", "recorded body is a prefix of a longer comment"
         elif a and b and core(wanted) and ratio >= 0.80:
             text_status, text_reason = "review", "wording differs; not full confirmation"
         else:
             text_status, text_reason = "mismatch", "comment body differs"
         text_check = verdict(text_status, text_reason, similarity=round(ratio, 6),
-                             dataset_body=wanted, source_body=actual,
+                             dataset_body=wanted, source_body=source_body,
+                             matched=exact[2] if exact else empty_exact[2] if empty_exact else None,
                              differences=[op for op in SequenceMatcher(None, a, b, autojunk=False).get_opcodes()
                                           if op[0] != "equal"])
         methods = astjava.methods(tree)
@@ -206,7 +236,7 @@ class Auditor:
     def attribution(self, row):
         """Validate substantive lines, not a SHA that occurs only on a delimiter."""
         try:
-            lines, tree, fragments = self.source(row)
+            lines, tree, fragments, nodes = self.source(row)
             first = int(row["comment_line"])
             last = first + int(row["n_comment_lines"]) - 1
             if not 1 <= first <= last <= len(lines):

@@ -108,6 +108,53 @@ class SyntaxEvidenceTests(unittest.TestCase):
         self.assertEqual(result["text"]["status"], "review")
         self.assertEqual(result["ast"]["status"], "confirmed")
 
+    def test_one_of_several_comments_on_a_line_can_match(self):
+        result = self.inspect(
+            'class A {\nvoid target() {\ncall(null/*menuID*/, true/*expandableMenu*/);\n}\n}',
+            '/*menuID*/', 3)
+        self.assertEqual(result["text"]["status"], "confirmed")
+        self.assertEqual(result["text"]["matched"], "menuID")
+
+    def test_line_comments_with_a_blank_line_are_one_comment(self):
+        result = self.inspect(
+            'class A {\nvoid target() {\n// first line\n\n// second line\n}\n}',
+            '// first line\n\n// second line', 3, 3)
+        self.assertEqual(result["text"]["status"], "confirmed")
+
+    def test_two_block_comments_on_one_line_can_form_one_dataset_comment(self):
+        result = self.inspect(
+            'class A {\nvoid target() {\n/* first *//* second */\n}\n}',
+            '/* first */\n/* second */', 3)
+        self.assertEqual(result["text"]["status"], "confirmed")
+
+    def test_long_prefix_of_a_comment_is_review_not_confirmation(self):
+        result = self.inspect(
+            'class A {\nvoid target() {\n// HAS TO BE REINITIALIZED... don\'t ask why.\n}\n}',
+            '// HAS TO BE REINITIALIZED', 3)
+        self.assertEqual(result["text"]["status"], "review")
+
+    def test_short_prefix_of_a_comment_is_also_review(self):
+        result = self.inspect(
+            'class A {\nvoid target() {\n// Blizzard (Sniper)\n}\n}', '// Blizzard', 3)
+        self.assertEqual(result["text"]["status"], "review")
+        self.assertEqual(result["text"]["reason"], "recorded body is a prefix of a longer comment")
+
+    def test_short_word_inside_a_comment_is_not_review(self):
+        result = self.inspect(
+            'class A {\nvoid target() {\n// move mode; it will delete 30 characters\n}\n}',
+            '// delete', 3)
+        self.assertEqual(result["text"]["status"], "mismatch")
+
+    def test_empty_doc_whose_closing_line_is_outside_span_is_review(self):
+        result = self.inspect('class A {\nvoid target() {\n/**\n */\n}\n}', '/**\n */', 3)
+        self.assertEqual(result["text"]["status"], "review")
+
+    def test_comment_node_starting_before_span_is_not_confirmed(self):
+        result = self.inspect(
+            'class A {\nvoid target() {\n// first line\n// second line\n// third line\n}\n}',
+            '// first line\n// second line\n// third line', 4, 2)
+        self.assertNotEqual(result["text"]["status"], "confirmed")
+
 
 class GitEvidenceTests(unittest.TestCase):
     def setUp(self):

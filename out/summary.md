@@ -1,13 +1,13 @@
 # Tesoro provenance (repo / file / commit)
 
-生成: 2026-10-31 11:21
+生成: 2026-10-31 18:52
 
 ## カバレッジ
 
 - 関数: 1255 件中 1242 件を特定 (99.0%)、うち commit 取得 1236 件 (履歴から復元 59 件)
 - コメント: 4981 件中 4961 件に commit を付与 (99.6%)、968 プロジェクト
 - 関数一致度: {'high': 1126, 'medium': 105, 'low': 11}
-- コメント特定方法: {'exact': 3495, 'structural': 1385, 'fuzzy': 10, 'relocated': 21, 'history': 21, 'reshaped': 6, 'position': 23} (exact=本文一致, structural=行末コメント・部分一致, fuzzy=本文が改変, position=記号のみ, relocated=別メソッドへ移動, history=履歴から復元, reshaped=形が変化)
+- コメント特定方法: {'exact': 3494, 'structural': 1386, 'fuzzy': 10, 'relocated': 21, 'history': 21, 'reshaped': 6, 'position': 23} (exact=本文一致, structural=行末コメント・部分一致, fuzzy=本文が改変, position=記号のみ, relocated=別メソッドへ移動, history=履歴から復元, reshaped=形が変化)
 - commit 日付範囲: 2000-12-06 〜 2026-08-31
 
 ## 状態
@@ -67,9 +67,9 @@ python3 scripts/06_blame.py 8431   # 個別の来歴と blame
 
 来歴付き件数と検証の確実性は別集計です。全コメントの個別版を検査しています。
 
-- 確定: 4589
-- 要確認: 348
-- 不一致: 24
+- 確定: 4598
+- 要確認: 349
+- 不一致: 14
 - 検証不能: 0
 - 未対応: 20
 
