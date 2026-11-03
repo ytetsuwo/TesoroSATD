@@ -67,6 +67,7 @@ python3 scripts/10_swh_batch.py     # 大型リポジトリの一括調理・ポ
 python3 scripts/11_backfill_all.py  # 全クローンの blob を取得 (オフライン化)
 python3 scripts/12_crossrepo.py     # 削除リポジトリの関数を他の clone から探索
 python3 scripts/13_manifest.py      # 各 clone の入手経路を out/repo_manifest.csv に
+python3 scripts/29_swh_browse_restore.py  # SWH browse page から 1 リポジトリを履歴復元
 python3 scripts/14_check_span.py    # 全コメントが関数内/直上 javadoc か検算 (AST)
 python3 scripts/15_ast_analysis.py  # AST とデータセット関数の突き合わせ (work/ast_analysis.jsonl)
 python3 scripts/16_symbol_history.py # 記号だけのコメントを履歴から復元

@@ -121,6 +121,16 @@ python3 scripts/08_history.py <function_id> ...   # HEAD に無ければ履歴�
 `javacreed/super-simple-stocks` は `albertattard/super-simple-stocks` の
 `Stock.java` 115〜121 行を SWH の browse page から復元し、コメントを
 commit `0136cb593d`（2017-11-03, Albert Attard）に紐付けた。
+この 1 件は `swhid` を持たないため、次のコマンドで再構築する。
+
+```bash
+python3 scripts/29_swh_browse_restore.py repos/javacreed__super-simple-stocks \
+  --head 5cda4140df3b6fa688c2891606fe5c88de4d5afa --keep 7
+```
+
+`--keep` は HEAD から遡るコミット数。`--log` に revision log の JSON を渡すと
+SWH API の 1 回の呼び出しを省略できる。スクリプトは各 tree / commit の SHA を
+SWH の ID と突き合わせ、末尾を `.git/shallow` で切る。
 `krisiney/SOKOBANFX-DMS-2020` は関数自体は `ok` だが、2 コメントのうち
 Javadoc 1 件が未対応のまま残っている。
 `mkpaz/telek` と `derekdinan/CTFServer` は行単位の一致率では落ちていたが、
