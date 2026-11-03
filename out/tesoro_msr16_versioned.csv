@@ -6774,8 +6774,8 @@ mindscan-de/BrightFlux@9a9b5ad,WITHOUT_CLASSIFICATION,// use classloader  and se
 mindscan-de/BrightFlux@c20c75e,IMPLEMENTATION,"// TODO: check if superclass is registered as a DataTokenizer....
 // and check if it implements DataTokenizer"
 mindscan-de/BrightFlux@9a9b5ad,WITHOUT_CLASSIFICATION,// create the class using the unparametereized the constructor. 
-ming1991/mingop,DEFECT,"// FIXME: issue A:外面如果ObservableOn 其他线程,将会是异步操作,如果在实际的onNext调用之前,发生了onComplete或者onError,将会unsubscribe,导致onNext没有被调用"
-ming1991/mingop,DEFECT,"// FIXME: issue A:外面如果ObservableOn 其他线程,将会是异步操作,如果在实际的onNext调用之前,发生了onComplete或者onError,将会unsubscribe,导致onNext没有被调用"
+ming1991/mingop@ebb26e1,DEFECT,"// FIXME: issue A:外面如果ObservableOn 其他线程,将会是异步操作,如果在实际的onNext调用之前,发生了onComplete或者onError,将会unsubscribe,导致onNext没有被调用"
+ming1991/mingop@ebb26e1,DEFECT,"// FIXME: issue A:外面如果ObservableOn 其他线程,将会是异步操作,如果在实际的onNext调用之前,发生了onComplete或者onError,将会unsubscribe,导致onNext没有被调用"
 minhhn2910/g-mason@1232b0a,DESIGN,// compiler complains unless I include the full classname!!! Huh?
 minhhn2910/g-mason@1232b0a,WITHOUT_CLASSIFICATION,// unknown
 mino98/stix@ccbeac0,DESIGN,"/**

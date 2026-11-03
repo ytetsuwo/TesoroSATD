@@ -57,11 +57,16 @@ def global_hits(patterns: list) -> list:
                        errors="replace", timeout=7200)
     hits = []
     for line in p.stdout.splitlines():
-        parts = line.split(":", 3)
-        if len(parts) != 4 or not parts[2].isdigit():
+        # rg output is "path:line:text"; text itself may contain colons
+        parts = line.split(":", 2)
+        if len(parts) != 3 or not parts[1].isdigit():
             continue
-        repo = parts[0].lstrip("./").replace("__", "/", 1)
-        hits.append((repo, parts[1].lstrip("./"), int(parts[2]), norm(parts[3])))
+        path = parts[0].lstrip("./")
+        repo_name, separator, relative = path.partition("/")
+        if not separator:
+            continue
+        repo = repo_name.replace("__", "/", 1)
+        hits.append((repo, relative, int(parts[1]), norm(parts[2])))
     return hits
 
 

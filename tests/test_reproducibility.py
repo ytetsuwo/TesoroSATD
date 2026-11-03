@@ -43,6 +43,23 @@ class SelectionTests(unittest.TestCase):
             self.assertEqual(results[0], results[1])
 
 
+class CrossrepoHitTests(unittest.TestCase):
+    def test_hit_path_keeps_colons_in_comment_text(self):
+        crossrepo = load_script("12_crossrepo.py")
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / "owner__repo" / "src" / "A.java"
+            source.parent.mkdir(parents=True)
+            source.write_text("class A { // TODO: x:y\n}\n")
+            with patch.object(crossrepo, "REPOS", root), \
+                    patch.object(crossrepo, "WORK", root):
+                hits = crossrepo.global_hits(["TODO: x:y"])
+            self.assertEqual(
+                hits,
+                [("owner/repo", "src/A.java", 1, "class A { // TODO: x:y")],
+            )
+
+
 class CrossfileTests(unittest.TestCase):
     def run_search(self, source):
         crossfile = load_script("21_crossfile.py")

@@ -16,15 +16,15 @@
 | `out/tesoro_msr16_versioned.csv` | 4981 | 同上、`projectname` を `owner/name@<sha7>` にした版 |
 | `out/functions_located.jsonl` | 1255 | 関数単位の生データ (アラインメント結果と全コメント) |
 | `out/summary.md` | – | カバレッジと制約の自動レポート |
-| `out/repo_manifest.csv` | 960 | 各 clone の入手経路 (`kind` / 取得元 URL / SWH swhid / HEAD) |
+| `out/repo_manifest.csv` | 975 | 各 clone の入手経路 (`kind` / 取得元 URL / SWH swhid / HEAD) |
 
-カバレッジ: **関数 1242/1255 (99.0%) を特定、コメント 4961/4981 (99.6%)** に commit を付与。
-うち 50 関数は HEAD ではなく履歴から復元 (削除リポジトリは Software Heritage・
-存命ミラー・上流プロジェクトから復元)。950 プロジェクト、commit 日付は
+カバレッジ: **関数 1244/1255 (99.1%) を特定、コメント 4963/4981 (99.6%)** に commit を付与。
+うち 59 関数は HEAD ではなく履歴から復元 (削除リポジトリは Software Heritage・
+存命ミラー・上流プロジェクトから復元)。969 プロジェクト、commit 日付は
 2000-12-06 〜 2026-08-31。
 
 各 clone をどこからどう取得したかは **[docs/repo_acquisition.md](docs/repo_acquisition.md)**
-に手順つきで記録している (`out/repo_manifest.csv` に 960 件の一覧)。
+に手順つきで記録している (`out/repo_manifest.csv` に 975 件の一覧)。
 
 ## 使い方
 
@@ -96,7 +96,7 @@ git sparse-checkout set --no-cone '*.java' && git checkout HEAD
 ```
 
 で**全履歴を持つが作業ツリーは Java だけ**のクローンを作る。
-その後 `11_backfill_all.py` で全 blob を取得済みなので (`repos/` 960 件, 138GB)、
+その後 `11_backfill_all.py` で全 blob を取得済みなので (`repos/` 975 件, 242GB)、
 `git blame` / `git log -S` はネットワークなしで動く。
 
 > 注: 匿名の部分クローンは数百リクエストで HTTP 400 になる。`git_env()` が
@@ -149,7 +149,7 @@ symlink で、`repos/coheigea__tcommon-studio-se` は
 `gaozone-talend/tcommon-studio-se` の clone。
 
 SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検索で特徴行を探し、
-改名・組織移転先や上流プロジェクトを見つけて復元した (25 件中 13 件・27 関数)。
+改名・組織移転先や上流プロジェクトを見つけて復元した (25 件中 19 件・24 関数)。
 
 - `zipated/src` (10) と `LynzhX/android_frameworks_base-1` (2) は AOSP
   `platform_frameworks_base` の全履歴から `WifiStateMachine.java` 等を特定。
@@ -163,11 +163,11 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
 
 ### 5. 検証 (05 / 14 / 27 / 28)
 
-- `--full`: commit が付いた全 4961 コメントで、ファイル上のコメント本文が一致する
-  ことを確認 → **4961/4961**。
+- `--full`: commit が付いた全 4963 コメントで、ファイル上のコメント本文が一致する
+  ことを確認 → **4963/4963**。
 - ランダム 120 件で「本文一致・blame 一致・その commit に本文が存在」の 3 点を
   確認 → **120/120**。
-- `--all-checks`: 本文・blame・show の従来3検査を来歴付き全件に実行 → **各4961/4961**。
+- `--all-checks`: 本文・blame・show の従来3検査を来歴付き全件に実行 → **各4963/4963**。
 - `14_check_span.py`: 履歴・別ファイル・変形コメントを除外せず、各コメントの
   `path_snapshot` / `snapshot_commit` で AST と期待するメソッドへの所属を検査する。
   `--json` の出力はコメント単位。取得失敗や範囲外を成功扱いしない。
@@ -181,8 +181,8 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
 - `28_introduced.py`: 本文が確定したコメントについて、現在の本文を導入したコミットを
   親方向へ探索する。`commit_id`（本文行の最終更新者）とは別の列で記録し、
   `introduced` / `ambiguous` / `truncated` / `unresolved` / `not_confirmed` / `unmapped`
-  に分ける。来歴は変更しない。全4,981件では **特定4,922 / 曖昧0 / 打ち切り0 /
-  未解決0 / 本文未確定39 / 未対応20**。記録済み `commit_id` と同一4,526、異なる396。
+  に分ける。来歴は変更しない。全4,981件では **特定4,924 / 曖昧0 / 打ち切り0 /
+  未解決0 / 本文未確定39 / 未対応18**。記録済み `commit_id` と同一4,528、異なる396。
   現在の本文と一致しない行は、dataset 側の本文を履歴から別に探し、
   `dataset_introduced_in` に **履歴で完全一致8 / 候補2 / 近い候補1 / 接頭辞1 /
   周辺コードから推定24 / 短語2 / 見つからない1** を記録する。詳細は
@@ -282,7 +282,7 @@ python3 scripts/26_benchmark.py --repeat 3 --output work/tmp/benchmark.json
 
 ```
 tesoro/     Tesoro 本家のデータ (sparse clone, data/ 184MB)
-repos/      clone 960 件 (875 存命 + SWH・ミラー・上流復元 + symlink 4 件, owner__name, 全履歴 + *.java)
+repos/      clone 975 件 (GitHub 874 + SWH 63 + ミラー 32 + symlink 6 件, owner__name, 全履歴 + *.java)
 scripts/    パイプライン (00〜23)
 work/       中間状態・ログ (repo_meta.json, clone_state.jsonl, swh_state.jsonl, locate.log)
 out/        成果物 (CSV / JSONL / summary.md / repo_manifest.csv)

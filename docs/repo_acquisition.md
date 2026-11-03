@@ -1,10 +1,10 @@
 # リポジトリの入手経路（再現手順）
 
-`repos/` の 960 ディレクトリがどこから来たのかを、後から同じ状態に戻せる形で記録する。
+`repos/` の 975 ディレクトリがどこから来たのかを、後から同じ状態に戻せる形で記録する。
 機械可読な一覧は **`out/repo_manifest.csv`**（1 行 = 1 ディレクトリ）。
 
 ```bash
-python3 scripts/13_manifest.py          # 960 行を再生成
+python3 scripts/13_manifest.py          # 975 行を再生成
 column -s, -t out/repo_manifest.csv | less -S
 ```
 
@@ -17,11 +17,11 @@ column -s, -t out/repo_manifest.csv | less -S
 | `head` | 復元した HEAD の完全 SHA。再現できたかの照合に使う |
 | `swh_status` / `swh_visit` | `work/swh_state.jsonl` の最終 status とスナップショット日時 |
 
-現状の内訳: **github 875 / swh 62 / mirror 19 / symlink 4**。
+現状の内訳: **github 874 / swh 63 / mirror 32 / symlink 6**。
 
 ---
 
-## 1. GitHub からの直接クローン（875 件）
+## 1. GitHub からの直接クローン（874 件）
 
 `scripts/02_clone_repos.py` が `work/repo_meta.json` の存命リポジトリを取得する。
 全履歴を持ち、作業ツリーは Java だけ、という形。
@@ -42,7 +42,7 @@ git -C repos/<owner>__<name> checkout HEAD
 python3 scripts/02_clone_repos.py          # 未取得分だけ取得。冪等
 ```
 
-## 2. Software Heritage の Vault からの復元（62 件）
+## 2. Software Heritage の Vault からの復元（62 件 + バンドル 1 件）
 
 GitHub 側で 404（削除・非公開）になったリポジトリを、SWH のスナップショットから戻す。
 
@@ -123,7 +123,7 @@ python3 scripts/08_history.py <function_id> ...   # HEAD に無ければ履歴�
 `mkpaz/telek` と `derekdinan/CTFServer` は行単位の一致率では落ちていたが、
 トークン単位の照合で同一メソッドと確認して復元した。
 
-## 4. symlink による使い回し（4 件）
+## 4. symlink による使い回し（6 件）
 
 巨大な履歴を二重に持たないためのエイリアス。`03_locate.py` はディレクトリ名で
 リポジトリを引くので、symlink でも通常のクローンと区別なく動く。
@@ -151,7 +151,7 @@ python3 scripts/05_verify.py --full                              # コメント 
 
 ## 注意
 
-- `repos/` は `.gitignore` 対象（138GB）。**このリポジトリには入っていない**ので、
+- `repos/` は `.gitignore` 対象（242GB）。**このリポジトリには入っていない**ので、
   別マシンでは上記 1〜4 を実行して作り直す。
 - `git log -S` を使う `08_history.py` は全 blob を必要とする。SWH 由来の clone も
   02 と同じく全履歴を持つが、blob は `11_backfill_all.py` で補充済み。
@@ -175,10 +175,20 @@ python3 scripts/05_verify.py --full                              # コメント 
 | IonBazan/openapi-generator | `OpenAPITools/openapi-generator` | 1 |
 | bshp/midpoint | `Evolveum/midpoint` | 1 |
 | kjthegod/chromium / sarang-apps/darshan_browser | `zealoussnow__chromium` への symlink | 1 |
+| ming1991/mingop | `cpoopc/RetrofitRxCache` | 2 |
 
-残る `repo_missing` は `bcgov/jag-efax` / `fernandogomesfg/Algoritmos-em-Java` /
-`ming1991/mingop` / `JC-Bodoque/geometric-transformer` の 4 件で、いずれも
-GitHub 上に現存せず、コード検索でも同一本文が見つからない。
+残る `repo_missing` は `fernandogomesfg/Algoritmos-em-Java` /
+`JC-Bodoque/geometric-transformer` の 2 件で、いずれも GitHub 上に現存せず、
+コード検索でも同一本文が見つからない。2026-11-03 時点の探索記録:
+
+| リポジトリ | 確認したこと |
+| --- | --- |
+| `fernandogomesfg/Algoritmos-em-Java` | GitHub API は 404。所有者の公開リポジトリに Java は無い。`FuncProdutividade` / `addFuncprodutividade` / `printSalarioProdutividade` は GitHub code search（`fork:true` を含む）で 0 件、Sourcegraph でも 0 件。SWH の origin search に登録なし。GitLab / Bitbucket にも無い。Internet Archive の CDX に snapshot なし。 |
+| `JC-Bodoque/geometric-transformer` | GitHub API は 404。`TODO: translate code` と `translate()` の組合せは GitHub code search / Sourcegraph で 0 件。SWH の origin は登録されているが、2023 年の 3 回の visit はすべて `not_found` で snapshot が無い。同名の公開リポジトリ 78 件も Java の一致なし。 |
+
+`ming1991/mingop` は `cpoopc/RetrofitRxCache` に同一コードが現存し、
+`AsyncOnSubscribeCacheNet.java` の 2 箇所（122 行 / 161 行）が
+commit `ebb26e1c`（2016-05-15）で導入されたことを確認した。
 
 ### bcgov/jag-efax の復元（完了）
 
@@ -218,11 +228,11 @@ curl -s https://archive.softwareheritage.org/api/1/vault/gitfast/swh:1:rev:51514
 | 種別 | 件数 | 意味 |
 | --- | --- | --- |
 | github | 874 | 存命リポジトリを GitHub から clone |
-| swh | 62 | Software Heritage のバルクから復元（remote は `work/swh/...`） |
-| mirror | 30 | 削除済みの代替（上流・fork・SWH バンドル） |
+| swh | 63 | Software Heritage のバルクから復元（remote は `work/swh/...`） |
+| mirror | 32 | 削除済みの代替（上流・fork・SWH バンドル） |
 | symlink | 6 | 同一内容の clone を使い回し |
 
-- 972 ディレクトリすべてが manifest に載り、HEAD のドリフトは 0。
+- 975 ディレクトリすべてが manifest に載り、HEAD のドリフトは 0。
 - `bcgov__jag-efax` は SWH の gitfast バンドル（`work/jag.git`）を remote にしている。
 - `fieldenms__unknown` は `fieldenms__` への、`sarang-apps__darshan_browser` は
   `zealoussnow__chromium` への symlink。

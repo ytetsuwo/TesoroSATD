@@ -1,6 +1,6 @@
 """Write out/repo_manifest.csv: where every clone in repos/ came from.
 
-One row per directory under repos/ (960 at the time of writing):
+One row per directory under repos/ (975 at the time of writing):
 
   repo        directory name, also the key used in out/*.csv
   kind        github    original repository cloned from GitHub by 02_clone_repos.py
