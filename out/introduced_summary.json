@@ -16,14 +16,15 @@
     "counts": {
       "current": 4922,
       "historical": 8,
-      "not_informative": 26,
+      "context": 24,
       "unmapped": 20,
+      "not_informative": 2,
       "candidate": 2,
       "near_exact": 1,
       "prefix": 1,
       "not_found": 1
     },
-    "identified": 4934,
+    "identified": 4958,
     "exact": 4930,
     "definition": "the commit found for the dataset comment body; `current` is the same body as the current file, `historical` is an exact older body, and candidate/near_exact are not confirmations"
   },

@@ -39,8 +39,11 @@
    - `candidate`: 完全一致はあるが、親探索が上限に達した
 7. 完全一致が無い場合は、現在のコメント本文との類似度が 0.95 以上のときだけ
    `near_exact`、dataset 本文が現在の長いコメントの接頭辞であるときは `prefix`
-   として参考候補を記録する。記号・空・短い一般語は `not_informative`、
-   履歴に無ければ `not_found` とする。
+   として参考候補を記録する。
+8. 記号だけ・空のコメントは、本文ではなくコメントノードと前後のコード行を
+   親方向へたどり、`context` として代理の導入コミットを記録する。
+   備考に「本文ではなく周辺コードから推定した代理値」と明記する。
+9. 短い一般語は `not_informative`、履歴に無ければ `not_found` とする。
 
 ## 制約
 
@@ -50,7 +53,10 @@
 - `dataset_introduced_in` の `historical` は dataset 本文の完全一致であり、
   `candidate` / `ambiguous` / `near_exact` / `prefix` は確定ではない。現在の本文の
   `introduced_in` とは別の列として扱う。
-- 記号だけ・空・短い一般語のコメントは本文で起源を決められないため、
+- `context` は記号だけ・空のコメントについて、コメントノードと前後のコード行が
+  同じ範囲をたどった代理値である。コメント本文の導入を保証しないため、
+  `dataset_note` にその旨を明記する。
+- 短い一般語のコメントは本文で起源を決められないため、
   `not_informative` としてコミットを付けない。
 - 同一本文が別ファイルへコピーされた場合、コピー元の唯一の起源は保証しない。
 - マージコミットでは、複数親のうち本文を持つ親だけをたどる。独立した導入が
@@ -69,8 +75,11 @@
 `introduced_short` / `introduced_url` は GitHub のコミット表示用。
 `basis` は `blame`（本文行の候補から開始）、`version`（スナップショットから開始）、
 `pickaxe`（履歴の再探索）のいずれか。
+`dataset_basis` は `history-exact` / `history-exact-candidate` / `history-ambiguous` /
+`near-exact` / `source-prefix` / `context-lineage` のいずれか。
 `dataset_introduced_in` は dataset 本文の履歴で、`dataset_status` が
-`current` / `historical` / `candidate` / `ambiguous` / `near_exact` / `prefix` のとき値を持つ。
+`current` / `historical` / `candidate` / `ambiguous` / `near_exact` / `prefix` /
+`context` のとき値を持つ。
 `not_informative` / `not_found` / `unmapped` はコミットを付けない。
 
 ## 実行
@@ -116,14 +125,16 @@ python3 scripts/24_consistency.py   # 件数・キー・fingerprint を検査
 | `ambiguous`（独立した完全一致が複数） | 0 |
 | `near_exact`（本文差ありの参考候補） | 1 |
 | `prefix`（現在本文の接頭辞） | 1 |
-| `not_informative`（記号・空・短語） | 26 |
+| `context`（周辺コードから推定） | 24 |
+| `not_informative`（短語） | 2 |
 | `not_found`（履歴に見つからない） | 1 |
 | `unmapped`（来歴なし） | 20 |
 | 合計 | 4,981 |
 
-`dataset_introduced_in` を付けたのは 4,934 件（うち完全一致 4,930 件）。
+`dataset_introduced_in` を付けたのは 4,958 件（うち完全一致 4,930 件）。
 完全一致の内訳は、現在本文と同一 4,922 件、履歴で完全一致 8 件。
-残りは候補 2 件、近い候補 1 件、接頭辞 1 件で、これらは確定ではない。
+残りは候補 2 件、近い候補 1 件、接頭辞 1 件、周辺コードから推定 24 件で、
+これらは確定ではない。
 
 ### 未確定 39 件の内訳
 
@@ -135,8 +146,12 @@ python3 scripts/24_consistency.py   # 件数・キー・fingerprint を検査
   現在のコメントと完全一致しないため `near_exact` とした。
 - **接頭辞 1 件**: `32108:8`。dataset 本文が現在の長いコメントの接頭辞で
   あるため `prefix` とした。
-- **記号・空・短語 26 件**: `}`、`*/`、`//`、`delete`、`get` など。
-  本文だけでは起源を決められないため、コミットを付けない。
+- **周辺コードから推定 24 件**: 記号 17 件（`}`、`*/`、`>>`、`>=` など）と
+  空コメント 7 件（`//`、空の `/** */`）。本文では起源を決められないため、
+  コメントノードと前後のコード行を親方向へたどった代理値を `context` とし、
+  `dataset_note` に「本文ではなく周辺コードから推定した代理値」と記録した。
+- **短語 2 件**: `34583:25` の `delete`、`18099:34` の `get`。
+  一般語が長い Javadoc に含まれるだけなので `not_informative` とした。
 - **履歴に見つからない 1 件**: `20104:0`。dataset 本文には
   `@param bookmarkType` があるが、スナップショットの本文には無く、
   リポジトリの履歴にも完全一致が無い。

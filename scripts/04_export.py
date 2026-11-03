@@ -221,8 +221,9 @@ def main():
                       f"履歴で完全一致 {dcounts.get('historical', 0)}、"
                       f"候補 {dcounts.get('candidate', 0) + dcounts.get('ambiguous', 0)}、"
                       f"近い候補 {dcounts.get('near_exact', 0)}、"
-                      f"接頭辞 {dcounts.get('prefix', 0)}）。",
-                      f"記号・空・短語のため対象外: {dcounts.get('not_informative', 0)}、"
+                      f"接頭辞 {dcounts.get('prefix', 0)}、"
+                      f"周辺コードから推定 {dcounts.get('context', 0)}）。",
+                      f"短語のため対象外: {dcounts.get('not_informative', 0)}、"
                       f"本文が履歴に見つからない: {dcounts.get('not_found', 0)}。",
                       "",
                       "本文が後から書き換えられている場合、`introduced_in` は現在の本文を導入した",

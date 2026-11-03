@@ -40,8 +40,8 @@ LABELS = {
     "unmapped": "来歴なし",
 }
 DATASET_STATUSES = ("current", "historical", "candidate", "ambiguous",
-                    "near_exact", "prefix", "not_informative", "not_found",
-                    "unmapped", "error")
+                    "near_exact", "prefix", "context", "not_informative",
+                    "not_found", "unmapped", "error")
 DATASET_LABELS = {
     "current": "現在本文と同一",
     "historical": "履歴で完全一致",
@@ -49,7 +49,8 @@ DATASET_LABELS = {
     "ambiguous": "履歴候補（複数系統）",
     "near_exact": "近い候補（本文差あり）",
     "prefix": "接頭辞（現在本文の一部）",
-    "not_informative": "記号・空・短語のため対象外",
+    "context": "周辺コードから推定（記号・空）",
+    "not_informative": "短語のため対象外",
     "not_found": "本文が履歴に見つからない",
     "unmapped": "来歴なし",
     "error": "探索エラー",
@@ -377,29 +378,162 @@ class Introducer:
 
     def dataset_commit(self, directory, terminal, status, basis, similarity):
         meta = self.commit_meta(directory, terminal["sha"])
-        return {
+        result = {
             "dataset_status": status,
             "dataset_basis": basis,
             "dataset_introduced_in": meta.get("sha", ""),
             "dataset_introduced_date": meta.get("date", ""),
             "dataset_introduced_author": meta.get("author", ""),
-            "dataset_similarity": round(similarity, 6),
             "dataset_line": terminal.get("line", ""),
             "dataset_path": terminal.get("path", ""),
         }
+        if similarity is not None:
+            result["dataset_similarity"] = round(similarity, 6)
+        return result
+
+    def source_lines(self, directory, sha, path):
+        result = git_text(directory, "show", f"{sha}:{path}")
+        return result.stdout.split("\n") if result.returncode == 0 else None
+
+    def comment_span(self, lines, line, count):
+        """First and last line of the comment node(s) around a mapped range."""
+        tree = astjava.parse("\n".join(lines).encode())
+        nodes = [node for node in astjava.comments(tree)
+                 if node["end"] >= line and node["start"] <= line + count - 1]
+        if not nodes:
+            return None
+        return min(node["start"] for node in nodes), max(node["end"] for node in nodes)
+
+    def context_signature(self, lines, first, last):
+        """The comment lines plus the nearest code lines around them."""
+        def normalize(value):
+            return re.sub(r"\s+", " ", value.strip())
+
+        def is_code(value):
+            text = value.strip()
+            return bool(text) and not text.startswith(("//", "/*", "*"))
+
+        full = tuple(normalize(lines[index - 1]) for index in range(first, last + 1))
+        previous = next((normalize(lines[index - 1])
+                         for index in range(first - 1, 0, -1)
+                         if is_code(lines[index - 1])), None)
+        following = next((normalize(lines[index - 1])
+                          for index in range(last + 1, len(lines) + 1)
+                          if is_code(lines[index - 1])), None)
+        return full, previous, following
+
+    def context_introduction(self, directory, start, path, first, last,
+                             signature, max_walk):
+        """Walk parents while the comment and its code surroundings remain."""
+        queue = deque([(start, path, first, last)])
+        seen = {(start, path)}
+        terminals, steps = [], 0
+        while queue:
+            if steps >= max_walk:
+                return {"status": "truncated", "terminals": [], "steps": steps}
+            sha, current_path, current_first, current_last = queue.popleft()
+            steps += 1
+            following = []
+            for parent in self.parents(directory, sha):
+                parent_path = self.parent_path(directory, parent, sha, current_path)
+                if not parent_path:
+                    continue
+                parent_first = self.map_line(
+                    directory, parent, sha, current_path, current_first)
+                parent_last = self.map_line(
+                    directory, parent, sha, current_path, current_last)
+                if parent_first is None or parent_last is None:
+                    continue
+                lines = self.source_lines(directory, parent, parent_path)
+                if lines is None or not (1 <= parent_first <= parent_last <= len(lines)):
+                    continue
+                if self.comment_span(lines, parent_first, parent_last) is None:
+                    continue
+                if self.context_signature(lines, parent_first, parent_last) != signature:
+                    continue
+                following.append((parent, parent_path, parent_first, parent_last))
+            if not following:
+                terminals.append((sha, current_path, current_first))
+            else:
+                for state in following:
+                    if state[:2] not in seen:
+                        seen.add(state[:2])
+                        queue.append(state)
+        terminals = list(dict.fromkeys(terminals))
+        if not terminals:
+            return {"status": "unresolved", "terminals": [], "steps": steps}
+        terminals.sort(key=lambda state: self.commit_meta(directory, state[0])["time"])
+        return {
+            "status": "introduced" if len(terminals) == 1 else "ambiguous",
+            "terminals": [{"sha": sha, "path": path, "line": line}
+                          for sha, path, line in terminals],
+            "steps": steps,
+        }
+
+    def context_analysis(self, row):
+        """Proxy introduction for an empty or symbol-only comment.
+
+        The text itself cannot identify an origin, so the comment node and its
+        nearest code lines are followed through history. The result is labelled
+        `context` and never treated as an exact body match.
+        """
+        directory = repo_dir(row["repo"])
+        try:
+            version = self.version_state(row)
+            lines = self.source_lines(directory, version[0], version[1])
+        except Exception as error:
+            return {"dataset_status": "error", "dataset_basis": "none",
+                    "dataset_note": str(error)[:160]}
+        if lines is None:
+            return {"dataset_status": "not_found", "dataset_basis": "none",
+                    "dataset_note": "source file is not available"}
+        line = int(row["comment_line"])
+        count = int(row["n_comment_lines"])
+        span = self.comment_span(lines, line, count)
+        if span is None:
+            return {"dataset_status": "not_found", "dataset_basis": "none",
+                    "dataset_note": "no comment node at the mapped location"}
+        first, last = span
+        signature = self.context_signature(lines, first, last)
+        walked = self.context_introduction(
+            directory, version[0], version[1], first, last, signature, self.max_walk)
+        if walked["status"] == "truncated":
+            walked = self.context_introduction(
+                directory, version[0], version[1], first, last, signature,
+                max(self.max_walk, 2048))
+        terminals = walked.get("terminals") or []
+        if not terminals:
+            return {"dataset_status": "not_found", "dataset_basis": "none",
+                    "dataset_note": "no stable code context in the available history"}
+        terminal = terminals[0]
+        if walked["status"] == "ambiguous":
+            terminal = min(terminals, key=lambda item: self.commit_meta(
+                directory, item["sha"])["time"])
+        result = self.dataset_commit(directory, terminal, "context",
+                                     "context-lineage", None)
+        body_text = dataset_body(row["commenttext"]).strip()
+        if body_text:
+            result["dataset_note"] = (
+                "記号のみの本文のため、本文ではなく周辺コードの履歴から推定した代理値（確定ではない）")
+        else:
+            result["dataset_note"] = (
+                "空コメントのため、本文ではなく周辺コードの履歴から推定した代理値（確定ではない）")
+        if walked["status"] == "ambiguous":
+            result["dataset_terminals"] = terminals
+            result["dataset_note"] += "。独立した系統が複数"
+        return result
 
     def dataset_analysis(self, row, audit):
         """Identify the dataset body separately from the current file body.
 
         An exact historical body is `historical`; long ambiguities and near
-        matches stay labelled as candidates. Symbol, empty and short generic
-        bodies are never promoted to a commit.
+        matches stay labelled as candidates. Symbol and empty bodies use a
+        separate `context` proxy, and short generic words are not promoted.
         """
         wanted = dataset_body(row["commenttext"])
         core_body = core(wanted)
         if not core_body:
-            return {"dataset_status": "not_informative", "dataset_basis": "none",
-                    "dataset_note": "empty or symbol-only body"}
+            return self.context_analysis(row)
         if len(core_body) < 8:
             return {"dataset_status": "not_informative", "dataset_basis": "none",
                     "dataset_note": "short generic body"}
@@ -859,7 +993,8 @@ def main():
         f"`dataset_introduced_in` を付けた件数: {len(dataset_identified)} "
         f"（うち現在本文と同一または履歴で完全一致 {dataset_exact}）。",
         "`historical` は dataset 本文が過去の版に完全一致したもの、`candidate` と",
-        "`ambiguous` は候補、`near_exact` は本文に差がある参考候補である。",
+        "`ambiguous` は候補、`near_exact` は本文に差がある参考候補、`context` は",
+        "記号・空コメントの周辺コードから推定した代理値である。",
     ]
     (OUT / "introduced_summary.md").write_text("\n".join(lines) + "\n")
     print(json.dumps(summary, ensure_ascii=False, indent=2))

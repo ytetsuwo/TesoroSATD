@@ -118,15 +118,27 @@ class IntroductionTests(unittest.TestCase):
         self.assertEqual(result["dataset_status"], "prefix")
         self.assertEqual(result["dataset_introduced_in"], first)
 
-    def test_symbol_body_is_not_given_a_dataset_commit(self):
-        with patch.object(self.module, "repo_dir", side_effect=AssertionError("must not read")):
-            result = self.module.Introducer().analyse(
-                self.row("// }", 1, sha="a" * 40),
-                {"checks": {"text": {"status": "review", "source_body": "}",
-                             "similarity": 0}}})
+    def test_symbol_body_uses_code_context_with_a_note(self):
+        first = self.commit("class A {\n// }\nvoid target() {}\n}\n")
+        result = self.analyse(
+            self.row("// }", 2, sha=first),
+            {"checks": {"text": {"status": "review", "source_body": "}",
+                         "similarity": 0}}})
         self.assertEqual(result["status"], "not_confirmed")
-        self.assertEqual(result["dataset_status"], "not_informative")
-        self.assertNotIn("dataset_introduced_in", result)
+        self.assertEqual(result["dataset_status"], "context")
+        self.assertEqual(result["dataset_introduced_in"], first)
+        self.assertIn("周辺コード", result["dataset_note"])
+
+    def test_empty_comment_uses_code_context_with_a_note(self):
+        first = self.commit("class A {\n//\nvoid target() {}\n}\n")
+        result = self.analyse(
+            self.row("//", 2, sha=first),
+            {"checks": {"text": {"status": "review", "source_body": "",
+                                 "similarity": 0}}})
+        self.assertEqual(result["status"], "not_confirmed")
+        self.assertEqual(result["dataset_status"], "context")
+        self.assertEqual(result["dataset_introduced_in"], first)
+        self.assertIn("空コメント", result["dataset_note"])
 
     def test_missing_provenance_is_unmapped(self):
         with patch.object(self.module, "repo_dir", side_effect=AssertionError("must not read")):
