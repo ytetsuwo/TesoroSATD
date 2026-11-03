@@ -1,13 +1,13 @@
 # Tesoro provenance (repo / file / commit)
 
-生成: 2026-11-03 17:45
+生成: 2026-11-03 18:15
 
 ## カバレッジ
 
 - 関数: 1255 件中 1242 件を特定 (99.0%)、うち commit 取得 1236 件 (履歴から復元 59 件)
 - コメント: 4981 件中 4961 件に commit を付与 (99.6%)、968 プロジェクト
 - 関数一致度: {'high': 1126, 'medium': 105, 'low': 11}
-- コメント特定方法: {'exact': 3494, 'structural': 1386, 'fuzzy': 10, 'relocated': 21, 'history': 21, 'reshaped': 6, 'position': 23} (exact=本文一致, structural=行末コメント・部分一致, fuzzy=本文が改変, position=記号のみ, relocated=別メソッドへ移動, history=履歴から復元, reshaped=形が変化)
+- コメント特定方法: {'exact': 3492, 'structural': 1388, 'fuzzy': 10, 'relocated': 21, 'history': 21, 'reshaped': 6, 'position': 23} (exact=本文一致, structural=行末コメント・部分一致, fuzzy=本文が改変, position=記号のみ, relocated=別メソッドへ移動, history=履歴から復元, reshaped=形が変化)
 - commit 日付範囲: 2000-12-06 〜 2026-08-31
 
 ## 状態
@@ -63,30 +63,16 @@ python3 scripts/05_verify.py --full  # 全行のテキスト検証
 python3 scripts/06_blame.py 8431   # 個別の来歴と blame
 ```
 
-## 来歴の厳密監査
-
-来歴付き件数と検証の確実性は別集計です。全コメントの個別版を検査しています。
-
-- 確定: 4598
-- 要確認: 349
-- 不一致: 14
-- 検証不能: 0
-- 未対応: 20
-
-確定は本文・関数所属・本文行の最終更新者についての自動判定であり、
-最初の導入コミットや同型コピーの唯一の起源を保証しません。
-詳細: `out/strict_audit_summary.md` / `out/strict_audit.jsonl`。
-
 ## SATD 導入コミット
 
 現在のコメント本文が最初に現れたコミットを、履歴の親方向へ確認した別集計です。
 
-- 導入コミットを特定: 4895
-- 記録済み `commit_id` と同一: 4508
-- 記録済み `commit_id` と異なる: 387
+- 導入コミットを特定: 4919
+- 記録済み `commit_id` と同一: 4523
+- 記録済み `commit_id` と異なる: 396
 - 曖昧: 0
 - 未解決: 0 + 打ち切り 0
-- 本文未確定のため対象外: 66
+- 本文未確定のため対象外: 42
 
 本文が後から書き換えられている場合、`introduced_in` は現在の本文を導入した
 コミットであり、SATD コメント全体の最初の導入とは限りません。
