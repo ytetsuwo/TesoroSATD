@@ -206,6 +206,10 @@ python3 scripts/05_verify.py --full                              # コメント 
 `Yixin-Shen-1218/Sokoban`（同じ `c6c7ca4`）にも履歴が無い。
 `TODO: implement something funny` の現存コピーは 1 件だけで、
 Javadoc の完全一致は GitHub code search で 0 件だった。
+2026-11-04 には GitHub の `Sokoban language:Java` 666 リポジトリ
+（433 + 233）と GitLab の `ae2dms` 4 リポジトリ、`com.ae2dms` を含む
+10 リポジトリの全履歴も走査したが、旧 Javadoc は見つからなかった。
+作者の連絡先は `shenyixin1218@163.com`（`c6c7ca4` の author）。
 
 `ming1991/mingop` は `cpoopc/RetrofitRxCache` に同一コードが現存し、
 `AsyncOnSubscribeCacheNet.java` の 2 箇所（122 行 / 161 行）が
