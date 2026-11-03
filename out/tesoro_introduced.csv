@@ -357,10 +357,10 @@ function_id,comment_id,projectname,repo,path,comment_line,commenttext,introduced
 20999,12,CAPIndustries/capDB,CAPIndustries/capDB,M2/src/app_kvServer/KVServer.java,425,// remove the top item from the list for this key,6edf4f341be3729b58936a3be9098e6b61b16f41,6edf4f3,https://github.com/CAPIndustries/capDB/commit/6edf4f341be3729b58936a3be9098e6b61b16f41,2022-01-28,Suhayb Bashir Yousif,blame,introduced,6edf4f341be3729b58936a3be9098e6b61b16f41
 21001,0,CAPIndustries/capDB,CAPIndustries/capDB,M2/src/app_kvServer/KVServer.java,605,"/**
 	 * @param args contains the program's input args (here for signature purposes)
-	 */",43b4fd998aa68abcb5f83f2c464844e3893ade62,43b4fd9,https://github.com/CAPIndustries/capDB/commit/43b4fd998aa68abcb5f83f2c464844e3893ade62,2022-01-25,Suhayb Bashir Yousif,blame,ambiguous,7d1606e34c624f9d6e31edf1c120a058a2378003
+	 */",01d87ded61e0f349011f69b8961b2acf4bea33d3,01d87de,https://github.com/CAPIndustries/capDB/commit/01d87ded61e0f349011f69b8961b2acf4bea33d3,2022-03-02,Suhayb Bashir Yousif,exact-first-parent,introduced,7d1606e34c624f9d6e31edf1c120a058a2378003
 21001,1,CAPIndustries/capDB,CAPIndustries/capDB,M2/src/app_kvServer/KVServer.java,624,"// No need to use the run method here since the contructor is supposed to
 // start the server on its own
-// TODO: Allow passing additional arguments from the command line:",43b4fd998aa68abcb5f83f2c464844e3893ade62,43b4fd9,https://github.com/CAPIndustries/capDB/commit/43b4fd998aa68abcb5f83f2c464844e3893ade62,2022-01-25,Suhayb Bashir Yousif,blame,ambiguous,7d1606e34c624f9d6e31edf1c120a058a2378003
+// TODO: Allow passing additional arguments from the command line:",01d87ded61e0f349011f69b8961b2acf4bea33d3,01d87de,https://github.com/CAPIndustries/capDB/commit/01d87ded61e0f349011f69b8961b2acf4bea33d3,2022-03-02,Suhayb Bashir Yousif,exact-first-parent,introduced,7d1606e34c624f9d6e31edf1c120a058a2378003
 3223,0,CATION-M/X-moe,CATION-M/X-moe,Dev/ONScripter/onscripter_android/src/de/idyl/crypto/zip/impl/CentralDirectoryEntry.java,78,// Central directory structure / central file header signature,345bb1d4e0a5281e3f5b769b5e3ef2cf22a1bfe6,345bb1d,https://github.com/CATION-M/X-moe/commit/345bb1d4e0a5281e3f5b769b5e3ef2cf22a1bfe6,2016-07-18,X'moe,blame,introduced,345bb1d4e0a5281e3f5b769b5e3ef2cf22a1bfe6
 3223,1,CATION-M/X-moe,CATION-M/X-moe,Dev/ONScripter/onscripter_android/src/de/idyl/crypto/zip/impl/CentralDirectoryEntry.java,106,"// TODO - check, why we have to use the local header instead of the CDS sometimes...",345bb1d4e0a5281e3f5b769b5e3ef2cf22a1bfe6,345bb1d,https://github.com/CATION-M/X-moe/commit/345bb1d4e0a5281e3f5b769b5e3ef2cf22a1bfe6,2016-07-18,X'moe,blame,introduced,345bb1d4e0a5281e3f5b769b5e3ef2cf22a1bfe6
 3224,0,CATION-M/X-moe,CATION-M/X-moe,Dev/ONScripter/onscripter_android/src/de/idyl/crypto/zip/impl/CentralDirectoryEntry.java,205,"/** fixed 256 key size, 16 bytes salt + 2 bytes pwVerification */",345bb1d4e0a5281e3f5b769b5e3ef2cf22a1bfe6,345bb1d,https://github.com/CATION-M/X-moe/commit/345bb1d4e0a5281e3f5b769b5e3ef2cf22a1bfe6,2016-07-18,X'moe,blame,introduced,345bb1d4e0a5281e3f5b769b5e3ef2cf22a1bfe6
@@ -2328,7 +2328,7 @@ function_id,comment_id,projectname,repo,path,comment_line,commenttext,introduced
 18326,0,adam-collins/parsers,adam-collins/parsers,src/main/java/org/gbif/common/parsers/date/DateTimeParserBuilder.java,269,"/**
      * Ensure the builder is used with content we expect.
      * Currently (this could change) we should only have one DateTimeParser per DateComponentOrdering.
-     */",58b53bdb486a6e628cacef35dee5ac2cd86035b4,58b53bd,https://github.com/adam-collins/parsers/commit/58b53bdb486a6e628cacef35dee5ac2cd86035b4,2020-08-14,Matthew Blissett,version,ambiguous,040ac16486a7713814151ae162d1adff24a3a72b
+     */",aa6054c3b54a7e586f0bda5d3ba99e7e0fdc34dc,aa6054c,https://github.com/adam-collins/parsers/commit/aa6054c3b54a7e586f0bda5d3ba99e7e0fdc34dc,2020-08-19,Qifeng,exact-first-parent,introduced,040ac16486a7713814151ae162d1adff24a3a72b
 16885,0,adams-okode/chirpstack-rest-sdk,adams-okode/chirpstack-rest-sdk,src/main/java/com/example/models/ApiListChannelListRequest.java,17,"/** GETTER
      * TODO: Write general description for this method
      */",e7e7e1a297a8f64731ebd59f2a7d18df2c0ce87e,e7e7e1a,https://github.com/adams-okode/chirpstack-rest-sdk/commit/e7e7e1a297a8f64731ebd59f2a7d18df2c0ce87e,2019-12-15,adams-okode,blame,introduced,e7e7e1a297a8f64731ebd59f2a7d18df2c0ce87e
@@ -3092,7 +3092,7 @@ function_id,comment_id,projectname,repo,path,comment_line,commenttext,introduced
      * @param prompt    The prompt to issue to the console, may be null.
      * @return          A line that is read from the terminal, or null if there was null input (e.g., <i>CTRL-D</i>
      *                  was pressed).
-     */",3715461ea8af9e7e2e31a013faa30b1713798123,3715461,https://github.com/boris-gelman/jline2/commit/3715461ea8af9e7e2e31a013faa30b1713798123,2015-07-21,Guillaume Nodet,version,ambiguous,fe139c9bdee310ff64828fc180c8f598ddbf9b78
+     */",3715461ea8af9e7e2e31a013faa30b1713798123,3715461,https://github.com/boris-gelman/jline2/commit/3715461ea8af9e7e2e31a013faa30b1713798123,2015-07-21,Guillaume Nodet,exact-first-parent,introduced,fe139c9bdee310ff64828fc180c8f598ddbf9b78
 34583,1,boris-gelman/jline2,boris-gelman/jline2,src/main/java/jline/console/ConsoleReader.java,2395,"// prompt may be null
 // mask may be null
 // buffer may be null
@@ -7469,7 +7469,7 @@ function_id,comment_id,projectname,repo,path,comment_line,commenttext,introduced
                              * messes up odd base output such as 3.5 in base 3.
                              */",bb0ec6c72f2399d323b7b2cdb7db7d090a4b9516,bb0ec6c,https://github.com/pitbox46/graaljs-forge/commit/bb0ec6c72f2399d323b7b2cdb7db7d090a4b9516,2021-12-05,pitbox46,blame,introduced,bb0ec6c72f2399d323b7b2cdb7db7d090a4b9516
 2277,0,pk-80/device-modbus,pk-80/device-modbus,src/main/java/org/edgexfoundry/modbus/ModbusDriver.java,148,"// TODO 7: [Optional] Fill with your own implementation for handling
-// asynchronous data from the driver layer to the device service",caf0bec99849aa3a04988be0ba4db20541131dbf,caf0bec,https://github.com/pk-80/device-modbus/commit/caf0bec99849aa3a04988be0ba4db20541131dbf,2017-08-17,Tyler Cox,blame,ambiguous,42e358ab55a98c03f1cef5abf919fc62a7a1ac08
+// asynchronous data from the driver layer to the device service",42e358ab55a98c03f1cef5abf919fc62a7a1ac08,42e358a,https://github.com/pk-80/device-modbus/commit/42e358ab55a98c03f1cef5abf919fc62a7a1ac08,2018-04-05,Cloud Tsai,exact,introduced,42e358ab55a98c03f1cef5abf919fc62a7a1ac08
 1545,0,plusplusjiajia/SSM,plusplusjiajia/SSM,smart-metastore/src/main/java/org/smartdata/metastore/MetaStore.java,569,//Todo: optimize,2837aac5a0484663287d776c8a731f26cc6498ea,2837aac,https://github.com/plusplusjiajia/SSM/commit/2837aac5a0484663287d776c8a731f26cc6498ea,2017-06-19,Qiyuan Gong,blame,introduced,2837aac5a0484663287d776c8a731f26cc6498ea
 17318,0,pokebadgerswithspoon/incubator-netbeans,pokebadgerswithspoon/incubator-netbeans,apisupport.ant/src/org/netbeans/modules/apisupport/project/ui/customizer/SingleModuleProperties.java,926,// Store chnages in manifest,6daa72c9819847bb4f71ee6aba6d30d5ffaca41a,6daa72c,https://github.com/pokebadgerswithspoon/incubator-netbeans/commit/6daa72c9819847bb4f71ee6aba6d30d5ffaca41a,2017-09-11,pgebauer,blame,introduced,6daa72c9819847bb4f71ee6aba6d30d5ffaca41a
 17318,1,pokebadgerswithspoon/incubator-netbeans,pokebadgerswithspoon/incubator-netbeans,apisupport.ant/src/org/netbeans/modules/apisupport/project/ui/customizer/SingleModuleProperties.java,929,// store localized info,6daa72c9819847bb4f71ee6aba6d30d5ffaca41a,6daa72c,https://github.com/pokebadgerswithspoon/incubator-netbeans/commit/6daa72c9819847bb4f71ee6aba6d30d5ffaca41a,2017-09-11,pgebauer,blame,introduced,6daa72c9819847bb4f71ee6aba6d30d5ffaca41a

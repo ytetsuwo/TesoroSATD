@@ -297,6 +297,14 @@ class Introducer:
             "steps": steps,
         }
 
+    def exact_start(self, directory, sha, path, wanted):
+        """Return a line only when the whole recorded body is present exactly."""
+        groups = self.groups_at(directory, sha, path)
+        if groups is None:
+            return None
+        starts = groups.get(compact(wanted), [])
+        return min(starts) if starts else None
+
     def pickaxe(self, directory, start, path, wanted, raw=""):
         """Fast fallback for long walks: find the oldest commit changing a line."""
         lines = [line.strip() for line in wanted.splitlines() if len(line.strip()) >= 4]
@@ -401,6 +409,72 @@ class Introducer:
         }
 
 
+def resolve_ambiguous(introducer, rows, previous):
+    """Use exact-body history and first-parent lineage to collapse candidates."""
+    records = []
+    resolved = 0
+    first_parent = {}
+    for row in rows:
+        key = (row["function_id"], row["comment_id"])
+        record = dict(previous.get(key) or {})
+        if record.get("status") == "ambiguous":
+            try:
+                directory = repo_dir(row["repo"])
+                version = introducer.version_state(row)
+                wanted = dataset_body(row["commenttext"])
+                needles = [line.strip() for line in wanted.splitlines() if len(line.strip()) >= 4]
+                needles += [line.strip() for line in row["commenttext"].splitlines()
+                            if len(line.strip()) >= 4]
+                commits = set()
+                for needle in sorted(set(needles), key=len, reverse=True):
+                    result = git(directory, "log", "--format=%H", "--reverse",
+                                 "-S", needle, version[0], "--", version[1])
+                    if result.returncode == 0:
+                        commits.update(result.stdout.splitlines())
+                exact = []
+                for sha in sorted(commits, key=lambda item: introducer.commit_meta(directory, item)["time"]):
+                    line = introducer.exact_start(directory, sha, version[1], wanted)
+                    if line is not None:
+                        exact.append((sha, line))
+                if directory not in first_parent:
+                    first_parent[directory] = set(git(
+                        directory, "rev-list", "--first-parent", "HEAD").stdout.splitlines())
+                preferred = [item for item in exact if item[0] in first_parent[directory]]
+                choice = preferred[0] if len(preferred) == 1 else exact[0] if len(exact) == 1 else None
+                if choice is None:
+                    terminal_preferred = [
+                        (t["sha"], t["line"]) for t in record.get("terminals", [])
+                        if t["sha"] in first_parent[directory]
+                        and introducer.exact_start(directory, t["sha"], t["path"], wanted) is not None
+                    ]
+                    if len(terminal_preferred) == 1:
+                        choice = terminal_preferred[0]
+                if choice is None:
+                    recorded_line = introducer.exact_start(
+                        directory, row["commit_id"], version[1], wanted)
+                    if recorded_line is not None:
+                        choice = (row["commit_id"], recorded_line)
+                if choice:
+                    sha, line = choice
+                    meta = introducer.commit_meta(directory, sha)
+                    record.update({
+                        "status": "introduced",
+                        "terminals": [{"sha": sha, "path": version[1], "line": line}],
+                        "steps": 0,
+                        "introduced_in": meta["sha"],
+                        "introduced_date": meta["date"],
+                        "introduced_author": meta["author"],
+                        "basis": "exact-first-parent" if preferred else "exact",
+                        "fallback": "ambiguous-resolution",
+                    })
+                    resolved += 1
+            except Exception as error:
+                record["retry_error"] = str(error)[:160]
+        records.append(record)
+    print(f"resolved {resolved} ambiguous rows", flush=True)
+    return records
+
+
 def audit_map():
     path = OUT / "strict_audit.jsonl"
     if not path.exists():
@@ -467,6 +541,8 @@ def main():
                         help="parallel worker processes (each keeps its own caches)")
     parser.add_argument("--retry-truncated", action="store_true",
                         help="re-search only truncated rows with the pickaxe history scan")
+    parser.add_argument("--retry-ambiguous", action="store_true",
+                        help="resolve ambiguous rows using exact-body history and first-parent lineage")
     parser.add_argument("--fail-on", default="",
                         help="comma-separated statuses that cause exit 1")
     args = parser.parse_args()
@@ -479,7 +555,7 @@ def main():
     with open(OUT / "tesoro_provenance.csv", encoding="utf-8", newline="") as file:
         rows = list(csv.DictReader(file))
     audits = audit_map()
-    if args.retry_truncated:
+    if args.retry_truncated or args.retry_ambiguous:
         previous_path = OUT / "introduced.jsonl"
         if not previous_path.exists():
             raise SystemExit("missing out/introduced.jsonl; run 28_introduced.py first")
@@ -487,7 +563,19 @@ def main():
         for line in previous_path.read_text().splitlines():
             record = json.loads(line)
             previous[(record["function_id"], record["comment_id"])] = record
-        records = retry_truncated(Introducer(max_walk=args.max_walk), rows, previous)
+        records = []
+        for row in rows:
+            key = (row["function_id"], row["comment_id"])
+            records.append(dict(previous.get(key) or {}))
+        introducer = Introducer(max_walk=args.max_walk)
+        if args.retry_truncated:
+            records = retry_truncated(introducer, rows,
+                                      {(record.get("function_id"), record.get("comment_id")): record
+                                       for record in records})
+        if args.retry_ambiguous:
+            records = resolve_ambiguous(introducer, rows,
+                                        {(record.get("function_id"), record.get("comment_id")): record
+                                         for record in records})
     else:
         jobs = max(1, args.jobs)
         local = Introducer(max_walk=args.max_walk) if jobs == 1 else None

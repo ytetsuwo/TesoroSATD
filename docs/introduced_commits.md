@@ -57,6 +57,7 @@
 python3 scripts/27_strict_audit.py  # 本文の確定判定を先に作る
 python3 scripts/28_introduced.py    # 導入コミットを全件探索
 python3 scripts/28_introduced.py --retry-truncated  # 打ち切りだけ pickaxe で再探索
+python3 scripts/28_introduced.py --retry-ambiguous  # 複数候補を完全一致と first-parent で解決
 python3 scripts/04_export.py        # summary.md に反映（fingerprint 一致時）
 python3 scripts/24_consistency.py   # 件数・キー・fingerprint を検査
 ```
@@ -69,17 +70,17 @@ python3 scripts/24_consistency.py   # 件数・キー・fingerprint を検査
 
 | 状態 | 件数 |
 | --- | ---: |
-| `introduced` | 4,890 |
-| `ambiguous` | 5 |
+| `introduced` | 4,895 |
+| `ambiguous` | 0 |
 | `truncated` | 0 |
 | `unresolved` | 0 |
 | `not_confirmed` | 66 |
 | `unmapped` | 20 |
 | 合計 | 4,981 |
 
-導入コミットを特定できた 4,890 件のうち、記録済み `commit_id` と同一が 4,507 件、
-異なるのが 383 件だった。異なる例は、複数行コメントの完成や、コード整形で
+導入コミットを特定できた 4,895 件のうち、記録済み `commit_id` と同一が 4,508 件、
+異なるのが 387 件だった。異なる例は、複数行コメントの完成や、コード整形で
 同じ行の blame が更新されたが本文は変わっていないケースである。
 
-打ち切りは 0 件。`ambiguous` は独立した導入候補が複数見つかったもの、
-`not_confirmed` は本文の厳密検査が確定していないもの。
+候補が複数あった 5 件は、本文全体の完全一致と first-parent 系譜で 1 件に絞れた。
+`not_confirmed` は本文の厳密検査が確定していないもの、`unmapped` は来歴がないもの。
