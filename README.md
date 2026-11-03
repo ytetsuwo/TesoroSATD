@@ -18,7 +18,7 @@
 | `out/summary.md` | – | カバレッジと制約の自動レポート |
 | `out/repo_manifest.csv` | 975 | 各 clone の入手経路 (`kind` / 取得元 URL / SWH swhid / HEAD) |
 
-カバレッジ: **関数 1247/1255 (99.4%) を特定、コメント 4970/4981 (99.8%)** に commit を付与。
+カバレッジ: **関数 1252/1255 (99.8%) を特定、コメント 4976/4981 (99.9%)** に commit を付与。
 うち 59 関数は HEAD ではなく履歴から復元 (削除リポジトリは Software Heritage・
 存命ミラー・上流プロジェクトから復元)。972 プロジェクト、commit 日付は
 2000-12-06 〜 2026-08-31。
@@ -163,11 +163,11 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
 
 ### 5. 検証 (05 / 14 / 27 / 28)
 
-- `--full`: commit が付いた全 4970 コメントで、ファイル上のコメント本文が一致する
-  ことを確認 → **4970/4970**。
+- `--full`: commit が付いた全 4976 コメントで、ファイル上のコメント本文が一致する
+  ことを確認 → **4976/4976**。
 - ランダム 120 件で「本文一致・blame 一致・その commit に本文が存在」の 3 点を
   確認 → **120/120**。
-- `--all-checks`: 本文・blame・show の従来3検査を来歴付き全件に実行 → **各4970/4970**。
+- `--all-checks`: 本文・blame・show の従来3検査を来歴付き全件に実行 → **各4976/4976**。
 - `14_check_span.py`: 履歴・別ファイル・変形コメントを除外せず、各コメントの
   `path_snapshot` / `snapshot_commit` で AST と期待するメソッドへの所属を検査する。
   `--json` の出力はコメント単位。取得失敗や範囲外を成功扱いしない。
@@ -181,8 +181,8 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
 - `28_introduced.py`: 本文が確定したコメントについて、現在の本文を導入したコミットを
   親方向へ探索する。`commit_id`（本文行の最終更新者）とは別の列で記録し、
   `introduced` / `ambiguous` / `truncated` / `unresolved` / `not_confirmed` / `unmapped`
-  に分ける。来歴は変更しない。全4,981件では **特定4,931 / 曖昧0 / 打ち切り0 /
-  未解決0 / 本文未確定39 / 未対応11**。記録済み `commit_id` と同一4,535、異なる396。
+  に分ける。来歴は変更しない。全4,981件では **特定4,938 / 曖昧0 / 打ち切り0 /
+  未解決0 / 本文未確定38 / 未対応5**。記録済み `commit_id` と同一4,541、異なる397。
   現在の本文と一致しない行は、dataset 側の本文を履歴から別に探し、
   `dataset_introduced_in` に **履歴で完全一致8 / 候補2 / 近い候補1 / 接頭辞1 /
   周辺コードから推定24 / 短語2 / 見つからない1** を記録する。詳細は
@@ -250,8 +250,10 @@ python3 scripts/26_benchmark.py --repeat 3 --output work/tmp/benchmark.json
 - **unavailable 3 関数 / 2 リポジトリ**: `JC-Bodoque/geometric-transformer` の 1 件と
   `fernandogomesfg/Algoritmos-em-Java` の 2 件。GitHub 上で削除済みで、SWH にも
   使える snapshot が無く、コード検索でも同一本文が見つからない。
-- **weak_match 5 関数** (すべて Chromium の部分取得):
-  `zealoussnow/chromium` の 4 件と `sarang-apps/darshan_browser` の 1 件。
+- **weak_match 0 関数**: Chromium の旧版 5 関数 (16761, 16764, 19585, 20104,
+  24102) は `_chromium_full` の履歴から `MediaCodecBridge.java`、
+  `WebLayerPaymentRequestService.java`、`BookmarkUtils.java`、
+  `VrBrowserNativeUiTest.java` の該当行を特定し、`ok_history` として復元した。
   以前 weak_match だった `leusonmario/2022PhDThesis` の randoop 生成テストは
   jsoup の 1 コピー (`randoop_6/RegressionTest40.java`) に一意化でき、
   `octo-online/reactive-aud` は改名先 `octo-online/reactive-audit` の

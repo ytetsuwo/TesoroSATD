@@ -10098,8 +10098,8 @@ zealoussnow/chromium@b2a61e5,DEFECT,"// TODO(crbug.com/948518): This is a band-a
 /**
      * @return Whether filter should notify observers about the SetIndex call.
      */"
-zealoussnow/chromium,IMPLEMENTATION,// TODO(qinmin): May need to report the error to the caller. crbug.com/356498.
-zealoussnow/chromium,IMPLEMENTATION,// TODO(dalecurtis): We may want to drop transient errors here.
+zealoussnow/chromium@e272282,IMPLEMENTATION,// TODO(qinmin): May need to report the error to the caller. crbug.com/356498.
+zealoussnow/chromium@e048085,IMPLEMENTATION,// TODO(dalecurtis): We may want to drop transient errors here.
 zealoussnow/chromium@f019e0c,IMPLEMENTATION,"// Ignores the service worker payment apps in WebLayer until -
 // TODO(crbug.com/1224420): WebLayer supports Service worker payment apps."
 zealoussnow/chromium@611d21b,WITHOUT_CLASSIFICATION,"/**
@@ -10111,12 +10111,12 @@ zealoussnow/chromium@611d21b,WITHOUT_CLASSIFICATION,"/**
      * @param tab The current {@link Tab} which bookmark properties are pulled.
      * @param bookmarkType The {@link BookmarkType} of the bookmark.
      */"
-zealoussnow/chromium,WITHOUT_CLASSIFICATION,"// Reading list items will be added when either one of the 2 conditions is met:
+zealoussnow/chromium@42fa57e,WITHOUT_CLASSIFICATION,"// Reading list items will be added when either one of the 2 conditions is met:
 // 1. The bookmark type explicitly specifies READING_LIST.
 // 2. The last used parent implicitly specifies READING_LIST."
-zealoussnow/chromium,WITHOUT_CLASSIFICATION,"// Use ""New tab"" as title for both incognito and regular NTP."
-zealoussnow/chromium,WITHOUT_CLASSIFICATION,// The shopping list experiment saves extra metadata along with the bookmark.
-zealoussnow/chromium,DESIGN,"// TODO(lazzzis): remove log after bookmark sync is fixed, crbug.com/986978"
+zealoussnow/chromium@3714099,WITHOUT_CLASSIFICATION,"// Use ""New tab"" as title for both incognito and regular NTP."
+zealoussnow/chromium@611d21b,WITHOUT_CLASSIFICATION,// The shopping list experiment saves extra metadata along with the bookmark.
+zealoussnow/chromium@4699d64,DESIGN,"// TODO(lazzzis): remove log after bookmark sync is fixed, crbug.com/986978"
 zebra1024/couchbase-lite-android@542ad90,TEST,"// TODO: MArray has isMuated() method, but unable to check mutated to mutated.
 // @Test"
 zem13579/hive@3f3d210,DESIGN,// TODO May be possible to do finer-grained locks.

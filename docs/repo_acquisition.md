@@ -309,3 +309,19 @@ curl -s https://archive.softwareheritage.org/api/1/vault/gitfast/swh:1:rev:51514
   SWH の Vault が `new` のまま進まないため、browse page から
   `0136cb593d` までの 7 コミットを git オブジェクトとして再構築し、
   コメントを commit `0136cb593d`（2017-11-03, Albert Attard）に特定した。
+
+### Chromium の weak_match 5 件（2026-11-04）
+
+`_chromium_full`（64GB、全履歴）から旧版のファイルと行を特定し、
+`zealoussnow__chromium` に `objects/info/alternates` を追加して同じ履歴を参照できるようにした。
+`25_manual_fixes.py` の `HISTORY_FIXES` に以下を登録した。
+
+| 関数 | スナップショット | ファイル | コメント行 | コミット |
+| --- | --- | --- | --- | --- |
+| 16761 | `e272282175ff` | `media/.../MediaCodecBridge.java` | 404 | `e272282175ff` (qinmin, 2014-03-26) |
+| 16764 | `e048085aee3f` | `media/.../MediaCodecBridge.java` | 217 | `e048085aee3f` (Dale Curtis, 2018-08-15) |
+| 19585 | `f019e0c2f94e` | `weblayer/.../WebLayerPaymentRequestService.java` | 63–64 | `f019e0c2f94e` (Liquan Gu, 2021-06-30) |
+| 20104 | `42fa57e9aa3c` | `chrome/.../bookmarks/BookmarkUtils.java` | 250–258, 272–274, 282, 286, 295 | `611d21bc6f86` / `42fa57e9aa3c` / `3714099df5fd` / `611d21bc6f86` / `4699d649c383` |
+| 24102 | `d48d2b163977` | `chrome/.../vr/VrBrowserNativeUiTest.java` | 703–706 | `d48d2b163977` (bsheedy, 2019-03-13) |
+
+これで `weak_match` は 0 関数になった。

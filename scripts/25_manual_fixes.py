@@ -14,8 +14,9 @@ import re
 import subprocess
 import sys
 from datetime import datetime
+from difflib import SequenceMatcher
 
-from common import OUT, core, load_tesoro, repo_dir
+from common import OUT, core, load_tesoro, norm, repo_dir
 
 # (function_id, comment_id, revision or None for HEAD, path, first, last, match)
 FIXES = [
@@ -107,6 +108,29 @@ WHOLE_FIXES = [
      1455, 1488, "exact", {0: 1474, 1: 1477, 2: 1479}),
 ]
 
+# Functions that only exist in an older Chromium revision.  Each entry names
+# the snapshot, the path and span at that snapshot, and the line range of every
+# comment.  The comment commit is recomputed with git blame at that revision.
+# (function_id, revision, path, start, end, {comment_id: (first, last)})
+HISTORY_FIXES = [
+    (16761, "e272282175ff952685c32820cc8e018907e543b8",
+     "media/base/android/java/src/org/chromium/media/MediaCodecBridge.java",
+     399, 407, {0: (404, 404)}),
+    (16764, "e048085aee3fb3afa17ec2cd24f3173457887aa9",
+     "media/base/android/java/src/org/chromium/media/MediaCodecBridge.java",
+     215, 220, {0: (217, 217)}),
+    (19585, "f019e0c2f94e08e66572956735f3f5c6969db5d4",
+     "weblayer/browser/java/org/chromium/weblayer_private/payments/WebLayerPaymentRequestService.java",
+     61, 66, {0: (63, 64)}),
+    (20104, "42fa57e9aa3cef3c0efe2c8f656f29de207ccd2e",
+     "chrome/android/java/src/org/chromium/chrome/browser/bookmarks/BookmarkUtils.java",
+     259, 307, {0: (250, 258), 1: (272, 274), 2: (282, 282),
+                3: (286, 286), 4: (295, 295)}),
+    (24102, "d48d2b1639774af47043bf653ccfb15fd972005b",
+     "chrome/android/javatests/src/org/chromium/chrome/browser/vr/VrBrowserNativeUiTest.java",
+     703, 715, {0: (703, 706)}),
+]
+
 
 def blame(d, rev, path, ln):
     p = subprocess.run(["git", "-C", str(d), "-c", "core.quotepath=false",
@@ -132,7 +156,7 @@ def main() -> int:
     path = OUT / "functions_located.jsonl"
     rows = [json.loads(x) for x in path.read_text().splitlines() if x.strip()]
     by_id = {r["id"]: r for r in rows}
-    _, tesoro_comments = load_tesoro()
+    tesoro_funcs, tesoro_comments = load_tesoro()
     n = 0
     for fid, cid, rev, fpath, first, last, kind in FIXES:
         loc = by_id.get(fid)
@@ -186,6 +210,48 @@ def main() -> int:
                       "path_at": info.get("path") or fpath})
             c.pop("at_commit", None)
             n += 1
+    for fid, rev, fpath, first, last, comment_lines in HISTORY_FIXES:
+        loc = by_id.get(fid)
+        if not loc:
+            continue
+        d = repo_dir(loc["repo"])
+        shown = subprocess.run(["git", "-C", str(d), "-c", "core.quotepath=false",
+                                "show", f"{rev}:{fpath}"],
+                               capture_output=True, text=True)
+        if shown.returncode:
+            print(f"history fix {fid}: {shown.stderr.strip()[:120]}", file=sys.stderr)
+            continue
+        old_lines = shown.stdout.splitlines()
+        ref = [norm(x) for x in tesoro_funcs[fid]["original_code"].splitlines()]
+        old = [norm(x) for x in old_lines[first - 1:last]]
+        ratio = SequenceMatcher(None, ref, [x for x in old if x],
+                                autojunk=False).ratio() if old else 0.0
+        loc.update({"path": fpath, "start": first, "end": last,
+                    "ratio": round(ratio, 3), "status": "ok_history",
+                    "confidence": "high" if ratio >= 0.9 else "medium",
+                    "at_head": False, "match": "history",
+                    "prev_status": loc.get("status")})
+        loc.pop("reason", None)
+        loc.pop("rival", None)
+        loc.pop("ast_span_shift", None)
+        for c in loc.get("comments") or []:
+            span = comment_lines.get(c["comment_id"])
+            if not span:
+                continue
+            cfirst, clast = span
+            target = next((i for i in range(cfirst, clast + 1) if core(old_lines[i - 1])),
+                          cfirst)
+            info = blame(d, rev, fpath, target)
+            c.update({"lines": list(range(cfirst, clast + 1)), "match": "history",
+                      "commit": info.get("sha"), "author": info.get("author"),
+                      "author_time": info.get("date"), "summary": info.get("summary"),
+                      "path_snapshot": fpath, "path_at": info.get("path") or fpath,
+                      "at_commit": rev})
+            n += 1
+        loc["n_mapped"] = sum(1 for c in loc.get("comments") or [] if c.get("lines"))
+        if loc.get("comments"):
+            loc["commit"] = loc["comments"][0].get("commit") or rev
+            loc["commit_sha"] = loc["commit"]
     tmp = path.with_suffix(".jsonl.tmp")
     tmp.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
     tmp.replace(path)
