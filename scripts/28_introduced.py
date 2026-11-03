@@ -26,7 +26,7 @@ import sys
 import astjava
 from common import OUT, core, git, git_env, repo_dir, write_jsonl
 from strict_verification import (
-    Auditor, comment_groups, compact, dataset_body, parse_blame,
+    Auditor, body, comment_groups, compact, dataset_body, parse_blame,
 )
 
 STATUSES = ("introduced", "ambiguous", "truncated", "unresolved",
@@ -299,7 +299,7 @@ class Introducer:
 
     def pickaxe(self, directory, start, path, wanted):
         """Fast fallback for long walks: find the oldest commit changing a line."""
-        lines = [line.strip() for line in wanted.splitlines() if len(line.strip()) >= 8]
+        lines = [line.strip() for line in wanted.splitlines() if len(line.strip()) >= 4]
         if not lines:
             return None
         commits = set()
@@ -310,8 +310,36 @@ class Introducer:
                 commits.update(result.stdout.splitlines())
         for sha in sorted(commits, key=lambda item: self.commit_meta(directory, item)["time"]):
             matched = self.present(directory, sha, path, wanted, None)
+            if matched is None:
+                matched = self.raw_present(directory, sha, path, wanted)
             if matched is not None:
                 return {"sha": sha, "path": path, "line": matched}
+        return None
+
+    def raw_present(self, directory, sha, path, wanted):
+        """Line-based fallback for comments spanning several separate lines."""
+        result = git_text(directory, "show", f"{sha}:{path}")
+        if result.returncode:
+            return None
+        wanted_key = compact(wanted)
+        parts, start = [], None
+        for number, line in enumerate(result.stdout.split("\n"), 1):
+            stripped = line.lstrip()
+            if not stripped:
+                continue
+            if not (stripped.startswith("//") or stripped.startswith("*")
+                    or stripped.startswith("/*")):
+                parts, start = [], None
+                continue
+            text = compact(body(line))
+            if not text:
+                continue
+            if not parts:
+                start = number
+            parts.append(text)
+            joined = "".join(parts)
+            if joined == wanted_key or (len(wanted_key) >= 4 and wanted_key in joined):
+                return start
         return None
 
     def analyse(self, row, audit):

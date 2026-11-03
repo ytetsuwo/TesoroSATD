@@ -4,16 +4,16 @@
   "mapped": 4961,
   "provenance_sha256": "33b816d5ccdcf7cef221fe3dfc4adba1259eb42682bdc822b3b3d51efdb4606d",
   "counts": {
-    "introduced": 4879,
+    "introduced": 4884,
     "not_confirmed": 66,
     "ambiguous": 5,
     "unmapped": 20,
-    "truncated": 11
+    "truncated": 6
   },
-  "identified": 4879,
-  "same_as_recorded_commit": 4506,
-  "different_from_recorded_commit": 373,
-  "unique_introduced_commits": 1455,
+  "identified": 4884,
+  "same_as_recorded_commit": 4507,
+  "different_from_recorded_commit": 377,
+  "unique_introduced_commits": 1458,
   "max_walk": 128,
   "definition": "the commit that introduced the current exact comment body, by walking parents while the body remains present; not necessarily the first SATD appearance if the wording changed earlier or the text was copied"
 }
