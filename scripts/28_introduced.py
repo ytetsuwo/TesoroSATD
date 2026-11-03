@@ -7,7 +7,8 @@ comment body is still present, so a later edit is not mistaken for the first
 introduction. The result is a separate file; provenance rows are not changed.
 
     python3 scripts/28_introduced.py
-    python3 scripts/28_introduced.py --max-walk 128
+    python3 scripts/28_introduced.py --retry-truncated
+    python3 scripts/28_introduced.py --max-walk 256
 """
 from __future__ import annotations
 
@@ -296,6 +297,23 @@ class Introducer:
             "steps": steps,
         }
 
+    def pickaxe(self, directory, start, path, wanted):
+        """Fast fallback for long walks: find the oldest commit changing a line."""
+        lines = [line.strip() for line in wanted.splitlines() if len(line.strip()) >= 8]
+        if not lines:
+            return None
+        commits = set()
+        for needle in sorted(set(lines), key=len, reverse=True):
+            result = git(directory, "log", "--format=%H", "--reverse",
+                         "-S", needle, start, "--", path)
+            if result.returncode == 0:
+                commits.update(result.stdout.splitlines())
+        for sha in sorted(commits, key=lambda item: self.commit_meta(directory, item)["time"]):
+            matched = self.present(directory, sha, path, wanted, None)
+            if matched is not None:
+                return {"sha": sha, "path": path, "line": matched}
+        return None
+
     def analyse(self, row, audit):
         if not row.get("commit_id") or not row.get("comment_line"):
             return {"status": "unmapped", "reason": "no recorded provenance"}
@@ -325,6 +343,13 @@ class Introducer:
         start = self.latest(directory, pool)
         start_path, start_hint = next((path, hint) for sha, path, hint in pool if sha == start)
         walked = self.introduction(directory, start, start_path, start_hint, wanted)
+        basis = "blame" if start in body_shas else "version"
+        if walked["status"] == "truncated":
+            fallback = self.pickaxe(directory, version[0], version[1], wanted)
+            if fallback:
+                walked = {"status": "introduced", "terminals": [fallback],
+                          "steps": walked["steps"], "fallback": "pickaxe"}
+                basis = "pickaxe"
         meta = self.commit_meta(directory, walked["terminals"][0]["sha"]) \
             if walked["terminals"] else {}
         return {
@@ -332,7 +357,7 @@ class Introducer:
             "introduced_in": meta.get("sha", ""),
             "introduced_date": meta.get("date", ""),
             "introduced_author": meta.get("author", ""),
-            "basis": "blame" if start in body_shas else "version",
+            "basis": basis,
             "candidate_count": len(candidates),
         }
 
@@ -362,12 +387,46 @@ def analyse_worker(item):
         return row, {"status": "unresolved", "reason": str(error)[:160]}
 
 
+def retry_truncated(introducer, rows, previous):
+    """Re-search only the rows whose parent walk hit the limit, via pickaxe."""
+    records = []
+    retried = 0
+    for index, row in enumerate(rows, 1):
+        key = (row["function_id"], row["comment_id"])
+        record = dict(previous.get(key) or {})
+        if record.get("status") == "truncated":
+            retried += 1
+            try:
+                directory = repo_dir(row["repo"])
+                version = introducer.version_state(row)
+                wanted = dataset_body(row["commenttext"])
+                found = introducer.pickaxe(directory, version[0], version[1], wanted)
+                if found:
+                    meta = introducer.commit_meta(directory, found["sha"])
+                    record.update({
+                        "status": "introduced", "terminals": [found], "steps": 0,
+                        "introduced_in": meta["sha"], "introduced_date": meta["date"],
+                        "introduced_author": meta["author"], "basis": "pickaxe",
+                        "fallback": "pickaxe",
+                    })
+                    record.pop("reason", None)
+            except Exception as error:
+                record["retry_error"] = str(error)[:160]
+            if retried % 20 == 0:
+                print(f"retried {retried} truncated rows", flush=True)
+        records.append(record)
+    print(f"retried {retried} truncated rows", flush=True)
+    return records
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--max-walk", type=int, default=128,
                         help="maximum commits to inspect while walking parents")
     parser.add_argument("--jobs", type=int, default=6,
                         help="parallel worker processes (each keeps its own caches)")
+    parser.add_argument("--retry-truncated", action="store_true",
+                        help="re-search only truncated rows with the pickaxe history scan")
     parser.add_argument("--fail-on", default="",
                         help="comma-separated statuses that cause exit 1")
     args = parser.parse_args()
@@ -380,41 +439,51 @@ def main():
     with open(OUT / "tesoro_provenance.csv", encoding="utf-8", newline="") as file:
         rows = list(csv.DictReader(file))
     audits = audit_map()
-    jobs = max(1, args.jobs)
-    local = Introducer(max_walk=args.max_walk) if jobs == 1 else None
+    if args.retry_truncated:
+        previous_path = OUT / "introduced.jsonl"
+        if not previous_path.exists():
+            raise SystemExit("missing out/introduced.jsonl; run 28_introduced.py first")
+        previous = {}
+        for line in previous_path.read_text().splitlines():
+            record = json.loads(line)
+            previous[(record["function_id"], record["comment_id"])] = record
+        records = retry_truncated(Introducer(max_walk=args.max_walk), rows, previous)
+    else:
+        jobs = max(1, args.jobs)
+        local = Introducer(max_walk=args.max_walk) if jobs == 1 else None
 
-    def sequential():
-        for row in rows:
-            key = (row["function_id"], row["comment_id"])
-            try:
-                yield row, local.analyse(row, audits.get(key))
-            except Exception as error:  # one broken repository must not stop the audit
-                yield row, {"status": "unresolved", "reason": str(error)[:160]}
+        def sequential():
+            for row in rows:
+                key = (row["function_id"], row["comment_id"])
+                try:
+                    yield row, local.analyse(row, audits.get(key))
+                except Exception as error:  # one broken repository must not stop the audit
+                    yield row, {"status": "unresolved", "reason": str(error)[:160]}
 
-    executor = ProcessPoolExecutor(max_workers=jobs, initializer=init_worker,
-                                   initargs=(args.max_walk,)) if jobs > 1 else None
-    with (executor if executor is not None else nullcontext()) as pool:
-        if pool is not None:
-            results = pool.map(analyse_worker, (
-                (row, audits.get((row["function_id"], row["comment_id"]))) for row in rows
-            ), chunksize=8)
-        else:
-            results = sequential()
-        records = []
-        for index, (row, result) in enumerate(results, 1):
-            records.append({
-                "function_id": row["function_id"],
-                "comment_id": row["comment_id"],
-                "projectname": row["projectname"],
-                "repo": row["repo"],
-                "path": row.get("path_snapshot") or row["path"],
-                "comment_line": row["comment_line"],
-                "commenttext": row["commenttext"],
-                "recorded_commit": row["commit_id"],
-                **result,
-            })
-            if index % 500 == 0:
-                print(f"analysed {index}/{len(rows)}", flush=True)
+        executor = ProcessPoolExecutor(max_workers=jobs, initializer=init_worker,
+                                       initargs=(args.max_walk,)) if jobs > 1 else None
+        with (executor if executor is not None else nullcontext()) as pool:
+            if pool is not None:
+                results = pool.map(analyse_worker, (
+                    (row, audits.get((row["function_id"], row["comment_id"]))) for row in rows
+                ), chunksize=8)
+            else:
+                results = sequential()
+            records = []
+            for index, (row, result) in enumerate(results, 1):
+                records.append({
+                    "function_id": row["function_id"],
+                    "comment_id": row["comment_id"],
+                    "projectname": row["projectname"],
+                    "repo": row["repo"],
+                    "path": row.get("path_snapshot") or row["path"],
+                    "comment_line": row["comment_line"],
+                    "commenttext": row["commenttext"],
+                    "recorded_commit": row["commit_id"],
+                    **result,
+                })
+                if index % 500 == 0:
+                    print(f"analysed {index}/{len(rows)}", flush=True)
 
     counts = Counter(record["status"] for record in records)
     identified = [record for record in records if record["status"] == "introduced"]

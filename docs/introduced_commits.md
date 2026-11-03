@@ -56,6 +56,7 @@
 ```bash
 python3 scripts/27_strict_audit.py  # 本文の確定判定を先に作る
 python3 scripts/28_introduced.py    # 導入コミットを全件探索
+python3 scripts/28_introduced.py --retry-truncated  # 打ち切りだけ pickaxe で再探索
 python3 scripts/04_export.py        # summary.md に反映（fingerprint 一致時）
 python3 scripts/24_consistency.py   # 件数・キー・fingerprint を検査
 ```
@@ -68,18 +69,18 @@ python3 scripts/24_consistency.py   # 件数・キー・fingerprint を検査
 
 | 状態 | 件数 |
 | --- | ---: |
-| `introduced` | 4,743 |
+| `introduced` | 4,879 |
 | `ambiguous` | 5 |
-| `truncated` | 147 |
+| `truncated` | 11 |
 | `unresolved` | 0 |
 | `not_confirmed` | 66 |
 | `unmapped` | 20 |
 | 合計 | 4,981 |
 
-導入コミットを特定できた 4,743 件のうち、記録済み `commit_id` と同一が 4,498 件、
-異なるのが 245 件だった。異なる例は、複数行コメントの完成や、コード整形で
+導入コミットを特定できた 4,879 件のうち、記録済み `commit_id` と同一が 4,506 件、
+異なるのが 373 件だった。異なる例は、複数行コメントの完成や、コード整形で
 同じ行の blame が更新されたが本文は変わっていないケースである。
 
-`truncated` 147 件は、親方向の探索が 128 コミットに達したもので、誤対応ではない。
-`--max-walk 256` などで再実行すると一部は特定できる。`ambiguous` は独立した
+`truncated` 11 件は、親方向の通常探索が 128 コミットに達し、pickaxe でも
+本文全体の導入点を確定できなかったもの。誤対応ではない。`ambiguous` は独立した
 導入候補が複数見つかったもの、`not_confirmed` は本文の厳密検査が確定していないもの。

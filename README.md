@@ -178,8 +178,9 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
 - `28_introduced.py`: 本文が確定したコメントについて、現在の本文を導入したコミットを
   親方向へ探索する。`commit_id`（本文行の最終更新者）とは別の列で記録し、
   `introduced` / `ambiguous` / `truncated` / `unresolved` / `not_confirmed` / `unmapped`
-  に分ける。来歴は変更しない。全4,981件では **特定4,743 / 曖昧5 / 打ち切り147 /
-  未解決0 / 本文未確定66 / 未対応20**。記録済み `commit_id` と同一4,498、異なる245。
+  に分ける。来歴は変更しない。全4,981件では **特定4,879 / 曖昧5 / 打ち切り11 /
+  未解決0 / 本文未確定66 / 未対応20**。記録済み `commit_id` と同一4,506、異なる373。
+  打ち切りは `--retry-truncated` で pickaxe 再探索できる。
   詳細は [導入コミット](docs/introduced_commits.md)。
 
 ### MSR16 形式の適合性 (20)
