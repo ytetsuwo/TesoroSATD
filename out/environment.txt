@@ -1,7 +1,7 @@
-date: 2026-11-03T17:26:40
+date: 2026-11-03T17:31:10
 python: 3.9.6 (macOS-27.2-arm64-arm-64bit)
 tree-sitter: 0.23.2
 tree-sitter-java: 0.23.5
 git: git version 2.54.0 (Apple Git-157)
-commit: 0c4b2784181b7a17dd4c5b7de45ae267e710a61a
+commit: 90b16b098eae50ca0f87f0a172fe1101ba6527ae
 manifest: dca61e0a6b80cb2485deadfc351f6f2ac52b62b0

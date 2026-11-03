@@ -297,9 +297,10 @@ class Introducer:
             "steps": steps,
         }
 
-    def pickaxe(self, directory, start, path, wanted):
+    def pickaxe(self, directory, start, path, wanted, raw=""):
         """Fast fallback for long walks: find the oldest commit changing a line."""
         lines = [line.strip() for line in wanted.splitlines() if len(line.strip()) >= 4]
+        lines += [line.strip() for line in raw.splitlines() if len(line.strip()) >= 4]
         if not lines:
             return None
         commits = set()
@@ -314,6 +315,15 @@ class Introducer:
                 matched = self.raw_present(directory, sha, path, wanted)
             if matched is not None:
                 return {"sha": sha, "path": path, "line": matched}
+        history = git(directory, "log", "--full-history", "--format=%H", "--reverse",
+                      start, "--", path)
+        if history.returncode == 0:
+            for sha in history.stdout.splitlines():
+                matched = self.present(directory, sha, path, wanted, None)
+                if matched is None:
+                    matched = self.raw_present(directory, sha, path, wanted)
+                if matched is not None:
+                    return {"sha": sha, "path": path, "line": matched}
         return None
 
     def raw_present(self, directory, sha, path, wanted):
@@ -373,7 +383,8 @@ class Introducer:
         walked = self.introduction(directory, start, start_path, start_hint, wanted)
         basis = "blame" if start in body_shas else "version"
         if walked["status"] == "truncated":
-            fallback = self.pickaxe(directory, version[0], version[1], wanted)
+            fallback = self.pickaxe(directory, version[0], version[1], wanted,
+                                     row["commenttext"])
             if fallback:
                 walked = {"status": "introduced", "terminals": [fallback],
                           "steps": walked["steps"], "fallback": "pickaxe"}
@@ -428,7 +439,8 @@ def retry_truncated(introducer, rows, previous):
                 directory = repo_dir(row["repo"])
                 version = introducer.version_state(row)
                 wanted = dataset_body(row["commenttext"])
-                found = introducer.pickaxe(directory, version[0], version[1], wanted)
+                found = introducer.pickaxe(directory, version[0], version[1], wanted,
+                                           row["commenttext"])
                 if found:
                     meta = introducer.commit_meta(directory, found["sha"])
                     record.update({
