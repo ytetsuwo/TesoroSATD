@@ -17,7 +17,7 @@ column -s, -t out/repo_manifest.csv | less -S
 | `head` | 復元した HEAD の完全 SHA。再現できたかの照合に使う |
 | `swh_status` / `swh_visit` | `work/swh_state.jsonl` の最終 status とスナップショット日時 |
 
-現状の内訳: **github 874 / swh 63 / mirror 32 / symlink 6**。
+現状の内訳: **github 874 / swh 64 / mirror 32 / symlink 5**。
 
 ---
 
@@ -42,7 +42,7 @@ git -C repos/<owner>__<name> checkout HEAD
 python3 scripts/02_clone_repos.py          # 未取得分だけ取得。冪等
 ```
 
-## 2. Software Heritage の Vault からの復元（62 件 + バンドル 1 件）
+## 2. Software Heritage からの復元（Vault 62 件 + バンドル 1 件 + browse page 1 件）
 
 GitHub 側で 404（削除・非公開）になったリポジトリを、SWH のスナップショットから戻す。
 
@@ -78,7 +78,7 @@ grep -E 'ready|ok |failed|done,' work/swh7.log      # 進捗はラウンド行�
   手順 2〜4 をやり直す（Vault の成果物は一定期間キャッシュされている）。
 - 1 件だけ戻すなら `python3 scripts/10_swh_batch.py <owner>/<name>`。
 
-## 3. 存命ミラー・改名先・上流プロジェクト（19 件）
+## 3. 存命ミラー・改名先・上流プロジェクト（20 件）
 
 SWH にすら無い `not_archived` のリポジトリは、コードそのものが別の場所に生きている。
 **元のディレクトリ名のまま**、生きているリポジトリを clone して差し替える。
@@ -109,34 +109,37 @@ python3 scripts/08_history.py <function_id> ...   # HEAD に無ければ履歴�
 | mkpaz/telek | `mkpaz/corf`（改名） | 1 / 1 |
 | derekdinan/CTFServer | `grahamedgecombe/opencraft` | 1 / 1 |
 | good-loop/open-code | `sodash/open-code`（旧 `Licardo/AndroidChart` は別物） | 1 / 1 |
-| javacreed/super-simple-stocks | `jainebri/Super-Simple-Stocks`（API が別物） | 0 / 1 |
+| javacreed/super-simple-stocks | `albertattard/super-simple-stocks`（SWH browse page から履歴復元） | 1 / 1 |
 | krisiney/SOKOBANFX-DMS-2020 | `hallvard/javafx` | 0 / 1 |
 | nikosnikolaidis/commons-rdf | `apache/commons-rdf`（6.3MB） | 1 / 1 |
+| octo-online/reactive-aud | `octo-online/reactive-audit`（改名） | 3 / 3 |
 
 `good-loop/open-code` は最初に選んだ `Licardo/AndroidChart` が同名の別プロジェクトで、
 `sodash/open-code`（Winterwell 系、`winterwell.maths` を含む）に差し替えて復元した。
 `Clay-Ferguson/Quantizr` は履歴が 1 コミットに潰れていたため、上流の
 `xmonader/quantizr` に差し替えて復元した（`src/main/java/quanta/actpub/ActPubService.java`）。
-残る `javacreed/super-simple-stocks` と `krisiney/SOKOBANFX-DMS-2020` は、
-公開されている fork が別の API に書き換わっていて関数本文が一致しない
-（`weak_match` のまま）。記録としてディレクトリだけ残している。削除してよい。
+`javacreed/super-simple-stocks` は `albertattard/super-simple-stocks` の
+`Stock.java` 115〜121 行を SWH の browse page から復元し、コメントを
+commit `0136cb593d`（2017-11-03, Albert Attard）に紐付けた。
+`krisiney/SOKOBANFX-DMS-2020` は関数自体は `ok` だが、2 コメントのうち
+Javadoc 1 件が未対応のまま残っている。
 `mkpaz/telek` と `derekdinan/CTFServer` は行単位の一致率では落ちていたが、
 トークン単位の照合で同一メソッドと確認して復元した。
 
-## 4. symlink による使い回し（6 件）
+## 4. symlink による使い回し（5 件）
 
 巨大な履歴を二重に持たないためのエイリアス。`03_locate.py` はディレクトリ名で
 リポジトリを引くので、symlink でも通常のクローンと区別なく動く。
 
 ```bash
 ln -s LynzhX__android_frameworks_base-1 repos/zipated__src
-ln -s LynzhX__android_frameworks_base-1 repos/octo-online__reactive-aud
 ln -s ../repos/lembergerth__cpachecker   repos/jcdubois__cpachecker
 ln -s ../repos/metas-fresh__fresh        repos/focadiz__metasfresh
 ```
 
-`zipated/src`（10 関数）は AOSP `frameworks/base` の履歴から、
-`octo-online/reactive-aud` は該当コードが AOSP 本流に無く復元できなかった。
+`zipated/src`（10 関数）は AOSP `frameworks/base` の履歴から復元した。
+`octo-online/reactive-aud` は AOSP の symlink では一致せず、改名先の
+`octo-online/reactive-audit` を clone して 3 コメントを復元した。
 
 ---
 
@@ -228,9 +231,9 @@ curl -s https://archive.softwareheritage.org/api/1/vault/gitfast/swh:1:rev:51514
 | 種別 | 件数 | 意味 |
 | --- | --- | --- |
 | github | 874 | 存命リポジトリを GitHub から clone |
-| swh | 63 | Software Heritage のバルクから復元（remote は `work/swh/...`） |
+| swh | 64 | Software Heritage のバルクから復元（remote は `work/swh/...`） |
 | mirror | 32 | 削除済みの代替（上流・fork・SWH バンドル） |
-| symlink | 6 | 同一内容の clone を使い回し |
+| symlink | 5 | 同一内容の clone を使い回し |
 
 - 975 ディレクトリすべてが manifest に載り、HEAD のドリフトは 0。
 - `bcgov__jag-efax` は SWH の gitfast バンドル（`work/jag.git`）を remote にしている。
@@ -289,3 +292,20 @@ curl -s https://archive.softwareheritage.org/api/1/vault/gitfast/swh:1:rev:51514
 19585 と 20104 は、`zealoussnow__chromium` に `_chromium_full` から該当コミットを fetch し、
 `25_manual_fixes.py` に `at_commit` 付きで登録して CSV に統合した。
 24102 も当時の本文が一致したため統合。
+
+### weak_match の追加解決（2026-11-03）
+
+- `10862` (`leusonmario/2022PhDThesis`): `test20046` は 83 ファイルに重複するが、
+  jsoup の本文と一致するのは
+  `jsoup/a8b6982de98ff76ef254031d7152fff57f6bf941/randoop_6/RegressionTest40.java`
+  1455〜1488 行だけ。3 コメントは commit `efafe731`（2022-02-17, leusonmario）で
+  導入された。`25_manual_fixes.py` の `WHOLE_FIXES` に登録した。
+- `19374` (`octo-online/reactive-aud`): リポジトリは
+  `octo-online/reactive-audit` に改名されていた。`HistoryStackElement.java`
+  34〜44 行の 3 コメントを、`c7c501d6`（2014-06-20, WARNING）と
+  `64855eb4`（2014-07-07, 残り 2 件）に紐付けた。
+- `13571` (`javacreed/super-simple-stocks`): 元リポジトリは削除済みだが、同一コードは
+  `albertattard/super-simple-stocks` の `Stock.java` 115〜121 行に現存する。
+  SWH の Vault が `new` のまま進まないため、browse page から
+  `0136cb593d` までの 7 コミットを git オブジェクトとして再構築し、
+  コメントを commit `0136cb593d`（2017-11-03, Albert Attard）に特定した。

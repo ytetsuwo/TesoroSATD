@@ -5091,7 +5091,7 @@ janjaali/azure-sdk-for-java@40bad2e,WITHOUT_CLASSIFICATION,"/**
 janjaali/azure-sdk-for-java@2fd8e68,DESIGN,// TODO (savaity): replace with the AZ_TRACING_NAMESPACE_KEY
 jasonnam/buck@b4479d2,DEFECT,"// TODO(T48080142): When we wrap up all of these validation errors into something human
 // friendly, this will become a build file error"
-javacreed/super-simple-stocks,IMPLEMENTATION,"/*
+javacreed/super-simple-stocks@0136cb5,IMPLEMENTATION,"/*
      * TODO: Need to verify the denominator to be used in this formula. I was not able to understand this from the
      * document
      */"
@@ -6359,9 +6359,9 @@ leolleeooleo/cloudstack@bd4bc02,WITHOUT_CLASSIFICATION,// Check if cidr is RFC19
 leolleeooleo/cloudstack@c676371,WITHOUT_CLASSIFICATION,//Logical router's UUID provided as VLAN_ID
 leolleeooleo/cloudstack@c676371,WITHOUT_CLASSIFICATION,//Set transient field
 leolleeooleo/cloudstack@f62e28c,WITHOUT_CLASSIFICATION,// For shared network
-leusonmario/2022PhDThesis,WITHOUT_CLASSIFICATION,// The following exception was thrown during execution in test generation
-leusonmario/2022PhDThesis,DEFECT,"// flaky:             org.junit.Assert.fail(""Expected exception of type java.io.IOException; message: Too many redirects occurred trying to load URL null"");"
-leusonmario/2022PhDThesis,WITHOUT_CLASSIFICATION,// Expected exception.
+leusonmario/2022PhDThesis@efafe73,WITHOUT_CLASSIFICATION,// The following exception was thrown during execution in test generation
+leusonmario/2022PhDThesis@efafe73,DEFECT,"// flaky:             org.junit.Assert.fail(""Expected exception of type java.io.IOException; message: Too many redirects occurred trying to load URL null"");"
+leusonmario/2022PhDThesis@efafe73,WITHOUT_CLASSIFICATION,// Expected exception.
 lg198/CodeFray@082bae8,IMPLEMENTATION,"//TODO: FIX ANNOTATION STUFF
 //log.println(""[Red Team Controller: "" + quote(game.getController(Team.RED).getIdString()) + ""]"");
 //log.println(""[Blue Team Controller: "" + quote(game.getController(Team.BLUE).getIdString()) + ""]"");"
@@ -7111,9 +7111,9 @@ oco27/edisyn@786e428,WITHOUT_CLASSIFICATION,"// Some of the dark star stuff is 8
 oco27/edisyn@27dbdf3,DEFECT,"// The spec is wrong: it's LSB, then MSB"
 oco27/edisyn@765e758,WITHOUT_CLASSIFICATION,"//data[pos + 1] = (byte)((val >> 0) & 0x0F);
 //data[pos] = (byte)((val >> 4) & 0x0F);"
-octo-online/reactive-aud,DESIGN,// WARNING : use synchronized. Is it possible to reduce the blocking part ?
-octo-online/reactive-aud,WITHOUT_CLASSIFICATION,"// Ok, it's block the code, but for a small period"
-octo-online/reactive-aud,WITHOUT_CLASSIFICATION,// Detect with the precalculated hash value
+octo-online/reactive-aud@c7c501d,DESIGN,// WARNING : use synchronized. Is it possible to reduce the blocking part ?
+octo-online/reactive-aud@64855eb,WITHOUT_CLASSIFICATION,"// Ok, it's block the code, but for a small period"
+octo-online/reactive-aud@64855eb,WITHOUT_CLASSIFICATION,// Detect with the precalculated hash value
 ogreflow/ogre@87334f7,WITHOUT_CLASSIFICATION,"// For integral number type things, need to convert ""null"" into 0."
 ogreflow/ogre@87334f7,WITHOUT_CLASSIFICATION,"// For decimal number type things, need to convert ""null"" into 0.0."
 ogreflow/ogre@87334f7,DESIGN,// What can we do in this case :(

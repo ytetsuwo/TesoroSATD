@@ -18,9 +18,9 @@
 | `out/summary.md` | – | カバレッジと制約の自動レポート |
 | `out/repo_manifest.csv` | 975 | 各 clone の入手経路 (`kind` / 取得元 URL / SWH swhid / HEAD) |
 
-カバレッジ: **関数 1244/1255 (99.1%) を特定、コメント 4963/4981 (99.6%)** に commit を付与。
+カバレッジ: **関数 1247/1255 (99.4%) を特定、コメント 4970/4981 (99.8%)** に commit を付与。
 うち 59 関数は HEAD ではなく履歴から復元 (削除リポジトリは Software Heritage・
-存命ミラー・上流プロジェクトから復元)。969 プロジェクト、commit 日付は
+存命ミラー・上流プロジェクトから復元)。972 プロジェクト、commit 日付は
 2000-12-06 〜 2026-08-31。
 
 各 clone をどこからどう取得したかは **[docs/repo_acquisition.md](docs/repo_acquisition.md)**
@@ -149,7 +149,7 @@ symlink で、`repos/coheigea__tcommon-studio-se` は
 `gaozone-talend/tcommon-studio-se` の clone。
 
 SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検索で特徴行を探し、
-改名・組織移転先や上流プロジェクトを見つけて復元した (25 件中 19 件・24 関数)。
+改名・組織移転先や上流プロジェクトを見つけて復元した (25 件中 23 件・38 関数)。
 
 - `zipated/src` (10) と `LynzhX/android_frameworks_base-1` (2) は AOSP
   `platform_frameworks_base` の全履歴から `WifiStateMachine.java` 等を特定。
@@ -163,11 +163,11 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
 
 ### 5. 検証 (05 / 14 / 27 / 28)
 
-- `--full`: commit が付いた全 4963 コメントで、ファイル上のコメント本文が一致する
-  ことを確認 → **4963/4963**。
+- `--full`: commit が付いた全 4970 コメントで、ファイル上のコメント本文が一致する
+  ことを確認 → **4970/4970**。
 - ランダム 120 件で「本文一致・blame 一致・その commit に本文が存在」の 3 点を
   確認 → **120/120**。
-- `--all-checks`: 本文・blame・show の従来3検査を来歴付き全件に実行 → **各4963/4963**。
+- `--all-checks`: 本文・blame・show の従来3検査を来歴付き全件に実行 → **各4970/4970**。
 - `14_check_span.py`: 履歴・別ファイル・変形コメントを除外せず、各コメントの
   `path_snapshot` / `snapshot_commit` で AST と期待するメソッドへの所属を検査する。
   `--json` の出力はコメント単位。取得失敗や範囲外を成功扱いしない。
@@ -181,8 +181,8 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
 - `28_introduced.py`: 本文が確定したコメントについて、現在の本文を導入したコミットを
   親方向へ探索する。`commit_id`（本文行の最終更新者）とは別の列で記録し、
   `introduced` / `ambiguous` / `truncated` / `unresolved` / `not_confirmed` / `unmapped`
-  に分ける。来歴は変更しない。全4,981件では **特定4,924 / 曖昧0 / 打ち切り0 /
-  未解決0 / 本文未確定39 / 未対応18**。記録済み `commit_id` と同一4,528、異なる396。
+  に分ける。来歴は変更しない。全4,981件では **特定4,931 / 曖昧0 / 打ち切り0 /
+  未解決0 / 本文未確定39 / 未対応11**。記録済み `commit_id` と同一4,535、異なる396。
   現在の本文と一致しない行は、dataset 側の本文を履歴から別に探し、
   `dataset_introduced_in` に **履歴で完全一致8 / 候補2 / 近い候補1 / 接頭辞1 /
   周辺コードから推定24 / 短語2 / 見つからない1** を記録する。詳細は
@@ -247,20 +247,18 @@ python3 scripts/26_benchmark.py --repeat 3 --output work/tmp/benchmark.json
 
 ## 既知の制約
 
-- **unavailable 6 関数 / 4 リポジトリ**: GitHub 上で削除済みで、SWH と上流の
-  どちらからも復元できなかったもの。内訳は SWH に未収録かつ上流も辿れない 6 リポジトリ
-  (8 関数)、SWH の調理失敗 8 リポジトリ (14 関数, chromium の fork 2 件 6 関数、
-  hive 3、cxf / midpoint / azure-sdk-for-java / openapi-generator / Marist-Sakai 各 1)、
-  不正なリポジトリ名 1 件 (1 関数)。
-- **weak_match 4 関数** (いずれも「その版のコードが公開されていない」):
-  `leusonmario/2022PhDThesis` の randoop 生成テスト (同じ `test20046` が 83 ファイルに
-  重複し来歴を一意に決められない。`work/manual_reject.jsonl` に理由つきで登録)、
-  `javacreed/super-simple-stocks` (元リポジトリは削除済み。現存する fork は
-  `calculatePERatio` に書き換わっていて `computePeRatio` が無い)、
-  `octo-online/reactive-aud` (削除済み。関数は AOSP の
-  `tools/lock_agent/.../LockHook.java` 由来で、手元の AOSP ミラーは古く該当しない)、
-  `krisiney/SOKOBANFX-DMS-2020` (削除済み。公開されている fork は
-  `keyPressed(KeyCode)` 版で、`handleKey(KeyCode)` 版が無い)。
+- **unavailable 3 関数 / 2 リポジトリ**: `JC-Bodoque/geometric-transformer` の 1 件と
+  `fernandogomesfg/Algoritmos-em-Java` の 2 件。GitHub 上で削除済みで、SWH にも
+  使える snapshot が無く、コード検索でも同一本文が見つからない。
+- **weak_match 5 関数** (すべて Chromium の部分取得):
+  `zealoussnow/chromium` の 4 件と `sarang-apps/darshan_browser` の 1 件。
+  以前 weak_match だった `leusonmario/2022PhDThesis` の randoop 生成テストは
+  jsoup の 1 コピー (`randoop_6/RegressionTest40.java`) に一意化でき、
+  `octo-online/reactive-aud` は改名先 `octo-online/reactive-audit` の
+  `HistoryStackElement.java` から復元した。
+  `javacreed/super-simple-stocks` は `albertattard/super-simple-stocks` の
+  `Stock.java` を SWH の browse page から復元し、commit `0136cb593d`
+  (2017-11-03, Albert Attard) を特定した。
   行単位の一致率だけでは `mkpaz/telek` と `derekdinan/CTFServer` も落ちていたが、
   トークン照合で同一メソッドと確認できたため復元済み。
   `nikosnikolaidis/commons-rdf` は上流の選定を誤っており (rdf4j ではなく
@@ -282,7 +280,7 @@ python3 scripts/26_benchmark.py --repeat 3 --output work/tmp/benchmark.json
 
 ```
 tesoro/     Tesoro 本家のデータ (sparse clone, data/ 184MB)
-repos/      clone 975 件 (GitHub 874 + SWH 63 + ミラー 32 + symlink 6 件, owner__name, 全履歴 + *.java)
+repos/      clone 975 件 (GitHub 874 + SWH 64 + ミラー 32 + symlink 5 件, owner__name, 全履歴 + *.java)
 scripts/    パイプライン (00〜23)
 work/       中間状態・ログ (repo_meta.json, clone_state.jsonl, swh_state.jsonl, locate.log)
 out/        成果物 (CSV / JSONL / summary.md / repo_manifest.csv)

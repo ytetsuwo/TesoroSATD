@@ -1,40 +1,40 @@
 {
   "schema_version": 1,
   "rows": 4981,
-  "mapped": 4963,
-  "provenance_sha256": "d88b625c4ebb41c154c1feb37ffc00c77817b5f797d120c7537f0efe5e1b89be",
+  "mapped": 4970,
+  "provenance_sha256": "ac87f939632130075341b9277d68fac1d712df4f3f65870d3ff151d6902dba36",
   "full_attribution": true,
   "counts": {
-    "confirmed": 4623,
+    "confirmed": 4630,
     "review": 337,
-    "unmapped": 18,
+    "unmapped": 11,
     "mismatch": 3
   },
   "by_check": {
     "ast": {
-      "confirmed": 4812,
+      "confirmed": 4819,
       "review": 151
     },
     "text": {
-      "confirmed": 4924,
+      "confirmed": 4931,
       "review": 36,
       "mismatch": 3
     },
     "blame": {
-      "confirmed": 4771,
+      "confirmed": 4778,
       "review": 192
     },
     "commit": {
-      "confirmed": 4963
+      "confirmed": 4970
     }
   },
   "by_match": {
     "exact": {
-      "confirmed": 3304,
+      "confirmed": 3310,
       "review": 188
     },
     "structural": {
-      "confirmed": 1284,
+      "confirmed": 1285,
       "review": 102,
       "mismatch": 3
     },
@@ -58,7 +58,7 @@
       "review": 23
     },
     "unmapped": {
-      "unmapped": 18
+      "unmapped": 11
     }
   },
   "snapshots_inspected": 224,

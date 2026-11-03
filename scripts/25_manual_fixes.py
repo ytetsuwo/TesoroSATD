@@ -15,7 +15,7 @@ import subprocess
 import sys
 from datetime import datetime
 
-from common import OUT, core, repo_dir
+from common import OUT, core, load_tesoro, repo_dir
 
 # (function_id, comment_id, revision or None for HEAD, path, first, last, match)
 FIXES = [
@@ -96,6 +96,17 @@ FIXES = [
      1585, 1601, "reshaped"),
 ]
 
+# Functions whose location cannot be selected by the locator because the same
+# generated test text exists in many experiment directories.  The entry names
+# the one copy that matches the dataset body, its full span and the line that
+# carries each comment.
+# (function_id, path, first, last, kind, {comment_id: line})
+WHOLE_FIXES = [
+    (10862,
+     "jsoup/a8b6982de98ff76ef254031d7152fff57f6bf941/randoop_6/RegressionTest40.java",
+     1455, 1488, "exact", {0: 1474, 1: 1477, 2: 1479}),
+]
+
 
 def blame(d, rev, path, ln):
     p = subprocess.run(["git", "-C", str(d), "-c", "core.quotepath=false",
@@ -121,6 +132,7 @@ def main() -> int:
     path = OUT / "functions_located.jsonl"
     rows = [json.loads(x) for x in path.read_text().splitlines() if x.strip()]
     by_id = {r["id"]: r for r in rows}
+    _, tesoro_comments = load_tesoro()
     n = 0
     for fid, cid, rev, fpath, first, last, kind in FIXES:
         loc = by_id.get(fid)
@@ -144,6 +156,35 @@ def main() -> int:
                 c["at_commit"] = rev
             else:
                 c.pop("at_commit", None)
+            n += 1
+    for fid, fpath, first, last, kind, comment_lines in WHOLE_FIXES:
+        loc = by_id.get(fid)
+        if not loc:
+            continue
+        d = repo_dir(loc["repo"])
+        if not loc.get("comments"):
+            loc["comments"] = [
+                {"comment_id": c["comment_id"], "comment": c["comment"],
+                 "classification": c.get("classification"), "lines": []}
+                for c in tesoro_comments.get(fid, [])
+            ]
+            loc["n_comments"] = len(loc["comments"])
+        loc.update({"path": fpath, "start": first, "end": last,
+                    "ratio": 1.0, "line_ratio": 1.0, "tok_ratio": 0.0,
+                    "status": "ok", "confidence": "high", "match": kind})
+        loc.pop("reason", None)
+        loc.pop("rival", None)
+        loc.pop("ast_span_shift", None)
+        for c in loc.get("comments") or []:
+            ln = comment_lines.get(c["comment_id"])
+            if not ln:
+                continue
+            info = blame(d, None, fpath, ln)
+            c.update({"lines": [ln], "match": kind, "commit": info.get("sha"),
+                      "author": info.get("author"), "author_time": info.get("date"),
+                      "summary": info.get("summary"), "path_snapshot": fpath,
+                      "path_at": info.get("path") or fpath})
+            c.pop("at_commit", None)
             n += 1
     tmp = path.with_suffix(".jsonl.tmp")
     tmp.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
