@@ -10,7 +10,7 @@
 | ファイル | 行数 | 内容 |
 | --- | --- | --- |
 | `out/tesoro_provenance.csv` | 4981 | コメント単位の来歴 (repo / path / 行 / commit / 作者 / 日付) |
-| `out/tesoro_introduced.csv` | 4981 | 現在の本文を導入したコミット（別集計） |
+| `out/tesoro_introduced.csv` | 4981 | 現在の本文と dataset 本文の導入コミット（別集計） |
 | `out/introduced_summary.md` | – | 導入コミットの状態別集計 |
 | `out/tesoro_msr16.csv` | 4981 | Maldonado MSR16 形式 `projectname,classification,commenttext` |
 | `out/tesoro_msr16_versioned.csv` | 4981 | 同上、`projectname` を `owner/name@<sha7>` にした版 |
@@ -41,7 +41,8 @@ git -C repos/pagarme__pagarme-core-api-java \
 CSV の `commit_id` は**コメント行の blame 結果**なので、そのコメントが最後に
 書かれたコミット。関数本体の最終変更とは一致しないことがある。
 現在のコメント本文を導入したコミットは `out/tesoro_introduced.csv` の
-`introduced_in` に別途記録している（[詳細](docs/introduced_commits.md)）。
+`introduced_in` に、dataset 側の本文を履歴から特定したものは
+`dataset_introduced_in` に別途記録している（[詳細](docs/introduced_commits.md)）。
 `blame_url` を開けば GitHub 上でも同じ行を blame できる (`path_at_commit` は
 その commit 時点のパスなので、リネーム前でも URL が壊れない)。
 
@@ -78,6 +79,8 @@ python3 scripts/22_name_search.py    # メソッド名で別クローンまで�
 python3 scripts/23_environment.py    # 実行環境を out/environment.txt に記録
 python3 scripts/27_strict_audit.py   # 全コメントの厳密監査 (確定/要確認/不一致)
 python3 scripts/28_introduced.py     # 現在の本文を導入したコミットを履歴から特定
+python3 scripts/28_introduced.py --retry-truncated  # 打ち切りを pickaxe で再探索
+python3 scripts/28_introduced.py --retry-ambiguous  # 複数候補を完全一致と first-parent で解決
 python3 scripts/24_consistency.py    # データ・CSV・README・manifest の整合性検査
 python3 scripts/00_pin_repos.py      # clone を manifest の HEAD に固定/検査
 ```
@@ -173,14 +176,17 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
   部分一致・改変・記号のみは自動で確定にしない。同一行の複数コメントは AST ノード単位で
   比較する。来歴付き件数は維持し、判定を別集計する。
   結果は `out/strict_audit_summary.md`、詳細は [厳密検証](docs/strict_verification.md)。
-  全4,981件の結果は **確定4,598 / 要確認349 / 不一致14 / 検証不能0 / 未対応20**。
+  全4,981件の結果は **確定4,621 / 要確認337 / 不一致3 / 検証不能0 / 未対応20**。
   不一致には本文の別物・短い一般語の部分一致・行範囲の欠落などが残り、すべてを誤対応と断定しない。
 - `28_introduced.py`: 本文が確定したコメントについて、現在の本文を導入したコミットを
   親方向へ探索する。`commit_id`（本文行の最終更新者）とは別の列で記録し、
   `introduced` / `ambiguous` / `truncated` / `unresolved` / `not_confirmed` / `unmapped`
-  に分ける。来歴は変更しない。全4,981件では **特定4,919 / 曖昧0 / 打ち切り0 /
-  未解決0 / 本文未確定42 / 未対応20**。記録済み `commit_id` と同一4,523、異なる396。
-  詳細は [導入コミット](docs/introduced_commits.md)。
+  に分ける。来歴は変更しない。全4,981件では **特定4,922 / 曖昧0 / 打ち切り0 /
+  未解決0 / 本文未確定39 / 未対応20**。記録済み `commit_id` と同一4,526、異なる396。
+  現在の本文と一致しない行は、dataset 側の本文を履歴から別に探し、
+  `dataset_introduced_in` に **履歴で完全一致8 / 候補2 / 近い候補1 / 接頭辞1 /
+  記号・空・短語26 / 見つからない1** を記録する。詳細は
+  [導入コミット](docs/introduced_commits.md)。
 
 ### MSR16 形式の適合性 (20)
 

@@ -49,6 +49,22 @@ check(len({(r["function_id"], r["comment_id"]) for r in intro}) == len(intro),
 intro_summary = json.loads((OUT / "introduced_summary.json").read_text())
 check(sum(intro_summary["counts"].values()) == len(prov),
       "introduced status counts do not sum to the dataset")
+dataset_summary = intro_summary.get("dataset", {})
+check(sum(dataset_summary.get("counts", {}).values()) == len(prov),
+      "dataset status counts do not sum to the dataset")
+check(dataset_summary.get("identified") ==
+      sum(bool(r["dataset_introduced_in"]) for r in intro),
+      "dataset identified count differs from the CSV")
+check(dataset_summary.get("exact") ==
+      sum(r["dataset_status"] in {"current", "historical"} for r in intro),
+      "dataset exact count differs from the CSV")
+for r in intro:
+    if r["dataset_introduced_in"]:
+        check(re.fullmatch(r"[0-9a-f]{40}", r["dataset_introduced_in"]) is not None,
+              f"invalid dataset commit for {r['function_id']}:{r['comment_id']}")
+    else:
+        check(r["dataset_status"] in {"not_informative", "not_found", "unmapped", "error"},
+              f"dataset status without a commit for {r['function_id']}:{r['comment_id']}")
 check(intro_summary["provenance_sha256"] == hashlib.sha256(
     (OUT / "tesoro_provenance.csv").read_bytes()).hexdigest(),
     "introduced summary is stale for the provenance CSV")

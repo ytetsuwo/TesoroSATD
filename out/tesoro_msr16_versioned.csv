@@ -7977,7 +7977,7 @@ semantic-graph/js2graph@677df3a,WITHOUT_CLASSIFICATION,"/**
 semantic-graph/js2graph@677df3a,DESIGN,"// NOTE(Zhen): Ignore CoreModule for now to enable a more flexible semantic modeling
 // if (NodejsRequiredCoreModule.isCoreModule(target)) return NodejsRequiredCoreModule.make(target);"
 semantic-graph/js2graph@677df3a,DESIGN,// NOTE(Zhen): it is not very useful to throw exception...
-sengerts/tic-tac-toe@20fcd86,WITHOUT_CLASSIFICATION,"/**
+sengerts/tic-tac-toe@49a7e73,WITHOUT_CLASSIFICATION,"/**
 	 * Lets the AI player make an automated move.
 	 * 
 	 * Here, the AI player calculates a fitting next field which he then marks

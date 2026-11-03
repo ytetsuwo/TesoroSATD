@@ -204,6 +204,8 @@ def main():
         introduced = json.loads(introduced_path.read_text())
         fingerprint = hashlib.sha256((OUT / "tesoro_provenance.csv").read_bytes()).hexdigest()
         if introduced.get("provenance_sha256") == fingerprint:
+            dataset = introduced.get("dataset", {})
+            dcounts = dataset.get("counts", {})
             lines += ["", "## SATD 導入コミット", "",
                       "現在のコメント本文が最初に現れたコミットを、履歴の親方向へ確認した別集計です。", "",
                       f"- 導入コミットを特定: {introduced['identified']}",
@@ -213,6 +215,15 @@ def main():
                       f"- 未解決: {introduced['counts'].get('unresolved', 0)} + "
                       f"打ち切り {introduced['counts'].get('truncated', 0)}",
                       f"- 本文未確定のため対象外: {introduced['counts'].get('not_confirmed', 0)}",
+                      "",
+                      f"データセット本文の履歴特定: {dataset.get('identified', 0)} "
+                      f"（完全一致 {dataset.get('exact', 0)}、"
+                      f"履歴で完全一致 {dcounts.get('historical', 0)}、"
+                      f"候補 {dcounts.get('candidate', 0) + dcounts.get('ambiguous', 0)}、"
+                      f"近い候補 {dcounts.get('near_exact', 0)}、"
+                      f"接頭辞 {dcounts.get('prefix', 0)}）。",
+                      f"記号・空・短語のため対象外: {dcounts.get('not_informative', 0)}、"
+                      f"本文が履歴に見つからない: {dcounts.get('not_found', 0)}。",
                       "",
                       "本文が後から書き換えられている場合、`introduced_in` は現在の本文を導入した",
                       "コミットであり、SATD コメント全体の最初の導入とは限りません。",

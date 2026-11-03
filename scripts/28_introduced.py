@@ -39,6 +39,21 @@ LABELS = {
     "not_confirmed": "本文未確定のため対象外",
     "unmapped": "来歴なし",
 }
+DATASET_STATUSES = ("current", "historical", "candidate", "ambiguous",
+                    "near_exact", "prefix", "not_informative", "not_found",
+                    "unmapped", "error")
+DATASET_LABELS = {
+    "current": "現在本文と同一",
+    "historical": "履歴で完全一致",
+    "candidate": "履歴候補（親探索打ち切り）",
+    "ambiguous": "履歴候補（複数系統）",
+    "near_exact": "近い候補（本文差あり）",
+    "prefix": "接頭辞（現在本文の一部）",
+    "not_informative": "記号・空・短語のため対象外",
+    "not_found": "本文が履歴に見つからない",
+    "unmapped": "来歴なし",
+    "error": "探索エラー",
+}
 
 
 def git_text(directory, *args):
@@ -360,11 +375,113 @@ class Introducer:
                 return start
         return None
 
+    def dataset_commit(self, directory, terminal, status, basis, similarity):
+        meta = self.commit_meta(directory, terminal["sha"])
+        return {
+            "dataset_status": status,
+            "dataset_basis": basis,
+            "dataset_introduced_in": meta.get("sha", ""),
+            "dataset_introduced_date": meta.get("date", ""),
+            "dataset_introduced_author": meta.get("author", ""),
+            "dataset_similarity": round(similarity, 6),
+            "dataset_line": terminal.get("line", ""),
+            "dataset_path": terminal.get("path", ""),
+        }
+
+    def dataset_analysis(self, row, audit):
+        """Identify the dataset body separately from the current file body.
+
+        An exact historical body is `historical`; long ambiguities and near
+        matches stay labelled as candidates. Symbol, empty and short generic
+        bodies are never promoted to a commit.
+        """
+        wanted = dataset_body(row["commenttext"])
+        core_body = core(wanted)
+        if not core_body:
+            return {"dataset_status": "not_informative", "dataset_basis": "none",
+                    "dataset_note": "empty or symbol-only body"}
+        if len(core_body) < 8:
+            return {"dataset_status": "not_informative", "dataset_basis": "none",
+                    "dataset_note": "short generic body"}
+        directory = repo_dir(row["repo"])
+        text = (audit or {}).get("checks", {}).get("text", {})
+        source = text.get("source_body", "")
+        similarity = float(text.get("similarity") or 0)
+        try:
+            version = self.version_state(row)
+            source_key = compact(source) if source else ""
+            wanted_key = compact(wanted)
+            is_prefix = text.get("reason") == "recorded body is a prefix of a longer comment"
+            if is_prefix and source_key.startswith(wanted_key) and len(source_key) > len(wanted_key):
+                source_found = self.pickaxe(directory, version[0], version[1],
+                                            source, source)
+                if source_found:
+                    source_walk = self.introduction(
+                        directory, source_found["sha"], source_found["path"],
+                        source_found["line"], source)
+                    terminals = source_walk.get("terminals") or []
+                    if terminals:
+                        result = self.dataset_commit(directory, terminals[0], "prefix",
+                                                     "source-prefix", similarity)
+                        result["dataset_note"] = (
+                            "dataset body is a prefix of the source comment")
+                        return result
+            found = self.pickaxe(directory, version[0], version[1], wanted,
+                                 row["commenttext"])
+        except Exception as error:
+            return {"dataset_status": "error", "dataset_basis": "none",
+                    "dataset_note": str(error)[:160]}
+        if found:
+            try:
+                walked = self.introduction(directory, found["sha"], found["path"],
+                                           found["line"], wanted)
+            except Exception:
+                walked = {"status": "unresolved", "terminals": [], "steps": 0}
+            terminals = walked.get("terminals") or []
+            if walked["status"] == "introduced" and terminals:
+                return self.dataset_commit(directory, terminals[0], "historical",
+                                           "history-exact", 1.0)
+            if walked["status"] == "ambiguous" and terminals:
+                oldest = min(terminals, key=lambda item: self.commit_meta(
+                    directory, item["sha"])["time"])
+                result = self.dataset_commit(directory, oldest, "ambiguous",
+                                             "history-ambiguous", 1.0)
+                result["dataset_terminals"] = terminals
+                result["dataset_note"] = "multiple independent exact-body branches"
+                return result
+            if walked["status"] == "truncated":
+                result = self.dataset_commit(directory, found, "candidate",
+                                             "history-exact-candidate", 1.0)
+                result["dataset_note"] = (
+                    f"exact body present; parent walk truncated at {walked.get('steps', 0)}")
+                return result
+        if source and len(core(source)) >= 8 and similarity >= 0.95:
+            try:
+                source_found = self.pickaxe(directory, version[0], version[1], source, source)
+                if source_found:
+                    source_walk = self.introduction(
+                        directory, source_found["sha"], source_found["path"],
+                        source_found["line"], source)
+                    terminals = source_walk.get("terminals") or []
+                    if terminals:
+                        result = self.dataset_commit(directory, terminals[0], "near_exact",
+                                                     "near-exact", similarity)
+                        result["dataset_note"] = (
+                            "dataset body differs slightly from the exact source body")
+                        return result
+            except Exception:
+                pass
+        return {"dataset_status": "not_found", "dataset_basis": "none",
+                "dataset_note": "no exact or near-exact body in the available history"}
+
     def analyse(self, row, audit):
         if not row.get("commit_id") or not row.get("comment_line"):
-            return {"status": "unmapped", "reason": "no recorded provenance"}
+            return {"status": "unmapped", "reason": "no recorded provenance",
+                    "dataset_status": "unmapped", "dataset_basis": "none"}
         if not audit or audit.get("checks", {}).get("text", {}).get("status") != "confirmed":
-            return {"status": "not_confirmed", "reason": "strict text check is not confirmed"}
+            result = self.dataset_analysis(row, audit)
+            return {"status": "not_confirmed",
+                    "reason": "strict text check is not confirmed", **result}
         wanted = dataset_body(row["commenttext"])
         try:
             version = self.version_state(row)
@@ -373,14 +490,19 @@ class Introducer:
             if not candidates:
                 records = self.body_records(row)
                 if not records:
-                    return {"status": "unresolved", "reason": "no substantive blame records"}
+                    result = self.dataset_analysis(row, audit)
+                    return {"status": "unresolved", "reason": "no substantive blame records",
+                            **result}
                 states = [(record["sha"], record["path"], record["line"]) for record in records]
                 states.append((version[0], version[1], int(row["comment_line"])))
                 candidates = self.candidates(row, states, wanted)
         except (OSError, ValueError, KeyError) as error:
-            return {"status": "unresolved", "reason": str(error)}
+            result = self.dataset_analysis(row, audit)
+            return {"status": "unresolved", "reason": str(error), **result}
         if not candidates:
-            return {"status": "unresolved", "reason": "comment body absent from all candidate versions"}
+            result = self.dataset_analysis(row, audit)
+            return {"status": "unresolved",
+                    "reason": "comment body absent from all candidate versions", **result}
         directory = repo_dir(row["repo"])
         body_shas = set((audit or {}).get("checks", {}).get("blame", {}).get("body_shas", []))
         body_shas.add(row["commit_id"])
@@ -399,7 +521,7 @@ class Introducer:
                 basis = "pickaxe"
         meta = self.commit_meta(directory, walked["terminals"][0]["sha"]) \
             if walked["terminals"] else {}
-        return {
+        current = {
             **walked,
             "introduced_in": meta.get("sha", ""),
             "introduced_date": meta.get("date", ""),
@@ -407,6 +529,20 @@ class Introducer:
             "basis": basis,
             "candidate_count": len(candidates),
         }
+        if walked["status"] == "introduced" and meta:
+            current.update({
+                "dataset_status": "current",
+                "dataset_basis": "current",
+                "dataset_introduced_in": meta.get("sha", ""),
+                "dataset_introduced_date": meta.get("date", ""),
+                "dataset_introduced_author": meta.get("author", ""),
+                "dataset_similarity": 1.0,
+                "dataset_line": walked["terminals"][0].get("line", ""),
+                "dataset_path": walked["terminals"][0].get("path", ""),
+            })
+        else:
+            current.update(self.dataset_analysis(row, audit))
+        return current
 
 
 def resolve_ambiguous(introducer, rows, previous):
@@ -466,6 +602,13 @@ def resolve_ambiguous(introducer, rows, previous):
                         "introduced_author": meta["author"],
                         "basis": "exact-first-parent" if preferred else "exact",
                         "fallback": "ambiguous-resolution",
+                        "dataset_status": "current", "dataset_basis": "current",
+                        "dataset_introduced_in": meta["sha"],
+                        "dataset_introduced_date": meta["date"],
+                        "dataset_introduced_author": meta["author"],
+                        "dataset_similarity": 1.0,
+                        "dataset_line": line,
+                        "dataset_path": version[1],
                     })
                     resolved += 1
             except Exception as error:
@@ -497,7 +640,8 @@ def analyse_worker(item):
     try:
         return row, _WORKER.analyse(row, audit)
     except Exception as error:  # one broken repository must not stop the audit
-        return row, {"status": "unresolved", "reason": str(error)[:160]}
+        return row, {"status": "unresolved", "reason": str(error)[:160],
+                     "dataset_status": "error", "dataset_basis": "none"}
 
 
 def retry_truncated(introducer, rows, previous):
@@ -522,6 +666,13 @@ def retry_truncated(introducer, rows, previous):
                         "introduced_in": meta["sha"], "introduced_date": meta["date"],
                         "introduced_author": meta["author"], "basis": "pickaxe",
                         "fallback": "pickaxe",
+                        "dataset_status": "current", "dataset_basis": "current",
+                        "dataset_introduced_in": meta["sha"],
+                        "dataset_introduced_date": meta["date"],
+                        "dataset_introduced_author": meta["author"],
+                        "dataset_similarity": 1.0,
+                        "dataset_line": found.get("line", ""),
+                        "dataset_path": found.get("path", ""),
                     })
                     record.pop("reason", None)
             except Exception as error:
@@ -586,7 +737,8 @@ def main():
                 try:
                     yield row, local.analyse(row, audits.get(key))
                 except Exception as error:  # one broken repository must not stop the audit
-                    yield row, {"status": "unresolved", "reason": str(error)[:160]}
+                    yield row, {"status": "unresolved", "reason": str(error)[:160],
+                                "dataset_status": "error", "dataset_basis": "none"}
 
         executor = ProcessPoolExecutor(max_workers=jobs, initializer=init_worker,
                                        initargs=(args.max_walk,)) if jobs > 1 else None
@@ -614,10 +766,14 @@ def main():
                     print(f"analysed {index}/{len(rows)}", flush=True)
 
     counts = Counter(record["status"] for record in records)
+    dataset_counts = Counter(record.get("dataset_status", "not_found") for record in records)
     identified = [record for record in records if record["status"] == "introduced"]
+    dataset_identified = [record for record in records if record.get("dataset_introduced_in")]
+    dataset_exact = sum(record.get("dataset_status") in {"current", "historical"}
+                        for record in records)
     same = sum(record["introduced_in"] == record["recorded_commit"] for record in identified)
     summary = {
-        "schema_version": 1,
+        "schema_version": 2,
         "rows": len(records),
         "mapped": sum(bool(row.get("commit_id")) for row in rows),
         "provenance_sha256": hashlib.sha256(
@@ -627,6 +783,14 @@ def main():
         "same_as_recorded_commit": same,
         "different_from_recorded_commit": len(identified) - same,
         "unique_introduced_commits": len({record["introduced_in"] for record in identified}),
+        "dataset": {
+            "counts": dict(dataset_counts),
+            "identified": len(dataset_identified),
+            "exact": dataset_exact,
+            "definition": ("the commit found for the dataset comment body; `current` is the "
+                           "same body as the current file, `historical` is an exact older body, "
+                           "and candidate/near_exact are not confirmations"),
+        },
         "max_walk": args.max_walk,
         "definition": ("the commit that introduced the current exact comment body, by walking "
                        "parents while the body remains present; not necessarily the first SATD "
@@ -636,16 +800,25 @@ def main():
     fields = ["function_id", "comment_id", "projectname", "repo", "path",
               "comment_line", "commenttext", "introduced_in", "introduced_short",
               "introduced_url", "introduced_date", "introduced_author", "basis",
-              "status", "recorded_commit"]
+              "status", "recorded_commit", "dataset_introduced_in",
+              "dataset_introduced_short", "dataset_introduced_url",
+              "dataset_introduced_date", "dataset_introduced_author",
+              "dataset_basis", "dataset_status", "dataset_similarity",
+              "dataset_path", "dataset_line", "dataset_note"]
     with open(OUT / "tesoro_introduced.csv", "w", encoding="utf-8", newline="") as file:
         writer = csv.DictWriter(file, fieldnames=fields)
         writer.writeheader()
         for record in records:
             sha = record.get("introduced_in", "")
+            dataset_sha = record.get("dataset_introduced_in", "")
             writer.writerow({
                 **{field: record.get(field, "") for field in fields},
                 "introduced_short": sha[:7],
                 "introduced_url": f"https://github.com/{record['repo']}/commit/{sha}" if sha else "",
+                "dataset_introduced_short": dataset_sha[:7],
+                "dataset_introduced_url": (
+                    f"https://github.com/{record['repo']}/commit/{dataset_sha}"
+                    if dataset_sha else ""),
             })
     write_jsonl(OUT / "introduced.jsonl", records)
     (OUT / "introduced_summary.json").write_text(
@@ -655,6 +828,8 @@ def main():
         "# SATD 導入コミット",
         "",
         f"対象: {len(records)} コメント（来歴付き {summary['mapped']}）",
+        "",
+        "## 現在の本文",
         "",
         "| 状態 | 件数 |",
         "| --- | ---: |",
@@ -669,6 +844,22 @@ def main():
         "本文が後から書き換えられている場合は、書き換え後の本文を導入したコミットであり、",
         "SATD コメント全体の最初の導入コミットとは限らない。",
         "`recorded_commit` は従来の来歴（本文行の最終更新者）で、変更していない。",
+        "",
+        "## データセット本文",
+        "",
+        "現在のファイル本文と一致しない場合に、dataset 側の本文を履歴から別に探した結果。",
+        "",
+        "| 状態 | 件数 |",
+        "| --- | ---: |",
+    ]
+    lines += [f"| {DATASET_LABELS.get(status, status)} | {dataset_counts[status]} |"
+              for status in DATASET_STATUSES]
+    lines += [
+        "",
+        f"`dataset_introduced_in` を付けた件数: {len(dataset_identified)} "
+        f"（うち現在本文と同一または履歴で完全一致 {dataset_exact}）。",
+        "`historical` は dataset 本文が過去の版に完全一致したもの、`candidate` と",
+        "`ambiguous` は候補、`near_exact` は本文に差がある参考候補である。",
     ]
     (OUT / "introduced_summary.md").write_text("\n".join(lines) + "\n")
     print(json.dumps(summary, ensure_ascii=False, indent=2))

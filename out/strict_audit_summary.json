@@ -2,13 +2,13 @@
   "schema_version": 1,
   "rows": 4981,
   "mapped": 4961,
-  "provenance_sha256": "43f76357ca527dae24d8fe2fd1539beff3c6ea709676a088c18cc550815e3f4a",
+  "provenance_sha256": "4a1ff0290ab09fb25915c4ad956220dd41867e0f39011889ebe01e41feb09a99",
   "full_attribution": true,
   "counts": {
-    "confirmed": 4618,
-    "review": 339,
+    "confirmed": 4621,
+    "review": 337,
     "unmapped": 20,
-    "mismatch": 4
+    "mismatch": 3
   },
   "by_check": {
     "ast": {
@@ -16,9 +16,9 @@
       "review": 151
     },
     "text": {
-      "confirmed": 4919,
-      "review": 38,
-      "mismatch": 4
+      "confirmed": 4922,
+      "review": 36,
+      "mismatch": 3
     },
     "blame": {
       "confirmed": 4769,
@@ -30,21 +30,21 @@
   },
   "by_match": {
     "exact": {
-      "confirmed": 3306,
+      "confirmed": 3304,
       "review": 188
     },
     "structural": {
-      "confirmed": 1280,
+      "confirmed": 1282,
       "review": 102,
-      "mismatch": 4
+      "mismatch": 3
     },
     "fuzzy": {
       "confirmed": 5,
-      "review": 5
+      "review": 3
     },
     "relocated": {
       "review": 11,
-      "confirmed": 10
+      "confirmed": 13
     },
     "history": {
       "review": 8,

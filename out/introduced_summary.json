@@ -1,17 +1,32 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "rows": 4981,
   "mapped": 4961,
-  "provenance_sha256": "e66164a96116d109cca44a424a7417ec8b629206ad399ead946376b46f2f853a",
+  "provenance_sha256": "4a1ff0290ab09fb25915c4ad956220dd41867e0f39011889ebe01e41feb09a99",
   "counts": {
-    "introduced": 4919,
-    "not_confirmed": 42,
+    "introduced": 4922,
+    "not_confirmed": 39,
     "unmapped": 20
   },
-  "identified": 4919,
-  "same_as_recorded_commit": 4523,
+  "identified": 4922,
+  "same_as_recorded_commit": 4526,
   "different_from_recorded_commit": 396,
   "unique_introduced_commits": 1457,
+  "dataset": {
+    "counts": {
+      "current": 4922,
+      "historical": 8,
+      "not_informative": 26,
+      "unmapped": 20,
+      "candidate": 2,
+      "near_exact": 1,
+      "prefix": 1,
+      "not_found": 1
+    },
+    "identified": 4934,
+    "exact": 4930,
+    "definition": "the commit found for the dataset comment body; `current` is the same body as the current file, `historical` is an exact older body, and candidate/near_exact are not confirmations"
+  },
   "max_walk": 128,
   "definition": "the commit that introduced the current exact comment body, by walking parents while the body remains present; not necessarily the first SATD appearance if the wording changed earlier or the text was copied"
 }

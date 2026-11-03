@@ -48,11 +48,11 @@ class IntroductionTests(unittest.TestCase):
                 "comment_line": str(line), "n_comment_lines": str(count),
                 "commenttext": text, "match": "exact", "commit_id": sha or ""}
 
-    def analyse(self, row):
+    def analyse(self, row, audit=None):
         with patch.object(self.module, "repo_dir", return_value=self.directory), \
                 patch("strict_verification.repo_dir", return_value=self.directory):
             return self.module.Introducer().analyse(
-                row, {"checks": {"text": {"status": "confirmed"}}})
+                row, audit or {"checks": {"text": {"status": "confirmed"}}})
 
     def test_unchanged_comment_is_introduced_in_the_first_commit(self):
         first = self.commit("class A {\n// stable SATD\nvoid target() {}\n}\n")
@@ -85,13 +85,48 @@ class IntroductionTests(unittest.TestCase):
         self.assertEqual(result["introduced_in"], first)
 
     def test_reviewed_text_is_not_given_an_introduction_commit(self):
-        self.path.write_text("class A {}\n")
-        with patch.object(self.module, "repo_dir", side_effect=AssertionError("must not read")):
-            result = self.module.Introducer().analyse(
-                self.row("// uncertain", 1, sha="a" * 40),
-                {"checks": {"text": {"status": "review"}}})
+        self.commit("class A {}\n")
+        result = self.analyse(
+            self.row("// uncertain", 1, sha="a" * 40),
+            {"checks": {"text": {"status": "review", "source_body": "",
+                                 "similarity": 0}}})
         self.assertEqual(result["status"], "not_confirmed")
         self.assertNotIn("introduced_in", result)
+        self.assertEqual(result["dataset_status"], "not_found")
+
+    def test_dataset_body_is_found_in_older_history(self):
+        first = self.commit("class A {\n// old wording\nvoid target() {}\n}\n")
+        latest = self.commit("class A {\n// new wording\nvoid target() {}\n}\n")
+        result = self.analyse(
+            self.row("// old wording", 2, sha=latest),
+            {"checks": {"text": {"status": "review", "source_body": "new wording",
+                                 "similarity": 0.6}}})
+        self.assertEqual(result["status"], "not_confirmed")
+        self.assertEqual(result["dataset_status"], "historical")
+        self.assertEqual(result["dataset_introduced_in"], first)
+
+    def test_dataset_prefix_uses_the_longer_source_comment(self):
+        first = self.commit(
+            "class A {\n// HAS TO BE REINITIALIZED... don't ask why.\nvoid target() {}\n}\n")
+        result = self.analyse(
+            self.row("// HAS TO BE REINITIALIZED", 2, sha=first),
+            {"checks": {"text": {"status": "review",
+                                 "reason": "recorded body is a prefix of a longer comment",
+                                 "source_body": "HAS TO BE REINITIALIZED... don't ask why.",
+                                 "similarity": 0.7}}})
+        self.assertEqual(result["status"], "not_confirmed")
+        self.assertEqual(result["dataset_status"], "prefix")
+        self.assertEqual(result["dataset_introduced_in"], first)
+
+    def test_symbol_body_is_not_given_a_dataset_commit(self):
+        with patch.object(self.module, "repo_dir", side_effect=AssertionError("must not read")):
+            result = self.module.Introducer().analyse(
+                self.row("// }", 1, sha="a" * 40),
+                {"checks": {"text": {"status": "review", "source_body": "}",
+                             "similarity": 0}}})
+        self.assertEqual(result["status"], "not_confirmed")
+        self.assertEqual(result["dataset_status"], "not_informative")
+        self.assertNotIn("dataset_introduced_in", result)
 
     def test_missing_provenance_is_unmapped(self):
         with patch.object(self.module, "repo_dir", side_effect=AssertionError("must not read")):
