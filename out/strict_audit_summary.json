@@ -1,31 +1,31 @@
 {
   "schema_version": 1,
   "rows": 4981,
-  "mapped": 4976,
-  "provenance_sha256": "0e78e4ba739ebe3702f625e90dd1bf9dd9f7abda727a8db2522a50a51f8ccc13",
+  "mapped": 4977,
+  "provenance_sha256": "637983207b81af1612d3819f4740eae087b94bc235fb3cb18bcf976bab6c4d37",
   "full_attribution": true,
   "counts": {
-    "confirmed": 4636,
+    "confirmed": 4637,
     "review": 337,
-    "unmapped": 5,
+    "unmapped": 4,
     "mismatch": 3
   },
   "by_check": {
     "ast": {
-      "confirmed": 4825,
+      "confirmed": 4826,
       "review": 151
     },
     "text": {
-      "confirmed": 4938,
+      "confirmed": 4939,
       "review": 35,
       "mismatch": 3
     },
     "blame": {
-      "confirmed": 4783,
+      "confirmed": 4784,
       "review": 193
     },
     "commit": {
-      "confirmed": 4976
+      "confirmed": 4977
     }
   },
   "by_match": {
@@ -48,7 +48,7 @@
     },
     "history": {
       "review": 8,
-      "confirmed": 19
+      "confirmed": 20
     },
     "reshaped": {
       "review": 2,
@@ -58,9 +58,9 @@
       "review": 23
     },
     "unmapped": {
-      "unmapped": 5
+      "unmapped": 4
     }
   },
-  "snapshots_inspected": 230,
+  "snapshots_inspected": 231,
   "definition": "automated evidence for the recorded body/location and last writer; not first introduction or unique origin"
 }

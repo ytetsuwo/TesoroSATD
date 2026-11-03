@@ -95,6 +95,9 @@ FIXES = [
      703, 706, "history"),
     (20778, 0, None, "src/org/sosy_lab/cpachecker/cpa/invariants/CompoundBitVectorInterval.java",
      1585, 1601, "reshaped"),
+    (2495, 0, "3e845ae18c19b7f4d1855d62914aac5ef760e788",
+     "platform-web-ui/src/main/java/ua/com/fielden/platform/web/centre/EntityCentre.java",
+     1439, 1445, "history"),
 ]
 
 # Functions whose location cannot be selected by the locator because the same

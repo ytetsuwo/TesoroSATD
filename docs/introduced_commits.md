@@ -103,15 +103,15 @@ python3 scripts/24_consistency.py   # 件数・キー・fingerprint を検査
 
 | 状態 | 件数 |
 | --- | ---: |
-| `introduced` | 4,938 |
+| `introduced` | 4,939 |
 | `ambiguous` | 0 |
 | `truncated` | 0 |
 | `unresolved` | 0 |
 | `not_confirmed` | 39 |
-| `unmapped` | 5 |
+| `unmapped` | 4 |
 | 合計 | 4,981 |
 
-導入コミットを特定できた 4,938 件のうち、記録済み `commit_id` と同一が 4,541 件、
+導入コミットを特定できた 4,939 件のうち、記録済み `commit_id` と同一が 4,542 件、
 異なるのが 396 件だった。異なる例は、複数行コメントの完成や、コード整形で
 同じ行の blame が更新されたが本文は変わっていないケースである。
 
@@ -119,7 +119,7 @@ python3 scripts/24_consistency.py   # 件数・キー・fingerprint を検査
 
 | 状態 | 件数 |
 | --- | ---: |
-| `current`（現在本文と同一） | 4,938 |
+| `current`（現在本文と同一） | 4,939 |
 | `historical`（履歴で完全一致） | 8 |
 | `candidate`（完全一致、親探索打ち切り） | 2 |
 | `ambiguous`（独立した完全一致が複数） | 0 |
@@ -128,11 +128,11 @@ python3 scripts/24_consistency.py   # 件数・キー・fingerprint を検査
 | `context`（周辺コードから推定） | 24 |
 | `not_informative`（短語） | 2 |
 | `not_found`（履歴に見つからない） | 1 |
-| `unmapped`（来歴なし） | 5 |
+| `unmapped`（来歴なし） | 4 |
 | 合計 | 4,981 |
 
-`dataset_introduced_in` を付けたのは 4,974 件（うち完全一致 4,946 件）。
-完全一致の内訳は、現在本文と同一 4,938 件、履歴で完全一致 8 件。
+`dataset_introduced_in` を付けたのは 4,975 件（うち完全一致 4,947 件）。
+完全一致の内訳は、現在本文と同一 4,939 件、履歴で完全一致 8 件。
 残りは候補 2 件、近い候補 1 件、接頭辞 1 件、周辺コードから推定 24 件で、
 これらは確定ではない。
 

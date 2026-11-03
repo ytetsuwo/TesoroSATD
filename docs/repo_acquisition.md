@@ -335,3 +335,12 @@ curl -s https://archive.softwareheritage.org/api/1/vault/gitfast/swh:1:rev:51514
 | 24102 | `d48d2b163977` | `chrome/.../vr/VrBrowserNativeUiTest.java` | 703–706 | `d48d2b163977` (bsheedy, 2019-03-13) |
 
 これで `weak_match` は 0 関数になった。
+
+### `2495` の Javadoc 復元（2026-11-04）
+
+`fieldenms/unknown` の `EntityCentre.java` は、2025-09-19 の commit `4a88bfb8` で
+`/** ... */` が `///` 形式へ変換されていた。変換前の `4a88bfb8^` には
+dataset と同一の Javadoc が 1439〜1445 行に残っており、すべて
+`6711ae6d`（2015-04-29, Jhou）に blame できる。
+`25_manual_fixes.py` の `FIXES` にこの履歴位置を追加し、コメント 0 を復元した。
+残る未対応は 4 件（削除リポジトリ 3 件 + `30244` の Javadoc 1 件）。
