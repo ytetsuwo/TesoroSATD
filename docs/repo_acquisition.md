@@ -192,12 +192,20 @@ python3 scripts/05_verify.py --full                              # コメント 
 
 残る `repo_missing` は `fernandogomesfg/Algoritmos-em-Java` /
 `JC-Bodoque/geometric-transformer` の 2 件で、いずれも GitHub 上に現存せず、
-コード検索でも同一本文が見つからない。2026-11-03 時点の探索記録:
+コード検索でも同一本文が見つからない。2026-11-04 時点の探索記録:
 
 | リポジトリ | 確認したこと |
 | --- | --- |
-| `fernandogomesfg/Algoritmos-em-Java` | GitHub API は 404。所有者の公開リポジトリに Java は無い。`FuncProdutividade` / `addFuncprodutividade` / `printSalarioProdutividade` は GitHub code search（`fork:true` を含む）で 0 件、Sourcegraph でも 0 件。SWH の origin search に登録なし。GitLab / Bitbucket にも無い。Internet Archive の CDX に snapshot なし。 |
-| `JC-Bodoque/geometric-transformer` | GitHub API は 404。`TODO: translate code` と `translate()` の組合せは GitHub code search / Sourcegraph で 0 件。SWH の origin は登録されているが、2023 年の 3 回の visit はすべて `not_found` で snapshot が無い。同名の公開リポジトリ 78 件も Java の一致なし。 |
+| `fernandogomesfg/Algoritmos-em-Java` | GitHub API は 404。所有者の公開リポジトリに Java は無い。`FuncProdutividade` / `addFuncprodutividade` / `printSalarioProdutividade` は GitHub code search（`fork:true` を含む）で 0 件、Sourcegraph でも 0 件。SWH の origin search に登録なし。GitLab / Bitbucket にも無い。Internet Archive の CDX に snapshot なし。GH Archive では 2021-09-29〜2022-06-14 に 39 イベント（Push 38・Create 1、Fork 0）。`FuncProdutividade.java` の作成は `d48d1a2a871c2be2c1a5960a043825afcfefc805`（2022-05-01）だが、SWH に revision が無く、現存する同名 fork 106 件の履歴にも一致しない。 |
+| `JC-Bodoque/geometric-transformer` | GitHub API は 404。`TODO: translate code` と `translate()` の組合せは GitHub code search / Sourcegraph で 0 件。SWH の origin は登録されているが、2023 年の 3 回の visit はすべて `not_found` で snapshot が無い。同名の公開リポジトリ 78 件も Java の一致なし。GH Archive では 2021-05-14〜2021-07-22 に 6 イベント。PR #2 の head `b1fd35f5c3c3ed2e20c9e89f3d85007248b3d48c`、merge `bb8031c940bf750da7abe0ae8a59e00e902273c2`、base `b61c9e7729bb7a5eee753dd69ca75c61922893d7` まで特定したが、Fork イベントは無く、SWH に revision が無い。 |
+
+`30244:0` の `krisiney/SOKOBANFX-DMS-2020` は、GH Archive で
+2021-12-22 の作成時に README / LICENSE だけが push され、現在の
+`c6c7ca4`（2023-10-17）は親のない単一コミットであることを確認した。
+データセットの Javadoc はその前の版のもので、現存する
+`Yixin-Shen-1218/Sokoban`（同じ `c6c7ca4`）にも履歴が無い。
+`TODO: implement something funny` の現存コピーは 1 件だけで、
+Javadoc の完全一致は GitHub code search で 0 件だった。
 
 `ming1991/mingop` は `cpoopc/RetrofitRxCache` に同一コードが現存し、
 `AsyncOnSubscribeCacheNet.java` の 2 箇所（122 行 / 161 行）が
