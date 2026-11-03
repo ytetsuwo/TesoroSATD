@@ -13,6 +13,7 @@ python3 scripts/25_manual_fixes.py
 python3 scripts/04_export.py
 python3 scripts/05_verify.py --all-checks
 python3 scripts/27_strict_audit.py
+python3 scripts/28_introduced.py
 python3 scripts/04_export.py
 python3 scripts/24_consistency.py
 python3 scripts/23_environment.py

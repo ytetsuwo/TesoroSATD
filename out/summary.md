@@ -1,6 +1,6 @@
 # Tesoro provenance (repo / file / commit)
 
-生成: 2026-10-31 18:52
+生成: 2026-11-03 17:08
 
 ## カバレッジ
 
@@ -58,7 +58,7 @@ snapshot_commit, path_snapshot
 python3 scripts/01_repo_meta.py    # GitHub API で生死と既定ブランチ
 python3 scripts/02_clone_repos.py  # blob なし部分クローン + *.java checkout
 python3 scripts/03_locate.py       # 関数アラインメント + git blame
-python3 scripts/04_export.py       # CSV / レポート
+python3 scripts/04_export.py       # CSV / レポート（27/28 の結果を反映）
 python3 scripts/05_verify.py --full  # 全行のテキスト検証
 python3 scripts/06_blame.py 8431   # 個別の来歴と blame
 ```
@@ -76,3 +76,18 @@ python3 scripts/06_blame.py 8431   # 個別の来歴と blame
 確定は本文・関数所属・本文行の最終更新者についての自動判定であり、
 最初の導入コミットや同型コピーの唯一の起源を保証しません。
 詳細: `out/strict_audit_summary.md` / `out/strict_audit.jsonl`。
+
+## SATD 導入コミット
+
+現在のコメント本文が最初に現れたコミットを、履歴の親方向へ確認した別集計です。
+
+- 導入コミットを特定: 4743
+- 記録済み `commit_id` と同一: 4498
+- 記録済み `commit_id` と異なる: 245
+- 曖昧: 5
+- 未解決: 0 + 打ち切り 147
+- 本文未確定のため対象外: 66
+
+本文が後から書き換えられている場合、`introduced_in` は現在の本文を導入した
+コミットであり、SATD コメント全体の最初の導入とは限りません。
+詳細: `out/introduced_summary.md` / `out/tesoro_introduced.csv`。

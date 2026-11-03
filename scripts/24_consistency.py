@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Cross-check the exported files, the dataset and the README numbers."""
+"""Cross-check the exported files, the dataset, README numbers and introductions."""
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 import re
 import sys
@@ -38,6 +39,19 @@ check({str(c["id"]) for c in code} == {r["function_id"] for r in prov},
 
 got = {(r["function_id"], r["comment_id"]) for r in prov}
 check(len(got) == len(prov), "duplicate (function, comment) rows")
+
+intro = rows("tesoro_introduced.csv")
+check(len(intro) == len(prov), f"introduced rows: {len(intro)}")
+check({(r["function_id"], r["comment_id"]) for r in intro} == got,
+      "introduced comment keys differ from provenance")
+check(len({(r["function_id"], r["comment_id"]) for r in intro}) == len(intro),
+      "duplicate introduced keys")
+intro_summary = json.loads((OUT / "introduced_summary.json").read_text())
+check(sum(intro_summary["counts"].values()) == len(prov),
+      "introduced status counts do not sum to the dataset")
+check(intro_summary["provenance_sha256"] == hashlib.sha256(
+    (OUT / "tesoro_provenance.csv").read_bytes()).hexdigest(),
+    "introduced summary is stale for the provenance CSV")
 
 withc = sum(1 for r in prov if r["commit_id"])
 st = Counter(r["status"] for r in prov)

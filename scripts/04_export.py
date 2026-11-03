@@ -181,7 +181,7 @@ def main():
         "python3 scripts/01_repo_meta.py    # GitHub API で生死と既定ブランチ",
         "python3 scripts/02_clone_repos.py  # blob なし部分クローン + *.java checkout",
         "python3 scripts/03_locate.py       # 関数アラインメント + git blame",
-        "python3 scripts/04_export.py       # CSV / レポート",
+        "python3 scripts/04_export.py       # CSV / レポート（27/28 の結果を反映）",
         "python3 scripts/05_verify.py --full  # 全行のテキスト検証",
         "python3 scripts/06_blame.py 8431   # 個別の来歴と blame",
         "```",
@@ -199,6 +199,24 @@ def main():
             lines += ["", "確定は本文・関数所属・本文行の最終更新者についての自動判定であり、",
                       "最初の導入コミットや同型コピーの唯一の起源を保証しません。",
                       "詳細: `out/strict_audit_summary.md` / `out/strict_audit.jsonl`。"]
+    introduced_path = OUT / "introduced_summary.json"
+    if introduced_path.exists():
+        introduced = json.loads(introduced_path.read_text())
+        fingerprint = hashlib.sha256((OUT / "tesoro_provenance.csv").read_bytes()).hexdigest()
+        if introduced.get("provenance_sha256") == fingerprint:
+            lines += ["", "## SATD 導入コミット", "",
+                      "現在のコメント本文が最初に現れたコミットを、履歴の親方向へ確認した別集計です。", "",
+                      f"- 導入コミットを特定: {introduced['identified']}",
+                      f"- 記録済み `commit_id` と同一: {introduced['same_as_recorded_commit']}",
+                      f"- 記録済み `commit_id` と異なる: {introduced['different_from_recorded_commit']}",
+                      f"- 曖昧: {introduced['counts'].get('ambiguous', 0)}",
+                      f"- 未解決: {introduced['counts'].get('unresolved', 0)} + "
+                      f"打ち切り {introduced['counts'].get('truncated', 0)}",
+                      f"- 本文未確定のため対象外: {introduced['counts'].get('not_confirmed', 0)}",
+                      "",
+                      "本文が後から書き換えられている場合、`introduced_in` は現在の本文を導入した",
+                      "コミットであり、SATD コメント全体の最初の導入とは限りません。",
+                      "詳細: `out/introduced_summary.md` / `out/tesoro_introduced.csv`。"]
     (OUT / "summary.md").write_text("\n".join(lines) + "\n")
     print("\n".join(lines))
 

@@ -10,6 +10,8 @@
 | ファイル | 行数 | 内容 |
 | --- | --- | --- |
 | `out/tesoro_provenance.csv` | 4981 | コメント単位の来歴 (repo / path / 行 / commit / 作者 / 日付) |
+| `out/tesoro_introduced.csv` | 4981 | 現在の本文を導入したコミット（別集計） |
+| `out/introduced_summary.md` | – | 導入コミットの状態別集計 |
 | `out/tesoro_msr16.csv` | 4981 | Maldonado MSR16 形式 `projectname,classification,commenttext` |
 | `out/tesoro_msr16_versioned.csv` | 4981 | 同上、`projectname` を `owner/name@<sha7>` にした版 |
 | `out/functions_located.jsonl` | 1255 | 関数単位の生データ (アラインメント結果と全コメント) |
@@ -38,6 +40,8 @@ git -C repos/pagarme__pagarme-core-api-java \
 
 CSV の `commit_id` は**コメント行の blame 結果**なので、そのコメントが最後に
 書かれたコミット。関数本体の最終変更とは一致しないことがある。
+現在のコメント本文を導入したコミットは `out/tesoro_introduced.csv` の
+`introduced_in` に別途記録している（[詳細](docs/introduced_commits.md)）。
 `blame_url` を開けば GitHub 上でも同じ行を blame できる (`path_at_commit` は
 その commit 時点のパスなので、リネーム前でも URL が壊れない)。
 
@@ -72,6 +76,8 @@ python3 scripts/20_check_msr16.py    # MSR16 の列・語彙を本家と照合
 python3 scripts/21_crossfile.py      # 同一リポジトリ内の別コピーを検索
 python3 scripts/22_name_search.py    # メソッド名で別クローンまで探索
 python3 scripts/23_environment.py    # 実行環境を out/environment.txt に記録
+python3 scripts/27_strict_audit.py   # 全コメントの厳密監査 (確定/要確認/不一致)
+python3 scripts/28_introduced.py     # 現在の本文を導入したコミットを履歴から特定
 python3 scripts/24_consistency.py    # データ・CSV・README・manifest の整合性検査
 python3 scripts/00_pin_repos.py      # clone を manifest の HEAD に固定/検査
 ```
@@ -152,7 +158,7 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
 - 上流プロジェクト: `aws/aws-sdk-java-v2`、`aws/aws-iot-device-sdk-java-v2`、
   `apache/stanbol`、`homacs/org.cakelab.blender.dna`。
 
-### 5. 検証 (05 / 14 / 27)
+### 5. 検証 (05 / 14 / 27 / 28)
 
 - `--full`: commit が付いた全 4961 コメントで、ファイル上のコメント本文が一致する
   ことを確認 → **4961/4961**。
@@ -169,6 +175,12 @@ SWH に未収録 (`not_archived`) だった 25 件は、GitHub のコード検�
   結果は `out/strict_audit_summary.md`、詳細は [厳密検証](docs/strict_verification.md)。
   全4,981件の結果は **確定4,598 / 要確認349 / 不一致14 / 検証不能0 / 未対応20**。
   不一致には本文の別物・短い一般語の部分一致・行範囲の欠落などが残り、すべてを誤対応と断定しない。
+- `28_introduced.py`: 本文が確定したコメントについて、現在の本文を導入したコミットを
+  親方向へ探索する。`commit_id`（本文行の最終更新者）とは別の列で記録し、
+  `introduced` / `ambiguous` / `truncated` / `unresolved` / `not_confirmed` / `unmapped`
+  に分ける。来歴は変更しない。全4,981件では **特定4,743 / 曖昧5 / 打ち切り147 /
+  未解決0 / 本文未確定66 / 未対応20**。記録済み `commit_id` と同一4,498、異なる245。
+  詳細は [導入コミット](docs/introduced_commits.md)。
 
 ### MSR16 形式の適合性 (20)
 

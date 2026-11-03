@@ -42,6 +42,42 @@ def dataset_body(text):
     return "\n".join(body(node["text"]) for node in nodes).strip() if nodes else body(text)
 
 
+def comment_groups(nodes, first, last, lines=None):
+    """Comment bodies that can form one dataset comment inside a line range.
+
+    Individual nodes are always candidates. Adjacent line comments (including
+    blank lines) and several comments on one line are also joined when their
+    ordered text exactly equals the recorded body.
+    """
+    ordered = sorted((node for node in nodes if first <= node["start"] and node["end"] <= last),
+                     key=lambda node: (node["start"], node["end"]))
+    groups = []
+    by_line = {}
+    for node in ordered:
+        by_line.setdefault(node["start"], []).append(body(node["text"]))
+    for start, parts in by_line.items():
+        if len(parts) > 1:
+            groups.append((start, start, "\n".join(parts)))
+    for index, node in enumerate(ordered):
+        text = body(node["text"])
+        groups.append((node["start"], node["end"], text))
+        end, parts = node["end"], [text]
+        for following in ordered[index + 1:]:
+            if following["start"] <= end:
+                continue
+            gap = range(end + 1, following["start"])
+            if lines is not None and any(lines[i - 1].strip() for i in gap):
+                break
+            if following["start"] == end + 1 or lines is not None:
+                parts.append(body(following["text"]))
+                end = following["end"]
+            else:
+                break
+        if len(parts) > 1:
+            groups.append((node["start"], end, "\n".join(parts)))
+    return groups
+
+
 def parse_blame(output):
     """Keep original line, current line, filename and SHA together per line."""
     records, current = [], None
@@ -153,21 +189,7 @@ class Auditor:
         actual = "\n".join(" ".join(fragments.get(i, [])) for i in selected).strip()
         wanted = dataset_body(row["commenttext"])
         a = compact(wanted)
-        contained = [node for node in nodes if first <= node["start"] and node["end"] <= last]
-        groups = []
-        ordered = sorted(contained, key=lambda node: (node["start"], node["end"]))
-        for index, node in enumerate(ordered):
-            text = body(node["text"])
-            groups.append((node["start"], node["end"], text))
-            end, parts = node["end"], [text]
-            for following in ordered[index + 1:]:
-                if following["start"] == end + 1:
-                    parts.append(body(following["text"]))
-                    end = following["end"]
-                elif following["start"] > end + 1:
-                    break
-            if len(parts) > 1:
-                groups.append((node["start"], end, "\n".join(parts)))
+        groups = comment_groups(nodes, first, last, lines)
         exact = next(((start, end, text) for start, end, text in groups
                       if a and compact(text) == a), None)
         empty_exact = next(((start, end, text) for start, end, text in groups
