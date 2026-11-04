@@ -1,0 +1,62 @@
+{
+  "model": "microsoft/graphcodebert-base",
+  "dataset": "tesoro",
+  "input": "text",
+  "split": "project",
+  "rows": 4981,
+  "satd": 1549,
+  "folds": 5,
+  "mean": {
+    "precision": 0.9158,
+    "recall": 0.9458,
+    "f1": 0.9303,
+    "auc": 0.9885
+  },
+  "per_fold": [
+    {
+      "fold": 1,
+      "n_train": 3984,
+      "n_test": 997,
+      "precision": 0.9574,
+      "recall": 0.9511,
+      "f1": 0.9542,
+      "auc": 0.9932
+    },
+    {
+      "fold": 2,
+      "n_train": 3985,
+      "n_test": 996,
+      "precision": 0.9085,
+      "recall": 0.9114,
+      "f1": 0.91,
+      "auc": 0.9861
+    },
+    {
+      "fold": 3,
+      "n_train": 3985,
+      "n_test": 996,
+      "precision": 0.936,
+      "recall": 0.9654,
+      "f1": 0.9505,
+      "auc": 0.9876
+    },
+    {
+      "fold": 4,
+      "n_train": 3985,
+      "n_test": 996,
+      "precision": 0.9071,
+      "recall": 0.9465,
+      "f1": 0.9264,
+      "auc": 0.9903
+    },
+    {
+      "fold": 5,
+      "n_train": 3985,
+      "n_test": 996,
+      "precision": 0.8702,
+      "recall": 0.9547,
+      "f1": 0.9105,
+      "auc": 0.9851
+    }
+  ]
+}

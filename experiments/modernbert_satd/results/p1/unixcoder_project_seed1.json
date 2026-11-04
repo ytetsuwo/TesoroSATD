@@ -1,0 +1,62 @@
+{
+  "model": "microsoft/unixcoder-base",
+  "dataset": "tesoro",
+  "input": "text",
+  "split": "project",
+  "rows": 4981,
+  "satd": 1549,
+  "folds": 5,
+  "mean": {
+    "precision": 0.8448,
+    "recall": 0.9348,
+    "f1": 0.8871,
+    "auc": 0.9782
+  },
+  "per_fold": [
+    {
+      "fold": 1,
+      "n_train": 3984,
+      "n_test": 997,
+      "precision": 0.8896,
+      "recall": 0.9707,
+      "f1": 0.9283,
+      "auc": 0.9872
+    },
+    {
+      "fold": 2,
+      "n_train": 3985,
+      "n_test": 996,
+      "precision": 0.8448,
+      "recall": 0.8956,
+      "f1": 0.8694,
+      "auc": 0.9691
+    },
+    {
+      "fold": 3,
+      "n_train": 3985,
+      "n_test": 996,
+      "precision": 0.8329,
+      "recall": 0.956,
+      "f1": 0.8902,
+      "auc": 0.9797
+    },
+    {
+      "fold": 4,
+      "n_train": 3985,
+      "n_test": 996,
+      "precision": 0.8671,
+      "recall": 0.9164,
+      "f1": 0.8911,
+      "auc": 0.9793
+    },
+    {
+      "fold": 5,
+      "n_train": 3985,
+      "n_test": 996,
+      "precision": 0.7896,
+      "recall": 0.9353,
+      "f1": 0.8563,
+      "auc": 0.9756
+    }
+  ]
+}

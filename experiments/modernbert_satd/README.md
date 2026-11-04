@@ -257,6 +257,36 @@ python experiments/modernbert_satd/summarize_p0.py
 プロジェクト横断では CodeBERT でも 0.93 を切ります。次の比較は
 project split を標準にすべきです。
 
+## P1: エンコーダ比較（project split）
+
+P0 の project split（974 プロジェクト、5グループ、3シード）を標準にして、
+次のエンコーダを同じ条件で比較しました。GraphCodeBERT / UnixCoder はバッチ128、
+ModernBERT-large は24GB GPUに収めるためバッチ64です。
+
+| モデル | Precision | Recall | F1 | AUC | CodeBERTとの差 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| CodeBERT-base | 0.9180 | 0.9379 | 0.9277 ± 0.0032 | 0.9873 | — |
+| ModernBERT-base | 0.9083 | 0.9220 | 0.9145 ± 0.0043 | 0.9843 | -0.0132 |
+| GraphCodeBERT-base | 0.9144 | 0.9456 | 0.9295 ± 0.0080 | 0.9886 | +0.0018 |
+| UnixCoder-base | 0.8430 | 0.9344 | 0.8860 ± 0.0027 | 0.9784 | -0.0417 |
+| **ModernBERT-large** | **0.9421** | 0.9372 | **0.9393 ± 0.0096** | **0.9885** | **+0.0116** |
+
+- **ModernBERT-large が最良（F1 0.9393）**。CodeBERT より +0.0116。
+- GraphCodeBERT は CodeBERT とほぼ同等（+0.0018、信頼区間内）。
+- UnixCoder は今回の設定では大きく劣る（0.8860）。トークナイザ・学習率・
+  mean pooling の相性を切り分ける必要があります。
+- 「コード専用モデルが常に強い」とは単純に言えず、**モデル規模と事前学習の
+  組み合わせ**が効いています。
+
+```bash
+python experiments/modernbert_satd/summarize_p1.py
+```
+
+`results/p1/` に各 seed の JSON / predictions、`results/p1_summary.json` に
+集計があります。CodeT5+ は encoder-decoder で、現行の
+`AutoModelForSequenceClassification` では分類ヘッドが合わないため、
+encoder pooling の実装後に追加します。
+
 ## 実行環境
 
 - 学習: `z690`（NVIDIA RTX 4090 24GB、CUDA）
