@@ -1,0 +1,618 @@
+{
+  "model": "ModernBERT-large",
+  "seed": 0,
+  "split": "project",
+  "confusion": {
+    "tp": 1463,
+    "fp": 89,
+    "fn": 86,
+    "tn": 3343
+  },
+  "metrics": {
+    "precision": 0.9427,
+    "recall": 0.9445,
+    "f1": 0.9436
+  },
+  "classes": {
+    "DEFECT": {
+      "count": 220,
+      "satd": 220,
+      "predicted_positive": 207,
+      "recall": 0.9409
+    },
+    "DESIGN": {
+      "count": 697,
+      "satd": 697,
+      "predicted_positive": 644,
+      "recall": 0.924
+    },
+    "DOCUMENTATION": {
+      "count": 80,
+      "satd": 80,
+      "predicted_positive": 79,
+      "recall": 0.9875
+    },
+    "IMPLEMENTATION": {
+      "count": 474,
+      "satd": 474,
+      "predicted_positive": 457,
+      "recall": 0.9641
+    },
+    "NONSATD": {
+      "count": 3432,
+      "satd": 0,
+      "predicted_positive": 89,
+      "specificity": 0.9741
+    },
+    "TEST": {
+      "count": 78,
+      "satd": 78,
+      "predicted_positive": 76,
+      "recall": 0.9744
+    }
+  },
+  "projects": [
+    {
+      "project": "tdc22/JAwesomeEngine",
+      "rows": 21,
+      "satd": 6,
+      "tp": 5,
+      "fp": 3,
+      "fn": 1,
+      "tn": 12,
+      "f1": 0.7143,
+      "recall": 0.8333
+    },
+    {
+      "project": "Narflex/sagetv",
+      "rows": 118,
+      "satd": 8,
+      "tp": 5,
+      "fp": 0,
+      "fn": 3,
+      "tn": 110,
+      "f1": 0.7692,
+      "recall": 0.625
+    },
+    {
+      "project": "cesarmo759/android_kernel_samsung_msm8916",
+      "rows": 19,
+      "satd": 6,
+      "tp": 5,
+      "fp": 1,
+      "fn": 1,
+      "tn": 12,
+      "f1": 0.8333,
+      "recall": 0.8333
+    },
+    {
+      "project": "SoftwareEngineeringToolDemos/type-inference",
+      "rows": 17,
+      "satd": 6,
+      "tp": 6,
+      "fp": 2,
+      "fn": 0,
+      "tn": 9,
+      "f1": 0.8571,
+      "recall": 1.0
+    },
+    {
+      "project": "valtri/midpoint",
+      "rows": 11,
+      "satd": 5,
+      "tp": 4,
+      "fp": 0,
+      "fn": 1,
+      "tn": 6,
+      "f1": 0.8889,
+      "recall": 0.8
+    },
+    {
+      "project": "wangwenwang/sfkc-driver-android",
+      "rows": 10,
+      "satd": 8,
+      "tp": 8,
+      "fp": 2,
+      "fn": 0,
+      "tn": 0,
+      "f1": 0.8889,
+      "recall": 1.0
+    },
+    {
+      "project": "xie-wenjie/AndroidBaseApplicationSourse",
+      "rows": 65,
+      "satd": 9,
+      "tp": 9,
+      "fp": 2,
+      "fn": 0,
+      "tn": 54,
+      "f1": 0.9,
+      "recall": 1.0
+    },
+    {
+      "project": "Bedework/bw-calendar-convert",
+      "rows": 82,
+      "satd": 5,
+      "tp": 5,
+      "fp": 1,
+      "fn": 0,
+      "tn": 76,
+      "f1": 0.9091,
+      "recall": 1.0
+    },
+    {
+      "project": "dcheung2/datanucleus-core",
+      "rows": 20,
+      "satd": 6,
+      "tp": 6,
+      "fp": 1,
+      "fn": 0,
+      "tn": 13,
+      "f1": 0.9231,
+      "recall": 1.0
+    },
+    {
+      "project": "iGivefirst/elasticsearch-grails-plugin",
+      "rows": 15,
+      "satd": 7,
+      "tp": 6,
+      "fp": 0,
+      "fn": 1,
+      "tn": 8,
+      "f1": 0.9231,
+      "recall": 0.8571
+    },
+    {
+      "project": "tkmonson/dataverse",
+      "rows": 54,
+      "satd": 21,
+      "tp": 20,
+      "fp": 2,
+      "fn": 1,
+      "tn": 31,
+      "f1": 0.9302,
+      "recall": 0.9524
+    },
+    {
+      "project": "woowahan/hive",
+      "rows": 28,
+      "satd": 7,
+      "tp": 7,
+      "fp": 1,
+      "fn": 0,
+      "tn": 20,
+      "f1": 0.9333,
+      "recall": 1.0
+    },
+    {
+      "project": "shisheng-1/Lantern",
+      "rows": 106,
+      "satd": 8,
+      "tp": 8,
+      "fp": 1,
+      "fn": 0,
+      "tn": 97,
+      "f1": 0.9412,
+      "recall": 1.0
+    },
+    {
+      "project": "serbaut/cloudstack",
+      "rows": 40,
+      "satd": 6,
+      "tp": 6,
+      "fp": 0,
+      "fn": 0,
+      "tn": 34,
+      "f1": 1.0,
+      "recall": 1.0
+    },
+    {
+      "project": "ttincs/guibat",
+      "rows": 31,
+      "satd": 8,
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 23,
+      "f1": 1.0,
+      "recall": 1.0
+    },
+    {
+      "project": "xyxiaoyou/snappy-store",
+      "rows": 30,
+      "satd": 9,
+      "tp": 9,
+      "fp": 0,
+      "fn": 0,
+      "tn": 21,
+      "f1": 1.0,
+      "recall": 1.0
+    },
+    {
+      "project": "Chiefwright/Mekanism",
+      "rows": 25,
+      "satd": 7,
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 18,
+      "f1": 1.0,
+      "recall": 1.0
+    },
+    {
+      "project": "mschroeder-github/datasprout",
+      "rows": 25,
+      "satd": 5,
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 20,
+      "f1": 1.0,
+      "recall": 1.0
+    },
+    {
+      "project": "adele-robots/fiona",
+      "rows": 23,
+      "satd": 5,
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 18,
+      "f1": 1.0,
+      "recall": 1.0
+    },
+    {
+      "project": "cirnoftw/android-openslmediaplayer",
+      "rows": 23,
+      "satd": 7,
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16,
+      "f1": 1.0,
+      "recall": 1.0
+    }
+  ],
+  "length_bins": [
+    {
+      "bin": "0-4",
+      "rows": 1188,
+      "satd": 134,
+      "precision": 0.9214,
+      "recall": 0.9627,
+      "f1": 0.9416
+    },
+    {
+      "bin": "5-9",
+      "rows": 1596,
+      "satd": 512,
+      "precision": 0.9566,
+      "recall": 0.9473,
+      "f1": 0.9519
+    },
+    {
+      "bin": "10-19",
+      "rows": 1286,
+      "satd": 543,
+      "precision": 0.9596,
+      "recall": 0.9632,
+      "f1": 0.9614
+    },
+    {
+      "bin": "20-39",
+      "rows": 592,
+      "satd": 242,
+      "precision": 0.917,
+      "recall": 0.9132,
+      "f1": 0.9151
+    },
+    {
+      "bin": "40-79",
+      "rows": 252,
+      "satd": 90,
+      "precision": 0.8804,
+      "recall": 0.9,
+      "f1": 0.8901
+    },
+    {
+      "bin": "80+",
+      "rows": 67,
+      "satd": 28,
+      "precision": 0.8889,
+      "recall": 0.8571,
+      "f1": 0.8727
+    }
+  ],
+  "comparison": {
+    "large_correct_codebert_wrong": 103,
+    "codebert_correct_large_wrong": 56,
+    "both_correct": 4703,
+    "both_wrong": 119
+  },
+  "errors": {
+    "false_positives": [
+      {
+        "project": "pandawithcat/VoogaSalad",
+        "classification": "NONSATD",
+        "comment": "//TODO: change filename param to INT",
+        "score": 1.0,
+        "label": 0
+      },
+      {
+        "project": "aurelienartus/testproject",
+        "classification": "NONSATD",
+        "comment": "//TODO get the data id",
+        "score": 1.0,
+        "label": 0
+      },
+      {
+        "project": "xie-wenjie/AndroidBaseApplicationSourse",
+        "classification": "NONSATD",
+        "comment": "// TODO - more\n// Original sync code.  Using for reference, will delete when done.",
+        "score": 0.9999,
+        "label": 0
+      },
+      {
+        "project": "atcbosselut/recipe-interpretation",
+        "classification": "NONSATD",
+        "comment": "// This method should not be called if the node is not a verb.\n//\n// Not sure if this happens, so I will currently have it crash so I can investigate it.",
+        "score": 0.9998,
+        "label": 0
+      },
+      {
+        "project": "dcheung2/datanucleus-core",
+        "classification": "NONSATD",
+        "comment": "// Special case of this being a link back to the owner. TODO Repeat this for nested and their owners",
+        "score": 0.9998,
+        "label": 0
+      },
+      {
+        "project": "javaemus/ArcoFlexDroid",
+        "classification": "NONSATD",
+        "comment": "/* Coin 2 is not working */",
+        "score": 0.9995,
+        "label": 0
+      },
+      {
+        "project": "ChGen/AndroidGpuGraphicsTest",
+        "classification": "NONSATD",
+        "comment": "//TODO: wait for onFrameAvailable() ??",
+        "score": 0.9995,
+        "label": 0
+      },
+      {
+        "project": "foolite/panda",
+        "classification": "NONSATD",
+        "comment": "// I'm not exactly sure why getRawType() returns Type instead of Class.\n// Neal isn't either but suspects some pathological case related\n// to nested classes exists.",
+        "score": 0.9994,
+        "label": 0
+      },
+      {
+        "project": "xie-wenjie/AndroidBaseApplicationSourse",
+        "classification": "NONSATD",
+        "comment": "/**\n     * Generic synchronizer - used for POP3 and IMAP.\n     *\n     * TODO Break this method up into smaller chunks.\n     *\n     * @param account the account to sync\n     * @param folder the mailbox to sync\n     * @return results of the sync pass\n     * @throws MessagingException\n     */",
+        "score": 0.9994,
+        "label": 0
+      },
+      {
+        "project": "wangwenwang/sfkc-driver-android",
+        "classification": "NONSATD",
+        "comment": "// ATTENTION: This was auto-generated to implement the App Indexing API.\n// See https://g.co/AppIndexing/AndroidStudio for more information.",
+        "score": 0.9993,
+        "label": 0
+      },
+      {
+        "project": "wangwenwang/sfkc-driver-android",
+        "classification": "NONSATD",
+        "comment": "// ATTENTION: This was auto-generated to implement the App Indexing API.\n// See https://g.co/AppIndexing/AndroidStudio for more information.",
+        "score": 0.9993,
+        "label": 0
+      },
+      {
+        "project": "yanivru/lucene-solr",
+        "classification": "NONSATD",
+        "comment": "// Safety check: don't allow an update to an existing doc that has children, unless we actually support this.",
+        "score": 0.9991,
+        "label": 0
+      },
+      {
+        "project": "swing-fly/webswing",
+        "classification": "NONSATD",
+        "comment": "// TODO size",
+        "score": 0.9988,
+        "label": 0
+      },
+      {
+        "project": "AdrianaDinca/training",
+        "classification": "NONSATD",
+        "comment": "// TODO use Unchecked.consumer from JOOL library\n// SOLUTION(",
+        "score": 0.9984,
+        "label": 0
+      },
+      {
+        "project": "tdc22/JAwesomeEngine",
+        "classification": "NONSATD",
+        "comment": "// TODO: just relevant for last iteration",
+        "score": 0.9983,
+        "label": 0
+      },
+      {
+        "project": "tdc22/JAwesomeEngine",
+        "classification": "NONSATD",
+        "comment": "// TODO: check",
+        "score": 0.9983,
+        "label": 0
+      },
+      {
+        "project": "tdc22/JAwesomeEngine",
+        "classification": "NONSATD",
+        "comment": "// TODO: check",
+        "score": 0.9983,
+        "label": 0
+      },
+      {
+        "project": "BerlinUnited/NaoTH",
+        "classification": "NONSATD",
+        "comment": "// HACK: since it is not possible to set the owner of an javafx alert to\n//       a swing frame, we use the following approach to set the modality!",
+        "score": 0.9983,
+        "label": 0
+      },
+      {
+        "project": "dgisser/Ripple",
+        "classification": "NONSATD",
+        "comment": "//not the right way to do this",
+        "score": 0.998,
+        "label": 0
+      },
+      {
+        "project": "dng24/wehe-android",
+        "classification": "NONSATD",
+        "comment": "// We first resolve the IP of the server and then communicate with the server\n// Using IP only, because we have multiple server under same domain and we want\n// the client not to switch server during a test run\n// TODO come up with a better way to handle Inet related queries, since this\n//  introduc",
+        "score": 0.9979,
+        "label": 0
+      }
+    ],
+    "false_negatives": [
+      {
+        "project": "fernandogomesfg/Algoritmos-em-Java",
+        "classification": "DESIGN",
+        "comment": "//metodo para imprimir salario do funcionario produtividade",
+        "score": 0.0,
+        "label": 1
+      },
+      {
+        "project": "fernandogomesfg/Algoritmos-em-Java",
+        "classification": "DESIGN",
+        "comment": "//metodo para adicionar funcionario produtividade",
+        "score": 0.0,
+        "label": 1
+      },
+      {
+        "project": "iGivefirst/elasticsearch-grails-plugin",
+        "classification": "TEST",
+        "comment": "//noinspection unchecked",
+        "score": 0.0,
+        "label": 1
+      },
+      {
+        "project": "YCjia/kudu",
+        "classification": "DESIGN",
+        "comment": "// We only expect two values, a DEF and a reference, but there might be more.",
+        "score": 0.0,
+        "label": 1
+      },
+      {
+        "project": "scottkillen-vault/Bunyan",
+        "classification": "DESIGN",
+        "comment": "//Confused? Copy the URL and paste it in your browser.",
+        "score": 0.0,
+        "label": 1
+      },
+      {
+        "project": "leolleeooleo/cloudstack",
+        "classification": "DESIGN",
+        "comment": "// this method supports only guest network creation",
+        "score": 0.0,
+        "label": 1
+      },
+      {
+        "project": "aoen/reair",
+        "classification": "DEFECT",
+        "comment": "// Note: if we constantly get empty results (i.e. no valid entries\n// because all the commands got filtered out), then the lastReadId won't\n// be updated for a while.",
+        "score": 0.0,
+        "label": 1
+      },
+      {
+        "project": "valtri/midpoint",
+        "classification": "DESIGN",
+        "comment": "// Writing by different connector that we are going to use for reading: danger of quantum effects",
+        "score": 0.0001,
+        "label": 1
+      },
+      {
+        "project": "nilesh14/FMC",
+        "classification": "DESIGN",
+        "comment": "// not called",
+        "score": 0.0001,
+        "label": 1
+      },
+      {
+        "project": "diktat-static-analysis/juliet-benchmark-java",
+        "classification": "DEFECT",
+        "comment": "/* POTENTIAL FLAW: Use password directly in PasswordAuthentication() */",
+        "score": 0.0001,
+        "label": 1
+      },
+      {
+        "project": "diktat-static-analysis/juliet-benchmark-java",
+        "classification": "DEFECT",
+        "comment": "/* POTENTIAL FLAW: Use password directly in PasswordAuthentication() */",
+        "score": 0.0001,
+        "label": 1
+      },
+      {
+        "project": "hurjeesic/YourSleeping",
+        "classification": "DEFECT",
+        "comment": "//this could cause #395 to come back",
+        "score": 0.0001,
+        "label": 1
+      },
+      {
+        "project": "fanx-dev/fantom",
+        "classification": "IMPLEMENTATION",
+        "comment": "// now that everthing is mapped, we can fill in the super\n// class fields (unless something is wacked, this will only\n// use Types in my pod or in pods already loaded)",
+        "score": 0.0001,
+        "label": 1
+      },
+      {
+        "project": "jgorny/liferay-faces-bridge-impl",
+        "classification": "IMPLEMENTATION",
+        "comment": "// TCK: encodeResourceURLOpaqueTest",
+        "score": 0.0002,
+        "label": 1
+      },
+      {
+        "project": "blackducksoftware/magpie-libraries",
+        "classification": "DEFECT",
+        "comment": "/**\n     * Fails if the subject is not a container with the specified number of values or name/value pairs.\n     */",
+        "score": 0.0002,
+        "label": 1
+      },
+      {
+        "project": "jupsal/schmies-jTEM",
+        "classification": "DESIGN",
+        "comment": "/* We might be close to the north pole. This would be bad,\n             * numerically. So perform a 180 degree rotation around the\n             * x-axis, project that point, and swap the entries of the\n             * result.\n             */",
+        "score": 0.0002,
+        "label": 1
+      },
+      {
+        "project": "openmuthu/jaya",
+        "classification": "IMPLEMENTATION",
+        "comment": "// Shortcut to check isAbsolute()",
+        "score": 0.0003,
+        "label": 1
+      },
+      {
+        "project": "Sailia/data_structures",
+        "classification": "IMPLEMENTATION",
+        "comment": "// replace this statement with your own return",
+        "score": 0.0003,
+        "label": 1
+      },
+      {
+        "project": "chbi/gerrit-gitblit-plugin",
+        "classification": "DESIGN",
+        "comment": "// We might even consider updating the user-supplied file, if any...",
+        "score": 0.0007,
+        "label": 1
+      },
+      {
+        "project": "Gravitational-Field/Dive-In-Java",
+        "classification": "DOCUMENTATION",
+        "comment": "/**\n     * A Factory Method pattern which creates an empty a BackedList\n     * implementation\n     * \n     * @return DOCUMENT ME!\n     */",
+        "score": 0.001,
+        "label": 1
+      }
+    ]
+  }
+}

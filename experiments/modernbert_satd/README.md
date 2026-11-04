@@ -321,6 +321,71 @@ python experiments/modernbert_satd/summarize_p2.py
 CodeSage v2 は `transformers 4.57` で `Conv1D` の import に失敗するため
 今回は除外しました（`modeling_codesage.py` が旧APIに依存）。
 
+## P3: エラー分析（ModernBERT-large、project split、seed 0）
+
+最良モデル ModernBERT-large の OOF 予測（seed 0）を、Tesoro の分類・プロジェクト・
+コメント長・CodeBERT との差分で分解しました。全体の混同行列は
+**TP 1,463 / FP 89 / FN 86 / TN 3,343**、Precision 0.9427、Recall 0.9445、
+F1 0.9436 です（フォールド平均は 0.9437）。
+
+### SATD種別ごとの Recall
+
+| 分類 | 件数 | Recall |
+| --- | ---: | ---: |
+| DOCUMENTATION | 80 | 0.9875 |
+| TEST | 78 | 0.9744 |
+| IMPLEMENTATION | 474 | 0.9641 |
+| DEFECT | 220 | 0.9409 |
+| DESIGN | 697 | **0.9240** |
+| NONSATD（specificity） | 3,432 | 0.9741 |
+
+**DESIGN の Recall が最も低い**。設計上の意図やトレードオフを述べるコメントは、
+表面の TODO/FIXME パターンだけでは拾いにくいことを示します。
+
+### コメント長
+
+| 語数 | 件数 | F1 | Recall |
+| --- | ---: | ---: | ---: |
+| 0–4 | 1,188 | 0.9416 | 0.9627 |
+| 5–9 | 1,596 | 0.9519 | 0.9473 |
+| 10–19 | 1,286 | **0.9614** | 0.9632 |
+| 20–39 | 592 | 0.9151 | 0.9132 |
+| 40–79 | 252 | 0.8901 | 0.9000 |
+| 80+ | 67 | 0.8727 | 0.8571 |
+
+長いコメントは文脈が増える一方、ノイズも増えて F1 が下がります。
+
+### プロジェクト別
+
+SATD が5件以上あるプロジェクトでは、最下位でも F1 0.7143
+（`tdc22/JAwesomeEngine`、6 SATD）、0.7692（`Narflex/sagetv`、8 SATD）でした。
+SATD が1〜2件しかないプロジェクトの F1 0 は標本効果が大きく、モデルの失敗とは
+解釈できません。
+
+### CodeBERT との比較
+
+- ModernBERT-large が正しく CodeBERT が誤り: **103件**
+- CodeBERT が正しく ModernBERT-large が誤り: **56件**
+- 両方正解: 4,703件 / 両方誤り: 119件
+
+ModernBERT-large の優位は、主に CodeBERT が落とす行を拾っているためです。
+
+### 誤りの例
+
+- **False Positive**: `//TODO: change filename param to INT` のような TODO が
+  NONSATD と注釈されている例。SATD の境界（将来の変更意図をどこまで含めるか）に
+  関するアノテーション揺れの可能性があります。
+- **False Negative**: `// We only expect two values...` や
+  `// this method supports only guest network creation` のような設計意図の記述。
+  明示的な TODO マーカーがないため、DESIGN の Recall 低下に対応しています。
+
+```bash
+python experiments/modernbert_satd/analyze_p3.py
+```
+
+`results/p3_error_analysis.json` に、混同行列・分類別・プロジェクト別・長さ別・
+FP/FN の上位例・CodeBERT との比較を保存しています。
+
 ## 実行環境
 
 - 学習: `z690`（NVIDIA RTX 4090 24GB、CUDA）
