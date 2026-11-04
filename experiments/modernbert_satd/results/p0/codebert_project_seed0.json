@@ -1,0 +1,62 @@
+{
+  "model": "microsoft/codebert-base",
+  "dataset": "tesoro",
+  "input": "text",
+  "split": "project",
+  "rows": 4981,
+  "satd": 1549,
+  "folds": 5,
+  "mean": {
+    "precision": 0.9178,
+    "recall": 0.9412,
+    "f1": 0.9292,
+    "auc": 0.9878
+  },
+  "per_fold": [
+    {
+      "fold": 1,
+      "n_train": 3984,
+      "n_test": 997,
+      "precision": 0.9395,
+      "recall": 0.9609,
+      "f1": 0.9501,
+      "auc": 0.991
+    },
+    {
+      "fold": 2,
+      "n_train": 3985,
+      "n_test": 996,
+      "precision": 0.929,
+      "recall": 0.9114,
+      "f1": 0.9201,
+      "auc": 0.9836
+    },
+    {
+      "fold": 3,
+      "n_train": 3985,
+      "n_test": 996,
+      "precision": 0.9192,
+      "recall": 0.9654,
+      "f1": 0.9417,
+      "auc": 0.9888
+    },
+    {
+      "fold": 4,
+      "n_train": 3985,
+      "n_test": 996,
+      "precision": 0.915,
+      "recall": 0.9365,
+      "f1": 0.9256,
+      "auc": 0.9909
+    },
+    {
+      "fold": 5,
+      "n_train": 3985,
+      "n_test": 996,
+      "precision": 0.8862,
+      "recall": 0.932,
+      "f1": 0.9085,
+      "auc": 0.9848
+    }
+  ]
+}

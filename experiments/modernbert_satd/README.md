@@ -217,6 +217,46 @@ ModernBERT との比較（重み付き3ビュー）:
 - CodeBERT のログは ModernBERT より低い（0.5096 vs 0.5363）一方、
   コードはほぼ同じ（0.5954 vs 0.5989）でした。
 
+## P0: プロジェクト分割・重複排除分割
+
+ランダム層化5分割は、同一プロジェクトのコメントや重複本文が訓練とテストに
+跨がるため、性能を楽観的に見積もる可能性があります。Tesoro で次の2つを追加しました。
+
+- **project split**: 974 プロジェクトを `GroupKFold(5)` で5つのグループに分け、
+  プロジェクトが訓練とテストに跨がらないようにする。
+- **duplicate-free split**: 空白を正規化した本文をグループとして `GroupKFold(5)`。
+  同一本文が別フォールドに跨がらないようにする。
+
+どちらもモデルの seed 0 / 1 / 2 で3回ずつ学習し、平均と95%信頼区間
+（t分布、df=2）を出しました。
+
+```bash
+python experiments/modernbert_satd/run_modernbert.py \
+    --dataset tesoro --input text --csv experiments/modernbert_satd/data/tesoro_views.csv.gz \
+    --split project --folds 5 --epochs 3 --batch 128 --seed 0 \
+    --model microsoft/codebert-base \
+    --output experiments/modernbert_satd/results/p0/codebert_project_seed0.json
+
+python experiments/modernbert_satd/summarize_p0.py
+```
+
+| 分割 | CodeBERT F1 | ModernBERT F1 |
+| --- | ---: | ---: |
+| random（既存） | 0.9349 | 0.9274 |
+| project（3 seed） | **0.9277 ± 0.0032** | **0.9145 ± 0.0043** |
+| duplicate-free（3 seed） | **0.9330 ± 0.0015** | **0.9177 ± 0.0157** |
+
+- project split で CodeBERT は -0.0072、ModernBERT は -0.0129。
+- duplicate-free split で CodeBERT は -0.0019、ModernBERT は -0.0097。
+- **CodeBERT の優位は分割を厳しくしても残る**。差は project で +0.0132
+  （95% CI ±0.0033）、duplicate-free で +0.0152（±0.0169）。
+- ModernBERT は duplicate-free の seed 間分散が大きく、3 seed では
+  0.9105〜0.9223 と幅があります。
+
+この結果から、Tesoro のランダム分割は極端に楽観ではありませんが、
+プロジェクト横断では CodeBERT でも 0.93 を切ります。次の比較は
+project split を標準にすべきです。
+
 ## 実行環境
 
 - 学習: `z690`（NVIDIA RTX 4090 24GB、CUDA）

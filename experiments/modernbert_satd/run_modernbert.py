@@ -208,9 +208,20 @@ def main() -> int:
           f"model {args.model}", flush=True)
 
     if args.split == "project":
-        if args.dataset != "maldonado":
-            raise SystemExit("--split project is only available for maldonado")
-        splits = list(LeaveOneGroupOut().split(texts, labels, projects))
+        if not any(projects):
+            raise SystemExit("--split project needs a project_name column")
+        if args.dataset == "maldonado":
+            # Preserve the original Maldonado protocol (leave-one-project-out).
+            splits = list(LeaveOneGroupOut().split(texts, labels, projects))
+        else:
+            # Tesoro has ~972 projects; use five disjoint project groups.
+            splits = list(GroupKFold(args.folds).split(texts, labels, projects))
+        for train, test in splits:
+            overlap = set(projects[train]) & set(projects[test])
+            if overlap:
+                raise SystemExit(f"project leakage: {sorted(overlap)[:3]}")
+        print(f"project split: {len(splits)} folds; "
+              f"projects {len(set(projects))}", flush=True)
     elif args.split == "duplicate-free":
         groups = np.array([" ".join(text.split()) for text in texts])
         splits = list(GroupKFold(args.folds).split(texts, labels, groups))

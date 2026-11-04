@@ -1,0 +1,62 @@
+{
+  "model": "answerdotai/ModernBERT-base",
+  "dataset": "tesoro",
+  "input": "text",
+  "split": "duplicate-free",
+  "rows": 4981,
+  "satd": 1549,
+  "folds": 5,
+  "mean": {
+    "precision": 0.9187,
+    "recall": 0.9234,
+    "f1": 0.9204,
+    "auc": 0.9862
+  },
+  "per_fold": [
+    {
+      "fold": 1,
+      "n_train": 3984,
+      "n_test": 997,
+      "precision": 0.8863,
+      "recall": 0.9532,
+      "f1": 0.9185,
+      "auc": 0.988
+    },
+    {
+      "fold": 2,
+      "n_train": 3985,
+      "n_test": 996,
+      "precision": 0.9236,
+      "recall": 0.9055,
+      "f1": 0.9145,
+      "auc": 0.9833
+    },
+    {
+      "fold": 3,
+      "n_train": 3985,
+      "n_test": 996,
+      "precision": 0.9455,
+      "recall": 0.8676,
+      "f1": 0.9049,
+      "auc": 0.9822
+    },
+    {
+      "fold": 4,
+      "n_train": 3985,
+      "n_test": 996,
+      "precision": 0.8916,
+      "recall": 0.926,
+      "f1": 0.9085,
+      "auc": 0.9815
+    },
+    {
+      "fold": 5,
+      "n_train": 3985,
+      "n_test": 996,
+      "precision": 0.9467,
+      "recall": 0.9649,
+      "f1": 0.9557,
+      "auc": 0.9962
+    }
+  ]
+}
