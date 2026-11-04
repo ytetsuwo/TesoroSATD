@@ -76,6 +76,16 @@ def read_maldonado(path: Path, input_kind: str):
 
 
 def read_tesoro(path: Path, input_kind: str):
+    if path.suffix in (".csv", ".gz"):
+        opener = gzip.open if path.suffix == ".gz" else open
+        with opener(path, "rt", encoding="utf-8", newline="") as handle:
+            rows = list(csv.DictReader(handle))
+        column = {"text": "comment_text", "log": "commit_log", "code": "code"}[input_kind]
+        texts = [row[column] for row in rows]
+        labels = np.array([1 if row.get("satd") == "1" else 0 for row in rows])
+        projects = np.array([row.get("project_name", "") for row in rows])
+        return rows, texts, labels, projects
+
     rows = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()
             if line.strip()]
     if input_kind == "code":
@@ -168,8 +178,8 @@ def main() -> int:
     if args.dataset == "maldonado":
         rows, texts, labels, projects = read_maldonado(args.csv, args.input)
     else:
-        if args.input == "log":
-            raise SystemExit("--input log is only available for maldonado")
+        if args.input == "log" and args.csv == DEFAULT_TESORO:
+            raise SystemExit("--input log needs the CSV built by build_tesoro_views.py")
         rows, texts, labels, projects = read_tesoro(args.csv, args.input)
 
     pairs = None

@@ -1,0 +1,111 @@
+{
+  "rows": 4981,
+  "satd": 1549,
+  "threshold": 0.5,
+  "single": {
+    "text": {
+      "precision": 0.9135,
+      "recall": 0.9413,
+      "f1": 0.9272,
+      "auc": 0.987,
+      "f1_honest": 0.9241
+    },
+    "log": {
+      "precision": 0.4339,
+      "recall": 0.7017,
+      "f1": 0.5363,
+      "auc": 0.699,
+      "f1_honest": 0.5413
+    },
+    "code": {
+      "precision": 0.5534,
+      "recall": 0.6527,
+      "f1": 0.5989,
+      "auc": 0.7902,
+      "f1_honest": 0.5995
+    }
+  },
+  "ensembles": {
+    "text+log": {
+      "probability": {
+        "precision": 0.9165,
+        "recall": 0.9425,
+        "f1": 0.9293,
+        "auc": 0.9759,
+        "f1_honest": 0.9316
+      },
+      "logit": {
+        "precision": 0.9165,
+        "recall": 0.9425,
+        "f1": 0.9293,
+        "auc": 0.9862,
+        "f1_honest": 0.9283
+      }
+    },
+    "text+code": {
+      "probability": {
+        "precision": 0.9119,
+        "recall": 0.9425,
+        "f1": 0.927,
+        "auc": 0.9799,
+        "f1_honest": 0.9271
+      },
+      "logit": {
+        "precision": 0.9119,
+        "recall": 0.9425,
+        "f1": 0.927,
+        "auc": 0.9877,
+        "f1_honest": 0.9305
+      }
+    },
+    "log+code": {
+      "probability": {
+        "precision": 0.5251,
+        "recall": 0.703,
+        "f1": 0.6012,
+        "auc": 0.7935,
+        "f1_honest": 0.6074
+      },
+      "logit": {
+        "precision": 0.5251,
+        "recall": 0.703,
+        "f1": 0.6012,
+        "auc": 0.7967,
+        "f1_honest": 0.6055
+      }
+    },
+    "text+log+code": {
+      "probability": {
+        "precision": 0.8759,
+        "recall": 0.9342,
+        "f1": 0.9041,
+        "auc": 0.9745,
+        "f1_honest": 0.9006
+      },
+      "logit": {
+        "precision": 0.9115,
+        "recall": 0.9445,
+        "f1": 0.9277,
+        "auc": 0.9862,
+        "f1_honest": 0.9277
+      }
+    }
+  },
+  "correlation": {
+    "text": 1.0,
+    "log": 0.3429,
+    "code": 0.4989
+  },
+  "weighted_text_log_code": {
+    "weights": {
+      "text": 0.5,
+      "log": 0.25,
+      "code": 0.25
+    },
+    "precision": 0.9211,
+    "recall": 0.9496,
+    "f1": 0.9352,
+    "auc": 0.9809,
+    "f1_honest": 0.936
+  }
+}

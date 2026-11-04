@@ -147,6 +147,20 @@ def main() -> int:
                   f"AUC {result['auc']:.4f} honest {result['f1_honest']:.4f}")
         payload["ensembles"][name] = row
 
+    # A fixed, a-priori weighting for the three views: the text model gets
+    # twice the weight of each auxiliary view.  This avoids fitting the
+    # weights on the evaluation rows.
+    weighted_scores = 0.5 * arrays["text"] + 0.25 * arrays["log"] + 0.25 * arrays["code"]
+    weighted = binary_metrics(labels, weighted_scores, args.threshold)
+    weighted["f1_honest"] = honest_f1(labels, folds, weighted_scores)
+    payload["weighted_text_log_code"] = {
+        "weights": {"text": 0.5, "log": 0.25, "code": 0.25},
+        **weighted,
+    }
+    print(f"  text+log+code weighted 0.5/0.25/0.25  P {weighted['precision']:.4f} "
+          f"R {weighted['recall']:.4f} F1 {weighted['f1']:.4f} "
+          f"AUC {weighted['auc']:.4f} honest {weighted['f1_honest']:.4f}")
+
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     print(f"\nwrote {args.output}")
