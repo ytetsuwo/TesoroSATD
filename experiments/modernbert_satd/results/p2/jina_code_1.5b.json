@@ -1,0 +1,51 @@
+{
+  "model": "jinaai/jina-code-embeddings-1.5b",
+  "pooling": "mean",
+  "rows": 4981,
+  "satd": 1549,
+  "split": "project",
+  "mean": {
+    "precision": 0.8054,
+    "recall": 0.8793,
+    "f1": 0.8407,
+    "auc": 0.9561
+  },
+  "per_fold": [
+    {
+      "fold": 1,
+      "precision": 0.8489,
+      "recall": 0.8599,
+      "f1": 0.8544,
+      "auc": 0.9624
+    },
+    {
+      "fold": 2,
+      "precision": 0.771,
+      "recall": 0.8418,
+      "f1": 0.8048,
+      "auc": 0.9325
+    },
+    {
+      "fold": 3,
+      "precision": 0.8275,
+      "recall": 0.8899,
+      "f1": 0.8576,
+      "auc": 0.9536
+    },
+    {
+      "fold": 4,
+      "precision": 0.8328,
+      "recall": 0.8997,
+      "f1": 0.865,
+      "auc": 0.9681
+    },
+    {
+      "fold": 5,
+      "precision": 0.7568,
+      "recall": 0.9061,
+      "f1": 0.8247,
+      "auc": 0.9615
+    }
+  ],
+  "f1_honest": 0.8476
+}

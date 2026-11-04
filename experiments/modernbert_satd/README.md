@@ -287,6 +287,40 @@ python experiments/modernbert_satd/summarize_p1.py
 `AutoModelForSequenceClassification` では分類ヘッドが合わないため、
 encoder pooling の実装後に追加します。
 
+## P2: 凍結埋め込み＋ロジスティック回帰
+
+P1 と同じ project split で、埋め込みモデルを特徴抽出器として固定し、
+ロジスティック回帰（`class_weight='balanced'`）で分類しました。
+埋め込みは mean pooling、L2 正規化、最大長256です。
+
+| モデル | F1 | F1 honest | Precision | Recall | AUC |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Salesforce/SFR-Embedding-Code-400M_R | **0.8907** | 0.8876 | 0.8720 | 0.9103 | 0.9727 |
+| Qwen/Qwen3-Embedding-0.6B（mean） | 0.8848 | 0.8874 | 0.8636 | 0.9070 | 0.9748 |
+| jina-code-embeddings-1.5b | 0.8407 | 0.8476 | 0.8054 | 0.8793 | 0.9561 |
+| jina-code-embeddings-0.5b | 0.8331 | 0.8400 | 0.7979 | 0.8715 | 0.9547 |
+| Qwen3-Embedding-0.6B（last） | 0.7726 | 0.7732 | 0.7209 | 0.8321 | 0.9181 |
+
+- 凍結埋め込みの最良は **SFR-Embedding-Code-400M の 0.8907**。
+  fine-tuning した ModernBERT-large（0.9393）や CodeBERT（0.9277）には
+  約0.04〜0.05 及びません。
+- コード専用の SFR と汎用の Qwen3 はほぼ同等（0.8907 vs 0.8848）。
+  今回のタスクでは「コード専用かどうか」よりモデル規模・学習目的の影響が大きい。
+- jina-code は 1.5b が 0.5b をわずかに上回る程度（+0.0076）。
+- Qwen3 は mean pooling が last pooling より大きく良い（0.8848 vs 0.7726）。
+  モデルカードの推奨とタスク特性が一致しないため、pooling は必ず確認する。
+
+```bash
+python experiments/modernbert_satd/embedding_eval.py \
+    --model Salesforce/SFR-Embedding-Code-400M_R --trust-remote-code \
+    --output experiments/modernbert_satd/results/p2/sfr_code_400m.json
+
+python experiments/modernbert_satd/summarize_p2.py
+```
+
+CodeSage v2 は `transformers 4.57` で `Conv1D` の import に失敗するため
+今回は除外しました（`modeling_codesage.py` が旧APIに依存）。
+
 ## 実行環境
 
 - 学習: `z690`（NVIDIA RTX 4090 24GB、CUDA）

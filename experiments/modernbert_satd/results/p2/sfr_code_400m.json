@@ -1,0 +1,51 @@
+{
+  "model": "Salesforce/SFR-Embedding-Code-400M_R",
+  "pooling": "mean",
+  "rows": 4981,
+  "satd": 1549,
+  "split": "project",
+  "mean": {
+    "precision": 0.872,
+    "recall": 0.9103,
+    "f1": 0.8907,
+    "auc": 0.9727
+  },
+  "per_fold": [
+    {
+      "fold": 1,
+      "precision": 0.8781,
+      "recall": 0.9153,
+      "f1": 0.8963,
+      "auc": 0.9765
+    },
+    {
+      "fold": 2,
+      "precision": 0.8956,
+      "recall": 0.8956,
+      "f1": 0.8956,
+      "auc": 0.966
+    },
+    {
+      "fold": 3,
+      "precision": 0.9003,
+      "recall": 0.9371,
+      "f1": 0.9183,
+      "auc": 0.9781
+    },
+    {
+      "fold": 4,
+      "precision": 0.8406,
+      "recall": 0.8997,
+      "f1": 0.8691,
+      "auc": 0.9721
+    },
+    {
+      "fold": 5,
+      "precision": 0.8455,
+      "recall": 0.9029,
+      "f1": 0.8732,
+      "auc": 0.9708
+    }
+  ],
+  "f1_honest": 0.8876
+}

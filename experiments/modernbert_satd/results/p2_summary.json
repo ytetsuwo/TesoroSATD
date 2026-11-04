@@ -1,0 +1,52 @@
+[
+  {
+    "file": "sfr_code_400m.json",
+    "model": "Salesforce/SFR-Embedding-Code-400M_R",
+    "pooling": "mean",
+    "f1": 0.8907,
+    "precision": 0.872,
+    "recall": 0.9103,
+    "auc": 0.9727,
+    "f1_honest": 0.8876
+  },
+  {
+    "file": "qwen3_0.6b.json",
+    "model": "Qwen/Qwen3-Embedding-0.6B",
+    "pooling": "mean",
+    "f1": 0.8848,
+    "precision": 0.8636,
+    "recall": 0.907,
+    "auc": 0.9748,
+    "f1_honest": 0.8874
+  },
+  {
+    "file": "jina_code_1.5b.json",
+    "model": "jinaai/jina-code-embeddings-1.5b",
+    "pooling": "mean",
+    "f1": 0.8407,
+    "precision": 0.8054,
+    "recall": 0.8793,
+    "auc": 0.9561,
+    "f1_honest": 0.8476
+  },
+  {
+    "file": "jina_code_0.5b.json",
+    "model": "jinaai/jina-code-embeddings-0.5b",
+    "pooling": "mean",
+    "f1": 0.8331,
+    "precision": 0.7979,
+    "recall": 0.8715,
+    "auc": 0.9547,
+    "f1_honest": 0.84
+  },
+  {
+    "file": "qwen3_0.6b_last.json",
+    "model": "Qwen/Qwen3-Embedding-0.6B",
+    "pooling": "last",
+    "f1": 0.7726,
+    "precision": 0.7209,
+    "recall": 0.8321,
+    "auc": 0.9181,
+    "f1_honest": 0.7732
+  }
+]
