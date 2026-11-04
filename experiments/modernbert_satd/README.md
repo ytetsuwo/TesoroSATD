@@ -386,6 +386,70 @@ python experiments/modernbert_satd/analyze_p3.py
 `results/p3_error_analysis.json` に、混同行列・分類別・プロジェクト別・長さ別・
 FP/FN の上位例・CodeBERT との比較を保存しています。
 
+## P3b: クロスデータセット・プロジェクト統計・アノテーション監査
+
+### Maldonado ↔ Tesoro（zero-shot）
+
+プロジェクトの重複はありません（Tesoro 974 / Maldonado 10、共通0）。
+訓練データのラベルだけで学習し、相手データをそのまま評価しました。
+`best-thr` は評価先のラベルで閾値を選んだ**上限値**で、実運用の値ではありません。
+
+| 訓練 → 評価 | モデル | F1@0.5 | best-thr F1 | Recall@0.5 |
+| --- | --- | ---: | ---: | ---: |
+| Maldonado → Tesoro | ModernBERT-large | **0.9190** | 0.9259 | 0.8903 |
+| Maldonado → Tesoro | CodeBERT | 0.9184 | 0.9244 | 0.9193 |
+| Tesoro → Maldonado | ModernBERT-large | **0.8536** | 0.8626 | 0.8480 |
+| Tesoro → Maldonado | CodeBERT | 0.8198 | 0.8650 | 0.8852 |
+
+- 大きい Maldonado（61,628行）から Tesoro への転移は 0.92 前後と高い。
+- 小さい Tesoro（4,981行）から Maldonado への転移は 0.82〜0.85 に落ちる。
+- **訓練データ量とドメインの非対称性**が、モデル差より大きく効いています。
+- ModernBERT-large は 0.5 で Precision 0.9497 / Recall 0.8903 と高精度寄り。
+  閾値を下げると F1 0.9259 まで上がるため、確率校准のずれもあります。
+
+### プロジェクト別の統計
+
+SATD が5件以上・10行以上ある **30プロジェクト**で、プロジェクト単位の F1 を
+計算し、行のブートストラップ（1,000回）で95%区間を出しました。
+
+- ModernBERT-large のプロジェクト F1 中央値 **1.000**、IQR **[0.9126, 1.000]**。
+- F1 < 0.8 は **2プロジェクト**のみ。
+- 最下位: `tdc22/JAwesomeEngine` 0.7143（6 SATD）、
+  `Narflex/sagetv` 0.7692（8 SATD）。
+- CodeBERT とのプロジェクト単位の差は、平均 +0.0113、中央値 0。
+  ModernBERT-large が勝つ 5、CodeBERT が勝つ 2、Wilcoxon 符号順位検定
+  **p=0.398** で、プロジェクト数30では有意差とは言えません。
+
+### FP/FN のアノテーション監査（予備）
+
+175件の誤り（FP 89 / FN 86）を、表層手がかりでスクリーニングしました。
+
+| 誤り | カテゴリ | 件数 |
+| --- | --- | ---: |
+| FP | NONSATD なのに TODO/FIXME を含む | 33 |
+| FP | 不確実性の表現を含む | 9 |
+| FP | 設計意図の表現を含む | 8 |
+| FP | 欠陥語を含む | 6 |
+| FP | 明示的な手がかりなし | 33 |
+| FN | 設計意図の暗黙記述 | 14 |
+| FN | 欠陥の暗黙記述 | 10 |
+| FN | 不確実性の暗黙記述 | 12 |
+| FN | 手がかりなし | 50 |
+
+- FP の **33/89 は TODO/FIXME を含む**。SATD の境界（将来変更の意図を
+  NONSATD に含めるか）に関するアノテーション揺れの候補です。ただし、
+  マーカーがあるだけで SATD とは限らないため、再ラベルはしていません。
+- FN の **50/86 は明示的な手がかりがない**。設計意図や暗黙の前提を読む必要があり、
+  DESIGN の Recall 0.924 と整合します。
+- 全175件は `results/p3_annotation_audit.csv` に保存しました。カテゴリは
+  ヒューリスティックな予備分類で、最終的な注釈判断ではありません。
+
+```bash
+python experiments/modernbert_satd/project_stats.py
+python experiments/modernbert_satd/annotation_audit.py
+python experiments/modernbert_satd/summarize_cross.py
+```
+
 ## 実行環境
 
 - 学習: `z690`（NVIDIA RTX 4090 24GB、CUDA）

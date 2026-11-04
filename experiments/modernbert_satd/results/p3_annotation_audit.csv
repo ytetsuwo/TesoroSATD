@@ -1,0 +1,458 @@
+kind,row,project,classification,label,score,words,marker,uncertainty,design,defect,category,comment
+FN,0,DavidWhitlock/PortlandStateJava,DEFECT,1,0.0016,16,False,False,False,False,no_marker_or_cue,"// If a manifest doesn't have a version, the other attributes won't get written out.  Lame."
+FP,91,umeshbsa/android-twitter-search-api,NONSATD,0,0.6001,8,False,False,False,False,no_obvious_cue,// we don't have to implement this method
+FN,160,nilesh14/FMC,DESIGN,1,0.0001,3,False,False,False,False,no_marker_or_cue,// not called
+FP,285,TomasHofman/infinispan,NONSATD,0,0.9389,9,False,True,True,True,uncertainty_in_nonsatd,// may happen only due to internal programming error
+FN,300,SquidPony/SquidLib,DESIGN,1,0.0064,73,False,True,False,False,implicit_uncertainty,"/**
+     * Creates a 2D array of the given width and height, filled with entirely with the value contents.
+     * You may want to use {@link #fill(char[][], char)} to modify an existing 2D array instead.
+     * @param contents the value to fill the array with
+     * @param width    the desired width
+     * @param height   the desired height
+     * @return a freshly allocated 2D array of the requested dimensions, filled entirely with contents
+     */"
+FN,301,SquidPony/SquidLib,DESIGN,1,0.0094,73,False,True,False,False,implicit_uncertainty,"/**
+     * Creates a 2D array of the given width and height, filled with entirely with the value contents.
+     * You may want to use {@link #fill(float[][], float)} to modify an existing 2D array instead.
+     * @param contents the value to fill the array with
+     * @param width    the desired width
+     * @param height   the desired height
+     * @return a freshly allocated 2D array of the requested dimensions, filled entirely with contents
+     */"
+FN,302,SquidPony/SquidLib,DESIGN,1,0.0112,73,False,True,False,False,implicit_uncertainty,"/**
+     * Creates a 2D array of the given width and height, filled with entirely with the value contents.
+     * You may want to use {@link #fill(double[][], double)} to modify an existing 2D array instead.
+     * @param contents the value to fill the array with
+     * @param width    the desired width
+     * @param height   the desired height
+     * @return a freshly allocated 2D array of the requested dimensions, filled entirely with contents
+     */"
+FN,303,SquidPony/SquidLib,DESIGN,1,0.0098,73,False,True,False,False,implicit_uncertainty,"/**
+     * Creates a 2D array of the given width and height, filled with entirely with the value contents.
+     * You may want to use {@link #fill(int[][], int)} to modify an existing 2D array instead.
+     * @param contents the value to fill the array with
+     * @param width    the desired width
+     * @param height   the desired height
+     * @return a freshly allocated 2D array of the requested dimensions, filled entirely with contents
+     */"
+FN,304,SquidPony/SquidLib,DESIGN,1,0.0077,73,False,True,False,False,implicit_uncertainty,"/**
+     * Creates a 2D array of the given width and height, filled with entirely with the value contents.
+     * You may want to use {@link #fill(byte[][], byte)} to modify an existing 2D array instead.
+     * @param contents the value to fill the array with
+     * @param width    the desired width
+     * @param height   the desired height
+     * @return a freshly allocated 2D array of the requested dimensions, filled entirely with contents
+     */"
+FN,313,SquidPony/SquidLib,DESIGN,1,0.0106,73,False,True,False,False,implicit_uncertainty,"/**
+     * Creates a 2D array of the given width and height, filled with entirely with the value contents.
+     * You may want to use {@link #fill(boolean[][], boolean)} to modify an existing 2D array instead.
+     * @param contents the value to fill the array with
+     * @param width    the desired width
+     * @param height   the desired height
+     * @return a freshly allocated 2D array of the requested dimensions, filled entirely with contents
+     */"
+FP,356,maybeec/lexeme,NONSATD,0,0.8849,56,True,False,False,True,marker_in_nonsatd,"/**
+     * @param pathToMergeSchema
+     *            String path to the MergeSchema to be used on this document. Note: Will in future builds
+     *            replaced by pathToMergeSchemas which leads to a directory containing MergeSchemas for every
+     *            used namespace.
+     *            
+     *            If <b>null</b> the default MergeSchemas will be used
+     * @author sholzer (12.03.2015)
+     * @return a LeXeMerger
+     */"
+FN,395,dontdrinkandroot/cache.java,DESIGN,1,0.0036,6,False,False,False,False,no_marker_or_cue,/* This really shouldn't happen */
+FN,431,carlosrafaelgn/FPlayAndroid,DEFECT,1,0.0283,15,False,False,False,False,no_marker_or_cue,"//apparently, a few 4.3 devices have an issue with com.android.music.metachanged....
+//stickyBroadcast.setAction(playbackHasChanged ? ""com.android.music.playstatechanged"" : ""com.android.music.metachanged"");"
+FP,446,andrebrait/java-uuid-generator,NONSATD,0,0.9977,11,True,False,False,True,marker_in_nonsatd,"// note: java.util.UUIDs compares with sign extension, IMO that's wrong, so:"
+FP,447,garyluu/dockstore-cli,NONSATD,0,0.7029,58,False,False,True,False,design_cue_in_nonsatd,"/**
+     * This tests that you can refresh user data by refreshing a tool
+     * ONLY WORKS if the current user in the database dump has no metadata, and on Github there is metadata (bio, location)
+     * If the user has metadata, test will pass as long as the user's metadata isn't the same as Github already
+     */"
+FP,456,dcheung2/datanucleus-core,NONSATD,0,0.9998,20,True,False,False,False,marker_in_nonsatd,// Special case of this being a link back to the owner. TODO Repeat this for nested and their owners
+FP,484,chdemko/java-lattices,NONSATD,0,0.896,56,True,False,True,True,marker_in_nonsatd,"/**
+     * Returns the join of the two specified nodes if it exists.
+     *
+     * @param x the first node
+     * @param y the second node
+     *
+     * @return the node which is at the join of the nodes or null if it does not
+     *         exist
+     *
+     * @todo this.majorants should return an iterator
+     */"
+FN,526,iGivefirst/elasticsearch-grails-plugin,TEST,1,0.0,2,False,False,False,False,no_marker_or_cue,//noinspection unchecked
+FN,577,YCjia/kudu,DESIGN,1,0.0,16,False,True,True,False,implicit_design,"// We only expect two values, a DEF and a reference, but there might be more."
+FN,579,YCjia/kudu,DESIGN,1,0.2839,28,False,False,True,False,implicit_design,"// this is bad, found a node that is referenced but not defined. It must have been
+// lost, emit some info about this node for debugging purposes."
+FN,592,leginee/netbeans,DESIGN,1,0.0089,22,False,False,False,False,no_marker_or_cue,"// if read of the first char caused skipping escaped line
+// do we need to backup and create escaped lines first?"
+FP,652,liveqmock/platform-tools-idea,NONSATD,0,0.9863,1,True,False,False,False,marker_in_nonsatd,//todo[nik]
+FP,662,woowahan/hive,NONSATD,0,0.7614,3,False,False,False,False,no_obvious_cue,// Shouldn't happen.
+FP,667,etirelli/kie-wb-common,NONSATD,0,0.9584,6,True,False,False,False,marker_in_nonsatd,"// TODO
+// ? addResourceReference(namedConsequence, PartType.NAMED_CONSEQUENCE);"
+FN,685,leolleeooleo/cloudstack,DESIGN,1,0.0,8,False,False,True,False,implicit_design,// this method supports only guest network creation
+FP,742,pandawithcat/VoogaSalad,NONSATD,0,1.0,6,True,False,False,False,marker_in_nonsatd,//TODO: change filename param to INT
+FN,753,wangchong6808/dremio-oss,DESIGN,1,0.0827,9,False,False,False,False,no_marker_or_cue,//DX-7850 : remove once solution for maprfs is found
+FP,883,hugogrochau/VoidMS,NONSATD,0,0.9949,7,False,False,False,False,no_obvious_cue,// Charged Blow - skill doesn't work
+FP,893,hugogrochau/VoidMS,NONSATD,0,0.9917,9,False,False,False,False,no_obvious_cue,// Sanctuary Skill doesn't work so i don't know
+FP,957,guilhermejulio/PAA-IndiceInvertido,NONSATD,0,0.9758,17,False,False,False,False,no_obvious_cue,"/**
+     * Metodo para remover acento de uma palavra usando rgex
+     * @param palavra
+     * @return
+     */"
+FP,987,bgklika/aws-iot-device-sdk-java-v2,NONSATD,0,0.891,20,False,False,False,False,no_obvious_cue,"//check if the authN data type matches is a good idea, and necessary if there are other fields
+//to open/inspect"
+FP,988,bgklika/aws-iot-device-sdk-java-v2,NONSATD,0,0.993,7,False,False,False,False,no_obvious_cue,//WARNING!!! this logic is for demonstration purposes
+FP,1023,yanivru/lucene-solr,NONSATD,0,0.9991,19,False,False,True,False,design_cue_in_nonsatd,"// Safety check: don't allow an update to an existing doc that has children, unless we actually support this."
+FP,1052,yida-lxw/solr-5.3.1,NONSATD,0,0.9773,14,False,False,True,False,design_cue_in_nonsatd,"// here the input isn't in the canonical form, but we should be forgiving"
+FP,1069,emafazillah/andhow,NONSATD,0,0.9337,7,False,False,True,True,design_cue_in_nonsatd,//The line above should throw an error
+FP,1089,javaemus/ArcoFlexDroid,NONSATD,0,0.9995,7,False,False,False,False,no_obvious_cue,/* Coin 2 is not working */
+FN,1136,ecgreb/robolectric,DESIGN,1,0.0225,14,False,False,False,False,no_marker_or_cue,"// the org.robolectric.res package lives in the base classloader, but not its tests; yuck."
+FN,1148,Sailia/data_structures,IMPLEMENTATION,1,0.0003,8,False,False,False,False,no_marker_or_cue,// replace this statement with your own return
+FP,1151,Sammoore15/Robot2022-2832-altencoderforingestor,NONSATD,0,0.9725,15,False,False,False,True,defect_cue_in_nonsatd,"// sometime the Kinematics spits out too fast of speeds, so this will fix this"
+FP,1240,BerlinUnited/NaoTH,NONSATD,0,0.9983,29,True,False,False,False,marker_in_nonsatd,"// HACK: since it is not possible to set the owner of an javafx alert to
+//       a swing frame, we use the following approach to set the modality!"
+FN,1262,diktat-static-analysis/juliet-benchmark-java,DEFECT,1,0.0001,9,False,False,False,False,no_marker_or_cue,/* POTENTIAL FLAW: Use password directly in PasswordAuthentication() */
+FN,1264,diktat-static-analysis/juliet-benchmark-java,DEFECT,1,0.0001,9,False,False,False,False,no_marker_or_cue,/* POTENTIAL FLAW: Use password directly in PasswordAuthentication() */
+FN,1266,phques/androidpush,DESIGN,1,0.3733,15,False,True,True,False,implicit_design,"// probably not needed, onStop closes the socket, which should make the thread stop (?)"
+FP,1280,cruisehz/phoenix,NONSATD,0,0.7167,54,False,False,False,False,no_obvious_cue,"// Keep all mutations we've encountered until a commit or rollback.
+// This is not ideal, but there's not good way to get the values back
+// in the event that we need to replay the commit.
+// Copy TableRef so we have the original PTable and know when the
+// indexes have changed."
+FN,1300,IronApollo/FastAsyncWorldEdit,IMPLEMENTATION,1,0.3372,21,False,False,False,True,implicit_defect,"// Set the top block of the column to be the same type
+// (this could otherwise go wrong with rounding)"
+FN,1308,IronApollo/FastAsyncWorldEdit,IMPLEMENTATION,1,0.3372,21,False,False,False,True,implicit_defect,"// Set the top block of the column to be the same type
+// (this could otherwise go wrong with rounding)"
+FP,1312,wangwenwang/sfkc-driver-android,NONSATD,0,0.9993,17,True,False,False,False,marker_in_nonsatd,"// ATTENTION: This was auto-generated to implement the App Indexing API.
+// See https://g.co/AppIndexing/AndroidStudio for more information."
+FP,1317,wangwenwang/sfkc-driver-android,NONSATD,0,0.9993,17,True,False,False,False,marker_in_nonsatd,"// ATTENTION: This was auto-generated to implement the App Indexing API.
+// See https://g.co/AppIndexing/AndroidStudio for more information."
+FN,1322,IBM/ibm-cos-sdk-java,DESIGN,1,0.0617,35,False,False,False,False,no_marker_or_cue,"//Hacky assert but we know that this mockServer will create an exception that will be logged, if there's no log entry
+//then there's no exception, which means that getCredentials didn't get called on the fetcher"
+FP,1332,OES2018/randomly-generation-of-diagnosable-dfa,NONSATD,0,0.7931,14,False,False,False,False,no_obvious_cue,// faulty event size (make sure it less than a half of alphabet size)
+FP,1338,29e7e280-0d1c-4bba-98fe-f7cd3ca7500a/data-transfer-project,NONSATD,0,0.9318,21,True,False,False,True,marker_in_nonsatd,"// TODO String nextLink = (String) graphMap.get(ODATA_NEXT);
+// TODO ContinuationData continuationData = nextLink == null ? null : new ContinuationData(new GraphPagination(nextLink));"
+FP,1341,29e7e280-0d1c-4bba-98fe-f7cd3ca7500a/data-transfer-project,NONSATD,0,0.9318,21,True,False,False,True,marker_in_nonsatd,"// TODO String nextLink = (String) graphMap.get(ODATA_NEXT);
+// TODO ContinuationData continuationData = nextLink == null ? null : new ContinuationData(new GraphPagination(nextLink));"
+FP,1356,AdrianaDinca/training,NONSATD,0,0.9984,9,True,False,False,False,marker_in_nonsatd,"// TODO use Unchecked.consumer from JOOL library
+// SOLUTION("
+FN,1358,chbi/gerrit-gitblit-plugin,DESIGN,1,0.0007,11,False,True,False,False,implicit_uncertainty,"// We might even consider updating the user-supplied file, if any..."
+FN,1408,MaTriXy/atlas,DESIGN,1,0.0662,7,False,False,False,False,no_marker_or_cue,// We can't do better than this
+FN,1428,tkmonson/dataverse,DESIGN,1,0.2441,36,True,False,False,False,no_marker_or_cue,"//        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone(""UTC""), Locale.UK);
+//        calendar.set(2010, 1, 1);
+//        Date start = calendar.getTime();
+//        calendar.set(2013, 1, 1);
+//        Date end = calendar.getTime();
+//        solrQuery.addDateRangeFacet(SearchFields.CITATION_DATE, start, end, ""+1MONTH"");
+/**
+         * @todo make this configurable
+         */"
+FP,1465,tkmonson/dataverse,NONSATD,0,0.8701,12,False,False,False,True,defect_cue_in_nonsatd,// null check added because these tests were failing: mvn test -Dtest=SearchIT
+FP,1466,tkmonson/dataverse,NONSATD,0,0.961,6,False,False,False,True,defect_cue_in_nonsatd,// how often is this null?
+FP,1486,godblessthequeen/spring-cloud-gateway,NONSATD,0,0.9891,12,False,False,False,False,no_obvious_cue,"/**
+                 * 匹配并转发到当前网关实例本地接口。
+                 * 注意：需要通过 PrefixPathGatewayFilterFactory 将请求重写路径，以匹配本地 API ，否则 DispatcherHandler 转发会失败。
+                 */"
+FP,1605,cdhermann/quarkus,NONSATD,0,0.9934,35,False,False,False,False,no_obvious_cue,"//this is a weird situation where the reader and writer are different types
+//we iterate and try and find a valid setter method for the type we have
+//OpenAPI does some weird stuff like this"
+FP,1632,boris-gelman/jline2,NONSATD,0,0.6909,24,False,False,False,False,no_obvious_cue,"/*
+                         * If we are on a ""vi"" movement based operation, then we
+                         * need to restrict the sets of inputs pretty heavily.
+                         */"
+FP,1634,boris-gelman/jline2,NONSATD,0,0.9847,52,False,True,False,False,uncertainty_in_nonsatd,"// There is an annoyance with tab completion in that
+// sometimes the user is actually pasting input in that
+// has physical tabs in it.  This attempts to look at how
+// quickly a character follows the tab, if the character
+// follows *immediately*, we assume it is a tab literal."
+FP,1653,AliGhaff/testLucene,NONSATD,0,0.9659,44,False,True,False,False,uncertainty_in_nonsatd,"// We will be trying twice to find the right GeoPolygon, using alternate siding choices for the first polygon
+// side.  While this looks like it might be 2x as expensive as it could be, there's really no other choice I can
+// find."
+FP,1709,aurelienartus/testproject,NONSATD,0,1.0,5,True,False,False,False,marker_in_nonsatd,//TODO get the data id
+FN,1725,adam-collins/parsers,DESIGN,1,0.0364,25,False,True,True,False,implicit_design,"/**
+     * Ensure the builder is used with content we expect.
+     * Currently (this could change) we should only have one DateTimeParser per DateComponentOrdering.
+     */"
+FN,1840,superhero75/Intra,DEFECT,1,0.4453,11,False,False,False,False,no_marker_or_cue,// This is weird: the calling thread has _also_ been interrupted.
+FP,1900,dgisser/Ripple,NONSATD,0,0.998,7,False,False,False,False,no_obvious_cue,//not the right way to do this
+FN,1923,valtri/midpoint,DESIGN,1,0.0001,17,False,False,False,False,no_marker_or_cue,// Writing by different connector that we are going to use for reading: danger of quantum effects
+FP,1940,ChGen/AndroidGpuGraphicsTest,NONSATD,0,0.9995,5,True,False,False,False,marker_in_nonsatd,//TODO: wait for onFrameAvailable() ??
+FN,2048,Lucsparidans/GGP-Project,DESIGN,1,0.0064,133,False,True,False,True,implicit_defect,"/**
+         * Given a state, this function returns all states reachable from this state. Each next state is
+         * paired with the list of moves (one for each role in the game) that lead to the next state.
+         *
+         * Whenever I call this method I assume that the moves for the roles are returned always with the
+         * same role order.
+         *
+         * @param state
+         * @return a list of lists of legal moves, one for each role, and all states reachable from the
+     "
+FN,2099,julien-faye/drill,DESIGN,1,0.044,17,False,True,True,False,implicit_design,"// The following should probably provide the type of the list,
+// and report cardinality as ARRAY."
+FN,2107,SandraBSofiaH/Final-UMldoclet,IMPLEMENTATION,1,0.3842,16,False,True,True,False,implicit_design,"// /* should check that the record really won't fit, e.g., there may be no text."
+FP,2124,chaordic/cassandra,NONSATD,0,0.7441,30,True,False,False,False,marker_in_nonsatd,"// Note: as yet there's no route to get here - a 2i query *always* uses a
+// PartitionRangeReadCommand. This is here in preparation for coming changes
+// in SelectStatement."
+FN,2128,chaordic/cassandra,DESIGN,1,0.0124,26,False,False,True,False,implicit_design,"// We can't effectively support reversed queries when we have a range, so we don't support it
+// (or through post-query reordering) and shouldn't get there."
+FN,2131,leusonmario/2022PhDThesis,DEFECT,1,0.0073,17,False,False,False,True,implicit_defect,"// flaky:             org.junit.Assert.fail(""Expected exception of type java.io.IOException; message: Too many redirects occurred trying to load URL null"");"
+FP,2135,vlc/r5,NONSATD,0,0.9953,134,True,True,True,True,marker_in_nonsatd,"/**
+     * Our binary travel time grid format ends with a block of JSON containing additional structured data.
+     * This includes
+     * This is somewhat hackish - when we want to return errors to the UI, we just append them as JSON at the end of
+     * We always append this JSON even when it won't contain anything so the UI has something to decode.
+     * The response's HTTP status code is set by the caller - it may be an error or not. If we only have warnings
+     * and no serious errors, we"
+FP,2137,vlc/r5,NONSATD,0,0.9947,33,False,False,False,False,no_obvious_cue,"// We could do this when setting up the Spark handler, supplying writeValue as the response transformer
+// But then you also have to handle the case where you are returning raw bytes."
+FN,2151,anubandhan/spring-security-oauth-BlockChain,DESIGN,1,0.4778,28,False,True,False,False,implicit_uncertainty,"// We need to order Merkle tree 1st before acually
+// Actual Merkel Tree implementation in Java. We probably will go with a less dramatic version for POC."
+FP,2173,pitbox46/graaljs-forge,NONSATD,0,0.9955,31,False,False,False,False,no_obvious_cue,"/*
+                             * The even test (|| (j1 == 0 && (digit & 1))) is not here because it
+                             * messes up odd base output such as 3.5 in base 3.
+                             */"
+FN,2177,KyoungjunPark/SmartClass,IMPLEMENTATION,1,0.1145,9,False,False,False,False,no_marker_or_cue,//implement below code if token is send to server
+FP,2270,paragp/GTS-PreUAT,NONSATD,0,0.7842,5,False,False,False,False,no_obvious_cue,/* not a match? */
+FN,2328,cesarmo759/android_kernel_samsung_msm8916,DESIGN,1,0.1175,98,True,True,False,False,implicit_uncertainty,"/*
+                     * Already have the headers, have to skip the headers
+                     * in the content array and return the body.
+                     *
+                     * XXX - It seems that some mail servers return slightly
+                     * different headers in the RETR results than were returned
+                     * in the TOP results, so we can't depend on remembering
+                     * the size of the headers from the TOP command and just
+                     * s"
+FP,2331,cesarmo759/android_kernel_samsung_msm8916,NONSATD,0,0.921,8,False,False,False,False,no_obvious_cue,"// got CR, is the next char LF?"
+FP,2368,blackjyn/flex-sdk,NONSATD,0,0.9917,83,True,False,False,True,marker_in_nonsatd,"/***
+                     * NOTE: when we've failed to find change events for properties of untyped or Object-typed parents, we go
+                     * ahead and generate code to create a runtime PropertyWatcher with no change events specified. The lack
+                     * of change events tells the runtime PW to introspect RTTI to discover change events associated with the
+                     * actual type of the actual value being assigned to the property.
+                     * OTOH for"
+FP,2381,ngi-nix/jitsi-videobridge,NONSATD,0,0.9938,82,True,True,True,False,marker_in_nonsatd,"// XXX(george) i've noticed some ""rogue"" base layer keyframes
+// that trigger this. what happens is the client sends a base
+// layer key frame, the bridge switches to that layer because
+// for all it knows it may be the only keyframe sent by the
+// client engine. then the bridge notices that packets from the
+// higher quality streams are flowing and execution ends-up
+// here. it is a mystery why the engine is ""leaking"" base layer
+// key frames"
+FN,2412,Gravitational-Field/Dive-In-Java,DOCUMENTATION,1,0.001,20,False,False,False,False,no_marker_or_cue,"/**
+     * A Factory Method pattern which creates an empty a BackedList
+     * implementation
+     * 
+     * @return DOCUMENT ME!
+     */"
+FN,2413,grimwm/flatcode,DESIGN,1,0.3004,64,False,False,True,False,implicit_design,"/**
+   * All objects returned from here from {@code this} should contribute to determining an object's hash code and equality.
+   * A suggestion for handling circular references back to {@code this} should be handled by way of a unique identifier
+   * in the other's {@link #significantAttributes()} instead of the object itself.
+   * @return An array of all the {@link Object} important for hashCode/equality.
+   */"
+FN,2427,NikitaFeodonit/bqtj,DESIGN,1,0.015,58,True,False,False,True,implicit_defect,"// TODO version db
+//                SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(
+//                                new File(dbDir, CoreContext.DB_LIBRARY_FILE_NAME), null);
+//
+//                if (db.getVersion() != version) {
+//                        db.beginTransaction();
+//                        try {
+//                                int currVersion = db.getVersion();
+//                                if (currVersion == 0) {
+//                                        onCreate("
+FN,2460,CoderMMK/RSPS,TEST,1,0.058,12,False,False,False,False,no_marker_or_cue,"/**
+	 * Can they ban?
+	 * 
+	 * @param name
+	 * @return
+	 */"
+FP,2496,RAFIWE/BigReactors-1.7.10-Fixed,NONSATD,0,0.9661,9,False,False,False,False,no_obvious_cue,// 0..1. How well does this fuel absorb radiation?
+FN,2520,jdissou/sigdep01_01,DESIGN,1,0.0017,38,False,False,False,False,no_marker_or_cue,"/* 3 - Alternative : Bind Fields instances that need validators manually and then bind all remaining fields using the bindInstanceFields method
+            this.binder.bindInstanceFields(this.formLayout); //Automatic Data Binding
+            //bindInstanceFields matches fields in DomaineActivite and DomaineActiviteView based on their names.
+            */"
+FP,2536,george-mcintyre/epics-core-java-backport-1.5,NONSATD,0,0.5202,12,False,False,False,False,no_obvious_cue,"// we could write remaining bytes, but for test this is enough"
+FN,2583,fanx-dev/fantom,IMPLEMENTATION,1,0.0001,33,False,False,True,False,implicit_design,"// now that everthing is mapped, we can fill in the super
+// class fields (unless something is wacked, this will only
+// use Types in my pod or in pods already loaded)"
+FN,2642,dynin/ideal,DESIGN,1,0.0438,46,False,False,False,True,implicit_defect,"// We need to specially handled narrowed variables here
+// because the reference type is not narrowed.
+// Say the variable declaration is ""string or null foo"", and it's narrowed to string.
+// The is_reference_type(the_type) would return a union type, which is not what we want."
+FN,2708,Shuffler/Breakout-Android-Game,DEFECT,1,0.4228,8,False,False,False,True,implicit_defect,// to fix Paddle going off the Screen
+FN,2710,Shuffler/Breakout-Android-Game,DEFECT,1,0.4228,8,False,False,False,True,implicit_defect,// to fix Paddle going off the Screen
+FP,2714,mkpaz/telek,NONSATD,0,0.6217,16,False,False,False,False,no_obvious_cue,"// sadly setMaxHeight() isn't working with TextFlow
+// so, we have to clip notification text manually"
+FN,2757,genesis-2/trunk,DESIGN,1,0.4617,29,False,False,False,False,no_marker_or_cue,"// A checking on permissions-string attribute has been made because it is applicable
+// for both RNS and ByteIO. A thorough testing on all attributes will be an overkill."
+FP,2786,QuinnCiccoretti/aws-greengrass-provisioner,NONSATD,0,0.9966,27,True,False,False,True,marker_in_nonsatd,"// Get the possible Python directories (don't include *dist-info and bin)
+// NOTE: This is an esoteric fix for Zope being broken which breaks Twisted - https://github.com/kpdyer/fteproxy/issues/66"
+FN,2809,hurjeesic/YourSleeping,DESIGN,1,0.0071,22,False,True,True,False,implicit_design,"// Get the app ID that generated this notification. For now only used by pebble color, but may be more useful later."
+FN,2813,hurjeesic/YourSleeping,DEFECT,1,0.0001,7,False,False,False,False,no_marker_or_cue,//this could cause #395 to come back
+FN,2840,gsi-upm/ewe-tasker-android,IMPLEMENTATION,1,0.0275,6,False,False,False,False,no_marker_or_cue,// do above Server call here
+FN,2846,gsi-upm/ewe-tasker-android,IMPLEMENTATION,1,0.0275,6,False,False,False,False,no_marker_or_cue,// do above Server call here
+FN,2857,costinm/tomcat,DESIGN,1,0.001,6,False,False,False,False,no_marker_or_cue,// last byte for flush ?
+FN,2858,costinm/tomcat,DESIGN,1,0.1054,13,False,False,False,False,no_marker_or_cue,// needsInput needs to be called - we're done with this frame ?
+FN,2918,aoen/reair,DEFECT,1,0.0,30,True,False,False,False,no_marker_or_cue,"// Note: if we constantly get empty results (i.e. no valid entries
+// because all the commands got filtered out), then the lastReadId won't
+// be updated for a while."
+FP,2931,alexey-lukyanenko/jdrive,NONSATD,0,0.9925,5,True,False,False,False,marker_in_nonsatd,"// TODO LoadGrfIndexed(""trkfoundw.grf"", _slopes_spriteindexes[_opt.landscape], i++);"
+FN,2941,ari-b/neb,DESIGN,1,0.0266,8,False,False,False,False,no_marker_or_cue,// Is the point within the rendering region?
+FN,2949,fernandogomesfg/Algoritmos-em-Java,DESIGN,1,0.0,5,False,False,False,False,no_marker_or_cue,//metodo para adicionar funcionario produtividade
+FN,2950,fernandogomesfg/Algoritmos-em-Java,DESIGN,1,0.0,7,False,False,False,False,no_marker_or_cue,//metodo para imprimir salario do funcionario produtividade
+FP,2959,chrishmorris/PiMS,NONSATD,0,0.9917,5,False,False,False,False,no_obvious_cue,// not testing persistence here
+FP,3001,jgorny/liferay-faces-bridge-impl,NONSATD,0,0.5068,39,False,False,True,True,design_cue_in_nonsatd,"// According to the Bridge Spec, the ""javax.portlet.faces.Secure"" parameter must not be ""carried
+// forward to the generated reference."" According to a clarification in the Portlet 3.0 JavaDoc for
+// BaseURL#setProperty(String,String), setting the parameter to null will remove it."
+FN,3003,jgorny/liferay-faces-bridge-impl,IMPLEMENTATION,1,0.0002,3,False,False,False,False,no_marker_or_cue,// TCK: encodeResourceURLOpaqueTest
+FP,3014,jgorny/liferay-faces-bridge-impl,NONSATD,0,0.5068,39,False,False,True,True,design_cue_in_nonsatd,"// According to the Bridge Spec, the ""javax.portlet.faces.Secure"" parameter must not be ""carried
+// forward to the generated reference."" According to a clarification in the Portlet 3.0 JavaDoc for
+// BaseURL#setProperty(String,String), setting the parameter to null will remove it."
+FP,3017,jgorny/liferay-faces-bridge-impl,NONSATD,0,0.5068,39,False,False,True,True,design_cue_in_nonsatd,"// According to the Bridge Spec, the ""javax.portlet.faces.Secure"" parameter must not be ""carried
+// forward to the generated reference."" According to a clarification in the Portlet 3.0 JavaDoc for
+// BaseURL#setProperty(String,String), setting the parameter to null will remove it."
+FN,3029,blackducksoftware/magpie-libraries,DEFECT,1,0.0002,20,False,False,False,True,implicit_defect,"/**
+     * Fails if the subject is not a container with the specified number of values or name/value pairs.
+     */"
+FN,3044,linyingfa/AnimatedPieView-master,DESIGN,1,0.3284,6,False,False,False,True,implicit_defect,// fix anim duration too short
+FP,3072,fhg-fokus-nubomedia/signaling-plane,NONSATD,0,0.9595,13,False,False,False,False,no_obvious_cue,// Issue 358 : remove socket and semaphore on close to avoid leaking
+FN,3082,mikesep/rocky,DESIGN,1,0.3171,4,False,False,False,False,no_marker_or_cue,// self object reference?
+FP,3149,SoftwareEngineeringToolDemos/type-inference,NONSATD,0,0.6536,6,False,False,False,False,no_obvious_cue,"//                    System.out.println(""WARN: be supported in SFlowVisitor"");"
+FP,3159,SoftwareEngineeringToolDemos/type-inference,NONSATD,0,0.9648,24,False,False,False,False,no_obvious_cue,"// WEI: added on Aug 2
+// WEI: Remove the above line, also considering remove the 
+// tree.getKind() == Kind.MEMBER_SELECT in the ""default"" case"
+FN,3174,OrienteerBAP/Transponder,IMPLEMENTATION,1,0.002,9,False,False,False,False,no_marker_or_cue,//Finding Base Implementation: mostly recently added implementation (not Advice)
+FN,3189,bramdvrepublic/com.beligum.blocks.core,DESIGN,1,0.3377,26,True,False,False,False,no_marker_or_cue,"//removes all favicon statements. Note that this last check isn't waterproof (we can use any name for our favicons), but it works 99% of the time"
+FP,3200,bramdvrepublic/com.beligum.blocks.core,NONSATD,0,0.9115,11,True,False,False,False,marker_in_nonsatd,"//Note: this makes sense: see SimpleLiteral(String label, IRI datatype) constructor code"
+FN,3216,RuiDTLima/diffuzz,DESIGN,1,0.2232,14,False,False,False,False,no_marker_or_cue,// hacky way to get the newly added obs and make tests on it
+FN,3323,vjymits/musicFinder,IMPLEMENTATION,1,0.0026,98,False,False,True,False,implicit_design,"/**
+* This method receives two parameters. The first parameter is the page
+* in which we have discovered this new url and the second parameter is
+* the new url. You should implement this function to specify whether
+* the given url should be crawled or not (based on your crawling logic).
+* In this example, we are instructing the crawler to ignore urls that
+* have css, js, git, ... extensions and to only accept urls that start
+* with ""http://www.ics.uci.edu/"". In this case, we didn't need the
+* re"
+FP,3365,scottwakeling/jsqsh,NONSATD,0,0.9977,71,True,False,False,False,marker_in_nonsatd,"/*
+         * Here's a hack.  The "".welcome"" file is a recent change to jsqsh, and
+         * we don't want to do the whole welcome thing if an existing jsqsh user
+         * already has a ~/.jsqsh but doesn't have a .welcome file in it. To avoid
+         * this, check to see if drivers.xml is older than the date at which this
+         * comment was written and don't do the setup activities.
+         */"
+FP,3378,gjbang/graduation-design,NONSATD,0,0.876,11,False,False,False,False,no_obvious_cue,//        need to bind the UI activity and the background service
+FP,3384,kylekyle/netgrok,NONSATD,0,0.9948,16,False,True,False,False,uncertainty_in_nonsatd,"// compute the mask address 
+// there is probably a way easier way to do this"
+FN,3391,k0kubun/jjvm,DESIGN,1,0.0347,4,False,False,False,False,no_marker_or_cue,// not used yet
+FN,3414,openmuthu/jaya,IMPLEMENTATION,1,0.0003,5,False,False,False,False,no_marker_or_cue,// Shortcut to check isAbsolute()
+FN,3420,jiangshide/sdk,DESIGN,1,0.0378,13,False,False,True,False,implicit_design,"// Should we show the replacement as just R.string.foo or
+// context.getString(R.string.foo) ?"
+FN,3437,Uniandes-isis2603/s2_Boletas,IMPLEMENTATION,1,0.002,28,False,False,False,False,no_marker_or_cue,"/**
+ * Metodo para buscar una compra (READ)
+ * @param compraId, id de la compra a buscar
+ * @return la compra con el id ingresado por parametro
+ */"
+FP,3468,adriancice/adrian-pfm,NONSATD,0,0.9693,30,False,False,False,False,no_obvious_cue,"/**
+         * Metodo para compartir el anuncio a traves del email
+         * 
+         * @param email
+         * @param model
+         * @param authentication
+         * @param req
+         * @param flash
+         * @return
+         */"
+FP,3481,dukson/curvature-scale-space-corners-and-transformations,NONSATD,0,0.8975,51,False,False,True,False,design_cue_in_nonsatd,"// This helps to merge edges (that is extracted curves) at adjacent 
+// points that resemble an intersection of the lines, but it's not 
+// necessarily useful if only interested in corners and not inflection
+// points because the curvature is determined correctly 
+// whether the curves are merged or not."
+FN,3496,svenpopping/acfl-replication-package,DESIGN,1,0.3181,15,False,False,False,False,no_marker_or_cue,// being a bit slothful here -- actually testing that X = A^-1 * B
+FP,3568,marceloamorimcg/Dr.InfoSystem,NONSATD,0,0.9921,4,False,False,False,False,no_obvious_cue,//metodo para consultar usuario
+FP,3571,marceloamorimcg/Dr.InfoSystem,NONSATD,0,0.9975,4,False,False,False,False,no_obvious_cue,//metodo para adicionar usuário
+FN,3595,yinwil27/PortfolioRepositorySQLJava,IMPLEMENTATION,1,0.0245,6,False,False,False,False,no_marker_or_cue,//timezone work needs to happen here
+FN,3597,yinwil27/PortfolioRepositorySQLJava,IMPLEMENTATION,1,0.0245,6,False,False,False,False,no_marker_or_cue,//timezone work needs to happen here
+FP,3602,dng24/wehe-android,NONSATD,0,0.9979,59,True,False,True,False,marker_in_nonsatd,"// We first resolve the IP of the server and then communicate with the server
+// Using IP only, because we have multiple server under same domain and we want
+// the client not to switch server during a test run
+// TODO come up with a better way to handle Inet related queries, since this
+//  introduced inefficiency"
+FN,3620,scottkillen-vault/Bunyan,DESIGN,1,0.0,10,False,True,False,False,implicit_uncertainty,//Confused? Copy the URL and paste it in your browser.
+FP,3640,efortuna/AndroidSDKClone,NONSATD,0,0.6302,16,False,True,False,False,uncertainty_in_nonsatd,"// The ""current"" may no longer be valid.  MMS depends on this to send properly. TBD"
+FP,3656,foolite/panda,NONSATD,0,0.9994,27,False,True,False,False,uncertainty_in_nonsatd,"// I'm not exactly sure why getRawType() returns Type instead of Class.
+// Neal isn't either but suspects some pathological case related
+// to nested classes exists."
+FN,3657,foolite/panda,DESIGN,1,0.0851,27,False,False,False,False,no_marker_or_cue,"// we could use the variable's bounds, but that won't work if there are multiple.
+// having a raw type that's more general than necessary is okay"
+FN,4074,jdissou/sigdep01_01,DESIGN,1,0.002,38,False,False,False,False,no_marker_or_cue,"/* 3 - Alternative : Bind Fields instances that need validators manually and then bind all remaining fields using the bindInstanceFields method
+            this.binder.bindInstanceFields(this.formLayout); //Automatic Data Binding
+            //bindInstanceFields matches fields in Rubrique and RubriqueView based on their names.
+            */"
+FP,4103,ogreflow/ogre,NONSATD,0,0.9571,12,False,False,False,True,defect_cue_in_nonsatd,"// For decimal number type things, need to convert ""null"" into 0.0."
+FP,4121,IFML2/ifml-player,NONSATD,0,0.996,4,True,False,False,False,marker_in_nonsatd,//TODO: file was choosen;
+FP,4130,kalucky0/The-Aether,NONSATD,0,0.9881,23,False,True,False,False,uncertainty_in_nonsatd,"// Who knows what this does? Nothing, it seems. But just in case I'll let it stick around.
+// Comment your code please!"
+FP,4162,atcbosselut/recipe-interpretation,NONSATD,0,0.9998,33,False,True,True,True,uncertainty_in_nonsatd,"// This method should not be called if the node is not a verb.
+//
+// Not sure if this happens, so I will currently have it crash so I can investigate it."
+FP,4166,LivelyKernel/sunlabs-kernel,NONSATD,0,0.9711,13,False,False,False,False,no_obvious_cue,// here's a place where two locations could be bound to each other?
+FP,4182,swing-fly/webswing,NONSATD,0,0.9988,3,True,False,False,False,marker_in_nonsatd,// TODO size
+FN,4221,jupsal/schmies-jTEM,DESIGN,1,0.0002,37,False,True,False,False,implicit_uncertainty,"/* We might be close to the north pole. This would be bad,
+             * numerically. So perform a 180 degree rotation around the
+             * x-axis, project that point, and swap the entries of the
+             * result.
+             */"
+FP,4243,tszielin/q-lab-editor,NONSATD,0,0.9406,13,False,False,False,True,defect_cue_in_nonsatd,// #7086 - (nf.exists() && !nf.equals(of)) instead of nf.exists() - fix for Win32
+FN,4245,Clay-Ferguson/Quantizr,DESIGN,1,0.0088,199,True,True,True,False,implicit_design,"/*
+     * When 'node' has been created under 'parent' (by the sessionContext user) this will send a
+     * notification to foreign servers. This call returns immediately and delegates the actuall
+     * proccessing to a daemon thread.
+     * 
+     * For concurrency reasons, note that we pass in the nodeId to this method rather than the node even
+     * if we do have the node, because we want to make sure there's no concurrent access.
+     * 
+     * IMPORTANT: This method ONLY sends notifications"
+FP,4268,SETTE-Testing/sette-tool,NONSATD,0,0.6079,30,True,False,False,False,marker_in_nonsatd,"// skip file if Java version is not supported by the tool (@SetteSnippetContainer)
+// NOTE it can be also done with snippet containers... (and also done in CATG
+// generator!)"
+FP,4280,ambedrake/UniversalAuthenticatedReportGenerator,NONSATD,0,0.9875,46,False,True,True,False,uncertainty_in_nonsatd,"// Setup regex pattern we want to use to isolate formula variables from _formulaEquation string
+// ==In terms of modularity, should we keep the regex string we use as a field for formulas that can be changed by config? Dunno, probably not, would be interesting though"
+FP,4297,tamchow/inventory-management,NONSATD,0,0.9644,3,False,False,False,False,no_obvious_cue,//configure everything again?
+FP,4306,tamchow/inventory-management,NONSATD,0,0.9757,12,False,False,False,False,no_obvious_cue,"//No!!! Don't leave me behind!(Can't do anything about it anyway, can I?)"
+FP,4314,xie-wenjie/AndroidBaseApplicationSourse,NONSATD,0,0.9994,46,True,False,False,False,marker_in_nonsatd,"/**
+     * Generic synchronizer - used for POP3 and IMAP.
+     *
+     * TODO Break this method up into smaller chunks.
+     *
+     * @param account the account to sync
+     * @param folder the mailbox to sync
+     * @return results of the sync pass
+     * @throws MessagingException
+     */"
+FP,4351,xie-wenjie/AndroidBaseApplicationSourse,NONSATD,0,0.9999,15,True,False,False,False,marker_in_nonsatd,"// TODO - more
+// Original sync code.  Using for reference, will delete when done."
+FP,4391,tdc22/JAwesomeEngine,NONSATD,0,0.9983,3,True,False,False,False,marker_in_nonsatd,// TODO: check
+FP,4395,tdc22/JAwesomeEngine,NONSATD,0,0.9983,3,True,False,False,False,marker_in_nonsatd,// TODO: check
+FN,4397,tdc22/JAwesomeEngine,DESIGN,1,0.0321,5,False,False,False,False,no_marker_or_cue,// HAS TO BE REINITIALIZED
+FP,4407,tdc22/JAwesomeEngine,NONSATD,0,0.9983,7,True,False,False,False,marker_in_nonsatd,// TODO: just relevant for last iteration
+FN,4494,Narflex/sagetv,DEFECT,1,0.0028,18,True,False,False,False,no_marker_or_cue,"//                                        System.out.println(""DRAWOVAL: dest=(""+x+"",""+y+"" ""+width+""x""+height+"") clip=(""+clipX+"",""+clipY+"" ""+clipW+""x""+clipH+"") thickness=""+thickness+"" argbTL=""+Integer.toHexString(argbTL)+"" argbTR=""+Integer.toHexString(argbTR)+"" argbBL=""+Integer.toHexString(argbBL)+"" argbBR=""+Integer.toHexString(argbBR));
+// FIXME: no gradient for framed ovals"
+FN,4498,Narflex/sagetv,DEFECT,1,0.0022,19,True,False,False,False,no_marker_or_cue,"//					System.out.println(""DRAWROUNDRECT: dest=(""+x+"",""+y+"" ""+width+""x""+height+"") clip=(""+clipX+"",""+clipY+"" ""+clipW+""x""+clipH+"") thickness=""+thickness+"" arcRadius=""+arcRadius+"" argbTL=""+Integer.toHexString(argbTL)+"" argbTR=""+Integer.toHexString(argbTR)+"" argbBL=""+Integer.toHexString(argbBL)+"" argbBR=""+Integer.toHexString(argbBR));
+// FIXME: no gradients on stroked shapes"
+FN,4583,Narflex/sagetv,DESIGN,1,0.3495,5,False,True,False,False,implicit_uncertainty,// seems to be unused
+FN,4628,Joybeanx/leetcode,DESIGN,1,0.3948,11,False,False,False,False,no_marker_or_cue,"/**
+     * Ugly DP
+     *
+     * @param n
+     * @return
+     */"
+FP,4656,Bedework/bw-calendar-convert,NONSATD,0,0.7327,5,False,False,False,True,defect_cue_in_nonsatd,// DORECUR - wrong again
+FN,4757,markovandooren/jnome,IMPLEMENTATION,1,0.0036,6,False,False,False,False,no_marker_or_cue,"// WARNING
+// INCOMPLETE see processSubtypeConstraints"
+FN,4853,bignaczak/eBots2020_V2,IMPLEMENTATION,1,0.0013,7,False,False,False,False,no_marker_or_cue,//TBD code to place the wobble goal
+FP,4855,bignaczak/eBots2020_V2,NONSATD,0,0.5054,3,False,False,False,False,no_obvious_cue,//or timed out?
+FP,4935,shisheng-1/Lantern,NONSATD,0,0.9616,2,True,False,False,False,marker_in_nonsatd,// TODO
+FN,4980,ebardes/EasyJNDI,DESIGN,1,0.2008,5,False,False,False,False,no_marker_or_cue,// this hurts my soul

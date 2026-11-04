@@ -1,0 +1,126 @@
+[
+  {
+    "file": "cross_maldonado_to_tesoro_modernbert-large.json",
+    "model": "answerdotai/ModernBERT-large",
+    "train": "maldonado",
+    "eval": "tesoro",
+    "train_rows": 61628,
+    "eval_rows": 4981,
+    "at_0.5": {
+      "threshold": 0.5,
+      "precision": 0.9497,
+      "recall": 0.8903,
+      "f1": 0.919,
+      "auc": 0.9836,
+      "tp": 1379,
+      "fp": 73,
+      "fn": 170,
+      "tn": 3359
+    },
+    "best_target_threshold": 0.0023,
+    "at_best_target_threshold": {
+      "threshold": 0.0023,
+      "precision": 0.9051,
+      "recall": 0.9477,
+      "f1": 0.9259,
+      "auc": 0.9836,
+      "tp": 1468,
+      "fp": 154,
+      "fn": 81,
+      "tn": 3278
+    }
+  },
+  {
+    "file": "cross_maldonado_to_tesoro_codebert.json",
+    "model": "microsoft/codebert-base",
+    "train": "maldonado",
+    "eval": "tesoro",
+    "train_rows": 61628,
+    "eval_rows": 4981,
+    "at_0.5": {
+      "threshold": 0.5,
+      "precision": 0.9175,
+      "recall": 0.9193,
+      "f1": 0.9184,
+      "auc": 0.9867,
+      "tp": 1424,
+      "fp": 128,
+      "fn": 125,
+      "tn": 3304
+    },
+    "best_target_threshold": 0.9262,
+    "at_best_target_threshold": {
+      "threshold": 0.9262,
+      "precision": 0.9509,
+      "recall": 0.8993,
+      "f1": 0.9244,
+      "auc": 0.9867,
+      "tp": 1393,
+      "fp": 72,
+      "fn": 156,
+      "tn": 3360
+    }
+  },
+  {
+    "file": "cross_tesoro_to_maldonado_modernbert-large.json",
+    "model": "answerdotai/ModernBERT-large",
+    "train": "tesoro",
+    "eval": "maldonado",
+    "train_rows": 4981,
+    "eval_rows": 61628,
+    "at_0.5": {
+      "threshold": 0.5,
+      "precision": 0.8593,
+      "recall": 0.848,
+      "f1": 0.8536,
+      "auc": 0.979,
+      "tp": 3798,
+      "fp": 622,
+      "fn": 681,
+      "tn": 56527
+    },
+    "best_target_threshold": 0.8099,
+    "at_best_target_threshold": {
+      "threshold": 0.8099,
+      "precision": 0.9075,
+      "recall": 0.8218,
+      "f1": 0.8626,
+      "auc": 0.979,
+      "tp": 3681,
+      "fp": 375,
+      "fn": 798,
+      "tn": 56774
+    }
+  },
+  {
+    "file": "cross_tesoro_to_maldonado_codebert.json",
+    "model": "microsoft/codebert-base",
+    "train": "tesoro",
+    "eval": "maldonado",
+    "train_rows": 4981,
+    "eval_rows": 61628,
+    "at_0.5": {
+      "threshold": 0.5,
+      "precision": 0.7634,
+      "recall": 0.8852,
+      "f1": 0.8198,
+      "auc": 0.9766,
+      "tp": 3965,
+      "fp": 1229,
+      "fn": 514,
+      "tn": 55920
+    },
+    "best_target_threshold": 0.9557,
+    "at_best_target_threshold": {
+      "threshold": 0.9557,
+      "precision": 0.9304,
+      "recall": 0.8082,
+      "f1": 0.865,
+      "auc": 0.9766,
+      "tp": 3620,
+      "fp": 271,
+      "fn": 859,
+      "tn": 56878
+    }
+  }
+]

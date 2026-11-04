@@ -1,0 +1,619 @@
+{
+  "min_satd": 5,
+  "min_rows": 10,
+  "projects": 30,
+  "large_f1_median": 1.0,
+  "large_f1_iqr": [
+    0.9126,
+    1.0
+  ],
+  "large_f1_below_0.8": 2,
+  "delta_mean": 0.0113,
+  "delta_median": 0.0,
+  "large_better": 5,
+  "codebert_better": 2,
+  "wilcoxon_stat": 9.0,
+  "wilcoxon_p": 0.398,
+  "projects_detail": [
+    {
+      "project": "tdc22/JAwesomeEngine",
+      "rows": 21,
+      "satd": 6,
+      "large": {
+        "precision": 0.625,
+        "recall": 0.8333,
+        "f1": 0.7143
+      },
+      "codebert": {
+        "precision": 0.625,
+        "recall": 0.8333,
+        "f1": 0.7143
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        0.3321,
+        0.9412
+      ]
+    },
+    {
+      "project": "Narflex/sagetv",
+      "rows": 118,
+      "satd": 8,
+      "large": {
+        "precision": 1.0,
+        "recall": 0.625,
+        "f1": 0.7692
+      },
+      "codebert": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571
+      },
+      "f1_delta": -0.0879,
+      "f1_ci95": [
+        0.4,
+        1.0
+      ]
+    },
+    {
+      "project": "cesarmo759/android_kernel_samsung_msm8916",
+      "rows": 19,
+      "satd": 6,
+      "large": {
+        "precision": 0.8333,
+        "recall": 0.8333,
+        "f1": 0.8333
+      },
+      "codebert": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "f1_delta": -0.1667,
+      "f1_ci95": [
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "project": "SoftwareEngineeringToolDemos/type-inference",
+      "rows": 17,
+      "satd": 6,
+      "large": {
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1": 0.8571
+      },
+      "codebert": {
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75
+      },
+      "f1_delta": 0.1071,
+      "f1_ci95": [
+        0.5714,
+        1.0
+      ]
+    },
+    {
+      "project": "valtri/midpoint",
+      "rows": 11,
+      "satd": 5,
+      "large": {
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.8889
+      },
+      "codebert": {
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.8889
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "project": "wangwenwang/sfkc-driver-android",
+      "rows": 10,
+      "satd": 8,
+      "large": {
+        "precision": 0.8,
+        "recall": 1.0,
+        "f1": 0.8889
+      },
+      "codebert": {
+        "precision": 0.8,
+        "recall": 1.0,
+        "f1": 0.8889
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        0.75,
+        1.0
+      ]
+    },
+    {
+      "project": "xie-wenjie/AndroidBaseApplicationSourse",
+      "rows": 65,
+      "satd": 9,
+      "large": {
+        "precision": 0.8182,
+        "recall": 1.0,
+        "f1": 0.9
+      },
+      "codebert": {
+        "precision": 0.8182,
+        "recall": 1.0,
+        "f1": 0.9
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        0.7143,
+        1.0
+      ]
+    },
+    {
+      "project": "Bedework/bw-calendar-convert",
+      "rows": 82,
+      "satd": 5,
+      "large": {
+        "precision": 0.8333,
+        "recall": 1.0,
+        "f1": 0.9091
+      },
+      "codebert": {
+        "precision": 0.7143,
+        "recall": 1.0,
+        "f1": 0.8333
+      },
+      "f1_delta": 0.0758,
+      "f1_ci95": [
+        0.6667,
+        1.0
+      ]
+    },
+    {
+      "project": "dcheung2/datanucleus-core",
+      "rows": 20,
+      "satd": 6,
+      "large": {
+        "precision": 0.8571,
+        "recall": 1.0,
+        "f1": 0.9231
+      },
+      "codebert": {
+        "precision": 0.8571,
+        "recall": 1.0,
+        "f1": 0.9231
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        0.7143,
+        1.0
+      ]
+    },
+    {
+      "project": "iGivefirst/elasticsearch-grails-plugin",
+      "rows": 15,
+      "satd": 7,
+      "large": {
+        "precision": 1.0,
+        "recall": 0.8571,
+        "f1": 0.9231
+      },
+      "codebert": {
+        "precision": 1.0,
+        "recall": 0.8571,
+        "f1": 0.9231
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        0.7119,
+        1.0
+      ]
+    },
+    {
+      "project": "tkmonson/dataverse",
+      "rows": 54,
+      "satd": 21,
+      "large": {
+        "precision": 0.9091,
+        "recall": 0.9524,
+        "f1": 0.9302
+      },
+      "codebert": {
+        "precision": 0.9091,
+        "recall": 0.9524,
+        "f1": 0.9302
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        0.8333,
+        1.0
+      ]
+    },
+    {
+      "project": "woowahan/hive",
+      "rows": 28,
+      "satd": 7,
+      "large": {
+        "precision": 0.875,
+        "recall": 1.0,
+        "f1": 0.9333
+      },
+      "codebert": {
+        "precision": 0.875,
+        "recall": 1.0,
+        "f1": 0.9333
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        0.75,
+        1.0
+      ]
+    },
+    {
+      "project": "shisheng-1/Lantern",
+      "rows": 106,
+      "satd": 8,
+      "large": {
+        "precision": 0.8889,
+        "recall": 1.0,
+        "f1": 0.9412
+      },
+      "codebert": {
+        "precision": 0.8889,
+        "recall": 1.0,
+        "f1": 0.9412
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        0.7692,
+        1.0
+      ]
+    },
+    {
+      "project": "serbaut/cloudstack",
+      "rows": 40,
+      "satd": 6,
+      "large": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "codebert": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "project": "ttincs/guibat",
+      "rows": 31,
+      "satd": 8,
+      "large": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "codebert": {
+        "precision": 0.8,
+        "recall": 1.0,
+        "f1": 0.8889
+      },
+      "f1_delta": 0.1111,
+      "f1_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "project": "xyxiaoyou/snappy-store",
+      "rows": 30,
+      "satd": 9,
+      "large": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "codebert": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "project": "Chiefwright/Mekanism",
+      "rows": 25,
+      "satd": 7,
+      "large": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "codebert": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "project": "mschroeder-github/datasprout",
+      "rows": 25,
+      "satd": 5,
+      "large": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "codebert": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "project": "adele-robots/fiona",
+      "rows": 23,
+      "satd": 5,
+      "large": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "codebert": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "project": "cirnoftw/android-openslmediaplayer",
+      "rows": 23,
+      "satd": 7,
+      "large": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "codebert": {
+        "precision": 0.6364,
+        "recall": 1.0,
+        "f1": 0.7778
+      },
+      "f1_delta": 0.2222,
+      "f1_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "project": "shivamkumar78/Music_Application",
+      "rows": 21,
+      "satd": 8,
+      "large": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "codebert": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "project": "tfisher1226/ARIES",
+      "rows": 21,
+      "satd": 5,
+      "large": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "codebert": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "project": "CBIIT/camod",
+      "rows": 20,
+      "satd": 10,
+      "large": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "codebert": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "project": "jayaskren/FastOpencsv",
+      "rows": 16,
+      "satd": 6,
+      "large": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "codebert": {
+        "precision": 0.8571,
+        "recall": 1.0,
+        "f1": 0.9231
+      },
+      "f1_delta": 0.0769,
+      "f1_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "project": "qinFamily/freeVM",
+      "rows": 14,
+      "satd": 14,
+      "large": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "codebert": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "project": "ontopia/ontopia",
+      "rows": 13,
+      "satd": 6,
+      "large": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "codebert": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "project": "information-machine/information-machine-api-android",
+      "rows": 12,
+      "satd": 12,
+      "large": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "codebert": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "project": "fsasaki/xmlcalabash1-print",
+      "rows": 11,
+      "satd": 7,
+      "large": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "codebert": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "project": "geniusdibya/pepipost-sdk-java",
+      "rows": 10,
+      "satd": 10,
+      "large": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "codebert": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "project": "zipated/src",
+      "rows": 10,
+      "satd": 10,
+      "large": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "codebert": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "f1_delta": 0.0,
+      "f1_ci95": [
+        1.0,
+        1.0
+      ]
+    }
+  ]
+}

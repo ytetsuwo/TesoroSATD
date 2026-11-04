@@ -1,0 +1,32 @@
+{
+  "model": "microsoft/codebert-base",
+  "train": "maldonado",
+  "eval": "tesoro",
+  "train_rows": 61628,
+  "train_satd": 4479,
+  "eval_rows": 4981,
+  "eval_satd": 1549,
+  "at_0.5": {
+    "threshold": 0.5,
+    "precision": 0.9175,
+    "recall": 0.9193,
+    "f1": 0.9184,
+    "auc": 0.9867,
+    "tp": 1424,
+    "fp": 128,
+    "fn": 125,
+    "tn": 3304
+  },
+  "best_target_threshold": 0.9262,
+  "at_best_target_threshold": {
+    "threshold": 0.9262,
+    "precision": 0.9509,
+    "recall": 0.8993,
+    "f1": 0.9244,
+    "auc": 0.9867,
+    "tp": 1393,
+    "fp": 72,
+    "fn": 156,
+    "tn": 3360
+  }
+}
