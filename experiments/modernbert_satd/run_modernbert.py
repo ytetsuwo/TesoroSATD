@@ -57,24 +57,32 @@ if torch.cuda.is_available():
 
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_MALDONADO = ROOT.parent / "MaldonadoSATD" / "research/data/finetune_input.csv.gz"
+DEFAULT_MALDONADO_CODE = (
+    ROOT.parent / "MaldonadoSATD" / "research/data/finetune_input_code.csv.gz"
+)
 DEFAULT_TESORO = ROOT / "tesoro/data/tesoro/tesoro_comment.json"
 DEFAULT_MODEL = "answerdotai/ModernBERT-base"
 
 
-def read_maldonado(path: Path):
+def read_maldonado(path: Path, input_kind: str):
     opener = gzip.open if path.suffix == ".gz" else open
     with opener(path, "rt", encoding="utf-8", newline="") as handle:
         rows = list(csv.DictReader(handle))
-    texts = [row["comment_text"] for row in rows]
+    column = {"text": "comment_text", "log": "commit_log", "code": "code"}[input_kind]
+    texts = [row[column] for row in rows]
     labels = np.array([1 if row.get("satd") == "1" else 0 for row in rows])
     projects = np.array([row.get("project_name", "") for row in rows])
     return rows, texts, labels, projects
 
 
-def read_tesoro(path: Path):
+def read_tesoro(path: Path, input_kind: str):
     rows = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()
             if line.strip()]
-    texts = [row["comment"] for row in rows]
+    if input_kind == "code":
+        # The full function is the code view; fall back to the 2-line context.
+        texts = [row.get("code") or row.get("code_context_2", "") for row in rows]
+    else:
+        texts = [row["comment"] for row in rows]
     labels = np.array([0 if row["classification"] == "NONSATD" else 1 for row in rows])
     projects = np.array([""] * len(rows))
     return rows, texts, labels, projects
@@ -127,8 +135,14 @@ def metrics(labels, scores):
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dataset", choices=["maldonado", "tesoro"], default="tesoro")
+    parser.add_argument("--input", choices=["text", "log", "code"], default="text",
+                        help="which field to encode; log is only available for maldonado")
+    parser.add_argument("--pair", choices=["none", "log", "code"], default="none",
+                        help="encode comment_text and this field as a text pair")
     parser.add_argument("--csv", type=Path, default=None,
                         help="override the dataset path")
+    parser.add_argument("--code-csv", type=Path, default=None,
+                        help="code table for --pair code (default: MaldonadoSATD code table)")
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--split", default="random",
                         choices=["random", "duplicate-free", "project"])
@@ -147,14 +161,41 @@ def main() -> int:
     args = parser.parse_args()
 
     if args.csv is None:
-        args.csv = DEFAULT_MALDONADO if args.dataset == "maldonado" else DEFAULT_TESORO
+        if args.dataset == "maldonado":
+            args.csv = DEFAULT_MALDONADO_CODE if args.input == "code" else DEFAULT_MALDONADO
+        else:
+            args.csv = DEFAULT_TESORO
     if args.dataset == "maldonado":
-        rows, texts, labels, projects = read_maldonado(args.csv)
+        rows, texts, labels, projects = read_maldonado(args.csv, args.input)
     else:
-        rows, texts, labels, projects = read_tesoro(args.csv)
+        if args.input == "log":
+            raise SystemExit("--input log is only available for maldonado")
+        rows, texts, labels, projects = read_tesoro(args.csv, args.input)
 
-    print(f"dataset {args.dataset}; rows {len(rows)}; SATD {int(labels.sum())} "
-          f"({100 * labels.mean():.1f}%); model {args.model}", flush=True)
+    pairs = None
+    input_label = args.input
+    if args.pair != "none":
+        if args.dataset == "tesoro" and args.pair == "log":
+            raise SystemExit("--pair log is only available for maldonado")
+        if args.input != "text":
+            raise SystemExit("--pair is meant to be used with --input text")
+        if args.pair == "log":
+            pairs = [row["commit_log"] for row in rows]
+        else:
+            if args.dataset == "tesoro":
+                pairs = [row.get("code") or row.get("code_context_2", "") for row in rows]
+            else:
+                code_path = args.code_csv or DEFAULT_MALDONADO_CODE
+                opener = gzip.open if code_path.suffix == ".gz" else open
+                with opener(code_path, "rt", encoding="utf-8", newline="") as handle:
+                    code_rows = list(csv.DictReader(handle))
+                code_by_id = {row["input_row"]: row["code"] for row in code_rows}
+                pairs = [code_by_id[row["input_row"]] for row in rows]
+        input_label = f"text+{args.pair}"
+
+    print(f"dataset {args.dataset}; input {input_label}; rows {len(rows)}; "
+          f"SATD {int(labels.sum())} ({100 * labels.mean():.1f}%); "
+          f"model {args.model}", flush=True)
 
     if args.split == "project":
         if args.dataset != "maldonado":
@@ -168,8 +209,9 @@ def main() -> int:
                                       random_state=args.seed).split(texts, labels))
 
     tokenizer = AutoTokenizer.from_pretrained(args.model)
-    encodings = tokenizer(texts, truncation=True, padding="max_length",
-                          max_length=args.max_length, return_tensors="pt")
+    encodings = tokenizer(texts, text_pair=pairs, truncation=True,
+                          padding="max_length", max_length=args.max_length,
+                          return_tensors="pt")
     results = []
     predictions = []
     selected = range(len(splits)) if args.fold == 0 else [args.fold - 1]
@@ -234,8 +276,8 @@ def main() -> int:
                                              if row[key] is not None])), 4)
                    for key in ("precision", "recall", "f1", "auc")}
     payload = {
-        "model": args.model, "dataset": args.dataset, "split": args.split,
-        "rows": len(rows), "satd": int(labels.sum()),
+        "model": args.model, "dataset": args.dataset, "input": input_label,
+        "split": args.split, "rows": len(rows), "satd": int(labels.sum()),
         "folds": len(results), "mean": summary, "per_fold": results,
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)

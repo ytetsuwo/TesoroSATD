@@ -1,8 +1,8 @@
 # ModernBERT による SATD 検出
 
 `MaldonadoSATD` の `research/finetune_bert.py` と同じ条件で、ModernBERT
-（`answerdotai/ModernBERT-base`）を微調整する実験です。コメント本文だけを入力にし、
-SATD / 非 SATD の 2 値分類を行います。
+（`answerdotai/ModernBERT-base`）を微調整する実験です。コメント本文を主入力にし、
+コミットログやコード断片を追加したビューも扱い、SATD / 非 SATD の 2 値分類を行います。
 
 ## データ
 
@@ -37,6 +37,14 @@ python3 -m venv --system-site-packages /tmp/mlenv-modernbert
 /tmp/mlenv-modernbert/bin/python experiments/modernbert_satd/run_modernbert.py \
     --dataset maldonado --fold 1 --epochs 1 --batch 32 \
     --output experiments/modernbert_satd/results/maldonado_fold1_1ep.json
+
+# 本文＋ログ / 本文＋コードの 2 セグメント入力
+/tmp/mlenv-modernbert/bin/python experiments/modernbert_satd/run_modernbert.py \
+    --dataset maldonado --pair log --folds 5 --epochs 3 --batch 128 \
+    --output experiments/modernbert_satd/results/maldonado_text_log_modernbert.json
+/tmp/mlenv-modernbert/bin/python experiments/modernbert_satd/run_modernbert.py \
+    --dataset maldonado --pair code --folds 5 --epochs 3 --batch 128 \
+    --output experiments/modernbert_satd/results/maldonado_text_code_modernbert.json
 ```
 
 `--limit` はスモークテスト用で、指定した数の**訓練行だけ**を間引きます。
@@ -99,6 +107,54 @@ F1 **0.9343**、Precision 0.9485、Recall 0.9205、AUC 0.9949 です。
 今回の実験はバッチ 128 と TF32 を使ったため F1 は 0.9300 で、既存値より
 0.004 低い結果になりました。分類器としては同程度で、パイプラインの再現を
 確認できています。
+
+## ログ・コードとのアンサンブル
+
+`MaldonadoSATD` の OOF 予測を使い、本文・ログ・コードの3ビューを比較しました。
+ここで `log` は「本文＋コミットログ」、`code` は「本文＋コード断片」を
+2セグメント入力にした ModernBERT で、いずれも同じ行・同じ5分割です。
+`ensemble.py` は確率平均と logit 平均を計算し、閾値は0.5のほか、
+他フォールドで選んだ閾値を保持フォールドに適用する `honest` も出します。
+
+```bash
+python experiments/modernbert_satd/ensemble.py \
+    --text  ../MaldonadoSATD/research/data/finetune/modern_text.csv.gz \
+    --log   ../MaldonadoSATD/research/data/finetune/modern_log.csv.gz \
+    --code  ../MaldonadoSATD/research/data/finetune/modern_code.csv.gz \
+    --output results/maldonado_ensemble_existing_all.json
+```
+
+| 入力 | F1@0.5 | F1 honest |
+| --- | ---: | ---: |
+| 本文のみ | 0.9343 | 0.9346 |
+| 本文＋ログ | 0.9368 | **0.9390** |
+| 本文＋コード | 0.9360 | 0.9369 |
+| ログ＋コード | 0.9333 | 0.9351 |
+| 本文＋ログ＋コード（確率平均） | 0.9368 | 0.9364 |
+| 本文＋ログ＋コード（logit平均） | 0.9375 | 0.9375 |
+
+- **本文＋ログの logit 平均が最も良く、honest F1 0.9390**（本文単体 0.9346 から +0.0044）。
+- 3ビューにすると 0.9375 で、2ビューよりわずかに低い。コードを足すと
+  ログの利得が薄まる。
+- 確率平均より logit 平均の方が安定。単体モデルのスコア分布が違うためです。
+- 本文とのスコア相関はログ 0.965、コード 0.970 で、相関の低いログを足したときだけ
+  小さな利得が出ています。
+
+今回 batch 128 で `text+log` / `text+code` を再学習すると、単体では
+F1 0.9212 / 0.9201 で、既存 OOF（batch 32）より低くなりました。
+しかし、今回の本文モデル（0.9299）と組み合わせると次のようになります
+（`results/maldonado_ensemble_batch128.json`）。
+
+| 入力 | 単体 F1@0.5 | 単体 honest | 確率平均 honest | logit平均 honest |
+| --- | ---: | ---: | ---: | ---: |
+| 本文 | 0.9299 | 0.9333 | — | — |
+| 本文＋ログ | 0.9212 | 0.9284 | 0.9347 | **0.9370** |
+| 本文＋コード | 0.9201 | 0.9251 | 0.9339 | 0.9360 |
+| 本文＋ログ＋コード | — | — | 0.9350 | 0.9359 |
+
+batch 128 でも **本文＋ログの logit 平均が最も良く、honest F1 0.9370**
+（本文単体 0.9333 から +0.0037）。単体で本文に負けるログ/コードも、
+アンサンブルにすると本文を補助します。既存 OOF の表と傾向は一致しています。
 
 ## 実行環境
 
